@@ -24,6 +24,4 @@ pip install numpyro tinygp graphviz
 - `Astropy_fitting.ipynb`: using `astropy` to model and fit data
 
 ## Class 3
-- `mcmc_fit_with_outliers_numpyro.ipynb`: fitting a line to data while rejecting outliers using MCMC (numpyro)
-- `Gaussian_process_theory.ipynb`: introduction to GPs
-- `Gaussian_process_regression_numpyro.ipynb`: fitting data without defining a functional form
+
