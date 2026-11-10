@@ -1,0 +1,7 @@
+# Default parameters for local synthetic fit runs
+# Values can be overridden by sweep-generated config files.
+data_size: 200
+slope: 1.2
+intercept: 0.4
+noise_sigma: 0.08
+seed: 13

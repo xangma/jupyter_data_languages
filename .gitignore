@@ -92,3 +92,8 @@ image_output/*.png
 tex/
 
 .vscode
+
+outputs/*
+config/param_grid.txt
+config/generated_params/
+.DS_Store

@@ -1,0 +1,9 @@
+# Parameter sweep description consumed by scripts/run_param_sweep.py
+# Produces 3 (slope) x 2 (intercept) = 6 candidate runs.
+grid_name: slurm_demo
+base_config: config/params.yaml
+configs_dir: config/generated_params
+grid_file: config/param_grid.txt
+sweep:
+  slope: [1.0, 1.2, 1.4]
+  intercept: [0.2, 0.5]
