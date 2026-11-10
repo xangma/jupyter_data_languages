@@ -1,0 +1,13 @@
+# Legacy requirements; use pyproject.toml for the 2026 course.
+numpy
+scipy
+astropy
+pandas
+matplotlib
+jupyter
+ipykernel
+ipywidgets
+pytest
+coverage
+pyyaml
+rich

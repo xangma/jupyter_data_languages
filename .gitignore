@@ -97,3 +97,8 @@ outputs/*
 config/param_grid.txt
 config/generated_params/
 .DS_Store
+.venv/
+node_modules/
+_build/
+_executed/
+.pytest_cache/

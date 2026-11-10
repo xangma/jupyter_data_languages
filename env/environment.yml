@@ -1,0 +1,16 @@
+# """Conda environment specification for the astrophysics coursework."""
+name: astroclass
+dependencies:
+  - python>=3.10
+  - numpy
+  - scipy
+  - astropy
+  - pandas
+  - matplotlib
+  - jupyter
+  - ipykernel
+  - ipywidgets
+  - pytest
+  - coverage
+  - pyyaml
+  - rich

@@ -1,0 +1,12 @@
+{
+  "name": "icg-phd-python-2026",
+  "private": true,
+  "engines": { "node": ">=22", "npm": ">=10" },
+  "scripts": {
+    "build:docs": "myst build --html --strict",
+    "preview": "myst start"
+  },
+  "devDependencies": {
+    "mystmd": "1.12.0"
+  }
+}

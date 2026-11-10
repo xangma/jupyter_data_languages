@@ -1,57 +1,56 @@
-# Jupyter notebooks for PhD class on data languages.
+# Python for ICG Research — 2026
 
-## Installing python
-The easiest way to install python on any OS is to use [anaconda python](https://www.continuum.io/downloads).  This will install a local version of python on your system so you don't need to worry about needing admin to install new packages.  Most of the packages listed above are installed by default with anaconda.  For this class we will be using python 3, and I recommend you use this version for your research.
-
-## Environment quick start
-There are two audiences for this repository: students who just need to *run* the notebooks, and instructors/developers who also need authoring tooling such as notebook diff/strip helpers.  The required packages are split accordingly.
-
-### Running the classes
-Use whichever option matches your tooling preference; both install the same runtime stack needed by the notebooks and exercises.
+Three two-hour practicals for incoming ICG PhD students: scientific arrays and
+astronomy data; Git and tests; coding agents and independent verification.
+Start with [the course overview](book/index.md) and [setup](book/setup.md).
 
 ```bash
-# option 1: conda environment
-conda env create -f env/environment.yml
-conda activate astroclass
-
-# option 2: pip + virtualenv/uv/venv
-python -m venv .venv && source .venv/bin/activate
-pip install -r env/requirements.txt
+uv sync --frozen --python 3.13 --extra teaching
+uv run --frozen --extra teaching python scripts/check_setup.py
+uv run --frozen --extra teaching jupyter lab
 ```
 
-These files install the core scientific stack (python>=3.10, numpy, scipy, astropy, pandas, matplotlib, jupyter, ipywidgets, pytest, coverage, pyyaml, rich) plus the optional libraries referenced in the notebooks (`numpyro`, `tinygp`, `graphviz`).  Students do **not** need to worry about any notebook‑authoring helpers such as `nbstripout` to work through the material.
+Open the notebooks in `book/`. All examples use small local synthetic data.
+No paid AI account or HPC access is required. See the [instructor guide](book/instructor.md)
+for pacing, solutions, prerequisites and the account-free agent fallback.
 
-### Maintainers / developing the classes
-Maintainers should install the same base environment as the students, then add the small set of tooling packages that keep the repository clean:
+## Validate and build the Jupyter Book
+
+Python 3.13 and Node.js 22 are the tested runtimes. Commands below run from this
+directory; the first installation needs the network.
+Check `node --version` reports 22 or later (`nvm use` if using nvm). Older Node
+releases can fail inside MyST even if its installation succeeds.
 
 ```bash
-pip install nbstripout pre-commit
-
-# configure helpers (runs once per clone)
-nbstripout --install --attributes .gitattributes
-pre-commit install
+uv run --frozen --extra teaching python -m pytest -q
+uv run --frozen --extra teaching python scripts/validate_course.py
+npm ci --ignore-scripts
+BASE_URL=/python-phd npm run build:docs
 ```
 
-`nbstripout` keeps execution counts/metadata out of commits, and `pre-commit` ensures the hooks run automatically.  These are development conveniences only-students do not need them to run the notebooks.
-
-## Optional packages used in advanced notebooks
-+ `numpyro`
-+ `tinygp`
-+ `graphviz`
+`validate_course.py` executes all five notebooks in fresh kernels and empty
+working directories, writing `_executed/`. The book builds from those checked
+copies, including the plots. Source notebooks retain empty outputs. Preview at
+the intended CPD subpath:
 
 ```bash
-pip install numpyro tinygp graphviz
+python scripts/serve_book.py --port 8765
 ```
 
-## Class 1
-- `Git.ipynb`: Git and Git-Hub
-- `General_Python.ipynb`: General python information
-- `Unit_testing.ipynb`: Writing unit tests in python
+Open `http://127.0.0.1:8765/python-phd/`. Stop the foreground server with Ctrl+C.
+The static book does not supply live kernels. [Deployment notes](deploy/README.md)
+describe the separate CPD publishing step.
 
-## Class 2
-- `General_plotting.ipynb`: How to make publication ready plots
-- `mpl_style.py`: How to make a `matplotlib` style
-- `Uncertainty_plotting.ipynb`: Making plots with errorbars
-- `Astropy_fitting.ipynb`: using `astropy` to model and fit data
+## Provenance and earlier lectures
 
-## Class 3
+Adapted from [Coleman Krawczyk's lectures](https://github.com/CKrawczyk/jupyter_data_languages)
+through [Xan's fork](https://github.com/xangma/jupyter_data_languages).
+The latest published teaching branch found was `update_2025` at `2e4201b`,
+newer than the default `master` at `8a8c246`. The local 2025 drafts, including
+unpublished class 3 material, are preserved in a separate baseline commit.
+The original checkout was not edited.
+
+The earlier `classes/`, root plotting notebooks, scripts/configuration and
+`Previous_notebooks/` are historical references outside the validated 2026 path;
+they may need extra dependencies or repairs. [Review notes](COURSE_REVIEW.md)
+record adopted recommendations. The original MIT licence is retained.

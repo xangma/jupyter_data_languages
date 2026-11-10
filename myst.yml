@@ -1,0 +1,22 @@
+version: 1
+project:
+  id: icg-phd-python-2026
+  title: Python for ICG Research
+  description: Three practical sessions on scientific Python, reproducible code, Git and coding agents.
+  github: xangma/jupyter_data_languages
+  license: MIT
+  settings:
+    output_matplotlib_strings: remove
+  toc:
+    - file: book/index.md
+    - file: book/setup.md
+    - file: _executed/00-primer.ipynb
+    - file: _executed/01-catalogue.ipynb
+    - file: _executed/02-git-and-tests.ipynb
+    - file: _executed/03-agents-and-inference.ipynb
+    - file: _executed/04-signal-extension.ipynb
+    - file: book/solutions.md
+    - file: book/further-reading.md
+    - file: book/instructor.md
+site:
+  template: book-theme
