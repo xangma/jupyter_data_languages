@@ -3,6 +3,7 @@ import importlib.metadata
 from pathlib import Path
 import shutil
 import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import numpy as np
 from astropy.table import QTable
 from course2026.analysis import usable_rows, weighted_mean

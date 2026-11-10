@@ -13,8 +13,9 @@ downloads or installing a GW/ML stack in class.
 
 Confirm an institution-approved coding agent in advance. Otherwise use the
 incorrect candidate in notebook 03 and let students review/fix it themselves.
-The outcomes do not depend on a vendor or paid account. JupyterHub must separately
-provide the Python environment and terminal; a static book does not supply these.
+The outcomes do not depend on a vendor or paid account. CPD provides a locked,
+CPU-only course workspace through JupyterHub. Confirm student enrolment before
+class and rehearse both in-page execution and opening the notebook in JupyterLab.
 
 ## Session 1 — 120 minutes
 

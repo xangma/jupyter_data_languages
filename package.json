@@ -1,9 +1,12 @@
 {
   "name": "icg-phd-python-2026",
   "private": true,
-  "engines": { "node": ">=22", "npm": ">=10" },
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10"
+  },
   "scripts": {
-    "build:docs": "myst build --html --strict",
+    "build:docs": "myst build --html --strict && python3 scripts/inject_jupyterhub_launch_links.py",
     "preview": "myst start"
   },
   "devDependencies": {

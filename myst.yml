@@ -5,6 +5,12 @@ project:
   description: Three practical sessions on scientific Python, reproducible code, Git and coding agents.
   github: xangma/jupyter_data_languages
   license: MIT
+  jupyter:
+    server:
+      url: https://icg-cpd-cluster.port.ac.uk/jupyterhub/services/phd-python-thebe/server/
+      token: cpd-hub-oauth
+    kernelName: python3
+    disableSessionSaving: true
   settings:
     output_matplotlib_strings: remove
   toc:
@@ -20,3 +26,6 @@ project:
     - file: book/instructor.md
 site:
   template: book-theme
+  actions:
+    - title: JupyterHub
+      url: /jupyterhub/services/phd-python-thebe/bootstrap

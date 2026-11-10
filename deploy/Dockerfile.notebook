@@ -1,0 +1,16 @@
+FROM python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90
+RUN apt-get update && apt-get install -y --no-install-recommends git ca-certificates libgomp1 \
+    && rm -rf /var/lib/apt/lists/* \
+    && useradd --create-home --uid 1011 --user-group --shell /bin/bash jovyan
+WORKDIR /opt/course
+COPY deploy/requirements-hub.lock ./requirements.lock
+RUN python -m venv /opt/course/.venv \
+    && .venv/bin/pip install --no-cache-dir --require-hashes -r requirements.lock \
+    && .venv/bin/python -m ipykernel install --prefix=/opt/course/.venv --name python3 --display-name "Python PhD (locked)" \
+    && .venv/bin/jupyter server extension enable --sys-prefix nbgitpuller
+ENV PATH="/opt/course/.venv/bin:$PATH" \
+    PYTHONUNBUFFERED=1
+USER 1011:1011
+WORKDIR /home/jovyan
+EXPOSE 8888
+CMD ["jupyterhub-singleuser"]

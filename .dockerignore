@@ -2,6 +2,10 @@
 !deploy/
 !deploy/Dockerfile
 !deploy/nginx.conf
+!deploy/Dockerfile.notebook
+!deploy/requirements-hub.lock
+!pyproject.toml
+!uv.lock
 !_build/
 !_build/html/
 !_build/html/**

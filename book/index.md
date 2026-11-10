@@ -22,9 +22,11 @@ a measurement of the Hubble constant. The same local file is used throughout, an
 the practicals need no network access after installation. Agent access is optional:
 you can use the supplied candidate implementation and review it with a partner.
 
-The book displays saved notebook results. Download/open the repository notebooks
-in JupyterLab or VS Code to edit and execute them. A static book does not provide
-a Python kernel; interactive CPD integration is a separate deployment step.
+Read the book without signing in, or choose **Connect to JupyterHub** to use the
+course's Python environment. Start compute on a notebook page and run cells from
+the top. Choose **Open this notebook in JupyterHub** for editing, files and the
+terminal used in the Git practical. JupyterHub access requires course enrolment.
+The PhD workspace runs separately from the UKSA course workspace.
 
 The [instructor guide](instructor.md) has the six-hour timetable. The signal
 exercise and [further reading](further-reading.md) are extensions. HPC is covered

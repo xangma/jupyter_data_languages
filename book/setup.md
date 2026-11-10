@@ -4,9 +4,24 @@ Allow 20–30 minutes for installation. You need Python 3.11 or later and Git;
 the locked course environment uses Python 3.13. A working notebook and a terminal
 are enough. VS Code is optional.
 
-Obtain the **2026 course checkout supplied by the instructor**. On GitHub, the
-older default `master` branch is not this course. Until the 2026 branch is
-published, use the instructor's source archive. Open a terminal in its root
+## Use CPD without local installation
+
+Open [the Python PhD book](https://icg-cpd-cluster.port.ac.uk/python-phd/) and
+choose **Connect to JupyterHub**. Sign in with your enrolled GitHub account.
+Preparing the course workspace can take a few minutes on the first visit.
+On a notebook page, start the compute environment and run cells from the top.
+For Git, a terminal or editing files, open the connection menu and choose
+**Open this notebook in JupyterHub**. Your workspace contains the course checkout.
+
+If access is denied, ask the instructor to check your existing CPD enrolment;
+creating a GitHub account alone does not grant access. Disconnecting the book
+does not stop your server: use JupyterHub's control panel to stop the `python-phd`
+server when finished. Your files remain in your workspace.
+
+## Install locally instead
+
+Use the [`codex/phd-python-2026` course branch](https://github.com/xangma/jupyter_data_languages/tree/codex/phd-python-2026).
+The older default `master` branch is not this course. Open a terminal in its root
 (the directory containing `pyproject.toml`).
 
 ## Reproducible setup with uv
