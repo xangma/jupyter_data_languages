@@ -317,6 +317,7 @@ html.dark .cpd-thebe-launch-toast {{
   let connectMenuCounter = 0;
   let consumedThebeLaunchIntent = false;
   let allowNextThebeLaunch = false;
+  let started = false;
 
   function currentReturnPath(options = {{}}) {{
     const url = new URL(window.location.href);
@@ -746,7 +747,7 @@ html.dark .cpd-thebe-launch-toast {{
         startThebeOrBootstrap(button);
       }}, true);
 
-      if (button.dataset.cpdThebeAutoLaunch !== "1" && consumeThebeLaunchIntent()) {{
+      if (started && button.dataset.cpdThebeAutoLaunch !== "1" && consumeThebeLaunchIntent()) {{
         button.dataset.cpdThebeAutoLaunch = "1";
         allowNextThebeLaunch = true;
         clearThebeLaunchParams();
@@ -756,13 +757,12 @@ html.dark .cpd-thebe-launch-toast {{
         }}, 150);
       }}
     }}
-    if (foundLaunchButton) clearThebeLaunchParams();
+    if (foundLaunchButton && started) clearThebeLaunchParams();
   }}
 
   updateThebeLaunchButtons();
 
   let pending = false;
-  let started = false;
   let observer = null;
   function scheduleUpdate() {{
     if (!started) return;
