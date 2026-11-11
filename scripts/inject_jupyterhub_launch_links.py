@@ -734,18 +734,19 @@ html.dark .cpd-thebe-launch-toast {{
 
       if (!label.includes("start compute environment") && !label.includes("launch kernel")) continue;
       foundLaunchButton = true;
-      if (button.dataset.cpdJupyterhubBootstrap === "1") continue;
-      button.dataset.cpdJupyterhubBootstrap = "1";
-      button.addEventListener("click", (event) => {{
-        if (allowNextThebeLaunch) {{
-          allowNextThebeLaunch = false;
-          return;
-        }}
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        if (button.dataset.cpdJupyterhubChecking === "1") return;
-        startThebeOrBootstrap(button);
-      }}, true);
+      if (button.dataset.cpdJupyterhubBootstrap !== "1") {{
+        button.dataset.cpdJupyterhubBootstrap = "1";
+        button.addEventListener("click", (event) => {{
+          if (allowNextThebeLaunch) {{
+            allowNextThebeLaunch = false;
+            return;
+          }}
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          if (button.dataset.cpdJupyterhubChecking === "1") return;
+          startThebeOrBootstrap(button);
+        }}, true);
+      }}
 
       if (started && button.dataset.cpdThebeAutoLaunch !== "1" && consumeThebeLaunchIntent()) {{
         button.dataset.cpdThebeAutoLaunch = "1";
