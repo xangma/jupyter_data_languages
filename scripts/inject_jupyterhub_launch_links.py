@@ -705,9 +705,11 @@ html.dark .cpd-thebe-launch-toast {{
         button.textContent,
       ].join(" ").toLowerCase();
 
-      if (label.includes("launch notebook in jupyter")) {{
+      if (label.includes("launch notebook in jupyter") || label.includes("launch in external computing interface")) {{
         if (button.dataset.cpdJupyterhubNotebookLaunch === "1") continue;
         button.dataset.cpdJupyterhubNotebookLaunch = "1";
+        button.setAttribute("aria-label", "Open this notebook in CPD JupyterHub");
+        button.title = "Open this notebook in CPD JupyterHub";
         button.addEventListener("click", (event) => {{
           event.preventDefault();
           event.stopImmediatePropagation();
