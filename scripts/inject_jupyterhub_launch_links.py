@@ -136,11 +136,23 @@ def injected_script(routes: dict[str, str]) -> str:
   position: relative;
 }}
 a.cpd-jupyterhub-connect {{
+  font-size: 0 !important;
   align-items: center;
   display: inline-flex;
   gap: 0.45rem;
   white-space: nowrap;
 }}
+a.cpd-jupyterhub-connect > * {{ display: none; }}
+a.cpd-jupyterhub-connect::before {{
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #94a3b8;
+  margin-right: 0.45rem;
+}}
+a.cpd-jupyterhub-connect[data-cpd-jupyterhub-state="connected"]::before {{ background: #22c55e; }}
+a.cpd-jupyterhub-connect::after {{ content: attr(data-cpd-label); font-size: 0.875rem; }}
 a.cpd-jupyterhub-connect .cpd-jupyterhub-status {{
   background: #6b7280;
   border-radius: 9999px;
@@ -428,8 +440,14 @@ html.dark .cpd-thebe-launch-toast {{
     const menu = Array.from(wrapper.children).find((child) =>
       child.classList && child.classList.contains("cpd-jupyterhub-menu")
     );
-    const link = wrapper.querySelector("a.cpd-jupyterhub-connect");
+    const link = wrapper.cpdConnectLink;
     if (open) {{
+      const rect = link.getBoundingClientRect();
+      wrapper.style.position = "fixed";
+      wrapper.style.left = rect.right + "px";
+      wrapper.style.top = rect.bottom + "px";
+      wrapper.style.width = "0px";
+      wrapper.style.zIndex = "1000";
       wrapper.dataset.cpdJupyterhubMenuOpen = "1";
       if (menu) menu.hidden = false;
       if (link) link.setAttribute("aria-expanded", "true");
@@ -441,18 +459,17 @@ html.dark .cpd-thebe-launch-toast {{
   }}
 
   function ensureConnectMenu(link) {{
-    let wrapper = link.parentElement;
-    if (
-      !wrapper
-      || !wrapper.classList.contains("cpd-jupyterhub-menu-wrap")
-      || wrapper.dataset.cpdJupyterhubWrapper !== "1"
-    ) {{
+    // React owns the header link and its children. Keep them in place: moving
+    // or replacing them breaks later React updates such as opening search.
+    let wrapper = document.getElementById("cpd-jupyterhub-menu-portal");
+    if (!wrapper) {{
       wrapper = document.createElement("span");
+      wrapper.id = "cpd-jupyterhub-menu-portal";
       wrapper.className = "cpd-jupyterhub-menu-wrap";
       wrapper.dataset.cpdJupyterhubWrapper = "1";
-      link.parentNode.insertBefore(wrapper, link);
-      wrapper.appendChild(link);
+      document.body.appendChild(wrapper);
     }}
+    wrapper.cpdConnectLink = link;
 
     let menu = Array.from(wrapper.children).find((child) =>
       child.classList && child.classList.contains("cpd-jupyterhub-menu")
@@ -526,6 +543,7 @@ html.dark .cpd-thebe-launch-toast {{
 
   function updateConnectLinks() {{
     for (const link of document.querySelectorAll("a")) {{
+      if (link.closest(".cpd-jupyterhub-menu-wrap")) continue;
       const isConnectLink = link.dataset.cpdJupyterhubConnect === "1"
         || link.href.includes("/services/phd-python-thebe/bootstrap")
         || link.textContent.trim() === "Connect JupyterHub"
@@ -542,24 +560,8 @@ html.dark .cpd-thebe-launch-toast {{
       const labelText = connectLabel(state);
       const href = hubConnected ? hubHomePath : bootstrapUrl();
       if (link.getAttribute("href") !== href) link.setAttribute("href", href);
-      if (
-        link.dataset.cpdJupyterhubState !== state
-        || !link.querySelector(".cpd-jupyterhub-status")
-        || !link.querySelector(".cpd-jupyterhub-caret")
-        || link.querySelector(".cpd-jupyterhub-label")?.textContent !== labelText
-      ) {{
-        link.dataset.cpdJupyterhubState = state;
-        const marker = document.createElement("span");
-        marker.className = "cpd-jupyterhub-status";
-        marker.setAttribute("aria-hidden", "true");
-        const label = document.createElement("span");
-        label.className = "cpd-jupyterhub-label";
-        label.textContent = labelText;
-        const caret = document.createElement("span");
-        caret.className = "cpd-jupyterhub-caret";
-        caret.setAttribute("aria-hidden", "true");
-        link.replaceChildren(marker, label, caret);
-      }}
+      link.dataset.cpdJupyterhubState = state;
+      link.dataset.cpdLabel = labelText + (hubConnected ? " ▾" : "");
       link.setAttribute(
         "aria-label",
         state === "connected"
@@ -590,7 +592,7 @@ html.dark .cpd-thebe-launch-toast {{
         link.addEventListener("click", (event) => {{
           event.preventDefault();
           event.stopImmediatePropagation();
-          const currentWrapper = link.closest(".cpd-jupyterhub-menu-wrap");
+          const currentWrapper = document.getElementById("cpd-jupyterhub-menu-portal");
           if (hubConnected && currentWrapper) {{
             const open = currentWrapper.dataset.cpdJupyterhubMenuOpen !== "1";
             closeConnectMenus(open ? currentWrapper : null);
@@ -611,7 +613,7 @@ html.dark .cpd-thebe-launch-toast {{
   document.addEventListener("click", (event) => {{
     const target = event.target instanceof Node ? event.target : null;
     for (const wrapper of document.querySelectorAll(".cpd-jupyterhub-menu-wrap[data-cpd-jupyterhub-menu-open='1']")) {{
-      if (target && wrapper.contains(target)) continue;
+      if (target && (wrapper.contains(target) || wrapper.cpdConnectLink?.contains(target))) continue;
       setConnectMenuOpen(wrapper, false);
     }}
   }}, true);
