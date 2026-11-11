@@ -1,54 +1,45 @@
-# CPD deployment preparation
+# CPD deployment
 
-The proposed new endpoint is `https://icg-cpd-cluster.port.ac.uk/python-phd/`.
-It is not an observed live endpoint. No cluster resource has changed; the
-existing UKSA book at `/jupyterbook/` is a separate application.
+Live course: <https://icg-cpd-cluster.port.ac.uk/python-phd/>.
+[Validation](../VALIDATION.md) records versions, image digests and observed tests.
+The existing UKSA book remains at `/jupyterbook/`.
 
-## Build and local container check
+## Student workflow
 
-Run the validation/build commands in the repository README, then from its root:
+Read without signing in. Choose Connect to JupyterHub or the compute button and
+use the existing GitHub sign-in. The bridge starts the CPU `python-phd` named
+server and synchronises the course into `~/jupyter_data_languages`. Start compute
+on a notebook page and run cells from the top. Open this notebook in CPD
+JupyterHub opens the editable source; use its terminal for the Git practical.
+Stop the named server from Hub Home when finished. Disconnect clears the book's
+connection; it does not stop the server or remove files.
 
-```bash
-docker build -f deploy/Dockerfile -t icg-phd-python:2026-review .
-docker run --rm --name icg-phd-python-preview -p 127.0.0.1:8085:8080 icg-phd-python:2026-review
-```
+## Build and promote
 
-Open `http://127.0.0.1:8085/python-phd/`. Check a deep chapter, figures, search,
-navigation and `/healthz`. Stop with Ctrl+C or `docker stop icg-phd-python-preview`.
-The container serves prebuilt checked HTML; it supplies no notebook kernel.
-Nginx preserves `/python-phd` rather than depending on an ingress prefix rewrite.
-The runtime base is pinned. For release, pin the published course image too. Retain
-the source revision, both lockfiles, check logs and image digest together.
-Rebuild HTML if the base path changes.
+Use the validation/build commands in the repository README, with Node 22 and
+`BASE_URL=/python-phd`. The build applies the documented Thebe compatibility
+patch and injects the user-scoped Hub controls. The static container serves
+checked HTML on port 8080 with `/healthz`; it does not contain a kernel.
 
-## Later GitOps change
+`Dockerfile.notebook` installs `requirements-hub.lock` with hashes. It supplies
+the course's Python kernel, JupyterHub client and nbgitpuller, using UID/GID 1011.
+The login-shell profile keeps terminal Python aligned with the kernel. Source
+and data are pulled into the student's persistent home, rather than installed
+as a hidden copy in the image.
 
-Verify GlobalProtect and the CPD route, consult activity records, then do
-read-only cluster checks. Reinspect current `space-k8s-gitops` default-branch
-manifests and instructions in an isolated worktree. Its UKSA JupyterBook pattern
-is a starting point; do not copy its JupyterHub identity, token or auth settings.
+GitOps resources live in `icg-innovation/space-k8s-gitops`:
 
-Proposed resources: namespace `python-phd`, CPU-only Deployment using a pinned
-image, ClusterIP Service and Ingress for `/python-phd` on the existing hostname.
-Use port 8080 and `/healthz` probes. A static book needs no GPU or persistent
-volume. Decide public versus authenticated course access before configuring
-ingress, and add the app to the current Kustomization and Flux health checks.
+- `apps/{base,overlays/prod-cluster}/phd-python-jupyterbook`
+- `apps/overlays/prod-cluster/jupyterhub/jupyterhub-values.yaml`
+- `docs/python-phd-jupyterbook.md` and `docs/registry-policy.md`
 
-Validate affected GitOps entrypoints locally and prepare a concrete diff. The
-GitOps repository belongs to `icg-innovation`; the user's AGENTS.md requires
-explicit prior approval before opening/submitting/modifying a PR there. This
-preparation creates none. Before live changes, state the exact commands, impact,
-verification and rollback.
+The book runs in `jupyterhub`, reusing its registry pull secret. The package
+permissions inherit the GitOps repository's pull identity; no public package
+exception or new credentials were needed. Promote immutable image digests and
+update the registry inventory in the same approved GitOps change. The user's
+approval is required before opening PRs in this organisation repository.
 
-After an approved release, verify Flux's source/applied revision, readiness,
-pods, endpoints and Ingress. Check the live home page, deep chapters, assets,
-search, plots and intended auth in a browser. Roll back by reverting to the
-previous working Git/image revision and repeating those checks. A local build
-or pushed image alone is not evidence of deployment.
-
-## Optional live notebooks
-
-Separately verify CPD JupyterHub's current image, environment, users and loading
-route. Provide the exact course revision and install it in that kernel. Static
-publication can proceed independently. No live-kernel integration is declared
-ready, and the UKSA service identity must not be reused blindly.
+After promotion verify Flux's applied revision, Hub Helm readiness, pod image and
+CPU resources, ingress, storage, login, clone, in-page execution, JupyterLab,
+terminal commands and search. Preserve student PVCs during any rollback; revert
+the relevant GitOps promotions rather than changing live workloads by hand.

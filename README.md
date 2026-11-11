@@ -2,7 +2,8 @@
 
 Three two-hour practicals for incoming ICG PhD students: scientific arrays and
 astronomy data; Git and tests; coding agents and independent verification.
-Start with [the course overview](book/index.md) and [setup](book/setup.md).
+Open [the live CPD book](https://icg-cpd-cluster.port.ac.uk/python-phd/), or start
+locally with [the course overview](book/index.md) and [setup](book/setup.md).
 
 ```bash
 uv sync --frozen --python 3.13 --extra teaching
@@ -38,8 +39,8 @@ python scripts/serve_book.py --port 8765
 ```
 
 Open `http://127.0.0.1:8765/python-phd/`. Stop the foreground server with Ctrl+C.
-The static book does not supply live kernels. [Deployment notes](deploy/README.md)
-describe the separate CPD publishing step.
+The local preview serves static pages. The deployed CPD edition connects to
+JupyterHub for live kernels; [deployment notes](deploy/README.md) describe it.
 
 The CPD edition uses the existing authenticated bridge with a separate
 `python-phd` named server and locked CPU environment. Book links open editable
