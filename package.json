@@ -6,7 +6,7 @@
     "npm": ">=10"
   },
   "scripts": {
-    "build:docs": "myst build --html --strict && python3 scripts/inject_jupyterhub_launch_links.py",
+    "build:docs": "myst build --html --strict && python3 scripts/inject_jupyterhub_launch_links.py && python3 scripts/fix_thebe_cold_start.py",
     "preview": "myst start"
   },
   "devDependencies": {
