@@ -1,84 +1,105 @@
-# Observed validation — 11 November 2026
+# Observed validation — reviewed course, 11 November 2026
 
 ## Implementation and deployment
 
-The course is published at <https://icg-cpd-cluster.port.ac.uk/python-phd/>.
-Its source is `xangma/jupyter_data_languages`, branch `codex/phd-python-2026`.
-The original local 2025 drafts remain preserved in baseline commit `f9c3ee3`;
-`COURSE_REVIEW.md` records provenance and the assessment recommendations adopted.
+Live book: <https://icg-cpd-cluster.port.ac.uk/python-phd/>.
+Course branch: `xangma/jupyter_data_languages`, `codex/phd-python-2026`.
+Reviewed content/build revision: `b7b5f096afe4dc337640e0b427c8a0d04fcc248a`.
+Later validation-only commits do not change those teaching/build inputs.
 
-CPD deployment and fixes were promoted through `space-k8s-gitops` PRs
-[416](https://github.com/icg-innovation/space-k8s-gitops/pull/416),
-[417](https://github.com/icg-innovation/space-k8s-gitops/pull/417),
-[418](https://github.com/icg-innovation/space-k8s-gitops/pull/418),
-[419](https://github.com/icg-innovation/space-k8s-gitops/pull/419),
-[420](https://github.com/icg-innovation/space-k8s-gitops/pull/420) and
-[421](https://github.com/icg-innovation/space-k8s-gitops/pull/421).
-The final application revision is `38ae7f547de86155afe80b7d5f02189ac2d6bb73`.
-The Hub reached Helm release v55 (chart 4.3.5).
+The five agreed revisions are implemented: the Git branch/commit and optional
+remote sequence; setup and environment commands; a non-overwriting agent
+sandbox with independently authored tests; clearer scientific assumptions and
+recomputed error-rescaling checks; and an executable FFT aliasing task. Small
+primer, instructor and solution clarifications support those changes.
+All three 120-minute sessions and ten-minute breaks retain their original times.
+The selected-only refit remains optional; untested timetable changes were not adopted.
 
-The PhD bridge reuses the UKSA implementation with separate user-scoped OAuth
-and a named `python-phd` server. The observed pod uses the default scheduler,
-requests 1 CPU / 1 GiB, limits 4 CPU / 8 GiB, and requests no GPU. Its home is a
-separate Bound 20 GiB `longhorn-retain` PVC. Existing Hub admission rules apply.
+GitOps [PR 422](https://github.com/icg-innovation/space-k8s-gitops/pull/422)
+passed all four required checks and was merged as
+`70ebf461d52520b99146080101834d080c1b7d17`. Flux `apps` applied that exact
+revision and reported Ready; the book Deployment reached one updated, ready replica.
 
 Pinned images:
 
-- Book: `ghcr.io/icg-innovation/phd-python-jupyterbook@sha256:e1c7d14379509bbb41f9c6223b1d4635ee5ca91ad1a7ed8fda06945cdd6943b1`
+- Book: `ghcr.io/icg-innovation/phd-python-jupyterbook@sha256:33c21b0d7e1060b0505f652803b3346cd4b5eb6d96738482393e6473fd370e71`
 - Runtime: `ghcr.io/icg-innovation/phd-python-notebook@sha256:b703527a678c9ef7d2be931c7f500fe1c8c76f091a217235448a383c6fa6e3ca`
 
-## Tests and student execution
+The runtime, bridge and Hub configuration are unchanged. A fresh build exposed
+an implicit book-theme v2.0.0 upgrade from its floating download. `myst.yml` now
+pins compatible v1.4.1 commit `23f2df5493e23dfb1d9433c8aa64c87beb4232a3`.
+The strict build, existing bounded Thebe patch and actual auto-start script
+regression all pass with that immutable template.
 
-- 20 course tests passed inside the actual Hub environment: Python 3.13.18,
-  NumPy 2.5.4, SciPy 1.18.1, Astropy 8.0.2, Matplotlib 3.11.2, pytest 9.2.0.
-- All five notebooks passed in fresh Hub kernels with empty working directories.
-  This includes catalogue/FITS/plots, Git reference tests, inference/agent
-  acceptance checks and the optional signal exercise.
-- GitHub sign-in and the book's OAuth connection were exercised as `xangma`.
-  This verifies the normal user-scoped bridge flow using the operator's admitted
-  account; a newly enrolled student's account was not available for this test.
-- In-page computation was activated from a stopped named server. After clearing
-  the saved outputs, Run All produced 400 rows, 395 usable, 262 selected, and a
-  395-row FITS round trip. The selection means were 110.7 and 87.5 Mpc.
-- Open Notebook targeted the editable `book/` source on the named server.
-  JupyterLab Restart and Run All passed, and its saved outputs survived a server
-  restart. A Session 2 notebook also opened before starting in-page computation.
-- A new JupyterLab terminal resolved `/opt/course/.venv/bin/python`; setup,
-  pytest and the five-notebook check passed using the lecture's ordinary commands.
-- The Git practical passed on CPD: branch, independent wraparound tests,
-  deliberate conflict, resolution, commit and revert. The sandbox finished with
-  a clean tree and no remote; no student-practice changes were pushed upstream.
-- Anonymous book access returned 200; the anonymous kernel proxy returned 401.
-  The existing UKSA book continued to return 200.
+## Tests and student workflow observed on CPD
 
-## Build and integration repairs
+The flow was exercised as the admitted user `xangma`, with a fresh book-service
+connection using the existing Hub sign-in session. A newly enrolled student's
+account was not available. No paid coding-agent account is needed for the tested
+classroom route.
 
-MyST 1.12.0 / Node 22.23.2 strict builds passed for ten pages and five notebook
-routes. The Hub/service/profile suite passed 114 tests; the registry-policy suite
-passed 29 tests. All three production Kustomize entrypoints and the complete
-pinned private-source registry validation passed, as did required GitHub checks.
+- The stopped named server started through one compute-button action. Its
+  runtime was the pinned image above, using the default scheduler, requesting
+  1 CPU / 1 GiB and limiting 4 CPU / 8 GiB, with no GPU resources. The separate
+  20 GiB `longhorn-retain` home PVC stayed Bound.
+- nbgitpuller incorporated the reviewed content while preserving the existing
+  notebook outputs through a local merge. The reviewed content commit was
+  verified as an ancestor of the student checkout; no hard reset was used.
+- In-page outputs were cleared and recomputed. Session 3 recovered slope/intercept
+  70.05/303.77, recomputed reduced chi-squared as 0.24 after doubling errors,
+  and observed the expected nine starter-test failures. Session 1 reproduced
+  400 rows, 395 usable, 262 selected, a 395-row FITS round trip and mean distances
+  110.7/87.5 Mpc. Its error-bar and selection plots were visually inspected.
+- Open Notebook opened editable `book/03-agents-and-inference.ipynb` in the
+  named server's JupyterLab. Restart and Run All executed all six code cells
+  with zero errors; the saved notebook reopened with those outputs after restart.
+- A new JupyterLab terminal selected `/opt/course/.venv/bin/python` (Python
+  3.13.18). Setup printed 395 usable rows out of 400. The documented pip
+  inspection command, **23 course tests**, and **all five notebooks** in fresh
+  kernels/empty working directories passed inside that actual workspace.
+- The Git practical completed branch creation, independent tests, deliberate
+  conflict/resolution, the new `edge-case-tests` commit, review and noninteractive
+  revert. Five sandbox tests passed. Optional hosting was checked with an empty
+  local bare remote, both branches pushed and a nonempty review diff; no hosted
+  practice PR or upstream push was made.
+- The offline agent exercise observed failure before repair, committed the
+  independently derived student checks, applied the published scalar solution,
+  passed **12 tests**, and confirmed both test files unchanged during repair.
+  Repeating setup refused the existing sandbox and preserved the student's edits.
+  Both practice repositories finished clean; the source starter remained wrong.
+- A further fresh Hub kernel ran the 300 Hz FFT variation and produced a visible
+  **212 Hz** peak on the full 0–256 Hz plot, with its sampling-theory check passing.
+- The server was stopped through Hub Home, its pod disappeared and its PVC
+  remained Bound. Starting through the book produced a different pod UID. Three
+  persisted evidence files retained their SHA-256 checksums, and the saved
+  six-cell notebook still had no errors. The test server was stopped again after
+  this check; student files and evidence remain in its retained home.
+- Anonymous book access returned **200**; the anonymous kernel proxy returned
+  **401**; the existing UKSA book returned **200**.
 
-Live testing identified and repaired failures that local notebook execution alone
-could not detect: the bridge now calls nbgitpuller's sync API and waits for its
-finished event; compute startup retains a request made while Thebe loads;
-readiness includes the notebook's own cells and session; login shells preserve
-the locked Python PATH; Hub controls leave React-owned nodes in place.
+The book console recorded no errors during computation. Two transient reconnect
+warnings were observed during bootstrap/navigation; subsequent fresh cell runs
+completed successfully. Windows shell guidance was reviewed but not executed on
+Windows in this pass.
 
-`scripts/fix_thebe_cold_start.py` is a bounded compatibility patch for the pinned
-theme. It fails the build if its vendor fragments change. Review it and rerun the
-student workflow when upgrading MyST/Thebe rather than assuming compatibility.
+## Local and promotion checks
 
-The build also runs `scripts/check_hub_autostart.cjs`, which executes the actual
-injected script before and after page hydration. It verifies that the launch
-intent survives parsing and reaches the compute handler exactly once afterward.
-Launch return URLs carry a build identifier to avoid cached preview HTML.
+Local macOS validation also passed 23 course tests, all five fresh-kernel
+notebooks, both practicals (including the nested course-directory layout), and
+FFT 40/40.3/300 Hz variants. Notebook cell IDs, empty source outputs, timed
+headings and the instructor timetable were checked and preserved.
 
-Final live UI checks passed on release `4cb54844dce4`: search returned the
-weighted-mean material and navigated to Session 3; a fresh tab then navigated to
-Session 1, launched compute once, cleared outputs and reran all cells without
-console errors. The resulting error-bar plot was visually verified. The source
-notebook opened in a fresh JupyterLab workspace. Disconnect/reconnect also passed.
+93 targeted Hub/registry tests passed against the pinned Hub chart. All three
+production Kustomize entrypoints rendered. The full registry policy passed with
+36 workloads, 48 images, 25 private images, 19 pull-secret references and ten
+sealed registry Secrets, including the exact pinned private Llama source.
 
-The test named server was stopped through Hub Home. Its pod is gone and its
-20 GiB home PVC remains Bound. The local preview was stopped too. The book tab
-was left open; its status correctly shows the server stopped.
+Detailed live logs, the executed 300 Hz notebook/figure, practical repositories,
+AI-use record and persistence marker are retained in the student's workspace:
+`~/jupyter_data_languages/outputs/review-deploy-20261111-b7b5f09/`.
+
+The [initial deployment record](https://github.com/xangma/jupyter_data_languages/blob/90ef6d55c2c0b23a61a9ca4eaf8b178c158717f2/VALIDATION.md)
+records PRs 416–421 and the earlier integration repairs. `COURSE_REVIEW.md`
+records provenance and the independent reviews; `deploy/README.md` describes
+builds, promotion and rollback. Revert the GitOps image promotion for rollback;
+preserve student PVCs.
