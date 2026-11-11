@@ -10,6 +10,9 @@ RUN python -m venv /opt/course/.venv \
     && .venv/bin/jupyter server extension enable --sys-prefix nbgitpuller
 ENV PATH="/opt/course/.venv/bin:$PATH" \
     PYTHONUNBUFFERED=1
+# JupyterLab opens a login shell; Debian's /etc/profile resets PATH. Keep the
+# terminal's `python` aligned with the notebook kernel, including existing homes.
+RUN printf '%s\n' 'export PATH="/opt/course/.venv/bin:$PATH"' > /etc/profile.d/course-env.sh
 USER 1011:1011
 WORKDIR /home/jovyan
 EXPOSE 8888
