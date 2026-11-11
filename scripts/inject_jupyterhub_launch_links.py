@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -27,6 +28,7 @@ HUB_HOME_PATH = "/jupyterhub/hub/home"
 THEBE_READY_PARAM = "phd-python-thebe-ready"
 MARKER_START = "<!-- cpd-jupyterhub-launch-links:start -->"
 MARKER_END = "<!-- cpd-jupyterhub-launch-links:end -->"
+RELEASE_ID = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()[:12]
 
 
 def launch_url(source_path: str | None = None) -> str:
@@ -49,6 +51,9 @@ def page_path(build_dir: Path, html_path: Path) -> str:
 
 
 def bootstrap_url(return_path: str, start_thebe: bool = False) -> str:
+    # Older preview HTML had heuristic caching. Give each launch implementation
+    # a fresh return URL, including after client-side chapter navigation.
+    return_path = with_query_params(return_path, {"course-version": RELEASE_ID})
     return_target = (
         with_query_params(return_path, {THEBE_READY_PARAM: "1", "thebe": "1"})
         if start_thebe
@@ -295,6 +300,7 @@ html.dark .cpd-thebe-launch-toast {{
 <script id="cpd-jupyterhub-launch-links">
 (() => {{
   const rootPath = {root_path};
+  const courseVersion = {json.dumps(RELEASE_ID)};
   const defaultUrl = {default_url};
   const thebeBootstrapPath = {thebe_bootstrap_path};
   const thebeStatusPath = {thebe_status_path};
@@ -314,6 +320,7 @@ html.dark .cpd-thebe-launch-toast {{
 
   function currentReturnPath(options = {{}}) {{
     const url = new URL(window.location.href);
+    url.searchParams.set("course-version", courseVersion);
     if (options.clearThebe) {{
       url.searchParams.delete("thebe");
       url.searchParams.delete(thebeReadyParam);
