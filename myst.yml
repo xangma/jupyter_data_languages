@@ -25,7 +25,8 @@ project:
     - file: book/further-reading.md
     - file: book/instructor.md
 site:
-  template: book-theme
+  # Book theme v1.4.1: keep the tested CPD/Thebe integration on an immutable build.
+  template: https://github.com/myst-templates/book-theme/archive/23f2df5493e23dfb1d9433c8aa64c87beb4232a3.zip
   actions:
     - title: JupyterHub
       url: /jupyterhub/services/phd-python-thebe/bootstrap

@@ -18,7 +18,7 @@ table = QTable({"object_id": np.arange(n), "distance": distance * u.Mpc,
     "velocity": velocity * u.km / u.s, "velocity_error": sigma * u.km / u.s,
     "apparent_magnitude": magnitude})
 table.meta.update(synthetic=True, seed=20261109, slope=70.0, intercept=300.0,
-    description="Invented low-redshift galaxy-like data; exact independent distances; Gaussian independent velocity errors; no cosmology measurement.")
+    description="Invented low-redshift galaxy-like data; exact distance inputs; independent Gaussian velocity noise; no cosmology measurement.")
 (root / "data").mkdir(exist_ok=True)
 table.write(root / "data/mock_galaxies.ecsv", overwrite=True)
 print("Wrote 400 synthetic rows")

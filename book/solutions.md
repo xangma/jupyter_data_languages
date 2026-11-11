@@ -35,6 +35,9 @@ The toy slope need not be biased by the cut: it does not select on velocity
 residuals at fixed distance. Real distance errors, correlations or selection on
 the fitted observable can change this conclusion.
 
+With the shared valid-row mask, magnitude cuts of 15.5, 16.5 and 17.5 select
+161, 262 and 357 objects respectively.
+
 ## Session 2
 
 ```python
@@ -50,10 +53,37 @@ their shortest separation.” Staging selects the next commit's content; committ
 records it locally; pushing sends it to a configured remote. A PR adds review
 and discussion around a proposed branch change.
 
+With the deliberate `abs(b - a)` bug, `test_wraparound` gets 358 instead of 2
+and `test_full_turns` gets 630 instead of 90. The small-angle, equal-angle and
+180-degree tests still pass. `git diff -- angle.py` is empty after restoring
+the correct formula; the new tests are committed on `edge-case-tests`.
+
 ## Session 3
 
 Doubling all error bars leaves the fitted parameters unchanged, doubles their
 standard errors and divides reduced chi-squared by four with `absolute_sigma=True`.
+
+For example, measurements `[2, 10]` with errors `[1, 2]` have relative weights
+`[1, 1/4]`, giving `(2 + 10/4) / (1 + 1/4) = 3.6`. Students should choose and
+derive their own example before opening this answer. Possible additions in
+`test_student_checks.py` are:
+
+```python
+import pytest
+from weighted_mean import weighted_mean
+
+def test_independent_unequal_errors():
+    assert weighted_mean([2, 10], [1, 2]) == pytest.approx(3.6)
+
+def test_equal_errors():
+    assert weighted_mean([1, 3], [2, 2]) == pytest.approx(2.0)
+
+def test_rejects_two_dimensions():
+    with pytest.raises(ValueError):
+        weighted_mean([[1, 3]], [[1, 3]])
+```
+
+Commit the agreed tests before the repair and keep them unchanged during it.
 
 A scalar-only solution for the sandbox is:
 
@@ -83,3 +113,11 @@ An AI-use record might say: “Tool X proposed validation and weights. I checked
 the derivative of chi-squared, calculated 1.2 and 2.8 independently, reran tests
 and reviewed the diff. The agent did not choose the statistical model.” State
 when no AI tool was used instead.
+
+## Signal extension
+
+At 512 Hz sampling, a 300 Hz sinusoid aliases to `512 - 300 = 212` Hz. The
+full 0–256 Hz plot shows that peak, and the frequency check compares it with
+the sampling-theory prediction. At 40 Hz the predicted alias remains 40 Hz.
+Halving a two-second record doubles bin spacing from 0.5 to 1 Hz; a 40.3 Hz
+sinusoid falls between the original bins and exhibits spectral leakage.

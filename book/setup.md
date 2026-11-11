@@ -21,8 +21,13 @@ server when finished. Your files remain in your workspace.
 ## Install locally instead
 
 Use the [`codex/phd-python-2026` course branch](https://github.com/xangma/jupyter_data_languages/tree/codex/phd-python-2026).
-The older default `master` branch is not this course. Open a terminal in its root
-(the directory containing `pyproject.toml`).
+The older default `master` branch is not this course. Install Git, then clone
+the course branch explicitly and enter its root (containing `pyproject.toml`):
+
+```bash
+git clone --branch codex/phd-python-2026 https://github.com/xangma/jupyter_data_languages.git
+cd jupyter_data_languages
+```
 
 ## Reproducible setup with uv
 
@@ -37,6 +42,14 @@ uv run --frozen --extra teaching jupyter lab
 
 The first command needs the network. Once installed, add `--offline` to `uv run`
 for classroom use. Open `book/00-primer.ipynb` or `book/01-catalogue.ipynb`.
+For the terminal practicals, activate this environment in each new terminal:
+`source .venv/bin/activate` on macOS/Linux, or `source .venv/Scripts/activate`
+in Windows Git Bash. Run that from the course root before entering a sandbox.
+In Windows PowerShell, use `.venv\Scripts\Activate.ps1`.
+
+uv does not install pip in this environment. Use `uv pip freeze` to inspect its
+packages; installing pip during class is unnecessary. Inside CPD JupyterLab the
+course interpreter is already on the terminal's PATH; use `python -m pip freeze`.
 
 ## Standard Python alternative
 
@@ -63,10 +76,11 @@ and restart the kernel. Check `sys.executable` in a cell to see which Python it 
 You should see `Setup OK`, 395 usable rows out of 400 and no import errors.
 Run `python -m pytest -q` in the active environment; all reference tests should
 pass. The separate `exercises/test_weighted_mean.py` intentionally fails until
-you repair its starter function in Session 3.
+you repair a **sandbox copy** of its starter in Session 3. Leave the originals
+in `exercises/` unchanged: the notebook uses them to demonstrate the failing baseline.
 
-For Windows, use PowerShell for Python commands and Git Bash for the shell
-blocks in the Git practical. For VS Code, install Microsoft's Python and Jupyter
+For Windows, use Git Bash for the shell blocks in Sessions 2 and 3 and activate
+the environment there first, as above. For VS Code, install Microsoft's Python and Jupyter
 extensions and choose this environment in **Select Kernel**.
 
 If installation is blocked, tell the instructor before class. Pairing or an

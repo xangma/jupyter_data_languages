@@ -16,6 +16,8 @@ print("Interpreter:", sys.executable)
 if shutil.which("git") is None:
     raise SystemExit("Install Git before Session 2; ask the instructor for help")
 catalogue = QTable.read(root / "data/mock_galaxies.ecsv")
-assert usable_rows(catalogue).sum() == 395
+usable_count = int(usable_rows(catalogue).sum())
+assert usable_count == 395
+print(f"{usable_count} usable rows out of {len(catalogue)}")
 assert np.isclose(weighted_mean([1, 3], [1, 3])[0], 1.2)
 print("Setup OK: local data, imports, Git and known-answer calculation")

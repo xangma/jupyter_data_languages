@@ -51,3 +51,22 @@ The 2026 package, five notebooks, Git workflow and static book are the verificat
 targets. Historical notebooks and the live CPD cluster are outside that boundary.
 No live resource, GitOps source, remote branch or PR is changed. See
 `VALIDATION.md` for observed checks and `deploy/README.md` for the publishing handoff.
+
+## Independent content reviews — 11 November 2026
+
+Three independent CLI reviews used GPT-6 Astra/Max, Claude Fable 5.2/Max and
+Gemini 4 Carbon High. Each received the same 19-file course snapshot, mixed
+incoming-PhD audience, learning outcomes and six-hour constraint. Their findings
+were checked against the source; workflow issues were reproduced before editing.
+
+The resulting revision completes the Git branch/commit and optional remote
+sequence, corrects setup/environment commands, protects the agent sandbox and
+student-owned acceptance tests, clarifies distance/noise assumptions and checks
+error rescaling directly, and repairs the FFT aliasing task. The primer and
+worked answers received small supporting clarifications. All session timings
+and breaks are preserved. Timing reallocations require a classroom rehearsal;
+the selected-only refit remains an optional teaching idea.
+
+A fresh build also exposed an implicit upgrade to book-theme v2.0.0. The site now
+pins the compatible v1.4.1 template commit; its CPD integration remains explicit.
+See `VALIDATION.md` for the revision's build, deployment and student-workflow evidence.

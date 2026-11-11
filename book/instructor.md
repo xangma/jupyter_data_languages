@@ -50,8 +50,11 @@ Do not imply that every selection biases every estimator.
 `scripts/create_practice_repo.py` refuses to overwrite an existing sandbox.
 The angle helper starts correct. Students add independent tests, temporarily
 introduce a bug, observe failures, restore the implementation and rerun.
-Keep hosted PRs in classroom repositories or students' own forks. Offline review
-uses the same diff and explanation. Research upstreams are reading examples.
+The later equal/opposite-bearing tests belong to a fresh `edge-case-tests`
+branch, committed before partner review. For optional hosting, use an empty
+classroom repository and push `main` before that branch. A nonempty classroom
+repository needs a clone with shared history. Offline review uses the same diff
+and explanation. Research upstreams are reading examples.
 
 ## Session 3 — 120 minutes
 
@@ -59,7 +62,7 @@ uses the same diff and explanation. Research upstreams are reading examples.
 | --- | --- | --- |
 | 0–20 | Recover injected parameters; Task A | Discuss residuals and error rescaling |
 | 20–40 | Agent inspection/test proposal demo | Bound files, commands and task |
-| 40–60 | Derive weighted-mean tests; Task B | Calculate 1.2 and 2.8 independently |
+| 40–60 | Derive weighted-mean tests; Task B | Explain 1.2, 2.8 and a student-chosen case |
 | 60–70 | Break | |
 | 70–105 | Repair a deliberately wrong function | Tests fail before, pass after |
 | 105–120 | Review, rerun, commit, AI-use record | Explain assumptions without quoting the agent |
@@ -67,8 +70,14 @@ uses the same diff and explanation. Research upstreams are reading examples.
 Do not generate the entire analysis before students understand the acceptance
 tests. Reject unexplained edits to truth values, data, error bars or tests.
 The starter returns only a mean; the reference helper also returns its standard
-error. Preserving the requested interface is part of the exercise. Ask for an
-equal-error test in addition to supplied unequal-error and invalid-input tests.
+error. Preserving the requested interface is part of the exercise. Task B's
+scratch markdown records the independent expectations. After the break students
+put their own unequal-error, equal-error and 2-D rejection cases in
+`test_student_checks.py`, then commit the tests before requesting a repair.
+The agent edits only `weighted_mean.py`; both test files retain the agreed
+expectations. `scripts/create_agent_practice.py` refuses an existing destination
+and leaves the original intentionally wrong exercise unchanged. The same steps
+work with a partner and no agent.
 
 ## Assessment and adaptations
 

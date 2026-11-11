@@ -11,7 +11,7 @@
 # - {seed: 20261109}
 # - {slope: 70.0}
 # - {intercept: 300.0}
-# - {description: Invented low-redshift galaxy-like data; exact independent distances; Gaussian independent velocity errors; no cosmology
+# - {description: Invented low-redshift galaxy-like data; exact distance inputs; independent Gaussian velocity noise; no cosmology
 #     measurement.}
 # - __serialized_columns__:
 #     distance:
