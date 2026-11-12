@@ -1,0 +1,24 @@
+# General CPD tools and GPU libraries stay in the existing Conda environment.
+# The course uses an independent, hash-locked Python environment and kernel.
+FROM ghcr.io/astral-sh/uv:0.13.7@sha256:96f40d3904aad8d0bd010539001d36c8e2188b981e1334471a90c4a1d93bb490 AS uv
+FROM ghcr.io/icg-innovation/cpd-jupyterhub:ai-sha-ec313ad62d1218493a39d6478b94cee30b6a61dd@sha256:9111defd34f30a44227f1d3b3baf071535f0d2a73da992ed512a6cc57e06b63a
+
+USER root
+COPY --from=uv /uv /usr/local/bin/uv
+ENV UV_PYTHON_INSTALL_DIR=/opt/cpd-python \
+    UV_LINK_MODE=copy
+COPY deploy/requirements-hub.lock /opt/course/requirements.lock
+RUN uv python install 3.13.18 \
+    && uv venv --python 3.13.18 --seed /opt/course/.venv \
+    && /opt/course/.venv/bin/python -m pip install --no-cache-dir --require-hashes -r /opt/course/requirements.lock \
+    && /opt/course/.venv/bin/python -m pip check \
+    && /opt/course/.venv/bin/python -m ipykernel install --prefix=/opt/conda --name python-phd --display-name 'Python PhD (locked)' \
+    && /opt/conda/bin/python -m pip check \
+    && uv cache clean \
+    && fix-permissions /opt/conda/share/jupyter
+
+# Do not change the standard terminal's interpreter for general users.
+# PhD practicals activate /opt/course/.venv explicitly.
+USER 1011:1011
+WORKDIR /home/jovyan
+CMD ["start-notebook.py"]

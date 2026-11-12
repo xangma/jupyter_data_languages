@@ -15,8 +15,10 @@ For Git, a terminal or editing files, open the connection menu and choose
 
 If access is denied, ask the instructor to check your existing CPD enrolment;
 creating a GitHub account alone does not grant access. Disconnecting the book
-does not stop your server: use JupyterHub's control panel to stop the `python-phd`
-server when finished. Your files remain in your workspace.
+does not stop your server: use JupyterHub's control panel to stop your standard
+server when finished. Your files remain in your workspace. PhD notebooks use the
+**Python PhD (locked)** kernel in the same workspace as your general work.
+CPU and shared-GPU server options are available; this course does not require a GPU.
 
 ## Install locally instead
 
@@ -36,6 +38,7 @@ Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and
 
 ```bash
 uv sync --frozen --python 3.13 --extra teaching
+uv run --frozen --extra teaching python -m ipykernel install --user --name python-phd --display-name "Python PhD (locked)"
 uv run --frozen --extra teaching python scripts/check_setup.py
 uv run --frozen --extra teaching jupyter lab
 ```
@@ -48,8 +51,9 @@ in Windows Git Bash. Run that from the course root before entering a sandbox.
 In Windows PowerShell, use `.venv\Scripts\Activate.ps1`.
 
 uv does not install pip in this environment. Use `uv pip freeze` to inspect its
-packages; installing pip during class is unnecessary. Inside CPD JupyterLab the
-course interpreter is already on the terminal's PATH; use `python -m pip freeze`.
+packages; installing pip during class is unnecessary. Inside CPD JupyterLab,
+activate the course environment in each new terminal:
+`source /opt/course/.venv/bin/activate`. Then use `python -m pip freeze`.
 
 ## Standard Python alternative
 
@@ -62,6 +66,7 @@ Activate it with `source .venv/bin/activate` on macOS/Linux, or
 
 ```bash
 python -m pip install -e ".[teaching]"
+python -m ipykernel install --user --name python-phd --display-name "Python PhD (locked)"
 python scripts/check_setup.py
 python -m jupyter lab
 ```

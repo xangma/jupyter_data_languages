@@ -46,9 +46,12 @@ The eight explanatory diagrams have editable DOT sources and portable SVG
 exports. See [diagram editing](book/diagrams/README.md) to regenerate them; viewing
 the book or notebooks does not require a diagram renderer or external service.
 
-The CPD edition uses the existing authenticated bridge with a separate
-`python-phd` named server and locked CPU environment. Book links open editable
-source notebooks rather than generated build copies.
+The CPD edition uses the existing authenticated bridge and your standard
+JupyterHub workspace, with the **Python PhD (locked)** kernel. CPU and shared-GPU
+server options use the same personal files. UKSA has its own named server and
+shared datasets. Book links open editable source notebooks rather than generated
+build copies. In a CPD terminal, activate `source /opt/course/.venv/bin/activate`
+before the PhD practicals.
 
 The course retains its MIT licence. The reused bridge UI in
 `scripts/inject_jupyterhub_launch_links.py` is adapted from the GPL-3.0 UKSA
