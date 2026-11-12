@@ -1,11 +1,11 @@
 # Python for ICG Research
 
-Three two-hour practical sessions for incoming PhD students at the Institute of
+Three practical sessions for incoming PhD students at the Institute of
 Cosmology and Gravitation, University of Portsmouth.
 
 By the end you will have a small analysis you can rerun, a scientific test you can
 explain, and a reviewed Git commit. You will practise using a coding agent while
-retaining responsibility for the result. Each session includes a ten-minute break.
+retaining responsibility for the result. Each session includes a break.
 
 | Session | Research task | What you will practise |
 | --- | --- | --- |
@@ -28,7 +28,7 @@ the top. Choose **Open this notebook in JupyterHub** for editing, files and the
 terminal used in the Git practical. JupyterHub access requires course enrolment.
 The PhD workspace runs separately from the UKSA course workspace.
 
-The [instructor guide](instructor.md) has the six-hour timetable. The signal
+The [instructor guide](instructor.md) provides teaching notes. The signal
 exercise and [further reading](further-reading.md) are extensions. HPC is covered
 in separate sessions.
 

@@ -24,4 +24,4 @@ Primary documentation for this course:
 The earlier notebooks remain in `classes/`, the three root plotting notebooks,
 and `Previous_notebooks/`. They are historical references, outside the validated
 2026 teaching path. They may need extra packages or repairs; do not treat the
-old Slurm session as part of the six-hour Python course.
+old Slurm session as part of the Python course.
