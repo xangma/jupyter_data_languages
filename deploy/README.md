@@ -7,11 +7,14 @@ The existing UKSA book remains at `/jupyterbook/`.
 ## Student workflow
 
 Read without signing in. Choose Connect to JupyterHub or the compute button and
-use the existing GitHub sign-in. The bridge starts the CPU `python-phd` named
-server and synchronises the course into `~/jupyter_data_languages`. Start compute
+use the existing GitHub sign-in. The bridge prepares your standard server and
+synchronises the course into `~/jupyter_data_languages`. It starts the CPU option
+when stopped and reuses an existing standard CPU/GPU server. Start compute
 on a notebook page and run cells from the top. Open this notebook in CPD
 JupyterHub opens the editable source; use its terminal for the Git practical.
-Stop the named server from Hub Home when finished. Disconnect clears the book's
+Select **Python PhD (locked)** for editable notebooks. Activate
+`source /opt/course/.venv/bin/activate` in terminals before PhD commands.
+Stop the standard server from Hub Home when finished. Disconnect clears the book's
 connection; it does not stop the server or remove files.
 
 ## Build and promote
@@ -36,6 +39,13 @@ the course's Python kernel, JupyterHub client and nbgitpuller, using UID/GID 101
 The login-shell profile keeps terminal Python aligned with the kernel. Source
 and data are pulled into the student's persistent home, rather than installed
 as a hidden copy in the image.
+
+`Dockerfile.standard` layers the same locked scientific Python environment onto
+the pinned general CPD image, retaining its Conda, GPU, C, R, Julia and optional
+AI tools. It registers `python-phd` without replacing general Python or changing
+terminal PATH. Run `python scripts/check_standard_runtime.py` from the standard
+environment to check both Python kernels and execute the five PhD notebooks.
+The standard profiles have no UKSA dataset mounts; UKSA uses its own named server.
 
 GitOps resources live in `icg-innovation/space-k8s-gitops`:
 
