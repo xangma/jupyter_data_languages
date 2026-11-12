@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="572" viewBox="0.00 0.00 745.00 592.00" role="img" aria-labelledby="git-branches-title git-branches-desc">
+  <title id="git-branches-title">Resolve two descriptions before the merge commit</title>
+  <desc id="git-branches-desc">Two branches change the same README paragraph. Their shared history joins in a merge commit after the conflict is resolved to preserve both units and shortest-arc meaning.</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(11.52 580.3)">
+    <title>git_branches</title>
+    <polygon fill="white" stroke="none" points="-11.52,11.52 -11.52,-580.3 733.72,-580.3 733.72,11.52 -11.52,11.52" />
+    <text xml:space="preserve" text-anchor="middle" x="361.1" y="-541.98" font-family="Arial" font-size="24.00" fill="#14263c">Two README edits meet in a merge</text>
+    <text xml:space="preserve" text-anchor="middle" x="361.1" y="-514.98" font-family="Arial" font-size="24.00" fill="#14263c">Solid arrows: older → newer commits</text>
+    <g id="edge1" class="edge">
+      <title>base-&gt;a</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.7" d="M108.12,-266.56C148.4,-273.29 230.82,-287.05 277.65,-294.87" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.7" points="277.06,-297.79 285.93,-296.26 278.04,-291.92 277.06,-297.79" />
+    </g>
+    <g id="edge2" class="edge">
+      <title>base-&gt;b</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.7" d="M108.12,-258.72C148.4,-251.99 230.82,-238.23 277.65,-230.41" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.7" points="278.04,-233.36 285.93,-229.02 277.06,-227.49 278.04,-233.36" />
+    </g>
+    <g id="edge3" class="edge">
+      <title>a-&gt;merge</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.7" d="M338.14,-297.33C385.88,-290.75 493.21,-275.94 551.02,-267.97" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.7" points="551.33,-270.93 559.35,-266.82 550.52,-265.03 551.33,-270.93" />
+    </g>
+    <g id="edge11" class="edge">
+      <title>a-&gt;a_note</title>
+      <path fill="none" stroke="#bac7d5" stroke-width="1.7" stroke-dasharray="5,2" d="M299.22,-321.16C293.72,-329.25 288.7,-336.64 288.7,-336.64 288.7,-336.64 288.7,-344.03 288.7,-352.12" />
+    </g>
+    <g id="edge4" class="edge">
+      <title>b-&gt;merge</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.7" d="M338.14,-227.95C385.88,-234.53 493.21,-249.34 551.02,-257.31" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.7" points="550.52,-260.25 559.35,-258.46 551.33,-254.35 550.52,-260.25" />
+    </g>
+    <g id="edge12" class="edge">
+      <title>b-&gt;b_note</title>
+      <path fill="none" stroke="#bac7d5" stroke-width="1.7" stroke-dasharray="5,2" d="M289.72,-215.5C260.15,-203.97 213.12,-185.64 213.12,-185.64 213.12,-185.64 213.12,-180.38 213.12,-173.73" />
+    </g>
+    <g id="edge13" class="edge">
+      <title>merge-&gt;resolved</title>
+      <path fill="none" stroke="#bac7d5" stroke-width="1.7" stroke-dasharray="5,2" d="M563.94,-251.4C526.98,-235.84 464.73,-209.64 464.73,-209.64 464.73,-209.64 464.73,-209.01 464.73,-207.88" />
+    </g>
+    <g id="node1" class="node">
+      <title>base</title>
+      <ellipse fill="#f3f5f7" stroke="#bac7d5" stroke-width="1.5" cx="83.62" cy="-262.64" rx="24.48" ry="24.48" />
+      <text xml:space="preserve" text-anchor="middle" x="83.62" y="-255.46" font-family="Arial" font-size="19.00" fill="#14263c">C</text>
+    </g>
+    <g id="node2" class="node">
+      <title>a</title>
+      <ellipse fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" cx="313.18" cy="-300.64" rx="24.48" ry="24.48" />
+      <text xml:space="preserve" text-anchor="middle" x="313.18" y="-293.46" font-family="Arial" font-size="19.00" fill="#14263c">A</text>
+    </g>
+    <g id="node3" class="node">
+      <title>b</title>
+      <ellipse fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" cx="313.18" cy="-224.64" rx="24.48" ry="24.48" />
+      <text xml:space="preserve" text-anchor="middle" x="313.18" y="-217.46" font-family="Arial" font-size="19.00" fill="#14263c">B</text>
+    </g>
+    <g id="node4" class="node">
+      <title>merge</title>
+      <ellipse fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" cx="590.65" cy="-262.64" rx="24.48" ry="24.48" />
+      <ellipse fill="none" stroke="#bac7d5" stroke-width="1.5" cx="590.65" cy="-262.64" rx="28.48" ry="28.48" />
+      <text xml:space="preserve" text-anchor="middle" x="590.65" y="-255.46" font-family="Arial" font-size="19.00" fill="#14263c">M</text>
+    </g>
+    <g id="node5" class="node">
+      <title>base_note</title>
+      <text xml:space="preserve" text-anchor="start" x="8.25" y="-194.59" font-family="Arial" font-size="19.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="29.25" y="-194.59" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">Common base</text>
+      <text xml:space="preserve" text-anchor="start" x="31.12" y="-175.59" font-family="Arial" font-size="19.00" fill="#14263c">    main after</text>
+      <text xml:space="preserve" text-anchor="start" x="39" y="-156.59" font-family="Arial" font-size="19.00" fill="#14263c">    merging</text>
+      <text xml:space="preserve" text-anchor="start" x="0" y="-137.59" font-family="Arial" font-size="19.00" fill="#14263c">    test-wraparound  </text>
+    </g>
+    <g id="node6" class="node">
+      <title>a_note</title>
+      <polygon fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" points="418.1,-464.78 202.25,-464.78 202.25,-352.5 424.1,-352.5 424.1,-458.78 418.1,-464.78" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="418.1,-464.78 418.1,-458.78" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="424.1,-458.78 418.1,-458.78" />
+      <text xml:space="preserve" text-anchor="start" x="244.18" y="-439.09" font-family="Arial" font-size="19.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="265.18" y="-439.09" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">description-a</text>
+      <text xml:space="preserve" text-anchor="start" x="243.8" y="-420.09" font-family="Arial" font-size="19.00" fill="#14263c">    README.md:</text>
+      <text xml:space="preserve" text-anchor="start" x="213.05" y="-382.09" font-family="Arial" font-size="19.00" fill="#14263c">    Angles are measured</text>
+      <text xml:space="preserve" text-anchor="start" x="250.55" y="-363.09" font-family="Arial" font-size="19.00" fill="#14263c">    in degrees.  </text>
+    </g>
+    <g id="node7" class="node">
+      <title>b_note</title>
+      <polygon fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" points="407.23,-173.28 213.12,-173.28 213.12,-42 413.23,-42 413.23,-167.28 407.23,-173.28" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="407.23,-173.28 407.23,-167.28" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="413.23,-167.28 407.23,-167.28" />
+      <text xml:space="preserve" text-anchor="start" x="243.8" y="-147.59" font-family="Arial" font-size="19.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="264.8" y="-147.59" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">description-b</text>
+      <text xml:space="preserve" text-anchor="start" x="223.93" y="-128.59" font-family="Arial" font-size="19.00" fill="#14263c">    same paragraph in</text>
+      <text xml:space="preserve" text-anchor="start" x="243.8" y="-109.59" font-family="Arial" font-size="19.00" fill="#14263c">    README.md:</text>
+      <text xml:space="preserve" text-anchor="start" x="225.8" y="-71.59" font-family="Arial" font-size="19.00" fill="#14263c">    The helper returns</text>
+      <text xml:space="preserve" text-anchor="start" x="229.55" y="-52.59" font-family="Arial" font-size="19.00" fill="#14263c">    the shortest arc.  </text>
+    </g>
+    <g id="node8" class="node">
+      <title>conflict</title>
+      <polygon fill="#fbeded" stroke="#bac7d5" stroke-width="1.5" stroke-dasharray="5,2" points="716.2,-506.78 459.1,-506.78 459.1,-318.5 722.2,-318.5 722.2,-500.78 716.2,-506.78" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" stroke-dasharray="5,2" points="716.2,-506.78 716.2,-500.78" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" stroke-dasharray="5,2" points="722.2,-500.78 716.2,-500.78" />
+      <text xml:space="preserve" text-anchor="start" x="478.9" y="-481.09" font-family="Arial" font-size="19.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="499.9" y="-481.09" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">Merge pauses: conflict</text>
+      <text xml:space="preserve" text-anchor="start" x="469.9" y="-443.09" font-family="Arial" font-size="19.00" fill="#14263c">    1 · main fast-forwards to A</text>
+      <text xml:space="preserve" text-anchor="start" x="527.28" y="-405.09" font-family="Arial" font-size="19.00" fill="#14263c">    2 · git merge</text>
+      <text xml:space="preserve" text-anchor="start" x="525.78" y="-386.09" font-family="Arial" font-size="19.00" fill="#14263c">    description-b</text>
+      <text xml:space="preserve" text-anchor="start" x="479.28" y="-348.09" font-family="Arial" font-size="19.00" fill="#14263c">    Conflict in README.md</text>
+      <text xml:space="preserve" text-anchor="start" x="489.03" y="-329.09" font-family="Arial" font-size="19.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="510.03" y="-329.09" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">No new commit yet</text>
+      <text xml:space="preserve" text-anchor="start" x="681.78" y="-329.09" font-family="Arial" font-size="19.00" fill="#14263c">  </text>
+    </g>
+    <g id="node9" class="node">
+      <title>resolved</title>
+      <polygon fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" points="710.58,-207.28 464.73,-207.28 464.73,0 716.58,0 716.58,-201.28 710.58,-207.28" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="710.58,-207.28 710.58,-201.28" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="716.58,-201.28 710.58,-201.28" />
+      <text xml:space="preserve" text-anchor="start" x="483.78" y="-181.59" font-family="Arial" font-size="19.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="504.78" y="-181.59" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">Resolve README.md</text>
+      <text xml:space="preserve" text-anchor="start" x="511.53" y="-143.59" font-family="Arial" font-size="19.00" fill="#14263c">    Keep both facts:</text>
+      <text xml:space="preserve" text-anchor="start" x="475.53" y="-124.59" font-family="Arial" font-size="19.00" fill="#14263c">    degrees and shortest arc</text>
+      <text xml:space="preserve" text-anchor="start" x="492.78" y="-86.59" font-family="Arial" font-size="19.00" fill="#14263c">    git add README.md</text>
+      <text xml:space="preserve" text-anchor="start" x="536.65" y="-67.59" font-family="Arial" font-size="19.00" fill="#14263c">    git commit</text>
+      <text xml:space="preserve" text-anchor="start" x="535.53" y="-29.59" font-family="Arial" font-size="19.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="556.53" y="-29.59" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">main → M</text>
+      <text xml:space="preserve" text-anchor="start" x="479.65" y="-10.59" font-family="Arial" font-size="19.00" fill="#14263c">    M has parents A and B  </text>
+    </g>
+  </g>
+</svg>

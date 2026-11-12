@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="529" viewBox="0.00 0.00 667.00 490.00" role="img" aria-labelledby="git-states-title git-states-desc">
+  <title id="git-states-title">A commit records the staged snapshot</title>
+  <desc id="git-states-desc">A first test-file version is staged, then edited again. Without staging the new edit, the next local commit contains the earlier snapshot.</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(11.52 478.15)">
+    <title>git_states</title>
+    <polygon fill="white" stroke="none" points="-11.52,11.52 -11.52,-478.15 655.52,-478.15 655.52,11.52 -11.52,11.52" />
+    <text xml:space="preserve" text-anchor="middle" x="322" y="-439.83" font-family="Arial" font-size="24.00" fill="#14263c">A commit records the staged snapshot</text>
+    <g id="clust1" class="cluster">
+      <title>cluster_working</title>
+      <path fill="white" stroke="#bac7d5" d="M20,-23.66C20,-23.66 290,-23.66 290,-23.66 296,-23.66 302,-29.66 302,-35.66 302,-35.66 302,-392.63 302,-392.63 302,-398.63 296,-404.63 290,-404.63 290,-404.63 20,-404.63 20,-404.63 14,-404.63 8,-398.63 8,-392.63 8,-392.63 8,-35.65 8,-35.65 8,-29.65 14,-23.66 20,-23.66" />
+      <text xml:space="preserve" text-anchor="middle" x="155" y="-380.68" font-family="Arial" font-size="21.00" fill="#14263c">Working tree</text>
+    </g>
+    <g id="clust2" class="cluster">
+      <title>cluster_snapshots</title>
+      <path fill="white" stroke="#bac7d5" d="M322,-8C322,-8 624,-8 624,-8 630,-8 636,-14 636,-20 636,-20 636,-411.63 636,-411.63 636,-417.63 630,-423.63 624,-423.63 624,-423.63 322,-423.63 322,-423.63 316,-423.63 310,-417.63 310,-411.63 310,-411.63 310,-20 310,-20 310,-14 316,-8 322,-8" />
+      <text xml:space="preserve" text-anchor="middle" x="473" y="-399.68" font-family="Arial" font-size="21.00" fill="#14263c">Git snapshots</text>
+    </g>
+    <g id="edge2" class="edge">
+      <title>working_v1-&gt;working_v2</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.5" d="M155,-279C155,-257.51 155,-229.73 155,-203.27" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.5" points="157.8,-203.49 155,-195.49 152.2,-203.49 157.8,-203.49" />
+    </g>
+    <g id="edge1" class="edge">
+      <title>working_v1-&gt;staged_v1</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.5" d="M270.04,-318.05C282.46,-318.05 305.61,-318.05 326.17,-318.05" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.5" points="326.04,-320.85 334.04,-318.05 326.04,-315.25 326.04,-320.85" />
+    </g>
+    <g id="edge3" class="edge">
+      <title>staged_v1-&gt;commit_v1</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.5" d="M473,-259.79C473,-247.08 473,-233.23 473,-219.33" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.5" points="475.8,-219.48 473,-211.48 470.2,-219.48 475.8,-219.48" />
+    </g>
+    <g id="node1" class="node">
+      <title>working_v1</title>
+      <polygon fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" points="263.62,-356.63 40.39,-356.63 40.39,-279.47 269.62,-279.47 269.62,-350.63 263.62,-356.63" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="263.62,-356.63 263.62,-350.63" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="269.62,-350.63 263.62,-350.63" />
+      <text xml:space="preserve" text-anchor="start" x="60.88" y="-329.5" font-family="Arial" font-size="19.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="92.38" y="-329.5" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">test_angle.py · v1</text>
+      <text xml:space="preserve" text-anchor="start" x="52.62" y="-291.5" font-family="Arial" font-size="19.00" fill="#14263c">      test_wraparound()    </text>
+    </g>
+    <g id="node2" class="node">
+      <title>working_v2</title>
+      <polygon fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" points="279.74,-192.81 24.26,-192.81 24.26,-39.66 285.74,-39.66 285.74,-186.81 279.74,-192.81" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="279.74,-192.81 279.74,-186.81" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="285.74,-186.81 279.74,-186.81" />
+      <text xml:space="preserve" text-anchor="start" x="81.12" y="-165.69" font-family="Arial" font-size="19.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="112.62" y="-165.69" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">2 · Edit again</text>
+      <text xml:space="preserve" text-anchor="start" x="64.25" y="-146.69" font-family="Arial" font-size="19.00" fill="#14263c">      test_angle.py · v2</text>
+      <text xml:space="preserve" text-anchor="start" x="63.12" y="-108.69" font-family="Arial" font-size="19.00" fill="#14263c">      test_wraparound()</text>
+      <text xml:space="preserve" text-anchor="start" x="65.75" y="-89.69" font-family="Arial" font-size="19.00" fill="#14263c">      + test_full_turns()</text>
+      <text xml:space="preserve" text-anchor="start" x="36.5" y="-51.69" font-family="Arial" font-size="19.00" fill="#14263c">      new edit uncommitted    </text>
+    </g>
+    <g id="node3" class="node">
+      <title>staged_v1</title>
+      <polygon fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" points="608.99,-375.63 337.01,-375.63 337.01,-260.47 608.99,-260.47 608.99,-375.63" />
+      <text xml:space="preserve" text-anchor="start" x="413.38" y="-348.5" font-family="Arial" font-size="19.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="444.88" y="-348.5" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">1 · git add</text>
+      <text xml:space="preserve" text-anchor="start" x="400.62" y="-329.5" font-family="Arial" font-size="19.00" fill="#14263c">      test_angle.py</text>
+      <text xml:space="preserve" text-anchor="start" x="349.25" y="-291.5" font-family="Arial" font-size="19.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="380.75" y="-291.5" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">Staging area (index) · v1</text>
+      <text xml:space="preserve" text-anchor="start" x="370.62" y="-272.5" font-family="Arial" font-size="19.00" fill="#14263c">      test_wraparound()    </text>
+    </g>
+    <g id="node4" class="node">
+      <title>commit_v1</title>
+      <path fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" d="M620.24,-191.7C620.24,-200.95 554.24,-208.47 473,-208.47 391.76,-208.47 325.76,-200.95 325.76,-191.7 325.76,-191.7 325.76,-40.77 325.76,-40.77 325.76,-31.52 391.76,-24 473,-24 554.24,-24 620.24,-31.52 620.24,-40.77 620.24,-40.77 620.24,-191.7 620.24,-191.7" />
+      <path fill="none" stroke="#bac7d5" stroke-width="1.5" d="M620.24,-191.7C620.24,-182.45 554.24,-174.93 473,-174.93 391.76,-174.93 325.76,-182.45 325.76,-191.7" />
+      <text xml:space="preserve" text-anchor="start" x="396.12" y="-156.19" font-family="Arial" font-size="19.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="427.62" y="-156.19" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">3 · git commit</text>
+      <text xml:space="preserve" text-anchor="start" x="376.25" y="-137.19" font-family="Arial" font-size="19.00" fill="#14263c">      (no second git add)</text>
+      <text xml:space="preserve" text-anchor="start" x="380.38" y="-99.19" font-family="Arial" font-size="19.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="411.88" y="-99.19" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">Local history · v1</text>
+      <text xml:space="preserve" text-anchor="start" x="338" y="-80.19" font-family="Arial" font-size="19.00" fill="#14263c">      staged snapshot unchanged</text>
+      <text xml:space="preserve" text-anchor="start" x="370.62" y="-61.19" font-family="Arial" font-size="19.00" fill="#14263c">      test_wraparound()    </text>
+    </g>
+  </g>
+</svg>

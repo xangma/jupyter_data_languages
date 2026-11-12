@@ -1,0 +1,45 @@
+// Symbolic entries show the operation; the teaching code uses factors of one.
+digraph broadcasting {
+  graph [rankdir=TB, bgcolor="white", pad=0.18, nodesep=0.14, ranksep=0.30,
+         fontname="Arial", fontsize=18];
+  node [shape=plain, fontname="Arial", fontsize=18, fontcolor="#14263C"];
+  edge [style=invis];
+
+  features [label=<
+    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6">
+      <TR><TD COLSPAN="3"><B>features</B><BR/><BR/>(N, 3)</TD></TR>
+      <TR><TD BGCOLOR="#EAF3FE">a₁</TD><TD BGCOLOR="#EAF3FE">b₁</TD><TD BGCOLOR="#EAF3FE">c₁</TD></TR>
+      <TR><TD BGCOLOR="#E9F7F2">a₂</TD><TD BGCOLOR="#E9F7F2">b₂</TD><TD BGCOLOR="#E9F7F2">c₂</TD></TR>
+      <TR><TD>⋮</TD><TD>⋮</TD><TD>⋮</TD></TR>
+      <TR><TD BGCOLOR="#FFF2D6">a<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD><TD BGCOLOR="#FFF2D6">b<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD><TD BGCOLOR="#FFF2D6">c<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD></TR>
+    </TABLE>
+  >];
+  multiply [fontsize=24, label="×"];
+  factors [label=<
+    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6">
+      <TR><TD><B>scale_per_object</B><BR/><B>[:, None]</B><BR/>(N, 1)</TD></TR>
+      <TR><TD BGCOLOR="#EAF3FE">s₁</TD></TR>
+      <TR><TD BGCOLOR="#E9F7F2">s₂</TD></TR>
+      <TR><TD>⋮</TD></TR>
+      <TR><TD BGCOLOR="#FFF2D6">s<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD></TR>
+    </TABLE>
+  >];
+  equals [fontsize=24, label="="];
+  result [label=<
+    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6">
+      <TR><TD COLSPAN="3"><B>result</B><BR/><BR/>(N, 3)</TD></TR>
+      <TR><TD BGCOLOR="#EAF3FE">s₁a₁</TD><TD BGCOLOR="#EAF3FE">s₁b₁</TD><TD BGCOLOR="#EAF3FE">s₁c₁</TD></TR>
+      <TR><TD BGCOLOR="#E9F7F2">s₂a₂</TD><TD BGCOLOR="#E9F7F2">s₂b₂</TD><TD BGCOLOR="#E9F7F2">s₂c₂</TD></TR>
+      <TR><TD>⋮</TD><TD>⋮</TD><TD>⋮</TD></TR>
+      <TR><TD BGCOLOR="#FFF2D6">s<SUB><FONT POINT-SIZE="12">N</FONT></SUB>a<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD><TD BGCOLOR="#FFF2D6">s<SUB><FONT POINT-SIZE="12">N</FONT></SUB>b<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD><TD BGCOLOR="#FFF2D6">s<SUB><FONT POINT-SIZE="12">N</FONT></SUB>c<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD></TR>
+    </TABLE>
+  >];
+
+  { rank=same; features; multiply; factors; equals; result; }
+  features -> multiply -> factors -> equals -> result [weight=100];
+
+  explanation [shape=box, style="rounded,filled", fillcolor="#F3F5F7", color="#BAC7D5",
+               margin="0.18,0.12",
+               label="One factor per row multiplies all three cells.\nTeaching example: every sᵢ = 1 (ones)."];
+  factors -> explanation;
+}

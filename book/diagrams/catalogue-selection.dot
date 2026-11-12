@@ -1,0 +1,30 @@
+// Observed counts: /lectures/book/01-catalogue.ipynb.
+digraph catalogue_selection {
+  graph [rankdir=TB, bgcolor="white", pad=0.18, nodesep=0.32, ranksep=0.44,
+         fontname="Arial", fontsize=18, ordering=out];
+  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=18,
+        fontcolor="#14263C", color="#BAC7D5", penwidth=1.2, margin="0.18,0.12"];
+  edge [fontname="Arial", fontsize=18, color="#14263C", fontcolor="#14263C",
+        arrowsize=0.8, penwidth=1.4];
+
+  raw [label="Raw catalogue\n400 rows", fillcolor="#F3F5F7"];
+  valid [label="Valid catalogue\n395 rows", fillcolor="#EAF3FE"];
+  invalid [label="Rejected: invalid\n5 rows", fillcolor="#FBEDED"];
+  cut [shape=diamond, style=filled, label="magnitude\n< 16.5 ?", fillcolor="#F0EBFA",
+       margin="0.08,0.04"];
+  selected [label="Selected\n262 rows", fillcolor="#E9F7F2"];
+  excluded [label="Usable, not selected\n133 rows", fillcolor="#FFF2D6"];
+  all_valid [label="All valid\n395 rows", fillcolor="#EAF3FE"];
+  compare [label="Compare distance distributions\nSame distance-bin edges", fillcolor="#F3F5F7"];
+
+  raw -> valid [label="validity mask"];
+  raw -> invalid [label="remove invalid rows"];
+  { rank=same; valid; invalid; }
+  valid -> all_valid [style=dashed, label="reference sample"];
+  valid -> cut;
+  cut -> selected [label="yes"];
+  cut -> excluded [label="no: magnitude ≥ 16.5"];
+  { rank=same; all_valid; selected; excluded; }
+  all_valid -> compare;
+  selected -> compare;
+}

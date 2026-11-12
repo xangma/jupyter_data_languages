@@ -1,0 +1,29 @@
+// SPDX-License-Identifier: MIT
+digraph agent_review_loop {
+  graph [bgcolor="white", fontname="Arial", fontsize=20, fontcolor="#14263C",
+         rankdir=TB, nodesep=0.30, ranksep=0.45, pad=0.18];
+  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=18,
+        fontcolor="#14263C", color="#BAC7D5", penwidth=1.5,
+        margin="0.16,0.12"];
+  edge [fontname="Arial", fontsize=16, fontcolor="#14263C", color="#526780",
+        penwidth=1.6, arrowsize=0.8];
+
+  question [label="YOU\nTask + independently\njustified expectations", fillcolor="#EAF3FE"];
+  plan [label="AGENT\nInspect files;\npropose a plan", fillcolor="#FFF2D6"];
+  scope [label="YOU\nReview plan; agree tests\nand permitted changes", fillcolor="#EAF3FE"];
+  repair [label="AGENT\nEdit weighted_mean.py;\nrun the agreed tests", fillcolor="#FFF2D6"];
+  review [label="YOU\nRerun independently;\ninspect the entire diff", fillcolor="#EAF3FE"];
+  accept [label="YOU\nAccept reviewed change;\ncommit + record AI use", fillcolor="#E9F7F2"];
+  fixed [label="Agreed tests stay fixed\nduring the repair", fillcolor="#F0EBFA", style="filled", shape=note];
+
+  question -> plan;
+  plan -> scope;
+  scope -> repair [label="authorise"];
+  repair -> review [label="actual diff + results"];
+  review -> accept [label="justified"];
+  review -> plan [label="question / steer", constraint=false, color="#8B6D37", style=dashed];
+  fixed -> repair [style=dashed, arrowhead=none, constraint=false, color="#71849A"];
+  {rank=same; question; plan;}
+  {rank=same; scope; fixed;}
+  {rank=same; repair; review;}
+}

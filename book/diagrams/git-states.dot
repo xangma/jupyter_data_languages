@@ -1,0 +1,61 @@
+// Source: 02-git-and-tests.ipynb; teaching example with an edit after staging.
+// Render with Graphviz dot. Arrows show actions or the passage of time.
+digraph git_states {
+  graph [
+    bgcolor="white", fontname="Arial", fontsize=24, fontcolor="#14263C",
+    label="A commit records the staged snapshot", labelloc=t,
+    rankdir=TB, newrank=true, nodesep=0.30, ranksep=0.72, pad=0.16,
+    splines=polyline, compound=true, outputorder=edgesfirst
+  ];
+  node [
+    fontname="Arial", fontsize=19, fontcolor="#14263C",
+    color="#BAC7D5", penwidth=1.5, style=filled,
+    margin="0.17,0.14"
+  ];
+  edge [
+    fontname="Arial", fontsize=18, fontcolor="#14263C",
+    color="#14263C", penwidth=1.5, arrowsize=0.8
+  ];
+
+  subgraph cluster_working {
+    label="Working tree"; fontsize=21; color="#BAC7D5";
+    style=rounded; margin=16;
+    working_v1 [shape=note, fillcolor="#EAF3FE", label=<
+      <B>test_angle.py · v1</B><BR/><BR/>
+      test_wraparound()
+    >];
+    working_v2 [shape=note, fillcolor="#FFF2D6", label=<
+      <B>2 · Edit again</B><BR/>
+      test_angle.py · v2<BR/><BR/>
+      test_wraparound()<BR/>
+      + test_full_turns()<BR/><BR/>
+      new edit uncommitted
+    >];
+  }
+
+  subgraph cluster_snapshots {
+    label="Git snapshots"; fontsize=21; color="#BAC7D5";
+    style=rounded; margin=16;
+    staged_v1 [shape=box, fillcolor="#E9F7F2", label=<
+      <B>1 · git add</B><BR/>
+      test_angle.py<BR/><BR/>
+      <B>Staging area (index) · v1</B><BR/>
+      test_wraparound()
+    >];
+    commit_v1 [shape=cylinder, fillcolor="#F0EBFA", label=<
+      <B>3 · git commit</B><BR/>
+      (no second git add)<BR/><BR/>
+      <B>Local history · v1</B><BR/>
+      staged snapshot unchanged<BR/>
+      test_wraparound()
+    >];
+  }
+
+  { rank=same; working_v1; staged_v1; }
+  { rank=same; working_v2; commit_v1; }
+
+  working_v1 -> staged_v1 [constraint=false];
+  working_v1 -> working_v2;
+  staged_v1 -> commit_v1;
+  working_v2 -> commit_v1 [style=invis, weight=20];
+}

@@ -42,6 +42,10 @@ Open `http://127.0.0.1:8765/python-phd/`. Stop the foreground server with Ctrl+C
 The local preview serves static pages. The deployed CPD edition connects to
 JupyterHub for live kernels; [deployment notes](deploy/README.md) describe it.
 
+The eight explanatory diagrams have editable DOT sources and portable SVG
+exports. See [diagram editing](book/diagrams/README.md) to regenerate them; viewing
+the book or notebooks does not require a diagram renderer or external service.
+
 The CPD edition uses the existing authenticated bridge with a separate
 `python-phd` named server and locked CPU environment. Book links open editable
 source notebooks rather than generated build copies.

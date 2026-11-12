@@ -1,0 +1,77 @@
+// Source: 02-git-and-tests.ipynb, optional hosting exercise.
+// The server is initially empty. Branch boxes show the state after both pushes.
+// A hosted pull request is a comparison/review, separate from push and merge.
+digraph git_remotes {
+  graph [
+    bgcolor="white", fontname="Arial", fontsize=24, fontcolor="#14263C",
+    label="Push, fetch and review do different jobs", labelloc=t,
+    rankdir=TB, newrank=true, nodesep=0.42, ranksep=0.75, pad=0.16,
+    splines=polyline, compound=true, outputorder=edgesfirst
+  ];
+  node [
+    fontname="Arial", fontsize=19, fontcolor="#14263C",
+    color="#BAC7D5", penwidth=1.5, style=filled,
+    margin="0.18,0.15"
+  ];
+  edge [
+    fontname="Arial", fontsize=18, fontcolor="#14263C",
+    color="#14263C", penwidth=1.5, arrowsize=0.85
+  ];
+
+  subgraph cluster_local {
+    label="Your local repository"; fontsize=22;
+    style=rounded; color="#BAC7D5"; margin=18;
+    local_branches [shape=box, fillcolor="#EAF3FE", label=<
+      <B>1–2 · Push local branches</B><BR/><BR/>
+      main first<BR/>
+      then edge-case-tests<BR/><BR/>
+      Transfer commits and<BR/>
+      update server branch tips.
+    >];
+    tracking [shape=box, fillcolor="#E9F7F2", label=<
+      <B>3 · git fetch origin</B><BR/><BR/>
+      Remote-tracking refs:<BR/>
+      origin/main<BR/>
+      origin/edge-case-tests<BR/><BR/>
+      Fetch updates these refs.<BR/>
+      Working files stay<BR/>
+      unchanged.
+    >];
+    compare [shape=note, fillcolor="#F3F5F7", label=<
+      <B>4 · Inspect the</B><BR/>
+      <B>proposed change</B><BR/><BR/>
+      git diff<BR/>
+      origin/main...edge-case-tests
+    >];
+  }
+
+  subgraph cluster_host {
+    label="Classroom server · origin\nEmpty before the first push";
+    fontsize=22; style=rounded; color="#BAC7D5"; margin=18;
+    server_branches [shape=box, fillcolor="#EAF3FE", label=<
+      <B>Server branches</B><BR/><BR/>
+      main<BR/>
+      edge-case-tests
+    >];
+    pull_request [shape=note, fillcolor="#F0EBFA", label=<
+      <B>5 · Hosted pull request</B><BR/><BR/>
+      edge-case-tests → main<BR/><BR/>
+      Compare and review<BR/>
+      the diff, description<BR/>
+      and tests.<BR/><BR/>
+      <B>Merge is a separate step.</B>
+    >];
+  }
+
+  { rank=same; local_branches; server_branches; }
+  { rank=same; tracking; pull_request; }
+
+  local_branches -> server_branches [constraint=false];
+  server_branches -> tracking [minlen=1];
+  server_branches -> pull_request [
+    style=dashed, arrowhead=none
+  ];
+  local_branches -> tracking [style=invis, weight=20];
+  tracking -> compare [style=invis, weight=20];
+  tracking -> pull_request [style=invis, weight=20];
+}

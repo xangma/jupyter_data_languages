@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="665" height="640" viewBox="0.00 0.00 743.00 715.00" role="img" aria-labelledby="git-remotes-title git-remotes-desc">
+  <title id="git-remotes-title">Local commits, remote branches and hosted review</title>
+  <desc id="git-remotes-desc">Push updates hosted branches; fetch updates local remote-tracking references. A pull request compares hosted branches for review. Fetch alone does not edit the working files.</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(11.52 703.82)">
+    <title>git_remotes</title>
+    <polygon fill="white" stroke="none" points="-11.52,11.52 -11.52,-703.82 731.52,-703.82 731.52,11.52 -11.52,11.52" />
+    <text xml:space="preserve" text-anchor="middle" x="360" y="-665.5" font-family="Arial" font-size="24.00" fill="#14263c">Push, fetch and review do different jobs</text>
+    <g id="clust1" class="cluster">
+      <title>cluster_local</title>
+      <path fill="white" stroke="#bac7d5" d="M20,-8C20,-8 354,-8 354,-8 360,-8 366,-14 366,-20 366,-20 366,-637.3 366,-637.3 366,-643.3 360,-649.3 354,-649.3 354,-649.3 20,-649.3 20,-649.3 14,-649.3 8,-643.3 8,-637.3 8,-637.3 8,-20 8,-20 8,-14 14,-8 20,-8" />
+      <text xml:space="preserve" text-anchor="middle" x="187" y="-624.4" font-family="Arial" font-size="22.00" fill="#14263c">Your local repository</text>
+    </g>
+    <g id="clust2" class="cluster">
+      <title>cluster_host</title>
+      <path fill="white" stroke="#bac7d5" d="M386,-178.6C386,-178.6 700,-178.6 700,-178.6 706,-178.6 712,-184.6 712,-190.6 712,-190.6 712,-634.3 712,-634.3 712,-640.3 706,-646.3 700,-646.3 700,-646.3 386,-646.3 386,-646.3 380,-646.3 374,-640.3 374,-634.3 374,-634.3 374,-190.6 374,-190.6 374,-184.6 380,-178.6 386,-178.6" />
+      <text xml:space="preserve" text-anchor="middle" x="543" y="-621.4" font-family="Arial" font-size="22.00" fill="#14263c">Classroom server · origin</text>
+      <text xml:space="preserve" text-anchor="middle" x="543" y="-595.9" font-family="Arial" font-size="22.00" fill="#14263c">Empty before the first push</text>
+    </g>
+    <g id="edge1" class="edge">
+      <title>local_branches-&gt;server_branches</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.5" d="M348.45,-520.5C368.25,-520.5 390.25,-520.5 402.97,-520.5" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.5" points="402.79,-523.48 411.29,-520.5 402.79,-517.53 402.79,-523.48" />
+    </g>
+    <g id="edge2" class="edge">
+      <title>server_branches-&gt;tracking</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.5" d="M451.92,-471.1C420.23,-448.9 381.38,-421.68 343.73,-395.3" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.5" points="345.74,-393.08 337.07,-390.64 342.33,-397.95 345.74,-393.08" />
+    </g>
+    <g id="edge3" class="edge">
+      <title>server_branches-&gt;pull_request</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.5" stroke-dasharray="5,2" d="M525.72,-471.1C528.04,-447.28 530.93,-417.69 533.67,-389.56" />
+    </g>
+    <g id="node1" class="node">
+      <title>local_branches</title>
+      <polygon fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" points="347.71,-597.8 50.29,-597.8 50.29,-443.2 347.71,-443.2 347.71,-597.8" />
+      <text xml:space="preserve" text-anchor="start" x="68.12" y="-569.95" font-family="Arial" font-size="19.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="99.62" y="-569.95" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">1–2 · Push local branches</text>
+      <text xml:space="preserve" text-anchor="start" x="144.62" y="-531.95" font-family="Arial" font-size="19.00" fill="#14263c">      main first</text>
+      <text xml:space="preserve" text-anchor="start" x="94.75" y="-512.95" font-family="Arial" font-size="19.00" fill="#14263c">      then edge-case-tests</text>
+      <text xml:space="preserve" text-anchor="start" x="91.75" y="-474.95" font-family="Arial" font-size="19.00" fill="#14263c">      Transfer commits and</text>
+      <text xml:space="preserve" text-anchor="start" x="63.25" y="-455.95" font-family="Arial" font-size="19.00" fill="#14263c">      update server branch tips.    </text>
+    </g>
+    <g id="node2" class="node">
+      <title>tracking</title>
+      <polygon fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" points="334.59,-389.2 63.41,-389.2 63.41,-196.6 334.59,-196.6 334.59,-389.2" />
+      <text xml:space="preserve" text-anchor="start" x="105.25" y="-361.35" font-family="Arial" font-size="19.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="136.75" y="-361.35" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">3 · git fetch origin</text>
+      <text xml:space="preserve" text-anchor="start" x="92.88" y="-323.35" font-family="Arial" font-size="19.00" fill="#14263c">      Remote-tracking refs:</text>
+      <text xml:space="preserve" text-anchor="start" x="136.75" y="-304.35" font-family="Arial" font-size="19.00" fill="#14263c">      origin/main</text>
+      <text xml:space="preserve" text-anchor="start" x="89.88" y="-285.35" font-family="Arial" font-size="19.00" fill="#14263c">      origin/edge-case-tests</text>
+      <text xml:space="preserve" text-anchor="start" x="76.38" y="-247.35" font-family="Arial" font-size="19.00" fill="#14263c">      Fetch updates these refs.</text>
+      <text xml:space="preserve" text-anchor="start" x="108.62" y="-228.35" font-family="Arial" font-size="19.00" fill="#14263c">      Working files stay</text>
+      <text xml:space="preserve" text-anchor="start" x="123.25" y="-209.35" font-family="Arial" font-size="19.00" fill="#14263c">      unchanged.    </text>
+    </g>
+    <g id="node3" class="node">
+      <title>compare</title>
+      <polygon fill="#f3f5f7" stroke="#bac7d5" stroke-width="1.5" points="342.09,-142.6 25.91,-142.6 25.91,-26 348.09,-26 348.09,-136.6 342.09,-142.6" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="342.09,-142.6 342.09,-136.6" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="348.09,-136.6 342.09,-136.6" />
+      <text xml:space="preserve" text-anchor="start" x="108.62" y="-114.75" font-family="Arial" font-size="19.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="140.12" y="-114.75" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">4 · Inspect the</text>
+      <text xml:space="preserve" text-anchor="start" x="93.62" y="-95.75" font-family="Arial" font-size="19.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="125.12" y="-95.75" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">proposed change</text>
+      <text xml:space="preserve" text-anchor="start" x="145.75" y="-57.75" font-family="Arial" font-size="19.00" fill="#14263c">      git diff</text>
+      <text xml:space="preserve" text-anchor="start" x="38.88" y="-38.75" font-family="Arial" font-size="19.00" fill="#14263c">      origin/main...edge-case-tests    </text>
+    </g>
+    <g id="node4" class="node">
+      <title>server_branches</title>
+      <polygon fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" points="627.71,-569.3 414.29,-569.3 414.29,-471.7 627.71,-471.7 627.71,-569.3" />
+      <text xml:space="preserve" text-anchor="start" x="431.38" y="-541.45" font-family="Arial" font-size="19.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="462.88" y="-541.45" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">Server branches</text>
+      <text xml:space="preserve" text-anchor="start" x="484.62" y="-503.45" font-family="Arial" font-size="19.00" fill="#14263c">      main</text>
+      <text xml:space="preserve" text-anchor="start" x="427.25" y="-484.45" font-family="Arial" font-size="19.00" fill="#14263c">      edge-case-tests    </text>
+    </g>
+    <g id="node5" class="node">
+      <title>pull_request</title>
+      <polygon fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" points="687.96,-389.2 392.04,-389.2 392.04,-196.6 693.96,-196.6 693.96,-383.2 687.96,-389.2" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="687.96,-389.2 687.96,-383.2" />
+      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="693.96,-383.2 687.96,-383.2" />
+      <text xml:space="preserve" text-anchor="start" x="426.75" y="-361.35" font-family="Arial" font-size="19.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="458.25" y="-361.35" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">5 · Hosted pull request</text>
+      <text xml:space="preserve" text-anchor="start" x="424.5" y="-323.35" font-family="Arial" font-size="19.00" fill="#14263c">      edge-case-tests → main</text>
+      <text xml:space="preserve" text-anchor="start" x="440.25" y="-285.35" font-family="Arial" font-size="19.00" fill="#14263c">      Compare and review</text>
+      <text xml:space="preserve" text-anchor="start" x="447.38" y="-266.35" font-family="Arial" font-size="19.00" fill="#14263c">      the diff, description</text>
+      <text xml:space="preserve" text-anchor="start" x="486" y="-247.35" font-family="Arial" font-size="19.00" fill="#14263c">      and tests.</text>
+      <text xml:space="preserve" text-anchor="start" x="405" y="-209.35" font-family="Arial" font-size="19.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="436.5" y="-209.35" font-family="Arial" font-weight="bold" font-size="19.00" fill="#14263c">Merge is a separate step.</text>
+      <text xml:space="preserve" text-anchor="start" x="660" y="-209.35" font-family="Arial" font-size="19.00" fill="#14263c">    </text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+// SPDX-License-Identifier: MIT
+digraph agent_architecture {
+  graph [bgcolor="white", fontname="Arial", fontsize=20, fontcolor="#14263C",
+         rankdir=TB, newrank=true, nodesep=0.30, ranksep=0.45, pad=0.18, compound=true];
+  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=18,
+        fontcolor="#14263C", color="#BAC7D5", penwidth=1.5,
+        fillcolor="#F3F5F7", margin="0.16,0.12"];
+  edge [fontname="Arial", fontsize=16, fontcolor="#14263C", color="#526780",
+        penwidth=1.6, arrowsize=0.8];
+
+  subgraph cluster_client {
+    label="Example: Cline + VS Code on your laptop";
+    style="rounded"; color="#BAC7D5"; margin=20;
+    client [label="Agent client\nCline", fillcolor="#F0EBFA"];
+    permission [label="Client permissions\nand action approvals", fillcolor="#FFF2D6"];
+    filetool [label="File read/edit tool"];
+    files [label="Your workspace files\nweighted_mean.py + tests", fillcolor="#EAF3FE"];
+    subgraph cluster_shell {
+      label="Enforced shell sandbox\nwhen enabled";
+      fontsize=17; style="rounded,dashed"; color="#71849A"; margin=16;
+      terminal [label="Terminal subprocess\npython -m pytest -q", fillcolor="#E9F7F2"];
+    }
+    client -> permission [label="requested action"];
+    permission -> filetool;
+    permission -> terminal [lhead=cluster_shell];
+    filetool -> files [label="read / edit"];
+    terminal -> files [label="permitted file access"];
+    {rank=same; filetool; terminal;}
+  }
+  subgraph cluster_cpd {
+    label="CPD: model inference";
+    style="rounded"; color="#BAC7D5"; margin=20;
+    model [label="Qwen 3.8 27B\nproposes next steps", fillcolor="#FFF2D6"];
+  }
+  {rank=same; client; model;}
+  client -> model [dir=both, label="context + results out\nproposals back", constraint=false];
+}

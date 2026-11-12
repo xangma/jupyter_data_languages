@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="491" height="640" viewBox="0.00 0.00 444.00 579.00" role="img" aria-labelledby="shared-mask-title shared-mask-desc">
+  <title id="shared-mask-title">One mask preserves row alignment</title>
+  <desc id="shared-mask-desc">An illustrative table applies the same Boolean row mask to distance, velocity and uncertainty, retaining the same two objects in every column.</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 566.24)">
+    <title>shared_mask</title>
+    <polygon fill="white" stroke="none" points="-12.96,12.96 -12.96,-566.24 431.21,-566.24 431.21,12.96 -12.96,12.96" />
+    <g id="node1" class="node">
+      <title>aligned</title>
+      <polygon fill="#f3f5f7" stroke="none" points="1,-513.28 1,-552.28 417.25,-552.28 417.25,-513.28 1,-513.28" />
+      <polygon fill="none" stroke="#bac7d5" points="1,-513.28 1,-552.28 417.25,-552.28 417.25,-513.28 1,-513.28" />
+      <text xml:space="preserve" text-anchor="start" x="46.38" y="-527.18" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">Aligned columns — illustrative values</text>
+      <polygon fill="none" stroke="#bac7d5" points="1,-459.28 1,-513.28 51.25,-513.28 51.25,-459.28 1,-459.28" />
+      <text xml:space="preserve" text-anchor="start" x="10" y="-480.68" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">row</text>
+      <polygon fill="none" stroke="#bac7d5" points="51.25,-459.28 51.25,-513.28 142,-513.28 142,-459.28 51.25,-459.28" />
+      <text xml:space="preserve" text-anchor="start" x="60.25" y="-488.18" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">distance</text>
+      <text xml:space="preserve" text-anchor="start" x="73.75" y="-470.18" font-family="Arial" font-size="18.00" fill="#14263c">(Mpc)</text>
+      <polygon fill="none" stroke="#bac7d5" points="142,-459.28 142,-513.28 226.75,-513.28 226.75,-459.28 142,-459.28" />
+      <text xml:space="preserve" text-anchor="start" x="151" y="-488.18" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">velocity</text>
+      <text xml:space="preserve" text-anchor="start" x="159.25" y="-470.18" font-family="Arial" font-size="18.00" fill="#14263c">(km/s)</text>
+      <polygon fill="none" stroke="#bac7d5" points="226.75,-459.28 226.75,-513.28 358,-513.28 358,-459.28 226.75,-459.28" />
+      <text xml:space="preserve" text-anchor="start" x="235.75" y="-488.18" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">velocity error</text>
+      <text xml:space="preserve" text-anchor="start" x="267.25" y="-470.18" font-family="Arial" font-size="18.00" fill="#14263c">(km/s)</text>
+      <polygon fill="none" stroke="#bac7d5" points="358,-459.28 358,-513.28 417.25,-513.28 417.25,-459.28 358,-459.28" />
+      <text xml:space="preserve" text-anchor="start" x="367" y="-480.68" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">valid</text>
+      <polygon fill="#e9f7f2" stroke="none" points="1,-420.28 1,-459.28 51.25,-459.28 51.25,-420.28 1,-420.28" />
+      <polygon fill="none" stroke="#bac7d5" points="1,-420.28 1,-459.28 51.25,-459.28 51.25,-420.28 1,-420.28" />
+      <text xml:space="preserve" text-anchor="start" x="21.25" y="-433.18" font-family="Arial" font-size="18.00" fill="#14263c">0</text>
+      <polygon fill="none" stroke="#bac7d5" points="51.25,-420.28 51.25,-459.28 142,-459.28 142,-420.28 51.25,-420.28" />
+      <text xml:space="preserve" text-anchor="start" x="86.88" y="-433.18" font-family="Arial" font-size="18.00" fill="#14263c">10</text>
+      <polygon fill="none" stroke="#bac7d5" points="142,-420.28 142,-459.28 226.75,-459.28 226.75,-420.28 142,-420.28" />
+      <text xml:space="preserve" text-anchor="start" x="169.75" y="-433.18" font-family="Arial" font-size="18.00" fill="#14263c">700</text>
+      <polygon fill="none" stroke="#bac7d5" points="226.75,-420.28 226.75,-459.28 358,-459.28 358,-420.28 226.75,-420.28" />
+      <text xml:space="preserve" text-anchor="start" x="282.62" y="-433.18" font-family="Arial" font-size="18.00" fill="#14263c">20</text>
+      <polygon fill="#e9f7f2" stroke="none" points="358,-420.28 358,-459.28 417.25,-459.28 417.25,-420.28 358,-420.28" />
+      <polygon fill="none" stroke="#bac7d5" points="358,-420.28 358,-459.28 417.25,-459.28 417.25,-420.28 358,-420.28" />
+      <text xml:space="preserve" text-anchor="start" x="382" y="-434.18" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">T</text>
+      <polygon fill="#fbeded" stroke="none" points="1,-381.28 1,-420.28 51.25,-420.28 51.25,-381.28 1,-381.28" />
+      <polygon fill="none" stroke="#bac7d5" points="1,-381.28 1,-420.28 51.25,-420.28 51.25,-381.28 1,-381.28" />
+      <text xml:space="preserve" text-anchor="start" x="21.25" y="-394.18" font-family="Arial" font-size="18.00" fill="#14263c">1</text>
+      <polygon fill="none" stroke="#bac7d5" points="51.25,-381.28 51.25,-420.28 142,-420.28 142,-381.28 51.25,-381.28" />
+      <text xml:space="preserve" text-anchor="start" x="86.88" y="-394.18" font-family="Arial" font-size="18.00" fill="#14263c">20</text>
+      <polygon fill="#fbeded" stroke="none" points="142,-381.28 142,-420.28 226.75,-420.28 226.75,-381.28 142,-381.28" />
+      <polygon fill="none" stroke="#bac7d5" points="142,-381.28 142,-420.28 226.75,-420.28 226.75,-381.28 142,-381.28" />
+      <text xml:space="preserve" text-anchor="start" x="166.75" y="-395.18" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">NaN</text>
+      <polygon fill="none" stroke="#bac7d5" points="226.75,-381.28 226.75,-420.28 358,-420.28 358,-381.28 226.75,-381.28" />
+      <text xml:space="preserve" text-anchor="start" x="282.62" y="-394.18" font-family="Arial" font-size="18.00" fill="#14263c">30</text>
+      <polygon fill="#fbeded" stroke="none" points="358,-381.28 358,-420.28 417.25,-420.28 417.25,-381.28 358,-381.28" />
+      <polygon fill="none" stroke="#bac7d5" points="358,-381.28 358,-420.28 417.25,-420.28 417.25,-381.28 358,-381.28" />
+      <text xml:space="preserve" text-anchor="start" x="382" y="-395.18" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">F</text>
+      <polygon fill="#fbeded" stroke="none" points="1,-342.28 1,-381.28 51.25,-381.28 51.25,-342.28 1,-342.28" />
+      <polygon fill="none" stroke="#bac7d5" points="1,-342.28 1,-381.28 51.25,-381.28 51.25,-342.28 1,-342.28" />
+      <text xml:space="preserve" text-anchor="start" x="21.25" y="-355.18" font-family="Arial" font-size="18.00" fill="#14263c">2</text>
+      <polygon fill="none" stroke="#bac7d5" points="51.25,-342.28 51.25,-381.28 142,-381.28 142,-342.28 51.25,-342.28" />
+      <text xml:space="preserve" text-anchor="start" x="86.88" y="-355.18" font-family="Arial" font-size="18.00" fill="#14263c">30</text>
+      <polygon fill="none" stroke="#bac7d5" points="142,-342.28 142,-381.28 226.75,-381.28 226.75,-342.28 142,-342.28" />
+      <text xml:space="preserve" text-anchor="start" x="164.88" y="-355.18" font-family="Arial" font-size="18.00" fill="#14263c">2100</text>
+      <polygon fill="#fbeded" stroke="none" points="226.75,-342.28 226.75,-381.28 358,-381.28 358,-342.28 226.75,-342.28" />
+      <polygon fill="none" stroke="#bac7d5" points="226.75,-342.28 226.75,-381.28 358,-381.28 358,-342.28 226.75,-342.28" />
+      <text xml:space="preserve" text-anchor="start" x="287.5" y="-356.18" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">0</text>
+      <polygon fill="#fbeded" stroke="none" points="358,-342.28 358,-381.28 417.25,-381.28 417.25,-342.28 358,-342.28" />
+      <polygon fill="none" stroke="#bac7d5" points="358,-342.28 358,-381.28 417.25,-381.28 417.25,-342.28 358,-342.28" />
+      <text xml:space="preserve" text-anchor="start" x="382" y="-356.18" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">F</text>
+      <polygon fill="#e9f7f2" stroke="none" points="1,-303.28 1,-342.28 51.25,-342.28 51.25,-303.28 1,-303.28" />
+      <polygon fill="none" stroke="#bac7d5" points="1,-303.28 1,-342.28 51.25,-342.28 51.25,-303.28 1,-303.28" />
+      <text xml:space="preserve" text-anchor="start" x="21.25" y="-316.18" font-family="Arial" font-size="18.00" fill="#14263c">3</text>
+      <polygon fill="none" stroke="#bac7d5" points="51.25,-303.28 51.25,-342.28 142,-342.28 142,-303.28 51.25,-303.28" />
+      <text xml:space="preserve" text-anchor="start" x="86.88" y="-316.18" font-family="Arial" font-size="18.00" fill="#14263c">40</text>
+      <polygon fill="none" stroke="#bac7d5" points="142,-303.28 142,-342.28 226.75,-342.28 226.75,-303.28 142,-303.28" />
+      <text xml:space="preserve" text-anchor="start" x="164.88" y="-316.18" font-family="Arial" font-size="18.00" fill="#14263c">2800</text>
+      <polygon fill="none" stroke="#bac7d5" points="226.75,-303.28 226.75,-342.28 358,-342.28 358,-303.28 226.75,-303.28" />
+      <text xml:space="preserve" text-anchor="start" x="282.62" y="-316.18" font-family="Arial" font-size="18.00" fill="#14263c">40</text>
+      <polygon fill="#e9f7f2" stroke="none" points="358,-303.28 358,-342.28 417.25,-342.28 417.25,-303.28 358,-303.28" />
+      <polygon fill="none" stroke="#bac7d5" points="358,-303.28 358,-342.28 417.25,-342.28 417.25,-303.28 358,-303.28" />
+      <text xml:space="preserve" text-anchor="start" x="382" y="-317.18" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">T</text>
+      <polygon fill="none" stroke="#bac7d5" points="0,-302.28 0,-553.28 418.25,-553.28 418.25,-302.28 0,-302.28" />
+    </g>
+    <g id="node2" class="node">
+      <title>mask</title>
+      <path fill="#eaf3fe" stroke="#bac7d5" d="M282.02,-277.28C282.02,-277.28 136.22,-277.28 136.22,-277.28 130.22,-277.28 124.22,-271.28 124.22,-265.28 124.22,-265.28 124.22,-230 124.22,-230 124.22,-224 130.22,-218 136.22,-218 136.22,-218 282.02,-218 282.02,-218 288.02,-218 294.02,-224 294.02,-230 294.02,-230 294.02,-265.28 294.02,-265.28 294.02,-271.28 288.02,-277.28 282.02,-277.28" />
+      <text xml:space="preserve" text-anchor="middle" x="209.12" y="-251.54" font-family="Arial" font-size="18.00" fill="#14263c">One shared mask</text>
+      <text xml:space="preserve" text-anchor="middle" x="209.12" y="-230.54" font-family="Arial" font-size="18.00" fill="#14263c">valid = [T, F, F, T]</text>
+    </g>
+    <g id="edge1" class="edge">
+      <title>aligned-&gt;mask</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.5" d="M209.12,-302.57C209.12,-297.33 209.12,-292.27 209.12,-287.51" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.5" points="211.93,-287.83 209.13,-279.83 206.33,-287.83 211.93,-287.83" />
+    </g>
+    <g id="node3" class="node">
+      <title>retained</title>
+      <polygon fill="#e9f7f2" stroke="none" points="30.62,-133 30.62,-172 387.62,-172 387.62,-133 30.62,-133" />
+      <polygon fill="none" stroke="#bac7d5" points="30.62,-133 30.62,-172 387.62,-172 387.62,-133 30.62,-133" />
+      <text xml:space="preserve" text-anchor="start" x="48.25" y="-146.9" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">Rows 0 and 3 remain in every column</text>
+      <polygon fill="none" stroke="#bac7d5" points="30.62,-79 30.62,-133 80.88,-133 80.88,-79 30.62,-79" />
+      <text xml:space="preserve" text-anchor="start" x="39.62" y="-100.4" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">row</text>
+      <polygon fill="none" stroke="#bac7d5" points="80.88,-79 80.88,-133 171.62,-133 171.62,-79 80.88,-79" />
+      <text xml:space="preserve" text-anchor="start" x="89.88" y="-107.9" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">distance</text>
+      <text xml:space="preserve" text-anchor="start" x="103.38" y="-89.9" font-family="Arial" font-size="18.00" fill="#14263c">(Mpc)</text>
+      <polygon fill="none" stroke="#bac7d5" points="171.62,-79 171.62,-133 256.38,-133 256.38,-79 171.62,-79" />
+      <text xml:space="preserve" text-anchor="start" x="180.62" y="-107.9" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">velocity</text>
+      <text xml:space="preserve" text-anchor="start" x="188.88" y="-89.9" font-family="Arial" font-size="18.00" fill="#14263c">(km/s)</text>
+      <polygon fill="none" stroke="#bac7d5" points="256.38,-79 256.38,-133 387.62,-133 387.62,-79 256.38,-79" />
+      <text xml:space="preserve" text-anchor="start" x="265.38" y="-107.9" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">velocity error</text>
+      <text xml:space="preserve" text-anchor="start" x="296.88" y="-89.9" font-family="Arial" font-size="18.00" fill="#14263c">(km/s)</text>
+      <polygon fill="none" stroke="#bac7d5" points="30.62,-40 30.62,-79 80.88,-79 80.88,-40 30.62,-40" />
+      <text xml:space="preserve" text-anchor="start" x="50.88" y="-52.9" font-family="Arial" font-size="18.00" fill="#14263c">0</text>
+      <polygon fill="none" stroke="#bac7d5" points="80.88,-40 80.88,-79 171.62,-79 171.62,-40 80.88,-40" />
+      <text xml:space="preserve" text-anchor="start" x="116.5" y="-52.9" font-family="Arial" font-size="18.00" fill="#14263c">10</text>
+      <polygon fill="none" stroke="#bac7d5" points="171.62,-40 171.62,-79 256.38,-79 256.38,-40 171.62,-40" />
+      <text xml:space="preserve" text-anchor="start" x="199.38" y="-52.9" font-family="Arial" font-size="18.00" fill="#14263c">700</text>
+      <polygon fill="none" stroke="#bac7d5" points="256.38,-40 256.38,-79 387.62,-79 387.62,-40 256.38,-40" />
+      <text xml:space="preserve" text-anchor="start" x="312.25" y="-52.9" font-family="Arial" font-size="18.00" fill="#14263c">20</text>
+      <polygon fill="none" stroke="#bac7d5" points="30.62,-1 30.62,-40 80.88,-40 80.88,-1 30.62,-1" />
+      <text xml:space="preserve" text-anchor="start" x="50.88" y="-13.9" font-family="Arial" font-size="18.00" fill="#14263c">3</text>
+      <polygon fill="none" stroke="#bac7d5" points="80.88,-1 80.88,-40 171.62,-40 171.62,-1 80.88,-1" />
+      <text xml:space="preserve" text-anchor="start" x="116.5" y="-13.9" font-family="Arial" font-size="18.00" fill="#14263c">40</text>
+      <polygon fill="none" stroke="#bac7d5" points="171.62,-1 171.62,-40 256.38,-40 256.38,-1 171.62,-1" />
+      <text xml:space="preserve" text-anchor="start" x="194.5" y="-13.9" font-family="Arial" font-size="18.00" fill="#14263c">2800</text>
+      <polygon fill="none" stroke="#bac7d5" points="256.38,-1 256.38,-40 387.62,-40 387.62,-1 256.38,-1" />
+      <text xml:space="preserve" text-anchor="start" x="312.25" y="-13.9" font-family="Arial" font-size="18.00" fill="#14263c">40</text>
+      <polygon fill="none" stroke="#bac7d5" points="29.62,0 29.62,-173 388.62,-173 388.62,0 29.62,0" />
+    </g>
+    <g id="edge2" class="edge">
+      <title>mask-&gt;retained</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.5" d="M209.12,-217.82C209.12,-207.64 209.12,-195.57 209.12,-182.93" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.5" points="211.93,-182.97 209.13,-174.97 206.33,-182.97 211.93,-182.97" />
+      <text xml:space="preserve" text-anchor="middle" x="310" y="-188.9" font-family="Arial" font-size="18.00" fill="#14263c">apply to all three columns</text>
+    </g>
+  </g>
+</svg>
