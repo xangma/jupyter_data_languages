@@ -20,6 +20,7 @@ project:
     - file: _executed/01-catalogue.ipynb
     - file: _executed/02-git-and-tests.ipynb
     - file: _executed/03-agents-and-inference.ipynb
+    - file: book/agent-tools.md
     - file: _executed/04-signal-extension.ipynb
     - file: book/solutions.md
     - file: book/further-reading.md

@@ -70,3 +70,29 @@ the selected-only refit remains an optional teaching idea.
 A fresh build also exposed an implicit upgrade to book-theme v2.0.0. The site now
 pins the compatible v1.4.1 template commit; its CPD integration remains explicit.
 See `VALIDATION.md` for the revision's build, deployment and student-workflow evidence.
+## Session 3 refocus — 12 November 2026
+
+Following the instructor's feedback, Session 3 now centres on operating coding
+agents: locating client/model/tool execution, inspecting built-in permissions
+and sandboxing, supplying context, reviewing a plan, delegating test syntax from
+independently derived expectations, authorising a bounded repair, steering from
+evidence and accepting a reviewed change. It supports Codex, Claude Code,
+Antigravity/agy and Cline with CPD Qwen 3.8 27B; a partner/saved-proposal route
+remains available. Two bounded Codex subagents advised on the teaching sequence
+and verified vendor controls; they did not modify the repository or deploy.
+
+Preparation is one command. The helper creates the practice files, local Git
+starter commit and repair branch without global identity changes or remotes,
+and continues to refuse an existing destination. The lesson distinguishes this
+practice workspace and recovery history from an enforced security sandbox.
+Students inspect their existing tool/instructor-provided boundary rather than
+constructing one manually. The agent can draft tests, but students derive and
+agree the expected answers before a checkpoint and keep the tests fixed during
+repair. A CPD model connection does not relocate a local Cline client's tools.
+
+The timed agent lesson remains 120 minutes with the 60–70 minute break. Its
+previous opening fitting example is retained after the core as optional worked
+scientific verification. Sessions 1 and 2 are unchanged. The new tool reference
+links official documentation checked on 12 November; actual controls may vary
+by client version and institutional policy. CPD base URL/model alias were checked
+against the applied serving-source configuration, not inferred from a model name.

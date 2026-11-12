@@ -60,6 +60,20 @@ the correct formula; the new tests are committed on `edge-case-tests`.
 
 ## Session 3
 
+The agent client, its model and its execution environment are different things.
+An enforced sandbox restricts processes; approval rules control actions; Git or
+tool checkpoints preserve review/recovery history. Planning instructions, a
+branch and a virtual environment do not create a security boundary. A Cline
+client on a laptop still edits that laptop's workspace when inference uses CPD.
+
+A useful plan identifies the scalar interface, invalid inputs, inverse-variance
+weights, permitted file and focused test command. Students own expected answers;
+the agent may translate them into test syntax. Preserve the reviewed tests
+checkpoint during repair. Reject changing `1.2` to `1.5` to match wrong code,
+weakening assertions, or returning a tuple for the scalar contract. A corrective
+follow-up names the mismatch, retains the agreed expectation and asks for a
+bounded implementation change with actual test evidence.
+
 Doubling all error bars leaves the fitted parameters unchanged, doubles their
 standard errors and divides reduced chi-squared by four with `absolute_sigma=True`.
 
@@ -85,7 +99,7 @@ def test_rejects_two_dimensions():
 
 Commit the agreed tests before the repair and keep them unchanged during it.
 
-A scalar-only solution for the sandbox is:
+A scalar-only solution for the practice workspace is:
 
 ```python
 import numpy as np
@@ -109,10 +123,13 @@ Equal-error tests cannot distinguish ordinary, inverse-error and inverse-varianc
 means. Tests do not establish that the measurements really share a true value or
 have independent Gaussian errors.
 
-An AI-use record might say: “Tool X proposed validation and weights. I checked
-the derivative of chi-squared, calculated 1.2 and 2.8 independently, reran tests
-and reviewed the diff. The agent did not choose the statistical model.” State
-when no AI tool was used instead.
+An AI-use record should name the actual tool/model and execution host, tests
+checkpoint, a real steering/review decision, independently derived example and
+observed before/after test results. For example: “I asked the agent to preserve
+the scalar API, reviewed its proposed tests against my derivation, then allowed
+the focused pytest command in the practice folder. I reran the tests and checked
+the diff. The agent did not choose the statistical model.” State when no AI
+tool was used instead; do not copy invented usage or results.
 
 ## Signal extension
 

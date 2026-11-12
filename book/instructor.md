@@ -11,8 +11,14 @@ older. Ask students to run the setup check and primer before Session 1.
 Bring an installed environment, local data and a working preview. Avoid survey
 downloads or installing a GW/ML stack in class.
 
-Confirm an institution-approved coding agent in advance. Otherwise use the
-incorrect candidate in notebook 03 and let students review/fix it themselves.
+Confirm one institution-approved coding agent per student/pair in advance:
+Codex, Claude Code, Antigravity/agy or Cline with the CPD Qwen 3.8 27B route.
+Use [tool setup](agent-tools.md) to prepare the practice workspace in one command;
+the helper creates its files, committed starter and branch automatically. Verify
+the client can edit that workspace and use its existing Python environment.
+Confirm the effective permissions/sandbox and demonstrate pause, diff and undo.
+Do not spend the session constructing a container or repeating Git initialisation.
+Without an agent, use the saved incorrect proposal and a partner's review/repair.
 The outcomes do not depend on a vendor or paid account. CPD provides a locked,
 CPU-only course workspace through JupyterHub. Confirm student enrolment before
 class and rehearse both in-page execution and opening the notebook in JupyterLab.
@@ -60,24 +66,39 @@ and explanation. Research upstreams are reading examples.
 
 | Minutes | Activity | Evidence of learning |
 | --- | --- | --- |
-| 0–20 | Recover injected parameters; Task A | Discuss residuals and error rescaling |
-| 20–40 | Agent inspection/test proposal demo | Bound files, commands and task |
-| 40–60 | Derive weighted-mean tests; Task B | Explain 1.2, 2.8 and a student-chosen case |
+| 0–15 | Locate model, client, workspace and controls | Distinguish sandbox, approval and checkpoint |
+| 15–35 | Agent inspection and plan; failing baseline | Review its diagnosis, contract and proposed scope |
+| 35–60 | Derive expectations; delegate and review test syntax | Explain 1.2, 2.8 and a student-chosen case; checkpoint tests |
 | 60–70 | Break | |
-| 70–105 | Repair a deliberately wrong function | Tests fail before, pass after |
-| 105–120 | Review, rerun, commit, AI-use record | Explain assumptions without quoting the agent |
+| 70–95 | Authorise repair; observe tools and steer | Explain one real edit, command or permission decision |
+| 95–110 | Independently rerun and review the diff | Tests unchanged; known-answer evidence; reject a false fix |
+| 110–120 | Accept repair and write AI-use record | Reviewed commit and scientific explanation |
 
-Do not generate the entire analysis before students understand the acceptance
-tests. Reject unexplained edits to truth values, data, error bars or tests.
+Make the agent interaction the organising thread. Students inspect and critique
+a plan, provide independently derived expectations, delegate test syntax, then
+authorise a bounded repair. They should use their tool, not just watch a demo.
+Keep prompts short enough for the CPD model route. A fresh chat needs the current
+contract, diff and test evidence. Avoid suggesting that another model's agreement
+establishes correctness. Reject unexplained edits to truth, data, errors or tests.
 The starter returns only a mean; the reference helper also returns its standard
-error. Preserving the requested interface is part of the exercise. Task B's
-scratch markdown records the independent expectations. After the break students
-put their own unequal-error, equal-error and 2-D rejection cases in
-`test_student_checks.py`, then commit the tests before requesting a repair.
-The agent edits only `weighted_mean.py`; both test files retain the agreed
-expectations. `scripts/create_agent_practice.py` refuses an existing destination
-and leaves the original intentionally wrong exercise unchanged. The same steps
-work with a partner and no agent.
+error. Preserving that interface is part of the exercise. Students derive their
+own unequal-error, equal-error and 2-D rejection cases, review the agent's
+`test_student_checks.py`, then checkpoint those tests before requesting a repair.
+The agent edits only `weighted_mean.py` during repair. Both tests retain the agreed
+expectations. The setup helper refuses an existing destination and leaves the
+original intentionally wrong exercise unchanged. It uses a synthetic Git identity
+local to the exercise, with no remotes. The same criteria apply to partner-only work.
+
+An agent's scope prompt is not enforced isolation. Explain the tool's sandbox,
+approval settings and recovery checkpoints separately. Some in-scope commands
+run automatically: accept a truthful account of that rather than require a
+fabricated permission prompt. Cline's inference on CPD does not relocate its
+client's file/terminal tools. The approved model connection is still needed
+even when agent shell downloads and extra services are out of scope.
+
+The fitting/residual/error-rescaling cells remain as a worked optional scientific
+verification example after the core activity. They no longer consume the opening
+20 minutes. Sessions 1 and 2 and the overall three two-hour structure are unchanged.
 
 ## Assessment and adaptations
 

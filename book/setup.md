@@ -73,10 +73,15 @@ and restart the kernel. Check `sys.executable` in a cell to see which Python it 
 
 ## Readiness check
 
+Before Session 3, choose one route in [coding-agent setup](agent-tools.md) and
+prepare its practice workspace with the single command there. Codex, Claude
+Code, Antigravity/agy and Cline with CPD Qwen use the same exercise. Check the
+tool's existing permissions/sandbox before class; a paid account is optional.
+
 You should see `Setup OK`, 395 usable rows out of 400 and no import errors.
 Run `python -m pytest -q` in the active environment; all reference tests should
 pass. The separate `exercises/test_weighted_mean.py` intentionally fails until
-you repair a **sandbox copy** of its starter in Session 3. Leave the originals
+you repair a **prepared practice copy** of its starter in Session 3. Leave the originals
 in `exercises/` unchanged: the notebook uses them to demonstrate the failing baseline.
 
 For Windows, use Git Bash for the shell blocks in Sessions 2 and 3 and activate
