@@ -1,0 +1,985 @@
+[
+  {
+    "name": "codex-tests",
+    "title": "Review independent scientific checks added through the Codex editor GUI",
+    "callouts": [
+      {
+        "label": "Check the unequal-error expectation of 3.6 against the independent hand calculation",
+        "bubble": [
+          1250,
+          575
+        ],
+        "target": [
+          1030,
+          591
+        ]
+      },
+      {
+        "label": "Review the matching two-dimensional inputs and their ValueError expectation",
+        "bubble": [
+          1020,
+          1105
+        ],
+        "target": [
+          650,
+          990
+        ]
+      },
+      {
+        "label": "Read the reported baseline: 11 failed and 1 passed before repairing the function",
+        "bubble": [
+          1740,
+          550
+        ],
+        "target": [
+          2045,
+          554
+        ]
+      }
+    ]
+  },
+  {
+    "name": "codex-review",
+    "title": "Review the Codex repair diff and reported test result before accepting it",
+    "callouts": [
+      {
+        "label": "Confirm the repair diff is scoped to weighted_mean.py",
+        "bubble": [
+          690,
+          245
+        ],
+        "target": [
+          330,
+          262
+        ]
+      },
+      {
+        "label": "Inspect inverse-variance weighting and normalization in the scientific calculation",
+        "bubble": [
+          1250,
+          1378
+        ],
+        "target": [
+          661,
+          1384
+        ]
+      },
+      {
+        "label": "Read the command and reported 12 passed result; verify it independently",
+        "bubble": [
+          1740,
+          920
+        ],
+        "target": [
+          2238,
+          908
+        ]
+      }
+    ]
+  },
+  {
+    "name": "opencode-tests",
+    "title": "Review an independent test file in the OpenCode Desktop diff",
+    "callouts": [
+      {
+        "label": "Files Changed lists only the new test_student_checks.py",
+        "bubble": [
+          1240,
+          520
+        ],
+        "target": [
+          1175,
+          387
+        ]
+      },
+      {
+        "label": "Compare the unequal-error expected value of 3.6 with the hand calculation",
+        "bubble": [
+          2340,
+          615
+        ],
+        "target": [
+          2442,
+          706
+        ]
+      },
+      {
+        "label": "Require matching two-dimensional arrays to raise ValueError",
+        "bubble": [
+          2450,
+          1040
+        ],
+        "target": [
+          2060,
+          1092
+        ]
+      }
+    ]
+  },
+  {
+    "name": "opencode-review",
+    "title": "Review the OpenCode Desktop repair diff alongside its reported result",
+    "callouts": [
+      {
+        "label": "Check that weighted_mean.py is the single file in this repair diff",
+        "bubble": [
+          1870,
+          275
+        ],
+        "target": [
+          1460,
+          313
+        ]
+      },
+      {
+        "label": "Inspect the inverse-variance weights and weighted-sum formula",
+        "bubble": [
+          1060,
+          769
+        ],
+        "target": [
+          464,
+          807
+        ]
+      },
+      {
+        "label": "Read the actual pytest command and reported 12 passed result",
+        "bubble": [
+          1165,
+          900
+        ],
+        "target": [
+          1020,
+          960
+        ]
+      }
+    ]
+  },
+  {
+    "name": "antigravity-tests",
+    "title": "Inspect uncommitted independent tests in the Antigravity review GUI",
+    "callouts": [
+      {
+        "label": "The new test_student_checks.py is uncommitted; review it before accepting or committing",
+        "bubble": [
+          2680,
+          430
+        ],
+        "target": [
+          2535,
+          325
+        ]
+      },
+      {
+        "label": "Check that unequal uncertainties give the independently calculated mean of 3.6",
+        "bubble": [
+          2225,
+          455
+        ],
+        "target": [
+          2140,
+          392
+        ]
+      },
+      {
+        "label": "Check that matching two-dimensional inputs must raise ValueError",
+        "bubble": [
+          2260,
+          640
+        ],
+        "target": [
+          1883,
+          670
+        ]
+      }
+    ]
+  },
+  {
+    "name": "cline-cpd-settings",
+    "title": "Configure Cline with the CPD OpenAI-compatible Qwen service",
+    "callouts": [
+      {
+        "label": "Select OpenAI Compatible as the API provider",
+        "bubble": [
+          1000,
+          341
+        ],
+        "target": [
+          437,
+          425
+        ]
+      },
+      {
+        "label": "Use the instructor-supplied CPD base URL and keep the API key masked",
+        "bubble": [
+          1010,
+          635
+        ],
+        "target": [
+          401,
+          638
+        ]
+      },
+      {
+        "label": "Select the CPD Qwen model ID supplied for this course",
+        "bubble": [
+          1160,
+          970
+        ],
+        "target": [
+          610,
+          958
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterhub-signin",
+    "title": "Sign in to CPD JupyterHub with GitHub",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "Choose Sign in with GitHub to authenticate to CPD JupyterHub",
+        "bubble": [
+          915,
+          105
+        ],
+        "target": [
+          810,
+          105
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterhub-workspaces",
+    "title": "Open the Standard workspace and Python PhD book from CPD JupyterHub",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "Open Standard for the Python PhD course JupyterLab workspace",
+        "bubble": [
+          432,
+          305
+        ],
+        "target": [
+          290,
+          314
+        ]
+      },
+      {
+        "label": "Open Python PhD book for the teaching materials",
+        "bubble": [
+          430,
+          373
+        ],
+        "target": [
+          285,
+          362
+        ]
+      },
+      {
+        "label": "Workspaces keep separate saved files; save and stop Standard before changing CPU or GPU resources",
+        "bubble": [
+          1100,
+          500
+        ],
+        "target": [
+          930,
+          418
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterlab-kernel-choice",
+    "title": "Select the locked Python PhD kernel for a course notebook",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "Choose Python PhD (locked) as the notebook kernel",
+        "bubble": [
+          1120,
+          415
+        ],
+        "target": [
+          780,
+          438
+        ]
+      },
+      {
+        "label": "Choose Select to start this notebook with the selected kernel",
+        "bubble": [
+          1110,
+          550
+        ],
+        "target": [
+          1000,
+          521
+        ]
+      },
+      {
+        "label": "Always start the preferred kernel is unchecked in this example",
+        "bubble": [
+          554,
+          498
+        ],
+        "target": [
+          662,
+          485
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyter-ai-final-review",
+    "title": "Review a saved Jupyter AI conversation beside its native Git repair diff",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "Compare the original mean on the left with the repaired function on the right in the Git diff",
+        "bubble": [
+          1085,
+          640
+        ],
+        "target": [
+          1007,
+          235
+        ]
+      },
+      {
+        "label": "Inspect inverse-variance weights and the weighted-sum return formula",
+        "bubble": [
+          1450,
+          635
+        ],
+        "target": [
+          1474,
+          545
+        ]
+      },
+      {
+        "label": "The saved conversation reports 12 passed and unchanged tests; rerun the tests to verify",
+        "bubble": [
+          640,
+          752
+        ],
+        "target": [
+          358,
+          688
+        ]
+      },
+      {
+        "label": "Check the OpenCode client and CPD Qwen model selection shown below the saved chat",
+        "bubble": [
+          470,
+          842
+        ],
+        "target": [
+          268,
+          849
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-push-rejected",
+    "title": "Inspect the real VS Code push rejection before integrating remote changes",
+    "callout_scale": 0.4,
+    "callouts": [
+      {
+        "label": "The push is rejected; read the suggestion to pull and integrate remote work",
+        "bubble": [
+          455,
+          170
+        ],
+        "target": [
+          448,
+          248
+        ]
+      },
+      {
+        "label": "Show Command Output reveals the Git error details",
+        "bubble": [
+          495,
+          423
+        ],
+        "target": [
+          450,
+          425
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-remote-controls",
+    "title": "Find Pull Push and Fetch in VS Code after integrating remote work",
+    "callout_scale": 1,
+    "callouts": [
+      {
+        "label": "Pull fetches and integrates remote work; this capture is after the pull and merge",
+        "bubble": [
+          1140,
+          273
+        ],
+        "target": [
+          722,
+          269
+        ]
+      },
+      {
+        "label": "Push publishes local commits; the visible post-pull state is zero incoming and two outgoing",
+        "bubble": [
+          1140,
+          350
+        ],
+        "target": [
+          724,
+          318
+        ]
+      },
+      {
+        "label": "Fetch updates knowledge of the remote without integrating its commits",
+        "bubble": [
+          1140,
+          470
+        ],
+        "target": [
+          730,
+          461
+        ]
+      }
+    ]
+  },
+  {
+    "name": "claude-editor-plan",
+    "title": "Review the Claude Code inspection plan and independent scientific expectations",
+    "callout_scale": 1,
+    "callouts": [
+      {
+        "label": "Check the hand calculation: unequal errors give an inverse-variance weighted mean of 3.6",
+        "bubble": [
+          1138,
+          443
+        ],
+        "target": [
+          861,
+          438
+        ]
+      },
+      {
+        "label": "Review the proposed one-dimensional shape, matching-length, finite-input and positive-error validation",
+        "bubble": [
+          1237,
+          1131
+        ],
+        "target": [
+          593,
+          1121
+        ]
+      },
+      {
+        "label": "Claude stayed in plan mode; review the written plan before allowing edits",
+        "bubble": [
+          1745,
+          1120
+        ],
+        "target": [
+          2042,
+          1110
+        ]
+      }
+    ]
+  },
+  {
+    "name": "claude-tests",
+    "title": "Review Claude Code independent tests and choose the scope of write approval",
+    "callout_scale": 1,
+    "callouts": [
+      {
+        "label": "Inspect the proposed independent test file: expected 3.6, equal-error 6.0 and rejection of two-dimensional inputs",
+        "bubble": [
+          1490,
+          527
+        ],
+        "target": [
+          1271,
+          488
+        ]
+      },
+      {
+        "label": "Choose Yes to approve this reviewed file write once",
+        "bubble": [
+          1740,
+          1150
+        ],
+        "target": [
+          1930,
+          1164
+        ]
+      },
+      {
+        "label": "Allow all edits this session grants broader permission than the one-time Yes choice",
+        "bubble": [
+          1740,
+          1237
+        ],
+        "target": [
+          2095,
+          1237
+        ]
+      }
+    ]
+  },
+  {
+    "name": "claude-repair-approval",
+    "title": "Review the named Claude Code repair and approve a single edit",
+    "callout_scale": 1,
+    "callouts": [
+      {
+        "label": "Confirm the approval request names only weighted_mean.py",
+        "bubble": [
+          1745,
+          1052
+        ],
+        "target": [
+          2104,
+          1091
+        ]
+      },
+      {
+        "label": "Inspect inverse-variance weights and the weighted-sum return formula before approving",
+        "bubble": [
+          1190,
+          1188
+        ],
+        "target": [
+          670,
+          1208
+        ]
+      },
+      {
+        "label": "Choose the one-time Yes for the reviewed repair instead of allowing every edit this session",
+        "bubble": [
+          1745,
+          1167
+        ],
+        "target": [
+          1930,
+          1164
+        ]
+      }
+    ]
+  },
+  {
+    "name": "claude-review",
+    "title": "Inspect the Claude Code repair diff and actual passing test output",
+    "callout_scale": 1,
+    "callouts": [
+      {
+        "label": "Inspect the weighted_mean.py working-tree diff and its input-validation guards",
+        "bubble": [
+          1470,
+          631
+        ],
+        "target": [
+          844,
+          630
+        ]
+      },
+      {
+        "label": "Check the inverse-variance weights and scalar weighted-mean return",
+        "bubble": [
+          1260,
+          1135
+        ],
+        "target": [
+          929,
+          1135
+        ]
+      },
+      {
+        "label": "Read the actual execution output: 12 passed in 0.03 seconds",
+        "bubble": [
+          1745,
+          541
+        ],
+        "target": [
+          2070,
+          540
+        ]
+      }
+    ]
+  },
+  {
+    "name": "antigravity-review",
+    "title": "Review the Antigravity repair diff and scientific test results",
+    "callout_scale": 1.2,
+    "callouts": [
+      {
+        "label": "Review the uncommitted weighted_mean.py repair; the test files remain outside this change",
+        "bubble": [
+          3090,
+          445
+        ],
+        "target": [
+          3116,
+          327
+        ]
+      },
+      {
+        "label": "Inspect rescaled inverse-variance weights and their normalization",
+        "bubble": [
+          2750,
+          1158
+        ],
+        "target": [
+          2325,
+          1158
+        ]
+      },
+      {
+        "label": "Read the pytest command and observed result: 12 passed in 0.04 seconds",
+        "bubble": [
+          1000,
+          1515
+        ],
+        "target": [
+          593,
+          1408
+        ]
+      },
+      {
+        "label": "Request Review is the visible review control; inspect the diff and evidence before accepting changes",
+        "bubble": [
+          1250,
+          1790
+        ],
+        "target": [
+          1266,
+          1910
+        ]
+      }
+    ]
+  },
+  {
+    "name": "cline-tests",
+    "title": "Review independent tests before saving the new file in Cline with CPD Qwen",
+    "callout_scale": 1,
+    "callouts": [
+      {
+        "label": "Auto-approve is None; choose Save or Reject after inspecting the proposed new test file",
+        "bubble": [
+          480,
+          1190
+        ],
+        "target": [
+          365,
+          1275
+        ]
+      },
+      {
+        "label": "Check the independent hand calculation and unequal-error expectation of 3.6",
+        "bubble": [
+          2145,
+          558
+        ],
+        "target": [
+          2195,
+          694
+        ]
+      },
+      {
+        "label": "Confirm matching two-dimensional inputs are tested for ValueError",
+        "bubble": [
+          2155,
+          1285
+        ],
+        "target": [
+          1760,
+          1160
+        ]
+      },
+      {
+        "label": "Check the CPD Qwen model selector while reviewing this Act-mode file proposal",
+        "bubble": [
+          1230,
+          1450
+        ],
+        "target": [
+          572,
+          1492
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterlab-remote-controls",
+    "title": "Find current repository Pull and Push controls in JupyterLab Git",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "Confirm the current repository is student and its current branch is main",
+        "bubble": [
+          208,
+          92
+        ],
+        "target": [
+          100,
+          97
+        ]
+      },
+      {
+        "label": "Pull from Remote fetches and integrates remote work",
+        "bubble": [
+          614,
+          159
+        ],
+        "target": [
+          340,
+          162
+        ]
+      },
+      {
+        "label": "Push to Remote publishes local commits to the configured remote",
+        "bubble": [
+          614,
+          94
+        ],
+        "target": [
+          340,
+          114
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterlab-push-rejected",
+    "title": "Read the JupyterLab Git non-fast-forward rejection and integration hint",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "The error identifies a rejected non-fast-forward push to main",
+        "bubble": [
+          1150,
+          390
+        ],
+        "target": [
+          987,
+          411
+        ]
+      },
+      {
+        "label": "Read the hint to pull and integrate remote changes before pushing again",
+        "bubble": [
+          556,
+          517
+        ],
+        "target": [
+          727,
+          471
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterlab-pull-merge",
+    "title": "Inspect staged remote work and complete the JupyterLab Git merge",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "Merging in main indicates a merge is still in progress",
+        "bubble": [
+          252,
+          130
+        ],
+        "target": [
+          111,
+          129
+        ]
+      },
+      {
+        "label": "Review the collaborator file listed under Staged",
+        "bubble": [
+          357,
+          247
+        ],
+        "target": [
+          144,
+          245
+        ]
+      },
+      {
+        "label": "Review the prepared merge message and choose Commit to complete this merge",
+        "bubble": [
+          834,
+          861
+        ],
+        "target": [
+          609,
+          859
+        ]
+      }
+    ]
+  },
+  {
+    "name": "github-pr-create",
+    "title": "Describe a tested branch change before creating a GitHub pull request",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "Check base main and compare add-wraparound-test before opening the pull request",
+        "bubble": [
+          544,
+          85
+        ],
+        "target": [
+          350,
+          23
+        ]
+      },
+      {
+        "label": "Describe the purpose of the regression check and report the test command and result",
+        "bubble": [
+          889,
+          395
+        ],
+        "target": [
+          400,
+          278
+        ]
+      },
+      {
+        "label": "Create pull request opens this branch change for review",
+        "bubble": [
+          860,
+          600
+        ],
+        "target": [
+          860,
+          539
+        ]
+      }
+    ]
+  },
+  {
+    "name": "github-pr-review",
+    "title": "Inspect the GitHub pull-request diff and review controls",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "Files changed opens the proposed file diff",
+        "bubble": [
+          720,
+          218
+        ],
+        "target": [
+          531,
+          242
+        ]
+      },
+      {
+        "label": "Read the added wraparound test: bearings 1 and 359 degrees should be separated by 2 degrees",
+        "bubble": [
+          851,
+          593
+        ],
+        "target": [
+          676,
+          534
+        ]
+      },
+      {
+        "label": "Mark inspected files Viewed and use Submit review when the review is ready",
+        "bubble": [
+          1166,
+          220
+        ],
+        "target": [
+          1077,
+          288
+        ]
+      }
+    ]
+  },
+  {
+    "name": "github-pr-merged",
+    "title": "Confirm the GitHub pull request was merged into main",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "Merged and the closed confirmation show the pull request has been integrated",
+        "bubble": [
+          48,
+          142
+        ],
+        "target": [
+          113,
+          30
+        ]
+      },
+      {
+        "label": "The timeline records merge commit 73a4eb4 into main",
+        "bubble": [
+          678,
+          80
+        ],
+        "target": [
+          398,
+          70
+        ]
+      }
+    ]
+  },
+  {
+    "name": "cline-review",
+    "title": "Review the Cline repair diff and explicitly captured pytest exit status",
+    "callout_scale": 1,
+    "callouts": [
+      {
+        "label": "Inspect the weighted_mean.py working-tree diff before accepting the repair",
+        "bubble": [
+          1190,
+          340
+        ],
+        "target": [
+          1305,
+          160
+        ]
+      },
+      {
+        "label": "Check inverse-variance weights and the scalar weighted-sum return formula",
+        "bubble": [
+          2180,
+          1240
+        ],
+        "target": [
+          1790,
+          1282
+        ]
+      },
+      {
+        "label": "Read the captured run: 12 passed and explicitly printed PYTEST_EXIT=0; verify status when a tool banner disagrees",
+        "bubble": [
+          915,
+          800
+        ],
+        "target": [
+          375,
+          834
+        ]
+      },
+      {
+        "label": "Check the CPD Qwen model selector used for this Cline review",
+        "bubble": [
+          1230,
+          1450
+        ],
+        "target": [
+          572,
+          1492
+        ]
+      }
+    ]
+  }
+]

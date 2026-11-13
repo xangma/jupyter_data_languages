@@ -1,13 +1,14 @@
-# Git session screenshots
+# Teaching screenshots and editable callouts
 
-These are actual captures of the built-in Git interface in Microsoft Visual
+The original Git captures show the built-in interface in Microsoft Visual
 Studio Code 1.141.0 on macOS, made on 13 November 2026. They show a disposable
 copy of the Session 2 bearing exercise, with synthetic author identity
 `PhD Student <student@example.org>` and no credentials or research data.
 Third-party extensions were temporarily disabled in the capture window.
 Window layout and font size were adjusted for reading in the book; no controls,
-code or history were fabricated or composited. The six beginner figures add
-numbered vector annotations over the unchanged captures, as described below.
+code or history were fabricated or composited. Every displayed figure now has numbered vector annotations over its unchanged
+capture. Later additions use the installed editor/desktop apps and CPD browser
+interfaces, as documented below.
 
 | File | Captured state |
 | --- | --- |
@@ -48,7 +49,9 @@ UI. The wraparound test was added and saved in the editor. State was checked
 against Git directly. Graph's historical A markers describe files in the
 selected commit; they are separate from pending Changes.
 
-Edit labels and pixel coordinates in [callouts.json](callouts.json), then run
+Edit labels and pixel coordinates in [callouts.json](callouts.json),
+[legacy-callouts.json](legacy-callouts.json) or
+[completion-callouts.json](completion-callouts.json), then run
 from the course root using its locked environment (Pillow comes with Matplotlib):
 
 ```bash
@@ -104,67 +107,115 @@ MyST `tab-set` has `Git commands`, `VS Code` and `JupyterLab on CPD` items with
 matching `:sync:` keys (`git-command`, `vscode`, `jupyterlab`). Keep a complete
 set in one cell. [MyST's tab documentation](https://mystmd.org/guide/dropdowns-cards-and-tabs#tabs)
 describes synchronization. These tabs also render inside CPD's MyST-enabled
-JupyterLab notebooks. The book synchronizes across all ten sets; JupyterLab's
+JupyterLab notebooks. The book synchronizes across its interface tab sets; JupyterLab's
 renderer synchronizes within a Markdown cell, so select the interface again in
 the next cell. Students perform each action once in their chosen
 interface; common setup and test commands sit outside the alternatives.
 
 
-## Lecture 3: Jupyter AI review
+## Completed sharing and setup walkthroughs
 
-`jupyter-ai-review.jpg` is a real 1682 × 908 CPD browser capture made on
-13 November 2026, with Jupyter AI 3.2.0 and OpenCode 1.18.34 using the prepared
-`cpd/qwen3.8` model. It shows the proposed new `test_student_checks.py` in the
-isolated weighted-mean exercise, before one-time approval. The numbers were
-independently derived and supplied in the prompt; the agent drafted test syntax.
-No controls, file contents or model output were fabricated or composited.
-The SVG embeds the unchanged JPEG and adds the manifest's editable callouts.
-The viewport was unchanged. No credentials or private research data are shown.
+These additional captures were made on 13 November 2026. The VS Code examples
+use VS Code Insiders; JupyterLab uses the existing CPD Standard server and its
+installed Git extension. New Git practice repositories use synthetic identities
+`Classroom Researcher <classroom@example.invalid>` and
+`Classroom Collaborator <partner@example.invalid>`.
 
-The named-file read, new test-file write, focused tests and subsequent repair
-are real tool actions with one-time decisions in the classroom validation.
-The lesson keeps the scientific acceptance criteria common to all six routes.
-
-
-## Lecture 3: graphical agent routes
-
-Five further captures were made on 13 November 2026 from installed graphical
-apps, using separate synthetic weighted-mean practice folders. The sixth route
-uses the CPD Jupyter AI capture above. The raw JPEGs are unchanged; each matching
-SVG embeds its exact JPEG bytes and adds three editable numbered callouts.
-No controls, results or agent responses were fabricated or composited.
-
-| Capture | Observed state |
+| Capture stem | Actual state |
 | --- | --- |
-| `codex-editor-plan` | Codex in VS Code Insiders, named practice function, returned five-bullet plan, Work locally and Ask for approval |
-| `claude-desktop-modes` | Claude Desktop Code, local folder and branch, Plan/Manual menu, unsent inspection draft; no completed agent run is claimed |
-| `antigravity-desktop-plan` | Antigravity Desktop returned advice, local project and Request Review preset |
-| `cline-editor-plan` | Cline 4.1.26 in VS Code Insiders, Plan selected, Auto-approve None, paused command request and practice code |
-| `opencode-desktop-plan` | OpenCode Desktop, local practice project, returned diagnosis, Plan/Big Pickle selectors and Toggle review |
+| `vscode-remote-controls` | Pull, Push and Fetch menu; Pull has created a merge, with zero incoming and two outgoing commits before Push |
+| `vscode-push-rejected` | Real non-fast-forward rejection dialog; Show Command Output reveals Git's error |
+| `jupyterlab-remote-controls` | Current repository/main branch and ordinary Pull/Push menu actions; no Fetch button is claimed |
+| `jupyterlab-push-rejected` | Real rejected push and integration hint from the classroom bare remote |
+| `jupyterlab-pull-merge` | Pull succeeded but left `MERGE_HEAD` and the collaborator file staged; review/test/Commit was still required |
+| `github-pr-create` | Prepared title, purpose and local validation, `main` as base and `add-wraparound-test` as comparison |
+| `github-pr-review` | Actual Files changed view of the new wraparound assertion; no review was requested from another person |
+| `github-pr-merged` | The synthetic pull request merged into main; a local clone still needs fetching/pulling |
+| `jupyterhub-signin` | Real unauthenticated GitHub sign-in page |
+| `jupyterhub-workspaces` | Standard and Python PhD book entry points, plus separate-workspace/resource-change guidance |
+| `jupyterlab-kernel-choice` | Python PhD (locked) selected for an isolated notebook; preferred-kernel setting unchecked |
+| `cline-cpd-settings` | OpenAI Compatible, the CPD endpoint and the advertised Qwen model; access field masked by the app |
 
-The Cline capture illustrates its GUI using an existing Qwen 3.8 provider. That
-provider was preserved: this capture does not demonstrate CPD inference. The
-course setup separately specifies the public CPD endpoint and its advertised
-`qwen3-8-27b-mtp-ud-q4-k-xl` model ID. The hosted Jupyter AI configuration uses
-`cpd/qwen3.8`. OpenCode Desktop's installed Big Pickle model is also an example,
-not a claim that the laptop app inherited CPD's hosted configuration.
+Both Git interfaces reproduced a rejected push. After integration, the bearing
+checks passed and GUI Push updated the classroom remote. The JupyterLab case
+required completing the staged merge before pushing; “Successfully pulled” did
+not mean the merge commit had been recorded. A fresh collaborator check verified
+the shared history. The GitHub screenshots use the private synthetic
+`xangma/python-phd-git-example` repository, pull request 1, with two local tests
+passing. Its Checks count of zero is not CI evidence or a correctness guarantee.
 
-A pending command is a proposal, not executed evidence. Cline requested a command
-despite an inspection-only prompt; it was left unapproved and the task stopped.
-Claude's local trial did not start responding and was stopped; the capture
-therefore documents setup only. Codex, Antigravity and OpenCode returned plans.
-The complete CPD file-edit/test workflow was verified separately through Jupyter
-AI/OpenCode, including an independent rerun with 12 passing checks and unchanged
-tests. Native app screenshots retain their normal window layout and resolution.
+The kernel choice was applied only to the isolated capture notebook. A real cell
+reported `/opt/course/.venv/bin/python` and computed `1 + 1 == 2`. The existing
+Standard server was retained. The CPU/GPU launch form is conditional on a stopped
+server; the workspace capture shows the actual entry points without stopping
+Standard merely for a screenshot.
 
+The four older `.png` sources contain JPEG bytes. Their names and bytes are
+retained; their new SVG wrappers use the encoding detected from the image header.
+The renderer also accepts genuine PNG captures and validates bounds, filenames,
+MIME type and duplicate names. The overlay never replaces or invents UI content.
 
-## Jupyter AI in the first planning tab
+## Lecture 3: six graphical agent workflows
 
-`jupyter-ai-plan.jpg` is an additional real CPD capture from 13 November 2026,
-1682 × 860 pixels. It shows a separate synthetic practice folder, three named
-file reads approved with **Allow once**, the returned diagnosis/plan, and
-**OpenCode → CPD Qwen → plan** in the chat toolbar. The capture uses an isolated
-JupyterLab workspace on the existing student server; no code edit or command
-execution was authorised. The raw capture is unchanged, with three editable
-callouts in the corresponding SVG. The first lesson tab uses this planning
-image; the later test-writing tab retains `jupyter-ai-review.svg`.
+All captures use synthetic copies of the weighted-mean exercise. The agent
+interface is a desktop app or editor panel. Commands visible in tool cards or
+integrated terminals prepare/check the work; they are not agent CLI sessions.
+Native window and browser capture sizes are retained.
+
+| Route | Inspection/plan | Independent test file | Repair and result |
+| --- | --- | --- | --- |
+| Codex editor integration | `codex-editor-plan` | `codex-tests` | `codex-review` |
+| Claude Code editor integration | `claude-editor-plan` | `claude-tests` | `claude-review` |
+| Antigravity desktop | `antigravity-desktop-plan` | `antigravity-tests` | `antigravity-review` |
+| Cline with CPD Qwen | `cline-editor-plan` | `cline-tests` | `cline-review` |
+| OpenCode Desktop | `opencode-desktop-plan` | `opencode-tests` | `opencode-review` |
+| CPD Jupyter AI/OpenCode | `jupyter-ai-plan` | `jupyter-ai-review` | `jupyter-ai-final-review` |
+
+The numbers were independently derived and supplied in the prompts; agents
+translated those criteria into test syntax. Each of the five native-agent
+workspaces extended the original nine checks with three student checks:
+11 failures/one pass against the broken starter, then 12 passing checks after
+the bounded repair. Both test files were independently compared with their Git
+tests checkpoint. Only `weighted_mean.py` changed during repair. Local captures
+use a prepared `.venv` link to the existing course interpreter; that link is
+capture preparation, not a step required in students' practice folders.
+
+The Claude test-file and `claude-repair-approval` images show genuine pending
+one-time write decisions. Cline's test-file preview likewise precedes Save.
+Codex and OpenCode applied in-scope workspace edits before review; no imaginary
+pre-edit approval gate is claimed. Antigravity's test capture is mid-task; its
+later repair capture includes the actual result and Request Review preset.
+
+Claude's first GUI attempt encountered an HTTPS connection failure; after the
+user restored connectivity, the editor GUI completed the plan, test-file and
+repair sequence. `claude-desktop-modes` is retained as an earlier setup-draft
+capture, but the current lesson uses the completed editor workflow instead.
+
+Cline's current captures use the real CPD public endpoint and
+`qwen3-8-27b-mtp-ud-q4-k-xl`. Its earlier non-CPD planning capture was replaced.
+The returned plan suggested a wrong test path; the lesson shows how to catch
+and correct that before allowing execution. Plan-to-Act session rebuilding also
+required a fresh task and a single explicit Send during capture. The final test capture includes an explicit `PYTEST_EXIT=0` after a tool-status
+ambiguity; an independent subprocess also returned zero with 12 passing tests.
+The original provider URL/model were restored after capture; no credential was
+replaced. Automatic approvals remain None.
+OpenCode Desktop's Big Pickle selection is an installed example, not an
+inheritance of CPD's hosted settings.
+
+Jupyter AI captures use JupyterLab 4.5.11, Jupyter AI 3.2.0 and OpenCode 1.18.34
+with the prepared `cpd/qwen3.8` route. The test-file preview shows actual
+Allow once/Reject controls. The final figure reopens the original saved
+classroom conversation beside the native Git diff from tests checkpoint
+`ac15c0debf947dd333e388753a3e63c94f341d59` to accepted repair
+`f4970163fc39869c2a3c3aa95b7023832597699b`. It is a saved report, not a newly
+executed chat turn. The exact Git bundle was restored in an isolated CPD folder
+and independently rerun with 12 passing tests before publication. No model
+response, tool result or file diff was fabricated or composited.
+
+Each SVG embeds the exact original capture and exposes editable numbered groups
+with an accessible title/description. Keep blank lines before Markdown images
+so MyST renders them as block figures, and preserve the numbered caption and
+full-size link. Lecture 3 uses `agent-codex`, `agent-claude`, `agent-agy`,
+`agent-cline`, `agent-opencode` and `agent-jupyterai` synchronization keys. The
+book synchronizes the three phases; JupyterLab may require selecting a tab
+again in the next Markdown cell.

@@ -9,11 +9,26 @@ are enough. VS Code is optional.
 Open [the Python PhD book](https://icg-cpd-cluster.port.ac.uk/python-phd/) and
 choose **Connect to JupyterHub**. Sign in with your enrolled GitHub account.
 Preparing the course workspace can take a few minutes on the first visit.
+
+![JupyterHub sign-in with the GitHub button highlighted](../book/screenshots/jupyterhub-signin.svg)
+
+[Open full-size screenshot](../book/screenshots/jupyterhub-signin.svg)
+
+**Sign in:** **1** opens GitHub authentication. Use your enrolled account.
+
 On a notebook page, start the compute environment and run cells from the top.
 For Git, a terminal or editing files, open the connection menu and choose
 **Open this notebook in JupyterHub**. Your workspace contains the course checkout. The **Git** sidebar is already
 enabled in CPD JupyterLab. Session 2 has matching **Git commands**, **VS Code**
 and **JupyterLab on CPD** tabs; choose one route for each action.
+
+![JupyterHub workspace choices with Standard and the Python PhD book highlighted](../book/screenshots/jupyterhub-workspaces.svg)
+
+[Open full-size screenshot](../book/screenshots/jupyterhub-workspaces.svg)
+
+**Choose the course workspace:** **1** opens **Standard** in JupyterLab;
+**2** opens the **Python PhD book**. **3** explains that workspaces keep separate
+files and resource changes require saving and stopping Standard first.
 
 If access is denied, ask the instructor to check your existing CPD enrolment;
 creating a GitHub account alone does not grant access. Disconnecting the book
@@ -21,6 +36,19 @@ does not stop your server: use JupyterHub's control panel to stop your standard
 server when finished. Your files remain in your workspace. PhD notebooks use the
 **Python PhD (locked)** kernel in the same workspace as your general work.
 CPU and shared-GPU server options are available; this course does not require a GPU.
+
+In JupyterLab, select the kernel name at the notebook's top right. Choose
+**Python PhD (locked)** under **Start python Kernel**, then **Select**. Choose a
+new kernel for your notebook rather than connecting to another open notebook's
+running kernel.
+
+![JupyterLab Select Kernel dialog with Python PhD locked selected](../book/screenshots/jupyterlab-kernel-choice.svg)
+
+[Open full-size screenshot](../book/screenshots/jupyterlab-kernel-choice.svg)
+
+**Match the interpreter:** **1** selects the course kernel; **2** confirms it.
+**3** leaves the global preferred-kernel option unchecked. In a cell, run
+`import sys; print(sys.executable)`; CPD should report `/opt/course/.venv/bin/python`.
 
 ## Install locally instead
 

@@ -10,13 +10,28 @@ from xml.sax.saxutils import escape
 from PIL import Image
 
 
+def filename(value: str) -> str:
+    if (not isinstance(value, str) or not value or value in {".", ".."}
+            or Path(value).name != value or "\\" in value):
+        raise ValueError(f"Expected a filename: {value!r}")
+    return value
+
+
 def render(root: Path, item: dict) -> str:
-    source = root / f"{item['name']}.jpg"
+    name = filename(item["name"])
+    source = root / filename(item.get("source", f"{name}.jpg"))
+    if source.suffix.lower() not in {".jpg", ".jpeg", ".png"}:
+        raise ValueError(f"Unsupported capture format: {source.name}")
     raw = source.read_bytes()
     with Image.open(source) as capture:
-        if capture.format != "JPEG":
-            raise ValueError(f"Not a JPEG: {source.name}")
+        # Some older .png captures contain JPEG bytes: trust the image header.
+        capture_format = capture.format
+        mime_type = {"JPEG": "image/jpeg", "PNG": "image/png"}.get(capture_format)
+        if mime_type is None:
+            raise ValueError(f"Unsupported capture format: {source.name}")
         width, height = capture.size
+    if item.get("mime_type", mime_type) != mime_type:
+        raise ValueError(f"MIME type does not match capture: {source.name}")
     description = " ".join(
         f"{i}: {callout['label']}." for i, callout in enumerate(item["callouts"], 1)
     )
@@ -31,9 +46,9 @@ def render(root: Path, item: dict) -> str:
         f'viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
         f'<title id="title">{escape(item["title"])}</title>',
         f'<desc id="desc">{escape(description)}</desc>',
-        f'<!-- Original JPEG SHA-256: {hashlib.sha256(raw).hexdigest()} -->',
+        f'<!-- Original {capture_format} SHA-256: {hashlib.sha256(raw).hexdigest()} -->',
         '<image id="original-capture" width="100%" height="100%" '
-        f'href="data:image/jpeg;base64,{base64.b64encode(raw).decode()}"/>',
+        f'href="data:{mime_type};base64,{base64.b64encode(raw).decode()}"/>',
         '<g id="editable-callouts" font-family="Arial, Helvetica, sans-serif" '
         f'font-size="{size(42)}" font-weight="700" text-anchor="middle">',
     ]
@@ -61,6 +76,16 @@ def main() -> None:
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1] / "book" / "screenshots"
     items = json.loads((root / "callouts.json").read_text())
+    for extra in ("legacy-callouts.json", "completion-callouts.json"):
+        manifest = root / extra
+        if manifest.exists():
+            items.extend(json.loads(manifest.read_text()))
+    names = set()
+    for item in items:
+        name = filename(item["name"]).casefold()
+        if name in names:
+            raise SystemExit(f"Duplicate screenshot name: {item['name']}")
+        names.add(name)
     for item in items:
         path = root / f"{item['name']}.svg"
         expected = render(root, item)

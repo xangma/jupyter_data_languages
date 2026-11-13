@@ -55,21 +55,38 @@ against the tests checkpoint. Use **Stop** to interrupt active work.
 [Editor integration](https://learn.chatgpt.com/docs/codex/ide),
 [review pane](https://learn.chatgpt.com/docs/code-review),
 [permissions](https://learn.chatgpt.com/docs/permission-modes).
+
+![Codex editor workspace, approval controls and completed inspection plan](../book/screenshots/codex-editor-plan.svg)
+
+[Open full-size screenshot](../book/screenshots/codex-editor-plan.svg)
+
+**Check before sending:** **1** names the practice files; **2** shows local work
+and approval controls; **3** is the returned plan to review.
 ````
 
 ````{tab-item} Claude Code
 :sync: agent-claude
 
-Open **Claude Desktop → Code**. Choose a local environment, practice folder,
-existing model and **Plan** using the controls beside the prompt.
+Open the practice folder in VS Code and select the **Claude Code** panel.
+Choose an existing model and **Plan** using the permission control beside the
+prompt. The screenshots use Claude Code's graphical editor integration.
 
 After plan review, select **Manual** for execution. Read each edit diff or
 command request before accepting or rejecting it; existing allow rules affect
-which requests appear. Click **Changes**, or the line counts in the Changes
-card, for the diff. Expand tool cards for execution results. Click stop to
-interrupt; select the saved session in the sidebar to return. Plan and Manual
+which requests appear. Review the proposed file in the editor and use **Yes**
+for that one edit, or **No** to correct its scope. Expand tool cards for execution
+results and use Source Control for the resulting Git diff. Click stop to
+interrupt; reopen the saved session from its history. Plan and Manual
 are distinct from enforced shell containment.
-[Desktop guide](https://code.claude.com/docs/en/desktop).
+[Editor guide](https://code.claude.com/docs/en/vs-code).
+
+![Claude Code editor with a completed inspection plan and retained Plan mode](../book/screenshots/claude-editor-plan.svg)
+
+[Open full-size screenshot](../book/screenshots/claude-editor-plan.svg)
+
+**Review before editing:** **1** checks the numerical example; **2** lists input
+validation; **3** confirms the session stayed in Plan. **No, keep planning** in
+the plan-approval dialog keeps that boundary; choose Manual when ready to edit.
 ````
 
 ````{tab-item} Antigravity
@@ -89,6 +106,13 @@ Expand execution details; use **Cancel** to stop before correcting scope.
 [Setup](https://antigravity.google/docs/getting-started),
 [planning](https://antigravity.google/docs/plan),
 [permissions](https://antigravity.google/docs/agent-settings).
+
+![Antigravity graphical project, returned advice and Request Review control](../book/screenshots/antigravity-desktop-plan.svg)
+
+[Open full-size screenshot](../book/screenshots/antigravity-desktop-plan.svg)
+
+**Check the project and permissions:** **1** identifies the workspace; **2** is
+advice to verify independently; **3** selects **Request Review**.
 ````
 
 ````{tab-item} Cline + Qwen
@@ -101,6 +125,16 @@ Open the practice folder in VS Code. In Cline settings select **OpenAI Compatibl
 | Base URL | `https://icg-cpd-cluster.port.ac.uk/v1` |
 | Model ID | `qwen3-8-27b-mtp-ud-q4-k-xl` (CPD Qwen 3.8 27B) |
 | Access | Instructor's current access settings; keep any credential out of prompts |
+
+![Cline OpenAI Compatible configuration with the CPD endpoint and Qwen model](../book/screenshots/cline-cpd-settings.svg)
+
+[Open full-size screenshot](../book/screenshots/cline-cpd-settings.svg)
+
+**Configure the actual connection:** **1** selects **OpenAI Compatible**;
+**2** is the Base URL field (use the full URL in the table) and masked access
+field; **3** selects the course model ID. These settings were used for the
+lesson's CPD-backed Cline examples. Provider settings may be shared between
+editor profiles; check the selected connection before changing it.
 
 Use the model ID advertised by the course endpoint; the hosted Jupyter AI alias
 `cpd/qwen3.8` is a different configuration. Confirm access and capability settings
@@ -135,6 +169,13 @@ desktop release.
 [OpenCode Desktop](https://dev.opencode.ai/desktop),
 [agents](https://opencode.ai/docs/agents),
 [permissions](https://opencode.ai/docs/permissions).
+
+![OpenCode Desktop with the practice project and graphical Plan selector](../book/screenshots/opencode-desktop-plan.svg)
+
+[Open full-size screenshot](../book/screenshots/opencode-desktop-plan.svg)
+
+**Check the session:** **1** identifies the project; **2** selects Plan/Build;
+**3** opens the review pane. Use your prepared model; this capture shows Big Pickle.
 ````
 
 ````{tab-item} Jupyter AI
@@ -154,6 +195,13 @@ and command result. **Stop generating** interrupts the turn; reopen the saved
 chat to resume. If only chat is available, request a proposed patch, review and
 apply it yourself, and record that fallback.
 [Jupyter AI agent chat](https://jupyter-ai.readthedocs.io/en/latest/users/chat/index.html).
+
+![CPD Jupyter AI with named practice files and the OpenCode CPD Qwen plan controls](../book/screenshots/jupyter-ai-plan.svg)
+
+[Open full-size screenshot](../book/screenshots/jupyter-ai-plan.svg)
+
+**Check the hosted route:** **1** names the practice files; **2** shows scoped
+reads and the plan; **3** identifies OpenCode, CPD Qwen and plan mode.
 ````
 `````
 

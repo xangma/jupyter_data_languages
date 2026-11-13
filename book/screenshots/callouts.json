@@ -935,39 +935,39 @@
   },
   {
     "name": "cline-editor-plan",
-    "title": "Inspect a paused Cline request in VS Code with automatic actions off",
+    "title": "Review a CPD Qwen repair plan in Cline before switching to Act",
     "callouts": [
       {
-        "label": "Plan is selected; switch to Act only after reviewing the plan",
+        "label": "Plan is selected and Auto-approve is None; review before switching to Act",
         "bubble": [
-          1150,
-          1488
-        ],
-        "target": [
-          995,
-          1492
-        ]
-      },
-      {
-        "label": "Auto-approve is None; inspect the pending command and its scope",
-        "bubble": [
-          1100,
-          1145
-        ],
-        "target": [
-          270,
-          1208
-        ]
-      },
-      {
-        "label": "Check the model/provider selector against the course CPD setup",
-        "bubble": [
-          720,
-          1415
-        ],
-        "target": [
-          438,
+          1190,
           1490
+        ],
+        "target": [
+          1014,
+          1490
+        ]
+      },
+      {
+        "label": "Check the proposed inverse-variance formula against the hand calculation",
+        "bubble": [
+          1190,
+          795
+        ],
+        "target": [
+          982,
+          794
+        ]
+      },
+      {
+        "label": "Catch the incorrect exercises/test_weighted_mean.py path before approving this command",
+        "bubble": [
+          1190,
+          996
+        ],
+        "target": [
+          690,
+          944
         ]
       }
     ]

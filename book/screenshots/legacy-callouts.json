@@ -1,0 +1,192 @@
+[
+  {
+    "name": "vscode-staging",
+    "source": "vscode-staging.png",
+    "mime_type": "image/jpeg",
+    "title": "Compare staged and unstaged versions of one file in VS Code",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "The selected snapshot is under Staged Changes",
+        "bubble": [
+          300,
+          467
+        ],
+        "target": [
+          212,
+          358
+        ]
+      },
+      {
+        "label": "The same file also has a later unstaged edit under Changes",
+        "bubble": [
+          92,
+          465
+        ],
+        "target": [
+          180,
+          420
+        ]
+      },
+      {
+        "label": "The Index diff includes the wraparound test selected for the next commit",
+        "bubble": [
+          1045,
+          275
+        ],
+        "target": [
+          710,
+          315
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-conflict",
+    "source": "vscode-conflict.png",
+    "mime_type": "image/jpeg",
+    "title": "Compare both inputs and edit the merge result in VS Code",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "README is listed under Merge Changes until its conflict is resolved",
+        "bubble": [
+          113,
+          463
+        ],
+        "target": [
+          195,
+          388
+        ]
+      },
+      {
+        "label": "Read both Incoming and Current versions before choosing the result",
+        "bubble": [
+          791,
+          191
+        ],
+        "target": [
+          851,
+          121
+        ]
+      },
+      {
+        "label": "Edit Result to preserve both degrees and shortest-arc meaning",
+        "bubble": [
+          1035,
+          587
+        ],
+        "target": [
+          754,
+          500
+        ]
+      },
+      {
+        "label": "Complete Merge stages the resolved file; review, test and commit afterward",
+        "bubble": [
+          948,
+          685
+        ],
+        "target": [
+          1060,
+          738
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-undo",
+    "source": "vscode-undo.png",
+    "mime_type": "image/jpeg",
+    "title": "Inspect retained work after Undo Last Commit in VS Code",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "README remains staged after undoing the private commit",
+        "bubble": [
+          326,
+          453
+        ],
+        "target": [
+          195,
+          358
+        ]
+      },
+      {
+        "label": "The staged diff retains the radians line so it can be corrected",
+        "bubble": [
+          1071,
+          330
+        ],
+        "target": [
+          854,
+          255
+        ]
+      },
+      {
+        "label": "The recovery-lab branch has moved back while other history remains",
+        "bubble": [
+          453,
+          616
+        ],
+        "target": [
+          292,
+          577
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-revert",
+    "source": "vscode-revert.png",
+    "mime_type": "image/jpeg",
+    "title": "Inspect a shared mistake followed by its revert in VS Code",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "The new revert is a separate commit at the top of Graph",
+        "bubble": [
+          275,
+          197
+        ],
+        "target": [
+          260,
+          265
+        ]
+      },
+      {
+        "label": "The original shared mistake remains in the recorded history",
+        "bubble": [
+          584,
+          318
+        ],
+        "target": [
+          443,
+          298
+        ]
+      },
+      {
+        "label": "The log shows local and practice remote branches at the new revert",
+        "bubble": [
+          1122,
+          643
+        ],
+        "target": [
+          1006,
+          545
+        ]
+      },
+      {
+        "label": "Check the README still records the corrected angle units",
+        "bubble": [
+          1056,
+          361
+        ],
+        "target": [
+          829,
+          286
+        ]
+      }
+    ]
+  }
+]
