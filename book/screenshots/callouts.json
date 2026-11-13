@@ -1,0 +1,280 @@
+[
+  {
+    "name": "vscode-basics-workspace",
+    "title": "Find your way around the Git practice workspace",
+    "callouts": [
+      {
+        "label": "The git-practice project folder in Explorer",
+        "bubble": [
+          610,
+          380
+        ],
+        "target": [
+          450,
+          380
+        ]
+      },
+      {
+        "label": "The editor containing angle.py",
+        "bubble": [
+          1230,
+          145
+        ],
+        "target": [
+          1095,
+          145
+        ]
+      },
+      {
+        "label": "The Source Control icon in the Activity Bar",
+        "bubble": [
+          90,
+          335
+        ],
+        "target": [
+          74,
+          402
+        ]
+      },
+      {
+        "label": "The integrated terminal, operating on this same repository",
+        "bubble": [
+          1440,
+          910
+        ],
+        "target": [
+          1190,
+          910
+        ]
+      },
+      {
+        "label": "The current branch indicator",
+        "bubble": [
+          620,
+          1470
+        ],
+        "target": [
+          235,
+          1608
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-basics-untracked",
+    "title": "Four saved starter files before the first commit",
+    "callouts": [
+      {
+        "label": "Changes lists the four new files",
+        "bubble": [
+          540,
+          585
+        ],
+        "target": [
+          420,
+          585
+        ]
+      },
+      {
+        "label": "U means untracked",
+        "bubble": [
+          815,
+          775
+        ],
+        "target": [
+          699,
+          775
+        ]
+      },
+      {
+        "label": "Plus stages a file for the next commit",
+        "bubble": [
+          600,
+          1000
+        ],
+        "target": [
+          600,
+          742
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-basics-staged",
+    "title": "Four staged files and a message ready for the first commit",
+    "callouts": [
+      {
+        "label": "Staged Changes is the selected snapshot",
+        "bubble": [
+          820,
+          645
+        ],
+        "target": [
+          710,
+          645
+        ]
+      },
+      {
+        "label": "Minus unstages a file while keeping its working contents",
+        "bubble": [
+          600,
+          1110
+        ],
+        "target": [
+          600,
+          800
+        ]
+      },
+      {
+        "label": "A message explains the checkpoint",
+        "bubble": [
+          820,
+          420
+        ],
+        "target": [
+          700,
+          420
+        ]
+      },
+      {
+        "label": "Commit records the staged snapshot locally",
+        "bubble": [
+          820,
+          565
+        ],
+        "target": [
+          700,
+          565
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-basics-committed",
+    "title": "The first local commit and a clean working tree",
+    "callouts": [
+      {
+        "label": "Changes has no pending files",
+        "bubble": [
+          590,
+          620
+        ],
+        "target": [
+          455,
+          600
+        ]
+      },
+      {
+        "label": "Graph shows the commit and the files it contains",
+        "bubble": [
+          820,
+          810
+        ],
+        "target": [
+          710,
+          810
+        ]
+      },
+      {
+        "label": "Git status confirms a clean working tree",
+        "bubble": [
+          1930,
+          1110
+        ],
+        "target": [
+          1780,
+          1110
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-basics-diff",
+    "title": "Review the saved wraparound test before staging",
+    "callouts": [
+      {
+        "label": "M marks test_angle.py as modified",
+        "bubble": [
+          800,
+          650
+        ],
+        "target": [
+          699,
+          650
+        ]
+      },
+      {
+        "label": "Green lines with plus signs are additions to the working file",
+        "bubble": [
+          2180,
+          920
+        ],
+        "target": [
+          2180,
+          780
+        ]
+      },
+      {
+        "label": "Plus stages this reviewed file",
+        "bubble": [
+          600,
+          945
+        ],
+        "target": [
+          600,
+          680
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vscode-basics-branch",
+    "title": "The current branch, branch picker and unchanged starting commit",
+    "callouts": [
+      {
+        "label": "The status bar names the current branch",
+        "bubble": [
+          310,
+          1510
+        ],
+        "target": [
+          310,
+          1610
+        ]
+      },
+      {
+        "label": "The branch picker can create a branch or switch to an existing one",
+        "bubble": [
+          2030,
+          160
+        ],
+        "target": [
+          1890,
+          160
+        ]
+      },
+      {
+        "label": "Both branch names initially point to the same short commit ID",
+        "bubble": [
+          2030,
+          410
+        ],
+        "target": [
+          1040,
+          410
+        ]
+      },
+      {
+        "label": "Graph marks the checked-out branch",
+        "bubble": [
+          820,
+          810
+        ],
+        "target": [
+          710,
+          810
+        ]
+      }
+    ]
+  }
+]
