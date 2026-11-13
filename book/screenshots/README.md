@@ -156,3 +156,15 @@ therefore documents setup only. Codex, Antigravity and OpenCode returned plans.
 The complete CPD file-edit/test workflow was verified separately through Jupyter
 AI/OpenCode, including an independent rerun with 12 passing checks and unchanged
 tests. Native app screenshots retain their normal window layout and resolution.
+
+
+## Jupyter AI in the first planning tab
+
+`jupyter-ai-plan.jpg` is an additional real CPD capture from 13 November 2026,
+1682 × 860 pixels. It shows a separate synthetic practice folder, three named
+file reads approved with **Allow once**, the returned diagnosis/plan, and
+**OpenCode → CPD Qwen → plan** in the chat toolbar. The capture uses an isolated
+JupyterLab workspace on the existing student server; no code edit or command
+execution was authorised. The raw capture is unchanged, with three editable
+callouts in the corresponding SVG. The first lesson tab uses this planning
+image; the later test-writing tab retains `jupyter-ai-review.svg`.

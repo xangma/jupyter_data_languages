@@ -1010,5 +1010,45 @@
         ]
       }
     ]
+  },
+  {
+    "name": "jupyter-ai-plan",
+    "title": "Inspect the named practice files and review a plan in CPD Jupyter AI",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "Check the practice folder and the three named files",
+        "bubble": [
+          285,
+          245
+        ],
+        "target": [
+          174,
+          160
+        ]
+      },
+      {
+        "label": "Only these named file reads were allowed once; review the plan below",
+        "bubble": [
+          1390,
+          370
+        ],
+        "target": [
+          1220,
+          329
+        ]
+      },
+      {
+        "label": "Check OpenCode, the CPD Qwen model and plan mode in the toolbar",
+        "bubble": [
+          1085,
+          795
+        ],
+        "target": [
+          825,
+          795
+        ]
+      }
+    ]
   }
 ]
