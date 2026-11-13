@@ -62,3 +62,47 @@ retain those edits when regenerating. The `original-capture` image is unchanged;
 and each lesson figure has meaningful alt text and a nearby numbered caption.
 Use short leaders that leave the demonstrated controls and text visible. Replace
 both capture and coordinates when changing interface layout or screenshot size.
+
+## JupyterLab on CPD and synchronized interface tabs
+
+The ten `jupyterlab-git-*.jpg` files are real browser captures from CPD's
+standard CPU workspace on 13 November 2026: JupyterLab 4.5.11,
+`jupyterlab-git` 0.51.1, nbdime 4.0.2 and `jupyterlab-myst` 2.7.0.
+They use an independent copy of the same bearing exercise and the same
+synthetic author identity. No extension installation is needed on CPD.
+The viewport was unchanged. Seven captures omit unused space on the right
+(1100 × 860); the two diffs and merge editor retain both/all panes
+(1682 × 860). No interface elements were fabricated or composited.
+
+| Capture and annotated figure (same stem) | State |
+| --- | --- |
+| `jupyterlab-git-workspace` | File Browser, editor, Git sidebar, Git menu and current branch |
+| `jupyterlab-git-untracked` | Four new files under Untracked, U markers and Track all untracked files |
+| `jupyterlab-git-staged` | Four files selected in Staged, Unstage, Summary and Commit |
+| `jupyterlab-git-committed` | First locally recorded commit in History |
+| `jupyterlab-git-branch` | New Branch and two branch names at the same initial commit |
+| `jupyterlab-git-diff` | HEAD versus WORKING; saved wraparound edit before staging |
+| `jupyterlab-git-staging` | HEAD versus INDEX; one file in Staged and Changed, only wraparound staged |
+| `jupyterlab-git-conflict` | Actual three-pane README merge editor before resolution |
+| `jupyterlab-git-undo` | Soft reset in JupyterLab Terminal; original work retained staged |
+| `jupyterlab-git-revert` | Revert, original mistake, updated practice remote and passing tests |
+
+The first commits, branch creation, staging/unstaging, merge resolution and
+merge commit were exercised through the Git UI. Recovery commands ran in the
+JupyterLab Terminal; **Git → Push to Remote** sent the tested revert to the
+account-free bare remote. A fresh collaborator clone confirmed both the
+corrected README and preserved history. **Mark as resolved** saves and stages
+the merge result; it does not create the repository's merge commit.
+
+The matching SVGs embed the exact JPEGs with editable vector annotations.
+`callout_scale` in the manifest adjusts annotation size for the capture;
+coordinates remain in source pixels. The rendering commands above cover both
+interfaces.
+
+Edit each walkthrough directly in the notebook's Markdown cells. Each native
+MyST `tab-set` has `Git commands`, `VS Code` and `JupyterLab on CPD` items with
+matching `:sync:` keys (`git-command`, `vscode`, `jupyterlab`). Keep a complete
+set in one cell. [MyST's tab documentation](https://mystmd.org/guide/dropdowns-cards-and-tabs#tabs)
+describes synchronization. These tabs also render inside CPD's MyST-enabled
+JupyterLab notebooks. Students perform each action once in their chosen
+interface; common setup and test commands sit outside the alternatives.

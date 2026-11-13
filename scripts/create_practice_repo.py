@@ -24,7 +24,7 @@ def test_small_angles():
     assert angle_distance(10, 90) == 80
 ''')
 (target / "README.md").write_text("# Bearing separation practical\n\nAngles are inputs to a small helper.\n")
-(target / ".gitignore").write_text("__pycache__/\n.pytest_cache/\n.venv/\n")
+(target / ".gitignore").write_text("__pycache__/\n.pytest_cache/\n.ipynb_checkpoints/\n.venv/\n")
 if args.files_only:
     print(f"Created starter files in {target}\nRun git init -b main there, as shown in Session 2.")
 else:

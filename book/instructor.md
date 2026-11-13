@@ -59,9 +59,12 @@ sandbox and writes only the starter files. Students run `git init -b main`
 themselves and inspect its new, empty history. Read status before and after staging: untracked contents do not appear
 in ordinary `git diff`. Task A stages wraparound, then adds a full-turn test
 without restaging. Students should predict the next snapshot before unstaging,
-restaging and committing both tests. Use the same repository in VS Code rather
-than repeating each action in two interfaces. VS Code is optional; the CPD
-JupyterLab terminal and editor cover the core route.
+restaging and committing both tests. The ten synchronized tab groups offer
+command-line, VS Code and CPD JupyterLab Git routes. Students execute each
+action once in one repository. CPD files are separate from a local VS Code
+checkout; selecting a tab does not synchronize those copies. JupyterLab has the
+Git extension and MyST notebook renderer already installed. Practise opening
+the exercise folder in File Browser so the Git panel follows the right repository.
 
 The `practice` remote is a separate bare repository in `outputs/`; all students
 can push and practise remote recovery without a hosted account. Keep the
@@ -72,7 +75,10 @@ then push normally and clone as a collaborator. Ask students to find both the
 mistake and revert in the clone's log. Do not substitute a local reset for a
 shared revert. VS Code's Undo Last Commit does not check whether a commit was
 pushed. Complete Merge in its merge editor stages a file; the repository's
-merge still needs a commit. Saved screenshots show these exact states.
+merge still needs a commit. JupyterLab's **Mark as resolved** also writes and
+stages the result, followed by review, tests and Commit. For the account-free
+remote use **Git → Push to Remote** after its upstream is configured. Saved
+screenshots show these exact states.
 
 The angle helper starts correct. Task B adds independently justified equal and
 opposite-bearing tests on a fresh `edge-case-tests` branch, temporarily introduces

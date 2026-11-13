@@ -11,7 +11,9 @@ choose **Connect to JupyterHub**. Sign in with your enrolled GitHub account.
 Preparing the course workspace can take a few minutes on the first visit.
 On a notebook page, start the compute environment and run cells from the top.
 For Git, a terminal or editing files, open the connection menu and choose
-**Open this notebook in JupyterHub**. Your workspace contains the course checkout.
+**Open this notebook in JupyterHub**. Your workspace contains the course checkout. The **Git** sidebar is already
+enabled in CPD JupyterLab. Session 2 has matching **Git commands**, **VS Code**
+and **JupyterLab on CPD** tabs; choose one route for each action.
 
 If access is denied, ask the instructor to check your existing CPD enrolment;
 creating a GitHub account alone does not grant access. Disconnecting the book

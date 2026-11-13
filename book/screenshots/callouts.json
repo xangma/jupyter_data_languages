@@ -276,5 +276,493 @@
         ]
       }
     ]
+  },
+  {
+    "name": "jupyterlab-git-workspace",
+    "title": "Find the Git practice folder in JupyterLab on CPD",
+    "callout_scale": 0.5,
+    "callouts": [
+      {
+        "label": "File Browser and the git-practice folder",
+        "bubble": [
+          195,
+          395
+        ],
+        "target": [
+          123,
+          139
+        ]
+      },
+      {
+        "label": "Git sidebar icon",
+        "bubble": [
+          115,
+          455
+        ],
+        "target": [
+          16,
+          160
+        ]
+      },
+      {
+        "label": "Editor containing angle.py",
+        "bubble": [
+          790,
+          190
+        ],
+        "target": [
+          606,
+          115
+        ]
+      },
+      {
+        "label": "Git menu opens a terminal in this repository",
+        "bubble": [
+          748,
+          43
+        ],
+        "target": [
+          276,
+          14
+        ]
+      },
+      {
+        "label": "Current branch main",
+        "bubble": [
+          432,
+          791
+        ],
+        "target": [
+          331,
+          847
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterlab-git-untracked",
+    "title": "Four saved starter files are untracked in JupyterLab",
+    "callout_scale": 0.5,
+    "callouts": [
+      {
+        "label": "Untracked contains four new files",
+        "bubble": [
+          410,
+          350
+        ],
+        "target": [
+          105,
+          268
+        ]
+      },
+      {
+        "label": "U means untracked",
+        "bubble": [
+          393,
+          450
+        ],
+        "target": [
+          275,
+          368
+        ]
+      },
+      {
+        "label": "Track all untracked files stages the new files",
+        "bubble": [
+          407,
+          267
+        ],
+        "target": [
+          244,
+          268
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterlab-git-staged",
+    "title": "Prepare the first local commit in JupyterLab",
+    "callout_scale": 0.5,
+    "callouts": [
+      {
+        "label": "Staged contains the four added files",
+        "bubble": [
+          415,
+          332
+        ],
+        "target": [
+          98,
+          220
+        ]
+      },
+      {
+        "label": "Minus unstages while keeping working files",
+        "bubble": [
+          403,
+          219
+        ],
+        "target": [
+          244,
+          219
+        ]
+      },
+      {
+        "label": "Summary describes the checkpoint",
+        "bubble": [
+          413,
+          648
+        ],
+        "target": [
+          157,
+          650
+        ]
+      },
+      {
+        "label": "Commit records the staged snapshot locally",
+        "bubble": [
+          408,
+          781
+        ],
+        "target": [
+          139,
+          813
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterlab-git-committed",
+    "title": "The first commit appears in JupyterLab History",
+    "callout_scale": 0.5,
+    "callouts": [
+      {
+        "label": "History lists recorded commits",
+        "bubble": [
+          414,
+          184
+        ],
+        "target": [
+          219,
+          184
+        ]
+      },
+      {
+        "label": "The saved commit has its message and short ID",
+        "bubble": [
+          414,
+          316
+        ],
+        "target": [
+          159,
+          267
+        ]
+      },
+      {
+        "label": "The main label points to this commit",
+        "bubble": [
+          398,
+          246
+        ],
+        "target": [
+          111,
+          247
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterlab-git-branch",
+    "title": "Create and inspect a branch in JupyterLab",
+    "callout_scale": 0.5,
+    "callouts": [
+      {
+        "label": "Current Branch names test-wraparound",
+        "bubble": [
+          445,
+          147
+        ],
+        "target": [
+          123,
+          147
+        ]
+      },
+      {
+        "label": "New Branch creates a branch from a chosen base",
+        "bubble": [
+          447,
+          230
+        ],
+        "target": [
+          223,
+          230
+        ]
+      },
+      {
+        "label": "Both branch labels initially point to the same commit",
+        "bubble": [
+          451,
+          531
+        ],
+        "target": [
+          171,
+          481
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterlab-git-diff",
+    "title": "Review a saved unstaged edit in JupyterLab",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "Changed contains a modified test file",
+        "bubble": [
+          419,
+          345
+        ],
+        "target": [
+          273,
+          268
+        ]
+      },
+      {
+        "label": "HEAD versus WORKING compares the commit and working file",
+        "bubble": [
+          922,
+          349
+        ],
+        "target": [
+          1055,
+          101
+        ]
+      },
+      {
+        "label": "The added wraparound test is highlighted",
+        "bubble": [
+          1308,
+          330
+        ],
+        "target": [
+          1215,
+          217
+        ]
+      },
+      {
+        "label": "Plus stages this reviewed file",
+        "bubble": [
+          610,
+          293
+        ],
+        "target": [
+          252,
+          268
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterlab-git-staging",
+    "title": "One file has both staged and later unstaged changes in JupyterLab",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "The same file appears in Staged and Changed",
+        "bubble": [
+          419,
+          388
+        ],
+        "target": [
+          106,
+          294
+        ]
+      },
+      {
+        "label": "HEAD versus INDEX shows the selected snapshot",
+        "bubble": [
+          918,
+          349
+        ],
+        "target": [
+          1056,
+          101
+        ]
+      },
+      {
+        "label": "Only the wraparound test is staged; the full-turns edit is still outside the index",
+        "bubble": [
+          1322,
+          331
+        ],
+        "target": [
+          1214,
+          217
+        ]
+      },
+      {
+        "label": "Minus unstages the snapshot without discarding edits",
+        "bubble": [
+          612,
+          294
+        ],
+        "target": [
+          252,
+          244
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterlab-git-conflict",
+    "title": "Resolve both README facts in the JupyterLab merge editor",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "Conflicted identifies the README needing a decision",
+        "bubble": [
+          425,
+          325
+        ],
+        "target": [
+          146,
+          244
+        ]
+      },
+      {
+        "label": "Compare the facts in both side panes",
+        "bubble": [
+          1434,
+          293
+        ],
+        "target": [
+          1374,
+          163
+        ]
+      },
+      {
+        "label": "Edit Result to retain degrees and the shortest arc",
+        "bubble": [
+          993,
+          291
+        ],
+        "target": [
+          989,
+          163
+        ]
+      },
+      {
+        "label": "Mark as resolved saves and stages the edited result",
+        "bubble": [
+          1535,
+          347
+        ],
+        "target": [
+          1562,
+          74
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterlab-git-undo",
+    "title": "Undo a private commit while keeping its work staged in JupyterLab",
+    "callout_scale": 0.5,
+    "callouts": [
+      {
+        "label": "The private recovery-lab branch is checked out",
+        "bubble": [
+          157,
+          415
+        ],
+        "target": [
+          116,
+          147
+        ]
+      },
+      {
+        "label": "The README change remains staged",
+        "bubble": [
+          158,
+          517
+        ],
+        "target": [
+          119,
+          243
+        ]
+      },
+      {
+        "label": "The terminal performs one soft reset",
+        "bubble": [
+          782,
+          85
+        ],
+        "target": [
+          506,
+          83
+        ]
+      },
+      {
+        "label": "The staged diff still contains the work from the private commit",
+        "bubble": [
+          847,
+          421
+        ],
+        "target": [
+          527,
+          338
+        ]
+      }
+    ]
+  },
+  {
+    "name": "jupyterlab-git-revert",
+    "title": "The shared mistake and its reversal remain in JupyterLab History",
+    "callout_scale": 0.5,
+    "callouts": [
+      {
+        "label": "The new revert commit follows the mistake",
+        "bubble": [
+          403,
+          283
+        ],
+        "target": [
+          155,
+          280
+        ]
+      },
+      {
+        "label": "The mistaken commit remains in history",
+        "bubble": [
+          410,
+          344
+        ],
+        "target": [
+          165,
+          344
+        ]
+      },
+      {
+        "label": "The practice remote branch now points to the revert",
+        "bubble": [
+          770,
+          257
+        ],
+        "target": [
+          229,
+          250
+        ]
+      },
+      {
+        "label": "The tests passed before pushing the revert",
+        "bubble": [
+          843,
+          214
+        ],
+        "target": [
+          421,
+          173
+        ]
+      }
+    ]
   }
 ]

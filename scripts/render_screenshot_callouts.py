@@ -1,4 +1,4 @@
-"""Layer editable, numbered SVG callouts over unchanged VS Code captures."""
+"""Layer editable, numbered SVG callouts over unchanged interface captures."""
 
 import argparse
 import base64
@@ -20,6 +20,12 @@ def render(root: Path, item: dict) -> str:
     description = " ".join(
         f"{i}: {callout['label']}." for i, callout in enumerate(item["callouts"], 1)
     )
+    scale = item.get("callout_scale", 1)
+    if not 0 < scale <= 2:
+        raise ValueError(f"Invalid callout scale: {item['name']}")
+    def size(value: int) -> int:
+        return max(1, round(value * scale))
+    radius = size(36)
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
         f'viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
@@ -29,21 +35,21 @@ def render(root: Path, item: dict) -> str:
         '<image id="original-capture" width="100%" height="100%" '
         f'href="data:image/jpeg;base64,{base64.b64encode(raw).decode()}"/>',
         '<g id="editable-callouts" font-family="Arial, Helvetica, sans-serif" '
-        'font-size="42" font-weight="700" text-anchor="middle">',
+        f'font-size="{size(42)}" font-weight="700" text-anchor="middle">',
     ]
     for i, callout in enumerate(item["callouts"], 1):
         x, y = callout["bubble"]
         tx, ty = callout["target"]
-        if not (36 <= x <= width - 36 and 36 <= y <= height - 36
+        if not (radius <= x <= width - radius and radius <= y <= height - radius
                 and 0 <= tx <= width and 0 <= ty <= height):
             raise ValueError(f"Callout outside capture: {item['name']} #{i}")
         parts.extend([
             f'<g id="callout-{i}" aria-label="{escape(callout["label"], {chr(34): "&quot;"})}">',
-            f'<path d="M{x},{y} L{tx},{ty}" stroke="white" stroke-width="12"/>',
-            f'<path d="M{x},{y} L{tx},{ty}" stroke="#075985" stroke-width="6"/>',
-            f'<circle cx="{tx}" cy="{ty}" r="7" fill="#075985" stroke="white" stroke-width="2"/>',
-            f'<circle cx="{x}" cy="{y}" r="36" fill="#075985" stroke="white" stroke-width="4"/>',
-            f'<text x="{x}" y="{y + 14}" fill="white">{i}</text>',
+            f'<path d="M{x},{y} L{tx},{ty}" stroke="white" stroke-width="{size(12)}"/>',
+            f'<path d="M{x},{y} L{tx},{ty}" stroke="#075985" stroke-width="{size(6)}"/>',
+            f'<circle cx="{tx}" cy="{ty}" r="{size(7)}" fill="#075985" stroke="white" stroke-width="{size(2)}"/>',
+            f'<circle cx="{x}" cy="{y}" r="{radius}" fill="#075985" stroke="white" stroke-width="{size(4)}"/>',
+            f'<text x="{x}" y="{y + size(14)}" fill="white">{i}</text>',
             '</g>',
         ])
     return "\n".join(parts + ["</g>", "</svg>", ""])

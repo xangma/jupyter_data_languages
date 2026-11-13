@@ -40,6 +40,8 @@ VS Code's guides cover [Source Control](https://code.visualstudio.com/docs/sourc
 [remotes and synchronisation](https://code.visualstudio.com/docs/sourcecontrol/repos-remotes),
 [merge conflicts](https://code.visualstudio.com/docs/sourcecontrol/merge-conflicts)
 and [troubleshooting](https://code.visualstudio.com/docs/sourcecontrol/troubleshooting).
+For the CPD interface, see the [JupyterLab Git project and usage guide](https://github.com/jupyterlab/jupyterlab-git#usage).
+JupyterHub starts the server; JupyterLab provides the editor and Git panel.
 The course's [screenshot notes](https://github.com/xangma/jupyter_data_languages/blob/codex/phd-python-2026/book/screenshots/README.md) record the captured version
 and how the example states were created.
 
