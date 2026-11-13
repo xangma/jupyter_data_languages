@@ -104,5 +104,7 @@ MyST `tab-set` has `Git commands`, `VS Code` and `JupyterLab on CPD` items with
 matching `:sync:` keys (`git-command`, `vscode`, `jupyterlab`). Keep a complete
 set in one cell. [MyST's tab documentation](https://mystmd.org/guide/dropdowns-cards-and-tabs#tabs)
 describes synchronization. These tabs also render inside CPD's MyST-enabled
-JupyterLab notebooks. Students perform each action once in their chosen
+JupyterLab notebooks. The book synchronizes across all ten sets; JupyterLab's
+renderer synchronizes within a Markdown cell, so select the interface again in
+the next cell. Students perform each action once in their chosen
 interface; common setup and test commands sit outside the alternatives.
