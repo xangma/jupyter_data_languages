@@ -1,96 +1,103 @@
-# Validation — Git commands, VS Code and CPD JupyterLab
+# Validation — graphical coding-agent walkthroughs
 
-Checked on 13 November 2026. Published teaching/build source:
-`e4e97e91e7debbe0808c3eef0d6b58a207391b35` on `codex/phd-python-2026`.
-[Previous VS Code capture validation](https://github.com/xangma/jupyter_data_languages/blob/ab0ab1af78ad79d7366701e59682c458bd0f3d58/VALIDATION.md)
+Checked 13 November 2026. Published teaching/build source:
+`8a00ba9a34ddb37197412932bed14d7df711f008` on `codex/phd-python-2026`.
+[Previous Git walkthrough validation](https://github.com/xangma/jupyter_data_languages/blob/9e40c754a3f37a347920132c6e0d118fb09be557/VALIDATION.md)
 is retained in history.
 
 ## Implementation
 
-Ten native MyST tab groups pair Git commands with VS Code and CPD JupyterLab
-instructions: workspace, untracked files, staging, first commit, branches,
-unstaged diff, partial staging, merge conflict, private undo and shared revert.
-Ten real CPD captures add editable numbered SVG callouts, captions and alt text.
-All twenty screenshots have full-size links. The screenshot README and
-`callouts.json` document capture provenance and editing.
+Lecture 3 has three native, synchronized six-choice tab groups for Codex,
+Claude Code, Antigravity, Cline + Qwen, OpenCode and Jupyter AI. Matching setup
+tabs use graphical desktop/editor controls. Shared terminals prepare the
+workspace, run pytest and inspect Git; agent startup and interaction use GUIs.
+The scientific contract, independent expectations, test checkpoint, bounded
+repair and six-hour course structure remain unchanged.
 
-The book synchronizes the chosen interface across all ten groups. CPD's native
-MyST notebook renderer synchronizes within a Markdown cell; the introduction
-explains selecting the interface again in the next cell. This uses existing
-JupyterLab extensions and native tabs, without build wrappers or added runtime
-packages. Shared setup and tests remain outside the interface alternatives.
+Six real GUI captures have editable numbered SVG callouts, captions, alt text
+and full-size links. Five new desktop/editor captures accompany the CPD Jupyter
+AI edit-approval capture. The SVGs embed unchanged JPEG bytes. Provenance and
+editing instructions are in `book/screenshots/README.md` and `callouts.json`.
+All eighteen cell IDs, six code cells and source notebook metadata are preserved;
+source outputs remain empty.
 
-The practice helper now ignores JupyterLab's `.ipynb_checkpoints/`, so opening
-files leaves the intended four starter files visible. All eighteen notebook
-cell IDs, three code cells and runtime metadata are preserved, with empty
-source outputs. The three-session, six-hour structure remains unchanged.
+The public CPD provider advertises `qwen3-8-27b-mtp-ud-q4-k-xl`; the prepared
+hosted Jupyter AI/OpenCode configuration uses `cpd/qwen3.8`. Model inference and
+client file/command execution locations are explained separately.
 
 ## Tests and build
 
-- All 24 reference tests passed in the locked Python 3.13 environment.
-- All five notebooks executed in fresh kernels and empty working directories.
-  The final clarification changes Markdown only; code remains identical.
-- Both practice-helper modes produced four starter files, refused overwrites
-  and ignored an actual checkpoint file.
-- All sixteen annotated SVGs regenerate exactly, embed the original JPEG bytes
-  unchanged and have valid annotation bounds. The older four PNGs are retained.
-- Node 22.23.2 built all eleven pages strictly, including five notebook launch
-  routes and the existing Hub cold-start/hydration checks.
-- All three production Kustomize entrypoints rendered. All four CI checks
-  passed for each promotion: validate, storage-policy, registry-policy and
+- Strict eleven-page build passed with Node 22.23.2 and pinned MyST 1.12.0,
+  including the Hub cold-start checks and all five notebook launch routes.
+- All 22 annotated screenshot overlays regenerate exactly with valid bounds.
+- All six choices synchronized across all three live lesson groups without
+  horizontal overflow. All six setup choices rendered.
+- All six GUI screenshots loaded successfully both in the live book and in
+  CPD JupyterLab. A visual check confirmed the annotated book layout.
+- The actual Downloads link returned a notebook matching all eighteen published
+  cell IDs and source strings.
+- The preceding validation of the same scientific code passed all 24 reference
+  tests and executed all five notebooks in fresh local kernels. This GUI
+  follow-up changed prose and media only.
+- A fresh copy of the final published notebook executed all six code cells on
+  CPD's **Python PhD (locked)** kernel as `[1, 2, 3, 4, 5, 6]`, with zero error
+  outputs. Its intentional starter check observed nine failing tests as designed.
+- All three production Kustomize entrypoints and the book base rendered. All
+  four PR checks passed: validate, storage-policy, registry-policy and
   private-llama-source.
 
 ## Deployment
 
-[PR443](https://github.com/icg-innovation/space-k8s-gitops/pull/443) deployed the
-walkthrough. [PR444](https://github.com/icg-innovation/space-k8s-gitops/pull/444)
-then deployed the notebook synchronization clarification, merging as
-`1b25a2b03a8e25843f3ee8f4b4f04f5a20fc01c4`.
-Flux's source and apps Kustomization applied that exact revision with Ready=True.
-The book rolled out successfully with one updated, available replica at:
+[PR 446](https://github.com/icg-innovation/space-k8s-gitops/pull/446) merged as
+`02337b39aeb2ad432833f8fe7a33ee63a1e7b500`. Flux's source and apps Kustomization
+applied that revision with Ready=True; apps also reported Healthy=True. The
+static book has one available replica at:
 
-`ghcr.io/icg-innovation/phd-python-jupyterbook@sha256:e700b18e4f82c6dd35c8fef61ce028468841733b7fa7f4bc24b6a1906142f6f2`
+`ghcr.io/icg-innovation/phd-python-jupyterbook@sha256:72166c8fd309c7004fa212e4abc4d39e2708dd0f8e5e3a4b63e8bf884210844e`
 
-Only the static book image and registry inventory changed. The standard
-notebook runtime and JupyterHub integration are retained.
+The live page serves the graphical lesson and all six images. Only the static
+book digest and registry inventory changed. The JupyterHub integration and
+standard runtime remain at:
 
-## Observed student workflow
+`ghcr.io/icg-innovation/phd-python-notebook:standard-387e9ee@sha256:cac45236652a82697f001f805b9667b1d2541cc66e059a0a1a1d2c307b747428`
 
-- On the live CPD book, choosing any of the three interfaces selects it in all
-  ten groups. All screenshots and captions are present, with no horizontal
-  page overflow. All 23 Git media assets returned HTTP 200, the expected MIME
-  type and exactly the validated build bytes.
-- The actual book's **Open this notebook in CPD JupyterHub** action reused the
-  standard CPU workspace and pulled the final source. Its cell IDs, code and
-  clarified introduction match the publication source. All ten JupyterLab
-  screenshots render in the notebook, and the observed per-cell tab behavior
-  matches the instructions.
-- **Run All Cells** on **Python PhD (locked)** completed the three code cells
-  as `[1]`, `[2]`, `[3]`, including all 17 scientific reference checks in 0.55s.
-- An independent practice repository exercised real JupyterLab GUI staging,
-  unstaging, branch creation and commits. The partial snapshot showed only
-  wraparound staged while a later full-turn edit remained outside the index.
-- The actual **Git → Merge Branch…** action produced the intended README
-  conflict. Editing Result and **Mark as resolved** saved and staged both facts;
-  three angle tests passed before the GUI merge commit. Git confirmed two parents.
-- A terminal soft reset retained the private work staged and on a rescue branch.
-  A shared revert preserved both commits; **Git → Push to Remote** updated the
-  practice remote. A fresh collaborator clone received the corrected README.
-- A fresh four-file repository also passed its initial test, displayed the
-  staged diff before its first commit, and recorded the first commit through
-  the GUI. Task B then passed five angle checks, exposed the deliberate bad
-  formula with two failures, and passed all five again after restoring only
-  the implementation. Its test branch reached the practice remote.
+## Observed student workflow and limits
+
+The actual book's **Open this notebook in CPD JupyterHub** action reused the
+running standard server and pulled the new source, preserving existing student
+changes. The source commit is present in the resulting checkout. The fresh
+published-copy check above avoided replacing the user's modified notebook.
+JupyterLab displays all three tab sets and six screenshots. Its MyST renderer
+synchronizes within each Markdown cell; the book synchronizes across groups.
+
+The CPD Jupyter AI/OpenCode practical completed actual scoped file reads,
+reviewed student test creation and one-time tool approvals. The agreed tests
+were committed before the implementation repair. The initial combined suite
+reported 11 failures/1 pass. The bounded repair then passed all 12 checks;
+an independent rerun confirmed both test file hashes unchanged. The accepted
+repair and AI-use record were committed in the disposable practice repository.
+
+Desktop captures illustrate controls rather than claiming six complete client
+runs. Codex, Antigravity and OpenCode returned plans. Claude's local trial did
+not start responding and was stopped: its image documents pre-send setup.
+Cline's existing Qwen provider was preserved; its image does not demonstrate
+CPD inference. It shows Plan, Auto-approve None and an unapproved command
+request. The pending task was stopped. Automatic Cline actions remain disabled.
+OpenCode Desktop's installed Big Pickle selection is an interface example,
+not a claim that it inherited the hosted CPD configuration.
 
 ## Evidence and cleanup
 
-Concise logs, the Git history bundle, image/build metadata, live browser and
-asset checks, deployment records and the live-book capture are in
-`evidence/jupyterlab-git-tabs-20261113/` in the task workspace.
+Concise build/deployment records, browser results, the live book capture,
+CPD notebook execution result and archived agent chat/Git bundle are in
+`evidence/lecture3-tabs-20261113/` in the task workspace.
 
-The task-created terminal exited, practice repositories were removed after
-preserving their history, and capture/preview tabs closed. The existing shared
-student server, other terminals/kernels and unrelated files are preserved.
-Temporary local build/install outputs and kernel registrations are removed
-once validation ends; `cleanup.json` records actual available disk space before
-and after removal. Source captures and editable figures remain in the course.
+The two task-owned notebook kernels were shut down. Task check copies,
+checkpoints, practice files and chat were removed after preserving their
+unique evidence. The student server UID remained unchanged and Running;
+other notebooks, kernels, terminals and personal files were preserved.
+
+The preview stopped and temporary local environments, build outputs, executed
+copies, fixture directories and task image tags were removed. Shared caches
+were preserved. `cleanup-gui.json` records actual available space before and
+after cleanup; retained evidence is below 1 MiB.
