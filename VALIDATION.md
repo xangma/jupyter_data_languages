@@ -1,71 +1,89 @@
-# Observed validation — editable diagrams, 12 November 2026
+# Validation — Git foundations and VS Code
 
-Live book: <https://icg-cpd-cluster.port.ac.uk/python-phd/>.
-Teaching/build revision: `805c416478b7922204f721ae19f7b611abe1c0cf` on
-`xangma/jupyter_data_languages`, branch `codex/phd-python-2026`.
-Later validation-only commits do not change those teaching/build inputs.
+Checked on 13 November 2026. Teaching/build source:
+`53a7c3836309844fdd2197464a049f64630db8f3` on `codex/phd-python-2026`.
+The current standard-workspace integration at `19866ee` is included.
+[Earlier diagram validation](https://github.com/xangma/jupyter_data_languages/blob/afee1c11c78897fa030c1b1369f2eb8c068001f6/VALIDATION.md)
+remains available in history.
 
-## Implementation
+## Teaching content
 
-Eight explanatory diagrams accompany the agreed teaching points:
+Session 2 introduces Git from the working tree/index/commit model, distinguishes
+Git, GitHub and VS Code, and includes explicit initialisation, branches, conflicts,
+private undo and shared recovery. Four real VS Code 1.141.0 captures show the
+actual exercise states. Their provenance is in `book/screenshots/README.md`.
+Two bounded subagent reviews informed the revision; the parent verified the
+material command and UI behaviours. The sources and adopted ideas are recorded
+in `COURSE_REVIEW.md` and the further-reading page.
 
-- Session 1: a shared row mask; row-wise broadcasting; validity filtering and
-  magnitude selection as separate decisions.
-- Session 2: staged snapshots versus working edits; the actual two-branch README
-  conflict; local commits, remote branches, fetching and hosted review.
-- Session 3: client/model/tool execution and permission boundaries, using the
-  Cline/CPD example; the human-led plan, authorise, repair and review loop.
+The core remains three two-hour sessions, with breaks and instructor-only pacing.
+Existing notebook code cells and their original IDs are preserved. Student source
+notebooks have empty outputs. The four other notebooks match the current
+standard-workspace source. A scoped Git attribute prevents local nbstripout
+filters from renumbering the validated book's cell IDs.
 
-Each has an editable DOT source, native SVG export, accessible title/description,
-caption and editable-source link. `book/diagrams/README.md` documents editing;
-`python scripts/render_diagrams.py` regenerates the exports and `--check` checks
-freshness. Graphviz 13.1.2 was used for maintenance. Viewing requires only the
-checked-in SVGs, with no extra student package or diagram service. SVG exports
-fit within 720 by 640 CSS pixels while retaining scalable vector content.
+## Local validation
 
-Two bounded delegates authored the science/Git sources. The primary agent
-reviewed the examples and every diagram in the actual book. A Graphviz nested
-cluster/rank interaction was isolated before applying explicit global ranking;
-all final sources render without warnings. Scientific notebook code, existing
-cell IDs and empty source outputs are preserved. The instructor pacing file is
-byte-for-byte unchanged, and student minute timings remain absent.
+- 24 reference tests passed.
+- All five notebooks executed in fresh kernels and empty working directories
+  using their declared `python-phd` kernel and the locked local environment.
+  Temporary kernel registration was removed afterward.
+- Both practice-constructor routes passed: manual Git initialisation through
+  `--files-only`, and the compatible default. Both refuse an existing target
+  without changing its files.
+- The Git practical passed through staging, the deliberate same-line conflict,
+  private recovery, shared revert/push and an independent collaborator clone.
+  Actual VS Code Undo Last Commit retained the work staged. Complete Merge
+  staged the resolved file without creating the repository's merge commit.
+- The introduced angle bug produced two failures; restoring only `angle.py`
+  left the student tests intact and produced five passing tests.
+- Rejected-push recovery retained both contributors' work; fetch left working
+  files untouched; reflog-based branch rescue retained the current checkout.
+- Node 22.23.2 built all 11 pages strictly. The five Hub launch routes and
+  cold-return/hydration checks passed with the current standard-server bridge.
+- All four screenshots were inspected in the rendered book in Edge at normal
+  article width. All seven Git media assets loaded without page overflow.
+- All three production Kustomize entrypoints and registry policy passed. The
+  policy used a task-owned clone containing the exact serving-source pin.
 
-## Validation
+## CPD deployment
 
-- All eight DOT sources rendered; the export freshness check passed, including
-  after the final book build. SVGs parse as native vector/text content with
-  accessibility descriptions and no embedded raster images, scripts or
-  foreignObject elements.
-- All eight image paths resolve from both source and executed notebook locations.
-  All five notebooks passed in fresh kernels/empty working directories. The
-  strict 11-page build and five Hub notebook launch routes passed.
-- All eight diagrams were visually reviewed at normal book reading width.
-  Matrix indices and the agent boundary layout were refined from that review.
-- On the deployed CPD pages, all eight images completed loading with positive
-  natural/rendered dimensions, all eight editable-source links were present,
-  and the three session pages had no horizontal overflow. The browser console
-  query returned no errors. Live screenshots cover catalogue, Git and agent views.
-- All eight deployed assets returned 200 with image/svg+xml. Their SHA-256 hashes
-  matched the exact locally validated build assets.
-- All three production Kustomize entrypoints rendered. The deployment PR passed
-  all four required checks after incorporating current main.
+[GitOps PR 438](https://github.com/icg-innovation/space-k8s-gitops/pull/438) merged as
+`840133f859c1cb2d84eed7f629e07d3ba3cd8dc4` after all four CI checks passed.
+Flux applied that exact revision with Ready=True. The book Deployment became
+available at the expected immutable image:
 
-This pass focused on diagram rendering and portability. It did not start or
-restart student compute; the prior validation records the broader Hub workflow.
+`ghcr.io/icg-innovation/phd-python-jupyterbook@sha256:e53852b6671049d523f6cdf1593b5d6c5edae1ba7400bfc0dbda1a8d4c870ece`
 
-## Deployment
+The existing standard notebook runtime remains
+`sha256:cac45236652a82697f001f805b9667b1d2541cc66e059a0a1a1d2c307b747428`.
+The Hub HelmRelease is Ready. Both the PhD and CPD Training book routes returned
+HTTP 200. Each of the seven published Git media assets returned its expected
+MIME type and exactly matched the locally validated build bytes.
 
-[PR 431](https://github.com/icg-innovation/space-k8s-gitops/pull/431) merged as
-`8a6574bfb23a16a1132aee2131208a8cdea5bf85`. Flux `apps` applied that exact revision
-and reported Ready. The book Deployment completed its rollout.
+## Observed student workflow
 
-Static image:
-`ghcr.io/icg-innovation/phd-python-jupyterbook@sha256:942e706ad94b87a91a05eb8894c7516c7932b96045f30a798c6c20c3a89d962e`.
+The live book's Open Notebook action started the standard CPU server, completed
+course synchronisation and opened the editable Session 2 notebook in JupyterLab
+with **Python PhD (locked)** selected. Run All executed all three code cells
+without errors; the notebook's reference checks reported 17 passed.
 
-This promotion changes the static book, retaining the existing notebook runtime
-and Hub integration. Rollback restores the previous static image through GitOps;
-preserve student PVCs.
+A fresh JupyterLab terminal activated `/opt/course/.venv/bin/python`
+(Python 3.13.18). The new constructor option, manual Git init,
+first commit, soft reset retaining staged work, bare remote, shared mistake,
+revert, normal push and fresh partner clone all passed. The clone retained the
+private work, omitted the reversed mistake and kept both shared-history commits.
+The nbgitpuller workspace HEAD was `8a6a4f300d90bbdb33fe5ab5e8280a1028d1460c`;
+the published source commit was verified as its ancestor.
 
-The [previous validation](https://github.com/xangma/jupyter_data_languages/blob/ffd26f3/VALIDATION.md)
-records student-facing timing removal and links the earlier authenticated
-classroom checks.
+The CPU pod requested one CPU and had no GPU request. Generated test repositories
+were removed after retaining concise evidence. The test server was stopped via
+Hub Home; saved course files and notebook outputs were preserved. This live pass
+covered book → JupyterLab → notebook execution → terminal Git → server stop.
+The optional hosted classroom PR exercise was not repeated; sharing and recovery
+were exercised against a separate bare Git remote.
+
+Detailed logs, UI/asset checks and deployment provenance are retained outside the
+source checkout in `evidence/git-session-20261113/` in the task workspace. The
+four requested source screenshots and the live book screenshot are retained;
+reproducible local build/install outputs are removed after validation.
