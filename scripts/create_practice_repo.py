@@ -4,6 +4,8 @@ from pathlib import Path
 import subprocess
 
 parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--files-only", action="store_true",
+    help="Write starter files without initialising Git, for the beginner walkthrough")
 parser.add_argument("destination", type=Path)
 args = parser.parse_args()
 target = args.destination.resolve()
@@ -23,5 +25,8 @@ def test_small_angles():
 ''')
 (target / "README.md").write_text("# Bearing separation practical\n\nAngles are inputs to a small helper.\n")
 (target / ".gitignore").write_text("__pycache__/\n.pytest_cache/\n.venv/\n")
-subprocess.run(["git", "init", "-b", "main", str(target)], check=True)
-print(f"Created {target}\nNo commits, remotes or identity settings were added. Follow Session 2.")
+if args.files_only:
+    print(f"Created starter files in {target}\nRun git init -b main there, as shown in Session 2.")
+else:
+    subprocess.run(["git", "init", "-b", "main", str(target)], check=True)
+    print(f"Created {target}\nNo commits, remotes or identity settings were added. Follow Session 2.")

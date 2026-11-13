@@ -21,6 +21,36 @@ Primary documentation for this course:
 - [Pro Git](https://git-scm.com/book/en/v2)
 - [Jupyter Book](https://jupyterbook.org/stable/) and [MyST hosting](https://mystmd.org/guide/deployment)
 
+## Git and VS Code
+
+Start with [Git's hands-on tutorial](https://git-scm.com/docs/gittutorial), then
+use the command manuals for the recovery you need:
+[restore](https://git-scm.com/docs/git-restore),
+[reset](https://git-scm.com/docs/git-reset),
+[revert](https://git-scm.com/docs/git-revert) and
+[reflog](https://git-scm.com/docs/git-reflog).
+The Session 2 recovery examples concern ordinary commits. Reverting a merge
+requires choosing a mainline parent and affects later merges; read the
+`git revert` manual and discuss the intended history before attempting it.
+Rewriting published history is a separate, coordinated workflow; the
+[push manual](https://git-scm.com/docs/git-push) explains force and lease checks.
+
+VS Code's guides cover [Source Control](https://code.visualstudio.com/docs/sourcecontrol/overview),
+[staging and commits](https://code.visualstudio.com/docs/sourcecontrol/staging-commits),
+[remotes and synchronisation](https://code.visualstudio.com/docs/sourcecontrol/repos-remotes),
+[merge conflicts](https://code.visualstudio.com/docs/sourcecontrol/merge-conflicts)
+and [troubleshooting](https://code.visualstudio.com/docs/sourcecontrol/troubleshooting).
+The course's [screenshot notes](https://github.com/xangma/jupyter_data_languages/blob/codex/phd-python-2026/book/screenshots/README.md) record the captured version
+and how the example states were created.
+
+Session 2 was also reviewed against
+[Coleman Krawczyk's original Git lecture](https://github.com/CKrawczyk/jupyter_data_languages/blob/master/Git.ipynb),
+the suggested [Medium tutorial](https://medium.com/@jaaeehoonkim/git-tutorial-1-31d0b1db1940)
+and [GeeksforGeeks topic index](https://www.geeksforgeeks.org/git/git-tutorial/).
+Use the primary manuals above to check command behaviour. The core practical
+introduces concepts before hosting and practises shared recovery without
+requiring an online account.
+
 The earlier notebooks remain in `classes/`, the three root plotting notebooks,
 and `Previous_notebooks/`. They are historical references, outside the validated
 2026 teaching path. They may need extra packages or repairs; do not treat the

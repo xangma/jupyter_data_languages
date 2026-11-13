@@ -10,7 +10,7 @@ retaining responsibility for the result. Each session includes a break.
 | Session | Research task | What you will practise |
 | --- | --- | --- |
 | 1: A defensible result | Inspect a mock galaxy catalogue and its survey selection | Arrays, shapes, masks, units, tables, FITS, plots and uncertainty |
-| 2: A reproducible change | Put a small calculation under version control | Functions, Git, branches, conflicts, pytest, environments and review |
+| 2: A reproducible change | Build, share and recover a versioned calculation | Git foundations, VS Code, branches, conflicts, local/shared recovery, tests and review |
 | 3: Agent-assisted science | Direct an agent's repair of a wrong weighted mean | Context, plans, permissions, tool use, steering, acceptance tests and independent review |
 
 Start with [setup](setup.md). If imports, loops and functions are unfamiliar, work

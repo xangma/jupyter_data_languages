@@ -96,3 +96,37 @@ scientific verification. Sessions 1 and 2 are unchanged. The new tool reference
 links official documentation checked on 12 November; actual controls may vary
 by client version and institutional policy. CPD base URL/model alias were checked
 against the applied serving-source configuration, not inferred from a model name.
+
+## Session 2 foundations and recovery — 13 November 2026
+
+Reviewed the current session against Coleman Krawczyk's original `Git.ipynb`,
+the instructor's Medium example and GeeksforGeeks topic index, and current Git
+and VS Code primary documentation. Two bounded read-only subagents advised on
+beginner sequencing and the built-in VS Code interface; the parent checked
+material behaviours in a real exercise repository before writing the lesson.
+
+The session now introduces Git, GitHub and VS Code separately, then builds the
+working tree/index/commit/branch model before the first commands. First-commit
+blocks have expected observations. Task A makes the two versions of a partially
+staged file visible. Four authentic VS Code screenshots show staging, a merge
+conflict, a private soft-reset undo and a pushed revert. Core Git support does
+not depend on a third-party editor extension or a hosted account.
+
+An account-free bare remote supports a shared mistake, revert, normal push and
+independent collaborator clone. Private recovery retains a rescue branch and
+staged work. Restore, reset and revert are distinguished, including restore's
+default index source and the ordinary-commit restriction of the examples.
+Troubleshooting covers directory/identity/staging mistakes, blocked switches,
+rejected pushes, conflicts, ignore rules and reflog recovery. Hosted PR setup
+remains optional; force-push and merge-revert recipes remain advanced references.
+
+The earlier lecture's explicit setup/help and research motivation were useful.
+The Medium article's `git push master` is not adopted as shorthand for
+`git push origin master`: the first positional argument is a repository.
+The topic index informed coverage, rather than expanding the core to every
+advanced command. Technical behaviours are checked against the primary manuals.
+
+The six-hour structure and breaks remain. Session 2's instructor pacing now
+allocates time to foundations and recovery; function/test demonstrations are
+shorter and later. Student content contains no minute-by-minute timings. The
+angle-helper tests, independent expectations and reproducible handoff remain.

@@ -40,6 +40,19 @@ With the shared valid-row mask, magnitude cuts of 15.5, 16.5 and 17.5 select
 
 ## Session 2
 
+Task A: before restaging, the next commit contains `test_wraparound` but not
+`test_full_turns`. The index holds the earlier staged contents while the working
+file includes the later edit. Unstaging keeps both edits in the working file;
+adding the file again selects both for the commit. Git and VS Code show the same
+index and working tree, rather than maintaining separate histories.
+
+Private recovery moves `recovery-lab` back one parent with a soft reset and leaves
+the mistaken work staged; `rescue-before-undo` still names that commit. After the
+corrected commit and the later shared mistake, reverting creates a new commit
+whose parent is the shared mistake. Both remain in the partner clone's history.
+The clone retains `Angle units: degrees.` and omits the incorrect validation
+line. A revert is not the same operation as moving a branch back to an old commit.
+
 ```python
 def test_equal_bearings():
     assert angle_distance(42, 42) == 0
@@ -51,7 +64,8 @@ def test_opposite_bearings():
 A conflict resolution can say: “Angles are in degrees and the helper returns
 their shortest separation.” Staging selects the next commit's content; committing
 records it locally; pushing sends it to a configured remote. A PR adds review
-and discussion around a proposed branch change.
+and discussion around a proposed branch change on a hosting service such as
+GitHub. `git pull` fetches and integrates commits; it does not create a PR.
 
 With the deliberate `abs(b - a)` bug, `test_wraparound` gets 358 instead of 2
 and `test_full_turns` gets 630 instead of 90. The small-angle, equal-angle and

@@ -45,22 +45,47 @@ Do not imply that every selection biases every estimator.
 
 | Minutes | Activity | Evidence of learning |
 | --- | --- | --- |
-| 0–10 | Move a calculation to a function | Explain its input/output contract |
-| 10–40 | Sandbox, status, diff, staging, commit; Task A | Passing test change on a branch |
+| 0–15 | Why Git; Git/GitHub/VS Code; working tree, index, commit | Distinguish saving, staging, committing and sharing |
+| 15–40 | First commit; VS Code mapping; branch and Task A | Explain one file appearing in both change lists |
 | 40–60 | Resolve a same-line merge conflict | Retain both intended meanings |
 | 60–70 | Break | |
-| 70–95 | Known-answer tests; Task B | See an introduced bug fail |
-| 95–110 | Environment, README, ignore rules; remote/PR demo | Explain reproducibility and review |
+| 70–95 | Bare practice remote; private reset; shared revert and clone | Retain work after reset; collaborator receives a revert |
+| 95–110 | Function interface; known-answer tests; Task B and handoff | See an introduced bug fail and restore only that implementation edit |
 | 110–120 | Partner review and exit check | Show diff, tests and commit |
 
-`scripts/create_practice_repo.py` refuses to overwrite an existing sandbox.
-The angle helper starts correct. Students add independent tests, temporarily
-introduce a bug, observe failures, restore the implementation and rerun.
-The later equal/opposite-bearing tests belong to a fresh `edge-case-tests`
-branch, committed before partner review. For optional hosting, use an empty
-classroom repository and push `main` before that branch. A nonempty classroom
-repository needs a clone with shared history. Offline review uses the same diff
-and explanation. Research upstreams are reading examples.
+`scripts/create_practice_repo.py --files-only` refuses to overwrite an existing
+sandbox and writes only the starter files. Students run `git init -b main`
+themselves and inspect its new, empty history. Read status before and after staging: untracked contents do not appear
+in ordinary `git diff`. Task A stages wraparound, then adds a full-turn test
+without restaging. Students should predict the next snapshot before unstaging,
+restaging and committing both tests. Use the same repository in VS Code rather
+than repeating each action in two interfaces. VS Code is optional; the CPD
+JupyterLab terminal and editor cover the core route.
+
+The `practice` remote is a separate bare repository in `outputs/`; all students
+can push and practise remote recovery without a hosted account. Keep the
+recovery experiments on `recovery-lab`. Make the private mistake, retain a
+rescue branch, then soft-reset its ordinary latest commit and correct it.
+For the shared mistake, demonstrate the bad remote tip **before** reverting,
+then push normally and clone as a collaborator. Ask students to find both the
+mistake and revert in the clone's log. Do not substitute a local reset for a
+shared revert. VS Code's Undo Last Commit does not check whether a commit was
+pushed. Complete Merge in its merge editor stages a file; the repository's
+merge still needs a commit. Saved screenshots show these exact states.
+
+The angle helper starts correct. Task B adds independently justified equal and
+opposite-bearing tests on a fresh `edge-case-tests` branch, temporarily introduces
+a bug, observes failures and restores only the unwanted `angle.py` edit. Commit
+the tests before partner review. Keep the Python demonstrations concise so the
+Git foundations and recovery remain hands-on. If novices need longer, make the
+second description branch an instructor demonstration and omit hosted setup;
+retain each student's first commit, staging comparison and recovery decisions.
+
+Optional GitHub hosting adds `origin` alongside `practice`; use an empty
+classroom repository and push `main` before `edge-case-tests`. A nonempty
+repository needs a clone with shared history. Do not spend class on credentials,
+merge-revert mainline selection, rebase or force-push recipes. Account-free
+review uses the same diff and explanation. Research upstreams are reading examples.
 
 ## Session 3 — 120 minutes
 

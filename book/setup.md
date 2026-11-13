@@ -1,6 +1,6 @@
 # Before the first session
 
-Allow 20–30 minutes for installation. You need Python 3.11 or later and Git;
+Allow 20–30 minutes for installation. You need Python 3.11 or later and Git 2.28 or later;
 the locked course environment uses Python 3.13. A working notebook and a terminal
 are enough. VS Code is optional.
 
