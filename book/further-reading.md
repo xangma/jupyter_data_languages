@@ -23,12 +23,19 @@ Primary documentation for this course:
 
 ## Coding-agent interfaces
 
-The [setup tabs](agent-tools.md) link the current tool controls. For CPD, use
-[OpenCode V1 agents](https://opencode.ai/v1/docs/agents/) and
-[permissions](https://opencode.ai/v1/docs/permissions/) with the installed V1
-client, and [Jupyter AI agent chat](https://jupyter-ai.readthedocs.io/en/latest/users/chat/index.html).
-The interface, agent and inference provider are separate choices. Verify the
-actual files and command output alongside any agent summary.
+The [setup tabs](agent-tools.md) and Session 3 screenshots use graphical clients:
+
+- Codex: [projects](https://learn.chatgpt.com/docs/projects), [review pane](https://learn.chatgpt.com/docs/code-review) and [permissions](https://learn.chatgpt.com/docs/agent-approvals-security).
+- [Claude Desktop's Code tab](https://code.claude.com/docs/en/desktop).
+- Antigravity: [desktop setup](https://antigravity.google/docs/getting-started), [plan review](https://antigravity.google/docs/artifact-review) and [permissions](https://antigravity.google/docs/agent-settings).
+- Cline in VS Code: [Plan/Act](https://docs.cline.bot/core-workflows/plan-and-act), [approvals](https://docs.cline.bot/features/auto-approve) and [provider settings](https://docs.cline.bot/provider-config/openai-compatible).
+- [OpenCode Desktop](https://dev.opencode.ai/desktop), with its [agent](https://opencode.ai/docs/agents) and [permission](https://opencode.ai/docs/permissions) controls.
+- [Jupyter AI agent chat](https://jupyter-ai.readthedocs.io/en/latest/users/chat/index.html) in CPD JupyterLab, using the prepared OpenCode/Qwen connection.
+
+The interface, agent and inference provider are separate choices. Verify actual
+files and tool results alongside the summary. Terminals are used for the shared
+workspace helper, pytest and Git; they are not the coding-agent interface in
+this course. Match controls to the installed app rather than a terminal guide.
 
 ## Git and VS Code
 

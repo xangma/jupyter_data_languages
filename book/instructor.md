@@ -106,15 +106,20 @@ review uses the same diff and explanation. Research upstreams are reading exampl
 | 95–110 | Independently rerun and review the diff | Tests unchanged; known-answer evidence; reject a false fix |
 | 110–120 | Accept repair and write AI-use record | Reviewed commit and scientific explanation |
 
-Students choose one of six synchronized routes: Codex, Claude Code, agy,
+Students choose one of six synchronized routes: Codex, Claude Code, Antigravity,
 Cline + Qwen, OpenCode or Jupyter AI. Setup tabs prepare the tool; three matching
 sets in the lesson cover inspection, reviewed edits and independent review.
 Keep shared prompts and scientific criteria common. The book remembers a tab
 across sets; JupyterLab's MyST renderer remembers it within a Markdown cell.
-Rehearse OpenCode V1 and Jupyter AI on the current CPD image. The Jupyter AI
-route uses the prepared OpenCode persona with Qwen, so these are two interfaces
-to the same agent. Cline can use the same CPD model while its tools run on a
-laptop. Record interface, agent, model and command host separately. On CPD,
+Use graphical apps/editor panels throughout; the terminal is for the shared
+preparation, tests and Git. Rehearse the selected GUI route before class. Five
+local app captures and the CPD Jupyter AI capture illustrate their actual
+controls. Match instructions to the installed version. OpenCode Desktop and
+Jupyter AI can expose OpenCode through different interfaces, but the laptop
+app does not inherit the hosted provider configuration. Cline can use the same CPD model while its tools run on a
+laptop. Its public endpoint advertises `qwen3-8-27b-mtp-ud-q4-k-xl`;
+`cpd/qwen3.8` is the hosted Jupyter AI configuration. Record interface, agent,
+model and command host separately. On CPD,
 agent-spawned commands should use `/opt/course/.venv/bin/python` explicitly;
 activating one JupyterLab terminal does not change every agent process.
 
@@ -132,6 +137,11 @@ The agent edits only `weighted_mean.py` during repair. Both tests retain the agr
 expectations. The setup helper refuses an existing destination and leaves the
 original intentionally wrong exercise unchanged. It uses a synthetic Git identity
 local to the exercise, with no remotes. The same criteria apply to partner-only work.
+
+Cline's Plan mode can still present a command request: do not describe the
+mode as a universal tool barrier. The captured request remains unapproved.
+Claude's screenshot shows pre-send setup; OpenCode Desktop uses its installed
+Big Pickle model as an interface example. Run the class on its prepared route.
 
 An agent's scope prompt is not enforced isolation. Explain the tool's sandbox,
 approval settings and recovery checkpoints separately. Some in-scope commands

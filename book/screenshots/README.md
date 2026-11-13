@@ -124,3 +124,35 @@ The viewport was unchanged. No credentials or private research data are shown.
 The named-file read, new test-file write, focused tests and subsequent repair
 are real tool actions with one-time decisions in the classroom validation.
 The lesson keeps the scientific acceptance criteria common to all six routes.
+
+
+## Lecture 3: graphical agent routes
+
+Five further captures were made on 13 November 2026 from installed graphical
+apps, using separate synthetic weighted-mean practice folders. The sixth route
+uses the CPD Jupyter AI capture above. The raw JPEGs are unchanged; each matching
+SVG embeds its exact JPEG bytes and adds three editable numbered callouts.
+No controls, results or agent responses were fabricated or composited.
+
+| Capture | Observed state |
+| --- | --- |
+| `codex-editor-plan` | Codex in VS Code Insiders, named practice function, returned five-bullet plan, Work locally and Ask for approval |
+| `claude-desktop-modes` | Claude Desktop Code, local folder and branch, Plan/Manual menu, unsent inspection draft; no completed agent run is claimed |
+| `antigravity-desktop-plan` | Antigravity Desktop returned advice, local project and Request Review preset |
+| `cline-editor-plan` | Cline 4.1.26 in VS Code Insiders, Plan selected, Auto-approve None, paused command request and practice code |
+| `opencode-desktop-plan` | OpenCode Desktop, local practice project, returned diagnosis, Plan/Big Pickle selectors and Toggle review |
+
+The Cline capture illustrates its GUI using an existing Qwen 3.8 provider. That
+provider was preserved: this capture does not demonstrate CPD inference. The
+course setup separately specifies the public CPD endpoint and its advertised
+`qwen3-8-27b-mtp-ud-q4-k-xl` model ID. The hosted Jupyter AI configuration uses
+`cpd/qwen3.8`. OpenCode Desktop's installed Big Pickle model is also an example,
+not a claim that the laptop app inherited CPD's hosted configuration.
+
+A pending command is a proposal, not executed evidence. Cline requested a command
+despite an inspection-only prompt; it was left unapproved and the task stopped.
+Claude's local trial did not start responding and was stopped; the capture
+therefore documents setup only. Codex, Antigravity and OpenCode returned plans.
+The complete CPD file-edit/test workflow was verified separately through Jupyter
+AI/OpenCode, including an independent rerun with 12 passing checks and unchanged
+tests. Native app screenshots retain their normal window layout and resolution.

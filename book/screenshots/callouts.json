@@ -815,5 +815,200 @@
         ]
       }
     ]
+  },
+  {
+    "name": "codex-editor-plan",
+    "title": "Inspect a weighted-mean repair plan in the Codex editor panel",
+    "callouts": [
+      {
+        "label": "Check the active practice file and local project",
+        "bubble": [
+          1120,
+          155
+        ],
+        "target": [
+          350,
+          102
+        ]
+      },
+      {
+        "label": "Check Work locally and Ask for approval; workspace actions can still be automatic",
+        "bubble": [
+          1780,
+          1380
+        ],
+        "target": [
+          1650,
+          1447
+        ]
+      },
+      {
+        "label": "Review the proposed scientific contract and phase boundaries",
+        "bubble": [
+          2250,
+          300
+        ],
+        "target": [
+          1590,
+          422
+        ]
+      }
+    ]
+  },
+  {
+    "name": "claude-desktop-modes",
+    "title": "Prepare a Claude Desktop Code session with Plan and Manual modes",
+    "callouts": [
+      {
+        "label": "Check the local practice folder and agent-repair branch",
+        "bubble": [
+          1685,
+          235
+        ],
+        "target": [
+          1885,
+          267
+        ]
+      },
+      {
+        "label": "Select Plan before inspection and Manual before the bounded edit",
+        "bubble": [
+          1680,
+          1350
+        ],
+        "target": [
+          1535,
+          1392
+        ]
+      },
+      {
+        "label": "The bounded inspection prompt is a draft, before sending",
+        "bubble": [
+          90,
+          1260
+        ],
+        "target": [
+          295,
+          1350
+        ]
+      }
+    ]
+  },
+  {
+    "name": "antigravity-desktop-plan",
+    "title": "Review a plan and independent checks in Antigravity Desktop",
+    "callouts": [
+      {
+        "label": "Check the selected local project in the conversation heading",
+        "bubble": [
+          690,
+          85
+        ],
+        "target": [
+          523,
+          36
+        ]
+      },
+      {
+        "label": "Independently verify the numerical suggestion before using it",
+        "bubble": [
+          2180,
+          340
+        ],
+        "target": [
+          1582,
+          438
+        ]
+      },
+      {
+        "label": "Request Review is the visible permission preset",
+        "bubble": [
+          2190,
+          1717
+        ],
+        "target": [
+          1850,
+          1717
+        ]
+      }
+    ]
+  },
+  {
+    "name": "cline-editor-plan",
+    "title": "Inspect a paused Cline request in VS Code with automatic actions off",
+    "callouts": [
+      {
+        "label": "Plan is selected; switch to Act only after reviewing the plan",
+        "bubble": [
+          1150,
+          1488
+        ],
+        "target": [
+          995,
+          1492
+        ]
+      },
+      {
+        "label": "Auto-approve is None; inspect the pending command and its scope",
+        "bubble": [
+          1100,
+          1145
+        ],
+        "target": [
+          270,
+          1208
+        ]
+      },
+      {
+        "label": "Check the model/provider selector against the course CPD setup",
+        "bubble": [
+          720,
+          1415
+        ],
+        "target": [
+          438,
+          1490
+        ]
+      }
+    ]
+  },
+  {
+    "name": "opencode-desktop-plan",
+    "title": "Inspect a proposal in OpenCode Desktop Plan mode",
+    "callouts": [
+      {
+        "label": "Check the practice project in the session heading",
+        "bubble": [
+          635,
+          90
+        ],
+        "target": [
+          171,
+          132
+        ]
+      },
+      {
+        "label": "The graphical agent selector is set to Plan",
+        "bubble": [
+          505,
+          1490
+        ],
+        "target": [
+          705,
+          1516
+        ]
+      },
+      {
+        "label": "Toggle review opens the changes pane",
+        "bubble": [
+          2410,
+          220
+        ],
+        "target": [
+          2493,
+          135
+        ]
+      }
+    ]
   }
 ]
