@@ -108,3 +108,19 @@ JupyterLab notebooks. The book synchronizes across all ten sets; JupyterLab's
 renderer synchronizes within a Markdown cell, so select the interface again in
 the next cell. Students perform each action once in their chosen
 interface; common setup and test commands sit outside the alternatives.
+
+
+## Lecture 3: Jupyter AI review
+
+`jupyter-ai-review.jpg` is a real 1682 × 908 CPD browser capture made on
+13 November 2026, with Jupyter AI 3.2.0 and OpenCode 1.18.34 using the prepared
+`cpd/qwen3.8` model. It shows the proposed new `test_student_checks.py` in the
+isolated weighted-mean exercise, before one-time approval. The numbers were
+independently derived and supplied in the prompt; the agent drafted test syntax.
+No controls, file contents or model output were fabricated or composited.
+The SVG embeds the unchanged JPEG and adds the manifest's editable callouts.
+The viewport was unchanged. No credentials or private research data are shown.
+
+The named-file read, new test-file write, focused tests and subsequent repair
+are real tool actions with one-time decisions in the classroom validation.
+The lesson keeps the scientific acceptance criteria common to all six routes.

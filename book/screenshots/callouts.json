@@ -764,5 +764,56 @@
         ]
       }
     ]
+  },
+  {
+    "name": "jupyter-ai-review",
+    "title": "Review an OpenCode test-file proposal in Jupyter AI on CPD",
+    "callout_scale": 0.65,
+    "callouts": [
+      {
+        "label": "Check the proposed file is inside the practice workspace",
+        "bubble": [
+          1330,
+          302
+        ],
+        "target": [
+          1113,
+          365
+        ]
+      },
+      {
+        "label": "Review independently derived expected answers in the proposed diff",
+        "bubble": [
+          1240,
+          553
+        ],
+        "target": [
+          859,
+          520
+        ]
+      },
+      {
+        "label": "Allow once approves this one request; Reject declines it",
+        "bubble": [
+          820,
+          737
+        ],
+        "target": [
+          433,
+          698
+        ]
+      },
+      {
+        "label": "Read the selected agent, CPD Qwen model and current mode",
+        "bubble": [
+          1250,
+          766
+        ],
+        "target": [
+          690,
+          842
+        ]
+      }
+    ]
   }
 ]

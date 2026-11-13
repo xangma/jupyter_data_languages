@@ -21,6 +21,15 @@ Primary documentation for this course:
 - [Pro Git](https://git-scm.com/book/en/v2)
 - [Jupyter Book](https://jupyterbook.org/stable/) and [MyST hosting](https://mystmd.org/guide/deployment)
 
+## Coding-agent interfaces
+
+The [setup tabs](agent-tools.md) link the current tool controls. For CPD, use
+[OpenCode V1 agents](https://opencode.ai/v1/docs/agents/) and
+[permissions](https://opencode.ai/v1/docs/permissions/) with the installed V1
+client, and [Jupyter AI agent chat](https://jupyter-ai.readthedocs.io/en/latest/users/chat/index.html).
+The interface, agent and inference provider are separate choices. Verify the
+actual files and command output alongside any agent summary.
+
 ## Git and VS Code
 
 Start with [Git's hands-on tutorial](https://git-scm.com/docs/gittutorial), then

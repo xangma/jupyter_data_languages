@@ -106,6 +106,18 @@ review uses the same diff and explanation. Research upstreams are reading exampl
 | 95–110 | Independently rerun and review the diff | Tests unchanged; known-answer evidence; reject a false fix |
 | 110–120 | Accept repair and write AI-use record | Reviewed commit and scientific explanation |
 
+Students choose one of six synchronized routes: Codex, Claude Code, agy,
+Cline + Qwen, OpenCode or Jupyter AI. Setup tabs prepare the tool; three matching
+sets in the lesson cover inspection, reviewed edits and independent review.
+Keep shared prompts and scientific criteria common. The book remembers a tab
+across sets; JupyterLab's MyST renderer remembers it within a Markdown cell.
+Rehearse OpenCode V1 and Jupyter AI on the current CPD image. The Jupyter AI
+route uses the prepared OpenCode persona with Qwen, so these are two interfaces
+to the same agent. Cline can use the same CPD model while its tools run on a
+laptop. Record interface, agent, model and command host separately. On CPD,
+agent-spawned commands should use `/opt/course/.venv/bin/python` explicitly;
+activating one JupyterLab terminal does not change every agent process.
+
 Make the agent interaction the organising thread. Students inspect and critique
 a plan, provide independently derived expectations, delegate test syntax, then
 authorise a bounded repair. They should use their tool, not just watch a demo.
