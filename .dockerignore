@@ -3,6 +3,7 @@
 !deploy/Dockerfile
 !deploy/nginx.conf
 !deploy/Dockerfile.notebook
+!deploy/Dockerfile.standard
 !deploy/requirements-hub.lock
 !pyproject.toml
 !uv.lock

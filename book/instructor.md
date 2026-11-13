@@ -19,9 +19,10 @@ the client can edit that workspace and use its existing Python environment.
 Confirm the effective permissions/sandbox and demonstrate pause, diff and undo.
 Do not spend the session constructing a container or repeating Git initialisation.
 Without an agent, use the saved incorrect proposal and a partner's review/repair.
-The outcomes do not depend on a vendor or paid account. CPD provides a locked,
-CPU-only course workspace through JupyterHub. Confirm student enrolment before
-class and rehearse both in-page execution and opening the notebook in JupyterLab.
+The outcomes do not depend on a vendor or paid account. CPD's standard JupyterHub
+workspace provides the **Python PhD (locked)** kernel; CPU resources suffice for
+this course. Activate `/opt/course/.venv` in each CPD terminal. Confirm student
+enrolment before class and rehearse both in-page execution and opening the notebook in JupyterLab.
 
 ## Session 1 — 120 minutes
 

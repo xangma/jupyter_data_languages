@@ -32,7 +32,7 @@ RELEASE_ID = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()[:12]
 
 
 def launch_url(source_path: str | None = None) -> str:
-    # The bridge starts the named CPU server and pulls the right repository.
+    # The bridge prepares the standard server and pulls the right repository.
     # Built notebooks live in _executed; students edit the source in book/.
     if source_path and source_path.startswith("_executed/"):
         source_path = "book/" + Path(source_path).name

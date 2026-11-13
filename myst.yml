@@ -9,7 +9,7 @@ project:
     server:
       url: https://icg-cpd-cluster.port.ac.uk/jupyterhub/services/phd-python-thebe/server/
       token: cpd-hub-oauth
-    kernelName: python3
+    kernelName: python-phd
     disableSessionSaving: true
   settings:
     output_matplotlib_strings: remove

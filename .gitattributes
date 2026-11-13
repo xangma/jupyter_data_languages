@@ -3,3 +3,7 @@
 *.ipynb filter=nbstripout
 *.zpln filter=nbstripout
 *.ipynb diff=ipynb
+
+# Validated book sources keep stable cell IDs; executed copies live in _executed/.
+# Local nbstripout filters can renumber IDs during staging and merging.
+book/*.ipynb -filter
