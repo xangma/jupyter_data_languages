@@ -26,9 +26,12 @@ Verified in an isolated worktree branched from `ac96bd8` (`codex/phd-python-2026
   launch links and verified cold-start config. Headless Chrome verified `HTTP 200`,
   `0px` horizontal overflow, zero broken images, and synchronized 3-tab switching
   (`Jupyter AI on CPD`, `Cline + CPD Qwen`, `Claude Code`) across the rendered site.
-- **Deployment status**: Local branch commit only; live CPD remains at the
-  13 November 2026 image below pending instructor confirmation to push and open a
-  GitOps promotion PR in `icg-innovation/space-k8s-gitops`.
+- **Live CPD deployment — 14 November 2026**:
+  - Course source published on `codex/phd-python-2026` at `9a67ad96108102eedb871ba32e15ff3496264301`.
+  - [PR 449](https://github.com/icg-innovation/space-k8s-gitops/pull/449) passed all 4 required checks (`Private registry source`, `Registry policy checks`, `Storage policy checks`, `Traefik migration checks`) and merged as `3c1719aa6cc6a7ecc27fa896fb605a239f983b24`.
+  - Flux `gitrepository/flux-system` and `kustomization/{flux-system,apps,infrastructure}` reconciled `Ready=True` at `main@sha1:3c1719aa6cc6a7ecc27fa896fb605a239f983b24`.
+  - `deploy/phd-python-jupyterbook` rolled out cleanly to `pod/phd-python-jupyterbook-676f86798b-gqxsh` (`1/1 Running`, `ready=true`) at `ghcr.io/icg-innovation/phd-python-jupyterbook@sha256:86b58865595e1372eb47f48b94a4405b51fb4c856c74197536c26f10623da843`, while `helmrelease/jupyterhub` (`True`) and running student pod `jupyter-xangma` (`uid=031025c9-8042-41c8-a6b4-0bdca62a6453`, runtime digest `sha256:cac45236652a82697f001f805b9667b1d2541cc66e059a0a1a1d2c307b747428`) remained undisturbed.
+  - Headless Chrome against live `https://icg-cpd-cluster.port.ac.uk/python-phd/` verified `HTTP 200`, `0` broken images (60 rendered SVG/PNG assets across the 11 pages), `0px` horizontal overflow, live synchronized 3-tab switching (`Jupyter AI on CPD`, `Cline + CPD Qwen`, `Claude Code`), and `HTTP 200` on `/jupyterbook/` (`CPD Training`).
 
 ---
 
