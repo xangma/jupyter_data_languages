@@ -16,7 +16,7 @@ digraph agent_architecture {
     filetool [label="File read/edit tool"];
     files [label="Your workspace files\nweighted_mean.py + tests", fillcolor="#EAF3FE"];
     subgraph cluster_shell {
-      label="Enforced shell sandbox\nwhen enabled";
+      label="OS shell sandbox\n(only in tools that provide one)";
       fontsize=17; style="rounded,dashed"; color="#71849A"; margin=16;
       terminal [label="Terminal subprocess\npython -m pytest -q", fillcolor="#E9F7F2"];
     }

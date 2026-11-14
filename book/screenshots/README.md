@@ -99,8 +99,11 @@ the merge result; it does not create the repository's merge commit.
 
 The matching SVGs embed the exact JPEGs with editable vector annotations.
 `callout_scale` in the manifest adjusts annotation size for the capture;
-coordinates remain in source pixels. The rendering commands above cover both
-interfaces.
+an optional `"crop": [cx, cy, cw, ch]` integer pixel array sets the SVG
+`viewBox` and `<clipPath>` non-destructively so outer window chrome or blank
+margins are hidden while keeping `original-capture` bytes unchanged and all
+`bubble` and `target` coordinates in original source pixels. The rendering
+commands above cover all manifests.
 
 Edit each walkthrough directly in the notebook's Markdown cells. Each native
 MyST `tab-set` has `Git commands`, `VS Code` and `JupyterLab on CPD` items with
@@ -155,12 +158,16 @@ retained; their new SVG wrappers use the encoding detected from the image header
 The renderer also accepts genuine PNG captures and validates bounds, filenames,
 MIME type and duplicate names. The overlay never replaces or invents UI content.
 
-## Lecture 3: six graphical agent workflows
+## Lecture 3: graphical agent workflows and three-route focus
 
 All captures use synthetic copies of the weighted-mean exercise. The agent
 interface is a desktop app or editor panel. Commands visible in tool cards or
 integrated terminals prepare/check the work; they are not agent CLI sessions.
-Native window and browser capture sizes are retained.
+Session 3 focuses its main walkthroughs on three primary classroom routes —
+**Cline with CPD Qwen**, **CPD Jupyter AI/OpenCode** and **Claude Code editor
+integration** — with non-destructive `"crop"` framing applied to strip personal
+window chrome and dead margins. Captures for all six graphical routes remain in
+the manifests for reference and reproducible validation.
 
 | Route | Inspection/plan | Independent test file | Repair and result |
 | --- | --- | --- | --- |

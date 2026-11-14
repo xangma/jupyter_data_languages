@@ -1,36 +1,32 @@
 # Python for ICG Research
 
-Three practical sessions for incoming PhD students at the Institute of
-Cosmology and Gravitation, University of Portsmouth.
+Three practical sessions for incoming PhD students at the Institute of Cosmology
+and Gravitation, University of Portsmouth — welcoming both theoretical or
+computational researchers and observational astronomers.
 
-By the end you will have a small analysis you can rerun, a scientific test you can
-explain, and a reviewed Git commit. You will practise using a coding agent while
-retaining responsibility for the result. Each session includes a break.
+By the end you will have a reproducible numerical analysis, a scientific test
+you can explain, and a reviewed Git commit. You will also steer a coding agent
+while retaining responsibility for the result. Each session includes a break.
 
 | Session | Research task | What you will practise |
 | --- | --- | --- |
-| 1: A defensible result | Inspect a mock galaxy catalogue and its survey selection | Arrays, shapes, masks, units, tables, FITS, plots and uncertainty |
-| 2: A reproducible change | Build, share and recover a versioned calculation | Git foundations, VS Code, branches, conflicts, local/shared recovery, tests and review |
-| 3: Agent-assisted science | Direct an agent's repair of a wrong weighted mean | Context, plans, permissions, tool use, steering, acceptance tests and independent review |
+| 1: A defensible result | Analyse a mock galaxy catalogue and selection cut | Arrays, shapes, masks, units, FITS, plots and uncertainty |
+| 2: A reproducible change | Version, test and recover a scientific calculation | Git, VS Code or JupyterLab, branches, conflicts and review |
+| 3: Agent-assisted science | Direct an agent's repair of a wrong weighted mean | Plans, acceptance tests and review (`Jupyter AI on CPD`, `Cline + CPD Qwen`, `Claude Code`, or manual pair option) |
 
-Start with [setup](setup.md). If imports, loops and functions are unfamiliar, work
-through the primer first. The core notebooks contain short tasks, hints and exit
-checks; pause before opening the [solutions](solutions.md).
+Start with [setup](setup.md). If imports, arrays or functions are unfamiliar,
+complete the [primer](00-primer.ipynb) first. Pause at each task before opening
+the [solutions](solutions.md).
 
-All catalogue values are **invented teaching data**. They are not observations or
-a measurement of the Hubble constant. The same local file is used throughout, and
-the practicals need no network access after installation. Agent access is optional:
-you can use the supplied candidate implementation and review it with a partner.
+All catalogue values are **invented teaching data**, not real observations or a
+Hubble measurement. Every practical runs offline after setup, and paid AI
+accounts are never required.
 
-Read the book without signing in, or choose **Connect to JupyterHub** to use the
-course's Python environment. Start compute on a notebook page and run cells from
-the top. Choose **Open this notebook in JupyterHub** for editing, files and the
-terminal used in the Git practical. JupyterHub access requires course enrolment.
-The PhD workspace runs separately from the UKSA course workspace.
+Read online freely, or click **Connect to JupyterHub** (enrolled students) to
+use the course kernel: click **`⏻` Start compute** on notebook pages for quick
+inline runs, or **Open this notebook in CPD JupyterHub** for full JupyterLab
+editing, files and terminals.
 
-The [instructor guide](instructor.md) provides teaching notes. The signal
-exercise and [further reading](further-reading.md) are extensions. HPC is covered
-in separate sessions.
-
-Adapted from Coleman Krawczyk's `jupyter_data_languages` lectures and Xan
-Morice-Atkinson's 2025 additions. The original MIT licence is retained.
+Optional: [signal extension](04-signal-extension.ipynb), [further reading](further-reading.md)
+and [instructor guide](instructor.md). Adapted from Coleman Krawczyk's
+`jupyter_data_languages` and Xan Morice-Atkinson's 2025 additions (MIT licence).

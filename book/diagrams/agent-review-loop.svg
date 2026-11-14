@@ -1,97 +1,110 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="423" viewBox="0.00 0.00 820.00 482.00" role="img" aria-labelledby="agent-review-loop-title agent-review-loop-desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="481" viewBox="0.00 0.00 669.00 447.00" role="img" aria-labelledby="agent-review-loop-title agent-review-loop-desc">
   <title id="agent-review-loop-title">Keep scientific expectations under human control</title>
-  <desc id="agent-review-loop-desc">A student supplies the task and independently justified tests, reviews an agent plan, authorises a bounded implementation change, independently reruns and reviews, then accepts or steers. The agreed tests remain fixed during repair.</desc>
-  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 468.58)">
+  <desc id="agent-review-loop-desc">A student supplies the task and independently justified expectations, reviews an agent plan and derives test cases, reviews the drafted test_student_checks.py, verifies the failing run and commits a fixed tests checkpoint before authorising the weighted_mean.py repair, then reruns independently and inspects the diff before accepting.</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(11.52 435.88)">
     <title>agent_review_loop</title>
-    <polygon fill="white" stroke="none" points="-12.96,12.96 -12.96,-468.58 807.38,-468.58 807.38,12.96 -12.96,12.96" />
+    <polygon fill="white" stroke="none" points="-11.52,11.52 -11.52,-435.88 657.48,-435.88 657.48,11.52 -11.52,11.52" />
     <g id="node1" class="node">
       <title>question</title>
-      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M178.29,-455.62C178.29,-455.62 12,-455.62 12,-455.62 6,-455.62 0,-449.62 0,-443.62 0,-443.62 0,-387.34 0,-387.34 0,-381.34 6,-375.34 12,-375.34 12,-375.34 178.29,-375.34 178.29,-375.34 184.29,-375.34 190.29,-381.34 190.29,-387.34 190.29,-387.34 190.29,-443.62 190.29,-443.62 190.29,-449.62 184.29,-455.62 178.29,-455.62" />
-      <text xml:space="preserve" text-anchor="middle" x="95.14" y="-429.88" font-family="Arial" font-size="18.00" fill="#14263c">YOU</text>
-      <text xml:space="preserve" text-anchor="middle" x="95.14" y="-408.88" font-family="Arial" font-size="18.00" fill="#14263c">Task + independently</text>
-      <text xml:space="preserve" text-anchor="middle" x="95.14" y="-387.88" font-family="Arial" font-size="18.00" fill="#14263c">justified expectations</text>
+      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M185.85,-424.36C185.85,-424.36 27,-424.36 27,-424.36 21,-424.36 15,-418.36 15,-412.36 15,-412.36 15,-362.02 15,-362.02 15,-356.02 21,-350.02 27,-350.02 27,-350.02 185.85,-350.02 185.85,-350.02 191.85,-350.02 197.85,-356.02 197.85,-362.02 197.85,-362.02 197.85,-412.36 197.85,-412.36 197.85,-418.36 191.85,-424.36 185.85,-424.36" />
+      <text xml:space="preserve" text-anchor="middle" x="106.43" y="-400.29" font-family="Arial" font-size="17.00" fill="#14263c">1 · YOU</text>
+      <text xml:space="preserve" text-anchor="middle" x="106.43" y="-380.79" font-family="Arial" font-size="17.00" fill="#14263c">Task + independently</text>
+      <text xml:space="preserve" text-anchor="middle" x="106.43" y="-361.29" font-family="Arial" font-size="17.00" fill="#14263c">justified expectations</text>
     </g>
     <g id="node2" class="node">
       <title>plan</title>
-      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M362.16,-455.62C362.16,-455.62 246.12,-455.62 246.12,-455.62 240.12,-455.62 234.12,-449.62 234.12,-443.62 234.12,-443.62 234.12,-387.34 234.12,-387.34 234.12,-381.34 240.12,-375.34 246.12,-375.34 246.12,-375.34 362.16,-375.34 362.16,-375.34 368.16,-375.34 374.16,-381.34 374.16,-387.34 374.16,-387.34 374.16,-443.62 374.16,-443.62 374.16,-449.62 368.16,-455.62 362.16,-455.62" />
-      <text xml:space="preserve" text-anchor="middle" x="304.14" y="-429.88" font-family="Arial" font-size="18.00" fill="#14263c">AGENT</text>
-      <text xml:space="preserve" text-anchor="middle" x="304.14" y="-408.88" font-family="Arial" font-size="18.00" fill="#14263c">Inspect files;</text>
-      <text xml:space="preserve" text-anchor="middle" x="304.14" y="-387.88" font-family="Arial" font-size="18.00" fill="#14263c">propose a plan</text>
+      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M470.6,-424.36C470.6,-424.36 358.25,-424.36 358.25,-424.36 352.25,-424.36 346.25,-418.36 346.25,-412.36 346.25,-412.36 346.25,-362.02 346.25,-362.02 346.25,-356.02 352.25,-350.02 358.25,-350.02 358.25,-350.02 470.6,-350.02 470.6,-350.02 476.6,-350.02 482.6,-356.02 482.6,-362.02 482.6,-362.02 482.6,-412.36 482.6,-412.36 482.6,-418.36 476.6,-424.36 470.6,-424.36" />
+      <text xml:space="preserve" text-anchor="middle" x="414.43" y="-400.29" font-family="Arial" font-size="17.00" fill="#14263c">2 · AGENT</text>
+      <text xml:space="preserve" text-anchor="middle" x="414.43" y="-380.79" font-family="Arial" font-size="17.00" fill="#14263c">Inspect files;</text>
+      <text xml:space="preserve" text-anchor="middle" x="414.43" y="-361.29" font-family="Arial" font-size="17.00" fill="#14263c">propose a plan</text>
     </g>
-    <g id="edge1" class="edge">
+    <g id="edge7" class="edge">
       <title>question-&gt;plan</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" d="M190.66,-415.48C201.53,-415.48 212.39,-415.48 223.25,-415.48" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="223.24,-418.28 231.24,-415.48 223.24,-412.68 223.24,-418.28" />
+      <path fill="none" stroke="#526780" stroke-width="1.6" d="M198.46,-387.19C244.08,-387.19 289.7,-387.19 335.32,-387.19" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="335.25,-389.99 343.25,-387.19 335.25,-384.39 335.25,-389.99" />
+    </g>
+    <g id="node4" class="node">
+      <title>draft_tests</title>
+      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M194.1,-319.02C194.1,-319.02 18.75,-319.02 18.75,-319.02 12.75,-319.02 6.75,-313.02 6.75,-307.02 6.75,-307.02 6.75,-256.68 6.75,-256.68 6.75,-250.68 12.75,-244.68 18.75,-244.68 18.75,-244.68 194.1,-244.68 194.1,-244.68 200.1,-244.68 206.1,-250.68 206.1,-256.68 206.1,-256.68 206.1,-307.02 206.1,-307.02 206.1,-313.02 200.1,-319.02 194.1,-319.02" />
+      <text xml:space="preserve" text-anchor="middle" x="106.43" y="-294.95" font-family="Arial" font-size="17.00" fill="#14263c">4 · AGENT</text>
+      <text xml:space="preserve" text-anchor="middle" x="106.43" y="-275.45" font-family="Arial" font-size="17.00" fill="#14263c">Draft</text>
+      <text xml:space="preserve" text-anchor="middle" x="106.43" y="-255.95" font-family="Arial" font-size="17.00" fill="#14263c">test_student_checks.py</text>
     </g>
     <g id="node3" class="node">
       <title>scope</title>
-      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M401.16,-342.34C401.16,-342.34 207.12,-342.34 207.12,-342.34 201.12,-342.34 195.12,-336.34 195.12,-330.34 195.12,-330.34 195.12,-274.06 195.12,-274.06 195.12,-268.06 201.12,-262.06 207.12,-262.06 207.12,-262.06 401.16,-262.06 401.16,-262.06 407.16,-262.06 413.16,-268.06 413.16,-274.06 413.16,-274.06 413.16,-330.34 413.16,-330.34 413.16,-336.34 407.16,-342.34 401.16,-342.34" />
-      <text xml:space="preserve" text-anchor="middle" x="304.14" y="-316.6" font-family="Arial" font-size="18.00" fill="#14263c">YOU</text>
-      <text xml:space="preserve" text-anchor="middle" x="304.14" y="-295.6" font-family="Arial" font-size="18.00" fill="#14263c">Review plan; agree tests</text>
-      <text xml:space="preserve" text-anchor="middle" x="304.14" y="-274.6" font-family="Arial" font-size="18.00" fill="#14263c">and permitted changes</text>
-    </g>
-    <g id="edge2" class="edge">
-      <title>plan-&gt;scope</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" d="M304.14,-374.62C304.14,-367.66 304.14,-360.35 304.14,-353.16" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="306.95,-353.2 304.15,-345.2 301.35,-353.2 306.95,-353.2" />
-    </g>
-    <g id="node4" class="node">
-      <title>repair</title>
-      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M398.54,-211.31C398.54,-211.31 209.75,-211.31 209.75,-211.31 203.75,-211.31 197.75,-205.31 197.75,-199.31 197.75,-199.31 197.75,-143.03 197.75,-143.03 197.75,-137.03 203.75,-131.03 209.75,-131.03 209.75,-131.03 398.54,-131.03 398.54,-131.03 404.54,-131.03 410.54,-137.03 410.54,-143.03 410.54,-143.03 410.54,-199.31 410.54,-199.31 410.54,-205.31 404.54,-211.31 398.54,-211.31" />
-      <text xml:space="preserve" text-anchor="middle" x="304.14" y="-185.57" font-family="Arial" font-size="18.00" fill="#14263c">AGENT</text>
-      <text xml:space="preserve" text-anchor="middle" x="304.14" y="-164.57" font-family="Arial" font-size="18.00" fill="#14263c">Edit weighted_mean.py;</text>
-      <text xml:space="preserve" text-anchor="middle" x="304.14" y="-143.57" font-family="Arial" font-size="18.00" fill="#14263c">run the agreed tests</text>
-    </g>
-    <g id="edge3" class="edge">
-      <title>scope-&gt;repair</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" d="M304.14,-261.43C304.14,-249.05 304.14,-235.23 304.14,-222.23" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="306.95,-222.45 304.15,-214.45 301.35,-222.45 306.95,-222.45" />
-      <text xml:space="preserve" text-anchor="middle" x="337.52" y="-230.86" font-family="Arial" font-size="16.00" fill="#14263c">authorise</text>
-    </g>
-    <g id="node5" class="node">
-      <title>review</title>
-      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M746.66,-211.31C746.66,-211.31 579.62,-211.31 579.62,-211.31 573.62,-211.31 567.62,-205.31 567.62,-199.31 567.62,-199.31 567.62,-143.03 567.62,-143.03 567.62,-137.03 573.62,-131.03 579.62,-131.03 579.62,-131.03 746.66,-131.03 746.66,-131.03 752.66,-131.03 758.66,-137.03 758.66,-143.03 758.66,-143.03 758.66,-199.31 758.66,-199.31 758.66,-205.31 752.66,-211.31 746.66,-211.31" />
-      <text xml:space="preserve" text-anchor="middle" x="663.14" y="-185.57" font-family="Arial" font-size="18.00" fill="#14263c">YOU</text>
-      <text xml:space="preserve" text-anchor="middle" x="663.14" y="-164.57" font-family="Arial" font-size="18.00" fill="#14263c">Rerun independently;</text>
-      <text xml:space="preserve" text-anchor="middle" x="663.14" y="-143.57" font-family="Arial" font-size="18.00" fill="#14263c">inspect the entire diff</text>
+      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M476.98,-319.02C476.98,-319.02 351.88,-319.02 351.88,-319.02 345.88,-319.02 339.88,-313.02 339.88,-307.02 339.88,-307.02 339.88,-256.68 339.88,-256.68 339.88,-250.68 345.88,-244.68 351.88,-244.68 351.88,-244.68 476.98,-244.68 476.98,-244.68 482.98,-244.68 488.98,-250.68 488.98,-256.68 488.98,-256.68 488.98,-307.02 488.98,-307.02 488.98,-313.02 482.98,-319.02 476.98,-319.02" />
+      <text xml:space="preserve" text-anchor="middle" x="414.43" y="-294.95" font-family="Arial" font-size="17.00" fill="#14263c">3 · YOU</text>
+      <text xml:space="preserve" text-anchor="middle" x="414.43" y="-275.45" font-family="Arial" font-size="17.00" fill="#14263c">Review plan &amp;</text>
+      <text xml:space="preserve" text-anchor="middle" x="414.43" y="-255.95" font-family="Arial" font-size="17.00" fill="#14263c">derive test cases</text>
     </g>
     <g id="edge4" class="edge">
-      <title>repair-&gt;review</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" d="M410.88,-171.17C456.91,-171.17 510.61,-171.17 556.61,-171.17" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="556.48,-173.97 564.48,-171.17 556.48,-168.37 556.48,-173.97" />
-      <text xml:space="preserve" text-anchor="middle" x="489.08" y="-177.72" font-family="Arial" font-size="16.00" fill="#14263c">actual diff + results</text>
+      <title>plan-&gt;scope</title>
+      <path fill="none" stroke="#526780" stroke-width="1.6" d="M414.43,-349.47C414.43,-343.07 414.43,-336.34 414.43,-329.71" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="417.23,-329.88 414.43,-321.88 411.63,-329.88 417.23,-329.88" />
     </g>
-    <g id="edge6" class="edge">
-      <title>review-&gt;plan</title>
-      <path fill="none" stroke="#8b6d37" stroke-width="1.6" stroke-dasharray="5,2" d="M567.03,-202.26C532.91,-216.39 496.08,-236 468.14,-262.06 438.39,-289.81 452.34,-313 424.14,-342.34 412.32,-354.65 397.95,-365.63 383.33,-375.09" />
-      <polygon fill="#8b6d37" stroke="#8b6d37" stroke-width="1.6" points="382.06,-372.58 376.76,-379.2 385.03,-377.33 382.06,-372.58" />
-      <text xml:space="preserve" text-anchor="middle" x="523.64" y="-296.38" font-family="Arial" font-size="16.00" fill="#14263c">question / steer</text>
+    <g id="edge8" class="edge">
+      <title>scope-&gt;draft_tests</title>
+      <path fill="none" stroke="#526780" stroke-width="1.6" d="M339.33,-281.85C298.54,-281.85 257.75,-281.85 216.96,-281.85" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="217.01,-279.05 209.01,-281.85 217.01,-284.65 217.01,-279.05" />
     </g>
     <g id="node6" class="node">
-      <title>accept</title>
-      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" d="M762.04,-80.28C762.04,-80.28 564.25,-80.28 564.25,-80.28 558.25,-80.28 552.25,-74.28 552.25,-68.28 552.25,-68.28 552.25,-12 552.25,-12 552.25,-6 558.25,0 564.25,0 564.25,0 762.04,0 762.04,0 768.04,0 774.04,-6 774.04,-12 774.04,-12 774.04,-68.28 774.04,-68.28 774.04,-74.28 768.04,-80.28 762.04,-80.28" />
-      <text xml:space="preserve" text-anchor="middle" x="663.14" y="-54.54" font-family="Arial" font-size="18.00" fill="#14263c">YOU</text>
-      <text xml:space="preserve" text-anchor="middle" x="663.14" y="-33.54" font-family="Arial" font-size="18.00" fill="#14263c">Accept reviewed change;</text>
-      <text xml:space="preserve" text-anchor="middle" x="663.14" y="-12.54" font-family="Arial" font-size="18.00" fill="#14263c">commit + record AI use</text>
+      <title>repair</title>
+      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M504.73,-196.68C504.73,-196.68 324.12,-196.68 324.12,-196.68 318.12,-196.68 312.12,-190.68 312.12,-184.68 312.12,-184.68 312.12,-134.34 312.12,-134.34 312.12,-128.34 318.12,-122.34 324.12,-122.34 324.12,-122.34 504.73,-122.34 504.73,-122.34 510.73,-122.34 516.73,-128.34 516.73,-134.34 516.73,-134.34 516.73,-184.68 516.73,-184.68 516.73,-190.68 510.73,-196.68 504.73,-196.68" />
+      <text xml:space="preserve" text-anchor="middle" x="414.43" y="-172.61" font-family="Arial" font-size="17.00" fill="#14263c">6 · AGENT</text>
+      <text xml:space="preserve" text-anchor="middle" x="414.43" y="-153.11" font-family="Arial" font-size="17.00" fill="#14263c">Edit weighted_mean.py;</text>
+      <text xml:space="preserve" text-anchor="middle" x="414.43" y="-133.61" font-family="Arial" font-size="17.00" fill="#14263c">run fixed tests</text>
     </g>
-    <g id="edge5" class="edge">
-      <title>review-&gt;accept</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" d="M663.14,-130.4C663.14,-118.02 663.14,-104.2 663.14,-91.2" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="665.95,-91.42 663.15,-83.42 660.35,-91.42 665.95,-91.42" />
-      <text xml:space="preserve" text-anchor="middle" x="690.89" y="-99.83" font-family="Arial" font-size="16.00" fill="#14263c">justified</text>
+    <g id="node5" class="node">
+      <title>checkpoint</title>
+      <path fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" d="M195.6,-196.68C195.6,-196.68 17.25,-196.68 17.25,-196.68 11.25,-196.68 5.25,-190.68 5.25,-184.68 5.25,-184.68 5.25,-134.34 5.25,-134.34 5.25,-128.34 11.25,-122.34 17.25,-122.34 17.25,-122.34 195.6,-122.34 195.6,-122.34 201.6,-122.34 207.6,-128.34 207.6,-134.34 207.6,-134.34 207.6,-184.68 207.6,-184.68 207.6,-190.68 201.6,-196.68 195.6,-196.68" />
+      <text xml:space="preserve" text-anchor="middle" x="106.43" y="-172.61" font-family="Arial" font-size="17.00" fill="#14263c">5 · YOU</text>
+      <text xml:space="preserve" text-anchor="middle" x="106.43" y="-153.11" font-family="Arial" font-size="17.00" fill="#14263c">Verify failing run &amp;</text>
+      <text xml:space="preserve" text-anchor="middle" x="106.43" y="-133.61" font-family="Arial" font-size="17.00" fill="#14263c">commit tests checkpoint</text>
+    </g>
+    <g id="edge2" class="edge">
+      <title>draft_tests-&gt;checkpoint</title>
+      <path fill="none" stroke="#526780" stroke-width="1.6" d="M106.43,-244.09C106.43,-232.43 106.43,-219.37 106.43,-207.11" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="109.23,-207.47 106.43,-199.47 103.63,-207.47 109.23,-207.47" />
+    </g>
+    <g id="edge9" class="edge">
+      <title>checkpoint-&gt;repair</title>
+      <path fill="none" stroke="#526780" stroke-width="1.6" d="M208.13,-159.51C237.96,-159.51 270.76,-159.51 301.26,-159.51" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="301.09,-162.31 309.09,-159.51 301.09,-156.71 301.09,-162.31" />
+      <text xml:space="preserve" text-anchor="middle" x="259.86" y="-184.26" font-family="Arial" font-size="15.00" fill="#14263c">authorise</text>
+      <text xml:space="preserve" text-anchor="middle" x="259.86" y="-166.26" font-family="Arial" font-size="15.00" fill="#14263c">(tests fixed)</text>
+    </g>
+    <g id="node8" class="node">
+      <title>accept</title>
+      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" d="M200.85,-74.34C200.85,-74.34 12,-74.34 12,-74.34 6,-74.34 0,-68.34 0,-62.34 0,-62.34 0,-12 0,-12 0,-6 6,0 12,0 12,0 200.85,0 200.85,0 206.85,0 212.85,-6 212.85,-12 212.85,-12 212.85,-62.34 212.85,-62.34 212.85,-68.34 206.85,-74.34 200.85,-74.34" />
+      <text xml:space="preserve" text-anchor="middle" x="106.43" y="-50.27" font-family="Arial" font-size="17.00" fill="#14263c">8 · YOU</text>
+      <text xml:space="preserve" text-anchor="middle" x="106.43" y="-30.77" font-family="Arial" font-size="17.00" fill="#14263c">Accept reviewed change;</text>
+      <text xml:space="preserve" text-anchor="middle" x="106.43" y="-11.27" font-family="Arial" font-size="17.00" fill="#14263c">commit + record AI use</text>
     </g>
     <g id="node7" class="node">
-      <title>fixed</title>
-      <polygon fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" points="788.41,-331.84 589.88,-331.84 589.88,-272.56 794.41,-272.56 794.41,-325.84 788.41,-331.84" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="788.41,-331.84 788.41,-325.84" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="794.41,-325.84 788.41,-325.84" />
-      <text xml:space="preserve" text-anchor="middle" x="692.14" y="-306.1" font-family="Arial" font-size="18.00" fill="#14263c">Agreed tests stay fixed</text>
-      <text xml:space="preserve" text-anchor="middle" x="692.14" y="-285.1" font-family="Arial" font-size="18.00" fill="#14263c">during the repair</text>
+      <title>review</title>
+      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M495.35,-74.34C495.35,-74.34 333.5,-74.34 333.5,-74.34 327.5,-74.34 321.5,-68.34 321.5,-62.34 321.5,-62.34 321.5,-12 321.5,-12 321.5,-6 327.5,0 333.5,0 333.5,0 495.35,0 495.35,0 501.35,0 507.35,-6 507.35,-12 507.35,-12 507.35,-62.34 507.35,-62.34 507.35,-68.34 501.35,-74.34 495.35,-74.34" />
+      <text xml:space="preserve" text-anchor="middle" x="414.43" y="-50.27" font-family="Arial" font-size="17.00" fill="#14263c">7 · YOU</text>
+      <text xml:space="preserve" text-anchor="middle" x="414.43" y="-30.77" font-family="Arial" font-size="17.00" fill="#14263c">Rerun independently;</text>
+      <text xml:space="preserve" text-anchor="middle" x="414.43" y="-11.27" font-family="Arial" font-size="17.00" fill="#14263c">inspect entire diff</text>
     </g>
-    <g id="edge7" class="edge">
-      <title>fixed-&gt;repair</title>
-      <path fill="none" stroke="#71849a" stroke-width="1.6" stroke-dasharray="5,2" d="M604.1,-271.92C546.86,-252.89 471.87,-227.95 411.19,-207.77" />
+    <g id="edge6" class="edge">
+      <title>repair-&gt;review</title>
+      <path fill="none" stroke="#526780" stroke-width="1.6" d="M414.43,-121.75C414.43,-110.09 414.43,-97.03 414.43,-84.77" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="417.23,-85.13 414.43,-77.13 411.63,-85.13 417.23,-85.13" />
+      <text xml:space="preserve" text-anchor="middle" x="455.3" y="-93.09" font-family="Arial" font-size="15.00" fill="#14263c">diff + results</text>
+    </g>
+    <g id="edge11" class="edge">
+      <title>review:e-&gt;plan:e</title>
+      <path fill="none" stroke="#8b6d37" stroke-width="1.6" stroke-dasharray="5,2" d="M508.35,-37.17C582.82,-37.17 563.59,-356.45 493.78,-385.13" />
+      <polygon fill="#8b6d37" stroke="#8b6d37" stroke-width="1.6" points="493.26,-382.38 485.97,-386.71 494.37,-387.87 493.26,-382.38" />
+      <text xml:space="preserve" text-anchor="middle" x="600.21" y="-215.43" font-family="Arial" font-size="15.00" fill="#14263c"> steer / revise</text>
+    </g>
+    <g id="edge10" class="edge">
+      <title>review-&gt;accept</title>
+      <path fill="none" stroke="#526780" stroke-width="1.6" d="M320.85,-37.17C290.22,-37.17 255.79,-37.17 223.64,-37.17" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="223.71,-34.37 215.71,-37.17 223.71,-39.97 223.71,-34.37" />
+      <text xml:space="preserve" text-anchor="middle" x="267.18" y="-43.92" font-family="Arial" font-size="15.00" fill="#14263c">justified</text>
     </g>
   </g>
 </svg>

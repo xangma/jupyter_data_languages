@@ -122,7 +122,7 @@
         ],
         "target": [
           600,
-          800
+          775
         ]
       },
       {
@@ -143,7 +143,7 @@
           565
         ],
         "target": [
-          700,
+          555,
           565
         ]
       }
@@ -285,56 +285,56 @@
       {
         "label": "File Browser and the git-practice folder",
         "bubble": [
-          195,
-          395
+          238,
+          136
         ],
         "target": [
-          123,
-          139
+          188,
+          136
         ]
       },
       {
         "label": "Git sidebar icon",
         "bubble": [
-          115,
-          455
+          96,
+          98
         ],
         "target": [
-          16,
+          22,
           160
         ]
       },
       {
         "label": "Editor containing angle.py",
         "bubble": [
-          790,
-          190
+          600,
+          72
         ],
         "target": [
-          606,
-          115
+          520,
+          72
         ]
       },
       {
         "label": "Git menu opens a terminal in this repository",
         "bubble": [
-          748,
-          43
+          275,
+          56
         ],
         "target": [
-          276,
-          14
+          275,
+          22
         ]
       },
       {
         "label": "Current branch main",
         "bubble": [
-          432,
-          791
+          415,
+          808
         ],
         "target": [
-          331,
-          847
+          354,
+          846
         ]
       }
     ]
@@ -347,33 +347,33 @@
       {
         "label": "Untracked contains four new files",
         "bubble": [
-          410,
-          350
+          188,
+          318
         ],
         "target": [
-          105,
-          268
+          118,
+          318
         ]
       },
       {
         "label": "U means untracked",
         "bubble": [
-          393,
-          450
+          338,
+          368
         ],
         "target": [
-          275,
+          280,
           368
         ]
       },
       {
         "label": "Track all untracked files stages the new files",
         "bubble": [
-          407,
-          267
+          192,
+          268
         ],
         "target": [
-          244,
+          238,
           268
         ]
       }
@@ -387,45 +387,45 @@
       {
         "label": "Staged contains the four added files",
         "bubble": [
-          415,
-          332
+          338,
+          294
         ],
         "target": [
-          98,
-          220
+          262,
+          294
         ]
       },
       {
         "label": "Minus unstages while keeping working files",
         "bubble": [
-          403,
-          219
+          338,
+          192
         ],
         "target": [
-          244,
-          219
+          246,
+          213
         ]
       },
       {
         "label": "Summary describes the checkpoint",
         "bubble": [
-          413,
-          648
+          338,
+          650
         ],
         "target": [
-          157,
+          276,
           650
         ]
       },
       {
         "label": "Commit records the staged snapshot locally",
         "bubble": [
-          408,
-          781
+          338,
+          776
         ],
         "target": [
-          139,
-          813
+          205,
+          800
         ]
       }
     ]
@@ -438,33 +438,33 @@
       {
         "label": "History lists recorded commits",
         "bubble": [
-          414,
+          338,
           184
         ],
         "target": [
-          219,
+          252,
           184
         ]
       },
       {
         "label": "The saved commit has its message and short ID",
         "bubble": [
-          414,
-          316
+          338,
+          288
         ],
         "target": [
-          159,
-          267
+          245,
+          280
         ]
       },
       {
         "label": "The main label points to this commit",
         "bubble": [
-          398,
-          246
+          198,
+          247
         ],
         "target": [
-          111,
+          133,
           247
         ]
       }
@@ -478,33 +478,33 @@
       {
         "label": "Current Branch names test-wraparound",
         "bubble": [
-          445,
+          232,
           147
         ],
         "target": [
-          123,
+          176,
           147
         ]
       },
       {
         "label": "New Branch creates a branch from a chosen base",
         "bubble": [
-          447,
+          338,
           230
         ],
         "target": [
-          223,
+          264,
           230
         ]
       },
       {
         "label": "Both branch labels initially point to the same commit",
         "bubble": [
-          451,
-          531
+          338,
+          481
         ],
         "target": [
-          171,
+          223,
           481
         ]
       }
@@ -518,44 +518,44 @@
       {
         "label": "Changed contains a modified test file",
         "bubble": [
-          419,
-          345
+          345,
+          325
         ],
         "target": [
-          273,
-          268
+          274,
+          272
         ]
       },
       {
         "label": "HEAD versus WORKING compares the commit and working file",
         "bubble": [
-          922,
-          349
+          1180,
+          112
         ],
         "target": [
-          1055,
-          101
+          1088,
+          112
         ]
       },
       {
         "label": "The added wraparound test is highlighted",
         "bubble": [
-          1308,
-          330
+          1425,
+          236
         ],
         "target": [
-          1215,
-          217
+          1338,
+          236
         ]
       },
       {
         "label": "Plus stages this reviewed file",
         "bubble": [
-          610,
-          293
+          345,
+          255
         ],
         "target": [
-          252,
+          250,
           268
         ]
       }
@@ -569,44 +569,44 @@
       {
         "label": "The same file appears in Staged and Changed",
         "bubble": [
-          419,
-          388
+          345,
+          305
         ],
         "target": [
-          106,
+          268,
           294
         ]
       },
       {
         "label": "HEAD versus INDEX shows the selected snapshot",
         "bubble": [
-          918,
-          349
+          1165,
+          112
         ],
         "target": [
-          1056,
-          101
+          1068,
+          112
         ]
       },
       {
         "label": "Only the wraparound test is staged; the full-turns edit is still outside the index",
         "bubble": [
-          1322,
-          331
+          1425,
+          236
         ],
         "target": [
-          1214,
-          217
+          1338,
+          236
         ]
       },
       {
         "label": "Minus unstages the snapshot without discarding edits",
         "bubble": [
-          612,
-          294
+          345,
+          240
         ],
         "target": [
-          252,
+          250,
           244
         ]
       }
@@ -620,47 +620,53 @@
       {
         "label": "Conflicted identifies the README needing a decision",
         "bubble": [
-          425,
-          325
+          345,
+          246
         ],
         "target": [
-          146,
+          272,
           244
         ]
       },
       {
-        "label": "Compare the facts in both side panes",
+        "label": "Read Incoming on the right alongside Current on the left before editing",
         "bubble": [
-          1434,
-          293
+          1374,
+          265
         ],
         "target": [
           1374,
-          163
+          172
         ]
       },
       {
         "label": "Edit Result to retain degrees and the shortest arc",
         "bubble": [
-          993,
-          291
+          960,
+          265
         ],
         "target": [
-          989,
-          163
+          960,
+          172
         ]
       },
       {
         "label": "Mark as resolved saves and stages the edited result",
         "bubble": [
-          1535,
-          347
+          1445,
+          74
         ],
         "target": [
-          1562,
+          1518,
           74
         ]
       }
+    ],
+    "crop": [
+      0,
+      0,
+      1682,
+      340
     ]
   },
   {
@@ -671,44 +677,44 @@
       {
         "label": "The private recovery-lab branch is checked out",
         "bubble": [
-          157,
-          415
+          215,
+          147
         ],
         "target": [
-          116,
+          152,
           147
         ]
       },
       {
         "label": "The README change remains staged",
         "bubble": [
-          158,
-          517
+          205,
+          244
         ],
         "target": [
-          119,
-          243
+          136,
+          244
         ]
       },
       {
         "label": "The terminal performs one soft reset",
         "bubble": [
-          782,
-          85
+          625,
+          83
         ],
         "target": [
-          506,
+          556,
           83
         ]
       },
       {
         "label": "The staged diff still contains the work from the private commit",
         "bubble": [
-          847,
-          421
+          685,
+          338
         ],
         "target": [
-          527,
+          606,
           338
         ]
       }
@@ -722,44 +728,44 @@
       {
         "label": "The new revert commit follows the mistake",
         "bubble": [
-          403,
-          283
+          338,
+          296
         ],
         "target": [
-          155,
-          280
+          220,
+          296
         ]
       },
       {
         "label": "The mistaken commit remains in history",
         "bubble": [
-          410,
+          338,
           344
         ],
         "target": [
-          165,
+          256,
           344
         ]
       },
       {
         "label": "The practice remote branch now points to the revert",
         "bubble": [
-          770,
-          257
+          338,
+          246
         ],
         "target": [
-          229,
+          276,
           250
         ]
       },
       {
         "label": "The tests passed before pushing the revert",
         "bubble": [
-          843,
-          214
+          505,
+          173
         ],
         "target": [
-          421,
+          432,
           173
         ]
       }
@@ -773,47 +779,53 @@
       {
         "label": "Check the proposed file is inside the practice workspace",
         "bubble": [
-          1330,
-          302
+          1095,
+          365
         ],
         "target": [
-          1113,
+          955,
           365
         ]
       },
       {
         "label": "Review independently derived expected answers in the proposed diff",
         "bubble": [
-          1240,
-          553
+          1015,
+          520
         ],
         "target": [
-          859,
+          868,
           520
         ]
       },
       {
         "label": "Allow once approves this one request; Reject declines it",
         "bubble": [
-          820,
-          737
+          535,
+          742
         ],
         "target": [
-          433,
-          698
+          435,
+          710
         ]
       },
       {
         "label": "Read the selected agent, CPD Qwen model and current mode",
         "bubble": [
-          1250,
-          766
+          835,
+          842
         ],
         "target": [
-          690,
+          722,
           842
         ]
       }
+    ],
+    "crop": [
+      290,
+      28,
+      1392,
+      852
     ]
   },
   {
@@ -940,37 +952,44 @@
       {
         "label": "Plan is selected and Auto-approve is None; review before switching to Act",
         "bubble": [
-          1190,
+          1215,
           1490
         ],
         "target": [
-          1014,
+          1106,
           1490
         ]
       },
       {
         "label": "Check the proposed inverse-variance formula against the hand calculation",
         "bubble": [
-          1190,
+          1215,
           795
         ],
         "target": [
-          982,
-          794
+          1052,
+          795
         ]
       },
       {
         "label": "Catch the incorrect exercises/test_weighted_mean.py path before approving this command",
         "bubble": [
-          1190,
-          996
+          132,
+          962
         ],
         "target": [
-          690,
+          196,
           944
         ]
       }
-    ]
+    ],
+    "crop": [
+      84,
+      76,
+      2316,
+      1466
+    ],
+    "callout_scale": 0.9
   },
   {
     "name": "opencode-desktop-plan",
@@ -1019,36 +1038,42 @@
       {
         "label": "Check the practice folder and the three named files",
         "bubble": [
-          285,
-          245
+          145,
+          268
         ],
         "target": [
-          174,
-          160
+          145,
+          204
         ]
       },
       {
         "label": "Only these named file reads were allowed once; review the plan below",
         "bubble": [
-          1390,
-          370
+          1345,
+          348
         ],
         "target": [
-          1220,
-          329
+          1238,
+          348
         ]
       },
       {
         "label": "Check OpenCode, the CPD Qwen model and plan mode in the toolbar",
         "bubble": [
-          1085,
+          955,
           795
         ],
         "target": [
-          825,
+          845,
           795
         ]
       }
+    ],
+    "crop": [
+      34,
+      28,
+      1614,
+      806
     ]
   }
 ]

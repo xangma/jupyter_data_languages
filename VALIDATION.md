@@ -1,4 +1,38 @@
-# Validation — complete GUI screenshot walkthroughs
+# Validation — pedagogical revamp and GUI walkthroughs
+
+## Local verification — 14 November 2026 (`agy/pedagogy-revamp-20261114`)
+
+Verified in an isolated worktree branched from `ac96bd8` (`codex/phd-python-2026`):
+
+- **Unit and overlay suite**: `uv run --frozen --extra teaching python -m pytest -q`
+  passed **28 tests** (including 4 new SVG crop and callout-bounds checks in
+  `tests/test_screenshot_callouts.py`).
+- **Environment and data check**: `uv run --frozen --extra teaching python scripts/check_setup.py`
+  passed (`Setup OK`, 395/400 usable synthetic survey rows).
+- **Diagrams and screenshot overlays**:
+  - `uv run --frozen python scripts/render_diagrams.py --check` passed across all
+    **12 editable DOT/SVG diagrams** (`array-views`, `fits-vs-ecsv`,
+    `git-undo-vs-revert` and `nyquist-aliasing` added; `shared-mask`,
+    `agent-architecture` and `agent-review-loop` updated).
+  - `uv run --frozen python scripts/render_screenshot_callouts.py --check` passed
+    across all **52 annotated screenshot overlays**, preserving embedded raster
+    bytes while enforcing lossless `viewBox` + `<clipPath>` crops and callout bounds.
+- **Notebook execution and hygiene**: `uv run --frozen --extra teaching python scripts/validate_course.py`
+  executed all **5 course notebooks** cleanly (`00-primer`, `01-catalogue`,
+  `02-git-and-tests`, `03-agents-and-inference`, `04-signal-extension`); source
+  `.ipynb` files retain empty outputs (`outputs: []`, `execution_count: null`).
+- **Strict MyST HTML build and headless browser checks**: `BASE_URL=/python-phd npm run build:docs`
+  built all **11 pages** strictly with zero warnings, injected all 5 CPD notebook
+  launch links and verified cold-start config. Headless Chrome verified `HTTP 200`,
+  `0px` horizontal overflow, zero broken images, and synchronized 3-tab switching
+  (`Jupyter AI on CPD`, `Cline + CPD Qwen`, `Claude Code`) across the rendered site.
+- **Deployment status**: Local branch commit only; live CPD remains at the
+  13 November 2026 image below pending instructor confirmation to push and open a
+  GitOps promotion PR in `icg-innovation/space-k8s-gitops`.
+
+---
+
+## Previous live deployment validation — 13 November 2026
 
 Checked 13 November 2026 on `codex/phd-python-2026`. Published teaching/build
 source: `f0039d29fa11b5f64d692d12dd3f9886e4543428`.

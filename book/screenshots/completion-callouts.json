@@ -201,37 +201,44 @@
       {
         "label": "Select OpenAI Compatible as the API provider",
         "bubble": [
-          1000,
-          341
+          680,
+          425
         ],
         "target": [
-          437,
+          485,
           425
         ]
       },
       {
         "label": "Use the instructor-supplied CPD base URL and keep the API key masked",
         "bubble": [
-          1010,
-          635
+          700,
+          638
         ],
         "target": [
-          401,
+          548,
           638
         ]
       },
       {
         "label": "Select the CPD Qwen model ID supplied for this course",
         "bubble": [
-          1160,
-          970
+          780,
+          958
         ],
         "target": [
-          610,
+          618,
           958
         ]
       }
-    ]
+    ],
+    "crop": [
+      84,
+      76,
+      1054,
+      1280
+    ],
+    "callout_scale": 0.85
   },
   {
     "name": "jupyterhub-signin",
@@ -241,14 +248,20 @@
       {
         "label": "Choose Sign in with GitHub to authenticate to CPD JupyterHub",
         "bubble": [
-          915,
+          905,
           105
         ],
         "target": [
-          810,
+          814,
           105
         ]
       }
+    ],
+    "crop": [
+      0,
+      0,
+      980,
+      185
     ]
   },
   {
@@ -259,36 +272,42 @@
       {
         "label": "Open Standard for the Python PhD course JupyterLab workspace",
         "bubble": [
-          432,
-          305
+          445,
+          314
         ],
         "target": [
-          290,
+          348,
           314
         ]
       },
       {
         "label": "Open Python PhD book for the teaching materials",
         "bubble": [
-          430,
-          373
+          445,
+          366
         ],
         "target": [
-          285,
+          342,
           362
         ]
       },
       {
         "label": "Workspaces keep separate saved files; save and stop Standard before changing CPU or GPU resources",
         "bubble": [
-          1100,
-          500
+          1355,
+          420
         ],
         "target": [
-          930,
+          1248,
           418
         ]
       }
+    ],
+    "crop": [
+      140,
+      64,
+      1400,
+      408
     ]
   },
   {
@@ -299,36 +318,42 @@
       {
         "label": "Choose Python PhD (locked) as the notebook kernel",
         "bubble": [
-          1120,
-          415
+          1115,
+          437
         ],
         "target": [
-          780,
-          438
+          1028,
+          437
         ]
       },
       {
         "label": "Choose Select to start this notebook with the selected kernel",
         "bubble": [
-          1110,
-          550
+          1115,
+          520
         ],
         "target": [
-          1000,
-          521
+          1032,
+          520
         ]
       },
       {
         "label": "Always start the preferred kernel is unchecked in this example",
         "bubble": [
-          554,
-          498
+          565,
+          485
         ],
         "target": [
-          662,
+          656,
           485
         ]
       }
+    ],
+    "crop": [
+      288,
+      28,
+      1360,
+      596
     ]
   },
   {
@@ -339,47 +364,53 @@
       {
         "label": "Compare the original mean on the left with the repaired function on the right in the Git diff",
         "bubble": [
-          1085,
-          640
+          1007,
+          350
         ],
         "target": [
           1007,
-          235
+          246
         ]
       },
       {
         "label": "Inspect inverse-variance weights and the weighted-sum return formula",
         "bubble": [
-          1450,
-          635
+          1474,
+          650
         ],
         "target": [
           1474,
-          545
+          552
         ]
       },
       {
         "label": "The saved conversation reports 12 passed and unchanged tests; rerun the tests to verify",
         "bubble": [
-          640,
-          752
+          615,
+          735
         ],
         "target": [
-          358,
-          688
+          518,
+          720
         ]
       },
       {
         "label": "Check the OpenCode client and CPD Qwen model selection shown below the saved chat",
         "bubble": [
-          470,
-          842
+          495,
+          845
         ],
         "target": [
-          268,
-          849
+          392,
+          845
         ]
       }
+    ],
+    "crop": [
+      34,
+      28,
+      1616,
+      852
     ]
   },
   {
@@ -414,201 +445,231 @@
   {
     "name": "vscode-remote-controls",
     "title": "Find Pull Push and Fetch in VS Code after integrating remote work",
-    "callout_scale": 1,
+    "callout_scale": 0.85,
     "callouts": [
       {
         "label": "Pull fetches and integrates remote work; this capture is after the pull and merge",
         "bubble": [
-          1140,
-          273
+          1105,
+          265
         ],
         "target": [
-          722,
+          995,
           269
         ]
       },
       {
         "label": "Push publishes local commits; the visible post-pull state is zero incoming and two outgoing",
         "bubble": [
-          1140,
-          350
+          1105,
+          336
         ],
         "target": [
-          724,
+          995,
           318
         ]
       },
       {
         "label": "Fetch updates knowledge of the remote without integrating its commits",
         "bubble": [
-          1140,
-          470
+          1105,
+          461
         ],
         "target": [
-          730,
+          995,
           461
         ]
       }
+    ],
+    "crop": [
+      84,
+      76,
+      1600,
+      1084
     ]
   },
   {
     "name": "claude-editor-plan",
     "title": "Review the Claude Code inspection plan and independent scientific expectations",
-    "callout_scale": 1,
+    "callout_scale": 0.9,
     "callouts": [
       {
         "label": "Check the hand calculation: unequal errors give an inverse-variance weighted mean of 3.6",
         "bubble": [
-          1138,
-          443
+          1035,
+          438
         ],
         "target": [
-          861,
+          898,
           438
         ]
       },
       {
         "label": "Review the proposed one-dimensional shape, matching-length, finite-input and positive-error validation",
         "bubble": [
-          1237,
-          1131
+          855,
+          1110
         ],
         "target": [
-          593,
-          1121
+          705,
+          1110
         ]
       },
       {
         "label": "Claude stayed in plan mode; review the written plan before allowing edits",
         "bubble": [
-          1745,
-          1120
+          2235,
+          1112
         ],
         "target": [
-          2042,
-          1110
+          2132,
+          1112
         ]
       }
+    ],
+    "crop": [
+      84,
+      76,
+      2316,
+      1466
     ]
   },
   {
     "name": "claude-tests",
     "title": "Review Claude Code independent tests and choose the scope of write approval",
-    "callout_scale": 1,
+    "callout_scale": 0.9,
     "callouts": [
       {
         "label": "Inspect the proposed independent test file: expected 3.6, equal-error 6.0 and rejection of two-dimensional inputs",
         "bubble": [
-          1490,
-          527
+          1455,
+          492
         ],
         "target": [
-          1271,
-          488
+          1295,
+          492
         ]
       },
       {
         "label": "Choose Yes to approve this reviewed file write once",
         "bubble": [
-          1740,
-          1150
+          1735,
+          1164
         ],
         "target": [
-          1930,
+          1862,
           1164
         ]
       },
       {
         "label": "Allow all edits this session grants broader permission than the one-time Yes choice",
         "bubble": [
-          1740,
+          1735,
           1237
         ],
         "target": [
-          2095,
+          1862,
           1237
         ]
       }
+    ],
+    "crop": [
+      84,
+      76,
+      2316,
+      1450
     ]
   },
   {
     "name": "claude-repair-approval",
     "title": "Review the named Claude Code repair and approve a single edit",
-    "callout_scale": 1,
+    "callout_scale": 0.9,
     "callouts": [
       {
         "label": "Confirm the approval request names only weighted_mean.py",
         "bubble": [
-          1745,
-          1052
+          2255,
+          1085
         ],
         "target": [
-          2104,
-          1091
+          2158,
+          1085
         ]
       },
       {
         "label": "Inspect inverse-variance weights and the weighted-sum return formula before approving",
         "bubble": [
-          1190,
-          1188
+          1155,
+          1222
         ],
         "target": [
-          670,
-          1208
+          1022,
+          1236
         ]
       },
       {
         "label": "Choose the one-time Yes for the reviewed repair instead of allowing every edit this session",
         "bubble": [
-          1745,
-          1167
+          1735,
+          1164
         ],
         "target": [
-          1930,
+          1862,
           1164
         ]
       }
+    ],
+    "crop": [
+      84,
+      76,
+      2316,
+      1450
     ]
   },
   {
     "name": "claude-review",
     "title": "Inspect the Claude Code repair diff and actual passing test output",
-    "callout_scale": 1,
+    "callout_scale": 0.9,
     "callouts": [
       {
         "label": "Inspect the weighted_mean.py working-tree diff and its input-validation guards",
         "bubble": [
-          1470,
-          631
+          1010,
+          626
         ],
         "target": [
-          844,
-          630
+          845,
+          628
         ]
       },
       {
         "label": "Check the inverse-variance weights and scalar weighted-mean return",
         "bubble": [
-          1260,
-          1135
+          1135,
+          1132
         ],
         "target": [
-          929,
-          1135
+          982,
+          1132
         ]
       },
       {
         "label": "Read the actual execution output: 12 passed in 0.03 seconds",
         "bubble": [
-          1745,
-          541
+          2335,
+          540
         ],
         "target": [
-          2070,
+          2242,
           540
         ]
       }
+    ],
+    "crop": [
+      84,
+      76,
+      2316,
+      1466
     ]
   },
   {
@@ -665,52 +726,58 @@
   {
     "name": "cline-tests",
     "title": "Review independent tests before saving the new file in Cline with CPD Qwen",
-    "callout_scale": 1,
+    "callout_scale": 0.9,
     "callouts": [
       {
         "label": "Auto-approve is None; choose Save or Reject after inspecting the proposed new test file",
         "bubble": [
           480,
-          1190
+          1198
         ],
         "target": [
           365,
-          1275
+          1252
         ]
       },
       {
         "label": "Check the independent hand calculation and unequal-error expectation of 3.6",
         "bubble": [
-          2145,
-          558
+          2155,
+          560
         ],
         "target": [
-          2195,
-          694
+          2222,
+          682
         ]
       },
       {
         "label": "Confirm matching two-dimensional inputs are tested for ValueError",
         "bubble": [
-          2155,
-          1285
+          1930,
+          1162
         ],
         "target": [
-          1760,
-          1160
+          1792,
+          1162
         ]
       },
       {
         "label": "Check the CPD Qwen model selector while reviewing this Act-mode file proposal",
         "bubble": [
-          1230,
-          1450
+          660,
+          1385
         ],
         "target": [
-          572,
-          1492
+          580,
+          1478
         ]
       }
+    ],
+    "crop": [
+      84,
+      76,
+      2316,
+      1466
     ]
   },
   {
@@ -934,52 +1001,58 @@
   {
     "name": "cline-review",
     "title": "Review the Cline repair diff and explicitly captured pytest exit status",
-    "callout_scale": 1,
+    "callout_scale": 0.9,
     "callouts": [
       {
         "label": "Inspect the weighted_mean.py working-tree diff before accepting the repair",
         "bubble": [
-          1190,
-          340
+          1215,
+          290
         ],
         "target": [
-          1305,
-          160
+          1315,
+          165
         ]
       },
       {
         "label": "Check inverse-variance weights and the scalar weighted-sum return formula",
         "bubble": [
-          2180,
-          1240
+          2040,
+          1265
         ],
         "target": [
-          1790,
-          1282
+          1810,
+          1280
         ]
       },
       {
         "label": "Read the captured run: 12 passed and explicitly printed PYTEST_EXIT=0; verify status when a tool banner disagrees",
         "bubble": [
-          915,
-          800
+          565,
+          822
         ],
         "target": [
-          375,
-          834
+          380,
+          832
         ]
       },
       {
         "label": "Check the CPD Qwen model selector used for this Cline review",
         "bubble": [
-          1230,
-          1450
+          660,
+          1385
         ],
         "target": [
-          572,
-          1492
+          580,
+          1478
         ]
       }
+    ],
+    "crop": [
+      84,
+      76,
+      2316,
+      1466
     ]
   }
 ]

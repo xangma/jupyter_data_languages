@@ -130,3 +130,40 @@ The six-hour structure and breaks remain. Session 2's instructor pacing now
 allocates time to foundations and recovery; function/test demonstrations are
 shorter and later. Student content contains no minute-by-minute timings. The
 angle-helper tests, independent expectations and reproducible handoff remain.
+
+## Pedagogical, visual and 3-route agent revamp — 14 November 2026
+
+Reviewed all eleven pages, five notebooks, diagrams and screenshot overlays for
+incoming first-year astrophysics PhD students spanning both observational and
+theoretical projects and mixed computing backgrounds.
+
+- **Concept → visual → example → scaffolded task flow**: Restructured `setup.md`
+  into browser-first CPD (`Option A`, including `source /opt/course/.venv/bin/activate`
+  and cropped Hub/kernel guides) versus local `uv`/`venv` (`Option B`). Added
+  theorist and observer bridges, `pprint_all()` inspection, explicit 3-band flux
+  broadcasting, scaffolded student task cells, progressive `{dropdown}` hints and
+  worked answers in `solutions.md`, balanced theoretical/observational tracks in
+  `further-reading.md`, and scannable session tables in `instructor.md`.
+- **Twelve editable concept diagrams**: Added `array-views`, `fits-vs-ecsv`,
+  `git-undo-vs-revert` and `nyquist-aliasing` (plus two-panel time/FFT figure in
+  `04-signal-extension.ipynb`), and refined `shared-mask`, `agent-architecture`
+  and `agent-review-loop`.
+- **Sleeker lossless screenshot crops**: Extended `scripts/render_screenshot_callouts.py`
+  with optional `"crop": [cx, cy, cw, ch]` SVG `viewBox` + `<clipPath>` framing
+  and bounds checks (`tests/test_screenshot_callouts.py`), zooming key UI regions
+  and stripping personal IDE chrome while keeping embedded `.jpg`/`.png` bytes
+  untouched across all 52 annotated overlays.
+- **Session 2 rebalance (`02-git-and-tests.ipynb`)**: Reduced total Markdown prose
+  by ~36% (~40% along a single editor route) by trimming triple-repeated screenshot
+  captions, folding troubleshooting and the optional GitHub PR walkthrough into
+  `{dropdown}` blocks, moving `git-remotes.svg` into the Remotes section, adding
+  `git-undo-vs-revert.svg`, and expanding uninterrupted `pytest` coverage
+  (`pytest.approx`, `pytest.raises`, failure tracebacks, and 1D wraparound versus
+  2D spherical separation).
+- **Focused 3-tab Session 3 (`agent-tools.md`, `03-agents-and-inference.ipynb`)**:
+  Placed `agent-tools.md` immediately before Session 3 in `myst.yml`, streamlined
+  the six-tool tab sets to three synchronized GUI routes (`Jupyter AI on CPD`,
+  `Cline + CPD Qwen`, `Claude Code`) with a compact control-mapping table for
+  Codex, Antigravity and OpenCode Desktop, recorded `sys.executable` in generated
+  `TASK.md`, added `claude-repair-approval.svg` and a concrete steering contrast,
+  and removed raw internal CI harness cells from student view.

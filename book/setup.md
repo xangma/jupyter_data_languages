@@ -1,70 +1,49 @@
 # Before the first session
 
-Allow 20–30 minutes for installation. You need Python 3.11 or later and Git 2.28 or later;
-the locked course environment uses Python 3.13. A working notebook and a terminal
-are enough. VS Code is optional.
+Allow 10 minutes on CPD or 20–30 minutes for a local installation. Choose **Option A** to work entirely in your browser, or **Option B** to install locally (Python 3.11+ and Git 2.28+; the locked course environment uses Python 3.13). VS Code is optional.
 
-## Use CPD without local installation
+## Option A: Use CPD in your browser (recommended, no local install)
 
-Open [the Python PhD book](https://icg-cpd-cluster.port.ac.uk/python-phd/) and
-choose **Connect to JupyterHub**. Sign in with your enrolled GitHub account.
-Preparing the course workspace can take a few minutes on the first visit.
+1. Open [the Python PhD book](https://icg-cpd-cluster.port.ac.uk/python-phd/), choose **Connect to JupyterHub**, and authenticate with your enrolled GitHub account (creating a GitHub account alone does not grant access; ask the instructor if access is denied).
 
 ![JupyterHub sign-in with the GitHub button highlighted](../book/screenshots/jupyterhub-signin.svg)
 
-[Open full-size screenshot](../book/screenshots/jupyterhub-signin.svg)
+**Sign in:** Choose **Sign in with GitHub** (**1**) using your enrolled account. [Open full-size screenshot](../book/screenshots/jupyterhub-signin.svg)
 
-**Sign in:** **1** opens GitHub authentication. Use your enrolled account.
-
-On a notebook page, start the compute environment and run cells from the top.
-For Git, a terminal or editing files, open the connection menu and choose
-**Open this notebook in JupyterHub**. Your workspace contains the course checkout. The **Git** sidebar is already
-enabled in CPD JupyterLab. Session 2 has matching **Git commands**, **VS Code**
-and **JupyterLab on CPD** tabs; choose one route for each action.
+2. On **Workspaces**, choose **Open Standard** for full JupyterLab or **Python PhD book** for the interactive book; ignore the separate `CPD Training` card. If prompted for server options, select **Standard (CPU)** — no GPU is needed, and first startup takes a couple of minutes.
 
 ![JupyterHub workspace choices with Standard and the Python PhD book highlighted](../book/screenshots/jupyterhub-workspaces.svg)
 
-[Open full-size screenshot](../book/screenshots/jupyterhub-workspaces.svg)
+**Workspaces:** Choose **Open Standard** (**1**) for JupyterLab or **Python PhD book** (**2**) for the course pages (**3** notes separate workspace storage). [Open full-size screenshot](../book/screenshots/jupyterhub-workspaces.svg)
 
-**Choose the course workspace:** **1** opens **Standard** in JupyterLab;
-**2** opens the **Python PhD book**. **3** explains that workspaces keep separate
-files and resource changes require saving and stopping Standard first.
+3. On any notebook page in the book, click the **`⏻` Start compute** toolbar icon to run cells inline from top to bottom, or open the connection menu and choose **Open this notebook in CPD JupyterHub** for JupyterLab editing, files, the pre-enabled **Git** sidebar, and terminals.
 
-If access is denied, ask the instructor to check your existing CPD enrolment;
-creating a GitHub account alone does not grant access. Disconnecting the book
-does not stop your server: use JupyterHub's control panel to stop your standard
-server when finished. Your files remain in your workspace. PhD notebooks use the
-**Python PhD (locked)** kernel in the same workspace as your general work.
-CPU and shared-GPU server options are available; this course does not require a GPU.
-
-In JupyterLab, select the kernel name at the notebook's top right. Choose
-**Python PhD (locked)** under **Start python Kernel**, then **Select**. Choose a
-new kernel for your notebook rather than connecting to another open notebook's
-running kernel.
+4. In CPD JupyterLab, click the kernel indicator at the notebook's top right, choose **Python PhD (locked)** under **Start python Kernel**, and click **Select** (start a fresh kernel rather than attaching to another notebook's session).
 
 ![JupyterLab Select Kernel dialog with Python PhD locked selected](../book/screenshots/jupyterlab-kernel-choice.svg)
 
-[Open full-size screenshot](../book/screenshots/jupyterlab-kernel-choice.svg)
+**Select kernel:** Pick **Python PhD (locked)** (**1**) and click **Select** (**2**), leaving **Always start the preferred kernel** (**3**) unchecked. [Open full-size screenshot](../book/screenshots/jupyterlab-kernel-choice.svg)
 
-**Match the interpreter:** **1** selects the course kernel; **2** confirms it.
-**3** leaves the global preferred-kernel option unchecked. In a cell, run
-`import sys; print(sys.executable)`; CPD should report `/opt/course/.venv/bin/python`.
+5. In a notebook cell, `import sys; print(sys.executable)` should print `/opt/course/.venv/bin/python`. In **each new CPD JupyterLab terminal**, activate that same environment before running `python` or `pytest`:
 
-## Install locally instead
+```bash
+source /opt/course/.venv/bin/activate
+```
 
-Use the [`codex/phd-python-2026` course branch](https://github.com/xangma/jupyter_data_languages/tree/codex/phd-python-2026).
-The older default `master` branch is not this course. Install Git, then clone
-the course branch explicitly and enter its root (containing `pyproject.toml`):
+Disconnecting the book leaves your server running; stop your Standard server via the JupyterHub control panel when finished (your files are kept).
+
+## Option B: Install locally instead
+
+Clone the [`codex/phd-python-2026` course branch](https://github.com/xangma/jupyter_data_languages/tree/codex/phd-python-2026) explicitly (the default `master` branch is an older archive) and enter the repository root:
 
 ```bash
 git clone --branch codex/phd-python-2026 https://github.com/xangma/jupyter_data_languages.git
 cd jupyter_data_languages
 ```
 
-## Reproducible setup with uv
+### Option B1: Reproducible setup with uv
 
-Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and
-[Git](https://git-scm.com/downloads), then run:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and [Git](https://git-scm.com/downloads), then run:
 
 ```bash
 uv sync --frozen --python 3.13 --extra teaching
@@ -73,26 +52,11 @@ uv run --frozen --extra teaching python scripts/check_setup.py
 uv run --frozen --extra teaching jupyter lab
 ```
 
-The first command needs the network. Once installed, add `--offline` to `uv run`
-for classroom use. Open `book/00-primer.ipynb` or `book/01-catalogue.ipynb`.
-For the terminal practicals, activate this environment in each new terminal:
-`source .venv/bin/activate` on macOS/Linux, or `source .venv/Scripts/activate`
-in Windows Git Bash. Run that from the course root before entering a sandbox.
-In Windows PowerShell, use `.venv\Scripts\Activate.ps1`.
+`uv sync` creates a local `.venv/` with the exact package versions pinned in `uv.lock`, while `ipykernel install` registers that `.venv` interpreter in Jupyter as **Python PhD (locked)**. After installation you can pass `--offline` to `uv run`, and in each new terminal for Sessions 2 and 3 activate `.venv` from the course root (`source .venv/bin/activate` on macOS/Linux, `source .venv/Scripts/activate` in Windows Git Bash, or `.venv\Scripts\Activate.ps1` in PowerShell).
 
-uv does not install pip in this environment. Use `uv pip freeze` to inspect its
-packages; installing pip during class is unnecessary. Inside CPD JupyterLab,
-activate the course environment in each new terminal:
-`source /opt/course/.venv/bin/activate`. Then use `python -m pip freeze`.
+### Option B2: Standard Python venv
 
-## Standard Python alternative
-
-```bash
-python -m venv .venv
-```
-
-Activate it with `source .venv/bin/activate` on macOS/Linux, or
-`.venv\Scripts\Activate.ps1` in Windows PowerShell. Then:
+Create and activate a virtual environment (`python -m venv .venv`, followed by `source .venv/bin/activate` on macOS/Linux, `source .venv/Scripts/activate` in Windows Git Bash, or `.venv\Scripts\Activate.ps1` in PowerShell), then install the editable package and kernel:
 
 ```bash
 python -m pip install -e ".[teaching]"
@@ -101,28 +65,9 @@ python scripts/check_setup.py
 python -m jupyter lab
 ```
 
-This alternative resolves compatible package versions; `uv.lock` records the
-exact tested set. Select the same interpreter as the notebook kernel. If a cell
-cannot import `course2026`, run the editable install in the kernel's environment
-and restart the kernel. Check `sys.executable` in a cell to see which Python it uses.
+Select **Python PhD (locked)** in JupyterLab (or choose `.venv` in VS Code's **Select Kernel** menu with the Python and Jupyter extensions). On Windows, use **Git Bash** for shell commands in Sessions 2 and 3.
 
 ## Readiness check
 
-Before Session 3, choose one route in [coding-agent setup](agent-tools.md) and
-prepare its practice workspace with the single command there. Codex, Claude
-Code, Antigravity/agy and Cline with CPD Qwen use the same exercise. Check the
-tool's existing permissions/sandbox before class; a paid account is optional.
-
-You should see `Setup OK`, 395 usable rows out of 400 and no import errors.
-Run `python -m pytest -q` in the active environment; all reference tests should
-pass. The separate `exercises/test_weighted_mean.py` intentionally fails until
-you repair a **prepared practice copy** of its starter in Session 3. Leave the originals
-in `exercises/` unchanged: the notebook uses them to demonstrate the failing baseline.
-
-For Windows, use Git Bash for the shell blocks in Sessions 2 and 3 and activate
-the environment there first, as above. For VS Code, install Microsoft's Python and Jupyter
-extensions and choose this environment in **Select Kernel**.
-
-If installation is blocked, tell the instructor before class. Pairing or an
-instructor-provided JupyterHub environment is a fallback; an account with a paid
-AI service is never required. Keep a local copy of the repository and data.
+1. **Python and Git:** Run `python scripts/check_setup.py` and `python -m pytest -q` in your active course terminal. Confirm `395 usable rows out of 400`, `Setup OK`, and passing reference tests (`exercises/test_weighted_mean.py` intentionally fails until you repair a separate practice copy in Session 3 — leave `exercises/` untouched).
+2. **Coding agent (before Session 3):** Complete [Choose your coding agent](agent-tools.md) to configure `Jupyter AI on CPD`, `Cline + CPD Qwen`, `Claude Code`, or the manual pair option and create your practice folder. Tell the instructor before class if any step is blocked.

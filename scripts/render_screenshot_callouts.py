@@ -32,6 +32,16 @@ def render(root: Path, item: dict) -> str:
         width, height = capture.size
     if item.get("mime_type", mime_type) != mime_type:
         raise ValueError(f"MIME type does not match capture: {source.name}")
+    crop = item.get("crop")
+    if crop is None:
+        cx, cy, cw, ch = 0, 0, width, height
+    else:
+        if len(crop) != 4 or not all(isinstance(v, int) for v in crop):
+            raise ValueError(f"Expected integer [x, y, w, h] crop: {item['name']}")
+        cx, cy, cw, ch = crop
+        if not (0 <= cx < width and 0 <= cy < height and cw > 0 and ch > 0
+                and cx + cw <= width and cy + ch <= height):
+            raise ValueError(f"Crop outside capture: {item['name']}")
     description = " ".join(
         f"{i}: {callout['label']}." for i, callout in enumerate(item["callouts"], 1)
     )
@@ -41,23 +51,37 @@ def render(root: Path, item: dict) -> str:
     def size(value: int) -> int:
         return max(1, round(value * scale))
     radius = size(36)
+    overflow_attr = ' overflow="hidden"' if crop is not None else ''
     parts = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
-        f'viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{cw}" height="{ch}" '
+        f'viewBox="{cx} {cy} {cw} {ch}"{overflow_attr} role="img" aria-labelledby="title desc">',
         f'<title id="title">{escape(item["title"])}</title>',
         f'<desc id="desc">{escape(description)}</desc>',
         f'<!-- Original {capture_format} SHA-256: {hashlib.sha256(raw).hexdigest()} -->',
-        '<image id="original-capture" width="100%" height="100%" '
-        f'href="data:{mime_type};base64,{base64.b64encode(raw).decode()}"/>',
-        '<g id="editable-callouts" font-family="Arial, Helvetica, sans-serif" '
-        f'font-size="{size(42)}" font-weight="700" text-anchor="middle">',
     ]
+    if crop is not None:
+        parts.extend([
+            f'<defs><clipPath id="crop-box"><rect x="{cx}" y="{cy}" width="{cw}" height="{ch}"/></clipPath></defs>',
+            '<g clip-path="url(#crop-box)">',
+            f'<image id="original-capture" x="0" y="0" width="{width}" height="{height}" '
+            f'href="data:{mime_type};base64,{base64.b64encode(raw).decode()}"/>',
+        ])
+    else:
+        parts.append(
+            '<image id="original-capture" width="100%" height="100%" '
+            f'href="data:{mime_type};base64,{base64.b64encode(raw).decode()}"/>'
+        )
+    parts.append(
+        '<g id="editable-callouts" font-family="Arial, Helvetica, sans-serif" '
+        f'font-size="{size(42)}" font-weight="700" text-anchor="middle">'
+    )
     for i, callout in enumerate(item["callouts"], 1):
         x, y = callout["bubble"]
         tx, ty = callout["target"]
-        if not (radius <= x <= width - radius and radius <= y <= height - radius
-                and 0 <= tx <= width and 0 <= ty <= height):
-            raise ValueError(f"Callout outside capture: {item['name']} #{i}")
+        if not (cx + radius <= x <= cx + cw - radius
+                and cy + radius <= y <= cy + ch - radius
+                and cx <= tx <= cx + cw and cy <= ty <= cy + ch):
+            raise ValueError(f"Callout outside capture/crop: {item['name']} #{i}")
         parts.extend([
             f'<g id="callout-{i}" aria-label="{escape(callout["label"], {chr(34): "&quot;"})}">',
             f'<path d="M{x},{y} L{tx},{ty}" stroke="white" stroke-width="{size(12)}"/>',
@@ -67,7 +91,8 @@ def render(root: Path, item: dict) -> str:
             f'<text x="{x}" y="{y + size(14)}" fill="white">{i}</text>',
             '</g>',
         ])
-    return "\n".join(parts + ["</g>", "</svg>", ""])
+    closing = ["</g>", "</g>", "</svg>", ""] if crop is not None else ["</g>", "</svg>", ""]
+    return "\n".join(parts + closing)
 
 
 def main() -> None:

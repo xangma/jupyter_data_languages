@@ -1,8 +1,9 @@
 # Continue after the course
 
-Use a real repository as a reading exercise: find its README, environment,
-public API, one test and contribution guidance. Explain one function before
-asking an agent to change it. Classroom practice should stay in your own sandbox.
+Use an active research repository as a reading exercise: locate its `README`,
+dependency specification, public API, one unit test and contribution guidelines.
+Explain one function and its assumptions yourself before asking a coding agent to
+modify it, and keep practice edits in your own fork or local sandbox.
 
 | Interest | Starting point | First question |
 | --- | --- | --- |
@@ -15,61 +16,27 @@ Primary documentation for this course:
 
 - [NumPy broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html)
 - [Astropy units](https://docs.astropy.org/en/stable/units/) and [tables](https://docs.astropy.org/en/stable/table/)
-- [SciPy curve_fit](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html): inspect `sigma` and `absolute_sigma`
+- [SciPy `curve_fit`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html): inspect `sigma` and `absolute_sigma`
 - [Matplotlib error bars](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html)
-- [pytest assertions](https://docs.pytest.org/en/stable/how-to/assert.html)
-- [Pro Git](https://git-scm.com/book/en/v2)
-- [Jupyter Book](https://jupyterbook.org/stable/) and [MyST hosting](https://mystmd.org/guide/deployment)
+- [`pytest` assertions](https://docs.pytest.org/en/stable/how-to/assert.html)
+- [Pro Git](https://git-scm.com/book/en/v2) and [coding-agent setup](agent-tools.md)
 
-## Coding-agent interfaces
+## Next steps for observational astrophysics
 
-The [setup tabs](agent-tools.md) and Session 3 screenshots use graphical clients:
+- [`astropy.coordinates`](https://docs.astropy.org/en/stable/coordinates/): celestial reference frames (`ICRS`, `Galactic`), proper-motion propagation and exact 2D spherical sky cross-matching (`match_to_catalog_sky`) instead of naive Euclidean RA/Dec differences.
+- [`astropy.io.fits`](https://docs.astropy.org/en/stable/io/fits/) and [`astropy.wcs`](https://docs.astropy.org/en/stable/wcs/): multi-extension FITS images and binary tables, header provenance cards and pixel-to-sky World Coordinate System transformations.
+- [`astroquery`](https://astroquery.readthedocs.io/en/latest/): scripted, reproducible archive and ADQL/TAP queries across **Gaia**, **Euclid**, **SDSS** and space-telescope catalogues.
+- [`photutils`](https://photutils.readthedocs.io/en/stable/) and [`specutils`](https://specutils.readthedocs.io/en/stable/): background estimation, aperture/PSF photometry and 1D spectral line or continuum analysis carrying Astropy units and uncertainties.
 
-- Codex: [projects](https://learn.chatgpt.com/docs/projects), [review pane](https://learn.chatgpt.com/docs/code-review) and [permissions](https://learn.chatgpt.com/docs/agent-approvals-security).
-- [Claude Desktop's Code tab](https://code.claude.com/docs/en/desktop).
-- Antigravity: [desktop setup](https://antigravity.google/docs/getting-started), [plan review](https://antigravity.google/docs/artifact-review) and [permissions](https://antigravity.google/docs/agent-settings).
-- Cline in VS Code: [Plan/Act](https://docs.cline.bot/core-workflows/plan-and-act), [approvals](https://docs.cline.bot/features/auto-approve) and [provider settings](https://docs.cline.bot/provider-config/openai-compatible).
-- [OpenCode Desktop](https://dev.opencode.ai/desktop), with its [agent](https://opencode.ai/docs/agents) and [permission](https://opencode.ai/docs/permissions) controls.
-- [Jupyter AI agent chat](https://jupyter-ai.readthedocs.io/en/latest/users/chat/index.html) in CPD JupyterLab, using the prepared OpenCode/Qwen connection.
+## Next steps for theoretical and computational astrophysics
 
-The interface, agent and inference provider are separate choices. Verify actual
-files and tool results alongside the summary. Terminals are used for the shared
-workspace helper, pytest and Git; they are not the coding-agent interface in
-this course. Match controls to the installed app rather than a terminal guide.
+- [`JAX`](https://docs.jax.dev/en/latest/) and [`Numba`](https://numba.readthedocs.io/en/stable/): JIT compilation, batched vectorisation (`vmap`) and automatic differentiation (`grad`) when pure NumPy array operations hit CPU/GPU bottlenecks.
+- [`scipy.integrate.solve_ivp`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html) and [`scipy.fft`](https://docs.scipy.org/doc/scipy/reference/fft.html): stiff and non-stiff ODE solvers with explicit relative/absolute tolerances and spectral transforms for grid or perturbation calculations.
+- **Bayesian inference samplers across ICG:** ensemble MCMC with [`emcee`](https://emcee.readthedocs.io/en/stable/), nested sampling with [`dynesty`](https://dynesty.readthedocs.io/en/stable/) and [`nessai`](https://nessai.readthedocs.io/en/latest/) / [`bilby`](https://lscsoft.docs.ligo.org/bilby/) for gravitational-wave parameter estimation, and cosmological likelihood pipelines in [`Cobaya`](https://cobaya.readthedocs.io/en/latest/) and [`GetDist`](https://getdist.readthedocs.io/en/latest/).
+- **Property-based and numerical-invariant testing:** [`Hypothesis`](https://hypothesis.readthedocs.io/en/latest/) for automated edge-case generation alongside analytical limiting cases, conservation-law checks (energy, momentum, probability normalisation) and step-size convergence-rate tests.
+- **Profiling before scaling to SCIAMA HPC / Slurm:** profile single-core runtime and memory locally (`cProfile`, `line_profiler`) and verify deterministic seed/checkpoint reproducibility before scaling batch or job-array runs on Portsmouth's [SCIAMA HPC cluster](https://www.sciama.icg.port.ac.uk/) under Slurm.
 
 ## Git and VS Code
 
-Start with [Git's hands-on tutorial](https://git-scm.com/docs/gittutorial), then
-use the command manuals for the recovery you need:
-[restore](https://git-scm.com/docs/git-restore),
-[reset](https://git-scm.com/docs/git-reset),
-[revert](https://git-scm.com/docs/git-revert) and
-[reflog](https://git-scm.com/docs/git-reflog).
-The Session 2 recovery examples concern ordinary commits. Reverting a merge
-requires choosing a mainline parent and affects later merges; read the
-`git revert` manual and discuss the intended history before attempting it.
-Rewriting published history is a separate, coordinated workflow; the
-[push manual](https://git-scm.com/docs/git-push) explains force and lease checks.
-
-VS Code's guides cover [Source Control](https://code.visualstudio.com/docs/sourcecontrol/overview),
-[staging and commits](https://code.visualstudio.com/docs/sourcecontrol/staging-commits),
-[remotes and synchronisation](https://code.visualstudio.com/docs/sourcecontrol/repos-remotes),
-[merge conflicts](https://code.visualstudio.com/docs/sourcecontrol/merge-conflicts)
-and [troubleshooting](https://code.visualstudio.com/docs/sourcecontrol/troubleshooting).
-For the CPD interface, see the [JupyterLab Git project and usage guide](https://github.com/jupyterlab/jupyterlab-git#usage).
-JupyterHub starts the server; JupyterLab provides the editor and Git panel.
-The course's [screenshot notes](https://github.com/xangma/jupyter_data_languages/blob/codex/phd-python-2026/book/screenshots/README.md) record the captured version
-and how the example states were created.
-
-Session 2 was also reviewed against
-[Coleman Krawczyk's original Git lecture](https://github.com/CKrawczyk/jupyter_data_languages/blob/master/Git.ipynb),
-the suggested [Medium tutorial](https://medium.com/@jaaeehoonkim/git-tutorial-1-31d0b1db1940)
-and [GeeksforGeeks topic index](https://www.geeksforgeeks.org/git/git-tutorial/).
-Use the primary manuals above to check command behaviour. The core practical
-introduces concepts before hosting and practises shared recovery without
-requiring an online account.
-
-The earlier notebooks remain in `classes/`, the three root plotting notebooks,
-and `Previous_notebooks/`. They are historical references, outside the validated
-2026 teaching path. They may need extra packages or repairs; do not treat the
-old Slurm session as part of the Python course.
+- **Git manuals for history & recovery:** [hands-on tutorial](https://git-scm.com/docs/gittutorial), [`git restore`](https://git-scm.com/docs/git-restore), [`git reset`](https://git-scm.com/docs/git-reset), [`git revert`](https://git-scm.com/docs/git-revert) (note `-m` mainline parent selection before reverting a merge commit), [`git reflog`](https://git-scm.com/docs/git-reflog) and [`git push --force-with-lease`](https://git-scm.com/docs/git-push).
+- **Graphical Git guides:** VS Code [Source Control](https://code.visualstudio.com/docs/sourcecontrol/overview) ([staging](https://code.visualstudio.com/docs/sourcecontrol/staging-commits), [merge conflicts](https://code.visualstudio.com/docs/sourcecontrol/merge-conflicts), [remotes](https://code.visualstudio.com/docs/sourcecontrol/repos-remotes)) and the [JupyterLab Git extension guide](https://github.com/jupyterlab/jupyterlab-git#usage).

@@ -1,100 +1,197 @@
 # Hints and worked answers
 
-Attempt the tasks first. More than one implementation may satisfy a contract;
-you must still explain the scientific expectation.
+Attempt each task first. Read the visible **Hint** to unblock your thinking, then
+expand **Worked answer** to check your numbers, code and physical reasoning.
 
 ## Primer
 
+**Hint:** Convert the input with `np.asarray(values)` first, combine
+`np.isfinite(values)` and `(values > 0)` with `&`, and ask what `0.0` claims
+physically compared with `NaN`.
+
+:::{dropdown} Worked answer
 ```python
 def positive_finite(values):
     values = np.asarray(values)
     return values[np.isfinite(values) & (values > 0)]
+
+assert positive_finite([-2, 0, 1, np.nan, np.inf, 3]).tolist() == [1.0, 3.0]
 ```
 
-The supplied answer is `[1, 3]`. Replacing a missing measurement with zero invents
-an observed value and can shift summaries.
+For `[-2, 0, 1, np.nan, np.inf, 3]`, the returned values are `[1, 3]`. Replacing
+missing (`NaN`) entries with `0` invents an observed physical measurement of zero
+(such as zero flux or zero recession velocity) and biases downstream summaries.
+:::
 
 ## Session 1
 
-Task A: `np.count_nonzero(~np.isfinite(velocity))` gives 3 and
-`np.count_nonzero(sigma <= 0)` gives 1. The missing magnitude explains the fifth
-invalid row. Apply the same mask to aligned columns. `[:, None]` turns `(N,)`
-into `(N, 1)`, allowing one scale to broadcast across each row.
+### Baseline & Task A — shared masks, invalid-row counts and broadcasting
 
-Task B: the FITS example preserves three physical columns and units, omitting
-arbitrary ECSV metadata and other columns. An explicit conversion remains correct
-when a file uses compatible units with a different scale.
+**Hint:** Use `table[:3].pprint_all()` to inspect every column and unit, count
+each failure mode separately with `np.count_nonzero(...)`, and slice all columns
+with one shared boolean mask.
 
-Task C caption: “Counts and normalised distance distributions for 395 usable
-synthetic objects and the subset with apparent magnitude below 16.5, using common
-bin edges. Invalid measurements were removed with one shared mask. The brighter
-subset favours nearby objects; this is not a real completeness estimate or a
-measurement of the Hubble constant.”
+:::{dropdown} Worked answer
+```python
+table[:3].pprint_all()
+print("Missing velocity:", np.count_nonzero(~np.isfinite(velocity)))      # 3
+print("Nonpositive sigma:", np.count_nonzero(sigma <= 0))                # 1
+print("Missing magnitude:", np.count_nonzero(~np.isfinite(magnitude)))   # 1
+for cut in (15.5, 16.5, 17.5):
+    print(cut, np.count_nonzero(valid & (magnitude < cut)))              # 161, 262, 357
+```
 
-The toy slope need not be biased by the cut: it does not select on velocity
-residuals at fixed distance. Real distance errors, correlations or selection on
-the fitted observable can change this conclusion.
+Three missing velocities, one zero velocity error (`sigma <= 0`) and one missing
+apparent magnitude occur on five distinct rows, leaving **395 usable rows**.
+Assigning zero velocity to missing entries fabricates stationary galaxies. With
+the shared `valid` mask, magnitude limits of `15.5`, `16.5` and `17.5` select
+**161**, **262** and **357** objects respectively. Reshaping a 1-D per-object
+factor with `[:, None]` turns `(N,)` into `(N, 1)` so one scale broadcasts across
+each row's three features `(N, 3)`.
+:::
 
-With the shared valid-row mask, magnitude cuts of 15.5, 16.5 and 17.5 select
-161, 262 and 357 objects respectively.
+### Task B — units and FITS round-trip
+
+**Hint:** Compare the columns and `meta` dictionary of `table` against the FITS
+`subset`, and consider what `.value` would return if a file stored distances in
+`kpc` rather than `Mpc`.
+
+:::{dropdown} Worked answer
+```python
+restored_mpc = restored["distance"].to_value(u.Mpc)
+np.testing.assert_allclose(restored_mpc, distance[valid])
+assert np.all(np.isfinite(restored_mpc) & (restored_mpc > 0))
+```
+
+The FITS round-trip retains the three physical columns (`distance`, `velocity`,
+`velocity_error`) and their units while omitting `object_id`,
+`apparent_magnitude`, and arbitrary ECSV dictionary metadata (`subset.meta.clear()`).
+Calling `.to_value(u.Mpc)` converts compatible scales (such as `kpc` $\rightarrow$
+`Mpc`) and raises `UnitConversionError` on incompatible dimensions, whereas
+`.value` blindly strips whatever unit was stored. On real survey FITS files, also
+test expected row counts, finite value bounds and coordinate/frame header keys.
+:::
+
+### Task C — survey selection and figure caption
+
+**Hint:** Name the sample sizes, common bin edges and shared validity mask in
+three sentences, then check whether cutting on apparent magnitude selects on
+velocity residuals at fixed distance.
+
+:::{dropdown} Worked answer
+**Example caption:** "Counts and normalised distance distributions for 395 usable
+synthetic objects and the 262-object subset with apparent magnitude below 16.5,
+plotted on common distance bin edges. Five rows with non-finite measurements or
+nonpositive velocity errors were removed using one shared mask. The flux-limited
+subset preferentially retains nearby galaxies; this synthetic diagnostic is
+neither a survey completeness measurement nor a cosmological $H_0$ measurement."
+
+**Bias analysis:** Because selection here depends only on distance and apparent
+magnitude—not on velocity noise at fixed distance—the weighted linear slope need
+not be biased, though losing distant objects shrinks the distance lever arm and
+widens the slope uncertainty. Real distance errors, correlated peculiar
+velocities or selection on the fitted observable itself can bias the estimator.
+:::
 
 ## Session 2
 
-Task A: before restaging, the next commit contains `test_wraparound` but not
-`test_full_turns`. The index holds the earlier staged contents while the working
-file includes the later edit. Unstaging keeps both edits in the working file;
-adding the file again selects both for the commit. Git and VS Code show the same
-index and working tree, rather than maintaining separate histories.
+### Task A — staging area versus working tree
 
-Private recovery moves `recovery-lab` back one parent with a soft reset and leaves
-the mistaken work staged; `rescue-before-undo` still names that commit. After the
-corrected commit and the later shared mistake, reverting creates a new commit
-whose parent is the shared mistake. Both remain in the partner clone's history.
-The clone retains `Angle units: degrees.` and omits the incorrect validation
-line. A revert is not the same operation as moving a branch back to an old commit.
+**Hint:** Compare `git diff --staged` (index vs `HEAD`) with `git diff` (working
+tree vs index) before restaging `test_angle.py`.
 
+:::{dropdown} Worked answer
+Before restaging, the next commit would contain `test_wraparound` (already in the
+index) but omit `test_full_turns` (saved only in the working tree). That is why
+`test_angle.py` appears simultaneously in both Staged and Changed lists in the
+CLI, VS Code and JupyterLab—all three views read the same `.git` index and
+working tree. Running `git restore --staged -- test_angle.py` unstages without
+losing either edit; `git add test_angle.py` stages both tests together.
+:::
+
+### Merge conflict
+
+**Hint:** Read both sides of `<<<<<<< HEAD ... ======= ... >>>>>>> description-b`
+and write one clean sentence preserving both physical facts with all marker lines
+removed.
+
+:::{dropdown} Worked answer
+A valid resolution is: `"Angles are measured in degrees, and the helper returns
+their shortest separation."` Saving edits the working tree, staging selects the
+resolved file for the merge commit, committing records the two-parent snapshot
+locally, and pushing updates a remote repository. A pull request adds hosted
+review and discussion around a proposed branch merge; `git pull` fetches and
+integrates commits locally rather than opening a pull request.
+:::
+
+### Local & shared recovery
+
+**Hint:** Check whether anyone else can already have the mistaken commit: use a
+soft reset only for a private local tip, and `git revert` once a commit has been
+pushed.
+
+:::{dropdown} Worked answer
+Private recovery (`git reset --soft HEAD~1`) moves `recovery-lab` back one parent
+while keeping the edit staged so you can fix and recommit it (`rescue-before-undo`
+still points to the discarded commit). Shared recovery (`git revert --no-edit HEAD`
+followed by `git push`) records a new commit whose parent is the pushed mistake.
+In `partner-practice`, `git log` shows **both** the shared mistake and its
+revert, and `README.md` keeps `Angle units: degrees.` while omitting
+`Validation: skipped (practice mistake).`.
+:::
+
+### Task B — independent bearing tests and catching a bug
+
+**Hint:** Derive geometric boundary cases ($0^\circ$ and $180^\circ$) plus a
+floating-point wraparound across $360^\circ$ using `pytest.approx`, then predict
+which assertions fail under `abs(b - a)`.
+
+:::{dropdown} Worked answer
 ```python
+import pytest
+from angle import angle_distance
+
 def test_equal_bearings():
     assert angle_distance(42, 42) == 0
 
 def test_opposite_bearings():
     assert angle_distance(0, 180) == 180
+
+def test_float_wraparound():
+    assert angle_distance(359.9, 0.1) == pytest.approx(0.2)
 ```
 
-A conflict resolution can say: “Angles are in degrees and the helper returns
-their shortest separation.” Staging selects the next commit's content; committing
-records it locally; pushing sends it to a configured remote. A PR adds review
-and discussion around a proposed branch change on a hosting service such as
-GitHub. `git pull` fetches and integrates commits; it does not create a PR.
-
-With the deliberate `abs(b - a)` bug, `test_wraparound` gets 358 instead of 2
-and `test_full_turns` gets 630 instead of 90. The small-angle, equal-angle and
-180-degree tests still pass. `git diff -- angle.py` is empty after restoring
-the correct formula; the new tests are committed on `edge-case-tests`.
+In IEEE-754 floating-point arithmetic, `360 - abs(0.1 - 359.9)` evaluates to
+`0.20000000000004547`, so `pytest.approx(0.2)` avoids brittle exact-float
+failure. With the deliberate `abs(b - a)` bug, `test_wraparound` returns `358`
+instead of `2`, `test_float_wraparound` returns `359.8` instead of `0.2`, and
+`test_full_turns` returns `630` instead of `90`, while `test_small_angles`,
+`test_equal_bearings` and `test_opposite_bearings` still pass. Running
+`git restore -- angle.py` discards only that unstaged bug (`git diff -- angle.py`
+is empty), leaving `test_angle.py` ready to commit on `edge-case-tests`. Unit
+tests still cannot catch caller inputs supplied in radians instead of degrees.
+:::
 
 ## Session 3
 
-The agent client, its model and its execution environment are different things.
-An enforced sandbox restricts processes; approval rules control actions; Git or
-tool checkpoints preserve review/recovery history. Planning instructions, a
-branch and a virtual environment do not create a security boundary. A Cline
-client on a laptop still edits that laptop's workspace when inference uses CPD.
+### Core practical — plan, student checks, scalar `weighted_mean` repair and accountability
 
-A useful plan identifies the scalar interface, invalid inputs, inverse-variance
-weights, permitted file and focused test command. Students own expected answers;
-the agent may translate them into test syntax. Preserve the reviewed tests
-checkpoint during repair. Reject changing `1.2` to `1.5` to match wrong code,
-weakening assertions, or returning a tuple for the scalar contract. A corrective
-follow-up names the mismatch, retains the agreed expectation and asks for a
-bounded implementation change with actual test evidence.
+**Hint:** Pick unequal uncertainties so $1/\sigma^2$ and $1/\sigma$ disagree,
+lock `test_weighted_mean.py` and `test_student_checks.py` at `TESTS_COMMIT`, and
+rescale weights by `errors.min()` to avoid overflow while returning a `float`.
 
-Doubling all error bars leaves the fitted parameters unchanged, doubles their
-standard errors and divides reduced chi-squared by four with `absolute_sigma=True`.
+:::{dropdown} Worked answer
+**Boundaries & plan:** The client UI, model host and OS sandbox are distinct—for
+example, Cline on a laptop edits laptop files even when Qwen runs on CPD, and a
+Git branch or prompt instruction is not an OS sandbox. A sound plan preserves the
+scalar contract, validates matching nonempty finite 1-D arrays with `errors > 0`,
+and uses $w_i = 1/\sigma_i^2$.
 
-For example, measurements `[2, 10]` with errors `[1, 2]` have relative weights
-`[1, 1/4]`, giving `(2 + 10/4) / (1 + 1/4) = 3.6`. Students should choose and
-derive their own example before opening this answer. Possible additions in
-`test_student_checks.py` are:
+**Independent student tests (`test_student_checks.py`):** For `[2, 10]` with
+errors `[1, 2]`, relative inverse-variance weights `[1, 1/4]` give
+$(2 + 10/4)/(1 + 1/4) = 3.6$ (whereas $1/\sigma$ gives $4.67$). Equal-error tests
+give `2.0` under ordinary, $1/\sigma$ and $1/\sigma^2$ weighting alike, so they
+cannot catch wrong error powers.
 
 ```python
 import pytest
@@ -111,9 +208,7 @@ def test_rejects_two_dimensions():
         weighted_mean([[1, 3]], [[1, 3]])
 ```
 
-Commit the agreed tests before the repair and keep them unchanged during it.
-
-A scalar-only solution for the practice workspace is:
+**Scalar repair (`weighted_mean.py`):**
 
 ```python
 import numpy as np
@@ -131,24 +226,47 @@ def weighted_mean(values, errors):
     return float(np.average(values, weights=weights))
 ```
 
-Relative weights preserve inverse-variance ratios without directly forming
-`1 / sigma**2`. Known means: 1.2 and 2.8; common standard error: `sqrt(0.9)`.
-Equal-error tests cannot distinguish ordinary, inverse-error and inverse-variance
-means. Tests do not establish that the measurements really share a true value or
-have independent Gaussian errors.
+**Review & `AI_USE.md`:** Reject any proposal that changes `1.2` to `1.5` in a
+test file or returns `(mean, uncertainty)` instead of a scalar. Record the
+interface/model/host (or manual pair route), `TESTS_COMMIT`, one concrete
+steering or approval decision, observed before/after `pytest` counts, and an
+untested assumption (e.g. that observations share one true value with independent
+Gaussian noise).
+:::
 
-An AI-use record should name the actual tool/model and execution host, tests
-checkpoint, a real steering/review decision, independently derived example and
-observed before/after test results. For example: “I asked the agent to preserve
-the scalar API, reviewed its proposed tests against my derivation, then allowed
-the focused pytest command in the practice folder. I reran the tests and checked
-the diff. The agent did not choose the statistical model.” State when no AI
-tool was used instead; do not copy invented usage or results.
+### Optional follow-on — `curve_fit` $2\sigma$ scaling, survey cut and reference tuple note
+
+**Hint:** Track how $\sigma_i \rightarrow 2\sigma_i$ scales every term of
+$\chi^2(\theta) = \sum_i [y_i - f(x_i;\theta)]^2 / \sigma_i^2$ when SciPy's
+`absolute_sigma=True` is enabled.
+
+:::{dropdown} Worked answer
+Doubling every $\sigma_i$ divides $\chi^2(\theta)$ by `4` everywhere: the
+best-fit `[slope, intercept]` is **unchanged**, `reduced_chi2` divides by **4**,
+and with `absolute_sigma=True` the covariance matrix scales by `4`, so parameter
+standard errors **double**. Applying Session 1's `apparent_magnitude < 16.5` cut
+leaves the toy slope unbiased but removes distant galaxies, narrowing the
+distance baseline and widening the slope uncertainty $\sigma_a$.
+
+**Reference helper note:** Unlike the scalar practice file,
+`course2026.analysis.weighted_mean` returns `(mean, uncertainty)`. On `[1, 3]`
+with errors `[1, 3]` and `[3, 1]`, its means are `1.2` and `2.8` with common
+standard error $(\sum w_i)^{-1/2} = (1 + 1/9)^{-1/2} = \sqrt{0.9}$.
+:::
 
 ## Signal extension
 
-At 512 Hz sampling, a 300 Hz sinusoid aliases to `512 - 300 = 212` Hz. The
-full 0–256 Hz plot shows that peak, and the frequency check compares it with
-the sampling-theory prediction. At 40 Hz the predicted alias remains 40 Hz.
-Halving a two-second record doubles bin spacing from 0.5 to 1 Hz; a 40.3 Hz
-sinusoid falls between the original bins and exhibits spectral leakage.
+**Hint:** Use $\Delta f = 1/T$ for FFT bin spacing, test whether $40.3\text{ Hz}$
+spans an integer number of cycles over $T$, and fold $300\text{ Hz}$ across the
+Nyquist limit $f_{\mathrm{Nyq}} = f_s / 2 = 256\text{ Hz}$.
+
+:::{dropdown} Worked answer
+Halving the duration $T$ from $2\text{ s}$ to $1\text{ s}$ doubles the frequency
+bin spacing $\Delta f = 1/T$ from **$0.5\text{ Hz}$ to $1.0\text{ Hz}$**. Over a
+$2\text{ s}$ record ($\Delta f = 0.5\text{ Hz}$), a **$40.3\text{ Hz}$** sinusoid
+falls between the $40.0\text{ Hz}$ and $40.5\text{ Hz}$ bins and exhibits
+**spectral leakage** across adjacent bins. At $512\text{ Hz}$ sampling, a
+**$300\text{ Hz}$** sinusoid aliases across $256\text{ Hz}$ to
+$512 - 300 = \mathbf{212\text{ Hz}}$, matching `predicted_alias` and the plotted
+peak on $0\text{--}256\text{ Hz}$ (whereas $40\text{ Hz}$ stays at $40\text{ Hz}$).
+:::

@@ -1,13 +1,13 @@
 // Schematic values; the full catalogue validity mask also checks magnitude.
 digraph shared_mask {
-  graph [rankdir=TB, bgcolor="white", pad=0.18, nodesep=0.25, ranksep=0.32,
-         fontname="Arial", fontsize=18, color="#BAC7D5"];
-  node [shape=plain, fontname="Arial", fontsize=18, fontcolor="#14263C"];
-  edge [fontname="Arial", fontsize=18, color="#14263C", fontcolor="#14263C",
+  graph [rankdir=TB, bgcolor="white", pad=0.16, nodesep=0.28, ranksep=0.34,
+         fontname="Arial", fontsize=17, color="#BAC7D5", newrank=true];
+  node [shape=plain, fontname="Arial", fontsize=16, fontcolor="#14263C"];
+  edge [fontname="Arial", fontsize=15, color="#14263C", fontcolor="#14263C",
         arrowsize=0.8, penwidth=1.5];
 
   aligned [label=<
-    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#BAC7D5">
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
       <TR><TD COLSPAN="5" BGCOLOR="#F3F5F7"><B>Aligned columns — illustrative values</B></TD></TR>
       <TR><TD><B>row</B></TD><TD><B>distance</B><BR/>(Mpc)</TD><TD><B>velocity</B><BR/>(km/s)</TD><TD><B>velocity error</B><BR/>(km/s)</TD><TD><B>valid</B></TD></TR>
       <TR><TD BGCOLOR="#E9F7F2">0</TD><TD>10</TD><TD>700</TD><TD>20</TD><TD BGCOLOR="#E9F7F2"><B>T</B></TD></TR>
@@ -18,17 +18,40 @@ digraph shared_mask {
   >];
 
   mask [shape=box, style="rounded,filled", fillcolor="#EAF3FE", color="#BAC7D5",
-        margin="0.20,0.12", label="One shared mask\nvalid = [T, F, F, T]"];
+        margin="0.18,0.10", label="One shared mask\nvalid = [T, F, F, T]"];
 
   retained [label=<
-    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#BAC7D5">
-      <TR><TD COLSPAN="4" BGCOLOR="#E9F7F2"><B>Rows 0 and 3 remain in every column</B></TD></TR>
-      <TR><TD><B>row</B></TD><TD><B>distance</B><BR/>(Mpc)</TD><TD><B>velocity</B><BR/>(km/s)</TD><TD><B>velocity error</B><BR/>(km/s)</TD></TR>
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
+      <TR><TD COLSPAN="4" BGCOLOR="#E9F7F2"><B>Rows 0 and 3 stay aligned — shape (2,)</B></TD></TR>
+      <TR><TD><B>row</B></TD><TD><B>distance</B><BR/>(Mpc)</TD><TD><B>velocity</B><BR/>(km/s)</TD><TD><B>error</B><BR/>(km/s)</TD></TR>
       <TR><TD>0</TD><TD>10</TD><TD>700</TD><TD>20</TD></TR>
       <TR><TD>3</TD><TD>40</TD><TD>2800</TD><TD>40</TD></TR>
     </TABLE>
   >];
 
-  aligned -> mask;
-  mask -> retained [label="apply to all three columns"];
+  trap_masks [shape=box, style="rounded,filled", fillcolor="#FFF2D6", color="#BAC7D5",
+              margin="0.18,0.10", label=<
+                <B>Trap: separate per-column masks</B><BR/>
+                isfinite(velocity) &rarr; rows 0, 2, 3  <B>(3,)</B><BR/>
+                error &gt; 0 &rarr; rows 0, 1, 3  <B>(3,)</B>
+              >];
+
+  trap_result [label=<
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
+      <TR><TD COLSPAN="3" BGCOLOR="#FBEDED"><B>Matching (3,) lengths — no error, silent mismatch!</B></TD></TR>
+      <TR><TD><B>idx</B></TD><TD><B>velocity</B></TD><TD><B>velocity error</B></TD></TR>
+      <TR><TD>0</TD><TD>700 (row 0)</TD><TD>20 (row 0)</TD></TR>
+      <TR><TD BGCOLOR="#FBEDED"><B>1</B></TD><TD BGCOLOR="#FFF2D6"><B>2100 (row 2)</B></TD><TD BGCOLOR="#FBEDED"><B>30 (row 1!)</B></TD></TR>
+      <TR><TD>2</TD><TD>2800 (row 3)</TD><TD>40 (row 3)</TD></TR>
+    </TABLE>
+  >];
+
+  { rank=same; mask; trap_masks; }
+  { rank=same; retained; trap_result; }
+
+  aligned -> mask [label="correct"];
+  mask -> retained [label="apply to all columns"];
+
+  aligned -> trap_masks [color="#8B6D37", style=dashed, label="wrong"];
+  trap_masks -> trap_result [color="#8B6D37", style=dashed, label="silent bug"];
 }

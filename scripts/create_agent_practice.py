@@ -3,6 +3,7 @@ import argparse
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("destination", type=Path)
@@ -21,7 +22,10 @@ root = Path(__file__).resolve().parents[1]
 for name in ("weighted_mean.py", "test_weighted_mean.py"):
     shutil.copy2(root / "exercises" / name, target / name)
 (target / ".gitignore").write_text("__pycache__/\n.pytest_cache/\n.venv/\n")
-(target / "TASK.md").write_text("""# Weighted-mean agent practical
+interpreter = Path(sys.executable).resolve()
+(target / "TASK.md").write_text(f"""# Weighted-mean agent practical
+
+Course Python interpreter: {interpreter}
 
 The intentionally wrong `weighted_mean(values, errors)` must return one scalar
 inverse-variance weighted mean. Inputs are matching, nonempty, finite 1-D arrays
@@ -32,8 +36,9 @@ return interface: do not substitute its (mean, uncertainty) tuple here.
 First inspect and propose a plan without edits. Then draft only student checks
 from the student's independently calculated expectations. After those checks
 are reviewed and checkpointed, repair only weighted_mean.py. Keep both test files
-fixed during the repair. Use the existing Python environment; no installations,
-downloads or remote pushes. Ask the student before changing phase or scope.
+fixed during the repair. Run pytest with the course Python interpreter recorded
+above rather than installing packages; no installations, downloads or remote
+pushes. Ask the student before changing phase or scope.
 
 This is a practice workspace, not an enforced security sandbox. Use the agent's
 configured permissions/sandbox or the instructor's prepared environment.

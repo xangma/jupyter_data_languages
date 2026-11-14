@@ -1,28 +1,34 @@
 # Instructor guide
 
-The six-hour core consists of notebooks 01–03. Notebook 00 is prework; notebook
-04 is an extension. Preserve the hands-on tasks and breaks if discussion runs
-long. Open solutions after students attempt an exercise.
+Notebooks `01`–`03` form the six-hour taught core; `00-primer` is pre-course
+preparation and `04-signal-extension` is an optional post-course extension.
+Protect hands-on task blocks and breaks when discussion runs long, and direct
+students to the visible hints in [Hints and worked answers](solutions.md) before
+opening full dropdown solutions.
 
 ## Before class
 
-Distribute the exact 2026 checkout and lockfile; the GitHub default branch is
-older. Ask students to run the setup check and primer before Session 1.
-Bring an installed environment, local data and a working preview. Avoid survey
-downloads or installing a GW/ML stack in class.
-
-Confirm one institution-approved coding agent per student/pair in advance:
-Codex, Claude Code, Antigravity/agy or Cline with the CPD Qwen 3.8 27B route.
-Use [tool setup](agent-tools.md) to prepare the practice workspace in one command;
-the helper creates its files, committed starter and branch automatically. Verify
-the client can edit that workspace and use its existing Python environment.
-Confirm the effective permissions/sandbox and demonstrate pause, diff and undo.
-Do not spend the session constructing a container or repeating Git initialisation.
-Without an agent, use the saved incorrect proposal and a partner's review/repair.
-The outcomes do not depend on a vendor or paid account. CPD's standard JupyterHub
-workspace provides the **Python PhD (locked)** kernel; CPU resources suffice for
-this course. Activate `/opt/course/.venv` in each CPD terminal. Confirm student
-enrolment before class and rehearse both in-page execution and opening the notebook in JupyterLab.
+- **Environment & CPD readiness:** Distribute the locked 2026 checkout and
+  `uv.lock` (the upstream default branch is legacy material). Confirm CPD
+  JupyterHub enrolment (**Python PhD (locked)** kernel; standard CPU server
+  suffices) and remind students to run `source /opt/course/.venv/bin/activate` in
+  every new CPD terminal. Avoid live survey downloads or installing GW/ML stacks
+  during class.
+- **Coding-agent routes:** Confirm one graphical route per student or pair before
+  Session 3 using [Choose your coding agent](agent-tools.md):
+  1. **Jupyter AI on CPD** — recommended zero-install default (browser UI +
+     OpenCode + `cpd/qwen3.8` hosted together on CPD).
+  2. **Cline + CPD Qwen** — free local VS Code route (`https://icg-cpd-cluster.port.ac.uk/v1`,
+     model `qwen3-8-27b-mtp-ud-q4-k-xl`, distinct from `cpd/qwen3.8`; file and
+     terminal tools run on the laptop).
+  3. **Claude Code** — commercial editor/desktop route (`Plan` $\rightarrow$
+     `Manual` modes with pre-configured accounts).
+  Students bringing Codex, Antigravity or OpenCode Desktop map controls via the
+  reference table in [Choose your coding agent](agent-tools.md); pairs without
+  agent access use the first-class manual pair route. Running
+  `python scripts/create_agent_practice.py outputs/agent-practice` copies the
+  starter files, writes the active course Python interpreter path into `TASK.md`,
+  commits `main` and switches to `agent-repair`.
 
 ## Session 1 — 120 minutes
 
@@ -36,63 +42,91 @@ enrolment before class and rehearse both in-page execution and opening the noteb
 | 95–115 | Survey selection; Task C | Compare distributions with common bins |
 | 115–120 | Exit check | Explain one claim the figure cannot support |
 
-Expected issues: three missing velocities, one zero velocity error and one
-missing magnitude, without overlap. A magnitude cut favours nearby objects.
-This changes the distance distribution but need not bias the toy slope:
-conditional on distance, selection is independent of velocity noise here.
-Do not imply that every selection biases every estimator.
+### Key Pitfalls
+
+- Filtering columns separately instead of applying one shared `valid` mask (five
+  disjoint bad rows—three missing velocities, one zero error, one missing
+  magnitude—leave 395 usable rows).
+- Stripping units blindly with `.value` instead of `.to_value(u.Mpc)`, or
+  forgetting `[:, None]` when broadcasting a 1-D per-object scale `(N,)` across
+  `(N, 3)`.
+- Claiming every survey cut biases every fit: here `apparent_magnitude < 16.5`
+  (262 objects) alters the distance distribution without selecting on velocity
+  noise at fixed distance.
+
+### 3-Command Terminal/Repo Triage
+
+```bash
+pwd
+git rev-parse --show-toplevel
+python -c "import sys; print(sys.executable)"
+```
+
+Confirm `pwd` and the Git top-level directory match the 2026 course checkout
+containing `data/mock_galaxies.ecsv`, and `sys.executable` points to
+`/opt/course/.venv/bin/python` on CPD (or the local `.venv`).
+
+### Novice Minimum Path
+
+Pair on array indexing; complete the shared `valid` mask (395 rows), the FITS
+round-trip `.to_value(u.Mpc)` check, the subsampled error-bar figure, and a
+three-sentence caption for the `16.5` magnitude cut.
+
+### Fast-Finisher Stretch
+
+Compare selected counts across `15.5` (161), `16.5` (262) and `17.5` (357), add
+finite-range and header assertions to the FITS check, and specify which physical
+effects (distance errors, Malmquist bias, correlated peculiar velocities) would
+bias a real Hubble-flow slope.
 
 ## Session 2 — 120 minutes
 
 | Minutes | Activity | Evidence of learning |
 | --- | --- | --- |
 | 0–15 | Why Git; Git/GitHub/VS Code; working tree, index, commit | Distinguish saving, staging, committing and sharing |
-| 15–40 | First commit; VS Code mapping; branch and Task A | Explain one file appearing in both change lists |
+| 15–40 | First commit; GUI mapping; branch and Task A | Explain one file appearing in both change lists |
 | 40–60 | Resolve a same-line merge conflict | Retain both intended meanings |
 | 60–70 | Break | |
 | 70–95 | Bare practice remote; private reset; shared revert and clone | Retain work after reset; collaborator receives a revert |
 | 95–110 | Function interface; known-answer tests; Task B and handoff | See an introduced bug fail and restore only that implementation edit |
 | 110–120 | Partner review and exit check | Show diff, tests and commit |
 
-`scripts/create_practice_repo.py --files-only` refuses to overwrite an existing
-sandbox and writes only the starter files. Students run `git init -b main`
-themselves and inspect its new, empty history. Read status before and after staging: untracked contents do not appear
-in ordinary `git diff`. Task A stages wraparound, then adds a full-turn test
-without restaging. Students should predict the next snapshot before unstaging,
-restaging and committing both tests. The ten synchronized tab groups offer
-command-line, VS Code and CPD JupyterLab Git routes. Students execute each
-action once in one repository. CPD files are separate from a local VS Code
-checkout; selecting a tab does not synchronize those copies. JupyterLab has the
-Git extension and MyST notebook renderer already installed. Practise opening
-the exercise folder in File Browser so the Git panel follows the right repository.
+### Key Pitfalls
 
-The `practice` remote is a separate bare repository in `outputs/`; all students
-can push and practise remote recovery without a hosted account. Keep the
-recovery experiments on `recovery-lab`. Make the private mistake, retain a
-rescue branch, then soft-reset its ordinary latest commit and correct it.
-For the shared mistake, demonstrate the bad remote tip **before** reverting,
-then push normally and clone as a collaborator. Ask students to find both the
-mistake and revert in the clone's log. Do not substitute a local reset for a
-shared revert. VS Code's Undo Last Commit does not check whether a commit was
-pushed. Complete Merge in its merge editor stages a file; the repository's
-merge still needs a commit. JupyterLab's **Mark as resolved** also writes and
-stages the result, followed by review, tests and Commit. For the account-free
-remote use **Git → Push to Remote** after its upstream is configured. Saved
-screenshots show these exact states.
+- Running `git init`, commits or resets inside the parent course checkout rather
+  than `outputs/git-practice`, or assuming CPD JupyterLab files sync with a
+  laptop VS Code folder.
+- Expecting plain `git diff` to display untracked files, or forgetting that VS
+  Code **Complete Merge** and JupyterLab **Mark as resolved** stage the file
+  without creating the final merge commit.
+- Using VS Code **Undo Last Commit** (`reset --soft`) on a commit already pushed
+  to `practice`; demonstrate the pushed mistake on the remote *before* running
+  `git revert` and inspecting `partner-practice`.
 
-The angle helper starts correct. Task B adds independently justified equal and
-opposite-bearing tests on a fresh `edge-case-tests` branch, temporarily introduces
-a bug, observes failures and restores only the unwanted `angle.py` edit. Commit
-the tests before partner review. Keep the Python demonstrations concise so the
-Git foundations and recovery remain hands-on. If novices need longer, make the
-second description branch an instructor demonstration and omit hosted setup;
-retain each student's first commit, staging comparison and recovery decisions.
+### 3-Command Terminal/Repo Triage
 
-Optional GitHub hosting adds `origin` alongside `practice`; use an empty
-classroom repository and push `main` before `edge-case-tests`. A nonempty
-repository needs a clone with shared history. Do not spend class on credentials,
-merge-revert mainline selection, rebase or force-push recipes. Account-free
-review uses the same diff and explanation. Research upstreams are reading examples.
+```bash
+pwd
+git rev-parse --show-toplevel
+python -c "import sys; print(sys.executable)"
+```
+
+Verify `git rev-parse --show-toplevel` ends in `outputs/git-practice` (never the
+parent course repository) and `sys.executable` uses the active course
+environment before running `python -m pytest -q`.
+
+### Novice Minimum Path
+
+Complete `git init -b main`, the initial commit, Task A staging comparison,
+instructor-led conflict resolution, account-free `practice` remote recovery
+(`reset --soft` vs `revert`), and Task B equal/opposite bearing tests with local
+diff review—omitting optional GitHub remote setup.
+
+### Fast-Finisher Stretch
+
+Add floating-point wraparound checks using `pytest.approx(0.2)`, work through
+the rejected-push merge recovery, and push `main` + `edge-case-tests` to an
+empty personal classroom repository on GitHub for a hosted pull-request review.
 
 ## Session 3 — 120 minutes
 
@@ -106,63 +140,49 @@ review uses the same diff and explanation. Research upstreams are reading exampl
 | 95–110 | Independently rerun and review the diff | Tests unchanged; known-answer evidence; reject a false fix |
 | 110–120 | Accept repair and write AI-use record | Reviewed commit and scientific explanation |
 
-Students choose one of six synchronized routes: Codex, Claude Code, Antigravity,
-Cline + Qwen, OpenCode or Jupyter AI. Setup tabs prepare the tool; three matching
-sets in the lesson cover inspection, reviewed edits and independent review.
-Keep shared prompts and scientific criteria common. The book remembers a tab
-across sets; JupyterLab's MyST renderer remembers it within a Markdown cell.
-Use graphical apps/editor panels throughout; the terminal is for the shared
-preparation, tests and Git. Rehearse the selected GUI route before class. Five
-local app captures and the CPD Jupyter AI capture illustrate their actual
-controls. Match instructions to the installed version. OpenCode Desktop and
-Jupyter AI can expose OpenCode through different interfaces, but the laptop
-app does not inherit the hosted provider configuration. Cline can use the same CPD model while its tools run on a
-laptop. Its public endpoint advertises `qwen3-8-27b-mtp-ud-q4-k-xl`;
-`cpd/qwen3.8` is the hosted Jupyter AI configuration. Record interface, agent,
-model and command host separately. On CPD,
-agent-spawned commands should use `/opt/course/.venv/bin/python` explicitly;
-activating one JupyterLab terminal does not change every agent process.
+### Key Pitfalls
 
-Make the agent interaction the organising thread. Students inspect and critique
-a plan, provide independently derived expectations, delegate test syntax, then
-authorise a bounded repair. They should use their tool, not just watch a demo.
-Keep prompts short enough for the CPD model route. A fresh chat needs the current
-contract, diff and test evidence. Avoid suggesting that another model's agreement
-establishes correctness. Reject unexplained edits to truth, data, errors or tests.
-The starter returns only a mean; the reference helper also returns its standard
-error. Preserving that interface is part of the exercise. Students derive their
-own unequal-error, equal-error and 2-D rejection cases, review the agent's
-`test_student_checks.py`, then checkpoint those tests before requesting a repair.
-The agent edits only `weighted_mean.py` during repair. Both tests retain the agreed
-expectations. The setup helper refuses an existing destination and leaves the
-original intentionally wrong exercise unchanged. It uses a synthetic Git identity
-local to the exercise, with no remotes. The same criteria apply to partner-only work.
+- Agent subprocesses invoking system Python instead of the course interpreter
+  recorded in `TASK.md` (`/opt/course/.venv/bin/python` on CPD).
+- Treating a Git branch, `.venv`, Plan mode or prompt instruction as an enforced
+  OS sandbox, or forgetting that Cline's CPD Qwen route still edits files and
+  runs commands on the laptop.
+- Accepting weakened or edited tests (`1.2` $\rightarrow$ `1.5`), relying on
+  equal-error checks that cannot distinguish $1/\sigma$ from $1/\sigma^2$, or
+  substituting the `(mean, uncertainty)` tuple from `course2026.analysis`.
 
-Cline's Plan mode can still present a command request: do not describe the
-mode as a universal tool barrier. The captured request remains unapproved.
-Claude's screenshot shows pre-send setup; OpenCode Desktop uses its installed
-Big Pickle model as an interface example. Run the class on its prepared route.
+### 3-Command Terminal/Repo Triage
 
-An agent's scope prompt is not enforced isolation. Explain the tool's sandbox,
-approval settings and recovery checkpoints separately. Some in-scope commands
-run automatically: accept a truthful account of that rather than require a
-fabricated permission prompt. Cline's inference on CPD does not relocate its
-client's file/terminal tools. The approved model connection is still needed
-even when agent shell downloads and extra services are out of scope.
+```bash
+pwd
+git rev-parse --show-toplevel
+python -c "import sys; print(sys.executable)"
+```
 
-The fitting/residual/error-rescaling cells remain as a worked optional scientific
-verification example after the core activity. They no longer consume the opening
-20 minutes. Sessions 1 and 2 and the overall three two-hour structure are unchanged.
+Confirm `git rev-parse --show-toplevel` resolves to `outputs/agent-practice` on
+branch `agent-repair`, and `sys.executable` matches the `Course Python
+interpreter:` line recorded in `TASK.md`.
 
-## Assessment and adaptations
+### Novice Minimum Path
 
-Each student/pair submits a rerunnable analysis with a caption and selection,
-an independently justified test, a reviewed commit and an AI-use record.
-Ask: what are the units, why is the expected answer correct, what did the agent
-change, and which scientific assumption is still untested? Passing-test
-screenshots alone are insufficient.
+Use **Jupyter AI on CPD** (or the manual pair route) through the four core
+gates: inspect & critique the plan, derive one unequal-error test and commit
+`TESTS_COMMIT`, authorise and steer a single-file repair of `weighted_mean.py`
+(restoring tests with `git checkout "$TESTS_COMMIT" -- test_weighted_mean.py test_student_checks.py`
+if touched), verify with `pytest -q` and `git diff`, and record the 5-line
+`AI_USE.md`.
 
-Pair novices on arrays and omit optional remote pushing if needed. Experienced
-students can vary the cut or run multiple-seed recovery simulations; distinguish
-one successful recovery from a coverage study. The FFT extension supports GW
-interests. Keep HPC infrastructure in its separate teaching.
+### Fast-Finisher Stretch
+
+Run the optional `mock_galaxies.ecsv` weighted `curve_fit` cells, verify the
+$2\sigma$ uncertainty doubling and $\chi^2/4$ scaling, test how Session 1's
+`apparent_magnitude < 16.5` cut narrows the distance lever arm and widens
+$\sigma_a$, or explore FFT resolution, leakage and aliasing in `04-signal-extension.ipynb`.
+
+## Assessment and sign-off
+
+Each student or pair finishes with a rerunnable Session 1 plot and caption, a
+committed Session 2 test branch, and a verified Session 3 repair with
+`AI_USE.md`. Ask four check questions rather than accepting passing-test
+screenshots alone: **What are the units? Why is your expected answer right? What
+did the diff actually change? Which physical assumption remains untested?**

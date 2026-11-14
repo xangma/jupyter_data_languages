@@ -5,8 +5,8 @@ Edit labels, examples, nodes and connections there, then regenerate from the
 course root:
 
 ```bash
-python scripts/render_diagrams.py
-python scripts/render_diagrams.py --check
+uv run --frozen python scripts/render_diagrams.py
+uv run --frozen python scripts/render_diagrams.py --check
 ```
 
 Rendering requires [Graphviz](https://graphviz.org/download/), tested with
@@ -19,18 +19,23 @@ Exports fit within 720 by 640 CSS pixels while retaining their scalable viewBox.
 
 | Source | Placement |
 | --- | --- |
-| `shared-mask.dot` | Session 1: Arrays, shapes and masks |
+| `shared-mask.dot` | Session 1: Arrays, shapes and masks (including separate-mask misalignment trap) |
+| `array-views.dot` | Session 1: Slice views versus independent `.copy()` buffers |
 | `broadcasting.dot` | Session 1: beside the row-scaling example |
 | `catalogue-selection.dot` | Session 1: Investigate a survey selection |
+| `fits-vs-ecsv.dot` | Session 1: Saving tables with units and metadata (ECSV vs FITS HDUs) |
+| `nyquist-aliasing.dot` | Session 1: Spectral analysis and Nyquist folding / aliasing |
 | `git-states.dot` | Session 2: before staging and committing |
 | `git-branches.dot` | Session 2: Merge and resolve a conflict |
+| `git-undo-vs-revert.dot` | Session 2: Private `git reset --soft` vs shared `git revert` |
 | `git-remotes.dot` | Session 2: Optional hosting exercise |
 | `agent-architecture.dot` | Session 3: Know what your agent can do |
-| `agent-review-loop.dot` | Session 3: Supply context and review a plan |
+| `agent-review-loop.dot` | Session 3: Supply context, commit the tests checkpoint and review repairs |
 
 Keep labels short enough to read in a notebook/book column. Use labels and
 shapes as well as colour. Match the actual file, branch, array-shape and catalogue
 examples in the lesson. After an edit, check the rendered diagram at reading
 size and the SVG's notebook link. The shared palette uses dark ink on a white
 canvas, blue for human/input context, purple for stored state/client mediation,
-amber for proposals/decisions, and green for checked results.
+amber for proposals/decisions, green for checked results, and soft red for
+errors or rejected items.

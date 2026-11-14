@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="402" viewBox="0.00 0.00 811.00 453.00" role="img" aria-labelledby="array-views-title array-views-desc">
+  <title id="array-views-title">A NumPy slice is a view into shared memory; .copy() allocates new memory</title>
+  <desc id="array-views-desc">Starting from original = np.array([10, 20, 30, 40]), assigning view[0] = 99 on view = original[:2] mutates the shared memory buffer so original becomes [99, 20, 30, 40], whereas separate = original[:2].copy() allocates independent memory so separate[0] = -5 leaves original intact.</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(11.52 441.42)">
+    <title>array_views</title>
+    <polygon fill="white" stroke="none" points="-11.52,11.52 -11.52,-441.42 799.52,-441.42 799.52,11.52 -11.52,11.52" />
+    <text xml:space="preserve" text-anchor="middle" x="394" y="-405.95" font-family="Arial" font-size="21.00" fill="#14263c">A NumPy slice is a view into shared memory; .copy() allocates new memory</text>
+    <g id="clust1" class="cluster">
+      <title>cluster_view</title>
+      <path fill="white" stroke="#bac7d5" d="M20,-27.62C20,-27.62 320,-27.62 320,-27.62 326,-27.62 332,-33.62 332,-39.62 332,-39.62 332,-326.9 332,-326.9 332,-332.9 326,-338.9 320,-338.9 320,-338.9 20,-338.9 20,-338.9 14,-338.9 8,-332.9 8,-326.9 8,-326.9 8,-39.63 8,-39.63 8,-33.63 14,-27.62 20,-27.62" />
+      <text xml:space="preserve" text-anchor="middle" x="170" y="-316.85" font-family="Arial" font-size="19.00" fill="#14263c">1 · Slice view (shared memory)</text>
+    </g>
+    <g id="clust2" class="cluster">
+      <title>cluster_copy</title>
+      <path fill="white" stroke="#bac7d5" d="M352,-8C352,-8 768,-8 768,-8 774,-8 780,-14 780,-20 780,-20 780,-326.9 780,-326.9 780,-332.9 774,-338.9 768,-338.9 768,-338.9 352,-338.9 352,-338.9 346,-338.9 340,-332.9 340,-326.9 340,-326.9 340,-20 340,-20 340,-14 346,-8 352,-8" />
+      <text xml:space="preserve" text-anchor="middle" x="560" y="-316.85" font-family="Arial" font-size="19.00" fill="#14263c">2 · Explicit .copy() (independent memory)</text>
+    </g>
+    <g id="node1" class="node">
+      <title>start</title>
+      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.4" d="M663.46,-397.9C663.46,-397.9 64.54,-397.9 64.54,-397.9 58.54,-397.9 52.54,-391.9 52.54,-385.9 52.54,-385.9 52.54,-373.9 52.54,-373.9 52.54,-367.9 58.54,-361.9 64.54,-361.9 64.54,-361.9 663.46,-361.9 663.46,-361.9 669.46,-361.9 675.46,-367.9 675.46,-373.9 675.46,-373.9 675.46,-385.9 675.46,-385.9 675.46,-391.9 669.46,-397.9 663.46,-397.9" />
+      <text xml:space="preserve" text-anchor="start" x="65.5" y="-374.5" font-family="Arial" font-size="17.00" fill="#14263c">           </text>
+      <text xml:space="preserve" text-anchor="start" x="115" y="-374.5" font-family="Arial" font-weight="bold" font-size="17.00" fill="#14263c">Starter array:</text>
+      <text xml:space="preserve" text-anchor="start" x="224.5" y="-374.5" font-family="Arial" font-size="17.00" fill="#14263c">  </text>
+      <text xml:space="preserve" text-anchor="start" x="233.5" y="-374.5" font-family="Courier New" font-size="17.00" fill="#14263c">original = np.array([10, 20, 30, 40])</text>
+      <text xml:space="preserve" text-anchor="start" x="622" y="-374.5" font-family="Arial" font-size="17.00" fill="#14263c">         </text>
+    </g>
+    <g id="node2" class="node">
+      <title>view_code</title>
+      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.4" d="M306.08,-295.15C306.08,-295.15 33.92,-295.15 33.92,-295.15 27.92,-295.15 21.92,-289.15 21.92,-283.15 21.92,-283.15 21.92,-258.75 21.92,-258.75 21.92,-252.75 27.92,-246.75 33.92,-246.75 33.92,-246.75 306.08,-246.75 306.08,-246.75 312.08,-246.75 318.08,-252.75 318.08,-258.75 318.08,-258.75 318.08,-283.15 318.08,-283.15 318.08,-289.15 312.08,-295.15 306.08,-295.15" />
+      <text xml:space="preserve" text-anchor="start" x="32" y="-272.8" font-family="Arial" font-size="17.00" fill="#14263c">                 </text>
+      <text xml:space="preserve" text-anchor="start" x="108.5" y="-272.8" font-family="Courier New" font-size="17.00" fill="#14263c">view = original[:2]</text>
+      <text xml:space="preserve" text-anchor="start" x="35" y="-255.8" font-family="Arial" font-size="17.00" fill="#14263c">                 </text>
+      <text xml:space="preserve" text-anchor="start" x="111.5" y="-255.8" font-family="Courier New" font-size="17.00" fill="#14263c">view[0] = 99</text>
+      <text xml:space="preserve" text-anchor="start" x="237.5" y="-255.8" font-family="Arial" font-size="17.00" fill="#14263c">               </text>
+    </g>
+    <g id="edge3" class="edge">
+      <title>start-&gt;view_code</title>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M331.96,-361.24C302.1,-344.78 257.04,-319.93 222.02,-300.63" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="223.69,-298.35 215.33,-296.94 220.99,-303.26 223.69,-298.35" />
+    </g>
+    <g id="node4" class="node">
+      <title>copy_code</title>
+      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.4" d="M753.83,-295.15C753.83,-295.15 366.17,-295.15 366.17,-295.15 360.17,-295.15 354.17,-289.15 354.17,-283.15 354.17,-283.15 354.17,-258.75 354.17,-258.75 354.17,-252.75 360.17,-246.75 366.17,-246.75 366.17,-246.75 753.83,-246.75 753.83,-246.75 759.83,-246.75 765.83,-252.75 765.83,-258.75 765.83,-258.75 765.83,-283.15 765.83,-283.15 765.83,-289.15 759.83,-295.15 753.83,-295.15" />
+      <text xml:space="preserve" text-anchor="start" x="364.25" y="-272.8" font-family="Arial" font-size="17.00" fill="#14263c">                 </text>
+      <text xml:space="preserve" text-anchor="start" x="440.75" y="-272.8" font-family="Courier New" font-size="17.00" fill="#14263c">separate = original[:2].copy()</text>
+      <text xml:space="preserve" text-anchor="start" x="404" y="-255.8" font-family="Arial" font-size="17.00" fill="#14263c">                 </text>
+      <text xml:space="preserve" text-anchor="start" x="480.5" y="-255.8" font-family="Courier New" font-size="17.00" fill="#14263c">separate[0] = -5</text>
+      <text xml:space="preserve" text-anchor="start" x="648.5" y="-255.8" font-family="Arial" font-size="17.00" fill="#14263c">               </text>
+    </g>
+    <g id="edge4" class="edge">
+      <title>start-&gt;copy_code</title>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M396.37,-361.24C426.54,-344.78 472.07,-319.93 507.45,-300.63" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="508.53,-303.22 514.22,-296.93 505.85,-298.31 508.53,-303.22" />
+    </g>
+    <g id="node3" class="node">
+      <title>view_mem</title>
+      <polygon fill="#f0ebfa" stroke="none" points="31.5,-143.88 31.5,-179.38 308.5,-179.38 308.5,-143.88 31.5,-143.88" />
+      <polygon fill="none" stroke="#bac7d5" points="31.5,-143.88 31.5,-179.38 308.5,-179.38 308.5,-143.88 31.5,-143.88" />
+      <text xml:space="preserve" text-anchor="start" x="59.75" y="-156.22" font-family="Arial" font-weight="bold" font-size="17.00" fill="#14263c">One shared memory buffer</text>
+      <polygon fill="#fbeded" stroke="none" points="31.5,-108.38 31.5,-143.88 100.75,-143.88 100.75,-108.38 31.5,-108.38" />
+      <polygon fill="none" stroke="#bac7d5" points="31.5,-108.38 31.5,-143.88 100.75,-143.88 100.75,-108.38 31.5,-108.38" />
+      <text xml:space="preserve" text-anchor="start" x="56.38" y="-120.72" font-family="Arial" font-weight="bold" font-size="17.00" fill="#14263c">99</text>
+      <polygon fill="#fff2d6" stroke="none" points="100.75,-108.38 100.75,-143.88 170,-143.88 170,-108.38 100.75,-108.38" />
+      <polygon fill="none" stroke="#bac7d5" points="100.75,-108.38 100.75,-143.88 170,-143.88 170,-108.38 100.75,-108.38" />
+      <text xml:space="preserve" text-anchor="start" x="125.62" y="-119.72" font-family="Arial" font-size="17.00" fill="#14263c">20</text>
+      <polygon fill="#f3f5f7" stroke="none" points="170,-108.38 170,-143.88 239.25,-143.88 239.25,-108.38 170,-108.38" />
+      <polygon fill="none" stroke="#bac7d5" points="170,-108.38 170,-143.88 239.25,-143.88 239.25,-108.38 170,-108.38" />
+      <text xml:space="preserve" text-anchor="start" x="194.88" y="-119.72" font-family="Arial" font-size="17.00" fill="#14263c">30</text>
+      <polygon fill="#f3f5f7" stroke="none" points="239.25,-108.38 239.25,-143.88 308.5,-143.88 308.5,-108.38 239.25,-108.38" />
+      <polygon fill="none" stroke="#bac7d5" points="239.25,-108.38 239.25,-143.88 308.5,-143.88 308.5,-108.38 239.25,-108.38" />
+      <text xml:space="preserve" text-anchor="start" x="264.12" y="-119.72" font-family="Arial" font-size="17.00" fill="#14263c">40</text>
+      <polygon fill="#fff2d6" stroke="none" points="31.5,-76.62 31.5,-108.38 170,-108.38 170,-76.62 31.5,-76.62" />
+      <polygon fill="none" stroke="#bac7d5" points="31.5,-76.62 31.5,-108.38 170,-108.38 170,-76.62 31.5,-76.62" />
+      <text xml:space="preserve" text-anchor="start" x="50.88" y="-88.08" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">view[:2]</text>
+      <text xml:space="preserve" text-anchor="start" x="101.88" y="-88.08" font-family="Arial" font-size="14.00" fill="#14263c"> window</text>
+      <polygon fill="#f3f5f7" stroke="none" points="170,-76.62 170,-108.38 308.5,-108.38 308.5,-76.62 170,-76.62" />
+      <polygon fill="none" stroke="#bac7d5" points="170,-76.62 170,-108.38 308.5,-108.38 308.5,-76.62 170,-76.62" />
+      <text xml:space="preserve" text-anchor="start" x="197.62" y="-87.08" font-family="Arial" font-size="14.00" fill="#14263c">unindexed tail</text>
+      <polygon fill="#fbeded" stroke="none" points="31.5,-42.62 31.5,-76.62 308.5,-76.62 308.5,-42.62 31.5,-42.62" />
+      <polygon fill="none" stroke="#bac7d5" points="31.5,-42.62 31.5,-76.62 308.5,-76.62 308.5,-42.62 31.5,-42.62" />
+      <text xml:space="preserve" text-anchor="start" x="39.5" y="-55.38" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">original</text>
+      <text xml:space="preserve" text-anchor="start" x="94.25" y="-55.38" font-family="Arial" font-size="15.00" fill="#14263c"> → </text>
+      <text xml:space="preserve" text-anchor="start" x="118.25" y="-55.38" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">[99, 20, 30, 40]</text>
+      <text xml:space="preserve" text-anchor="start" x="221.75" y="-55.38" font-family="Arial" font-size="15.00" fill="#14263c">  (mutated!)</text>
+      <polygon fill="none" stroke="#bac7d5" points="30.5,-41.62 30.5,-180.38 309.5,-180.38 309.5,-41.62 30.5,-41.62" />
+    </g>
+    <g id="edge1" class="edge">
+      <title>view_code-&gt;view_mem</title>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M170,-246.3C170,-231.22 170,-210.71 170,-190.28" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="172.8,-190.54 170,-182.54 167.2,-190.54 172.8,-190.54" />
+      <text xml:space="preserve" text-anchor="middle" x="221.38" y="-217.55" font-family="Arial" font-size="16.00" fill="#14263c">writes in place</text>
+    </g>
+    <g id="node5" class="node">
+      <title>copy_mem</title>
+      <polygon fill="#f0ebfa" stroke="none" points="415.38,-165.5 415.38,-199 704.62,-199 704.62,-165.5 415.38,-165.5" />
+      <polygon fill="none" stroke="#bac7d5" points="415.38,-165.5 415.38,-199 704.62,-199 704.62,-165.5 415.38,-165.5" />
+      <text xml:space="preserve" text-anchor="start" x="471.88" y="-176.85" font-family="Arial" font-weight="bold" font-size="17.00" fill="#14263c">separate buffer (new)</text>
+      <polygon fill="#fff2d6" stroke="none" points="415.38,-132 415.38,-165.5 558.12,-165.5 558.12,-132 415.38,-132" />
+      <polygon fill="none" stroke="#bac7d5" points="415.38,-132 415.38,-165.5 558.12,-165.5 558.12,-132 415.38,-132" />
+      <text xml:space="preserve" text-anchor="start" x="478.88" y="-143.35" font-family="Arial" font-weight="bold" font-size="17.00" fill="#14263c">-5</text>
+      <polygon fill="#f3f5f7" stroke="none" points="558.12,-132 558.12,-165.5 704.62,-165.5 704.62,-132 558.12,-132" />
+      <polygon fill="none" stroke="#bac7d5" points="558.12,-132 558.12,-165.5 704.62,-165.5 704.62,-132 558.12,-132" />
+      <text xml:space="preserve" text-anchor="start" x="621.62" y="-142.35" font-family="Arial" font-size="17.00" fill="#14263c">20</text>
+      <polygon fill="none" stroke="#bac7d5" points="414.38,-131 414.38,-200 705.62,-200 705.62,-131 414.38,-131" />
+      <polygon fill="#e9f7f2" stroke="none" points="415.38,-88.5 415.38,-122 704.62,-122 704.62,-88.5 415.38,-88.5" />
+      <polygon fill="none" stroke="#bac7d5" points="415.38,-88.5 415.38,-122 704.62,-122 704.62,-88.5 415.38,-88.5" />
+      <text xml:space="preserve" text-anchor="start" x="452" y="-99.85" font-family="Arial" font-weight="bold" font-size="17.00" fill="#14263c">original buffer stays intact</text>
+      <polygon fill="#e9f7f2" stroke="none" points="415.38,-55 415.38,-88.5 487.69,-88.5 487.69,-55 415.38,-55" />
+      <polygon fill="none" stroke="#bac7d5" points="415.38,-55 415.38,-88.5 487.69,-88.5 487.69,-55 415.38,-55" />
+      <text xml:space="preserve" text-anchor="start" x="441.78" y="-66.35" font-family="Arial" font-weight="bold" font-size="17.00" fill="#14263c">10</text>
+      <polygon fill="#e9f7f2" stroke="none" points="487.69,-55 487.69,-88.5 560,-88.5 560,-55 487.69,-55" />
+      <polygon fill="none" stroke="#bac7d5" points="487.69,-55 487.69,-88.5 560,-88.5 560,-55 487.69,-55" />
+      <text xml:space="preserve" text-anchor="start" x="514.09" y="-66.35" font-family="Arial" font-weight="bold" font-size="17.00" fill="#14263c">20</text>
+      <polygon fill="#e9f7f2" stroke="none" points="560,-55 560,-88.5 632.31,-88.5 632.31,-55 560,-55" />
+      <polygon fill="none" stroke="#bac7d5" points="560,-55 560,-88.5 632.31,-88.5 632.31,-55 560,-55" />
+      <text xml:space="preserve" text-anchor="start" x="586.41" y="-65.35" font-family="Arial" font-size="17.00" fill="#14263c">30</text>
+      <polygon fill="#e9f7f2" stroke="none" points="632.31,-55 632.31,-88.5 704.62,-88.5 704.62,-55 632.31,-55" />
+      <polygon fill="none" stroke="#bac7d5" points="632.31,-55 632.31,-88.5 704.62,-88.5 704.62,-55 632.31,-55" />
+      <text xml:space="preserve" text-anchor="start" x="658.72" y="-65.35" font-family="Arial" font-size="17.00" fill="#14263c">40</text>
+      <polygon fill="#e9f7f2" stroke="none" points="415.38,-23 415.38,-55 704.62,-55 704.62,-23 415.38,-23" />
+      <polygon fill="none" stroke="#bac7d5" points="415.38,-23 415.38,-55 704.62,-55 704.62,-23 415.38,-23" />
+      <text xml:space="preserve" text-anchor="start" x="422.38" y="-34.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">original</text>
+      <text xml:space="preserve" text-anchor="start" x="477.12" y="-34.75" font-family="Arial" font-size="15.00" fill="#14263c"> → </text>
+      <text xml:space="preserve" text-anchor="start" x="501.12" y="-34.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">[10, 20, 30, 40]</text>
+      <text xml:space="preserve" text-anchor="start" x="604.62" y="-34.75" font-family="Arial" font-size="15.00" fill="#14263c">  (unchanged)</text>
+      <polygon fill="none" stroke="#bac7d5" points="414.38,-22 414.38,-123 705.62,-123 705.62,-22 414.38,-22" />
+    </g>
+    <g id="edge2" class="edge">
+      <title>copy_code-&gt;copy_mem</title>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M560,-246.3C560,-236.05 560,-223.31 560,-209.78" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="562.8,-210.08 560,-202.08 557.2,-210.08 562.8,-210.08" />
+      <text xml:space="preserve" text-anchor="middle" x="622.25" y="-217.55" font-family="Arial" font-size="16.00" fill="#14263c">allocates + writes</text>
+    </g>
+  </g>
+</svg>

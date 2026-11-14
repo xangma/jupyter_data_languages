@@ -1,0 +1,101 @@
+// Source: 01-catalogue.ipynb; slice views share memory while .copy() allocates a new buffer.
+digraph array_views {
+  graph [
+    bgcolor="white", fontname="Arial", fontsize=21, fontcolor="#14263C",
+    label="A NumPy slice is a view into shared memory; .copy() allocates new memory",
+    labelloc=t, rankdir=TB, newrank=true, nodesep=0.32, ranksep=0.38, pad=0.16
+  ];
+  node [
+    shape=plain, fontname="Arial", fontsize=17, fontcolor="#14263C",
+    color="#BAC7D5", penwidth=1.4
+  ];
+  edge [
+    fontname="Arial", fontsize=16, fontcolor="#14263C",
+    color="#526780", penwidth=1.5, arrowsize=0.8
+  ];
+
+  start [shape=box, style="rounded,filled", fillcolor="#EAF3FE", margin="0.18,0.10",
+         label=<
+           <B>Starter array:</B>  <FONT FACE="Courier New">original = np.array([10, 20, 30, 40])</FONT>
+         >];
+
+  subgraph cluster_view {
+    label="1 · Slice view (shared memory)";
+    fontsize=19; style="rounded"; color="#BAC7D5"; margin=14;
+
+    view_code [shape=box, style="rounded,filled", fillcolor="#EAF3FE", margin="0.14,0.10",
+               label=<
+                 <FONT FACE="Courier New">view = original[:2]</FONT><BR/>
+                 <FONT FACE="Courier New">view[0] = 99</FONT>
+               >];
+
+    view_mem [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
+        <TR><TD COLSPAN="4" BGCOLOR="#F0EBFA"><B>One shared memory buffer</B></TD></TR>
+        <TR>
+          <TD BGCOLOR="#FBEDED"><B>99</B></TD>
+          <TD BGCOLOR="#FFF2D6">20</TD>
+          <TD BGCOLOR="#F3F5F7">30</TD>
+          <TD BGCOLOR="#F3F5F7">40</TD>
+        </TR>
+        <TR>
+          <TD COLSPAN="2" BGCOLOR="#FFF2D6"><FONT POINT-SIZE="14"><B>view[:2]</B> window</FONT></TD>
+          <TD COLSPAN="2" BGCOLOR="#F3F5F7"><FONT POINT-SIZE="14">unindexed tail</FONT></TD>
+        </TR>
+        <TR>
+          <TD COLSPAN="4" BGCOLOR="#FBEDED"><FONT POINT-SIZE="15"><B>original</B> → <B>[99, 20, 30, 40]</B>  (mutated!)</FONT></TD>
+        </TR>
+      </TABLE>
+    >];
+
+    view_code -> view_mem [label="writes in place"];
+  }
+
+  subgraph cluster_copy {
+    label="2 · Explicit .copy() (independent memory)";
+    fontsize=19; style="rounded"; color="#BAC7D5"; margin=14;
+
+    copy_code [shape=box, style="rounded,filled", fillcolor="#EAF3FE", margin="0.14,0.10",
+               label=<
+                 <FONT FACE="Courier New">separate = original[:2].copy()</FONT><BR/>
+                 <FONT FACE="Courier New">separate[0] = -5</FONT>
+               >];
+
+    copy_mem [label=<
+      <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="0">
+        <TR><TD>
+          <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#BAC7D5">
+            <TR><TD COLSPAN="2" BGCOLOR="#F0EBFA"><B>separate buffer (new)</B></TD></TR>
+            <TR>
+              <TD BGCOLOR="#FFF2D6"><B>-5</B></TD>
+              <TD BGCOLOR="#F3F5F7">20</TD>
+            </TR>
+          </TABLE>
+        </TD></TR>
+        <TR><TD HEIGHT="8"></TD></TR>
+        <TR><TD>
+          <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#BAC7D5">
+            <TR><TD COLSPAN="4" BGCOLOR="#E9F7F2"><B>original buffer stays intact</B></TD></TR>
+            <TR>
+              <TD BGCOLOR="#E9F7F2"><B>10</B></TD>
+              <TD BGCOLOR="#E9F7F2"><B>20</B></TD>
+              <TD BGCOLOR="#E9F7F2">30</TD>
+              <TD BGCOLOR="#E9F7F2">40</TD>
+            </TR>
+            <TR>
+              <TD COLSPAN="4" BGCOLOR="#E9F7F2"><FONT POINT-SIZE="15"><B>original</B> → <B>[10, 20, 30, 40]</B>  (unchanged)</FONT></TD>
+            </TR>
+          </TABLE>
+        </TD></TR>
+      </TABLE>
+    >];
+
+    copy_code -> copy_mem [label="allocates + writes"];
+  }
+
+  { rank=same; view_code; copy_code; }
+  { rank=same; view_mem; copy_mem; }
+
+  start -> view_code;
+  start -> copy_code;
+}
