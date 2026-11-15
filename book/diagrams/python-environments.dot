@@ -1,0 +1,95 @@
+// Source: 01-catalogue.ipynb; Python environment tools and aligned kernel/terminal execution.
+digraph python_environments {
+  graph [
+    bgcolor="white", fontname="Arial", fontsize=19, fontcolor="#14263C",
+    label="Lock one project environment and point both kernel and terminal at it",
+    labelloc=t, rankdir=TB, newrank=true, nodesep=0.18, ranksep=0.40, pad=0.14
+  ];
+  node [
+    shape=plain, fontname="Arial", fontsize=14, fontcolor="#14263C",
+    color="#BAC7D5", penwidth=1.4
+  ];
+  edge [
+    fontname="Arial", fontsize=13, fontcolor="#14263C",
+    color="#526780", penwidth=1.5, arrowsize=0.8
+  ];
+
+  subgraph cluster_tools {
+    label="1 · Environment tools in astrophysics research (pick one per project)";
+    fontsize=16; style="rounded"; color="#BAC7D5"; margin=11;
+
+    uv_tool [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#BAC7D5">
+        <TR><TD BGCOLOR="#EAF3FE"><B>uv · used here</B></TD></TR>
+        <TR><TD BGCOLOR="#FFFFFF"><FONT FACE="Courier New" POINT-SIZE="12">pyproject.toml + uv.lock</FONT></TD></TR>
+        <TR><TD BGCOLOR="#F3F5F7"><FONT FACE="Courier New" POINT-SIZE="12">uv sync --frozen</FONT><BR/>Fast, hash-locked Python<BR/>+ PyPI wheels</TD></TR>
+      </TABLE>
+    >];
+
+    venv_tool [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#BAC7D5">
+        <TR><TD BGCOLOR="#EAF3FE"><B>pip + venv · stdlib</B></TD></TR>
+        <TR><TD BGCOLOR="#FFFFFF"><FONT FACE="Courier New" POINT-SIZE="12">pyproject.toml / requirements.txt</FONT></TD></TR>
+        <TR><TD BGCOLOR="#F3F5F7"><FONT FACE="Courier New" POINT-SIZE="12">python -m venv .venv</FONT><BR/><FONT FACE="Courier New" POINT-SIZE="12">python -m pip install ...</FONT><BR/>Built-in stdlib + PyPI</TD></TR>
+      </TABLE>
+    >];
+
+    conda_tool [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#BAC7D5">
+        <TR><TD BGCOLOR="#EAF3FE"><B>conda / mamba · binary deps</B></TD></TR>
+        <TR><TD BGCOLOR="#FFFFFF"><FONT FACE="Courier New" POINT-SIZE="12">environment.yml (conda-forge)</FONT></TD></TR>
+        <TR><TD BGCOLOR="#F3F5F7"><B>Python + C/Fortran/CUDA</B><BR/>Compiled libs: CFITSIO,<BR/>FFTW, healpy</TD></TR>
+      </TABLE>
+    >];
+
+    { rank=same; uv_tool; venv_tool; conda_tool; }
+  }
+
+  project_env [label=<
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
+      <TR><TD BGCOLOR="#F0EBFA"><B>Isolated project environment</B><BR/><FONT FACE="Courier New" POINT-SIZE="12">.venv/bin/python (local)</FONT><BR/><FONT FACE="Courier New" POINT-SIZE="12">/opt/course/.venv/bin/python (CPD)</FONT></TD></TR>
+      <TR><TD BGCOLOR="#FFFFFF">Python 3.13 · NumPy 2 · Astropy<BR/>SciPy · Matplotlib · pytest</TD></TR>
+    </TABLE>
+  >];
+
+  unactivated_cmd [label=<
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#D8A8A8">
+      <TR><TD BGCOLOR="#FFF2D6"><B>Unactivated terminal (#1 trap)</B></TD></TR>
+      <TR><TD BGCOLOR="#FFFFFF"><FONT FACE="Courier New" POINT-SIZE="12">pip install ...  |  pytest</FONT><BR/>Bare commands in new shell<BR/>(forgot to activate .venv)</TD></TR>
+    </TABLE>
+  >];
+
+  { rank=same; project_env; unactivated_cmd; }
+
+  kernel_ok [label=<
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#BAC7D5">
+      <TR><TD BGCOLOR="#E9F7F2"><B>Aligned · Jupyter kernel</B></TD></TR>
+      <TR><TD BGCOLOR="#FFFFFF"><B>Python PhD (locked)</B><BR/>Registered via ipykernel<BR/><FONT FACE="Courier New" POINT-SIZE="12">sys.executable → .venv</FONT></TD></TR>
+    </TABLE>
+  >];
+
+  term_ok [label=<
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#BAC7D5">
+      <TR><TD BGCOLOR="#E9F7F2"><B>Aligned · Activated terminal</B></TD></TR>
+      <TR><TD BGCOLOR="#FFFFFF"><FONT FACE="Courier New" POINT-SIZE="12">source .../activate | uv run</FONT><BR/><FONT FACE="Courier New" POINT-SIZE="12">python -m pytest · python -m pip</FONT><BR/>Uses the project .venv</TD></TR>
+    </TABLE>
+  >];
+
+  trap_bad [label=<
+    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#D8A8A8">
+      <TR><TD BGCOLOR="#FBEDED"><B>Wrong interpreter!</B></TD></TR>
+      <TR><TD BGCOLOR="#FBEDED">Hits system or base Python:<BR/><FONT FACE="Courier New" POINT-SIZE="12">/usr/bin/python3 | conda (base)</FONT><BR/>ModuleNotFoundError / wrong versions</TD></TR>
+    </TABLE>
+  >];
+
+  { rank=same; kernel_ok; term_ok; trap_bad; }
+
+  uv_tool -> project_env [label=" builds"];
+  venv_tool -> project_env [label=" builds"];
+  conda_tool -> project_env [label=" builds (env)"];
+  conda_tool -> unactivated_cmd [style=invis];
+
+  project_env -> kernel_ok [color="#2F6F5E", label=" ipykernel"];
+  project_env -> term_ok [color="#2F6F5E", label=" activate / uv run"];
+  unactivated_cmd -> trap_bad [color="#A63A3A", style=dashed, penwidth=1.8, label=" bypasses .venv"];
+}

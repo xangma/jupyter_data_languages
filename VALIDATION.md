@@ -1,5 +1,15 @@
 # Validation — pedagogical revamp and GUI walkthroughs
 
+## Session 1 & Primer expansion — 15 November 2026 (`agy/pedagogy-revamp-20261114`)
+
+Verified in `/Users/xangma/.gemini/antigravity/scratch/phd-python-2026-revamp` on top of `4cabba9` (legacy `CKrawczyk` / 2025 files untouched):
+
+- **Unit, diagram and overlay checks**: `pytest` (**28 passed**), `render_diagrams.py --check` (**14 editable DOT/SVG diagrams**, adding `python-environments` and `array-axes-slicing`), and `render_screenshot_callouts.py --check` (**52 annotated screenshots**).
+- **Notebook execution and output hygiene**: `validate_course.py` executed all **5 course notebooks** cleanly (`00-primer`, `01-catalogue`, `02-git-and-tests`, `03-agents-and-inference`, `04-signal-extension`) with zero errors or `FITSFixedWarning`s; all source `.ipynb` code cells retain `outputs: []` and `execution_count: null`.
+- **Strict MyST HTML build and hydrated browser check**: `BASE_URL=/python-phd npm run build:docs` built all **11 pages** strictly with zero warnings, injected all 5 CPD notebook launch routes, and passed headless Chrome checks (`HTTP 200`, `0` broken images, `0px` horizontal overflow across `/python-phd/primer` and `/python-phd/catalogue`).
+
+---
+
 ## Local verification — 14 November 2026 (`agy/pedagogy-revamp-20261114`)
 
 Verified in an isolated worktree branched from `ac96bd8` (`codex/phd-python-2026`):

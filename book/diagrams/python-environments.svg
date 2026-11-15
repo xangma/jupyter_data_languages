@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="462" viewBox="0.00 0.00 778.00 499.00" role="img" aria-labelledby="python-environments-title python-environments-desc">
+  <title id="python-environments-title">Lock one project environment and point both kernel and terminal at it</title>
+  <desc id="python-environments-desc">Three environment workflows encountered in astrophysics research — uv with pyproject.toml and uv.lock via uv sync --frozen, pip + venv with python -m venv .venv and python -m pip, and conda or mamba with environment.yml and conda-forge C, Fortran and CUDA libraries such as CFITSIO, FFTW and healpy — build an isolated project environment (.venv/bin/python or /opt/course/.venv/bin/python with Python 3.13, NumPy 2, Astropy, SciPy, Matplotlib and pytest). Two aligned execution paths — the Python PhD (locked) Jupyter kernel via ipykernel and an activated terminal via source activate or uv run — use that .venv interpreter, whereas an unactivated terminal running bare pip install or pytest hits system /usr/bin/python3 or conda (base) and causes ModuleNotFoundError or version mismatches.</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(10.08 488.83)">
+    <title>python_environments</title>
+    <polygon fill="white" stroke="none" points="-10.08,10.08 -10.08,-488.83 768.08,-488.83 768.08,10.08 -10.08,10.08" />
+    <text xml:space="preserve" text-anchor="middle" x="379" y="-456.7" font-family="Arial" font-size="19.00" fill="#14263c">Lock one project environment and point both kernel and terminal at it</text>
+    <g id="clust1" class="cluster">
+      <title>cluster_tools</title>
+      <path fill="white" stroke="#bac7d5" d="M20,-276.25C20,-276.25 738,-276.25 738,-276.25 744,-276.25 750,-282.25 750,-288.25 750,-288.25 750,-429 750,-429 750,-435 744,-441 738,-441 738,-441 20,-441 20,-441 14,-441 8,-435 8,-429 8,-429 8,-288.25 8,-288.25 8,-282.25 14,-276.25 20,-276.25" />
+      <text xml:space="preserve" text-anchor="middle" x="379" y="-421.8" font-family="Arial" font-size="16.00" fill="#14263c">1 · Environment tools in astrophysics research (pick one per project)</text>
+    </g>
+    <g id="node1" class="node">
+      <title>uv_tool</title>
+      <polygon fill="#eaf3fe" stroke="none" points="20,-371.5 20,-401.25 214,-401.25 214,-371.5 20,-371.5" />
+      <polygon fill="none" stroke="#bac7d5" points="20,-371.5 20,-401.25 214,-401.25 214,-371.5 20,-371.5" />
+      <text xml:space="preserve" text-anchor="start" x="71.25" y="-381.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">uv · used here</text>
+      <polygon fill="#ffffff" stroke="none" points="20,-343.25 20,-371.5 214,-371.5 214,-343.25 20,-343.25" />
+      <polygon fill="none" stroke="#bac7d5" points="20,-343.25 20,-371.5 214,-371.5 214,-343.25 20,-343.25" />
+      <text xml:space="preserve" text-anchor="start" x="27" y="-353.1" font-family="Courier New" font-size="12.00" fill="#14263c">pyproject.toml + uv.lock</text>
+      <polygon fill="#f3f5f7" stroke="none" points="20,-289.25 20,-343.25 214,-343.25 214,-289.25 20,-289.25" />
+      <polygon fill="none" stroke="#bac7d5" points="20,-289.25 20,-343.25 214,-343.25 214,-289.25 20,-289.25" />
+      <text xml:space="preserve" text-anchor="start" x="57" y="-325.85" font-family="Courier New" font-size="12.00" fill="#14263c">uv sync --frozen</text>
+      <text xml:space="preserve" text-anchor="start" x="40.88" y="-311.95" font-family="Arial" font-size="14.00" fill="#14263c">Fast, hash-locked Python</text>
+      <text xml:space="preserve" text-anchor="start" x="73.88" y="-297.95" font-family="Arial" font-size="14.00" fill="#14263c">+ PyPI wheels</text>
+      <polygon fill="none" stroke="#bac7d5" points="19,-288.25 19,-402.25 215,-402.25 215,-288.25 19,-288.25" />
+    </g>
+    <g id="node4" class="node">
+      <title>project_env</title>
+      <polygon fill="#f0ebfa" stroke="none" points="220.5,-183.25 220.5,-237.25 491.5,-237.25 491.5,-183.25 220.5,-183.25" />
+      <polygon fill="none" stroke="#bac7d5" points="220.5,-183.25 220.5,-237.25 491.5,-237.25 491.5,-183.25 220.5,-183.25" />
+      <text xml:space="preserve" text-anchor="start" x="263.38" y="-216.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">Isolated project environment</text>
+      <text xml:space="preserve" text-anchor="start" x="266" y="-204.85" font-family="Courier New" font-size="12.00" fill="#14263c">.venv/bin/python (local)</text>
+      <text xml:space="preserve" text-anchor="start" x="228.5" y="-192.85" font-family="Courier New" font-size="12.00" fill="#14263c">/opt/course/.venv/bin/python (CPD)</text>
+      <polygon fill="#ffffff" stroke="none" points="220.5,-135.75 220.5,-183.25 491.5,-183.25 491.5,-135.75 220.5,-135.75" />
+      <polygon fill="none" stroke="#bac7d5" points="220.5,-135.75 220.5,-183.25 491.5,-183.25 491.5,-135.75 220.5,-135.75" />
+      <text xml:space="preserve" text-anchor="start" x="257.38" y="-161.95" font-family="Arial" font-size="14.00" fill="#14263c">Python 3.13 · NumPy 2 · Astropy</text>
+      <text xml:space="preserve" text-anchor="start" x="279.5" y="-146.2" font-family="Arial" font-size="14.00" fill="#14263c">SciPy · Matplotlib · pytest</text>
+      <polygon fill="none" stroke="#bac7d5" points="219.5,-134.75 219.5,-238.25 492.5,-238.25 492.5,-134.75 219.5,-134.75" />
+    </g>
+    <g id="edge1" class="edge">
+      <title>uv_tool-&gt;project_env</title>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M202.27,-288.32C224.38,-273.82 248.2,-258.2 270.33,-243.69" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="271.67,-246.16 276.82,-239.43 268.6,-241.47 271.67,-246.16" />
+      <text xml:space="preserve" text-anchor="middle" x="270.31" y="-255.9" font-family="Arial" font-size="13.00" fill="#14263c"> builds</text>
+    </g>
+    <g id="node2" class="node">
+      <title>venv_tool</title>
+      <polygon fill="#eaf3fe" stroke="none" points="229.25,-370.5 229.25,-400.25 490.75,-400.25 490.75,-370.5 229.25,-370.5" />
+      <polygon fill="none" stroke="#bac7d5" points="229.25,-370.5 229.25,-400.25 490.75,-400.25 490.75,-370.5 229.25,-370.5" />
+      <text xml:space="preserve" text-anchor="start" x="302.62" y="-380.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">pip + venv · stdlib</text>
+      <polygon fill="#ffffff" stroke="none" points="229.25,-342.25 229.25,-370.5 490.75,-370.5 490.75,-342.25 229.25,-342.25" />
+      <polygon fill="none" stroke="#bac7d5" points="229.25,-342.25 229.25,-370.5 490.75,-370.5 490.75,-342.25 229.25,-342.25" />
+      <text xml:space="preserve" text-anchor="start" x="236.25" y="-352.1" font-family="Courier New" font-size="12.00" fill="#14263c">pyproject.toml / requirements.txt</text>
+      <polygon fill="#f3f5f7" stroke="none" points="229.25,-290.25 229.25,-342.25 490.75,-342.25 490.75,-290.25 229.25,-290.25" />
+      <polygon fill="none" stroke="#bac7d5" points="229.25,-290.25 229.25,-342.25 490.75,-342.25 490.75,-290.25 229.25,-290.25" />
+      <text xml:space="preserve" text-anchor="start" x="285" y="-324.85" font-family="Courier New" font-size="12.00" fill="#14263c">python -m venv .venv</text>
+      <text xml:space="preserve" text-anchor="start" x="266.25" y="-312.85" font-family="Courier New" font-size="12.00" fill="#14263c">python -m pip install ...</text>
+      <text xml:space="preserve" text-anchor="start" x="299.62" y="-298.95" font-family="Arial" font-size="14.00" fill="#14263c">Built-in stdlib + PyPI</text>
+      <polygon fill="none" stroke="#bac7d5" points="228.25,-289.25 228.25,-401.25 491.75,-401.25 491.75,-289.25 228.25,-289.25" />
+    </g>
+    <g id="edge2" class="edge">
+      <title>venv_tool-&gt;project_env</title>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M358.6,-289.43C358.26,-276.13 357.9,-261.84 357.55,-248.28" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="360.35,-248.29 357.35,-240.36 354.75,-248.43 360.35,-248.29" />
+      <text xml:space="preserve" text-anchor="middle" x="377.5" y="-255.9" font-family="Arial" font-size="13.00" fill="#14263c"> builds</text>
+    </g>
+    <g id="node3" class="node">
+      <title>conda_tool</title>
+      <polygon fill="#eaf3fe" stroke="none" points="506.25,-372.5 506.25,-402.25 737.75,-402.25 737.75,-372.5 506.25,-372.5" />
+      <polygon fill="none" stroke="#bac7d5" points="506.25,-372.5 506.25,-402.25 737.75,-402.25 737.75,-372.5 506.25,-372.5" />
+      <text xml:space="preserve" text-anchor="start" x="528.25" y="-382.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">conda / mamba · binary deps</text>
+      <polygon fill="#ffffff" stroke="none" points="506.25,-344.25 506.25,-372.5 737.75,-372.5 737.75,-344.25 506.25,-344.25" />
+      <polygon fill="none" stroke="#bac7d5" points="506.25,-344.25 506.25,-372.5 737.75,-372.5 737.75,-344.25 506.25,-344.25" />
+      <text xml:space="preserve" text-anchor="start" x="513.25" y="-354.1" font-family="Courier New" font-size="12.00" fill="#14263c">environment.yml (conda-forge)</text>
+      <polygon fill="#f3f5f7" stroke="none" points="506.25,-288.25 506.25,-344.25 737.75,-344.25 737.75,-288.25 506.25,-288.25" />
+      <polygon fill="none" stroke="#bac7d5" points="506.25,-288.25 506.25,-344.25 737.75,-344.25 737.75,-288.25 506.25,-288.25" />
+      <text xml:space="preserve" text-anchor="start" x="539.5" y="-324.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">Python + C/Fortran/CUDA</text>
+      <text xml:space="preserve" text-anchor="start" x="548.5" y="-310.95" font-family="Arial" font-size="14.00" fill="#14263c">Compiled libs: CFITSIO,</text>
+      <text xml:space="preserve" text-anchor="start" x="579.62" y="-296.95" font-family="Arial" font-size="14.00" fill="#14263c">FFTW, healpy</text>
+      <polygon fill="none" stroke="#bac7d5" points="505.25,-287.25 505.25,-403.25 738.75,-403.25 738.75,-287.25 505.25,-287.25" />
+    </g>
+    <g id="edge3" class="edge">
+      <title>conda_tool-&gt;project_env</title>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M525.59,-287.44C501.12,-273.02 474.86,-257.54 450.48,-243.18" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="452.21,-240.95 443.9,-239.3 449.37,-245.77 452.21,-240.95" />
+      <text xml:space="preserve" text-anchor="middle" x="525.75" y="-255.9" font-family="Arial" font-size="13.00" fill="#14263c"> builds (env)</text>
+    </g>
+    <g id="node5" class="node">
+      <title>unactivated_cmd</title>
+      <polygon fill="#fff2d6" stroke="none" points="518.5,-198.62 518.5,-230.38 729.5,-230.38 729.5,-198.62 518.5,-198.62" />
+      <polygon fill="none" stroke="#d8a8a8" points="518.5,-198.62 518.5,-230.38 729.5,-230.38 729.5,-198.62 518.5,-198.62" />
+      <text xml:space="preserve" text-anchor="start" x="528.75" y="-210.07" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">Unactivated terminal (#1 trap)</text>
+      <polygon fill="#ffffff" stroke="none" points="518.5,-142.62 518.5,-198.62 729.5,-198.62 729.5,-142.62 518.5,-142.62" />
+      <polygon fill="none" stroke="#d8a8a8" points="518.5,-142.62 518.5,-198.62 729.5,-198.62 729.5,-142.62 518.5,-142.62" />
+      <text xml:space="preserve" text-anchor="start" x="526.5" y="-180.22" font-family="Courier New" font-size="12.00" fill="#14263c">pip install ...  |  pytest</text>
+      <text xml:space="preserve" text-anchor="start" x="537" y="-166.32" font-family="Arial" font-size="14.00" fill="#14263c">Bare commands in new shell</text>
+      <text xml:space="preserve" text-anchor="start" x="551.62" y="-152.32" font-family="Arial" font-size="14.00" fill="#14263c">(forgot to activate .venv)</text>
+      <polygon fill="none" stroke="#d8a8a8" points="517.5,-141.62 517.5,-231.38 730.5,-231.38 730.5,-141.62 517.5,-141.62" />
+    </g>
+    <g id="node6" class="node">
+      <title>kernel_ok</title>
+      <polygon fill="#e9f7f2" stroke="none" points="34.5,-57 34.5,-86.75 213.5,-86.75 213.5,-57 34.5,-57" />
+      <polygon fill="none" stroke="#bac7d5" points="34.5,-57 34.5,-86.75 213.5,-86.75 213.5,-57 34.5,-57" />
+      <text xml:space="preserve" text-anchor="start" x="47.12" y="-67.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">Aligned · Jupyter kernel</text>
+      <polygon fill="#ffffff" stroke="none" points="34.5,-3 34.5,-57 213.5,-57 213.5,-3 34.5,-3" />
+      <polygon fill="none" stroke="#bac7d5" points="34.5,-3 34.5,-57 213.5,-57 213.5,-3 34.5,-3" />
+      <text xml:space="preserve" text-anchor="start" x="58" y="-37.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">Python PhD (locked)</text>
+      <text xml:space="preserve" text-anchor="start" x="52" y="-23.7" font-family="Arial" font-size="14.00" fill="#14263c">Registered via ipykernel</text>
+      <text xml:space="preserve" text-anchor="start" x="41.5" y="-11.6" font-family="Courier New" font-size="12.00" fill="#14263c">sys.executable → .venv</text>
+      <polygon fill="none" stroke="#bac7d5" points="33.5,-2 33.5,-87.75 214.5,-87.75 214.5,-2 33.5,-2" />
+    </g>
+    <g id="edge5" class="edge">
+      <title>project_env-&gt;kernel_ok</title>
+      <path fill="none" stroke="#2f6f5e" stroke-width="1.5" d="M271.91,-134.89C249.03,-121.12 224.35,-106.27 201.83,-92.72" />
+      <polygon fill="#2f6f5e" stroke="#2f6f5e" stroke-width="1.5" points="203.56,-90.49 195.26,-88.76 200.67,-95.29 203.56,-90.49" />
+      <text xml:space="preserve" text-anchor="middle" x="268.88" y="-107.4" font-family="Arial" font-size="13.00" fill="#14263c"> ipykernel</text>
+    </g>
+    <g id="node7" class="node">
+      <title>term_ok</title>
+      <polygon fill="#e9f7f2" stroke="none" points="229,-56 229,-85.75 483,-85.75 483,-56 229,-56" />
+      <polygon fill="none" stroke="#bac7d5" points="229,-56 229,-85.75 483,-85.75 483,-56 229,-56" />
+      <text xml:space="preserve" text-anchor="start" x="266.75" y="-66.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">Aligned · Activated terminal</text>
+      <polygon fill="#ffffff" stroke="none" points="229,-4 229,-56 483,-56 483,-4 229,-4" />
+      <polygon fill="none" stroke="#bac7d5" points="229,-4 229,-56 483,-56 483,-4 229,-4" />
+      <text xml:space="preserve" text-anchor="start" x="251" y="-38.6" font-family="Courier New" font-size="12.00" fill="#14263c">source .../activate | uv run</text>
+      <text xml:space="preserve" text-anchor="start" x="236" y="-26.6" font-family="Courier New" font-size="12.00" fill="#14263c">python -m pytest · python -m pip</text>
+      <text xml:space="preserve" text-anchor="start" x="289.25" y="-12.7" font-family="Arial" font-size="14.00" fill="#14263c">Uses the project .venv</text>
+      <polygon fill="none" stroke="#bac7d5" points="228,-3 228,-86.75 484,-86.75 484,-3 228,-3" />
+    </g>
+    <g id="edge6" class="edge">
+      <title>project_env-&gt;term_ok</title>
+      <path fill="none" stroke="#2f6f5e" stroke-width="1.5" d="M356,-135.09C356,-122.64 356,-109.3 356,-96.82" />
+      <polygon fill="#2f6f5e" stroke="#2f6f5e" stroke-width="1.5" points="358.8,-96.86 356,-88.86 353.2,-96.86 358.8,-96.86" />
+      <text xml:space="preserve" text-anchor="middle" x="405.5" y="-107.4" font-family="Arial" font-size="13.00" fill="#14263c"> activate / uv run</text>
+    </g>
+    <g id="node8" class="node">
+      <title>trap_bad</title>
+      <polygon fill="#fbeded" stroke="none" points="497.88,-57 497.88,-88.75 750.12,-88.75 750.12,-57 497.88,-57" />
+      <polygon fill="none" stroke="#d8a8a8" points="497.88,-57 497.88,-88.75 750.12,-88.75 750.12,-57 497.88,-57" />
+      <text xml:space="preserve" text-anchor="start" x="564.75" y="-68.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">Wrong interpreter!</text>
+      <polygon fill="#fbeded" stroke="none" points="497.88,-1 497.88,-57 750.12,-57 750.12,-1 497.88,-1" />
+      <polygon fill="none" stroke="#d8a8a8" points="497.88,-1 497.88,-57 750.12,-57 750.12,-1 497.88,-1" />
+      <text xml:space="preserve" text-anchor="start" x="539.62" y="-36.7" font-family="Arial" font-size="14.00" fill="#14263c">Hits system or base Python:</text>
+      <text xml:space="preserve" text-anchor="start" x="507.75" y="-24.6" font-family="Courier New" font-size="12.00" fill="#14263c">/usr/bin/python3 | conda (base)</text>
+      <text xml:space="preserve" text-anchor="start" x="505.88" y="-10.7" font-family="Arial" font-size="14.00" fill="#14263c">ModuleNotFoundError / wrong versions</text>
+      <polygon fill="none" stroke="#d8a8a8" points="496.88,0 496.88,-89.75 751.12,-89.75 751.12,0 496.88,0" />
+    </g>
+    <g id="edge7" class="edge">
+      <title>unactivated_cmd-&gt;trap_bad</title>
+      <path fill="none" stroke="#a63a3a" stroke-width="1.8" stroke-dasharray="5,2" d="M624,-141.7C624,-128.45 624,-113.73 624,-99.89" />
+      <polygon fill="#a63a3a" stroke="#a63a3a" stroke-width="1.8" points="626.8,-100.24 624,-92.24 621.2,-100.24 626.8,-100.24" />
+      <text xml:space="preserve" text-anchor="middle" x="672.38" y="-107.4" font-family="Arial" font-size="13.00" fill="#14263c"> bypasses .venv</text>
+    </g>
+  </g>
+</svg>

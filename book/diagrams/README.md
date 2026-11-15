@@ -19,12 +19,14 @@ Exports fit within 720 by 640 CSS pixels while retaining their scalable viewBox.
 
 | Source | Placement |
 | --- | --- |
+| `array-axes-slicing.dot` | Primer: 0-based and negative indexing, half-open slices and 2D `axis` reductions |
+| `array-views.dot` | Primer: Slice views versus independent `.copy()` buffers |
+| `python-environments.dot` | Session 1: Python environment tools (`uv`, `pip + venv`, `conda / mamba`) and aligned kernel/terminal execution |
 | `shared-mask.dot` | Session 1: Arrays, shapes and masks (including separate-mask misalignment trap) |
-| `array-views.dot` | Session 1: Slice views versus independent `.copy()` buffers |
 | `broadcasting.dot` | Session 1: beside the row-scaling example |
 | `catalogue-selection.dot` | Session 1: Investigate a survey selection |
 | `fits-vs-ecsv.dot` | Session 1: Saving tables with units and metadata (ECSV vs FITS HDUs) |
-| `nyquist-aliasing.dot` | Session 1: Spectral analysis and Nyquist folding / aliasing |
+| `nyquist-aliasing.dot` | Optional extension: Spectral analysis and Nyquist folding / aliasing |
 | `git-states.dot` | Session 2: before staging and committing |
 | `git-branches.dot` | Session 2: Merge and resolve a conflict |
 | `git-undo-vs-revert.dot` | Session 2: Private `git reset --soft` vs shared `git revert` |

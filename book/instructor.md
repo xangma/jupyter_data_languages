@@ -34,22 +34,25 @@ opening full dropdown solutions.
 
 | Minutes | Activity | Evidence of learning |
 | --- | --- | --- |
-| 0–10 | Inspect the catalogue | Identify units and error columns |
-| 10–40 | Arrays, masks, broadcasting; Task A | Explain a shared mask and 395 usable rows |
-| 40–60 | Quantities and FITS round-trip; Task B | Distinguish metadata from numbers |
+| 0–5 | Environments & kernels (`pip`, `conda`, `uv`) | Verify `sys.executable`; distinguish kernel from terminal |
+| 5–12 | Inspect the catalogue (`QTable`, ECSV) | Identify units, error columns and `table.meta` |
+| 12–38 | Arrays, masks, 2D axes & broadcasting; Task A | Explain shared `valid` mask (395 rows) and `axis=0` vs `axis=1` |
+| 38–60 | Units, constants, equivalencies, FITS tables & 2D WCS cutouts; Task B | Convert units/Doppler shifts safely; explain `origin='lower'` & residual colormaps |
 | 60–70 | Break | |
-| 70–95 | Error-bar plot | Label units and define uncertainty |
-| 95–115 | Survey selection; Task C | Compare distributions with common bins |
+| 70–95 | 2-panel error-bar & magnitude-selection figure, `savefig`, Your turn | Pair `errorbar` + `fill_between`, invert magnitudes, plot residuals |
+| 95–115 | Survey selection histograms; Task C | Compare counts vs densities on common distance bins |
 | 115–120 | Exit check | Explain one claim the figure cannot support |
 
 ### Key Pitfalls
 
+- Running bare `pip` in an unactivated shell instead of checking `sys.executable`
+  and activating `/opt/course/.venv` (or `uv run`), or installing into Conda `(base)`.
 - Filtering columns separately instead of applying one shared `valid` mask (five
   disjoint bad rows—three missing velocities, one zero error, one missing
   magnitude—leave 395 usable rows).
-- Stripping units blindly with `.value` instead of `.to_value(u.Mpc)`, or
-  forgetting `[:, None]` when broadcasting a 1-D per-object scale `(N,)` across
-  `(N, 3)`.
+- Stripping units blindly with `.value` instead of `.to_value(u.Mpc)`, forgetting
+  `[:, None]` when broadcasting `(N,)` across `(N, 3)`, or omitting `origin='lower'`
+  and zero-centred diverging norms (`CenteredNorm`) on 2D FITS residual maps.
 - Claiming every survey cut biases every fit: here `apparent_magnitude < 16.5`
   (262 objects) alters the distance distribution without selecting on velocity
   noise at fixed distance.

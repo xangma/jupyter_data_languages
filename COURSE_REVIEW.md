@@ -167,3 +167,32 @@ theoretical projects and mixed computing backgrounds.
   Codex, Antigravity and OpenCode Desktop, recorded `sys.executable` in generated
   `TASK.md`, added `claude-repair-approval.svg` and a concrete steering contrast,
   and removed raw internal CI harness cells from student view.
+
+## Session 1 & Primer audit against `CKrawczyk` — 15 November 2026
+
+Audited the Jupyter Book's Python lessons (`01-catalogue.ipynb` and `00-primer.ipynb`)
+against Coleman Krawczyk's (`CKrawczyk`) original `master` notebooks
+(`General_Python.ipynb`, `General_plotting.ipynb`, `Uncertainty_plotting.ipynb`,
+`Fits_images.ipynb`, `mpl_style.py`) and 2025's `1.1 - Environments_and_Conda.ipynb`,
+leaving all legacy notebooks untouched:
+
+- **`pip`, `conda` and `uv` opening section in Session 1 (`01-catalogue.ipynb`)**:
+  Added a concise opening section, comparison table, `sys.executable` check,
+  scientific-stack overview (`QTable` vs `pandas.DataFrame`), and editable diagram
+  `python-environments.svg` contrasting `pip + venv`, hash-locked `uv` (`uv.lock`),
+  and `conda`/`mamba` (`conda-forge` C/Fortran/CUDA astronomy libraries) alongside
+  the Jupyter kernel vs unactivated terminal shell boundary.
+- **Essential scientific Python, Astropy, FITS & Matplotlib additions (`01-catalogue.ipynb`)**:
+  Added `astropy.constants` ($R_s = 2 G M_\odot / c^2$) and spectral/Doppler
+  `equivalencies` (`u.spectral()`, `u.doppler_optical`), 2D `axis=0` vs `axis=1`
+  reductions, a 2-panel 2D FITS `WCS` cutout + residual figure (`origin='lower'`,
+  `AsinhStretch` sequential `magma` vs zero-centred `RdBu_r` `CenteredNorm`),
+  inward journal ticks, a 2-panel `errorbar` + `fill_between` and inverted-magnitude
+  selection-plane figure (`ax.invert_yaxis()`), `fig.savefig` (`.pdf` vs `.png`,
+  noting `rasterized=True` / `hexbin` for $\ge 10^5$ points), and a velocity-residual
+  diagnostic task.
+- **Core Python & 2D array idioms (`00-primer.ipynb`)**: Added `array-axes-slicing.svg`
+  (bringing the course total to **fourteen** editable diagrams), `tuple` unpacking,
+  stride/reverse slicing (`[::2]`, `[::-1]`), formatted `f-strings`, attributes vs
+  methods, 2D indexing and `axis=0`/`axis=1` reductions, `enumerate`/`zip`/list
+  comprehensions, `with` cleanup, and a starter `fig, ax = plt.subplots()` plot.

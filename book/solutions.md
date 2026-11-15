@@ -47,10 +47,11 @@ Assigning zero velocity to missing entries fabricates stationary galaxies. With
 the shared `valid` mask, magnitude limits of `15.5`, `16.5` and `17.5` select
 **161**, **262** and **357** objects respectively. Reshaping a 1-D per-object
 factor with `[:, None]` turns `(N,)` into `(N, 1)` so one scale broadcasts across
-each row's three features `(N, 3)`.
+each row's three features `(N, 3)`, while `axis=0` collapses rows into `(3,)`
+per-band summaries and `axis=1` collapses columns into `(N,)` per-galaxy sums.
 :::
 
-### Task B — units and FITS round-trip
+### Task B — units, constants and FITS
 
 **Hint:** Compare the columns and `meta` dictionary of `table` against the FITS
 `subset`, and consider what `.value` would return if a file stored distances in
@@ -64,12 +65,35 @@ assert np.all(np.isfinite(restored_mpc) & (restored_mpc > 0))
 ```
 
 The FITS round-trip retains the three physical columns (`distance`, `velocity`,
-`velocity_error`) and their units while omitting `object_id`,
+`velocity_error`) and their `TUNITn` units while omitting `object_id`,
 `apparent_magnitude`, and arbitrary ECSV dictionary metadata (`subset.meta.clear()`).
-Calling `.to_value(u.Mpc)` converts compatible scales (such as `kpc` $\rightarrow$
-`Mpc`) and raises `UnitConversionError` on incompatible dimensions, whereas
-`.value` blindly strips whatever unit was stored. On real survey FITS files, also
-test expected row counts, finite value bounds and coordinate/frame header keys.
+Calling `.to_value(u.Mpc)` (like `astropy.constants` and `u.spectral()` /
+`u.doppler_optical` equivalencies) checks dimensions and converts compatible
+scales (`kpc` $\rightarrow$ `Mpc`), whereas `.value` blindly strips whatever unit
+was stored. On real survey FITS tables and 2D cutouts, also verify row or `NAXIS`
+shapes, finite bounds, `WCS` frame/projection keys, and `origin='lower'` display
+orientation.
+:::
+
+### Your turn — velocity residual diagnostic
+
+**Hint:** Subtract `70.0 * distance[valid] + 300.0` from `velocity[valid]` and
+plot against `distance[valid]` around `ax.axhline(0.0, ls='--')`.
+
+:::{dropdown} Worked answer
+```python
+resid = velocity[valid] - (70.0 * distance[valid] + 300.0)
+fig, ax = plt.subplots(figsize=(7, 3.6))
+idx = np.arange(resid.size)[::8]
+ax.errorbar(distance[valid][idx], resid[idx], yerr=sigma[valid][idx], fmt="o", ms=3.5, capsize=2)
+ax.axhline(0.0, color="C3", ls="--", lw=1.3)
+ax.set(xlabel="Distance [Mpc]", ylabel="Velocity residual [km/s]")
+fig.tight_layout()
+```
+
+Residuals scatter symmetrically around `0 km/s` across `20–200 Mpc` with no
+systematic distance trend, and roughly two-thirds of the $1\sigma$ error bars
+cross the zero line (`np.mean(np.abs(resid) <= sigma[valid])` $\approx 0.68$).
 :::
 
 ### Task C — survey selection and figure caption

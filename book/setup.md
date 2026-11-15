@@ -1,6 +1,6 @@
 # Before the first session
 
-Allow 10 minutes on CPD or 20–30 minutes for a local installation. Choose **Option A** to work entirely in your browser, or **Option B** to install locally (Python 3.11+ and Git 2.28+; the locked course environment uses Python 3.13). VS Code is optional.
+Allow 10 minutes on CPD or 20–30 minutes for a local installation. Choose **Option A** to work entirely in your browser, or **Option B** to install locally (Python 3.11+ and Git 2.28+; the locked course environment uses Python 3.13). VS Code is optional. See *Environments and kernels: pip, conda and uv* at the start of [Session 1](01-catalogue.ipynb) for how `uv`, `pip` and `conda` relate.
 
 ## Option A: Use CPD in your browser (recommended, no local install)
 

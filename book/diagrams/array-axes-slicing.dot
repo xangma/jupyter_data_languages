@@ -1,0 +1,130 @@
+// Source: 00-primer.ipynb; 0-based/negative indexing, half-open slices and 2D axis reductions.
+digraph array_axes_slicing {
+  graph [
+    bgcolor="white", fontname="Arial", fontsize=19, fontcolor="#14263C",
+    label="0-based half-open slices in 1D and axis reductions on a 2D (rows, cols) grid",
+    labelloc=t, rankdir=TB, newrank=true, nodesep=0.20, ranksep=0.40, pad=0.14
+  ];
+  node [
+    shape=plain, fontname="Arial", fontsize=14, fontcolor="#14263C",
+    color="#BAC7D5", penwidth=1.4
+  ];
+  edge [
+    fontname="Arial", fontsize=13, fontcolor="#14263C",
+    color="#526780", penwidth=1.5, arrowsize=0.8
+  ];
+
+  subgraph cluster_slicing {
+    label="1 · 1D indexing & half-open slices (start:stop:step)";
+    fontsize=16; style="rounded"; color="#BAC7D5"; margin=11;
+
+    idx_table [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#BAC7D5">
+        <TR><TD COLSPAN="6" BGCOLOR="#EAF3FE"><FONT FACE="Courier New" POINT-SIZE="12"><B>a = [10, 20, 30, 40, 50]  # shape (5,)</B></FONT></TD></TR>
+        <TR>
+          <TD BGCOLOR="#F3F5F7"><B>0-based</B></TD>
+          <TD BGCOLOR="#FFFFFF"><FONT FACE="Courier New">0</FONT></TD>
+          <TD BGCOLOR="#FFF2D6"><FONT FACE="Courier New"><B>1</B></FONT></TD>
+          <TD BGCOLOR="#FFF2D6"><FONT FACE="Courier New"><B>2</B></FONT></TD>
+          <TD BGCOLOR="#FFF2D6"><FONT FACE="Courier New"><B>3</B></FONT></TD>
+          <TD BGCOLOR="#FBEDED"><FONT FACE="Courier New"><B>4</B></FONT></TD>
+        </TR>
+        <TR>
+          <TD BGCOLOR="#F3F5F7"><B>value a[i]</B></TD>
+          <TD BGCOLOR="#FFFFFF"><B>10</B></TD>
+          <TD BGCOLOR="#FFF2D6"><B>20</B></TD>
+          <TD BGCOLOR="#FFF2D6"><B>30</B></TD>
+          <TD BGCOLOR="#FFF2D6"><B>40</B></TD>
+          <TD BGCOLOR="#FFFFFF"><B>50</B></TD>
+        </TR>
+        <TR>
+          <TD BGCOLOR="#F3F5F7"><B>negative</B></TD>
+          <TD BGCOLOR="#F0EBFA"><FONT FACE="Courier New">-5</FONT></TD>
+          <TD BGCOLOR="#F0EBFA"><FONT FACE="Courier New">-4</FONT></TD>
+          <TD BGCOLOR="#F0EBFA"><FONT FACE="Courier New">-3</FONT></TD>
+          <TD BGCOLOR="#F0EBFA"><FONT FACE="Courier New">-2</FONT></TD>
+          <TD BGCOLOR="#F0EBFA"><FONT FACE="Courier New"><B>-1</B></FONT></TD>
+        </TR>
+      </TABLE>
+    >];
+
+    slice_rules [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#BAC7D5">
+        <TR><TD COLSPAN="7" BGCOLOR="#FFF2D6"><B>Half-open a[1:4]: start 1 in, stop 4 excluded</B></TD></TR>
+        <TR>
+          <TD BGCOLOR="#F3F5F7"><FONT FACE="Courier New" POINT-SIZE="12"><B>a[1:4]</B></FONT></TD>
+          <TD BGCOLOR="#F3F5F7">·</TD>
+          <TD BGCOLOR="#FFF2D6"><B>20</B></TD>
+          <TD BGCOLOR="#FFF2D6"><B>30</B></TD>
+          <TD BGCOLOR="#FFF2D6"><B>40</B></TD>
+          <TD BGCOLOR="#FBEDED"><FONT POINT-SIZE="12">stop 4✗</FONT></TD>
+          <TD BGCOLOR="#FFF2D6"><FONT FACE="Courier New" POINT-SIZE="12"><B>[20, 30, 40]</B></FONT></TD>
+        </TR>
+        <TR><TD COLSPAN="7" BGCOLOR="#E9F7F2"><B>Stride a[::2] (step=2): indices 0, 2, 4  (a[-1]=50)</B></TD></TR>
+        <TR>
+          <TD BGCOLOR="#F3F5F7"><FONT FACE="Courier New" POINT-SIZE="12"><B>a[::2]</B></FONT></TD>
+          <TD BGCOLOR="#E9F7F2"><B>10</B></TD>
+          <TD BGCOLOR="#F3F5F7">·</TD>
+          <TD BGCOLOR="#E9F7F2"><B>30</B></TD>
+          <TD BGCOLOR="#F3F5F7">·</TD>
+          <TD BGCOLOR="#E9F7F2"><B>50</B></TD>
+          <TD BGCOLOR="#E9F7F2"><FONT FACE="Courier New" POINT-SIZE="12"><B>[10, 30, 50]</B></FONT></TD>
+        </TR>
+      </TABLE>
+    >];
+
+    idx_table -> slice_rules [label=" slice windows"];
+  }
+
+  subgraph cluster_axes {
+    label="2 · 2D shape (rows, cols) & axis reductions";
+    fontsize=16; style="rounded"; color="#BAC7D5"; margin=11;
+
+    grid_2d [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6" COLOR="#BAC7D5">
+        <TR><TD COLSPAN="5" BGCOLOR="#EAF3FE"><B>grid — 2 objects × 3 bands · shape (2, 3)</B></TD></TR>
+        <TR>
+          <TD BGCOLOR="#F3F5F7"><FONT POINT-SIZE="12"><B>axis 0 ↓ / axis 1 →</B></FONT></TD>
+          <TD BGCOLOR="#F3F5F7"><B>col 0</B></TD>
+          <TD BGCOLOR="#F3F5F7"><B>col 1</B></TD>
+          <TD BGCOLOR="#F3F5F7"><B>col 2</B></TD>
+          <TD BGCOLOR="#E9F7F2"><B>sum(axis=1) →</B></TD>
+        </TR>
+        <TR>
+          <TD BGCOLOR="#F3F5F7">row 0 (obj 0)</TD>
+          <TD BGCOLOR="#FFFFFF">1</TD>
+          <TD BGCOLOR="#FFFFFF">2</TD>
+          <TD BGCOLOR="#FFFFFF">3</TD>
+          <TD BGCOLOR="#E9F7F2"><B>6</B></TD>
+        </TR>
+        <TR>
+          <TD BGCOLOR="#F3F5F7">row 1 (obj 1)</TD>
+          <TD BGCOLOR="#FFFFFF">10</TD>
+          <TD BGCOLOR="#FFFFFF">20</TD>
+          <TD BGCOLOR="#FFFFFF">30</TD>
+          <TD BGCOLOR="#E9F7F2"><B>60</B></TD>
+        </TR>
+        <TR>
+          <TD BGCOLOR="#F0EBFA"><B>sum(axis=0) ↓</B></TD>
+          <TD BGCOLOR="#F0EBFA"><B>11</B></TD>
+          <TD BGCOLOR="#F0EBFA"><B>22</B></TD>
+          <TD BGCOLOR="#F0EBFA"><B>33</B></TD>
+          <TD BGCOLOR="#F3F5F7"><FONT POINT-SIZE="12">↓ (3,) · → (2,)</FONT></TD>
+        </TR>
+      </TABLE>
+    >];
+
+    axis_rules [label=<
+      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
+        <TR><TD BGCOLOR="#F0EBFA"><B>axis=0: down rows (↓) → shape (3,)</B><BR/><FONT FACE="Courier New" POINT-SIZE="12">per-column: grid.sum(axis=0) = [11, 22, 33]</FONT></TD></TR>
+        <TR><TD BGCOLOR="#E9F7F2"><B>axis=1: across cols (→) → shape (2,)</B><BR/><FONT FACE="Courier New" POINT-SIZE="12">per-row: grid.sum(axis=1) = [6, 60]</FONT></TD></TR>
+        <TR><TD BGCOLOR="#FFF2D6"><B>Rule to remember</B><BR/><I>“The axis number names the dimension</I><BR/><I>that gets collapsed.”</I></TD></TR>
+      </TABLE>
+    >];
+
+    grid_2d -> axis_rules [label=" collapse one axis"];
+  }
+
+  { rank=same; idx_table; grid_2d; }
+  { rank=same; slice_rules; axis_rules; }
+}
