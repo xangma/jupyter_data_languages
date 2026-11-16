@@ -1,45 +1,134 @@
-// Symbolic entries show the operation; the teaching code uses factors of one.
+// Source: 01-catalogue.ipynb; 2D broadcasting for a chi^2(H0) grid scan over galaxies.
 digraph broadcasting {
-  graph [rankdir=TB, bgcolor="white", pad=0.18, nodesep=0.14, ranksep=0.30,
-         fontname="Arial", fontsize=18];
-  node [shape=plain, fontname="Arial", fontsize=18, fontcolor="#14263C"];
-  edge [style=invis];
+  graph [
+    bgcolor="white", fontname="Arial", fontsize=19, fontcolor="#14263C",
+    label="Broadcast M trial slopes against N galaxies, then sum across axis=1",
+    labelloc=t, rankdir=TB, newrank=true, nodesep=0.07, ranksep=0.28, pad=0.10
+  ];
+  node [
+    shape=plain, fontname="Arial", fontsize=15, fontcolor="#14263C",
+    color="#BAC7D5", penwidth=1.4
+  ];
+  edge [
+    fontname="Arial", fontsize=14, fontcolor="#14263C",
+    color="#526780", penwidth=1.6, arrowsize=0.8
+  ];
 
-  features [label=<
-    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6">
-      <TR><TD COLSPAN="3"><B>features</B><BR/><BR/>(N, 3)</TD></TR>
-      <TR><TD BGCOLOR="#EAF3FE">a₁</TD><TD BGCOLOR="#EAF3FE">b₁</TD><TD BGCOLOR="#EAF3FE">c₁</TD></TR>
-      <TR><TD BGCOLOR="#E9F7F2">a₂</TD><TD BGCOLOR="#E9F7F2">b₂</TD><TD BGCOLOR="#E9F7F2">c₂</TD></TR>
-      <TR><TD>⋮</TD><TD>⋮</TD><TD>⋮</TD></TR>
-      <TR><TD BGCOLOR="#FFF2D6">a<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD><TD BGCOLOR="#FFF2D6">b<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD><TD BGCOLOR="#FFF2D6">c<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD></TR>
+  h0_col [label=<
+    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+      <TR><TD COLSPAN="3"><FONT FACE="Courier New" POINT-SIZE="13"><B>h0_grid[:, None]&#160;</B></FONT></TD></TR>
+      <TR><TD COLSPAN="3"><B>(M, 1)</B> · M = 201</TD></TR>
+      <TR><TD COLSPAN="3" HEIGHT="4"></TD></TR>
+      <TR>
+        <TD WIDTH="30"></TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="7" WIDTH="42">H<SUB><FONT POINT-SIZE="12">1</FONT></SUB></TD>
+        <TD WIDTH="30"></TD>
+      </TR>
+      <TR>
+        <TD></TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="7">H<SUB><FONT POINT-SIZE="12">2</FONT></SUB></TD>
+        <TD></TD>
+      </TR>
+      <TR>
+        <TD></TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="5">&#8942;</TD>
+        <TD></TD>
+      </TR>
+      <TR>
+        <TD></TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="7">H<SUB><FONT POINT-SIZE="12">M</FONT></SUB></TD>
+        <TD></TD>
+      </TR>
     </TABLE>
   >];
-  multiply [fontsize=24, label="×"];
-  factors [label=<
-    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6">
-      <TR><TD><B>scale_per_object</B><BR/><B>[:, None]</B><BR/>(N, 1)</TD></TR>
-      <TR><TD BGCOLOR="#EAF3FE">s₁</TD></TR>
-      <TR><TD BGCOLOR="#E9F7F2">s₂</TD></TR>
-      <TR><TD>⋮</TD></TR>
-      <TR><TD BGCOLOR="#FFF2D6">s<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD></TR>
-    </TABLE>
-  >];
-  equals [fontsize=24, label="="];
-  result [label=<
-    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="6">
-      <TR><TD COLSPAN="3"><B>result</B><BR/><BR/>(N, 3)</TD></TR>
-      <TR><TD BGCOLOR="#EAF3FE">s₁a₁</TD><TD BGCOLOR="#EAF3FE">s₁b₁</TD><TD BGCOLOR="#EAF3FE">s₁c₁</TD></TR>
-      <TR><TD BGCOLOR="#E9F7F2">s₂a₂</TD><TD BGCOLOR="#E9F7F2">s₂b₂</TD><TD BGCOLOR="#E9F7F2">s₂c₂</TD></TR>
-      <TR><TD>⋮</TD><TD>⋮</TD><TD>⋮</TD></TR>
-      <TR><TD BGCOLOR="#FFF2D6">s<SUB><FONT POINT-SIZE="12">N</FONT></SUB>a<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD><TD BGCOLOR="#FFF2D6">s<SUB><FONT POINT-SIZE="12">N</FONT></SUB>b<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD><TD BGCOLOR="#FFF2D6">s<SUB><FONT POINT-SIZE="12">N</FONT></SUB>c<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD></TR>
+
+  multiply [fontsize=22, label="×"];
+
+  dist_row [label=<
+    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+      <TR><TD COLSPAN="4"><FONT FACE="Courier New" POINT-SIZE="13"><B>distance[valid]&#160;</B></FONT></TD></TR>
+      <TR><TD COLSPAN="4"><B>(N,) → (1, N)</B> · N = 395</TD></TR>
+      <TR><TD COLSPAN="4" HEIGHT="4"></TD></TR>
+      <TR>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#F3F5F7" CELLPADDING="7">d<SUB><FONT POINT-SIZE="12">1</FONT></SUB></TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#F3F5F7" CELLPADDING="7">d<SUB><FONT POINT-SIZE="12">2</FONT></SUB></TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="6">&#8230;</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#F3F5F7" CELLPADDING="7">d<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD>
+      </TR>
     </TABLE>
   >];
 
-  { rank=same; features; multiply; factors; equals; result; }
-  features -> multiply -> factors -> equals -> result [weight=100];
+  plus_offset [label=<
+    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
+      <TR><TD><FONT POINT-SIZE="13">offset</FONT></TD></TR>
+      <TR><TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#F3F5F7" CELLPADDING="6"><FONT FACE="Courier New" POINT-SIZE="13"><B>+ 300&#160;</B></FONT></TD></TR>
+    </TABLE>
+  >];
 
-  explanation [shape=box, style="rounded,filled", fillcolor="#F3F5F7", color="#BAC7D5",
-               margin="0.18,0.12",
-               label="One factor per row multiplies all three cells.\nTeaching example: every sᵢ = 1 (ones)."];
-  factors -> explanation;
+  equals [fontsize=22, label="="];
+
+  v_model [label=<
+    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+      <TR><TD COLSPAN="3"><FONT FACE="Courier New" POINT-SIZE="13"><B>v_model&#160;</B></FONT></TD></TR>
+      <TR><TD COLSPAN="3"><B>(M, N)</B> · 201 × 395 grid</TD></TR>
+      <TR><TD COLSPAN="3" HEIGHT="4"></TD></TR>
+      <TR>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="6">H<SUB><FONT POINT-SIZE="12">1</FONT></SUB>&#8201;d<SUB><FONT POINT-SIZE="12">1</FONT></SUB>+300</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="6">&#8230;</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="6">H<SUB><FONT POINT-SIZE="12">1</FONT></SUB>&#8201;d<SUB><FONT POINT-SIZE="12">N</FONT></SUB>+300</TD>
+      </TR>
+      <TR>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="6">H<SUB><FONT POINT-SIZE="12">2</FONT></SUB>&#8201;d<SUB><FONT POINT-SIZE="12">1</FONT></SUB>+300</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="6">&#8230;</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="6">H<SUB><FONT POINT-SIZE="12">2</FONT></SUB>&#8201;d<SUB><FONT POINT-SIZE="12">N</FONT></SUB>+300</TD>
+      </TR>
+      <TR>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="5">&#8942;</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="5">&#8945;</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="5">&#8942;</TD>
+      </TR>
+      <TR>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="6">H<SUB><FONT POINT-SIZE="12">M</FONT></SUB>&#8201;d<SUB><FONT POINT-SIZE="12">1</FONT></SUB>+300</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="6">&#8230;</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="6">H<SUB><FONT POINT-SIZE="12">M</FONT></SUB>&#8201;d<SUB><FONT POINT-SIZE="12">N</FONT></SUB>+300</TD>
+      </TR>
+    </TABLE>
+  >];
+
+  chi2_vec [label=<
+    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
+      <TR><TD COLSPAN="3"><FONT FACE="Courier New" POINT-SIZE="13"><B>chi2&#160;</B></FONT></TD></TR>
+      <TR><TD COLSPAN="3"><B>(M,)</B> · per H<SUB><FONT POINT-SIZE="12">0</FONT></SUB></TD></TR>
+      <TR><TD COLSPAN="3" HEIGHT="4"></TD></TR>
+      <TR>
+        <TD WIDTH="14"></TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="7" WIDTH="44">&#967;<SUP><FONT POINT-SIZE="11">2</FONT></SUP><SUB><FONT POINT-SIZE="12">1</FONT></SUB></TD>
+        <TD WIDTH="14"></TD>
+      </TR>
+      <TR>
+        <TD></TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="7">&#967;<SUP><FONT POINT-SIZE="11">2</FONT></SUP><SUB><FONT POINT-SIZE="12">2</FONT></SUB></TD>
+        <TD></TD>
+      </TR>
+      <TR>
+        <TD></TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="5">&#8942;</TD>
+        <TD></TD>
+      </TR>
+      <TR>
+        <TD></TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="7">&#967;<SUP><FONT POINT-SIZE="11">2</FONT></SUP><SUB><FONT POINT-SIZE="12">M</FONT></SUB></TD>
+        <TD></TD>
+      </TR>
+    </TABLE>
+  >];
+
+  { rank=same; h0_col; multiply; dist_row; plus_offset; equals; v_model; chi2_vec; }
+
+  h0_col -> multiply [style=invis, weight=100];
+  multiply -> dist_row [style=invis, weight=100];
+  dist_row -> plus_offset [style=invis, weight=100];
+  plus_offset -> equals [style=invis, weight=100];
+  equals -> v_model [style=invis, weight=100];
+  v_model -> chi2_vec [color="#2F6F5E", label=" .sum(axis=1)\n across N", weight=100];
 }

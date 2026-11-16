@@ -196,3 +196,32 @@ leaving all legacy notebooks untouched:
   stride/reverse slicing (`[::2]`, `[::-1]`), formatted `f-strings`, attributes vs
   methods, 2D indexing and `axis=0`/`axis=1` reductions, `enumerate`/`zip`/list
   comprehensions, `with` cleanup, and a starter `fig, ax = plt.subplots()` plot.
+
+## Three-model review & dependency-solving refinement of Session 1 — 16 November 2026
+
+Refined `book/01-catalogue.ipynb`, `book/solutions.md`, `book/instructor.md` and
+`book/setup.md` following independent pedagogical and technical reviews across
+three models (`Gemini Pro`, `Codex gpt-6-astra`, `Claude Opus 5.5`) plus explicit
+coverage of dependency solving:
+
+- **Dependency solving & scannable opening (`env-kernels`)**: Explained how
+  package constraint graphs are solved by full-graph lockfile resolvers (`uv` +
+  `uv.lock` and `conda`/`mamba`'s `libmamba` SAT solver across Python + compiled
+  C/Fortran/CUDA libraries) versus ad-hoc `pip install`, noted `%pip` and `uv`'s
+  `pip`-free default `.venv` alongside hidden out-of-order notebook state, and
+  moved the 4-column tool reference table into a `{dropdown}`.
+- **Cohesive catalogue thread & protected 120-minute pacing**: Added explicit
+  units and uniform-baseline caveats on the mock Hubble relation, 4 learning
+  objectives, `clean = table[valid]` `QTable` slicing alongside sentinel-value
+  warnings, a 5-line $\chi^2(H_0)$ parameter-grid broadcast `(201, 1) * (395,)`
+  replacing the disconnected 3-band toy array, `1 / H0` unit algebra with
+  `u.allclose`, preserved `<=8`-character FITS provenance cards (`SYNTH`, `SEED`,
+  `H0_INJ`) before Task B, and badged the constants/equivalencies and 2D FITS WCS
+  cells as optional pre-break spotlights (`layout='constrained'`, sparse asinh
+  colorbar ticks).
+- **Honest uncertainty & unspoiled Task C discovery**: Added faint background
+  scatter of all 395 valid rows behind `[::8]` error bars, labelled the shaded
+  band explicitly as $\pm\text{median }\sigma_v$ data scatter, wrote persistent
+  `.pdf`/`.png` exports to `outputs/`, placed legends on both selection-histogram
+  panels, removed pre-answered Task C numbers from preceding prose and Task A's
+  worked answer, and aligned `solutions.md`, `instructor.md` and `setup.md`.

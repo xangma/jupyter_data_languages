@@ -1,101 +1,165 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="464" viewBox="0.00 0.00 476.00 307.00" role="img" aria-labelledby="broadcasting-title broadcasting-desc">
-  <title id="broadcasting-title">Broadcast one scale per object</title>
-  <desc id="broadcasting-desc">A feature matrix of shape N by 3 is multiplied by a column of N row scales, producing another N by 3 matrix. Each scale applies across one object's three features.</desc>
-  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 293.74)">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="197" viewBox="0.00 0.00 811.00 222.00" role="img" aria-labelledby="broadcasting-title broadcasting-desc">
+  <title id="broadcasting-title">Broadcast M trial slopes against N galaxies, then sum across axis=1</title>
+  <desc id="broadcasting-desc">Column vector h0_grid[:, None] of shape (M, 1) with M = 201 trial slopes multiplies distance[valid] of shape (N,) treated as (1, N) across N = 395 galaxies plus intercept 300 to form the (M, N) prediction matrix v_model with entries H_i d_j + 300, followed by .sum(axis=1) collapsing across the N galaxy columns into chi2 of shape (M,) with one chi-squared score per trial H0.</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(7.2 214.7)">
     <title>broadcasting</title>
-    <polygon fill="white" stroke="none" points="-12.96,12.96 -12.96,-293.74 462.71,-293.74 462.71,12.96 -12.96,12.96" />
+    <polygon fill="white" stroke="none" points="-7.2,7.2 -7.2,-214.7 803.95,-214.7 803.95,7.2 -7.2,7.2" />
+    <text xml:space="preserve" text-anchor="middle" x="398.38" y="-185.45" font-family="Arial" font-size="19.00" fill="#14263c">Broadcast M trial slopes against N galaxies, then sum across axis=1</text>
     <g id="node1" class="node">
-      <title>features</title>
-      <text xml:space="preserve" text-anchor="start" x="9" y="-258.68" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">features</text>
-      <text xml:space="preserve" text-anchor="start" x="21" y="-222.68" font-family="Arial" font-size="18.00" fill="#14263c">(N, 3)</text>
-      <polygon fill="#eaf3fe" stroke="none" points="0,-181.78 0,-214.78 29.25,-214.78 29.25,-181.78 0,-181.78" />
-      <text xml:space="preserve" text-anchor="start" x="7.12" y="-191.68" font-family="Arial" font-size="18.00" fill="#14263c">a₁</text>
-      <polygon fill="#eaf3fe" stroke="none" points="29.25,-181.78 29.25,-214.78 58.5,-214.78 58.5,-181.78 29.25,-181.78" />
-      <text xml:space="preserve" text-anchor="start" x="36.38" y="-191.68" font-family="Arial" font-size="18.00" fill="#14263c">b₁</text>
-      <polygon fill="#eaf3fe" stroke="none" points="58.5,-181.78 58.5,-214.78 87,-214.78 87,-181.78 58.5,-181.78" />
-      <text xml:space="preserve" text-anchor="start" x="65.62" y="-191.68" font-family="Arial" font-size="18.00" fill="#14263c">c₁</text>
-      <polygon fill="#e9f7f2" stroke="none" points="0,-148.78 0,-181.78 29.25,-181.78 29.25,-148.78 0,-148.78" />
-      <text xml:space="preserve" text-anchor="start" x="7.12" y="-158.68" font-family="Arial" font-size="18.00" fill="#14263c">a₂</text>
-      <polygon fill="#e9f7f2" stroke="none" points="29.25,-148.78 29.25,-181.78 58.5,-181.78 58.5,-148.78 29.25,-148.78" />
-      <text xml:space="preserve" text-anchor="start" x="36.38" y="-158.68" font-family="Arial" font-size="18.00" fill="#14263c">b₂</text>
-      <polygon fill="#e9f7f2" stroke="none" points="58.5,-148.78 58.5,-181.78 87,-181.78 87,-148.78 58.5,-148.78" />
-      <text xml:space="preserve" text-anchor="start" x="65.62" y="-158.68" font-family="Arial" font-size="18.00" fill="#14263c">c₂</text>
-      <text xml:space="preserve" text-anchor="start" x="6.75" y="-125.68" font-family="Arial" font-size="18.00" fill="#14263c">⋮</text>
-      <text xml:space="preserve" text-anchor="start" x="36" y="-125.68" font-family="Arial" font-size="18.00" fill="#14263c">⋮</text>
-      <text xml:space="preserve" text-anchor="start" x="64.88" y="-125.68" font-family="Arial" font-size="18.00" fill="#14263c">⋮</text>
-      <polygon fill="#fff2d6" stroke="none" points="0,-81.28 0,-114.28 29.25,-114.28 29.25,-81.28 0,-81.28" />
-      <text xml:space="preserve" text-anchor="start" x="6" y="-92.18" font-family="Arial" font-size="18.00" fill="#14263c">a</text>
-      <text xml:space="preserve" text-anchor="start" x="15.75" y="-92.18" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
-      <polygon fill="#fff2d6" stroke="none" points="29.25,-81.28 29.25,-114.28 58.5,-114.28 58.5,-81.28 29.25,-81.28" />
-      <text xml:space="preserve" text-anchor="start" x="35.25" y="-92.18" font-family="Arial" font-size="18.00" fill="#14263c">b</text>
-      <text xml:space="preserve" text-anchor="start" x="45" y="-92.18" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
-      <polygon fill="#fff2d6" stroke="none" points="58.5,-81.28 58.5,-114.28 87,-114.28 87,-81.28 58.5,-81.28" />
-      <text xml:space="preserve" text-anchor="start" x="64.5" y="-92.18" font-family="Arial" font-size="18.00" fill="#14263c">c</text>
-      <text xml:space="preserve" text-anchor="start" x="73.5" y="-92.18" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
+      <title>h0_col</title>
+      <text xml:space="preserve" text-anchor="start" x="2" y="-164.4" font-family="Courier New" font-weight="bold" font-size="13.00" fill="#14263c">h0_grid[:, None] </text>
+      <text xml:space="preserve" text-anchor="start" x="10.62" y="-142.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">(M, 1)</text>
+      <text xml:space="preserve" text-anchor="start" x="51.12" y="-142.75" font-family="Arial" font-size="15.00" fill="#14263c"> · M = 201</text>
+      <polygon fill="#eaf3fe" stroke="none" points="39.83,-98 39.83,-132 91.67,-132 91.67,-98 39.83,-98" />
+      <polygon fill="none" stroke="#bac7d5" points="39.83,-98 39.83,-132 91.67,-132 91.67,-98 39.83,-98" />
+      <text xml:space="preserve" text-anchor="start" x="57.88" y="-110.75" font-family="Arial" font-size="15.00" fill="#14263c">H</text>
+      <text xml:space="preserve" text-anchor="start" x="68.38" y="-110.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">1</text>
+      <polygon fill="#e9f7f2" stroke="none" points="39.83,-64 39.83,-98 91.67,-98 91.67,-64 39.83,-64" />
+      <polygon fill="none" stroke="#bac7d5" points="39.83,-64 39.83,-98 91.67,-98 91.67,-64 39.83,-64" />
+      <text xml:space="preserve" text-anchor="start" x="57.88" y="-76.75" font-family="Arial" font-size="15.00" fill="#14263c">H</text>
+      <text xml:space="preserve" text-anchor="start" x="68.38" y="-76.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">2</text>
+      <polygon fill="#ffffff" stroke="none" points="39.83,-34 39.83,-64 91.67,-64 91.67,-34 39.83,-34" />
+      <polygon fill="none" stroke="#bac7d5" points="39.83,-34 39.83,-64 91.67,-64 91.67,-34 39.83,-34" />
+      <text xml:space="preserve" text-anchor="start" x="59.38" y="-43.75" font-family="Arial" font-size="15.00" fill="#14263c">⋮</text>
+      <polygon fill="#fff2d6" stroke="none" points="39.83,0 39.83,-34 91.67,-34 91.67,0 39.83,0" />
+      <polygon fill="none" stroke="#bac7d5" points="39.83,0 39.83,-34 91.67,-34 91.67,0 39.83,0" />
+      <text xml:space="preserve" text-anchor="start" x="56.38" y="-12.75" font-family="Arial" font-size="15.00" fill="#14263c">H</text>
+      <text xml:space="preserve" text-anchor="start" x="66.88" y="-12.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">M</text>
     </g>
     <g id="node2" class="node">
       <title>multiply</title>
-      <text xml:space="preserve" text-anchor="middle" x="104.5" y="-171.73" font-family="Arial" font-size="24.00" fill="#14263c">×</text>
+      <text xml:space="preserve" text-anchor="middle" x="147.75" y="-80.72" font-family="Arial" font-size="22.00" fill="#14263c">×</text>
     </g>
     <g id="node3" class="node">
-      <title>factors</title>
-      <text xml:space="preserve" text-anchor="start" x="128.12" y="-258.68" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">scale_per_object</text>
-      <text xml:space="preserve" text-anchor="start" x="163.75" y="-240.68" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">[:, None]</text>
-      <text xml:space="preserve" text-anchor="start" x="178" y="-222.68" font-family="Arial" font-size="18.00" fill="#14263c">(N, 1)</text>
-      <polygon fill="#eaf3fe" stroke="none" points="122.12,-181.78 122.12,-214.78 278.88,-214.78 278.88,-181.78 122.12,-181.78" />
-      <text xml:space="preserve" text-anchor="start" x="193.38" y="-191.68" font-family="Arial" font-size="18.00" fill="#14263c">s₁</text>
-      <polygon fill="#e9f7f2" stroke="none" points="122.12,-148.78 122.12,-181.78 278.88,-181.78 278.88,-148.78 122.12,-148.78" />
-      <text xml:space="preserve" text-anchor="start" x="193.38" y="-158.68" font-family="Arial" font-size="18.00" fill="#14263c">s₂</text>
-      <text xml:space="preserve" text-anchor="start" x="192.62" y="-125.68" font-family="Arial" font-size="18.00" fill="#14263c">⋮</text>
-      <polygon fill="#fff2d6" stroke="none" points="122.12,-81.28 122.12,-114.28 278.88,-114.28 278.88,-81.28 122.12,-81.28" />
-      <text xml:space="preserve" text-anchor="start" x="192.25" y="-92.18" font-family="Arial" font-size="18.00" fill="#14263c">s</text>
-      <text xml:space="preserve" text-anchor="start" x="201.25" y="-92.18" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
+      <title>dist_row</title>
+      <text xml:space="preserve" text-anchor="start" x="183.75" y="-115.4" font-family="Courier New" font-weight="bold" font-size="13.00" fill="#14263c">distance[valid] </text>
+      <text xml:space="preserve" text-anchor="start" x="166.12" y="-93.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">(N,) → (1, N)</text>
+      <text xml:space="preserve" text-anchor="start" x="253.88" y="-93.75" font-family="Arial" font-size="15.00" fill="#14263c"> · N = 395</text>
+      <polygon fill="#f3f5f7" stroke="none" points="164.12,-49 164.12,-83 203.5,-83 203.5,-49 164.12,-49" />
+      <polygon fill="none" stroke="#bac7d5" points="164.12,-49 164.12,-83 203.5,-83 203.5,-49 164.12,-49" />
+      <text xml:space="preserve" text-anchor="start" x="177.06" y="-61.75" font-family="Arial" font-size="15.00" fill="#14263c">d</text>
+      <text xml:space="preserve" text-anchor="start" x="185.31" y="-61.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">1</text>
+      <polygon fill="#f3f5f7" stroke="none" points="203.5,-49 203.5,-83 242.88,-83 242.88,-49 203.5,-49" />
+      <polygon fill="none" stroke="#bac7d5" points="203.5,-49 203.5,-83 242.88,-83 242.88,-49 203.5,-49" />
+      <text xml:space="preserve" text-anchor="start" x="216.44" y="-61.75" font-family="Arial" font-size="15.00" fill="#14263c">d</text>
+      <text xml:space="preserve" text-anchor="start" x="224.69" y="-61.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">2</text>
+      <polygon fill="#ffffff" stroke="none" points="242.88,-49 242.88,-83 281.75,-83 281.75,-49 242.88,-49" />
+      <polygon fill="none" stroke="#bac7d5" points="242.88,-49 242.88,-83 281.75,-83 281.75,-49 242.88,-49" />
+      <text xml:space="preserve" text-anchor="start" x="254.81" y="-60.75" font-family="Arial" font-size="15.00" fill="#14263c">…</text>
+      <polygon fill="#f3f5f7" stroke="none" points="281.75,-49 281.75,-83 323.38,-83 323.38,-49 281.75,-49" />
+      <polygon fill="none" stroke="#bac7d5" points="281.75,-49 281.75,-83 323.38,-83 323.38,-49 281.75,-49" />
+      <text xml:space="preserve" text-anchor="start" x="294.69" y="-61.75" font-family="Arial" font-size="15.00" fill="#14263c">d</text>
+      <text xml:space="preserve" text-anchor="start" x="302.94" y="-61.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
     </g>
     <g id="node4" class="node">
-      <title>equals</title>
-      <text xml:space="preserve" text-anchor="middle" x="296.5" y="-171.73" font-family="Arial" font-size="24.00" fill="#14263c">=</text>
-    </g>
-    <g id="node6" class="node">
-      <title>explanation</title>
-      <path fill="#f3f5f7" stroke="#bac7d5" d="M372.09,-59.28C372.09,-59.28 28.91,-59.28 28.91,-59.28 22.91,-59.28 16.91,-53.28 16.91,-47.28 16.91,-47.28 16.91,-12 16.91,-12 16.91,-6 22.91,0 28.91,0 28.91,0 372.09,0 372.09,0 378.09,0 384.09,-6 384.09,-12 384.09,-12 384.09,-47.28 384.09,-47.28 384.09,-53.28 378.09,-59.28 372.09,-59.28" />
-      <text xml:space="preserve" text-anchor="middle" x="200.5" y="-33.54" font-family="Arial" font-size="18.00" fill="#14263c">One factor per row multiplies all three cells.</text>
-      <text xml:space="preserve" text-anchor="middle" x="200.5" y="-12.54" font-family="Arial" font-size="18.00" fill="#14263c">Teaching example: every sᵢ = 1 (ones).</text>
+      <title>plus_offset</title>
+      <text xml:space="preserve" text-anchor="start" x="346.25" y="-98.9" font-family="Arial" font-size="13.00" fill="#14263c">offset</text>
+      <polygon fill="#f3f5f7" stroke="none" points="333.25,-62.5 333.25,-92.25 392.25,-92.25 392.25,-62.5 333.25,-62.5" />
+      <polygon fill="none" stroke="#bac7d5" points="333.25,-62.5 333.25,-92.25 392.25,-92.25 392.25,-62.5 333.25,-62.5" />
+      <text xml:space="preserve" text-anchor="start" x="340.25" y="-73.9" font-family="Courier New" font-weight="bold" font-size="13.00" fill="#14263c">+ 300 </text>
     </g>
     <g id="node5" class="node">
-      <title>result</title>
-      <text xml:space="preserve" text-anchor="start" x="357.12" y="-258.68" font-family="Arial" font-weight="bold" font-size="18.00" fill="#14263c">result</text>
-      <text xml:space="preserve" text-anchor="start" x="359" y="-222.68" font-family="Arial" font-size="18.00" fill="#14263c">(N, 3)</text>
-      <polygon fill="#eaf3fe" stroke="none" points="313.25,-181.78 313.25,-214.78 359,-214.78 359,-181.78 313.25,-181.78" />
-      <text xml:space="preserve" text-anchor="start" x="321.5" y="-191.68" font-family="Arial" font-size="18.00" fill="#14263c">s₁a₁</text>
-      <polygon fill="#eaf3fe" stroke="none" points="359,-181.78 359,-214.78 404.75,-214.78 404.75,-181.78 359,-181.78" />
-      <text xml:space="preserve" text-anchor="start" x="367.25" y="-191.68" font-family="Arial" font-size="18.00" fill="#14263c">s₁b₁</text>
-      <polygon fill="#eaf3fe" stroke="none" points="404.75,-181.78 404.75,-214.78 449.75,-214.78 449.75,-181.78 404.75,-181.78" />
-      <text xml:space="preserve" text-anchor="start" x="413" y="-191.68" font-family="Arial" font-size="18.00" fill="#14263c">s₁c₁</text>
-      <polygon fill="#e9f7f2" stroke="none" points="313.25,-148.78 313.25,-181.78 359,-181.78 359,-148.78 313.25,-148.78" />
-      <text xml:space="preserve" text-anchor="start" x="321.5" y="-158.68" font-family="Arial" font-size="18.00" fill="#14263c">s₂a₂</text>
-      <polygon fill="#e9f7f2" stroke="none" points="359,-148.78 359,-181.78 404.75,-181.78 404.75,-148.78 359,-148.78" />
-      <text xml:space="preserve" text-anchor="start" x="367.25" y="-158.68" font-family="Arial" font-size="18.00" fill="#14263c">s₂b₂</text>
-      <polygon fill="#e9f7f2" stroke="none" points="404.75,-148.78 404.75,-181.78 449.75,-181.78 449.75,-148.78 404.75,-148.78" />
-      <text xml:space="preserve" text-anchor="start" x="413" y="-158.68" font-family="Arial" font-size="18.00" fill="#14263c">s₂c₂</text>
-      <text xml:space="preserve" text-anchor="start" x="328.25" y="-125.68" font-family="Arial" font-size="18.00" fill="#14263c">⋮</text>
-      <text xml:space="preserve" text-anchor="start" x="374" y="-125.68" font-family="Arial" font-size="18.00" fill="#14263c">⋮</text>
-      <text xml:space="preserve" text-anchor="start" x="419.38" y="-125.68" font-family="Arial" font-size="18.00" fill="#14263c">⋮</text>
-      <polygon fill="#fff2d6" stroke="none" points="313.25,-81.28 313.25,-114.28 359,-114.28 359,-81.28 313.25,-81.28" />
-      <text xml:space="preserve" text-anchor="start" x="319.25" y="-92.18" font-family="Arial" font-size="18.00" fill="#14263c">s</text>
-      <text xml:space="preserve" text-anchor="start" x="328.25" y="-92.18" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
-      <text xml:space="preserve" text-anchor="start" x="335.75" y="-92.18" font-family="Arial" font-size="18.00" fill="#14263c">a</text>
-      <text xml:space="preserve" text-anchor="start" x="345.5" y="-92.18" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
-      <polygon fill="#fff2d6" stroke="none" points="359,-81.28 359,-114.28 404.75,-114.28 404.75,-81.28 359,-81.28" />
-      <text xml:space="preserve" text-anchor="start" x="365" y="-92.18" font-family="Arial" font-size="18.00" fill="#14263c">s</text>
-      <text xml:space="preserve" text-anchor="start" x="374" y="-92.18" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
-      <text xml:space="preserve" text-anchor="start" x="381.5" y="-92.18" font-family="Arial" font-size="18.00" fill="#14263c">b</text>
-      <text xml:space="preserve" text-anchor="start" x="391.25" y="-92.18" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
-      <polygon fill="#fff2d6" stroke="none" points="404.75,-81.28 404.75,-114.28 449.75,-114.28 449.75,-81.28 404.75,-81.28" />
-      <text xml:space="preserve" text-anchor="start" x="410.75" y="-92.18" font-family="Arial" font-size="18.00" fill="#14263c">s</text>
-      <text xml:space="preserve" text-anchor="start" x="419.75" y="-92.18" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
-      <text xml:space="preserve" text-anchor="start" x="427.25" y="-92.18" font-family="Arial" font-size="18.00" fill="#14263c">c</text>
-      <text xml:space="preserve" text-anchor="start" x="436.25" y="-92.18" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
+      <title>equals</title>
+      <text xml:space="preserve" text-anchor="middle" x="407.75" y="-80.72" font-family="Arial" font-size="22.00" fill="#14263c">=</text>
+    </g>
+    <g id="node6" class="node">
+      <title>v_model</title>
+      <text xml:space="preserve" text-anchor="start" x="492.75" y="-161.4" font-family="Courier New" font-weight="bold" font-size="13.00" fill="#14263c">v_model </text>
+      <text xml:space="preserve" text-anchor="start" x="445.88" y="-139.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">(M, N)</text>
+      <text xml:space="preserve" text-anchor="start" x="488.62" y="-139.75" font-family="Arial" font-size="15.00" fill="#14263c"> · 201 × 395 grid</text>
+      <polygon fill="#eaf3fe" stroke="none" points="424.12,-97 424.12,-129 507.12,-129 507.12,-97 424.12,-97" />
+      <polygon fill="none" stroke="#bac7d5" points="424.12,-97 424.12,-129 507.12,-129 507.12,-97 424.12,-97" />
+      <text xml:space="preserve" text-anchor="start" x="432.62" y="-108.75" font-family="Arial" font-size="15.00" fill="#14263c">H</text>
+      <text xml:space="preserve" text-anchor="start" x="443.12" y="-108.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">1</text>
+      <text xml:space="preserve" text-anchor="start" x="448.38" y="-108.75" font-family="Arial" font-size="15.00" fill="#14263c"> d</text>
+      <text xml:space="preserve" text-anchor="start" x="459.62" y="-108.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">1</text>
+      <text xml:space="preserve" text-anchor="start" x="464.88" y="-108.75" font-family="Arial" font-size="15.00" fill="#14263c">+300</text>
+      <polygon fill="#eaf3fe" stroke="none" points="507.12,-97 507.12,-129 536.12,-129 536.12,-97 507.12,-97" />
+      <polygon fill="none" stroke="#bac7d5" points="507.12,-97 507.12,-129 536.12,-129 536.12,-97 507.12,-97" />
+      <text xml:space="preserve" text-anchor="start" x="514.12" y="-107.75" font-family="Arial" font-size="15.00" fill="#14263c">…</text>
+      <polygon fill="#eaf3fe" stroke="none" points="536.12,-97 536.12,-129 621.38,-129 621.38,-97 536.12,-97" />
+      <polygon fill="none" stroke="#bac7d5" points="536.12,-97 536.12,-129 621.38,-129 621.38,-97 536.12,-97" />
+      <text xml:space="preserve" text-anchor="start" x="544.62" y="-108.75" font-family="Arial" font-size="15.00" fill="#14263c">H</text>
+      <text xml:space="preserve" text-anchor="start" x="555.12" y="-108.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">1</text>
+      <text xml:space="preserve" text-anchor="start" x="560.38" y="-108.75" font-family="Arial" font-size="15.00" fill="#14263c"> d</text>
+      <text xml:space="preserve" text-anchor="start" x="571.62" y="-108.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
+      <text xml:space="preserve" text-anchor="start" x="579.12" y="-108.75" font-family="Arial" font-size="15.00" fill="#14263c">+300</text>
+      <polygon fill="#e9f7f2" stroke="none" points="424.12,-65 424.12,-97 507.12,-97 507.12,-65 424.12,-65" />
+      <polygon fill="none" stroke="#bac7d5" points="424.12,-65 424.12,-97 507.12,-97 507.12,-65 424.12,-65" />
+      <text xml:space="preserve" text-anchor="start" x="432.62" y="-76.75" font-family="Arial" font-size="15.00" fill="#14263c">H</text>
+      <text xml:space="preserve" text-anchor="start" x="443.12" y="-76.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">2</text>
+      <text xml:space="preserve" text-anchor="start" x="448.38" y="-76.75" font-family="Arial" font-size="15.00" fill="#14263c"> d</text>
+      <text xml:space="preserve" text-anchor="start" x="459.62" y="-76.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">1</text>
+      <text xml:space="preserve" text-anchor="start" x="464.88" y="-76.75" font-family="Arial" font-size="15.00" fill="#14263c">+300</text>
+      <polygon fill="#e9f7f2" stroke="none" points="507.12,-65 507.12,-97 536.12,-97 536.12,-65 507.12,-65" />
+      <polygon fill="none" stroke="#bac7d5" points="507.12,-65 507.12,-97 536.12,-97 536.12,-65 507.12,-65" />
+      <text xml:space="preserve" text-anchor="start" x="514.12" y="-75.75" font-family="Arial" font-size="15.00" fill="#14263c">…</text>
+      <polygon fill="#e9f7f2" stroke="none" points="536.12,-65 536.12,-97 621.38,-97 621.38,-65 536.12,-65" />
+      <polygon fill="none" stroke="#bac7d5" points="536.12,-65 536.12,-97 621.38,-97 621.38,-65 536.12,-65" />
+      <text xml:space="preserve" text-anchor="start" x="544.62" y="-76.75" font-family="Arial" font-size="15.00" fill="#14263c">H</text>
+      <text xml:space="preserve" text-anchor="start" x="555.12" y="-76.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">2</text>
+      <text xml:space="preserve" text-anchor="start" x="560.38" y="-76.75" font-family="Arial" font-size="15.00" fill="#14263c"> d</text>
+      <text xml:space="preserve" text-anchor="start" x="571.62" y="-76.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
+      <text xml:space="preserve" text-anchor="start" x="579.12" y="-76.75" font-family="Arial" font-size="15.00" fill="#14263c">+300</text>
+      <polygon fill="#ffffff" stroke="none" points="424.12,-35 424.12,-65 507.12,-65 507.12,-35 424.12,-35" />
+      <polygon fill="none" stroke="#bac7d5" points="424.12,-35 424.12,-65 507.12,-65 507.12,-35 424.12,-35" />
+      <text xml:space="preserve" text-anchor="start" x="459.25" y="-44.75" font-family="Arial" font-size="15.00" fill="#14263c">⋮</text>
+      <polygon fill="#ffffff" stroke="none" points="507.12,-35 507.12,-65 536.12,-65 536.12,-35 507.12,-35" />
+      <polygon fill="none" stroke="#bac7d5" points="507.12,-35 507.12,-65 536.12,-65 536.12,-35 507.12,-35" />
+      <text xml:space="preserve" text-anchor="start" x="514.5" y="-42.88" font-family="Arial" font-size="15.00" fill="#14263c">⋱</text>
+      <polygon fill="#ffffff" stroke="none" points="536.12,-35 536.12,-65 621.38,-65 621.38,-35 536.12,-35" />
+      <polygon fill="none" stroke="#bac7d5" points="536.12,-35 536.12,-65 621.38,-65 621.38,-35 536.12,-35" />
+      <text xml:space="preserve" text-anchor="start" x="572.38" y="-44.75" font-family="Arial" font-size="15.00" fill="#14263c">⋮</text>
+      <polygon fill="#fff2d6" stroke="none" points="424.12,-3 424.12,-35 507.12,-35 507.12,-3 424.12,-3" />
+      <polygon fill="none" stroke="#bac7d5" points="424.12,-3 424.12,-35 507.12,-35 507.12,-3 424.12,-3" />
+      <text xml:space="preserve" text-anchor="start" x="431.12" y="-14.75" font-family="Arial" font-size="15.00" fill="#14263c">H</text>
+      <text xml:space="preserve" text-anchor="start" x="441.62" y="-14.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">M</text>
+      <text xml:space="preserve" text-anchor="start" x="449.88" y="-14.75" font-family="Arial" font-size="15.00" fill="#14263c"> d</text>
+      <text xml:space="preserve" text-anchor="start" x="461.12" y="-14.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">1</text>
+      <text xml:space="preserve" text-anchor="start" x="466.38" y="-14.75" font-family="Arial" font-size="15.00" fill="#14263c">+300</text>
+      <polygon fill="#fff2d6" stroke="none" points="507.12,-3 507.12,-35 536.12,-35 536.12,-3 507.12,-3" />
+      <polygon fill="none" stroke="#bac7d5" points="507.12,-3 507.12,-35 536.12,-35 536.12,-3 507.12,-3" />
+      <text xml:space="preserve" text-anchor="start" x="514.12" y="-13.75" font-family="Arial" font-size="15.00" fill="#14263c">…</text>
+      <polygon fill="#fff2d6" stroke="none" points="536.12,-3 536.12,-35 621.38,-35 621.38,-3 536.12,-3" />
+      <polygon fill="none" stroke="#bac7d5" points="536.12,-3 536.12,-35 621.38,-35 621.38,-3 536.12,-3" />
+      <text xml:space="preserve" text-anchor="start" x="543.12" y="-14.75" font-family="Arial" font-size="15.00" fill="#14263c">H</text>
+      <text xml:space="preserve" text-anchor="start" x="553.62" y="-14.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">M</text>
+      <text xml:space="preserve" text-anchor="start" x="561.88" y="-14.75" font-family="Arial" font-size="15.00" fill="#14263c"> d</text>
+      <text xml:space="preserve" text-anchor="start" x="573.12" y="-14.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">N</text>
+      <text xml:space="preserve" text-anchor="start" x="580.62" y="-14.75" font-family="Arial" font-size="15.00" fill="#14263c">+300</text>
+    </g>
+    <g id="node7" class="node">
+      <title>chi2_vec</title>
+      <text xml:space="preserve" text-anchor="start" x="734" y="-164.4" font-family="Courier New" font-weight="bold" font-size="13.00" fill="#14263c">chi2 </text>
+      <text xml:space="preserve" text-anchor="start" x="710.75" y="-142.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">(M,)</text>
+      <text xml:space="preserve" text-anchor="start" x="738.5" y="-142.75" font-family="Arial" font-size="15.00" fill="#14263c"> · per H</text>
+      <text xml:space="preserve" text-anchor="start" x="789.5" y="-142.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">0</text>
+      <polygon fill="#eaf3fe" stroke="none" points="728.08,-98 728.08,-132 777.42,-132 777.42,-98 728.08,-98" />
+      <polygon fill="none" stroke="#bac7d5" points="728.08,-98 728.08,-132 777.42,-132 777.42,-98 728.08,-98" />
+      <text xml:space="preserve" text-anchor="start" x="743.75" y="-110.75" font-family="Arial" font-size="15.00" fill="#14263c">χ</text>
+      <text xml:space="preserve" text-anchor="start" x="751.25" y="-110.75" font-family="Arial" baseline-shift="super" font-size="11.00" fill="#14263c">2</text>
+      <text xml:space="preserve" text-anchor="start" x="756.5" y="-110.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">1</text>
+      <polygon fill="#e9f7f2" stroke="none" points="728.08,-64 728.08,-98 777.42,-98 777.42,-64 728.08,-64" />
+      <polygon fill="none" stroke="#bac7d5" points="728.08,-64 728.08,-98 777.42,-98 777.42,-64 728.08,-64" />
+      <text xml:space="preserve" text-anchor="start" x="743.75" y="-76.75" font-family="Arial" font-size="15.00" fill="#14263c">χ</text>
+      <text xml:space="preserve" text-anchor="start" x="751.25" y="-76.75" font-family="Arial" baseline-shift="super" font-size="11.00" fill="#14263c">2</text>
+      <text xml:space="preserve" text-anchor="start" x="756.5" y="-76.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">2</text>
+      <polygon fill="#ffffff" stroke="none" points="728.08,-34 728.08,-64 777.42,-64 777.42,-34 728.08,-34" />
+      <polygon fill="none" stroke="#bac7d5" points="728.08,-34 728.08,-64 777.42,-64 777.42,-34 728.08,-34" />
+      <text xml:space="preserve" text-anchor="start" x="746.38" y="-43.75" font-family="Arial" font-size="15.00" fill="#14263c">⋮</text>
+      <polygon fill="#fff2d6" stroke="none" points="728.08,0 728.08,-34 777.42,-34 777.42,0 728.08,0" />
+      <polygon fill="none" stroke="#bac7d5" points="728.08,0 728.08,-34 777.42,-34 777.42,0 728.08,0" />
+      <text xml:space="preserve" text-anchor="start" x="742.25" y="-12.75" font-family="Arial" font-size="15.00" fill="#14263c">χ</text>
+      <text xml:space="preserve" text-anchor="start" x="749.75" y="-12.75" font-family="Arial" baseline-shift="super" font-size="11.00" fill="#14263c">2</text>
+      <text xml:space="preserve" text-anchor="start" x="755" y="-12.75" font-family="Arial" baseline-shift="sub" font-size="12.00" fill="#14263c">M</text>
+    </g>
+    <g id="edge6" class="edge">
+      <title>v_model-&gt;chi2_vec</title>
+      <path fill="none" stroke="#2f6f5e" stroke-width="1.6" d="M621.29,-88.88C647.83,-88.88 675.56,-88.88 698.68,-88.88" />
+      <polygon fill="#2f6f5e" stroke="#2f6f5e" stroke-width="1.6" points="698.53,-91.68 706.53,-88.88 698.53,-86.08 698.53,-91.68" />
+      <text xml:space="preserve" text-anchor="middle" x="665.06" y="-110.08" font-family="Arial" font-size="14.00" fill="#14263c"> .sum(axis=1)</text>
+      <text xml:space="preserve" text-anchor="middle" x="665.06" y="-94.33" font-family="Arial" font-size="14.00" fill="#14263c"> across N</text>
     </g>
   </g>
 </svg>

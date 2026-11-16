@@ -34,28 +34,32 @@ opening full dropdown solutions.
 
 | Minutes | Activity | Evidence of learning |
 | --- | --- | --- |
-| 0–5 | Environments & kernels (`pip`, `conda`, `uv`) | Verify `sys.executable`; distinguish kernel from terminal |
-| 5–12 | Inspect the catalogue (`QTable`, ECSV) | Identify units, error columns and `table.meta` |
-| 12–38 | Arrays, masks, 2D axes & broadcasting; Task A | Explain shared `valid` mask (395 rows) and `axis=0` vs `axis=1` |
-| 38–60 | Units, constants, equivalencies, FITS tables & 2D WCS cutouts; Task B | Convert units/Doppler shifts safely; explain `origin='lower'` & residual colormaps |
-| 60–70 | Break | |
-| 70–95 | 2-panel error-bar & magnitude-selection figure, `savefig`, Your turn | Pair `errorbar` + `fill_between`, invert magnitudes, plot residuals |
-| 95–115 | Survey selection histograms; Task C | Compare counts vs densities on common distance bins |
-| 115–120 | Exit check | Explain one claim the figure cannot support |
+| 0–8 | Environments, dependency solving & kernels (`uv`, `conda`, `pip`) | Verify `sys.executable`; explain lockfiles and kernel vs terminal |
+| 8–15 | Inspect the catalogue (`QTable`, ECSV) | Identify units, error columns and `table.meta` |
+| 15–38 | Shared masks, sentinels & $\chi^2(H_0)$ grid broadcasting; Task A | Explain `clean = table[valid]` (395 rows) and `(201, 1) * (395,)` |
+| 38–55 | Units, FITS provenance cards & Task B *(optional spotlights if ahead)* | Preserve `SEED`/`H0_INJ` in FITS; explain `.to_value(u.Mpc)` vs `.value` |
+| 55–65 | Break | |
+| 65–92 | 2-panel error-bar & magnitude-selection figure, `outputs/` export, Your turn | Distinguish $\pm\text{median }\sigma_v$ scatter from fit error; plot residuals |
+| 92–113 | Survey selection histograms (`density=True` area); Task C | Compare counts/mean $d$ across cuts and draft 3-sentence caption |
+| 113–120 | Exit check & Restart-and-Run-All | Verify four core checks and clean top-to-bottom execution |
 
 ### Key Pitfalls
 
-- Running bare `pip` in an unactivated shell instead of checking `sys.executable`
-  and activating `/opt/course/.venv` (or `uv run`), or installing into Conda `(base)`.
-- Filtering columns separately instead of applying one shared `valid` mask (five
-  disjoint bad rows—three missing velocities, one zero error, one missing
-  magnitude—leave 395 usable rows).
-- Stripping units blindly with `.value` instead of `.to_value(u.Mpc)`, forgetting
-  `[:, None]` when broadcasting `(N,)` across `(N, 3)`, or omitting `origin='lower'`
-  and zero-centred diverging norms (`CenteredNorm`) on 2D FITS residual maps.
-- Claiming every survey cut biases every fit: here `apparent_magnitude < 16.5`
-  (262 objects) alters the distance distribution without selecting on velocity
-  noise at fixed distance.
+- Running ad-hoc `pip install` in an unactivated shell or Conda `(base)` (or
+  expecting `pip` inside a default `uv` `.venv`) instead of checking
+  `sys.executable` and using `uv sync --frozen` / activated environments.
+- Filtering columns separately instead of slicing with one shared `valid` mask
+  (five disjoint bad rows—three missing velocities, one zero error, one missing
+  magnitude—leave 395 valid rows), or forgetting sentinel codes (`-99`, `-999`)
+  in real archives.
+- Stripping units blindly with `.value` instead of `.to_value(u.Mpc)`, wiping
+  FITS provenance instead of mapping short `<=8`-character header cards (`SEED`,
+  `H0_INJ`), or falling into the square-array `(N, N) * (N,)` column-scaling trap.
+- Mistaking the shaded $\pm\text{median }\sigma_v$ data-scatter band for a
+  parameter-uncertainty band, or claiming every flux cut biases every fit: here
+  `apparent_magnitude < 16.5` (262 galaxies) truncates $p(d)$ without selecting
+  on velocity noise at fixed exact distance (skip the two optional pre-break
+  spotlights if Task B reaches minute 55).
 
 ### 3-Command Terminal/Repo Triage
 

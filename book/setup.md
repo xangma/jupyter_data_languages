@@ -65,7 +65,7 @@ python scripts/check_setup.py
 python -m jupyter lab
 ```
 
-Select **Python PhD (locked)** in JupyterLab (or choose `.venv` in VS Code's **Select Kernel** menu with the Python and Jupyter extensions). On Windows, use **Git Bash** for shell commands in Sessions 2 and 3.
+Select **Python PhD (locked)** in JupyterLab (or choose `.venv` in VS Code's **Select Kernel** menu with the Python and Jupyter extensions); note that `pip install -e ".[teaching]"` resolves unconstrained version ranges from `pyproject.toml` while registering the same `python-phd` kernel name (`Option B1` pins exact versions from `uv.lock`). On Windows, use **Git Bash** for shell commands in Sessions 2 and 3.
 
 ## Readiness check
 

@@ -1,100 +1,96 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="488" viewBox="0.00 0.00 721.00 489.00" role="img" aria-labelledby="fits-vs-ecsv-title fits-vs-ecsv-desc">
-  <title id="fits-vs-ecsv-title">ECSV stores text + YAML metadata; FITS packs Header + Data Units (HDUs)</title>
-  <desc id="fits-vs-ecsv-desc">Side-by-side comparison of ECSV plain-text YAML metadata headers (preserving units, datatypes and arbitrary nested table.meta dicts above CSV rows) against FITS binary multi-HDU containers (Primary Header plus Binary Table HDU with TTYPEn, TFORMn and TUNITn cards whose strict 8-character keyword rules reject arbitrary nested meta dicts).</desc>
-  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(11.52 477.27)">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="447" viewBox="0.00 0.00 772.00 479.00" role="img" aria-labelledby="fits-vs-ecsv-title fits-vs-ecsv-desc">
+  <title id="fits-vs-ecsv-title">ECSV stores space-delimited text + YAML; FITS packs Header/Data Units (HDUs)</title>
+  <desc id="fits-vs-ecsv-desc">Side-by-side comparison of Astropy ECSV 1.0 plain-text YAML headers (# %ECSV 1.0, datatype and nested meta dicts above space-delimited text rows) against FITS binary containers (HDU 0 Primary HDU with no data plus HDU 1 Binary Table HDU preserving &lt;=8-character keywords and TUNITn column units while &gt;8-character keys trigger HIERARCH warnings and nested dicts fail).</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(10.08 468.83)">
     <title>fits_vs_ecsv</title>
-    <polygon fill="white" stroke="none" points="-11.52,11.52 -11.52,-477.27 709.27,-477.27 709.27,11.52 -11.52,11.52" />
-    <text xml:space="preserve" text-anchor="middle" x="348.88" y="-442.75" font-family="Arial" font-size="20.00" fill="#14263c">ECSV stores text + YAML metadata; FITS packs Header + Data Units (HDUs)</text>
+    <polygon fill="white" stroke="none" points="-10.08,10.08 -10.08,-468.83 762.08,-468.83 762.08,10.08 -10.08,10.08" />
+    <text xml:space="preserve" text-anchor="middle" x="376" y="-436.7" font-family="Arial" font-size="19.00" fill="#14263c">ECSV stores space-delimited text + YAML; FITS packs Header/Data Units (HDUs)</text>
     <g id="clust1" class="cluster">
       <title>cluster_ecsv</title>
-      <path fill="white" stroke="#bac7d5" d="M58.88,-23.75C58.88,-23.75 328.88,-23.75 328.88,-23.75 334.88,-23.75 340.88,-29.75 340.88,-35.75 340.88,-35.75 340.88,-414.5 340.88,-414.5 340.88,-420.5 334.88,-426.5 328.88,-426.5 328.88,-426.5 58.88,-426.5 58.88,-426.5 52.88,-426.5 46.88,-420.5 46.88,-414.5 46.88,-414.5 46.88,-35.75 46.88,-35.75 46.88,-29.75 52.88,-23.75 58.88,-23.75" />
-      <text xml:space="preserve" text-anchor="middle" x="193.88" y="-404.45" font-family="Arial" font-size="19.00" fill="#14263c">ECSV (.ecsv text file)</text>
+      <path fill="white" stroke="#bac7d5" d="M20,-31.75C20,-31.75 424,-31.75 424,-31.75 430,-31.75 436,-37.75 436,-43.75 436,-43.75 436,-409 436,-409 436,-415 430,-421 424,-421 424,-421 20,-421 20,-421 14,-421 8,-415 8,-409 8,-409 8,-43.75 8,-43.75 8,-37.75 14,-31.75 20,-31.75" />
+      <text xml:space="preserve" text-anchor="middle" x="222" y="-400.85" font-family="Arial" font-size="17.00" fill="#14263c">ECSV (.ecsv plain-text file)</text>
     </g>
     <g id="clust2" class="cluster">
       <title>cluster_fits</title>
-      <path fill="white" stroke="#bac7d5" d="M360.88,-8C360.88,-8 638.88,-8 638.88,-8 644.88,-8 650.88,-14 650.88,-20 650.88,-20 650.88,-399.62 650.88,-399.62 650.88,-405.62 644.88,-411.62 638.88,-411.62 638.88,-411.62 360.88,-411.62 360.88,-411.62 354.88,-411.62 348.88,-405.62 348.88,-399.62 348.88,-399.62 348.88,-20 348.88,-20 348.88,-14 354.88,-8 360.88,-8" />
-      <text xml:space="preserve" text-anchor="middle" x="499.88" y="-389.57" font-family="Arial" font-size="19.00" fill="#14263c">FITS (.fits binary container)</text>
+      <path fill="white" stroke="#bac7d5" d="M456,-8C456,-8 732,-8 732,-8 738,-8 744,-14 744,-20 744,-20 744,-394.75 744,-394.75 744,-400.75 738,-406.75 732,-406.75 732,-406.75 456,-406.75 456,-406.75 450,-406.75 444,-400.75 444,-394.75 444,-394.75 444,-20 444,-20 444,-14 450,-8 456,-8" />
+      <text xml:space="preserve" text-anchor="middle" x="594" y="-386.6" font-family="Arial" font-size="17.00" fill="#14263c">FITS (.fits binary container)</text>
     </g>
     <g id="node1" class="node">
       <title>ecsv_hdr</title>
-      <polygon fill="#eaf3fe" stroke="none" points="62.12,-347 62.12,-381.75 325.62,-381.75 325.62,-347 62.12,-347" />
-      <polygon fill="none" stroke="#bac7d5" points="62.12,-347 62.12,-381.75 325.62,-381.75 325.62,-347 62.12,-347" />
-      <text xml:space="preserve" text-anchor="start" x="100.5" y="-359.55" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c"># %ECSV · YAML Header</text>
-      <polygon fill="#f3f5f7" stroke="none" points="62.12,-281.5 62.12,-347 325.62,-347 325.62,-281.5 62.12,-281.5" />
-      <polygon fill="none" stroke="#bac7d5" points="62.12,-281.5 62.12,-347 325.62,-347 325.62,-281.5 62.12,-281.5" />
-      <text xml:space="preserve" text-anchor="start" x="115.5" y="-325.7" font-family="Courier New" font-size="14.00" fill="#14263c"># unit: [Mpc, km/s]</text>
-      <text xml:space="preserve" text-anchor="start" x="70.12" y="-309.2" font-family="Courier New" font-size="14.00" fill="#14263c"># datatype: [float64, float64]</text>
-      <text xml:space="preserve" text-anchor="start" x="82.5" y="-292.7" font-family="Courier New" font-size="14.00" fill="#14263c"># meta: {cuts: {mag: 16.5}}</text>
-      <polygon fill="#e9f7f2" stroke="none" points="62.12,-233.5 62.12,-281.5 325.62,-281.5 325.62,-233.5 62.12,-233.5" />
-      <polygon fill="none" stroke="#bac7d5" points="62.12,-233.5 62.12,-281.5 325.62,-281.5 325.62,-233.5 62.12,-233.5" />
-      <text xml:space="preserve" text-anchor="start" x="102" y="-259.3" font-family="Arial" font-size="16.00" fill="#14263c">Preserves units, dtypes &amp;</text>
-      <text xml:space="preserve" text-anchor="start" x="99.38" y="-243.3" font-family="Arial" font-size="16.00" fill="#14263c">nested </text>
-      <text xml:space="preserve" text-anchor="start" x="152.62" y="-243.3" font-family="Courier New" font-size="16.00" fill="#14263c">table.meta</text>
-      <text xml:space="preserve" text-anchor="start" x="250.12" y="-243.3" font-family="Arial" font-size="16.00" fill="#14263c"> dicts</text>
-      <polygon fill="none" stroke="#bac7d5" points="61.12,-232.5 61.12,-382.75 326.62,-382.75 326.62,-232.5 61.12,-232.5" />
+      <polygon fill="#eaf3fe" stroke="none" points="19,-348.5 19,-382.5 425,-382.5 425,-348.5 19,-348.5" />
+      <polygon fill="none" stroke="#bac7d5" points="19,-348.5 19,-382.5 425,-382.5 425,-348.5 19,-348.5" />
+      <text xml:space="preserve" text-anchor="start" x="121.5" y="-361.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c"># %ECSV 1.0 · YAML Header</text>
+      <polygon fill="#f3f5f7" stroke="none" points="19,-275.5 19,-348.5 425,-348.5 425,-275.5 19,-275.5" />
+      <polygon fill="none" stroke="#bac7d5" points="19,-275.5 19,-348.5 425,-348.5 425,-275.5 19,-275.5" />
+      <text xml:space="preserve" text-anchor="start" x="27" y="-329.1" font-family="Courier New" font-size="12.00" fill="#14263c"># %ECSV 1.0</text>
+      <text xml:space="preserve" text-anchor="start" x="27" y="-314.85" font-family="Courier New" font-size="12.00" fill="#14263c"># datatype:</text>
+      <text xml:space="preserve" text-anchor="start" x="27" y="-300.6" font-family="Courier New" font-size="12.00" fill="#14263c"># - {name: distance, unit: Mpc, datatype: float64}  </text>
+      <text xml:space="preserve" text-anchor="start" x="27" y="-286.35" font-family="Courier New" font-size="12.00" fill="#14263c"># meta: {seed: 20261109, synthetic: true}  </text>
+      <polygon fill="#e9f7f2" stroke="none" points="19,-241.5 19,-275.5 425,-275.5 425,-241.5 19,-241.5" />
+      <polygon fill="none" stroke="#bac7d5" points="19,-241.5 19,-275.5 425,-275.5 425,-241.5 19,-241.5" />
+      <text xml:space="preserve" text-anchor="start" x="75" y="-253.25" font-family="Arial" font-size="15.00" fill="#14263c">Preserves units, dtypes &amp; nested meta dicts</text>
+      <polygon fill="none" stroke="#bac7d5" points="18,-240.5 18,-383.5 426,-383.5 426,-240.5 18,-240.5" />
     </g>
     <g id="node2" class="node">
       <title>ecsv_body</title>
-      <polygon fill="#e9f7f2" stroke="none" points="83.88,-139 83.88,-173.75 303.88,-173.75 303.88,-139 83.88,-139" />
-      <polygon fill="none" stroke="#bac7d5" points="83.88,-139 83.88,-173.75 303.88,-173.75 303.88,-139 83.88,-139" />
-      <text xml:space="preserve" text-anchor="start" x="91.88" y="-151.55" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">Human-readable CSV rows</text>
-      <polygon fill="#ffffff" stroke="none" points="83.88,-73.5 83.88,-139 303.88,-139 303.88,-73.5 83.88,-73.5" />
-      <polygon fill="none" stroke="#bac7d5" points="83.88,-73.5 83.88,-139 303.88,-139 303.88,-73.5 83.88,-73.5" />
-      <text xml:space="preserve" text-anchor="start" x="91.88" y="-117.7" font-family="Courier New" font-size="14.00" fill="#14263c">distance,velocity</text>
-      <text xml:space="preserve" text-anchor="start" x="120.75" y="-101.2" font-family="Courier New" font-size="14.00" fill="#14263c">14.2,980.5</text>
-      <text xml:space="preserve" text-anchor="start" x="116.62" y="-84.7" font-family="Courier New" font-size="14.00" fill="#14263c">41.8,2810.0</text>
-      <polygon fill="#eaf3fe" stroke="none" points="83.88,-38.75 83.88,-73.5 303.88,-73.5 303.88,-38.75 83.88,-38.75" />
-      <polygon fill="none" stroke="#bac7d5" points="83.88,-38.75 83.88,-73.5 303.88,-73.5 303.88,-38.75 83.88,-38.75" />
-      <text xml:space="preserve" text-anchor="start" x="92.62" y="-51.3" font-family="Arial" font-size="16.00" fill="#14263c">Plain text · clean </text>
-      <text xml:space="preserve" text-anchor="start" x="217.12" y="-51.3" font-family="Courier New" font-size="16.00" fill="#14263c">git diff</text>
-      <polygon fill="none" stroke="#bac7d5" points="82.88,-37.75 82.88,-174.75 304.88,-174.75 304.88,-37.75 82.88,-37.75" />
+      <polygon fill="#e9f7f2" stroke="none" points="97,-140 97,-174 347,-174 347,-140 97,-140" />
+      <polygon fill="none" stroke="#bac7d5" points="97,-140 97,-174 347,-174 347,-140 97,-140" />
+      <text xml:space="preserve" text-anchor="start" x="128.62" y="-152.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Space-delimited text rows</text>
+      <polygon fill="#ffffff" stroke="none" points="97,-76.75 97,-140 347,-140 347,-76.75 97,-76.75" />
+      <polygon fill="none" stroke="#bac7d5" points="97,-76.75 97,-140 347,-140 347,-76.75 97,-76.75" />
+      <text xml:space="preserve" text-anchor="start" x="105" y="-119.65" font-family="Courier New" font-size="13.00" fill="#14263c">distance velocity  </text>
+      <text xml:space="preserve" text-anchor="start" x="105" y="-103.9" font-family="Courier New" font-size="13.00" fill="#14263c">14.2 980.5  </text>
+      <text xml:space="preserve" text-anchor="start" x="105" y="-88.15" font-family="Courier New" font-size="13.00" fill="#14263c">41.8 2810.0  </text>
+      <polygon fill="#eaf3fe" stroke="none" points="97,-42.75 97,-76.75 347,-76.75 347,-42.75 97,-42.75" />
+      <polygon fill="none" stroke="#bac7d5" points="97,-42.75 97,-76.75 347,-76.75 347,-42.75 97,-42.75" />
+      <text xml:space="preserve" text-anchor="start" x="105" y="-54.5" font-family="Arial" font-size="15.00" fill="#14263c">Human-readable text · clean git diff</text>
+      <polygon fill="none" stroke="#bac7d5" points="96,-41.75 96,-175 348,-175 348,-41.75 96,-41.75" />
     </g>
     <g id="edge1" class="edge">
       <title>ecsv_hdr-&gt;ecsv_body</title>
-      <path fill="none" stroke="#526780" stroke-width="1.5" d="M193.88,-232.67C193.88,-217.03 193.88,-200.49 193.88,-184.73" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="196.68,-184.77 193.88,-176.77 191.08,-184.77 196.68,-184.77" />
-      <text xml:space="preserve" text-anchor="middle" x="249" y="-206.25" font-family="Arial" font-size="15.00" fill="#14263c">followed by rows</text>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M222,-240.76C222,-222.74 222,-203.27 222,-184.98" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="224.8,-185.23 222,-177.23 219.2,-185.23 224.8,-185.23" />
+      <text xml:space="preserve" text-anchor="middle" x="240" y="-214.2" font-family="Arial" font-size="14.00" fill="#14263c">  rows</text>
     </g>
     <g id="node3" class="node">
       <title>fits_hdu0</title>
-      <polygon fill="#f0ebfa" stroke="none" points="388.75,-332.12 388.75,-366.88 611,-366.88 611,-332.12 388.75,-332.12" />
-      <polygon fill="none" stroke="#bac7d5" points="388.75,-332.12 388.75,-366.88 611,-366.88 611,-332.12 388.75,-332.12" />
-      <text xml:space="preserve" text-anchor="start" x="410.25" y="-344.68" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">HDU 0 · Primary Header</text>
-      <polygon fill="#f3f5f7" stroke="none" points="388.75,-283.12 388.75,-332.12 611,-332.12 611,-283.12 388.75,-283.12" />
-      <polygon fill="none" stroke="#bac7d5" points="388.75,-283.12 388.75,-332.12 611,-332.12 611,-283.12 388.75,-283.12" />
-      <text xml:space="preserve" text-anchor="start" x="396.75" y="-310.82" font-family="Courier New" font-size="14.00" fill="#14263c">SIMPLE  =            T</text>
-      <text xml:space="preserve" text-anchor="start" x="400.88" y="-294.32" font-family="Courier New" font-size="14.00" fill="#14263c">TELESCOP= 'ICG-SYNTH'</text>
-      <polygon fill="#f3f5f7" stroke="none" points="388.75,-248.38 388.75,-283.12 611,-283.12 611,-248.38 388.75,-248.38" />
-      <polygon fill="none" stroke="#bac7d5" points="388.75,-248.38 388.75,-283.12 611,-283.12 611,-248.38 388.75,-248.38" />
-      <text xml:space="preserve" text-anchor="start" x="396.75" y="-259.93" font-family="Arial" font-size="16.00" fill="#14263c">Global 8-char keyword cards</text>
-      <polygon fill="none" stroke="#bac7d5" points="387.75,-247.38 387.75,-367.88 612,-367.88 612,-247.38 387.75,-247.38" />
+      <polygon fill="#f0ebfa" stroke="none" points="466,-334.25 466,-368.25 722,-368.25 722,-334.25 466,-334.25" />
+      <polygon fill="none" stroke="#bac7d5" points="466,-334.25 466,-368.25 722,-368.25 722,-334.25 466,-334.25" />
+      <text xml:space="preserve" text-anchor="start" x="484.5" y="-347" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">HDU 0 · Primary HDU (no data)</text>
+      <polygon fill="#f3f5f7" stroke="none" points="466,-289.75 466,-334.25 722,-334.25 722,-289.75 466,-289.75" />
+      <polygon fill="none" stroke="#bac7d5" points="466,-289.75 466,-334.25 722,-334.25 722,-289.75 466,-289.75" />
+      <text xml:space="preserve" text-anchor="start" x="474" y="-314.85" font-family="Courier New" font-size="12.00" fill="#14263c">SIMPLE  =                    T  </text>
+      <text xml:space="preserve" text-anchor="start" x="474" y="-300.6" font-family="Courier New" font-size="12.00" fill="#14263c">EXTEND  =                    T  </text>
+      <polygon fill="#f3f5f7" stroke="none" points="466,-255.75 466,-289.75 722,-289.75 722,-255.75 466,-255.75" />
+      <polygon fill="none" stroke="#bac7d5" points="466,-255.75 466,-289.75 722,-289.75 722,-255.75 466,-255.75" />
+      <text xml:space="preserve" text-anchor="start" x="489.38" y="-267.5" font-family="Arial" font-size="15.00" fill="#14263c">Global &lt;=8-char keyword cards</text>
+      <polygon fill="none" stroke="#bac7d5" points="465,-254.75 465,-369.25 723,-369.25 723,-254.75 465,-254.75" />
     </g>
     <g id="node4" class="node">
       <title>fits_hdu1</title>
-      <polygon fill="#f0ebfa" stroke="none" points="364,-154.75 364,-189.5 635.75,-189.5 635.75,-154.75 364,-154.75" />
-      <polygon fill="none" stroke="#bac7d5" points="364,-154.75 364,-189.5 635.75,-189.5 635.75,-154.75 364,-154.75" />
-      <text xml:space="preserve" text-anchor="start" x="402.75" y="-167.3" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">HDU 1 · Binary Table HDU</text>
-      <polygon fill="#eaf3fe" stroke="none" points="364,-105.75 364,-154.75 635.75,-154.75 635.75,-105.75 364,-105.75" />
-      <polygon fill="none" stroke="#bac7d5" points="364,-105.75 364,-154.75 635.75,-154.75 635.75,-105.75 364,-105.75" />
-      <text xml:space="preserve" text-anchor="start" x="384.38" y="-133.45" font-family="Courier New" font-size="14.00" fill="#14263c">TTYPE1='distance' TFORM1='D'</text>
-      <text xml:space="preserve" text-anchor="start" x="372" y="-116.95" font-family="Courier New" font-size="14.00" fill="#14263c">TUNIT1='Mpc'      TUNIT2='km/s'</text>
-      <polygon fill="#e9f7f2" stroke="none" points="364,-71 364,-105.75 635.75,-105.75 635.75,-71 364,-71" />
-      <polygon fill="none" stroke="#bac7d5" points="364,-71 364,-105.75 635.75,-105.75 635.75,-71 364,-71" />
-      <text xml:space="preserve" text-anchor="start" x="384.38" y="-82.55" font-family="Arial" font-size="16.00" fill="#14263c">Compact binary columns + units</text>
-      <polygon fill="#fbeded" stroke="none" points="364,-23 364,-71 635.75,-71 635.75,-23 364,-23" />
-      <polygon fill="none" stroke="#bac7d5" points="364,-23 364,-71 635.75,-71 635.75,-23 364,-23" />
-      <text xml:space="preserve" text-anchor="start" x="421.5" y="-48.8" font-family="Arial" font-size="16.00" fill="#14263c">Strict card rules reject</text>
-      <text xml:space="preserve" text-anchor="start" x="402.75" y="-32.8" font-family="Arial" font-size="16.00" fill="#14263c">arbitrary nested </text>
-      <text xml:space="preserve" text-anchor="start" x="519.75" y="-32.8" font-family="Courier New" font-size="16.00" fill="#14263c">meta</text>
-      <text xml:space="preserve" text-anchor="start" x="558.75" y="-32.8" font-family="Arial" font-size="16.00" fill="#14263c"> dicts</text>
-      <polygon fill="none" stroke="#bac7d5" points="363,-22 363,-190.5 636.75,-190.5 636.75,-22 363,-22" />
+      <polygon fill="#f0ebfa" stroke="none" points="454.75,-163.75 454.75,-197.75 733.25,-197.75 733.25,-163.75 454.75,-163.75" />
+      <polygon fill="none" stroke="#bac7d5" points="454.75,-163.75 454.75,-197.75 733.25,-197.75 733.25,-163.75 454.75,-163.75" />
+      <text xml:space="preserve" text-anchor="start" x="502.12" y="-176.5" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">HDU 1 · Binary Table HDU</text>
+      <polygon fill="#eaf3fe" stroke="none" points="454.75,-105 454.75,-163.75 733.25,-163.75 733.25,-105 454.75,-105" />
+      <polygon fill="none" stroke="#bac7d5" points="454.75,-105 454.75,-163.75 733.25,-163.75 733.25,-105 454.75,-105" />
+      <text xml:space="preserve" text-anchor="start" x="462.75" y="-144.35" font-family="Courier New" font-size="12.00" fill="#14263c">TTYPE1='distance' TUNIT1='Mpc'  </text>
+      <text xml:space="preserve" text-anchor="start" x="462.75" y="-130.1" font-family="Courier New" font-size="12.00" fill="#14263c">TTYPE2='velocity' TUNIT2='km s-1'  </text>
+      <text xml:space="preserve" text-anchor="start" x="462.75" y="-115.85" font-family="Courier New" font-size="12.00" fill="#14263c">SEED  = 20261109  SYNTH = T  </text>
+      <polygon fill="#e9f7f2" stroke="none" points="454.75,-71 454.75,-105 733.25,-105 733.25,-71 454.75,-71" />
+      <polygon fill="none" stroke="#bac7d5" points="454.75,-71 454.75,-105 733.25,-105 733.25,-71 454.75,-71" />
+      <text xml:space="preserve" text-anchor="start" x="485.25" y="-82.75" font-family="Arial" font-size="15.00" fill="#14263c">&lt;=8-char keys preserved cleanly</text>
+      <polygon fill="#fbeded" stroke="none" points="454.75,-19 454.75,-71 733.25,-71 733.25,-19 454.75,-19" />
+      <polygon fill="none" stroke="#bac7d5" points="454.75,-19 454.75,-71 733.25,-71 733.25,-19 454.75,-19" />
+      <text xml:space="preserve" text-anchor="start" x="479.25" y="-48.75" font-family="Arial" font-size="15.00" fill="#14263c">&gt;8-char keys warn (HIERARCH) &amp;</text>
+      <text xml:space="preserve" text-anchor="start" x="542.25" y="-30.75" font-family="Arial" font-size="15.00" fill="#14263c">nested dicts fail</text>
+      <polygon fill="none" stroke="#bac7d5" points="453.75,-18 453.75,-198.75 734.25,-198.75 734.25,-18 453.75,-18" />
     </g>
     <g id="edge2" class="edge">
       <title>fits_hdu0-&gt;fits_hdu1</title>
-      <path fill="none" stroke="#526780" stroke-width="1.5" d="M499.88,-247.62C499.88,-232.78 499.88,-216.5 499.88,-200.44" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="502.68,-200.75 499.88,-192.75 497.08,-200.75 502.68,-200.75" />
-      <text xml:space="preserve" text-anchor="middle" x="549.75" y="-206.25" font-family="Arial" font-size="15.00" fill="#14263c">extension HDU</text>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M594,-254.84C594,-240.36 594,-224.35 594,-208.4" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="596.8,-208.76 594,-200.76 591.2,-208.76 596.8,-208.76" />
+      <text xml:space="preserve" text-anchor="middle" x="626.62" y="-214.2" font-family="Arial" font-size="14.00" fill="#14263c">  extension</text>
     </g>
   </g>
 </svg>

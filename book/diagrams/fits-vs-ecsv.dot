@@ -1,64 +1,64 @@
 // Source: 01-catalogue.ipynb; Astropy Table serialization comparison (ECSV vs FITS).
 digraph fits_vs_ecsv {
   graph [
-    bgcolor="white", fontname="Arial", fontsize=20, fontcolor="#14263C",
-    label="ECSV stores text + YAML metadata; FITS packs Header + Data Units (HDUs)",
-    labelloc=t, rankdir=TB, newrank=true, nodesep=0.28, ranksep=0.34, pad=0.16
+    bgcolor="white", fontname="Arial", fontsize=19, fontcolor="#14263C",
+    label="ECSV stores space-delimited text + YAML; FITS packs Header/Data Units (HDUs)",
+    labelloc=t, rankdir=TB, newrank=true, nodesep=0.18, ranksep=0.36, pad=0.14
   ];
   node [
-    shape=plain, fontname="Arial", fontsize=16, fontcolor="#14263C",
+    shape=plain, fontname="Arial", fontsize=15, fontcolor="#14263C",
     color="#BAC7D5", penwidth=1.4
   ];
   edge [
-    fontname="Arial", fontsize=15, fontcolor="#14263C",
+    fontname="Arial", fontsize=14, fontcolor="#14263C",
     color="#526780", penwidth=1.5, arrowsize=0.8
   ];
 
   subgraph cluster_ecsv {
-    label="ECSV (.ecsv text file)";
-    fontsize=19; style="rounded"; color="#BAC7D5"; margin=14;
+    label="ECSV (.ecsv plain-text file)";
+    fontsize=17; style="rounded"; color="#BAC7D5"; margin=10;
 
     ecsv_hdr [label=<
       <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
-        <TR><TD BGCOLOR="#EAF3FE"><B># %ECSV · YAML Header</B></TD></TR>
-        <TR><TD ALIGN="LEFT" BGCOLOR="#F3F5F7"><FONT FACE="Courier New" POINT-SIZE="14"># unit: [Mpc, km/s]<BR/># datatype: [float64, float64]<BR/># meta: {cuts: {mag: 16.5}}</FONT></TD></TR>
-        <TR><TD BGCOLOR="#E9F7F2">Preserves units, dtypes &amp;<BR/>nested <FONT FACE="Courier New">table.meta</FONT> dicts</TD></TR>
+        <TR><TD BGCOLOR="#EAF3FE"><B># %ECSV 1.0 · YAML Header</B></TD></TR>
+        <TR><TD ALIGN="LEFT" BGCOLOR="#F3F5F7"><FONT FACE="Courier New" POINT-SIZE="12.5"># %ECSV 1.0<BR ALIGN="LEFT"/># datatype:<BR ALIGN="LEFT"/># - {name: distance, unit: Mpc, datatype: float64}&#160;&#160;<BR ALIGN="LEFT"/># meta: {seed: 20261109, synthetic: true}&#160;&#160;<BR ALIGN="LEFT"/></FONT></TD></TR>
+        <TR><TD BGCOLOR="#E9F7F2">Preserves units, dtypes &amp; nested meta dicts</TD></TR>
       </TABLE>
     >];
 
     ecsv_body [label=<
       <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
-        <TR><TD BGCOLOR="#E9F7F2"><B>Human-readable CSV rows</B></TD></TR>
-        <TR><TD ALIGN="LEFT" BGCOLOR="#FFFFFF"><FONT FACE="Courier New" POINT-SIZE="14">distance,velocity<BR/>14.2,980.5<BR/>41.8,2810.0</FONT></TD></TR>
-        <TR><TD BGCOLOR="#EAF3FE">Plain text · clean <FONT FACE="Courier New">git diff</FONT></TD></TR>
+        <TR><TD BGCOLOR="#E9F7F2"><B>Space-delimited text rows</B></TD></TR>
+        <TR><TD ALIGN="LEFT" BGCOLOR="#FFFFFF"><FONT FACE="Courier New" POINT-SIZE="13">distance velocity&#160;&#160;<BR ALIGN="LEFT"/>14.2 980.5&#160;&#160;<BR ALIGN="LEFT"/>41.8 2810.0&#160;&#160;<BR ALIGN="LEFT"/></FONT></TD></TR>
+        <TR><TD BGCOLOR="#EAF3FE">Human-readable text · clean git diff</TD></TR>
       </TABLE>
     >];
 
-    ecsv_hdr -> ecsv_body [label="followed by rows"];
+    ecsv_hdr -> ecsv_body [label="  rows"];
   }
 
   subgraph cluster_fits {
     label="FITS (.fits binary container)";
-    fontsize=19; style="rounded"; color="#BAC7D5"; margin=14;
+    fontsize=17; style="rounded"; color="#BAC7D5"; margin=10;
 
     fits_hdu0 [label=<
       <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
-        <TR><TD BGCOLOR="#F0EBFA"><B>HDU 0 · Primary Header</B></TD></TR>
-        <TR><TD ALIGN="LEFT" BGCOLOR="#F3F5F7"><FONT FACE="Courier New" POINT-SIZE="14">SIMPLE  =            T<BR/>TELESCOP= 'ICG-SYNTH'</FONT></TD></TR>
-        <TR><TD BGCOLOR="#F3F5F7">Global 8-char keyword cards</TD></TR>
+        <TR><TD BGCOLOR="#F0EBFA"><B>HDU 0 · Primary HDU (no data)</B></TD></TR>
+        <TR><TD ALIGN="LEFT" BGCOLOR="#F3F5F7"><FONT FACE="Courier New" POINT-SIZE="12.5">SIMPLE  =                    T&#160;&#160;<BR ALIGN="LEFT"/>EXTEND  =                    T&#160;&#160;<BR ALIGN="LEFT"/></FONT></TD></TR>
+        <TR><TD BGCOLOR="#F3F5F7">Global &lt;=8-char keyword cards</TD></TR>
       </TABLE>
     >];
 
     fits_hdu1 [label=<
       <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
         <TR><TD BGCOLOR="#F0EBFA"><B>HDU 1 · Binary Table HDU</B></TD></TR>
-        <TR><TD ALIGN="LEFT" BGCOLOR="#EAF3FE"><FONT FACE="Courier New" POINT-SIZE="14">TTYPE1='distance' TFORM1='D'<BR/>TUNIT1='Mpc'      TUNIT2='km/s'</FONT></TD></TR>
-        <TR><TD BGCOLOR="#E9F7F2">Compact binary columns + units</TD></TR>
-        <TR><TD BGCOLOR="#FBEDED">Strict card rules reject<BR/>arbitrary nested <FONT FACE="Courier New">meta</FONT> dicts</TD></TR>
+        <TR><TD ALIGN="LEFT" BGCOLOR="#EAF3FE"><FONT FACE="Courier New" POINT-SIZE="12.5">TTYPE1='distance' TUNIT1='Mpc'&#160;&#160;<BR ALIGN="LEFT"/>TTYPE2='velocity' TUNIT2='km s-1'&#160;&#160;<BR ALIGN="LEFT"/>SEED  = 20261109  SYNTH = T&#160;&#160;<BR ALIGN="LEFT"/></FONT></TD></TR>
+        <TR><TD BGCOLOR="#E9F7F2">&lt;=8-char keys preserved cleanly</TD></TR>
+        <TR><TD BGCOLOR="#FBEDED">&gt;8-char keys warn (HIERARCH) &amp;<BR/>nested dicts fail</TD></TR>
       </TABLE>
     >];
 
-    fits_hdu0 -> fits_hdu1 [label="extension HDU"];
+    fits_hdu0 -> fits_hdu1 [label="  extension"];
   }
 
   { rank=same; ecsv_hdr; fits_hdu0; }

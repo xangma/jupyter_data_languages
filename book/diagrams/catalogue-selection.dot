@@ -1,30 +1,34 @@
-// Observed counts: /lectures/book/01-catalogue.ipynb.
+// Observed counts: book/01-catalogue.ipynb.
 digraph catalogue_selection {
-  graph [rankdir=TB, bgcolor="white", pad=0.18, nodesep=0.32, ranksep=0.44,
-         fontname="Arial", fontsize=18, ordering=out];
-  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=18,
-        fontcolor="#14263C", color="#BAC7D5", penwidth=1.2, margin="0.18,0.12"];
-  edge [fontname="Arial", fontsize=18, color="#14263C", fontcolor="#14263C",
-        arrowsize=0.8, penwidth=1.4];
+  graph [
+    rankdir=LR, bgcolor="white", pad=0.12, nodesep=0.24, ranksep=0.20,
+    fontname="Arial", fontsize=18, fontcolor="#14263C",
+    label="Data-hygiene filtering and physical survey selection are separate steps",
+    labelloc=t
+  ];
+  node [
+    shape=box, style="rounded,filled", fontname="Arial", fontsize=15,
+    fontcolor="#14263C", color="#BAC7D5", penwidth=1.4, margin="0.10,0.08"
+  ];
+  edge [
+    fontname="Arial", fontsize=13.5, color="#526780", fontcolor="#14263C",
+    arrowsize=0.8, penwidth=1.5
+  ];
 
   raw [label="Raw catalogue\n400 rows", fillcolor="#F3F5F7"];
   valid [label="Valid catalogue\n395 rows", fillcolor="#EAF3FE"];
   invalid [label="Rejected: invalid\n5 rows", fillcolor="#FBEDED"];
-  cut [shape=diamond, style=filled, label="magnitude\n< 16.5 ?", fillcolor="#F0EBFA",
-       margin="0.08,0.04"];
+  cut [shape=diamond, style=filled, label="m < 16.5 ?", fillcolor="#F0EBFA",
+       fixedsize=true, width=1.45, height=0.72];
   selected [label="Selected\n262 rows", fillcolor="#E9F7F2"];
-  excluded [label="Usable, not selected\n133 rows", fillcolor="#FFF2D6"];
-  all_valid [label="All valid\n395 rows", fillcolor="#EAF3FE"];
-  compare [label="Compare distance distributions\nSame distance-bin edges", fillcolor="#F3F5F7"];
+  excluded [label="Valid, not selected\n133 rows", fillcolor="#FFF2D6"];
+  compare [label="Compare distributions\nShared distance bins", fillcolor="#F3F5F7"];
 
-  raw -> valid [label="validity mask"];
-  raw -> invalid [label="remove invalid rows"];
-  { rank=same; valid; invalid; }
-  valid -> all_valid [style=dashed, label="reference sample"];
+  raw -> valid;
+  raw -> invalid;
+  valid -> compare [style=dashed, label="reference (395)"];
   valid -> cut;
-  cut -> selected [label="yes"];
-  cut -> excluded [label="no: magnitude ≥ 16.5"];
-  { rank=same; all_valid; selected; excluded; }
-  all_valid -> compare;
-  selected -> compare;
+  cut -> selected [color="#2F6F5E", label="yes"];
+  cut -> excluded [label="no\n(m ≥ 16.5)"];
+  selected -> compare [color="#2F6F5E"];
 }

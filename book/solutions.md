@@ -27,94 +27,118 @@ missing (`NaN`) entries with `0` invents an observed physical measurement of zer
 
 ### Baseline & Task A — shared masks, invalid-row counts and broadcasting
 
-**Hint:** Use `table[:3].pprint_all()` to inspect every column and unit, count
-each failure mode separately with `np.count_nonzero(...)`, and slice all columns
-with one shared boolean mask.
+**Hint:** Use `np.count_nonzero(...)` on each failure condition separately,
+inspect all excluded rows with `table[~valid].pprint_all()`, and trace how
+`h0_grid[:, None]` reshapes `(201,)` before multiplying `(395,)`.
 
 :::{dropdown} Worked answer
 ```python
-table[:3].pprint_all()
-print("Missing velocity:", np.count_nonzero(~np.isfinite(velocity)))      # 3
-print("Nonpositive sigma:", np.count_nonzero(sigma <= 0))                # 1
-print("Missing magnitude:", np.count_nonzero(~np.isfinite(magnitude)))   # 1
-for cut in (15.5, 16.5, 17.5):
-    print(cut, np.count_nonzero(valid & (magnitude < cut)))              # 161, 262, 357
+print("Missing velocity:", np.count_nonzero(~np.isfinite(velocity)))               # 3
+print("Invalid sigma:", np.count_nonzero(~np.isfinite(sigma) | (sigma <= 0)))     # 1
+print("Missing magnitude:", np.count_nonzero(~np.isfinite(magnitude)))             # 1
+table[~valid].pprint_all()
 ```
 
-Three missing velocities, one zero velocity error (`sigma <= 0`) and one missing
-apparent magnitude occur on five distinct rows, leaving **395 usable rows**.
-Assigning zero velocity to missing entries fabricates stationary galaxies. With
-the shared `valid` mask, magnitude limits of `15.5`, `16.5` and `17.5` select
-**161**, **262** and **357** objects respectively. Reshaping a 1-D per-object
-factor with `[:, None]` turns `(N,)` into `(N, 1)` so one scale broadcasts across
-each row's three features `(N, 3)`, while `axis=0` collapses rows into `(3,)`
-per-band summaries and `axis=1` collapses columns into `(N,)` per-galaxy sums.
+Three missing velocities (`object_id` `5, 40, 130`), one zero velocity error
+(`object_id` `20`) and one missing apparent magnitude (`object_id` `25`) occur on
+five disjoint rows, leaving **395 valid rows** for our joint velocity and
+selection analysis. Replacing missing velocities with `0.0` fabricates stationary
+galaxies, while leaving `-999` survey sentinel values unmasked pulls means and
+fitted slopes sharply downward. In the grid search, `h0_grid[:, None]` reshapes
+`(201,)` to `(201, 1)` so `(201, 1) * (395,)` broadcasts to `(201, 395)` trial
+predictions, and `.sum(axis=1)` collapses the 395 galaxy columns into `(201,)`
+$\chi^2$ values (`best_h0 = 70.1 km/s/Mpc`).
 :::
 
-### Task B — units, constants and FITS
+### Task B — units and FITS provenance round-trip
 
-**Hint:** Compare the columns and `meta` dictionary of `table` against the FITS
-`subset`, and consider what `.value` would return if a file stored distances in
-`kpc` rather than `Mpc`.
+**Hint:** Compare `table.colnames` and `table.meta` against `restored.colnames`
+and `restored.meta`, then ask what `.value` returns if an external FITS file
+stored `TUNITn = 'kpc'` instead of `'Mpc'`.
 
 :::{dropdown} Worked answer
 ```python
 restored_mpc = restored["distance"].to_value(u.Mpc)
+assert restored.colnames == ["object_id", "distance", "velocity", "velocity_error"]
+assert restored.meta["SEED"] == 20261109 and np.all(np.isfinite(restored_mpc) & (restored_mpc > 0))
 np.testing.assert_allclose(restored_mpc, distance[valid])
-assert np.all(np.isfinite(restored_mpc) & (restored_mpc > 0))
 ```
 
-The FITS round-trip retains the three physical columns (`distance`, `velocity`,
-`velocity_error`) and their `TUNITn` units while omitting `object_id`,
-`apparent_magnitude`, and arbitrary ECSV dictionary metadata (`subset.meta.clear()`).
-Calling `.to_value(u.Mpc)` (like `astropy.constants` and `u.spectral()` /
-`u.doppler_optical` equivalencies) checks dimensions and converts compatible
-scales (`kpc` $\rightarrow$ `Mpc`), whereas `.value` blindly strips whatever unit
-was stored. On real survey FITS tables and 2D cutouts, also verify row or `NAXIS`
-shapes, finite bounds, `WCS` frame/projection keys, and `origin='lower'` display
-orientation.
+`subset` retained `object_id`, `distance`, `velocity` and `velocity_error` (plus
+their `TUNITn` unit cards) while omitting `apparent_magnitude` and the long
+free-text `description`, and preserved key provenance in `<=8`-character FITS
+header cards (`SYNTH = True`, `SEED = 20261109`, `H0_INJ = 70.0`). Calling
+`.to_value(u.Mpc)` checks dimensions and rescales compatible units (`kpc`
+$\rightarrow$ `Mpc`) or raises `UnitConversionError`, whereas `.value` blindly
+strips whatever unit was stored.
 :::
 
 ### Your turn — velocity residual diagnostic
 
-**Hint:** Subtract `70.0 * distance[valid] + 300.0` from `velocity[valid]` and
-plot against `distance[valid]` around `ax.axhline(0.0, ls='--')`.
+**Hint:** Plot `resid` against `distance[valid]` with `[::8]` $1\sigma_v$ error
+bars around `ax.axhline(0.0, ls='--')`, and compare `np.abs(resid) <= sigma[valid]`
+against the Gaussian $1\sigma$ expectation.
 
 :::{dropdown} Worked answer
 ```python
 resid = velocity[valid] - (70.0 * distance[valid] + 300.0)
-fig, ax = plt.subplots(figsize=(7, 3.6))
 idx = np.arange(resid.size)[::8]
-ax.errorbar(distance[valid][idx], resid[idx], yerr=sigma[valid][idx], fmt="o", ms=3.5, capsize=2)
-ax.axhline(0.0, color="C3", ls="--", lw=1.3)
-ax.set(xlabel="Distance [Mpc]", ylabel="Velocity residual [km/s]")
+fig, ax = plt.subplots(figsize=(7.2, 3.6))
+ax.scatter(distance[valid], resid, s=10, color="0.75", alpha=0.35, label=f"All valid (n={valid.sum()})")
+ax.errorbar(
+    distance[valid][idx], resid[idx], yerr=sigma[valid][idx],
+    fmt="o", color="0.15", ms=3.5, capsize=2, label=rf"Every 8th with $1\sigma_v$ (n={idx.size})",
+)
+ax.axhline(0.0, color="C3", ls="--", lw=1.3, label="Zero residual")
+ax.set(
+    xlabel="Distance (exact input) [Mpc]", ylabel="Velocity residual [km/s]",
+    title="Velocity residuals around injected relation", ylim=(-2400, 2750),
+)
+ax.legend(fontsize=8.2, loc="upper right", ncol=3)
 fig.tight_layout()
+print("Within ±1σ_v (all 395 / every 8th):", round(np.mean(np.abs(resid) <= sigma[valid]), 3), round(np.mean(np.abs(resid[idx]) <= sigma[valid][idx]), 3))
 ```
 
 Residuals scatter symmetrically around `0 km/s` across `20–200 Mpc` with no
-systematic distance trend, and roughly two-thirds of the $1\sigma$ error bars
-cross the zero line (`np.mean(np.abs(resid) <= sigma[valid])` $\approx 0.68$).
+systematic distance trend. Across all 395 valid rows, **69.6%** (`0.696`; **72.0%**
+or `36/50` in the `[::8]` subsample) lie within $\pm 1\sigma_v$, consistent with
+the asymptotic $68.3\%$ (`0.683`) Gaussian $1\sigma$ expectation.
 :::
 
 ### Task C — survey selection and figure caption
 
-**Hint:** Name the sample sizes, common bin edges and shared validity mask in
-three sentences, then check whether cutting on apparent magnitude selects on
-velocity residuals at fixed distance.
+**Hint:** Complete the `(15.5, 16.5, 17.5)` loop to compare both counts and mean
+distances, then cover populations/bins, the 5-row validity mask, and why
+truncating $p(d)$ leaves $E[v \mid d]$ unbiased here in three concise sentences.
 
 :::{dropdown} Worked answer
-**Example caption:** "Counts and normalised distance distributions for 395 usable
-synthetic objects and the 262-object subset with apparent magnitude below 16.5,
-plotted on common distance bin edges. Five rows with non-finite measurements or
-nonpositive velocity errors were removed using one shared mask. The flux-limited
-subset preferentially retains nearby galaxies; this synthetic diagnostic is
-neither a survey completeness measurement nor a cosmological $H_0$ measurement."
+```python
+print(f"All valid : n={valid.sum():3d} | mean d = {distance[valid].mean():5.1f} Mpc")
+for test_limit in (15.5, 16.5, 17.5):
+    mask_cut = valid & (magnitude < test_limit)
+    print(f"m < {test_limit:4.1f} : n={mask_cut.sum():3d} | mean d = {distance[mask_cut].mean():5.1f} Mpc")
+```
 
-**Bias analysis:** Because selection here depends only on distance and apparent
-magnitude—not on velocity noise at fixed distance—the weighted linear slope need
-not be biased, though losing distant objects shrinks the distance lever arm and
-widens the slope uncertainty. Real distance errors, correlated peculiar
-velocities or selection on the fitted observable itself can bias the estimator.
+| Sample | Galaxies retained | Mean distance $\bar{d}$ [Mpc] |
+| --- | --- | --- |
+| All valid (`valid`) | 395 | 110.7 |
+| `m < 15.5` | 161 | 65.5 |
+| `m < 16.5` (`selected`) | 262 | 87.5 |
+| `m < 17.5` | 357 | 104.2 |
+
+**Example 3-sentence caption:** "Raw counts and area-normalised distance
+distributions on shared `20–200 Mpc` bins for all 395 valid synthetic galaxies
+and the 262-galaxy flux-limited subset with `m < 16.5`. Five rows with non-finite
+entries or nonpositive velocity errors were excluded beforehand using a single
+shared validity mask. Although the magnitude limit truncates $p(d)$ toward nearer
+galaxies ($\bar{d} = 87.5\text{ Mpc}$ vs $110.7\text{ Mpc}$), it does not bias the
+conditional relation $E[v \mid d]$ here because input distances are exact and
+velocity noise is independent of magnitude (it only narrows the distance lever arm
+and widens slope uncertainty)."
+
+**Realistic biasing effects:** Distance scatter coupled with a flux cut
+(classical Malmquist bias), velocity-dependent selection, or spatially correlated
+peculiar velocities would bias a real Hubble-flow slope.
 :::
 
 ## Session 2
