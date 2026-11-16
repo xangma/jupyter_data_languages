@@ -1,10 +1,10 @@
 # Before the first session
 
-Allow 10 minutes on CPD or 20–30 minutes for a local installation. Choose **Option A** to work entirely in your browser, or **Option B** to install locally (Python 3.11+ and Git 2.28+; the locked course environment uses Python 3.13). VS Code is optional. See *Environments and kernels: pip, conda and uv* at the start of [Session 1](01-catalogue.ipynb) for how `uv`, `pip` and `conda` relate.
+Allow 10 minutes on CPD or 20–30 minutes for a local installation. Choose **Option A** to work entirely in your browser, or **Option B** to install locally (Python 3.11+ and Git 2.28+; the locked course environment uses Python 3.13). VS Code is optional. Everyone should also read *Environments and kernels: pip, conda and uv* at the start of [the Primer](00-primer.ipynb#environments-and-kernels-pip-conda-and-uv) for how dependency solvers, `uv`, `pip` and `conda` relate.
 
 ## Option A: Use CPD in your browser (recommended, no local install)
 
-1. Open [the Python PhD book](https://icg-cpd-cluster.port.ac.uk/python-phd/), choose **Connect to JupyterHub**, and authenticate with your enrolled GitHub account (creating a GitHub account alone does not grant access; ask the instructor if access is denied).
+1. Open [the Python PhD book](https://icg-cpd-cluster.port.ac.uk/python-phd/), choose **Connect to JupyterHub**, and authenticate with your enrolled GitHub account (creating a GitHub account alone does not grant access; request CPD course enrolment if access is denied).
 
 ![JupyterHub sign-in with the GitHub button highlighted](../book/screenshots/jupyterhub-signin.svg)
 
@@ -70,4 +70,4 @@ Select **Python PhD (locked)** in JupyterLab (or choose `.venv` in VS Code's **S
 ## Readiness check
 
 1. **Python and Git:** Run `python scripts/check_setup.py` and `python -m pytest -q` in your active course terminal. Confirm `395 usable rows out of 400`, `Setup OK`, and passing reference tests (`exercises/test_weighted_mean.py` intentionally fails until you repair a separate practice copy in Session 3 — leave `exercises/` untouched).
-2. **Coding agent (before Session 3):** Complete [Choose your coding agent](agent-tools.md) to configure `Jupyter AI on CPD`, `Cline + CPD Qwen`, `Claude Code`, or the manual pair option and create your practice folder. Tell the instructor before class if any step is blocked.
+2. **Coding agent (before Session 3):** Complete [Choose your coding agent](agent-tools.md) to configure `Jupyter AI on CPD`, `Cline + CPD Qwen`, `Claude Code`, or the manual option and create your practice folder.

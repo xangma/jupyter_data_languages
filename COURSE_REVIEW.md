@@ -225,3 +225,10 @@ coverage of dependency solving:
   `.pdf`/`.png` exports to `outputs/`, placed legends on both selection-histogram
   panels, removed pre-answered Task C numbers from preceding prose and Task A's
   worked answer, and aligned `solutions.md`, `instructor.md` and `setup.md`.
+- **Self-contained book cleanup**: Moved *Environments and kernels: pip, conda and
+  uv* (including dependency solving and `python-environments.svg`) into the
+  opening of `book/00-primer.ipynb` so Session 1 (`01-catalogue.ipynb`) starts
+  directly on the galaxy catalogue, removed `book/instructor.md` from the book
+  and TOC, and stripped inline workshop-pacing, break and partner/manual-pair cues
+  across all sessions and reference pages so every page reads as self-contained
+  material.

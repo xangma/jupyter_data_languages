@@ -1,4 +1,4 @@
-// Source: 01-catalogue.ipynb; Python environment solvers and aligned kernel/shell execution.
+// Source: 00-primer.ipynb; Python environment solvers and aligned kernel/shell execution.
 digraph python_environments {
   graph [
     bgcolor="white", fontname="Arial", fontsize=19, fontcolor="#14263C",

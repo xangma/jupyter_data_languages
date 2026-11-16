@@ -19,9 +19,9 @@ Exports fit within 720 by 640 CSS pixels while retaining their scalable viewBox.
 
 | Source | Placement |
 | --- | --- |
+| `python-environments.dot` | Primer: Dependency solvers (`uv`, `pip + venv`, `conda / mamba`) and aligned kernel/shell execution |
 | `array-axes-slicing.dot` | Primer: 0-based and negative indexing, half-open slices and 2D `axis` reductions |
 | `array-views.dot` | Primer: Slice views versus independent `.copy()` buffers |
-| `python-environments.dot` | Session 1: Dependency solvers (`uv`, `pip + venv`, `conda / mamba`) and aligned kernel/shell execution |
 | `shared-mask.dot` | Session 1: Arrays, shapes and masks (including separate-mask misalignment trap) |
 | `broadcasting.dot` | Session 1: 2D broadcasting `(M, 1) * (1, N)` and `axis=1` reduction for $\chi^2(H_0)$ |
 | `catalogue-selection.dot` | Session 1: Investigate a survey selection |

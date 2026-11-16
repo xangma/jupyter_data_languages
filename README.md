@@ -12,8 +12,8 @@ uv run --frozen --extra teaching jupyter lab
 ```
 
 Open the notebooks in `book/`. All examples use small local synthetic data.
-No paid AI account or HPC access is required. See the [instructor guide](book/instructor.md)
-for pacing, solutions, prerequisites and the account-free agent fallback.
+No paid AI account or HPC access is required. See [solutions](book/solutions.md)
+for progressive hints and worked answers.
 
 ## Validate and build the Jupyter Book
 

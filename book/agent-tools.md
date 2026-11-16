@@ -1,9 +1,10 @@
 # Choose your coding agent
 
-Prepare **one** graphical route before Session 3; pairs may share or follow the
-manual pair route. **Jupyter AI on CPD** is the recommended zero-install default.
-Complete sign-in and setup **before class**. Use the graphical app or panel for
-every agent prompt; keep the terminal for setup, `pytest` and Git.
+Prepare **one** graphical route before Session 3, or follow the manual route
+without an agent. **Jupyter AI on CPD** is the recommended zero-install default.
+Complete sign-in and workspace setup before starting Session 3. Use the
+graphical app or panel for every agent prompt; keep the terminal for setup,
+`pytest` and Git.
 
 ## Prepare the practice workspace
 
@@ -59,7 +60,7 @@ remote Qwen on CPD.
 | --- | --- |
 | Base URL | `https://icg-cpd-cluster.port.ac.uk/v1` |
 | Model ID | `qwen3-8-27b-mtp-ud-q4-k-xl` |
-| Access | Instructor's setting; keep credentials out of prompts |
+| Access | Provided endpoint key; keep credentials out of prompts |
 
 - **Controls:** Start in **Plan**, switch to **Act** after review, and keep
   **Auto-approve: None** (YOLO off). Inspect diffs before **Save**/**Reject**,

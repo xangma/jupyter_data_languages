@@ -5,8 +5,9 @@
 Verified in `/Users/xangma/.gemini/antigravity/scratch/phd-python-2026-revamp` following independent external reviews by **Gemini Pro**, **OpenAI Codex (`gpt-6-astra`)**, and **Anthropic Claude (`claude-opus-5-5`)**:
 
 - **Unit, diagram and overlay checks**: `pytest` (**28 passed**), `render_diagrams.py --check` (**14 editable DOT/SVG diagrams**, refining `python-environments`, `broadcasting`, `fits-vs-ecsv`, and `catalogue-selection` with native `viewBox` widths $\le 813\text{ pt}$), and `render_screenshot_callouts.py --check` (**52 annotated screenshots**).
+- **Primer & Session 1 layout and self-contained prose**: Moved `Environments and kernels: pip, conda and uv` (including dependency solving and `python-environments.svg`) into `book/00-primer.ipynb` so `book/01-catalogue.ipynb` starts immediately with the astronomy catalogue, removed `book/instructor.md` and all inline workshop/break cues, and stripped all partner/pair prompts across Sessions 1–3.
 - **Notebook execution, FITS provenance and output hygiene**: `validate_course.py` executed all **5 course notebooks** cleanly (`00-primer` through `04-signal-extension`) with zero errors or warnings, verified preserved `<=8`-character FITS header cards (`SYNTH`, `SEED=20261109`, `H0_INJ=70.0`) and persistent `outputs/catalogue_summary.{pdf,png}` export, while keeping all source `.ipynb` cells clean (`outputs: []`, `execution_count: null`).
-- **Strict MyST HTML build and hydrated browser check**: `BASE_URL=/python-phd npm run build:docs` built all **11 pages** strictly with zero warnings, injected all 5 CPD notebook launch routes, and rendered `/python-phd/catalogue` and `/python-phd/solutions` cleanly in headless Chrome (`HTTP 200`, `0` broken images, collapsible `{dropdown}` solver reference table, crisp rendered diagram text).
+- **Strict MyST HTML build and hydrated browser check**: `BASE_URL=/python-phd npm run build:docs` built all **10 student pages** strictly with zero warnings (`404` on `/python-phd/instructor`), injected all 5 CPD notebook launch routes, and rendered `/python-phd/primer` and `/python-phd/catalogue` cleanly in headless Chrome (`HTTP 200`, `0` broken images).
 
 ---
 

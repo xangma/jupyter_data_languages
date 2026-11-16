@@ -183,7 +183,7 @@ Private recovery (`git reset --soft HEAD~1`) moves `recovery-lab` back one paren
 while keeping the edit staged so you can fix and recommit it (`rescue-before-undo`
 still points to the discarded commit). Shared recovery (`git revert --no-edit HEAD`
 followed by `git push`) records a new commit whose parent is the pushed mistake.
-In `partner-practice`, `git log` shows **both** the shared mistake and its
+In `collaborator-clone`, `git log` shows **both** the shared mistake and its
 revert, and `README.md` keeps `Angle units: degrees.` while omitting
 `Validation: skipped (practice mistake).`.
 :::
@@ -276,7 +276,7 @@ def weighted_mean(values, errors):
 
 **Review & `AI_USE.md`:** Reject any proposal that changes `1.2` to `1.5` in a
 test file or returns `(mean, uncertainty)` instead of a scalar. Record the
-interface/model/host (or manual pair route), `TESTS_COMMIT`, one concrete
+interface/model/host (or manual route), `TESTS_COMMIT`, one concrete
 steering or approval decision, observed before/after `pytest` counts, and an
 untested assumption (e.g. that observations share one true value with independent
 Gaussian noise).
