@@ -2,8 +2,7 @@
 
 Three two-hour practicals for incoming ICG PhD students: scientific arrays and
 astronomy data; Git and tests; coding agents and independent verification.
-Open [the live CPD book](https://icg-cpd-cluster.port.ac.uk/python-phd/), or start
-locally with [the course overview](book/index.md) and [setup](book/setup.md).
+Start with [the course overview](book/index.md) and [setup](book/setup.md).
 
 ```bash
 uv sync --frozen --python 3.13 --extra teaching
@@ -32,28 +31,21 @@ BASE_URL=/python-phd npm run build:docs
 `validate_course.py` executes all five notebooks in fresh kernels and empty
 working directories, writing `_executed/`. The book builds from those checked
 copies, including the plots. Source notebooks retain empty outputs. Preview at
-the intended CPD subpath:
+the configured subpath:
 
 ```bash
 python scripts/serve_book.py --port 8765
 ```
 
-Open `http://127.0.0.1:8765/python-phd/`. Stop the foreground server with Ctrl+C.
-The local preview serves static pages. The deployed CPD edition connects to
-JupyterHub for live kernels; [deployment notes](deploy/README.md) describe it.
+Open `http://127.0.0.1:8765/python-phd/` and stop the foreground server with Ctrl+C.
+The local preview serves static pages; [deployment notes](deploy/README.md)
+describe containerised static hosting and optional JupyterHub kernel integration.
 
 The fourteen explanatory diagrams have editable DOT sources and portable SVG
 exports. See [diagram editing](book/diagrams/README.md) to regenerate them; viewing
 the book or notebooks does not require a diagram renderer or external service.
 
-The CPD edition uses the existing authenticated bridge and your standard
-JupyterHub workspace, with the **Python PhD (locked)** kernel. CPU and shared-GPU
-server options use the same personal files. UKSA has its own named server and
-shared datasets. Book links open editable source notebooks rather than generated
-build copies. In a CPD terminal, activate `source /opt/course/.venv/bin/activate`
-before the PhD practicals.
-
-The course retains its MIT licence. The reused bridge UI in
+The course retains its MIT licence. The optional JupyterHub launch bridge in
 `scripts/inject_jupyterhub_launch_links.py` is adapted from the GPL-3.0 UKSA
 integration and is distributed under GPL-3.0-or-later; see `LICENSES/GPL-3.0.txt`.
 

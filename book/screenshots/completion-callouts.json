@@ -725,7 +725,7 @@
   },
   {
     "name": "cline-tests",
-    "title": "Review independent tests before saving the new file in Cline with CPD Qwen",
+    "title": "Review independent tests before saving the new file in Cline with OpenAI-compatible Qwen",
     "callout_scale": 0.9,
     "callouts": [
       {
@@ -762,7 +762,7 @@
         ]
       },
       {
-        "label": "Check the CPD Qwen model selector while reviewing this Act-mode file proposal",
+        "label": "Check the configured model selector while reviewing this Act-mode file proposal",
         "bubble": [
           660,
           1385
@@ -1037,7 +1037,7 @@
         ]
       },
       {
-        "label": "Check the CPD Qwen model selector used for this Cline review",
+        "label": "Check the configured model selector used for this Cline review",
         "bubble": [
           660,
           1385

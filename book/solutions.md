@@ -230,8 +230,9 @@ rescale weights by `errors.min()` to avoid overflow while returning a `float`.
 
 :::{dropdown} Worked answer
 **Boundaries & plan:** The client UI, model host and OS sandbox are distinct—for
-example, Cline on a laptop edits laptop files even when Qwen runs on CPD, and a
-Git branch or prompt instruction is not an OS sandbox. A sound plan preserves the
+example, an editor agent on your laptop edits local files even when inference
+runs on a remote API, and a Git branch or prompt instruction is not an OS
+sandbox. A sound plan preserves the
 scalar contract, validates matching nonempty finite 1-D arrays with `errors > 0`,
 and uses $w_i = 1/\sigma_i^2$.
 

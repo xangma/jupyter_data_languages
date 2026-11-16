@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2316" height="1466" viewBox="84 76 2316 1466" overflow="hidden" role="img" aria-labelledby="title desc">
-<title id="title">Review independent tests before saving the new file in Cline with CPD Qwen</title>
-<desc id="desc">1: Auto-approve is None; choose Save or Reject after inspecting the proposed new test file. 2: Check the independent hand calculation and unequal-error expectation of 3.6. 3: Confirm matching two-dimensional inputs are tested for ValueError. 4: Check the CPD Qwen model selector while reviewing this Act-mode file proposal.</desc>
+<title id="title">Review independent tests before saving the new file in Cline with OpenAI-compatible Qwen</title>
+<desc id="desc">1: Auto-approve is None; choose Save or Reject after inspecting the proposed new test file. 2: Check the independent hand calculation and unequal-error expectation of 3.6. 3: Confirm matching two-dimensional inputs are tested for ValueError. 4: Check the configured model selector while reviewing this Act-mode file proposal.</desc>
 <!-- Original JPEG SHA-256: 916078e6c412b0827553cbdad9851bd921357a4135d7b37b7af64c2c24046a77 -->
 <defs><clipPath id="crop-box"><rect x="84" y="76" width="2316" height="1466"/></clipPath></defs>
 <g clip-path="url(#crop-box)">
@@ -27,7 +27,7 @@
 <circle cx="1930" cy="1162" r="32" fill="#075985" stroke="white" stroke-width="4"/>
 <text x="1930" y="1175" fill="white">3</text>
 </g>
-<g id="callout-4" aria-label="Check the CPD Qwen model selector while reviewing this Act-mode file proposal">
+<g id="callout-4" aria-label="Check the configured model selector while reviewing this Act-mode file proposal">
 <path d="M660,1385 L580,1478" stroke="white" stroke-width="11"/>
 <path d="M660,1385 L580,1478" stroke="#075985" stroke-width="5"/>
 <circle cx="580" cy="1478" r="6" fill="#075985" stroke="white" stroke-width="2"/>

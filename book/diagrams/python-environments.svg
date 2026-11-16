@@ -1,88 +1,88 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="390" viewBox="0.00 0.00 806.00 437.00" role="img" aria-labelledby="python-environments-title python-environments-desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="387" viewBox="0.00 0.00 807.00 434.00" role="img" aria-labelledby="python-environments-title python-environments-desc">
   <title id="python-environments-title">Lock one project environment and point both kernel and shell at it</title>
-  <desc id="python-environments-desc">Three dependency solvers and environment tools — uv solving and locking the PyPI graph via uv sync --frozen --extra teaching, pip + venv resolving against the current environment via python -m pip install, and conda or mamba solving Python plus compiled C and CUDA libraries such as CFITSIO, FFTW and MPI — build an isolated project environment (.venv or conda env, /opt/course/.venv on CPD). Two aligned paths — the Python PhD (locked) Jupyter kernel via ipykernel and an activated shell via source activate or uv run — execute inside that project environment, whereas an unactivated shell running bare pip install or pytest hits /usr/bin/python3 or conda (base) and raises ModuleNotFoundError.</desc>
-  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(10.08 427.08)">
+  <desc id="python-environments-desc">Three dependency solvers and environment tools — uv solving and locking the PyPI graph via uv sync --frozen --extra teaching, pip + venv resolving against the current environment via python -m pip install, and conda or mamba solving Python plus compiled C and CUDA libraries such as CFITSIO, FFTW and MPI — build an isolated project environment (.venv/bin/python for uv or venv, or .../envs/&lt;project&gt;/bin/python for conda). Two aligned paths — the Python PhD (locked) Jupyter kernel via ipykernel and an activated shell via source activate or uv run — execute inside that project environment, whereas an unactivated shell running bare pip install or pytest hits /usr/bin/python3 or conda (base) and raises ModuleNotFoundError.</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(10.08 424.08)">
     <title>python_environments</title>
-    <polygon fill="white" stroke="none" points="-10.08,10.08 -10.08,-427.08 795.83,-427.08 795.83,10.08 -10.08,10.08" />
-    <text xml:space="preserve" text-anchor="middle" x="392.88" y="-394.95" font-family="Arial" font-size="19.00" fill="#14263c">Lock one project environment and point both kernel and shell at it</text>
+    <polygon fill="white" stroke="none" points="-10.08,10.08 -10.08,-424.08 796.83,-424.08 796.83,10.08 -10.08,10.08" />
+    <text xml:space="preserve" text-anchor="middle" x="393.38" y="-391.95" font-family="Arial" font-size="19.00" fill="#14263c">Lock one project environment and point both kernel and shell at it</text>
     <g id="clust1" class="cluster">
       <title>cluster_tools</title>
-      <path fill="white" stroke="#bac7d5" d="M26.75,-249.5C26.75,-249.5 726.75,-249.5 726.75,-249.5 732.75,-249.5 738.75,-255.5 738.75,-261.5 738.75,-261.5 738.75,-367.25 738.75,-367.25 738.75,-373.25 732.75,-379.25 726.75,-379.25 726.75,-379.25 26.75,-379.25 26.75,-379.25 20.75,-379.25 14.75,-373.25 14.75,-367.25 14.75,-367.25 14.75,-261.5 14.75,-261.5 14.75,-255.5 20.75,-249.5 26.75,-249.5" />
-      <text xml:space="preserve" text-anchor="middle" x="376.75" y="-360.05" font-family="Arial" font-size="16.00" fill="#14263c">Dependency solvers &amp; environment tools (pick one per project)</text>
+      <path fill="white" stroke="#bac7d5" d="M42.75,-246.5C42.75,-246.5 742.75,-246.5 742.75,-246.5 748.75,-246.5 754.75,-252.5 754.75,-258.5 754.75,-258.5 754.75,-364.25 754.75,-364.25 754.75,-370.25 748.75,-376.25 742.75,-376.25 742.75,-376.25 42.75,-376.25 42.75,-376.25 36.75,-376.25 30.75,-370.25 30.75,-364.25 30.75,-364.25 30.75,-258.5 30.75,-258.5 30.75,-252.5 36.75,-246.5 42.75,-246.5" />
+      <text xml:space="preserve" text-anchor="middle" x="392.75" y="-357.05" font-family="Arial" font-size="16.00" fill="#14263c">Dependency solvers &amp; environment tools (pick one per project)</text>
     </g>
     <g id="node1" class="node">
       <title>uv_tool</title>
-      <polygon fill="#eaf3fe" stroke="none" points="28.25,-305.5 28.25,-339.5 299.25,-339.5 299.25,-305.5 28.25,-305.5" />
-      <polygon fill="none" stroke="#bac7d5" points="28.25,-305.5 28.25,-339.5 299.25,-339.5 299.25,-305.5 28.25,-305.5" />
-      <text xml:space="preserve" text-anchor="start" x="112.75" y="-318.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">uv · used here</text>
-      <polygon fill="#f3f5f7" stroke="none" points="28.25,-262.5 28.25,-305.5 299.25,-305.5 299.25,-262.5 28.25,-262.5" />
-      <polygon fill="none" stroke="#bac7d5" points="28.25,-262.5 28.25,-305.5 299.25,-305.5 299.25,-262.5 28.25,-262.5" />
-      <text xml:space="preserve" text-anchor="start" x="76" y="-284.25" font-family="Arial" font-size="15.00" fill="#14263c">Solves &amp; locks PyPI graph</text>
-      <text xml:space="preserve" text-anchor="start" x="36.25" y="-272.1" font-family="Courier New" font-size="12.00" fill="#14263c">uv sync --frozen --extra teaching </text>
-      <polygon fill="none" stroke="#bac7d5" points="27.25,-261.5 27.25,-340.5 300.25,-340.5 300.25,-261.5 27.25,-261.5" />
+      <polygon fill="#eaf3fe" stroke="none" points="44.25,-302.5 44.25,-336.5 315.25,-336.5 315.25,-302.5 44.25,-302.5" />
+      <polygon fill="none" stroke="#bac7d5" points="44.25,-302.5 44.25,-336.5 315.25,-336.5 315.25,-302.5 44.25,-302.5" />
+      <text xml:space="preserve" text-anchor="start" x="128.75" y="-315.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">uv · used here</text>
+      <polygon fill="#f3f5f7" stroke="none" points="44.25,-259.5 44.25,-302.5 315.25,-302.5 315.25,-259.5 44.25,-259.5" />
+      <polygon fill="none" stroke="#bac7d5" points="44.25,-259.5 44.25,-302.5 315.25,-302.5 315.25,-259.5 44.25,-259.5" />
+      <text xml:space="preserve" text-anchor="start" x="92" y="-281.25" font-family="Arial" font-size="15.00" fill="#14263c">Solves &amp; locks PyPI graph</text>
+      <text xml:space="preserve" text-anchor="start" x="52.25" y="-269.1" font-family="Courier New" font-size="12.00" fill="#14263c">uv sync --frozen --extra teaching </text>
+      <polygon fill="none" stroke="#bac7d5" points="43.25,-258.5 43.25,-337.5 316.25,-337.5 316.25,-258.5 43.25,-258.5" />
     </g>
     <g id="node4" class="node">
       <title>project_env</title>
-      <polygon fill="#f0ebfa" stroke="none" points="249,-174.75 249,-210.75 514.5,-210.75 514.5,-174.75 249,-174.75" />
-      <polygon fill="none" stroke="#bac7d5" points="249,-174.75 249,-210.75 514.5,-210.75 514.5,-174.75 249,-174.75" />
-      <text xml:space="preserve" text-anchor="start" x="278.62" y="-188.5" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Isolated project environment</text>
-      <polygon fill="#ffffff" stroke="none" points="249,-125.25 249,-174.75 514.5,-174.75 514.5,-125.25 249,-125.25" />
-      <polygon fill="none" stroke="#bac7d5" points="249,-125.25 249,-174.75 514.5,-174.75 514.5,-125.25 249,-125.25" />
-      <text xml:space="preserve" text-anchor="start" x="258" y="-153.4" font-family="Courier New" font-size="13.00" fill="#14263c"> .venv (uv / venv) or conda env  </text>
-      <text xml:space="preserve" text-anchor="start" x="280.5" y="-137.65" font-family="Courier New" font-size="13.00" fill="#14263c"> /opt/course/.venv on CPD  </text>
-      <polygon fill="none" stroke="#bac7d5" points="248,-124.25 248,-211.75 515.5,-211.75 515.5,-124.25 248,-124.25" />
+      <polygon fill="#f0ebfa" stroke="none" points="229.25,-171.75 229.25,-207.75 532.25,-207.75 532.25,-171.75 229.25,-171.75" />
+      <polygon fill="none" stroke="#bac7d5" points="229.25,-171.75 229.25,-207.75 532.25,-207.75 532.25,-171.75 229.25,-171.75" />
+      <text xml:space="preserve" text-anchor="start" x="277.62" y="-185.5" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Isolated project environment</text>
+      <polygon fill="#ffffff" stroke="none" points="229.25,-125.25 229.25,-171.75 532.25,-171.75 532.25,-125.25 229.25,-125.25" />
+      <polygon fill="none" stroke="#bac7d5" points="229.25,-125.25 229.25,-171.75 532.25,-171.75 532.25,-125.25 229.25,-125.25" />
+      <text xml:space="preserve" text-anchor="start" x="272" y="-151.35" font-family="Courier New" font-size="12.00" fill="#14263c">.venv/bin/python (uv / venv) </text>
+      <text xml:space="preserve" text-anchor="start" x="238.25" y="-137.1" font-family="Courier New" font-size="12.00" fill="#14263c">.../envs/&lt;project&gt;/bin/python (conda) </text>
+      <polygon fill="none" stroke="#bac7d5" points="228.25,-124.25 228.25,-208.75 533.25,-208.75 533.25,-124.25 228.25,-124.25" />
     </g>
     <g id="edge1" class="edge">
       <title>uv_tool-&gt;project_env</title>
-      <path fill="none" stroke="#526780" stroke-width="1.5" d="M227.68,-261.58C251.06,-247.53 277.79,-231.47 302.36,-216.71" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="303.58,-219.24 309,-212.72 300.7,-214.44 303.58,-219.24" />
-      <text xml:space="preserve" text-anchor="middle" x="305.3" y="-228.2" font-family="Arial" font-size="14.00" fill="#14263c"> builds</text>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M239.24,-258.67C260.9,-244.72 285.63,-228.79 308.28,-214.19" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="309.74,-216.58 314.95,-209.89 306.71,-211.87 309.74,-216.58" />
+      <text xml:space="preserve" text-anchor="middle" x="311.78" y="-225.2" font-family="Arial" font-size="14.00" fill="#14263c"> builds</text>
     </g>
     <g id="node2" class="node">
       <title>venv_tool</title>
-      <polygon fill="#eaf3fe" stroke="none" points="314.25,-305.5 314.25,-339.5 525.25,-339.5 525.25,-305.5 314.25,-305.5" />
-      <polygon fill="none" stroke="#bac7d5" points="314.25,-305.5 314.25,-339.5 525.25,-339.5 525.25,-305.5 314.25,-305.5" />
-      <text xml:space="preserve" text-anchor="start" x="355.25" y="-318.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">pip + venv · stdlib</text>
-      <polygon fill="#f3f5f7" stroke="none" points="314.25,-262.5 314.25,-305.5 525.25,-305.5 525.25,-262.5 314.25,-262.5" />
-      <polygon fill="none" stroke="#bac7d5" points="314.25,-262.5 314.25,-305.5 525.25,-305.5 525.25,-262.5 314.25,-262.5" />
-      <text xml:space="preserve" text-anchor="start" x="323" y="-284.25" font-family="Arial" font-size="15.00" fill="#14263c">Resolves against current env</text>
-      <text xml:space="preserve" text-anchor="start" x="322.25" y="-272.1" font-family="Courier New" font-size="12.00" fill="#14263c">python -m pip install ... </text>
-      <polygon fill="none" stroke="#bac7d5" points="313.25,-261.5 313.25,-340.5 526.25,-340.5 526.25,-261.5 313.25,-261.5" />
+      <polygon fill="#eaf3fe" stroke="none" points="330.25,-302.5 330.25,-336.5 541.25,-336.5 541.25,-302.5 330.25,-302.5" />
+      <polygon fill="none" stroke="#bac7d5" points="330.25,-302.5 330.25,-336.5 541.25,-336.5 541.25,-302.5 330.25,-302.5" />
+      <text xml:space="preserve" text-anchor="start" x="371.25" y="-315.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">pip + venv · stdlib</text>
+      <polygon fill="#f3f5f7" stroke="none" points="330.25,-259.5 330.25,-302.5 541.25,-302.5 541.25,-259.5 330.25,-259.5" />
+      <polygon fill="none" stroke="#bac7d5" points="330.25,-259.5 330.25,-302.5 541.25,-302.5 541.25,-259.5 330.25,-259.5" />
+      <text xml:space="preserve" text-anchor="start" x="339" y="-281.25" font-family="Arial" font-size="15.00" fill="#14263c">Resolves against current env</text>
+      <text xml:space="preserve" text-anchor="start" x="338.25" y="-269.1" font-family="Courier New" font-size="12.00" fill="#14263c">python -m pip install ... </text>
+      <polygon fill="none" stroke="#bac7d5" points="329.25,-258.5 329.25,-337.5 542.25,-337.5 542.25,-258.5 329.25,-258.5" />
     </g>
     <g id="edge2" class="edge">
       <title>venv_tool-&gt;project_env</title>
-      <path fill="none" stroke="#526780" stroke-width="1.5" d="M408.66,-261.76C404.99,-249.12 400.85,-234.83 396.93,-221.32" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="399.67,-220.74 394.76,-213.84 394.3,-222.3 399.67,-220.74" />
-      <text xml:space="preserve" text-anchor="middle" x="421.39" y="-228.2" font-family="Arial" font-size="14.00" fill="#14263c"> builds</text>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M419.55,-258.85C414.09,-245.99 407.91,-231.45 402.12,-217.81" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="404.77,-216.9 399.07,-210.63 399.62,-219.09 404.77,-216.9" />
+      <text xml:space="preserve" text-anchor="middle" x="429.4" y="-225.2" font-family="Arial" font-size="14.00" fill="#14263c"> builds</text>
     </g>
     <g id="node3" class="node">
       <title>conda_tool</title>
-      <polygon fill="#eaf3fe" stroke="none" points="540,-305.5 540,-339.5 725.5,-339.5 725.5,-305.5 540,-305.5" />
-      <polygon fill="none" stroke="#bac7d5" points="540,-305.5 540,-339.5 725.5,-339.5 725.5,-305.5 540,-305.5" />
-      <text xml:space="preserve" text-anchor="start" x="548.38" y="-318.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">conda / mamba · binary</text>
-      <polygon fill="#f3f5f7" stroke="none" points="540,-262.5 540,-305.5 725.5,-305.5 725.5,-262.5 540,-262.5" />
-      <polygon fill="none" stroke="#bac7d5" points="540,-262.5 540,-305.5 725.5,-305.5 725.5,-262.5 540,-262.5" />
-      <text xml:space="preserve" text-anchor="start" x="548" y="-284.25" font-family="Arial" font-size="15.00" fill="#14263c">Solves Python + C/CUDA</text>
-      <text xml:space="preserve" text-anchor="start" x="554" y="-272.1" font-family="Courier New" font-size="12.00" fill="#14263c">CFITSIO · FFTW · MPI </text>
-      <polygon fill="none" stroke="#bac7d5" points="539,-261.5 539,-340.5 726.5,-340.5 726.5,-261.5 539,-261.5" />
+      <polygon fill="#eaf3fe" stroke="none" points="556,-302.5 556,-336.5 741.5,-336.5 741.5,-302.5 556,-302.5" />
+      <polygon fill="none" stroke="#bac7d5" points="556,-302.5 556,-336.5 741.5,-336.5 741.5,-302.5 556,-302.5" />
+      <text xml:space="preserve" text-anchor="start" x="564.38" y="-315.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">conda / mamba · binary</text>
+      <polygon fill="#f3f5f7" stroke="none" points="556,-259.5 556,-302.5 741.5,-302.5 741.5,-259.5 556,-259.5" />
+      <polygon fill="none" stroke="#bac7d5" points="556,-259.5 556,-302.5 741.5,-302.5 741.5,-259.5 556,-259.5" />
+      <text xml:space="preserve" text-anchor="start" x="564" y="-281.25" font-family="Arial" font-size="15.00" fill="#14263c">Solves Python + C/CUDA</text>
+      <text xml:space="preserve" text-anchor="start" x="570" y="-269.1" font-family="Courier New" font-size="12.00" fill="#14263c">CFITSIO · FFTW · MPI </text>
+      <polygon fill="none" stroke="#bac7d5" points="555,-258.5 555,-337.5 742.5,-337.5 742.5,-258.5 555,-258.5" />
     </g>
     <g id="edge3" class="edge">
       <title>conda_tool-&gt;project_env</title>
-      <path fill="none" stroke="#526780" stroke-width="1.5" d="M559.14,-261.58C531.87,-247.35 500.64,-231.05 472.05,-216.13" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="473.68,-213.82 465.29,-212.6 471.08,-218.78 473.68,-213.82" />
-      <text xml:space="preserve" text-anchor="middle" x="534.28" y="-228.2" font-family="Arial" font-size="14.00" fill="#14263c"> builds</text>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M573.24,-258.58C564.99,-254.47 556.7,-250.38 548.75,-246.5 526.12,-235.47 501.65,-223.81 478.58,-212.94" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="479.95,-210.49 471.52,-209.62 477.57,-215.56 479.95,-210.49" />
+      <text xml:space="preserve" text-anchor="middle" x="550.13" y="-225.2" font-family="Arial" font-size="14.00" fill="#14263c"> builds</text>
     </g>
     <g id="node5" class="node">
       <title>unactivated_cmd</title>
-      <polygon fill="#fff2d6" stroke="none" points="538.5,-173 538.5,-209 759,-209 759,-173 538.5,-173" />
-      <polygon fill="none" stroke="#d8a8a8" points="538.5,-173 538.5,-209 759,-209 759,-173 538.5,-173" />
-      <text xml:space="preserve" text-anchor="start" x="554.62" y="-186.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Unactivated shell (#1 trap)</text>
-      <polygon fill="#ffffff" stroke="none" points="538.5,-127 538.5,-173 759,-173 759,-127 538.5,-127" />
-      <polygon fill="none" stroke="#d8a8a8" points="538.5,-127 538.5,-173 759,-173 759,-127 538.5,-127" />
-      <text xml:space="preserve" text-anchor="start" x="547.5" y="-152.65" font-family="Courier New" font-size="13.00" fill="#14263c"> pip install ... | pytest  </text>
-      <text xml:space="preserve" text-anchor="start" x="553.5" y="-137.75" font-family="Arial" font-size="15.00" fill="#14263c">Bare command in fresh shell</text>
-      <polygon fill="none" stroke="#d8a8a8" points="537.5,-126 537.5,-210 760,-210 760,-126 537.5,-126" />
+      <polygon fill="#fff2d6" stroke="none" points="547.5,-171.5 547.5,-207.5 768,-207.5 768,-171.5 547.5,-171.5" />
+      <polygon fill="none" stroke="#d8a8a8" points="547.5,-171.5 547.5,-207.5 768,-207.5 768,-171.5 547.5,-171.5" />
+      <text xml:space="preserve" text-anchor="start" x="563.62" y="-185.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Unactivated shell (#1 trap)</text>
+      <polygon fill="#ffffff" stroke="none" points="547.5,-125.5 547.5,-171.5 768,-171.5 768,-125.5 547.5,-125.5" />
+      <polygon fill="none" stroke="#d8a8a8" points="547.5,-125.5 547.5,-171.5 768,-171.5 768,-125.5 547.5,-125.5" />
+      <text xml:space="preserve" text-anchor="start" x="556.5" y="-151.15" font-family="Courier New" font-size="13.00" fill="#14263c"> pip install ... | pytest  </text>
+      <text xml:space="preserve" text-anchor="start" x="562.5" y="-136.25" font-family="Arial" font-size="15.00" fill="#14263c">Bare command in fresh shell</text>
+      <polygon fill="none" stroke="#d8a8a8" points="546.5,-124.5 546.5,-208.5 769,-208.5 769,-124.5 546.5,-124.5" />
     </g>
     <g id="node6" class="node">
       <title>kernel_ok</title>
@@ -97,9 +97,9 @@
     </g>
     <g id="edge5" class="edge">
       <title>project_env-&gt;kernel_ok</title>
-      <path fill="none" stroke="#2f6f5e" stroke-width="1.5" d="M292,-124.25C264.74,-111.27 234.79,-97 207.53,-84.01" />
-      <polygon fill="#2f6f5e" stroke="#2f6f5e" stroke-width="1.5" points="208.87,-81.55 200.44,-80.64 206.46,-86.61 208.87,-81.55" />
-      <text xml:space="preserve" text-anchor="middle" x="286.54" y="-96.95" font-family="Arial" font-size="14.00" fill="#14263c"> ipykernel</text>
+      <path fill="none" stroke="#2f6f5e" stroke-width="1.5" d="M293.54,-124.3C266.13,-111.35 235.82,-97.03 208.2,-83.98" />
+      <polygon fill="#2f6f5e" stroke="#2f6f5e" stroke-width="1.5" points="209.42,-81.46 200.99,-80.58 207.03,-86.53 209.42,-81.46" />
+      <text xml:space="preserve" text-anchor="middle" x="286.01" y="-96.95" font-family="Arial" font-size="14.00" fill="#14263c"> ipykernel</text>
     </g>
     <g id="node7" class="node">
       <title>term_ok</title>
@@ -114,26 +114,26 @@
     </g>
     <g id="edge6" class="edge">
       <title>project_env-&gt;term_ok</title>
-      <path fill="none" stroke="#2f6f5e" stroke-width="1.5" d="M381.75,-124.43C381.75,-113.52 381.75,-101.69 381.75,-90.48" />
-      <polygon fill="#2f6f5e" stroke="#2f6f5e" stroke-width="1.5" points="384.55,-90.66 381.75,-82.66 378.95,-90.66 384.55,-90.66" />
-      <text xml:space="preserve" text-anchor="middle" x="431.25" y="-96.95" font-family="Arial" font-size="14.00" fill="#14263c"> activate / uv run</text>
+      <path fill="none" stroke="#2f6f5e" stroke-width="1.5" d="M381.08,-124.47C381.17,-113.54 381.26,-101.62 381.36,-90.3" />
+      <polygon fill="#2f6f5e" stroke="#2f6f5e" stroke-width="1.5" points="384.15,-90.42 381.42,-82.4 378.55,-90.38 384.15,-90.42" />
+      <text xml:space="preserve" text-anchor="middle" x="430.81" y="-96.95" font-family="Arial" font-size="14.00" fill="#14263c"> activate / uv run</text>
     </g>
     <g id="node8" class="node">
       <title>trap_bad</title>
-      <polygon fill="#fbeded" stroke="none" points="528.75,-45.5 528.75,-79.5 784.75,-79.5 784.75,-45.5 528.75,-45.5" />
-      <polygon fill="none" stroke="#d8a8a8" points="528.75,-45.5 528.75,-79.5 784.75,-79.5 784.75,-45.5 528.75,-45.5" />
-      <text xml:space="preserve" text-anchor="start" x="590.38" y="-58.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Wrong interpreter!</text>
-      <polygon fill="#fbeded" stroke="none" points="528.75,-1 528.75,-45.5 784.75,-45.5 784.75,-1 528.75,-1" />
-      <polygon fill="none" stroke="#d8a8a8" points="528.75,-1 528.75,-45.5 784.75,-45.5 784.75,-1 528.75,-1" />
-      <text xml:space="preserve" text-anchor="start" x="536.75" y="-26.1" font-family="Courier New" font-size="12.00" fill="#14263c">/usr/bin/python3 | conda (base) </text>
-      <text xml:space="preserve" text-anchor="start" x="581.75" y="-11.85" font-family="Courier New" font-size="12.00" fill="#14263c">ModuleNotFoundError </text>
-      <polygon fill="none" stroke="#d8a8a8" points="527.75,0 527.75,-80.5 785.75,-80.5 785.75,0 527.75,0" />
+      <polygon fill="#fbeded" stroke="none" points="529.75,-45.5 529.75,-79.5 785.75,-79.5 785.75,-45.5 529.75,-45.5" />
+      <polygon fill="none" stroke="#d8a8a8" points="529.75,-45.5 529.75,-79.5 785.75,-79.5 785.75,-45.5 529.75,-45.5" />
+      <text xml:space="preserve" text-anchor="start" x="591.38" y="-58.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Wrong interpreter!</text>
+      <polygon fill="#fbeded" stroke="none" points="529.75,-1 529.75,-45.5 785.75,-45.5 785.75,-1 529.75,-1" />
+      <polygon fill="none" stroke="#d8a8a8" points="529.75,-1 529.75,-45.5 785.75,-45.5 785.75,-1 529.75,-1" />
+      <text xml:space="preserve" text-anchor="start" x="537.75" y="-26.1" font-family="Courier New" font-size="12.00" fill="#14263c">/usr/bin/python3 | conda (base) </text>
+      <text xml:space="preserve" text-anchor="start" x="582.75" y="-11.85" font-family="Courier New" font-size="12.00" fill="#14263c">ModuleNotFoundError </text>
+      <polygon fill="none" stroke="#d8a8a8" points="528.75,0 528.75,-80.5 786.75,-80.5 786.75,0 528.75,0" />
     </g>
     <g id="edge7" class="edge">
       <title>unactivated_cmd-&gt;trap_bad</title>
-      <path fill="none" stroke="#a63a3a" stroke-width="1.8" stroke-dasharray="5,2" d="M651.35,-126.17C652.07,-114.86 652.86,-102.46 653.6,-90.72" />
-      <polygon fill="#a63a3a" stroke="#a63a3a" stroke-width="1.8" points="656.39,-91.04 654.1,-82.88 650.8,-90.69 656.39,-91.04" />
-      <text xml:space="preserve" text-anchor="middle" x="696.35" y="-96.95" font-family="Arial" font-size="14.00" fill="#14263c"> bypasses env</text>
+      <path fill="none" stroke="#a63a3a" stroke-width="1.8" stroke-dasharray="5,2" d="M657.75,-124.82C657.75,-113.98 657.75,-102.16 657.75,-90.9" />
+      <polygon fill="#a63a3a" stroke="#a63a3a" stroke-width="1.8" points="660.55,-91.06 657.75,-83.06 654.95,-91.06 660.55,-91.06" />
+      <text xml:space="preserve" text-anchor="middle" x="700.88" y="-96.95" font-family="Arial" font-size="14.00" fill="#14263c"> bypasses env</text>
     </g>
   </g>
 </svg>

@@ -1,96 +1,97 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="549" viewBox="0.00 0.00 734.00 560.00" role="img" aria-labelledby="agent-architecture-title agent-architecture-desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="501" viewBox="0.00 0.00 753.00 524.00" role="img" aria-labelledby="agent-architecture-title agent-architecture-desc">
   <title id="agent-architecture-title">Locate the client, model and tool execution</title>
-  <desc id="agent-architecture-desc">In a laptop Cline session, Qwen inference runs on CPD, while permission-controlled file and terminal tools run with the client. An OS shell sandbox is a separate boundary only in tools that provide one.</desc>
-  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(12.96 546.83)">
+  <desc id="agent-architecture-desc">On your workstation (for example VS Code or a terminal), the agent client (Claude Code, Codex or Cline) mediates permission-controlled file and terminal tools against local workspace files, while an LLM endpoint (cloud API or local server) only receives context and proposes next steps. An OS shell sandbox is a separate boundary only in tools that provide one.</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(11.52 512.62)">
     <title>agent_architecture</title>
-    <polygon fill="white" stroke="none" points="-12.96,12.96 -12.96,-546.83 720.96,-546.83 720.96,12.96 -12.96,12.96" />
+    <polygon fill="white" stroke="none" points="-11.52,11.52 -11.52,-512.62 741.52,-512.62 741.52,11.52 -11.52,11.52" />
     <g id="clust1" class="cluster">
       <title>cluster_client</title>
-      <path fill="white" stroke="#bac7d5" d="M20,-8C20,-8 458,-8 458,-8 464,-8 470,-14 470,-20 470,-20 470,-513.87 470,-513.87 470,-519.87 464,-525.87 458,-525.87 458,-525.87 20,-525.87 20,-525.87 14,-525.87 8,-519.87 8,-513.87 8,-513.87 8,-20 8,-20 8,-14 14,-8 20,-8" />
-      <text xml:space="preserve" text-anchor="middle" x="239" y="-502.87" font-family="Arial" font-size="20.00" fill="#14263c">Example: Cline + VS Code on your laptop</text>
+      <path fill="white" stroke="#bac7d5" d="M20,-8C20,-8 403,-8 403,-8 409,-8 415,-14 415,-20 415,-20 415,-459.35 415,-459.35 415,-465.35 409,-471.35 403,-471.35 403,-471.35 20,-471.35 20,-471.35 14,-471.35 8,-465.35 8,-459.35 8,-459.35 8,-20 8,-20 8,-14 14,-8 20,-8" />
+      <text xml:space="preserve" text-anchor="middle" x="211.5" y="-449.3" font-family="Arial" font-size="19.00" fill="#14263c">Your workstation (e.g. VS Code / terminal)</text>
     </g>
     <g id="clust2" class="cluster">
       <title>cluster_shell</title>
-      <path fill="white" stroke="#71849a" stroke-dasharray="5,2" d="M216,-130.03C216,-130.03 438,-130.03 438,-130.03 444,-130.03 450,-136.03 450,-142.03 450,-142.03 450,-256.31 450,-256.31 450,-262.31 444,-268.31 438,-268.31 438,-268.31 216,-268.31 216,-268.31 210,-268.31 204,-262.31 204,-256.31 204,-256.31 204,-142.03 204,-142.03 204,-136.03 210,-130.03 216,-130.03" />
-      <text xml:space="preserve" text-anchor="middle" x="327" y="-248.16" font-family="Arial" font-size="17.00" fill="#14263c">OS shell sandbox</text>
-      <text xml:space="preserve" text-anchor="middle" x="327" y="-228.66" font-family="Arial" font-size="17.00" fill="#14263c">(only in tools that provide one)</text>
+      <path fill="white" stroke="#71849a" stroke-dasharray="5,2" d="M194,-116.9C194,-116.9 387,-116.9 387,-116.9 393,-116.9 399,-122.9 399,-128.9 399,-128.9 399,-228.8 399,-228.8 399,-234.8 393,-240.8 387,-240.8 387,-240.8 194,-240.8 194,-240.8 188,-240.8 182,-234.8 182,-228.8 182,-228.8 182,-128.9 182,-128.9 182,-122.9 188,-116.9 194,-116.9" />
+      <text xml:space="preserve" text-anchor="middle" x="290.5" y="-222.55" font-family="Arial" font-size="15.00" fill="#14263c">OS shell sandbox</text>
+      <text xml:space="preserve" text-anchor="middle" x="290.5" y="-204.55" font-family="Arial" font-size="15.00" fill="#14263c">(only in tools that provide one)</text>
     </g>
     <g id="clust4" class="cluster">
-      <title>cluster_cpd</title>
-      <path fill="white" stroke="#bac7d5" d="M490,-395.34C490,-395.34 688,-395.34 688,-395.34 694,-395.34 700,-401.34 700,-407.34 700,-407.34 700,-513.87 700,-513.87 700,-519.87 694,-525.87 688,-525.87 688,-525.87 490,-525.87 490,-525.87 484,-525.87 478,-519.87 478,-513.87 478,-513.87 478,-407.34 478,-407.34 478,-401.34 484,-395.34 490,-395.34" />
-      <text xml:space="preserve" text-anchor="middle" x="589" y="-502.87" font-family="Arial" font-size="20.00" fill="#14263c">CPD: model inference</text>
+      <title>cluster_model</title>
+      <path fill="white" stroke="#bac7d5" d="M501,-357.7C501,-357.7 710,-357.7 710,-357.7 716,-357.7 722,-363.7 722,-369.7 722,-369.7 722,-481.1 722,-481.1 722,-487.1 716,-493.1 710,-493.1 710,-493.1 501,-493.1 501,-493.1 495,-493.1 489,-487.1 489,-481.1 489,-481.1 489,-369.7 489,-369.7 489,-363.7 495,-357.7 501,-357.7" />
+      <text xml:space="preserve" text-anchor="middle" x="605.5" y="-471.05" font-family="Arial" font-size="19.00" fill="#14263c">Model inference</text>
+      <text xml:space="preserve" text-anchor="middle" x="605.5" y="-449.3" font-family="Arial" font-size="19.00" fill="#14263c">(cloud API or local server)</text>
     </g>
     <g id="node1" class="node">
       <title>client</title>
-      <path fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" d="M242.02,-474.62C242.02,-474.62 149.98,-474.62 149.98,-474.62 143.98,-474.62 137.98,-468.62 137.98,-462.62 137.98,-462.62 137.98,-427.34 137.98,-427.34 137.98,-421.34 143.98,-415.34 149.98,-415.34 149.98,-415.34 242.02,-415.34 242.02,-415.34 248.02,-415.34 254.02,-421.34 254.02,-427.34 254.02,-427.34 254.02,-462.62 254.02,-462.62 254.02,-468.62 248.02,-474.62 242.02,-474.62" />
-      <text xml:space="preserve" text-anchor="middle" x="196" y="-448.88" font-family="Arial" font-size="18.00" fill="#14263c">Agent client</text>
-      <text xml:space="preserve" text-anchor="middle" x="196" y="-427.88" font-family="Arial" font-size="18.00" fill="#14263c">Cline</text>
+      <path fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" d="M336.33,-425.6C336.33,-425.6 125.67,-425.6 125.67,-425.6 119.67,-425.6 113.67,-419.6 113.67,-413.6 113.67,-413.6 113.67,-385.7 113.67,-385.7 113.67,-379.7 119.67,-373.7 125.67,-373.7 125.67,-373.7 336.33,-373.7 336.33,-373.7 342.33,-373.7 348.33,-379.7 348.33,-385.7 348.33,-385.7 348.33,-413.6 348.33,-413.6 348.33,-419.6 342.33,-425.6 336.33,-425.6" />
+      <text xml:space="preserve" text-anchor="middle" x="231" y="-403.2" font-family="Arial" font-size="16.00" fill="#14263c">Agent client</text>
+      <text xml:space="preserve" text-anchor="middle" x="231" y="-384.45" font-family="Arial" font-size="16.00" fill="#14263c">(Claude Code / Codex / Cline)</text>
     </g>
     <g id="node2" class="node">
       <title>permission</title>
-      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M277.27,-352.59C277.27,-352.59 114.73,-352.59 114.73,-352.59 108.73,-352.59 102.73,-346.59 102.73,-340.59 102.73,-340.59 102.73,-305.31 102.73,-305.31 102.73,-299.31 108.73,-293.31 114.73,-293.31 114.73,-293.31 277.27,-293.31 277.27,-293.31 283.27,-293.31 289.27,-299.31 289.27,-305.31 289.27,-305.31 289.27,-340.59 289.27,-340.59 289.27,-346.59 283.27,-352.59 277.27,-352.59" />
-      <text xml:space="preserve" text-anchor="middle" x="196" y="-326.85" font-family="Arial" font-size="18.00" fill="#14263c">Client permissions</text>
-      <text xml:space="preserve" text-anchor="middle" x="196" y="-305.85" font-family="Arial" font-size="18.00" fill="#14263c">and action approvals</text>
+      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M304.08,-316.7C304.08,-316.7 157.92,-316.7 157.92,-316.7 151.92,-316.7 145.92,-310.7 145.92,-304.7 145.92,-304.7 145.92,-276.8 145.92,-276.8 145.92,-270.8 151.92,-264.8 157.92,-264.8 157.92,-264.8 304.08,-264.8 304.08,-264.8 310.08,-264.8 316.08,-270.8 316.08,-276.8 316.08,-276.8 316.08,-304.7 316.08,-304.7 316.08,-310.7 310.08,-316.7 304.08,-316.7" />
+      <text xml:space="preserve" text-anchor="middle" x="231" y="-294.3" font-family="Arial" font-size="16.00" fill="#14263c">Client permissions</text>
+      <text xml:space="preserve" text-anchor="middle" x="231" y="-275.55" font-family="Arial" font-size="16.00" fill="#14263c">and action approvals</text>
     </g>
     <g id="edge1" class="edge">
       <title>client-&gt;permission</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" d="M196,-414.62C196,-399.1 196,-379.84 196,-363.07" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="198.8,-363.43 196,-355.43 193.2,-363.43 198.8,-363.43" />
-      <text xml:space="preserve" text-anchor="middle" x="256" y="-372.14" font-family="Arial" font-size="16.00" fill="#14263c">requested action</text>
+      <path fill="none" stroke="#526780" stroke-width="1.6" d="M231,-373.04C231,-359.43 231,-342.46 231,-327.56" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="233.8,-327.57 231,-319.57 228.2,-327.57 233.8,-327.57" />
+      <text xml:space="preserve" text-anchor="middle" x="288.75" y="-335.45" font-family="Arial" font-size="15.00" fill="#14263c"> requested action</text>
     </g>
     <g id="node6" class="node">
       <title>model</title>
-      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M668.39,-474.62C668.39,-474.62 509.61,-474.62 509.61,-474.62 503.61,-474.62 497.61,-468.62 497.61,-462.62 497.61,-462.62 497.61,-427.34 497.61,-427.34 497.61,-421.34 503.61,-415.34 509.61,-415.34 509.61,-415.34 668.39,-415.34 668.39,-415.34 674.39,-415.34 680.39,-421.34 680.39,-427.34 680.39,-427.34 680.39,-462.62 680.39,-462.62 680.39,-468.62 674.39,-474.62 668.39,-474.62" />
-      <text xml:space="preserve" text-anchor="middle" x="589" y="-448.88" font-family="Arial" font-size="18.00" fill="#14263c">Qwen 3.8 27B</text>
-      <text xml:space="preserve" text-anchor="middle" x="589" y="-427.88" font-family="Arial" font-size="18.00" fill="#14263c">proposes next steps</text>
+      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M675.83,-425.6C675.83,-425.6 534.17,-425.6 534.17,-425.6 528.17,-425.6 522.17,-419.6 522.17,-413.6 522.17,-413.6 522.17,-385.7 522.17,-385.7 522.17,-379.7 528.17,-373.7 534.17,-373.7 534.17,-373.7 675.83,-373.7 675.83,-373.7 681.83,-373.7 687.83,-379.7 687.83,-385.7 687.83,-385.7 687.83,-413.6 687.83,-413.6 687.83,-419.6 681.83,-425.6 675.83,-425.6" />
+      <text xml:space="preserve" text-anchor="middle" x="605" y="-403.2" font-family="Arial" font-size="16.00" fill="#14263c">LLM endpoint</text>
+      <text xml:space="preserve" text-anchor="middle" x="605" y="-384.45" font-family="Arial" font-size="16.00" fill="#14263c">proposes next steps</text>
     </g>
     <g id="edge6" class="edge">
       <title>client-&gt;model</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" d="M264.46,-444.98C325.88,-444.98 416.85,-444.98 486.86,-444.98" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="264.83,-442.18 256.83,-444.98 264.83,-447.78 264.83,-442.18" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="486.61,-447.78 494.61,-444.98 486.61,-442.18 486.61,-447.78" />
-      <text xml:space="preserve" text-anchor="middle" x="375.81" y="-470.28" font-family="Arial" font-size="16.00" fill="#14263c">context + results out</text>
-      <text xml:space="preserve" text-anchor="middle" x="375.81" y="-451.53" font-family="Arial" font-size="16.00" fill="#14263c">proposals back</text>
+      <path fill="none" stroke="#526780" stroke-width="1.6" d="M359.37,-399.65C409.29,-399.65 465.41,-399.65 511.4,-399.65" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="359.5,-396.85 351.5,-399.65 359.5,-402.45 359.5,-396.85" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="511.23,-402.45 519.23,-399.65 511.23,-396.85 511.23,-402.45" />
+      <text xml:space="preserve" text-anchor="middle" x="435.25" y="-424.4" font-family="Arial" font-size="15.00" fill="#14263c">  context + results out  </text>
+      <text xml:space="preserve" text-anchor="middle" x="435.25" y="-406.4" font-family="Arial" font-size="15.00" fill="#14263c">  proposals back  </text>
     </g>
     <g id="node3" class="node">
       <title>filetool</title>
-      <path fill="#f3f5f7" stroke="#bac7d5" stroke-width="1.5" d="M175.77,-194.81C175.77,-194.81 40.23,-194.81 40.23,-194.81 34.23,-194.81 28.23,-188.81 28.23,-182.81 28.23,-182.81 28.23,-168.53 28.23,-168.53 28.23,-162.53 34.23,-156.53 40.23,-156.53 40.23,-156.53 175.77,-156.53 175.77,-156.53 181.77,-156.53 187.77,-162.53 187.77,-168.53 187.77,-168.53 187.77,-182.81 187.77,-182.81 187.77,-188.81 181.77,-194.81 175.77,-194.81" />
-      <text xml:space="preserve" text-anchor="middle" x="108" y="-169.07" font-family="Arial" font-size="18.00" fill="#14263c">File read/edit tool</text>
+      <path fill="#f3f5f7" stroke="#bac7d5" stroke-width="1.5" d="M156.33,-174.85C156.33,-174.85 35.67,-174.85 35.67,-174.85 29.67,-174.85 23.67,-168.85 23.67,-162.85 23.67,-162.85 23.67,-150.85 23.67,-150.85 23.67,-144.85 29.67,-138.85 35.67,-138.85 35.67,-138.85 156.33,-138.85 156.33,-138.85 162.33,-138.85 168.33,-144.85 168.33,-150.85 168.33,-150.85 168.33,-162.85 168.33,-162.85 168.33,-168.85 162.33,-174.85 156.33,-174.85" />
+      <text xml:space="preserve" text-anchor="middle" x="96" y="-151.03" font-family="Arial" font-size="16.00" fill="#14263c">File read/edit tool</text>
     </g>
     <g id="edge2" class="edge">
       <title>permission-&gt;filetool</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" d="M178.4,-292.9C162.77,-267.09 140.08,-229.62 124.71,-204.26" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="127.21,-202.97 120.67,-197.58 122.42,-205.87 127.21,-202.97" />
+      <path fill="none" stroke="#526780" stroke-width="1.6" d="M202.72,-264.07C194.66,-256.64 185.93,-248.46 178,-240.8 158.18,-221.64 136.25,-199.4 120.06,-182.77" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="122.32,-181.08 114.74,-177.29 118.3,-184.98 122.32,-181.08" />
     </g>
     <g id="node5" class="node">
       <title>terminal</title>
-      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" d="M393.89,-205.31C393.89,-205.31 232.11,-205.31 232.11,-205.31 226.11,-205.31 220.11,-199.31 220.11,-193.31 220.11,-193.31 220.11,-158.03 220.11,-158.03 220.11,-152.03 226.11,-146.03 232.11,-146.03 232.11,-146.03 393.89,-146.03 393.89,-146.03 399.89,-146.03 405.89,-152.03 405.89,-158.03 405.89,-158.03 405.89,-193.31 405.89,-193.31 405.89,-199.31 399.89,-205.31 393.89,-205.31" />
-      <text xml:space="preserve" text-anchor="middle" x="313" y="-179.57" font-family="Arial" font-size="18.00" fill="#14263c">Terminal subprocess</text>
-      <text xml:space="preserve" text-anchor="middle" x="313" y="-158.57" font-family="Arial" font-size="18.00" fill="#14263c">python -m pytest -q</text>
+      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" d="M353.7,-182.8C353.7,-182.8 208.3,-182.8 208.3,-182.8 202.3,-182.8 196.3,-176.8 196.3,-170.8 196.3,-170.8 196.3,-142.9 196.3,-142.9 196.3,-136.9 202.3,-130.9 208.3,-130.9 208.3,-130.9 353.7,-130.9 353.7,-130.9 359.7,-130.9 365.7,-136.9 365.7,-142.9 365.7,-142.9 365.7,-170.8 365.7,-170.8 365.7,-176.8 359.7,-182.8 353.7,-182.8" />
+      <text xml:space="preserve" text-anchor="middle" x="281" y="-160.4" font-family="Arial" font-size="16.00" fill="#14263c">Terminal subprocess</text>
+      <text xml:space="preserve" text-anchor="middle" x="281" y="-141.65" font-family="Arial" font-size="16.00" fill="#14263c">python -m pytest -q</text>
     </g>
     <g id="edge3" class="edge">
       <title>permission-&gt;terminal</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" d="M219.4,-292.9C223.51,-287.8 227.98,-282.24 232.68,-276.41" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="234.85,-278.18 237.68,-270.19 230.48,-274.67 234.85,-278.18" />
+      <path fill="none" stroke="#526780" stroke-width="1.6" d="M240.64,-264.32C242.27,-260.03 244.03,-255.37 245.89,-250.47" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="248.48,-251.54 248.7,-243.06 243.24,-249.55 248.48,-251.54" />
     </g>
     <g id="node4" class="node">
       <title>files</title>
-      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M301.39,-87.28C301.39,-87.28 94.61,-87.28 94.61,-87.28 88.61,-87.28 82.61,-81.28 82.61,-75.28 82.61,-75.28 82.61,-40 82.61,-40 82.61,-34 88.61,-28 94.61,-28 94.61,-28 301.39,-28 301.39,-28 307.39,-28 313.39,-34 313.39,-40 313.39,-40 313.39,-75.28 313.39,-75.28 313.39,-81.28 307.39,-87.28 301.39,-87.28" />
-      <text xml:space="preserve" text-anchor="middle" x="198" y="-61.54" font-family="Arial" font-size="18.00" fill="#14263c">Your workspace files</text>
-      <text xml:space="preserve" text-anchor="middle" x="198" y="-40.54" font-family="Arial" font-size="18.00" fill="#14263c">weighted_mean.py + tests</text>
+      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M268.2,-75.9C268.2,-75.9 83.8,-75.9 83.8,-75.9 77.8,-75.9 71.8,-69.9 71.8,-63.9 71.8,-63.9 71.8,-36 71.8,-36 71.8,-30 77.8,-24 83.8,-24 83.8,-24 268.2,-24 268.2,-24 274.2,-24 280.2,-30 280.2,-36 280.2,-36 280.2,-63.9 280.2,-63.9 280.2,-69.9 274.2,-75.9 268.2,-75.9" />
+      <text xml:space="preserve" text-anchor="middle" x="176" y="-53.5" font-family="Arial" font-size="16.00" fill="#14263c">Your workspace files</text>
+      <text xml:space="preserve" text-anchor="middle" x="176" y="-34.75" font-family="Arial" font-size="16.00" fill="#14263c">weighted_mean.py + tests</text>
     </g>
     <g id="edge4" class="edge">
       <title>filetool-&gt;files</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" d="M122.46,-156.03C135.04,-139.81 153.64,-115.83 169.24,-95.72" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="171.32,-97.61 174.01,-89.57 166.89,-94.18 171.32,-97.61" />
-      <text xml:space="preserve" text-anchor="middle" x="197.06" y="-106.83" font-family="Arial" font-size="16.00" fill="#14263c">read / edit</text>
+      <path fill="none" stroke="#526780" stroke-width="1.6" d="M109.25,-138.16C119.07,-125.07 132.81,-106.83 145,-90.9 146.7,-88.68 148.46,-86.39 150.23,-84.09" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="152.11,-86.23 154.79,-78.19 147.68,-82.81 152.11,-86.23" />
+      <text xml:space="preserve" text-anchor="middle" x="181" y="-94.65" font-family="Arial" font-size="15.00" fill="#14263c"> read / edit</text>
     </g>
     <g id="edge5" class="edge">
       <title>terminal-&gt;files</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" d="M283.98,-145.39C268.86,-130.14 250.23,-111.34 234.18,-95.14" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="236.34,-93.34 228.71,-89.63 232.36,-97.28 236.34,-93.34" />
-      <text xml:space="preserve" text-anchor="middle" x="333.2" y="-106.83" font-family="Arial" font-size="16.00" fill="#14263c">permitted file access</text>
+      <path fill="none" stroke="#526780" stroke-width="1.6" d="M256.2,-130.44C244.38,-118.4 230.02,-103.85 217,-90.9 214.45,-88.37 211.81,-85.76 209.15,-83.14" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="211.51,-81.53 203.83,-77.93 207.59,-85.53 211.51,-81.53" />
+      <text xml:space="preserve" text-anchor="middle" x="305.57" y="-94.65" font-family="Arial" font-size="15.00" fill="#14263c"> permitted file access</text>
     </g>
   </g>
 </svg>

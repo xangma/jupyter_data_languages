@@ -947,7 +947,7 @@
   },
   {
     "name": "cline-editor-plan",
-    "title": "Review a CPD Qwen repair plan in Cline before switching to Act",
+    "title": "Review an OpenAI-compatible Qwen repair plan in Cline before switching to Act",
     "callouts": [
       {
         "label": "Plan is selected and Auto-approve is None; review before switching to Act",

@@ -232,3 +232,10 @@ coverage of dependency solving:
   and TOC, and stripped inline workshop-pacing, break and partner/manual-pair cues
   across all sessions and reference pages so every page reads as self-contained
   material.
+- **Cluster-independent general tutorial**: Removed CPD-specific setup, paths and
+  model references across `book/` and `README.md`, restructured `setup.md` around
+  reproducible local `uv` and standard `venv`/`conda` workflows, generalised
+  Session 2's JupyterLab tabs to `JupyterLab`, and replaced CPD-bound Session 3
+  tabs with general `Claude Code`, `Codex`, and `Cline` (any OpenAI-compatible or
+  local Ollama/`llama.cpp` model) routes while keeping optional JupyterHub build
+  and deployment scripts intact.

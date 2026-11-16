@@ -45,7 +45,7 @@ digraph python_environments {
   project_env [label=<
     <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#BAC7D5">
       <TR><TD BGCOLOR="#F0EBFA"><B>Isolated project environment</B></TD></TR>
-      <TR><TD BGCOLOR="#FFFFFF"><FONT FACE="Courier New" POINT-SIZE="13">&#160;.venv (uv / venv) or conda env&#160;&#160;</FONT><BR/><FONT FACE="Courier New" POINT-SIZE="13">&#160;/opt/course/.venv on CPD&#160;&#160;</FONT></TD></TR>
+      <TR><TD BGCOLOR="#FFFFFF"><FONT FACE="Courier New" POINT-SIZE="12.5">.venv/bin/python (uv / venv)&#160;</FONT><BR/><FONT FACE="Courier New" POINT-SIZE="12.5">.../envs/&lt;project&gt;/bin/python (conda)&#160;</FONT></TD></TR>
     </TABLE>
   >];
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2316" height="1466" viewBox="84 76 2316 1466" overflow="hidden" role="img" aria-labelledby="title desc">
 <title id="title">Review the Cline repair diff and explicitly captured pytest exit status</title>
-<desc id="desc">1: Inspect the weighted_mean.py working-tree diff before accepting the repair. 2: Check inverse-variance weights and the scalar weighted-sum return formula. 3: Read the captured run: 12 passed and explicitly printed PYTEST_EXIT=0; verify status when a tool banner disagrees. 4: Check the CPD Qwen model selector used for this Cline review.</desc>
+<desc id="desc">1: Inspect the weighted_mean.py working-tree diff before accepting the repair. 2: Check inverse-variance weights and the scalar weighted-sum return formula. 3: Read the captured run: 12 passed and explicitly printed PYTEST_EXIT=0; verify status when a tool banner disagrees. 4: Check the configured model selector used for this Cline review.</desc>
 <!-- Original JPEG SHA-256: 99ef817dda76c29033dfa9d437b5d2fbee36b1dfa084cc475b7541c50c46cae6 -->
 <defs><clipPath id="crop-box"><rect x="84" y="76" width="2316" height="1466"/></clipPath></defs>
 <g clip-path="url(#crop-box)">
@@ -27,7 +27,7 @@
 <circle cx="565" cy="822" r="32" fill="#075985" stroke="white" stroke-width="4"/>
 <text x="565" y="835" fill="white">3</text>
 </g>
-<g id="callout-4" aria-label="Check the CPD Qwen model selector used for this Cline review">
+<g id="callout-4" aria-label="Check the configured model selector used for this Cline review">
 <path d="M660,1385 L580,1478" stroke="white" stroke-width="11"/>
 <path d="M660,1385 L580,1478" stroke="#075985" stroke-width="5"/>
 <circle cx="580" cy="1478" r="6" fill="#075985" stroke="white" stroke-width="2"/>
