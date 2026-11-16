@@ -2,6 +2,7 @@ version: 1
 project:
   id: icg-phd-python-2026
   title: Python for ICG Research
+  short_title: Course overview
   description: Three practical sessions on scientific Python, reproducible code, Git and coding agents.
   github: xangma/jupyter_data_languages
   license: MIT
@@ -52,6 +53,7 @@ project:
     Malmquist bias: "A selection bias where a brightness cut preferentially retains intrinsically brighter-than-average sources at large distances when distances or luminosities have scatter."
   toc:
     - file: book/index.md
+      title: Course overview
     - file: book/setup.md
     - file: _executed/00-primer.ipynb
     - file: _executed/01-catalogue.ipynb
@@ -64,9 +66,9 @@ project:
 site:
   # Book theme v1.4.1: keep the tested CPD/Thebe integration on an immutable build.
   template: https://github.com/myst-templates/book-theme/archive/23f2df5493e23dfb1d9433c8aa64c87beb4232a3.zip
-  title: Python PhD Lectures
+  title: Python for ICG Research
   options:
-    logo_text: Python PhD Lectures
+    logo_text: Python for ICG Research
   actions:
     - title: JupyterHub
       url: /jupyterhub/services/phd-python-thebe/bootstrap
