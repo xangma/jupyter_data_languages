@@ -239,3 +239,10 @@ coverage of dependency solving:
   tabs with general `Claude Code`, `Codex`, and `Cline` (any OpenAI-compatible or
   local Ollama/`llama.cpp` model) routes while keeping optional JupyterHub build
   and deployment scripts intact.
+- **Hover-over glossary & gentler beginner/theorist framing (`myst.yml`, `00-primer`, `01-catalogue`)**:
+  Added 36 interactive `project.abbreviations` hover-card explainers in `myst.yml`
+  for Python, packaging, NumPy, Astropy, and astronomy terms; replaced dense
+  packaging/survey jargon in `00-primer.ipynb` and `01-catalogue.ipynb` with
+  plain-English 1-line bullets and explicit bridges for inflation, gravitational-wave,
+  and numerical-simulation PhD students while reducing markdown word count in
+  both notebooks.

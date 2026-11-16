@@ -13,6 +13,43 @@ project:
     disableSessionSaving: true
   settings:
     output_matplotlib_strings: remove
+  abbreviations:
+    kernel: "The background Python process that runs your notebook cells and holds variables in memory."
+    virtual environment: "An isolated project folder with its own Python interpreter and libraries, kept separate from system Python and other projects."
+    dependency solver: "A tool that checks every required library's version rules at once to find one mutually compatible set of versions."
+    lockfile: "A file (such as uv.lock) recording the exact version of every installed package and sub-dependency so anyone can recreate the same environment."
+    PyPI: "Python Package Index (pypi.org): the standard public repository of Python packages installed by pip and uv."
+    conda-forge: "A community repository of pre-compiled scientific Python, C, Fortran, and GPU libraries used by conda and mamba."
+    mutable: "Changeable in place after creation (for example, editing or appending items in a Python list)."
+    immutable: "Fixed after creation so its elements cannot be overwritten in place (for example, a Python tuple)."
+    tuple: "A fixed, ordered collection written with parentheses, such as (10.0, 20.0), often used to return or unpack multiple values."
+    dictionary: "A lookup collection written with curly braces, such as {'unit': 'km/s'}, mapping named keys to values."
+    f-string: "A formatted string prefixed with f (such as f'H0 = {val:.1f}') that inserts variable values directly into text."
+    f-strings: "Formatted strings prefixed with f (such as f'H0 = {val:.1f}') that insert variable values directly into text."
+    docstring: "A triple-quoted summary at the top of a function stating what it computes, its inputs/outputs, and its physical units."
+    traceback: "Python's error report; read the bottom line first for the error type and message, then look up to the ----> arrow for the failing line."
+    NaN: "Not a Number (np.nan): a floating-point marker for missing or undefined values (such as a failed grid point or unmeasured entry), tested with np.isfinite()."
+    boolean mask: "An array of True and False values used to keep matching entries and drop invalid or unwanted ones in one step."
+    vectorised: "Computing on whole NumPy arrays at once in compiled C code rather than looping item-by-item in Python."
+    broadcasting: "NumPy's rule for combining arrays of different but compatible shapes (such as 201 parameter values across 395 data points) without Python loops."
+    view: "A NumPy slice sharing memory with the original array, so modifying the slice also changes the original; call .copy() when you need an independent array."
+    QTable: "Astropy Quantity Table: a table where each numeric column is a NumPy array carrying physical units (such as Mpc, km/s, Hz, or solar masses) plus header metadata."
+    Quantity: "An Astropy number or array paired with a physical unit (such as 70 * u.km / (u.s * u.Mpc)) whose dimensions are checked automatically."
+    ECSV: "Extended CSV (.ecsv): a plain-text CSV table preceded by a short #-commented YAML header that preserves column units, data types, and metadata."
+    YAML: "A human-readable text format for key-value metadata (such as unit: Mpc or seed: 20261109), used in ECSV headers and config files."
+    FITS: "Flexible Image Transport System (.fits): astronomy's standard binary file format for catalogues, spectra, sky images, CMB maps, and gravitational-wave sky maps."
+    HDU: "Header/Data Unit: a numbered block inside a FITS file pairing an 8-character-keyword metadata header with a binary table or image array."
+    HDUs: "Header/Data Units: numbered blocks inside a FITS file, each pairing an 8-character-keyword metadata header with a binary table or image array."
+    WCS: "World Coordinate System: FITS header rules that map pixel coordinates (x, y) onto physical coordinates such as sky Right Ascension (RA) and Declination (Dec)."
+    RA: "Right Ascension: celestial longitude on the sky; on standard north-up sky images, east (and RA) increases to the left."
+    Dec: "Declination: celestial latitude on the sky, measured in degrees north (+) or south (−) of the celestial equator."
+    Mpc: "Megaparsec: 10^6 parsecs (about 3.26 million light-years or 3.09 × 10^22 m), the standard distance unit in cosmology and extragalactic astrophysics."
+    apparent magnitude: "Astronomy's inverted logarithmic brightness scale (m = −2.5 log10 F + const): larger numbers mean fainter sources (+5 mag = 100× fainter flux)."
+    provenance: "The recorded origin of a dataset or calculation — such as input parameters, random seeds, units, and filtering choices — needed to reproduce it."
+    residual: "Data minus model prediction; plotting residuals around zero reveals small systematic trends or outliers."
+    residuals: "Data minus model predictions; plotting residuals around zero reveals small systematic trends or outliers."
+    asinh stretch: "Inverse hyperbolic sine colour scaling: linear near zero (showing noise cleanly) and logarithmic at high values so bright peaks do not wash out faint structure."
+    Malmquist bias: "A selection bias where a brightness cut preferentially retains intrinsically brighter-than-average sources at large distances when distances or luminosities have scatter."
   toc:
     - file: book/index.md
     - file: book/setup.md
