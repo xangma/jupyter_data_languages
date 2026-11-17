@@ -1,81 +1,59 @@
-// Source: 02-git-and-tests.ipynb, Part 1 ("What Git records, and why").
-// Shows the four places files and commits live and the commands moving between them.
+// Source: 02-git-and-tests.ipynb, Part 1.
+// Visual map of the four Git zones and the commands moving snapshots between them.
 digraph git_zones_lifecycle {
   graph [
-    bgcolor="white", fontname="Arial", fontsize=20, fontcolor="#14263C",
-    label="Four places your work lives — and which Git command moves between them",
-    labelloc=t, rankdir=TB, newrank=true, nodesep=0.45, ranksep=0.52, pad=0.16,
+    bgcolor="white", fontname="Arial", fontsize=18, fontcolor="#14263C",
+    label="Git zones and commands",
+    labelloc=t, rankdir=LR, nodesep=0.30, ranksep=0.38, pad=0.12,
     splines=true
   ];
   node [
-    fontname="Arial", fontsize=16, fontcolor="#14263C",
-    color="#BAC7D5", penwidth=1.5, style="rounded,filled", margin="0.16,0.12"
+    fontname="Arial", fontsize=15, fontcolor="#14263C",
+    color="#BAC7D5", penwidth=1.6, style="rounded,filled", margin="0.14,0.10"
   ];
   edge [
-    fontname="Arial", fontsize=14, fontcolor="#14263C",
-    color="#14263C", penwidth=1.6, arrowsize=0.82
+    fontname="Arial", fontsize=13, fontcolor="#14263C",
+    color="#14263C", penwidth=1.6, arrowsize=0.8
   ];
 
-  subgraph cluster_local {
-    label="On your computer (offline, no account required)"; fontsize=18;
-    style="rounded"; color="#BAC7D5"; margin=16;
+  working [shape=box, fillcolor="#EAF3FE", label=<
+    <B>Working tree</B><BR/>
+    <FONT POINT-SIZE="13" COLOR="#526780">saved files</FONT>
+  >];
 
-    working [shape=box, fillcolor="#EAF3FE", label=<
-      <B>1 · Working tree</B><BR/>
-      <FONT POINT-SIZE="14">Saved files on disk (U = untracked, M = modified)<BR/>
-      <I>Unsaved editor tabs are invisible to Git</I></FONT>
-    >];
+  index [shape=box, fillcolor="#E9F7F2", label=<
+    <B>Staging index</B><BR/>
+    <FONT POINT-SIZE="13" COLOR="#526780">next snapshot</FONT>
+  >];
 
-    index [shape=box, fillcolor="#E9F7F2", label=<
-      <B>2 · Staging index</B><BR/>
-      <FONT POINT-SIZE="14">Exact snapshot queued for the next commit<BR/>
-      Inspect with:  git status  ·  git diff --staged</FONT>
-    >];
+  local_repo [shape=box, fillcolor="#F0EBFA", label=<
+    <B>Local .git</B><BR/>
+    <FONT POINT-SIZE="13" COLOR="#526780">commits</FONT>
+  >];
 
-    local_repo [shape=box, fillcolor="#F0EBFA", label=<
-      <B>3 · Local history (.git)</B><BR/>
-      <FONT POINT-SIZE="14">Permanent commit snapshots  (HEAD → main)<BR/>
-      Inspect with:  git log --oneline --graph</FONT>
-    >];
+  remote [shape=box, fillcolor="#FFF2D6", label=<
+    <B>Remote</B><BR/>
+    <FONT POINT-SIZE="13" COLOR="#526780">origin</FONT>
+  >];
 
-    working -> index [label=<  <B>git add</B> (stage snapshot)  >];
-    index -> working [
-      style=dashed, color="#526780", fontcolor="#526780",
-      label=<  git restore --staged (unstage safely)  >
-    ];
+  working -> index [label=< <B>git add</B> >];
+  index -> local_repo [label=< <B>git commit</B> >];
+  local_repo -> remote [label=< <B>git push</B> >];
 
-    index -> local_repo [label=<  <B>git commit</B> (record snapshot)  >];
-    local_repo -> index [
-      style=dashed, color="#526780", fontcolor="#526780",
-      label=<  git reset --soft HEAD~1 (undo private commit)  >
-    ];
-  }
-
-  subgraph cluster_remote {
-    label="Shared server or bare folder"; fontsize=18;
-    style="rounded"; color="#BAC7D5"; margin=16;
-
-    remote [shape=box, fillcolor="#FFF2D6", label=<
-      <B>4 · Remote repository (origin)</B><BR/>
-      <FONT POINT-SIZE="14">GitHub, GitLab, institutional server,<BR/>
-      or another folder on disk</FONT>
-    >];
-
-    shortcuts [shape=note, style="filled", fillcolor="#F3F5F7", label=<
-      <B>Multi-step &amp; discard commands</B><BR/>
-      <FONT POINT-SIZE="13.5">• <B>git clone URL</B> — copy Remote → new .git + Working tree<BR/>
-      • <B>git pull</B> — git fetch + merge into current branch &amp; files<BR/>
-      • <B>git restore -- file</B> — discard unstaged Working-tree edits</FONT>
-    >];
-
-    remote -> shortcuts [style=invis, weight=10];
-  }
-
-  { rank=same; working; shortcuts; }
-  { rank=same; local_repo; remote; }
-
-  local_repo -> remote [
-    constraint=false, dir=both,
-    label=< <B>git push →</B><BR/><FONT COLOR="#2E7D6B"><B>← git fetch</B> (refs only)</FONT> >
+  index -> working [
+    style=dashed, color="#526780", fontcolor="#526780",
+    label=< restore --staged >
+  ];
+  local_repo -> index [
+    style=dashed, color="#526780", fontcolor="#526780",
+    label=< reset --soft >
+  ];
+  remote -> local_repo [
+    style=dashed, color="#2E7D6B", fontcolor="#2E7D6B",
+    label=< <B>git fetch</B> >
+  ];
+  remote -> working [
+    style=dotted, color="#2E7D6B", fontcolor="#2E7D6B",
+    label=< <B>git clone / git pull</B> >
   ];
 }

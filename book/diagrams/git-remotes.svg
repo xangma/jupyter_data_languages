@@ -1,116 +1,77 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="306" viewBox="0.00 0.00 877.00 373.00" role="img" aria-labelledby="git-remotes-title git-remotes-desc">
-  <title id="git-remotes-title">How clone, fetch, pull and push synchronise two repositories</title>
-  <desc id="git-remotes-desc">git clone copies full .git history and sets origin; git fetch downloads remote commit R3 into remote-tracking ref origin/main without changing working files; merge or git pull integrates R3 into the local branch; git push uploads local commits and rejects non-fast-forward pushes safely when the remote has newer commits.</desc>
-  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(11.52 361.77)">
+<svg xmlns="http://www.w3.org/2000/svg" width="566" height="286" viewBox="0.00 0.00 566.00 286.00" role="img" aria-labelledby="git-remotes-title git-remotes-desc">
+  <title id="git-remotes-title">Syncing a local clone with a remote</title>
+  <desc id="git-remotes-desc">git clone makes the initial local copy; git fetch updates tracking ref origin/main from remote main; merge or pull integrates into the local branch; git push uploads local commits to remote main.</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(11.52 274.27)">
     <title>git_remotes</title>
-    <polygon fill="white" stroke="none" points="-11.52,11.52 -11.52,-361.77 865.88,-361.77 865.88,11.52 -11.52,11.52" />
-    <text xml:space="preserve" text-anchor="middle" x="427.18" y="-327.25" font-family="Arial" font-size="20.00" fill="#14263c">How clone, fetch, pull and push synchronise two repositories</text>
+    <polygon fill="white" stroke="none" points="-11.52,11.52 -11.52,-274.27 554.35,-274.27 554.35,11.52 -11.52,11.52" />
+    <text xml:space="preserve" text-anchor="middle" x="271.41" y="-240.7" font-family="Arial" font-size="19.00" fill="#14263c">Syncing a local clone with a remote</text>
     <g id="clust1" class="cluster">
       <title>cluster_local</title>
-      <path fill="white" stroke="#bac7d5" d="M32.16,-8C32.16,-8 327.76,-8 327.76,-8 333.76,-8 339.76,-14 339.76,-20 339.76,-20 339.76,-299 339.76,-299 339.76,-305 333.76,-311 327.76,-311 327.76,-311 32.16,-311 32.16,-311 26.16,-311 20.16,-305 20.16,-299 20.16,-299 20.16,-20 20.16,-20 20.16,-14 26.16,-8 32.16,-8" />
-      <text xml:space="preserve" text-anchor="middle" x="179.96" y="-289.9" font-family="Arial" font-size="18.00" fill="#14263c">Your local clone</text>
+      <path fill="white" stroke="#bac7d5" d="M20,-8C20,-8 174.79,-8 174.79,-8 180.79,-8 186.79,-14 186.79,-20 186.79,-20 186.79,-213 186.79,-213 186.79,-219 180.79,-225 174.79,-225 174.79,-225 20,-225 20,-225 14,-225 8,-219 8,-213 8,-213 8,-20 8,-20 8,-14 14,-8 20,-8" />
+      <text xml:space="preserve" text-anchor="middle" x="97.39" y="-204.38" font-family="Arial" font-size="17.50" fill="#14263c">Local clone</text>
     </g>
     <g id="clust2" class="cluster">
       <title>cluster_remote</title>
-      <path fill="white" stroke="#bac7d5" d="M535.76,-33C535.76,-33 834.36,-33 834.36,-33 840.36,-33 846.36,-39 846.36,-45 846.36,-45 846.36,-263 846.36,-263 846.36,-269 840.36,-275 834.36,-275 834.36,-275 535.76,-275 535.76,-275 529.76,-275 523.76,-269 523.76,-263 523.76,-263 523.76,-45 523.76,-45 523.76,-39 529.76,-33 535.76,-33" />
-      <text xml:space="preserve" text-anchor="middle" x="685.06" y="-253.9" font-family="Arial" font-size="18.00" fill="#14263c">Remote repository (origin / practice)</text>
+      <path fill="white" stroke="#bac7d5" d="M352.29,-65C352.29,-65 522.83,-65 522.83,-65 528.83,-65 534.83,-71 534.83,-77 534.83,-77 534.83,-160 534.83,-160 534.83,-166 528.83,-172 522.83,-172 522.83,-172 352.29,-172 352.29,-172 346.29,-172 340.29,-166 340.29,-160 340.29,-160 340.29,-77 340.29,-77 340.29,-71 346.29,-65 352.29,-65" />
+      <text xml:space="preserve" text-anchor="middle" x="437.56" y="-151.38" font-family="Arial" font-size="17.50" fill="#14263c">Remote (origin)</text>
     </g>
     <g id="node1" class="node">
-      <title>clone_note</title>
-      <polygon fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" points="312.64,-84.17 41.29,-84.17 41.29,-21.83 318.64,-21.83 318.64,-78.17 312.64,-84.17" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="312.64,-84.17 312.64,-78.17" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="318.64,-78.17 312.64,-78.17" />
-      <text xml:space="preserve" text-anchor="start" x="52.09" y="-62.52" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="79.09" y="-62.52" font-family="Arial" font-weight="bold" font-size="15.50" fill="#14263c">0 · git clone &lt;url&gt;</text>
-      <text xml:space="preserve" text-anchor="start" x="208.84" y="-62.52" font-family="Arial" font-size="15.50" fill="#14263c"> (once at start)</text>
-      <text xml:space="preserve" text-anchor="start" x="67.09" y="-47.02" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="94.09" y="-47.02" font-family="Arial" font-size="13.00" fill="#14263c">Copies full .git history, checks out</text>
-      <text xml:space="preserve" text-anchor="start" x="56.96" y="-31.52" font-family="Arial" font-size="13.00" fill="#14263c">      files, and names that remote origin</text>
-      <text xml:space="preserve" text-anchor="start" x="284.96" y="-31.52" font-family="Arial" font-size="15.50" fill="#14263c">    </text>
-    </g>
-    <g id="node2" class="node">
       <title>local_work</title>
-      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M313.76,-268.42C313.76,-268.42 46.16,-268.42 46.16,-268.42 40.16,-268.42 34.16,-262.42 34.16,-256.42 34.16,-256.42 34.16,-233.58 34.16,-233.58 34.16,-227.58 40.16,-221.58 46.16,-221.58 46.16,-221.58 313.76,-221.58 313.76,-221.58 319.76,-221.58 325.76,-227.58 325.76,-233.58 325.76,-233.58 325.76,-256.42 325.76,-256.42 325.76,-262.42 319.76,-268.42 313.76,-268.42" />
-      <text xml:space="preserve" text-anchor="start" x="60.34" y="-246.78" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="87.34" y="-246.78" font-family="Arial" font-weight="bold" font-size="15.50" fill="#14263c">Local branch &amp; working files</text>
-      <text xml:space="preserve" text-anchor="start" x="44.96" y="-231.28" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="71.96" y="-231.28" font-family="Arial" font-size="13.00" fill="#14263c">main: C1 → C2 (plus local commit </text>
-      <text xml:space="preserve" text-anchor="start" x="276.71" y="-231.28" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">L3</text>
-      <text xml:space="preserve" text-anchor="start" x="292.46" y="-231.28" font-family="Arial" font-size="13.00" fill="#14263c">)</text>
-      <text xml:space="preserve" text-anchor="start" x="296.96" y="-231.28" font-family="Arial" font-size="15.50" fill="#14263c">    </text>
-    </g>
-    <g id="node5" class="node">
-      <title>remote_branch</title>
-      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M792.99,-232.17C792.99,-232.17 577.14,-232.17 577.14,-232.17 571.14,-232.17 565.14,-226.17 565.14,-220.17 565.14,-220.17 565.14,-181.83 565.14,-181.83 565.14,-175.83 571.14,-169.83 577.14,-169.83 577.14,-169.83 792.99,-169.83 792.99,-169.83 798.99,-169.83 804.99,-175.83 804.99,-181.83 804.99,-181.83 804.99,-220.17 804.99,-220.17 804.99,-226.17 798.99,-232.17 792.99,-232.17" />
-      <text xml:space="preserve" text-anchor="start" x="615.31" y="-210.53" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="642.31" y="-210.53" font-family="Arial" font-weight="bold" font-size="15.50" fill="#14263c">Remote branch</text>
-      <text xml:space="preserve" text-anchor="start" x="607.44" y="-195.03" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="634.44" y="-195.03" font-family="Arial" font-size="13.00" fill="#14263c">main: C1 → C2 → </text>
-      <text xml:space="preserve" text-anchor="start" x="745.44" y="-195.03" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">R3</text>
-      <text xml:space="preserve" text-anchor="start" x="575.94" y="-179.53" font-family="Arial" font-size="13.00" fill="#14263c">      (</text>
-      <text xml:space="preserve" text-anchor="start" x="602.94" y="-179.53" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">R3</text>
-      <text xml:space="preserve" text-anchor="start" x="620.19" y="-179.53" font-family="Arial" font-size="13.00" fill="#14263c"> pushed by a collaborator)</text>
-      <text xml:space="preserve" text-anchor="start" x="776.19" y="-179.53" font-family="Arial" font-size="15.50" fill="#14263c">    </text>
-    </g>
-    <g id="edge5" class="edge">
-      <title>local_work-&gt;remote_branch</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M326.48,-232.27C398.53,-225.97 484.79,-218.43 554.54,-212.33" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="554.37,-215.22 562.29,-211.65 553.87,-209.5 554.37,-215.22" />
-      <text xml:space="preserve" text-anchor="start" x="393.89" y="-245.21" font-family="Arial" font-size="14.00" fill="#14263c"> </text>
-      <text xml:space="preserve" text-anchor="start" x="397.64" y="-245.21" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">3 · git push</text>
-      <text xml:space="preserve" text-anchor="start" x="370.64" y="-231.21" font-family="Arial" font-size="12.00" fill="#14263c">uploads local commits</text>
-      <text xml:space="preserve" text-anchor="start" x="489.14" y="-231.21" font-family="Arial" font-size="14.00" fill="#14263c"> </text>
+      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.6" d="M158.79,-180.42C158.79,-180.42 36,-180.42 36,-180.42 30,-180.42 24,-174.42 24,-168.42 24,-168.42 24,-145.58 24,-145.58 24,-139.58 30,-133.58 36,-133.58 36,-133.58 158.79,-133.58 158.79,-133.58 164.79,-133.58 170.79,-139.58 170.79,-145.58 170.79,-145.58 170.79,-168.42 170.79,-168.42 170.79,-174.42 164.79,-180.42 158.79,-180.42" />
+      <text xml:space="preserve" text-anchor="start" x="35.52" y="-158.78" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="62.52" y="-158.78" font-family="Arial" font-weight="bold" font-size="15.50" fill="#14263c">Local branch</text>
+      <text xml:space="preserve" text-anchor="start" x="41.14" y="-143.28" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="68.14" y="-143.28" font-family="Arial" font-size="13.00" fill="#526780">main + files</text>
+      <text xml:space="preserve" text-anchor="start" x="135.64" y="-143.28" font-family="Arial" font-size="15.50" fill="#14263c">    </text>
     </g>
     <g id="node3" class="node">
-      <title>tracking</title>
-      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" d="M292.76,-170.17C292.76,-170.17 67.16,-170.17 67.16,-170.17 61.16,-170.17 55.16,-164.17 55.16,-158.17 55.16,-158.17 55.16,-119.83 55.16,-119.83 55.16,-113.83 61.16,-107.83 67.16,-107.83 67.16,-107.83 292.76,-107.83 292.76,-107.83 298.76,-107.83 304.76,-113.83 304.76,-119.83 304.76,-119.83 304.76,-158.17 304.76,-158.17 304.76,-164.17 298.76,-170.17 292.76,-170.17" />
-      <text xml:space="preserve" text-anchor="start" x="93.71" y="-148.53" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="120.71" y="-148.53" font-family="Arial" font-weight="bold" font-size="15.50" fill="#14263c">Remote-tracking ref</text>
-      <text xml:space="preserve" text-anchor="start" x="79.84" y="-133.03" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="106.84" y="-133.03" font-family="Arial" font-size="13.00" fill="#14263c">origin/main (or practice/main)</text>
-      <text xml:space="preserve" text-anchor="start" x="65.96" y="-117.53" font-family="Arial" font-size="13.00" fill="#14263c">      Local bookmark of remote state</text>
-      <text xml:space="preserve" text-anchor="start" x="275.96" y="-117.53" font-family="Arial" font-size="15.50" fill="#14263c">    </text>
+      <title>remote_branch</title>
+      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.6" d="M506.83,-127.42C506.83,-127.42 368.29,-127.42 368.29,-127.42 362.29,-127.42 356.29,-121.42 356.29,-115.42 356.29,-115.42 356.29,-92.58 356.29,-92.58 356.29,-86.58 362.29,-80.58 368.29,-80.58 368.29,-80.58 506.83,-80.58 506.83,-80.58 512.83,-80.58 518.83,-86.58 518.83,-92.58 518.83,-92.58 518.83,-115.42 518.83,-115.42 518.83,-121.42 512.83,-127.42 506.83,-127.42" />
+      <text xml:space="preserve" text-anchor="start" x="367.81" y="-105.78" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="394.81" y="-105.78" font-family="Arial" font-weight="bold" font-size="15.50" fill="#14263c">Remote branch</text>
+      <text xml:space="preserve" text-anchor="start" x="400.81" y="-90.28" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="427.81" y="-90.28" font-family="Arial" font-size="13.00" fill="#526780">main</text>
+      <text xml:space="preserve" text-anchor="start" x="456.31" y="-90.28" font-family="Arial" font-size="15.50" fill="#14263c">    </text>
     </g>
     <g id="edge4" class="edge">
-      <title>tracking-&gt;local_work</title>
-      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" d="M179.96,-170.8C179.96,-183.38 179.96,-197.87 179.96,-210.68" />
-      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="177.09,-210.35 179.96,-218.55 182.83,-210.35 177.09,-210.35" />
-      <text xml:space="preserve" text-anchor="start" x="102.96" y="-197.57" font-family="Arial" font-size="14.00" fill="#2e7d6b"> </text>
-      <text xml:space="preserve" text-anchor="start" x="106.71" y="-197.57" font-family="Arial" font-weight="bold" font-size="14.00" fill="#2e7d6b">2 · merge / git pull</text>
-      <text xml:space="preserve" text-anchor="start" x="94.34" y="-183.57" font-family="Arial" font-size="12.00" fill="#2e7d6b">integrates R3 into branch</text>
-      <text xml:space="preserve" text-anchor="start" x="227.84" y="-183.57" font-family="Arial" font-size="14.00" fill="#2e7d6b"> </text>
+      <title>local_work-&gt;remote_branch</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M171.52,-145.74C217.17,-138.68 277.17,-129.37 330.29,-121 335.17,-120.23 340.17,-119.44 345.22,-118.64" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="345.58,-121.49 353.23,-117.37 344.68,-115.82 345.58,-121.49" />
+      <text xml:space="preserve" text-anchor="start" x="223.79" y="-145.05" font-family="Arial" font-size="14.00" fill="#14263c"> </text>
+      <text xml:space="preserve" text-anchor="start" x="227.54" y="-145.05" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">3 · git push</text>
+      <text xml:space="preserve" text-anchor="start" x="299.54" y="-145.05" font-family="Arial" font-size="14.00" fill="#14263c"> </text>
     </g>
-    <g id="node4" class="node">
-      <title>rejected</title>
-      <polygon fill="#fbeded" stroke="#bac7d5" stroke-width="1.5" stroke-dasharray="5,2" points="826.36,-122.67 537.76,-122.67 537.76,-47.33 832.36,-47.33 832.36,-116.67 826.36,-122.67" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" stroke-dasharray="5,2" points="826.36,-122.67 826.36,-116.67" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" stroke-dasharray="5,2" points="832.36,-116.67 826.36,-116.67" />
-      <text xml:space="preserve" text-anchor="start" x="575.94" y="-101.03" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="602.94" y="-101.03" font-family="Arial" font-weight="bold" font-size="15.50" fill="#14263c">Why push can be rejected</text>
-      <text xml:space="preserve" text-anchor="start" x="552.31" y="-85.53" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="579.31" y="-85.53" font-family="Arial" font-size="13.00" fill="#14263c">If remote has </text>
-      <text xml:space="preserve" text-anchor="start" x="661.06" y="-85.53" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">R3</text>
-      <text xml:space="preserve" text-anchor="start" x="678.31" y="-85.53" font-family="Arial" font-size="13.00" fill="#14263c"> that your branch lacks,</text>
-      <text xml:space="preserve" text-anchor="start" x="555.31" y="-72.4" font-family="Arial" font-size="13.00" fill="#14263c">      git push stops safely (</text>
-      <text xml:space="preserve" text-anchor="start" x="708.31" y="-72.4" font-family="Arial" font-style="italic" font-size="13.00" fill="#14263c">non-fast-forward</text>
-      <text xml:space="preserve" text-anchor="start" x="806.56" y="-72.4" font-family="Arial" font-size="13.00" fill="#14263c">):</text>
-      <text xml:space="preserve" text-anchor="start" x="548.56" y="-57.03" font-family="Arial" font-size="13.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="571.06" y="-57.03" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">fetch → pull/merge → pytest → push</text>
-      <text xml:space="preserve" text-anchor="start" x="803.56" y="-57.03" font-family="Arial" font-size="15.50" fill="#14263c">    </text>
-    </g>
-    <g id="edge2" class="edge">
-      <title>rejected-&gt;remote_branch</title>
-      <path fill="none" stroke="#71849a" stroke-width="1.6" stroke-dasharray="5,2" d="M685.06,-123.06C685.06,-138.49 685.06,-153.91 685.06,-169.34" />
+    <g id="node2" class="node">
+      <title>tracking</title>
+      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.6" d="M153.91,-70.42C153.91,-70.42 40.88,-70.42 40.88,-70.42 34.88,-70.42 28.87,-64.42 28.87,-58.42 28.87,-58.42 28.87,-35.58 28.87,-35.58 28.87,-29.58 34.87,-23.58 40.87,-23.58 40.87,-23.58 153.91,-23.58 153.91,-23.58 159.91,-23.58 165.91,-29.58 165.91,-35.58 165.91,-35.58 165.91,-58.42 165.91,-58.42 165.91,-64.42 159.91,-70.42 153.91,-70.42" />
+      <text xml:space="preserve" text-anchor="start" x="40.39" y="-48.77" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="67.39" y="-48.77" font-family="Arial" font-weight="bold" font-size="15.50" fill="#14263c">Tracking ref</text>
+      <text xml:space="preserve" text-anchor="start" x="42.27" y="-33.27" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="69.27" y="-33.27" font-family="Arial" font-size="13.00" fill="#526780">origin/main</text>
+      <text xml:space="preserve" text-anchor="start" x="134.52" y="-33.27" font-family="Arial" font-size="15.50" fill="#14263c">    </text>
     </g>
     <g id="edge3" class="edge">
+      <title>tracking-&gt;local_work</title>
+      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" d="M97.39,-71.14C97.39,-86.18 97.39,-105.78 97.39,-122.46" />
+      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="94.53,-122.29 97.4,-130.49 100.27,-122.29 94.53,-122.29" />
+      <text xml:space="preserve" text-anchor="start" x="34.77" y="-97.58" font-family="Arial" font-size="14.00" fill="#2e7d6b"> </text>
+      <text xml:space="preserve" text-anchor="start" x="38.52" y="-97.58" font-family="Arial" font-weight="bold" font-size="14.00" fill="#2e7d6b">2 · merge / pull</text>
+      <text xml:space="preserve" text-anchor="start" x="134.52" y="-97.58" font-family="Arial" font-size="14.00" fill="#2e7d6b"> </text>
+    </g>
+    <g id="edge1" class="edge">
+      <title>remote_branch-&gt;local_work</title>
+      <path fill="none" stroke="#526780" stroke-width="1.6" stroke-dasharray="1,5" d="M355.59,-92.46C308.49,-88.36 248.42,-87.64 196.79,-101.25 176.58,-106.58 156.17,-117.11 139.21,-127.6" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="138.08,-124.92 132.72,-131.76 141.17,-129.76 138.08,-124.92" />
+      <text xml:space="preserve" text-anchor="start" x="196.79" y="-103.7" font-family="Arial" font-size="14.00" fill="#526780"> git clone (initial copy) </text>
+    </g>
+    <g id="edge2" class="edge">
       <title>remote_branch-&gt;tracking</title>
-      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" d="M564.59,-186.28C489.77,-177.06 393.19,-165.15 315.65,-155.6" />
-      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="316.22,-152.78 307.73,-154.62 315.51,-158.47 316.22,-152.78" />
-      <text xml:space="preserve" text-anchor="start" x="393.89" y="-194.88" font-family="Arial" font-size="14.00" fill="#2e7d6b"> </text>
-      <text xml:space="preserve" text-anchor="start" x="397.64" y="-194.88" font-family="Arial" font-weight="bold" font-size="14.00" fill="#2e7d6b">1 · git fetch</text>
-      <text xml:space="preserve" text-anchor="start" x="347.76" y="-180.88" font-family="Arial" font-size="12.00" fill="#2e7d6b">downloads R3; files untouched</text>
-      <text xml:space="preserve" text-anchor="start" x="512.01" y="-180.88" font-family="Arial" font-size="14.00" fill="#2e7d6b"> </text>
+      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" d="M377.21,-79.88C362.13,-74.59 345.79,-69.59 330.29,-66.25 279.91,-55.4 222.16,-50.59 176.89,-48.48" />
+      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="177.29,-45.63 168.97,-48.14 177.04,-51.36 177.29,-45.63" />
+      <text xml:space="preserve" text-anchor="start" x="223.79" y="-69.7" font-family="Arial" font-size="14.00" fill="#2e7d6b"> </text>
+      <text xml:space="preserve" text-anchor="start" x="227.54" y="-69.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#2e7d6b">1 · git fetch</text>
+      <text xml:space="preserve" text-anchor="start" x="299.54" y="-69.7" font-family="Arial" font-size="14.00" fill="#2e7d6b"> </text>
     </g>
   </g>
 </svg>

@@ -26,7 +26,7 @@ def render(entry: dict[str, str], dot: str) -> bytes:
     # Keep intrinsic reading dimensions bounded without rasterising or changing
     # the viewBox: tall figures should not fill several notebook screens.
     _, _, width, height = map(float, root.attrib["viewBox"].split())
-    scale = min(720 / width, 640 / height)
+    scale = min(1.0, 720 / width, 640 / height)
     root.set("width", str(round(width * scale)))
     root.set("height", str(round(height * scale)))
     root.set("role", "img")

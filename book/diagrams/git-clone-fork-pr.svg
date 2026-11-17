@@ -1,164 +1,137 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="322" viewBox="0.00 0.00 1078.00 482.00" role="img" aria-labelledby="git-clone-fork-pr-title git-clone-fork-pr-desc">
-  <title id="git-clone-fork-pr-title">Team repository versus open-source Fork and Pull Request workflow</title>
-  <desc id="git-clone-fork-pr-desc">Top panel shows a shared group repository with write access: git clone from origin, create a local branch, push to origin, and open a Pull Request into main. Bottom panel shows an external repository without write access: Fork upstream on GitHub into your personal origin, git clone origin locally, push a branch to origin, open a Pull Request back to upstream/main, and fetch upstream to stay synchronised.</desc>
-  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(10.08 472.33)">
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="428" viewBox="0.00 0.00 680.00 428.00" role="img" aria-labelledby="git-clone-fork-pr-title git-clone-fork-pr-desc">
+  <title id="git-clone-fork-pr-title">Group repository versus open-source Fork and Pull Request</title>
+  <desc id="git-clone-fork-pr-desc">Top panel shows a group repository with write access (clone origin, push branch, open PR into main); bottom panel shows an external repository without write access (Fork upstream to personal origin, clone, push to origin, open PR to upstream, and fetch upstream).</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(10.08 417.83)">
     <title>git_clone_fork_pr</title>
-    <polygon fill="white" stroke="none" points="-10.08,10.08 -10.08,-472.33 1067.8,-472.33 1067.8,10.08 -10.08,10.08" />
-    <text xml:space="preserve" text-anchor="middle" x="528.86" y="-439.25" font-family="Arial" font-size="20.00" fill="#14263c">Team repository vs Open-source Fork — and where a Pull Request fits</text>
+    <polygon fill="white" stroke="none" points="-10.08,10.08 -10.08,-417.83 669.83,-417.83 669.83,10.08 -10.08,10.08" />
+    <text xml:space="preserve" text-anchor="middle" x="329.88" y="-385.7" font-family="Arial" font-size="19.00" fill="#14263c">Group repository vs Open-source Fork + Pull Request</text>
     <g id="clust1" class="cluster">
       <title>cluster_fork</title>
-      <path fill="white" stroke="#bac7d5" d="M64.22,-8C64.22,-8 1037.72,-8 1037.72,-8 1043.72,-8 1049.72,-14 1049.72,-20 1049.72,-20 1049.72,-199 1049.72,-199 1049.72,-205 1043.72,-211 1037.72,-211 1037.72,-211 64.22,-211 64.22,-211 58.22,-211 52.22,-205 52.22,-199 52.22,-199 52.22,-20 52.22,-20 52.22,-14 58.22,-8 64.22,-8" />
-      <text xml:space="preserve" text-anchor="middle" x="550.97" y="-190.38" font-family="Arial" font-size="17.50" fill="#14263c">2 · External / open-source repository (no write access) — Fork + Clone + Pull Request</text>
+      <path fill="white" stroke="#bac7d5" d="M24.12,-8C24.12,-8 639.75,-8 639.75,-8 645.75,-8 651.75,-14 651.75,-20 651.75,-20 651.75,-177 651.75,-177 651.75,-183 645.75,-189 639.75,-189 639.75,-189 24.12,-189 24.12,-189 18.12,-189 12.12,-183 12.12,-177 12.12,-177 12.12,-20 12.12,-20 12.12,-14 18.12,-8 24.12,-8" />
+      <text xml:space="preserve" text-anchor="middle" x="331.94" y="-168.85" font-family="Arial" font-size="17.00" fill="#14263c">2 · External repo (no write access) — Fork workflow</text>
     </g>
     <g id="clust2" class="cluster">
       <title>cluster_team</title>
-      <path fill="white" stroke="#bac7d5" d="M12,-219C12,-219 672.25,-219 672.25,-219 678.25,-219 684.25,-225 684.25,-231 684.25,-231 684.25,-411 684.25,-411 684.25,-417 678.25,-423 672.25,-423 672.25,-423 12,-423 12,-423 6,-423 0,-417 0,-411 0,-411 0,-231 0,-231 0,-225 6,-219 12,-219" />
-      <text xml:space="preserve" text-anchor="middle" x="342.12" y="-402.38" font-family="Arial" font-size="17.50" fill="#14263c">1 · Shared group repository (you have write access) — Clone + Branch + Pull Request</text>
+      <path fill="white" stroke="#bac7d5" d="M15.53,-197C15.53,-197 381.78,-197 381.78,-197 387.78,-197 393.78,-203 393.78,-209 393.78,-209 393.78,-358 393.78,-358 393.78,-364 387.78,-370 381.78,-370 381.78,-370 15.53,-370 15.53,-370 9.53,-370 3.53,-364 3.53,-358 3.53,-358 3.53,-209 3.53,-209 3.53,-203 9.53,-197 15.53,-197" />
+      <text xml:space="preserve" text-anchor="middle" x="198.66" y="-349.85" font-family="Arial" font-size="17.00" fill="#14263c">1 · Group repo (write access) — Branch workflow</text>
     </g>
     <g id="node1" class="node">
       <title>upstream</title>
-      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M230.44,-154.98C230.44,-154.98 78.22,-154.98 78.22,-154.98 72.22,-154.98 66.22,-148.98 66.22,-142.98 66.22,-142.98 66.22,-109.02 66.22,-109.02 66.22,-103.02 72.22,-97.02 78.22,-97.02 78.22,-97.02 230.44,-97.02 230.44,-97.02 236.44,-97.02 242.44,-103.02 242.44,-109.02 242.44,-109.02 242.44,-142.98 242.44,-142.98 242.44,-148.98 236.44,-154.98 230.44,-154.98" />
-      <text xml:space="preserve" text-anchor="start" x="75.58" y="-135.25" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="102.58" y="-135.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Maintainer GitHub</text>
-      <text xml:space="preserve" text-anchor="start" x="86.45" y="-120.25" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="113.45" y="-120.25" font-family="Arial" font-size="13.00" fill="#14263c">remote: </text>
-      <text xml:space="preserve" text-anchor="start" x="162.2" y="-120.25" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">upstream</text>
-      <text xml:space="preserve" text-anchor="start" x="97.7" y="-105.25" font-family="Arial" font-size="13.00" fill="#14263c">      (org/project)</text>
-      <text xml:space="preserve" text-anchor="start" x="192.95" y="-105.25" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.6" d="M127.35,-133.48C127.35,-133.48 38.13,-133.48 38.13,-133.48 32.13,-133.48 26.13,-127.48 26.13,-121.48 26.13,-121.48 26.13,-102.52 26.13,-102.52 26.13,-96.52 32.13,-90.52 38.13,-90.52 38.13,-90.52 127.35,-90.52 127.35,-90.52 133.35,-90.52 139.35,-96.52 139.35,-102.52 139.35,-102.52 139.35,-121.48 139.35,-121.48 139.35,-127.48 133.35,-133.48 127.35,-133.48" />
+      <text xml:space="preserve" text-anchor="start" x="35.49" y="-113.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="62.49" y="-113.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">upstream</text>
+      <text xml:space="preserve" text-anchor="start" x="38.11" y="-98.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="65.11" y="-98.75" font-family="Arial" font-size="12.00" fill="#526780">org/repo</text>
+      <text xml:space="preserve" text-anchor="start" x="109.36" y="-98.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
     </g>
     <g id="node2" class="node">
       <title>fork</title>
-      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" d="M566.03,-114.98C566.03,-114.98 419.81,-114.98 419.81,-114.98 413.81,-114.98 407.81,-108.98 407.81,-102.98 407.81,-102.98 407.81,-69.02 407.81,-69.02 407.81,-63.02 413.81,-57.02 419.81,-57.02 419.81,-57.02 566.03,-57.02 566.03,-57.02 572.03,-57.02 578.03,-63.02 578.03,-69.02 578.03,-69.02 578.03,-102.98 578.03,-102.98 578.03,-108.98 572.03,-114.98 566.03,-114.98" />
-      <text xml:space="preserve" text-anchor="start" x="417.17" y="-95.25" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="444.17" y="-95.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Your GitHub Fork</text>
-      <text xml:space="preserve" text-anchor="start" x="436.3" y="-80.25" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="463.3" y="-80.25" font-family="Arial" font-size="13.00" fill="#14263c">remote: </text>
-      <text xml:space="preserve" text-anchor="start" x="512.05" y="-80.25" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">origin</text>
-      <text xml:space="preserve" text-anchor="start" x="435.17" y="-65.25" font-family="Arial" font-size="13.00" fill="#14263c">      (you/project)</text>
-      <text xml:space="preserve" text-anchor="start" x="532.67" y="-65.25" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.6" d="M369.44,-92.48C369.44,-92.48 242.72,-92.48 242.72,-92.48 236.72,-92.48 230.72,-86.48 230.72,-80.48 230.72,-80.48 230.72,-61.52 230.72,-61.52 230.72,-55.52 236.72,-49.52 242.72,-49.52 242.72,-49.52 369.44,-49.52 369.44,-49.52 375.44,-49.52 381.44,-55.52 381.44,-61.52 381.44,-61.52 381.44,-80.48 381.44,-80.48 381.44,-86.48 375.44,-92.48 369.44,-92.48" />
+      <text xml:space="preserve" text-anchor="start" x="257.7" y="-72.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="284.7" y="-72.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Your Fork</text>
+      <text xml:space="preserve" text-anchor="start" x="240.08" y="-57.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="267.08" y="-57.75" font-family="Arial" font-size="12.00" fill="#526780">origin (you/repo)</text>
+      <text xml:space="preserve" text-anchor="start" x="354.08" y="-57.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
     </g>
     <g id="edge1" class="edge">
       <title>upstream-&gt;fork</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M242.89,-115.59C290.17,-109.98 348.59,-103.03 396.97,-97.28" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="397.11,-100.09 404.72,-96.36 396.45,-94.53 397.11,-100.09" />
-      <text xml:space="preserve" text-anchor="start" x="286.69" y="-129.36" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
-      <text xml:space="preserve" text-anchor="start" x="290.44" y="-129.36" font-family="Arial" font-weight="bold" font-size="13.50" fill="#14263c">1 · Fork</text>
-      <text xml:space="preserve" text-anchor="start" x="282.94" y="-115.86" font-family="Arial" font-size="11.00" fill="#14263c">(on GitHub)</text>
-      <text xml:space="preserve" text-anchor="start" x="339.19" y="-115.86" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M139.88,-101.6C164.18,-97.1 193.16,-91.73 220.01,-86.76" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="220.45,-89.52 227.81,-85.31 219.43,-84.02 220.45,-89.52" />
+      <text xml:space="preserve" text-anchor="start" x="158.97" y="-101.49" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
+      <text xml:space="preserve" text-anchor="start" x="162.72" y="-101.49" font-family="Arial" font-weight="bold" font-size="13.50" fill="#14263c">1 · Fork</text>
+      <text xml:space="preserve" text-anchor="start" x="211.47" y="-101.49" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
     </g>
     <g id="node3" class="node">
       <title>f_local</title>
-      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M1002.72,-168.98C1002.72,-168.98 837.75,-168.98 837.75,-168.98 831.75,-168.98 825.75,-162.98 825.75,-156.98 825.75,-156.98 825.75,-123.02 825.75,-123.02 825.75,-117.02 831.75,-111.02 837.75,-111.02 837.75,-111.02 1002.72,-111.02 1002.72,-111.02 1008.72,-111.02 1014.72,-117.02 1014.72,-123.02 1014.72,-123.02 1014.72,-156.98 1014.72,-156.98 1014.72,-162.98 1008.72,-168.98 1002.72,-168.98" />
-      <text xml:space="preserve" text-anchor="start" x="853.86" y="-149.25" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="880.86" y="-149.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Your computer</text>
-      <text xml:space="preserve" text-anchor="start" x="860.99" y="-134.25" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="887.99" y="-134.25" font-family="Arial" font-size="13.00" fill="#14263c">branch fix-units</text>
-      <text xml:space="preserve" text-anchor="start" x="835.11" y="-119.25" font-family="Arial" font-size="13.00" fill="#14263c">      edit + pytest + commit</text>
-      <text xml:space="preserve" text-anchor="start" x="987.36" y="-119.25" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.6" d="M608.5,-145.48C608.5,-145.48 504.28,-145.48 504.28,-145.48 498.28,-145.48 492.28,-139.48 492.28,-133.48 492.28,-133.48 492.28,-114.52 492.28,-114.52 492.28,-108.52 498.28,-102.52 504.28,-102.52 504.28,-102.52 608.5,-102.52 608.5,-102.52 614.5,-102.52 620.5,-108.52 620.5,-114.52 620.5,-114.52 620.5,-133.48 620.5,-133.48 620.5,-139.48 614.5,-145.48 608.5,-145.48" />
+      <text xml:space="preserve" text-anchor="start" x="501.64" y="-125.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="528.64" y="-125.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Local clone</text>
+      <text xml:space="preserve" text-anchor="start" x="508.02" y="-110.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="535.02" y="-110.75" font-family="Arial" font-size="12.00" fill="#526780">branch fix</text>
+      <text xml:space="preserve" text-anchor="start" x="586.77" y="-110.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
     </g>
     <g id="edge5" class="edge">
       <title>upstream-&gt;f_local</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" stroke-dasharray="5,2" d="M243.02,-143.72C246.87,-144.21 250.69,-144.64 254.44,-145 284.36,-147.84 278.21,-150.32 792.75,-143 800,-142.9 807.48,-142.77 815.01,-142.63" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="814.94,-145.43 822.88,-142.47 814.83,-139.83 814.94,-145.43" />
-      <text xml:space="preserve" text-anchor="start" x="402.92" y="-150.64" font-family="Arial" font-size="13.50" fill="#526780"> fetch upstream (stay in sync) </text>
+      <path fill="none" stroke="#526780" stroke-width="1.6" stroke-dasharray="5,2" d="M139.97,-118.33C213.68,-125.85 347,-136.83 461.03,-132 467.65,-131.72 474.53,-131.33 481.42,-130.87" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="481.29,-133.69 489.07,-130.33 480.89,-128.1 481.29,-133.69" />
+      <text xml:space="preserve" text-anchor="start" x="257.7" y="-136.09" font-family="Arial" font-size="13.50" fill="#526780"> fetch upstream </text>
     </g>
     <g id="edge2" class="edge">
       <title>fork-&gt;f_local</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M578.71,-96.77C646.76,-105.41 742.59,-117.57 815.26,-126.8" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="814.66,-129.55 822.95,-127.78 815.37,-123.99 814.66,-129.55" />
-      <text xml:space="preserve" text-anchor="start" x="711.38" y="-127.22" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
-      <text xml:space="preserve" text-anchor="start" x="715.12" y="-127.22" font-family="Arial" font-weight="bold" font-size="13.50" fill="#14263c">2 · clone</text>
-      <text xml:space="preserve" text-anchor="start" x="769.88" y="-127.22" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M375.56,-93.22C384.34,-95.7 393.24,-98.03 401.78,-100 427.68,-105.96 456.37,-110.88 481.88,-114.68" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="481.14,-117.41 489.46,-115.79 481.95,-111.86 481.14,-117.41" />
+      <text xml:space="preserve" text-anchor="start" x="401.78" y="-114.26" font-family="Arial" font-size="13.50" fill="#14263c"> 2 · clone </text>
     </g>
     <g id="node4" class="node">
       <title>f_pr</title>
-      <polygon fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" points="1029.72,-92.48 804.75,-92.48 804.75,-21.52 1035.72,-21.52 1035.72,-86.48 1029.72,-92.48" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="1029.72,-92.48 1029.72,-86.48" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="1035.72,-86.48 1029.72,-86.48" />
-      <text xml:space="preserve" text-anchor="start" x="814.11" y="-72.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="841.11" y="-72.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Pull Request on upstream</text>
-      <text xml:space="preserve" text-anchor="start" x="834.74" y="-57.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="861.74" y="-57.75" font-family="Arial" font-size="13.00" fill="#14263c">you:fix-units → org:main</text>
-      <text xml:space="preserve" text-anchor="start" x="825.36" y="-44.65" font-family="Arial" font-size="13.00" fill="#14263c">      Maintainers review diff &amp; CI,</text>
-      <text xml:space="preserve" text-anchor="start" x="821.61" y="-29.75" font-family="Arial" font-size="13.00" fill="#14263c">      then merge into </text>
-      <text xml:space="preserve" text-anchor="start" x="940.86" y="-29.75" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">upstream</text>
-      <text xml:space="preserve" text-anchor="start" x="1000.86" y="-29.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <path fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.6" d="M625.75,-64.48C625.75,-64.48 487.03,-64.48 487.03,-64.48 481.03,-64.48 475.03,-58.48 475.03,-52.48 475.03,-52.48 475.03,-33.52 475.03,-33.52 475.03,-27.52 481.03,-21.52 487.03,-21.52 487.03,-21.52 625.75,-21.52 625.75,-21.52 631.75,-21.52 637.75,-27.52 637.75,-33.52 637.75,-33.52 637.75,-52.48 637.75,-52.48 637.75,-58.48 631.75,-64.48 625.75,-64.48" />
+      <text xml:space="preserve" text-anchor="start" x="497.52" y="-44.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="524.52" y="-44.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Pull Request</text>
+      <text xml:space="preserve" text-anchor="start" x="484.39" y="-29.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="511.39" y="-29.75" font-family="Arial" font-size="12.00" fill="#526780">you:fix → org:main</text>
+      <text xml:space="preserve" text-anchor="start" x="610.39" y="-29.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
     </g>
     <g id="edge4" class="edge">
       <title>fork-&gt;f_pr</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M578.45,-68.39C613.49,-61.93 654.66,-55.43 692.25,-52.25 736.76,-48.49 748.09,-51.41 792.75,-52.25 793.1,-52.26 793.45,-52.26 793.8,-52.27" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="793.64,-55.07 801.69,-52.44 793.76,-49.47 793.64,-55.07" />
-      <text xml:space="preserve" text-anchor="start" x="700.5" y="-56.17" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
-      <text xml:space="preserve" text-anchor="start" x="704.25" y="-56.17" font-family="Arial" font-weight="bold" font-size="13.50" fill="#14263c">4 · Open PR</text>
-      <text xml:space="preserve" text-anchor="start" x="780.75" y="-56.17" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M371.2,-48.77C381.32,-46.07 391.75,-43.74 401.78,-42.25 421.87,-39.27 443.59,-38.13 464.21,-37.99" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="464.12,-40.79 472.12,-38.01 464.13,-35.19 464.12,-40.79" />
+      <text xml:space="preserve" text-anchor="start" x="408.53" y="-46.17" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
+      <text xml:space="preserve" text-anchor="start" x="412.28" y="-46.17" font-family="Arial" font-weight="bold" font-size="13.50" fill="#14263c">4 · PR</text>
+      <text xml:space="preserve" text-anchor="start" x="450.53" y="-46.17" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
     </g>
     <g id="edge3" class="edge">
       <title>f_local-&gt;fork</title>
-      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" d="M825.06,-112.29C818.03,-109.16 811.18,-105.73 804.75,-102 798.56,-98.41 799.42,-93.87 792.75,-91.25 728.14,-65.89 649.47,-65.6 589.06,-71.1" />
-      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="588.87,-68.31 581.18,-71.88 589.41,-73.88 588.87,-68.31" />
-      <text xml:space="preserve" text-anchor="start" x="692.25" y="-95.17" font-family="Arial" font-size="13.50" fill="#2e7d6b"> </text>
-      <text xml:space="preserve" text-anchor="start" x="696" y="-95.17" font-family="Arial" font-weight="bold" font-size="13.50" fill="#2e7d6b">3 · push origin</text>
-      <text xml:space="preserve" text-anchor="start" x="789" y="-95.17" font-family="Arial" font-size="13.50" fill="#2e7d6b"> </text>
+      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" d="M517.64,-101.95C500.87,-93.26 480.54,-84.19 461.03,-79.25 439.09,-73.69 414.85,-70.9 392.23,-69.66" />
+      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="392.49,-66.87 384.38,-69.31 392.24,-72.47 392.49,-66.87" />
+      <text xml:space="preserve" text-anchor="start" x="403.28" y="-82.17" font-family="Arial" font-size="13.50" fill="#2e7d6b"> 3 · push </text>
     </g>
     <g id="node5" class="node">
       <title>t_origin</title>
-      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M215.81,-330.98C215.81,-330.98 92.84,-330.98 92.84,-330.98 86.84,-330.98 80.84,-324.98 80.84,-318.98 80.84,-318.98 80.84,-285.02 80.84,-285.02 80.84,-279.02 86.84,-273.02 92.84,-273.02 92.84,-273.02 215.81,-273.02 215.81,-273.02 221.81,-273.02 227.81,-279.02 227.81,-285.02 227.81,-285.02 227.81,-318.98 227.81,-318.98 227.81,-324.98 221.81,-330.98 215.81,-330.98" />
-      <text xml:space="preserve" text-anchor="start" x="90.95" y="-311.25" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="117.95" y="-311.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Group GitHub</text>
-      <text xml:space="preserve" text-anchor="start" x="97.7" y="-296.25" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="124.7" y="-296.25" font-family="Arial" font-size="13.00" fill="#14263c">remote: </text>
-      <text xml:space="preserve" text-anchor="start" x="173.45" y="-296.25" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">origin</text>
-      <text xml:space="preserve" text-anchor="start" x="90.2" y="-281.25" font-family="Arial" font-size="13.00" fill="#14263c">      (group/project)</text>
-      <text xml:space="preserve" text-anchor="start" x="200.45" y="-281.25" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.6" d="M131.47,-293.48C131.47,-293.48 34,-293.48 34,-293.48 28,-293.48 22,-287.48 22,-281.48 22,-281.48 22,-262.52 22,-262.52 22,-256.52 28,-250.52 34,-250.52 34,-250.52 131.47,-250.52 131.47,-250.52 137.47,-250.52 143.47,-256.52 143.47,-262.52 143.47,-262.52 143.47,-281.48 143.47,-281.48 143.47,-287.48 137.47,-293.48 131.47,-293.48" />
+      <text xml:space="preserve" text-anchor="start" x="48.24" y="-273.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="75.24" y="-273.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">origin</text>
+      <text xml:space="preserve" text-anchor="start" x="31.36" y="-258.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="58.36" y="-258.75" font-family="Arial" font-size="12.00" fill="#526780">group/repo</text>
+      <text xml:space="preserve" text-anchor="start" x="116.11" y="-258.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
     </g>
     <g id="node6" class="node">
       <title>t_local</title>
-      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M575.41,-290.98C575.41,-290.98 410.44,-290.98 410.44,-290.98 404.44,-290.98 398.44,-284.98 398.44,-278.98 398.44,-278.98 398.44,-245.02 398.44,-245.02 398.44,-239.02 404.44,-233.02 410.44,-233.02 410.44,-233.02 575.41,-233.02 575.41,-233.02 581.41,-233.02 587.41,-239.02 587.41,-245.02 587.41,-245.02 587.41,-278.98 587.41,-278.98 587.41,-284.98 581.41,-290.98 575.41,-290.98" />
-      <text xml:space="preserve" text-anchor="start" x="426.55" y="-271.25" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="453.55" y="-271.25" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Your computer</text>
-      <text xml:space="preserve" text-anchor="start" x="421.3" y="-256.25" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="448.3" y="-256.25" font-family="Arial" font-size="13.00" fill="#14263c">git switch -c feature</text>
-      <text xml:space="preserve" text-anchor="start" x="407.8" y="-241.25" font-family="Arial" font-size="13.00" fill="#14263c">      edit + pytest + commit</text>
-      <text xml:space="preserve" text-anchor="start" x="560.05" y="-241.25" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.6" d="M358.19,-259.48C358.19,-259.48 253.97,-259.48 253.97,-259.48 247.97,-259.48 241.97,-253.48 241.97,-247.48 241.97,-247.48 241.97,-228.52 241.97,-228.52 241.97,-222.52 247.97,-216.52 253.97,-216.52 253.97,-216.52 358.19,-216.52 358.19,-216.52 364.19,-216.52 370.19,-222.52 370.19,-228.52 370.19,-228.52 370.19,-247.48 370.19,-247.48 370.19,-253.48 364.19,-259.48 358.19,-259.48" />
+      <text xml:space="preserve" text-anchor="start" x="251.33" y="-239.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="278.33" y="-239.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Local clone</text>
+      <text xml:space="preserve" text-anchor="start" x="257.7" y="-224.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="284.7" y="-224.75" font-family="Arial" font-size="12.00" fill="#526780">branch fix</text>
+      <text xml:space="preserve" text-anchor="start" x="336.45" y="-224.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
     </g>
     <g id="edge6" class="edge">
       <title>t_origin-&gt;t_local</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M221.51,-272.3C232.32,-268.57 243.55,-265.33 254.44,-263.25 297.55,-255 345.89,-253.4 387.64,-254.34" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="387.33,-257.13 395.4,-254.56 387.48,-251.53 387.33,-257.13" />
-      <text xml:space="preserve" text-anchor="start" x="281.81" y="-267.18" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
-      <text xml:space="preserve" text-anchor="start" x="285.56" y="-267.18" font-family="Arial" font-weight="bold" font-size="13.50" fill="#14263c">1 · clone</text>
-      <text xml:space="preserve" text-anchor="start" x="340.31" y="-267.18" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M115.63,-249.76C128.1,-242.34 142.88,-235.01 157.47,-231.25 180.95,-225.19 207.21,-224.53 231,-226.1" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="230.77,-228.89 238.97,-226.74 231.22,-223.31 230.77,-228.89" />
+      <text xml:space="preserve" text-anchor="start" x="157.47" y="-234.18" font-family="Arial" font-size="13.50" fill="#14263c"> 1 · clone </text>
     </g>
     <g id="node7" class="node">
       <title>t_pr</title>
-      <polygon fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" points="596.41,-380.48 383.44,-380.48 383.44,-309.52 602.41,-309.52 602.41,-374.48 596.41,-380.48" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="596.41,-380.48 596.41,-374.48" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="602.41,-374.48 596.41,-374.48" />
-      <text xml:space="preserve" text-anchor="start" x="399.55" y="-360.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="426.55" y="-360.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Pull Request on origin</text>
-      <text xml:space="preserve" text-anchor="start" x="434.05" y="-345.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="461.05" y="-345.75" font-family="Arial" font-size="13.00" fill="#14263c">feature → main</text>
-      <text xml:space="preserve" text-anchor="start" x="392.8" y="-332.65" font-family="Arial" font-size="13.00" fill="#14263c">      Teammate reviews diff &amp; tests</text>
-      <text xml:space="preserve" text-anchor="start" x="397.67" y="-317.75" font-family="Arial" font-size="13.00" fill="#14263c">      before merging into </text>
-      <text xml:space="preserve" text-anchor="start" x="539.42" y="-317.75" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">main</text>
-      <text xml:space="preserve" text-anchor="start" x="570.17" y="-317.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <path fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.6" d="M362.31,-328.48C362.31,-328.48 249.84,-328.48 249.84,-328.48 243.84,-328.48 237.84,-322.48 237.84,-316.48 237.84,-316.48 237.84,-297.52 237.84,-297.52 237.84,-291.52 243.84,-285.52 249.84,-285.52 249.84,-285.52 362.31,-285.52 362.31,-285.52 368.31,-285.52 374.31,-291.52 374.31,-297.52 374.31,-297.52 374.31,-316.48 374.31,-316.48 374.31,-322.48 368.31,-328.48 362.31,-328.48" />
+      <text xml:space="preserve" text-anchor="start" x="247.2" y="-308.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="274.2" y="-308.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Pull Request</text>
+      <text xml:space="preserve" text-anchor="start" x="255.45" y="-293.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="282.45" y="-293.75" font-family="Arial" font-size="12.00" fill="#526780">fix → main</text>
+      <text xml:space="preserve" text-anchor="start" x="338.7" y="-293.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
     </g>
     <g id="edge8" class="edge">
       <title>t_origin-&gt;t_pr</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M228.36,-311.33C270.51,-316.71 324.55,-323.62 372.71,-329.77" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="372.2,-332.53 380.49,-330.76 372.91,-326.97 372.2,-332.53" />
-      <text xml:space="preserve" text-anchor="start" x="270.94" y="-332.54" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
-      <text xml:space="preserve" text-anchor="start" x="274.69" y="-332.54" font-family="Arial" font-weight="bold" font-size="13.50" fill="#14263c">3 · Open PR</text>
-      <text xml:space="preserve" text-anchor="start" x="351.19" y="-332.54" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M144.22,-281.56C169.76,-285.6 199.82,-290.36 227,-294.65" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="226.53,-297.41 234.87,-295.9 227.4,-291.88 226.53,-297.41" />
+      <text xml:space="preserve" text-anchor="start" x="164.22" y="-296.56" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
+      <text xml:space="preserve" text-anchor="start" x="167.97" y="-296.56" font-family="Arial" font-weight="bold" font-size="13.50" fill="#14263c">3 · PR</text>
+      <text xml:space="preserve" text-anchor="start" x="206.22" y="-296.56" font-family="Arial" font-size="13.50" fill="#14263c"> </text>
     </g>
     <g id="edge7" class="edge">
       <title>t_local-&gt;t_origin</title>
-      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" d="M397.91,-275.58C388.97,-276.78 380.03,-277.94 371.44,-279 327.69,-284.41 278.86,-289.68 238.7,-293.8" />
-      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="238.51,-291 230.83,-294.6 239.07,-296.57 238.51,-291" />
-      <text xml:space="preserve" text-anchor="start" x="254.44" y="-295.56" font-family="Arial" font-size="13.50" fill="#2e7d6b"> </text>
-      <text xml:space="preserve" text-anchor="start" x="258.19" y="-295.56" font-family="Arial" font-weight="bold" font-size="13.50" fill="#2e7d6b">2 · push -u origin</text>
-      <text xml:space="preserve" text-anchor="start" x="367.69" y="-295.56" font-family="Arial" font-size="13.50" fill="#2e7d6b"> </text>
+      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" d="M241.19,-247.81C213.99,-251.99 182.18,-256.88 154.3,-261.16" />
+      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="154.09,-258.36 146.61,-262.34 154.94,-263.89 154.09,-258.36" />
+      <text xml:space="preserve" text-anchor="start" x="158.97" y="-262.96" font-family="Arial" font-size="13.50" fill="#2e7d6b"> 2 · push </text>
     </g>
   </g>
 </svg>

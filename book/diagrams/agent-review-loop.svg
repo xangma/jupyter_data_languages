@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="481" viewBox="0.00 0.00 669.00 447.00" role="img" aria-labelledby="agent-review-loop-title agent-review-loop-desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="669" height="447" viewBox="0.00 0.00 669.00 447.00" role="img" aria-labelledby="agent-review-loop-title agent-review-loop-desc">
   <title id="agent-review-loop-title">Keep scientific expectations under human control</title>
   <desc id="agent-review-loop-desc">A student supplies the task and independently justified expectations, reviews an agent plan and derives test cases, reviews the drafted test_student_checks.py, verifies the failing run and commits a fixed tests checkpoint before authorising the weighted_mean.py repair, then reruns independently and inspects the diff before accepting.</desc>
   <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(11.52 435.88)">

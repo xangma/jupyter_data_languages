@@ -1,72 +1,62 @@
-// Source: 02-git-and-tests.ipynb; private git reset --soft vs shared git revert.
+// Source: 02-git-and-tests.ipynb, Part 3 ("Undo mistakes safely").
+// Private reset rewinds pointer; shared revert adds inverse commit.
 digraph git_undo_vs_revert {
   graph [
-    bgcolor="white", fontname="Arial", fontsize=20, fontcolor="#14263C",
-    label="Private reset rewinds the branch pointer; shared revert adds a new inverse commit",
-    labelloc=t, rankdir=LR, newrank=true, nodesep=0.26, ranksep=0.40, pad=0.16,
+    bgcolor="white", fontname="Arial", fontsize=19, fontcolor="#14263C",
+    label="Private soft reset vs shared forward revert",
+    labelloc=t, rankdir=LR, newrank=true, nodesep=0.28, ranksep=0.44, pad=0.14,
     splines=true
   ];
   node [
-    fontname="Arial", fontsize=16, fontcolor="#14263C",
-    color="#BAC7D5", penwidth=1.5, style="rounded,filled", margin="0.13,0.09"
+    fontname="Arial", fontsize=15.5, fontcolor="#14263C",
+    color="#BAC7D5", penwidth=1.6, style="rounded,filled", margin="0.13,0.09"
   ];
   edge [
-    fontname="Arial", fontsize=14, fontcolor="#14263C",
+    fontname="Arial", fontsize=13.5, fontcolor="#14263C",
     color="#526780", penwidth=1.6, arrowsize=0.8
   ];
 
-  // In rankdir=LR, Graphviz stacks later clusters higher on the y-axis,
-  // so defining cluster_shared before cluster_private places Row 1 on top.
+  // Defined first so cluster_private stacks above cluster_shared in rankdir=LR.
   subgraph cluster_shared {
-    label="2 · Shared pushed commit  —  git revert HEAD  +  git push";
-    fontsize=18; style="rounded"; color="#BAC7D5"; margin=14;
+    label="2 · Shared (pushed) — git revert HEAD";
+    fontsize=17; style="rounded"; color="#BAC7D5"; margin=14;
 
-    s_c1 [shape=box, fillcolor="#E9F7F2", label=<
-      <B>C1 (good)</B><BR/>
-      <FONT POINT-SIZE="14">initial state</FONT>
-    >];
+    s_c1 [shape=circle, fixedsize=true, width=0.56, fillcolor="#E9F7F2", label="C1"];
     s_c2 [shape=box, fillcolor="#FBEDED", label=<
-      <B>C2 (mistake)</B><BR/>
-      <FONT POINT-SIZE="14">stays in shared<BR/>history</FONT>
+      <B>C2</B><BR/>
+      <FONT POINT-SIZE="12.5" COLOR="#7A2E2E">mistake</FONT>
     >];
     s_c3 [shape=box, fillcolor="#E9F7F2", label=<
-      <B>C3 (revert C2)</B><BR/>
-      <FONT POINT-SIZE="14">new inverse commit<BR/>restores clean files</FONT>
+      <B>C3</B><BR/>
+      <FONT POINT-SIZE="12.5" COLOR="#2E7D6B">reverts C2</FONT>
     >];
-    s_push [shape=note, style="filled", fillcolor="#F0EBFA", label=<
-      <B>recovery-lab &amp; remote</B><BR/>
-      advance to <B>C3</B>;<BR/>
-      fast-forward safe
+    s_tip [shape=box, fillcolor="#F0EBFA", label=<
+      <B>branch &amp; remote</B>
     >];
 
-    s_c1 -> s_c2 [label="pushed"];
-    s_c2 -> s_c3 [label="revert"];
-    s_c3 -> s_push [style=dashed, arrowhead=none, color="#71849A"];
+    s_c1 -> s_c2;
+    s_c2 -> s_c3 [color="#2E7D6B", fontcolor="#2E7D6B", label="revert"];
+    s_c3 -> s_tip [style=dashed, dir=back, color="#526780"];
   }
 
   subgraph cluster_private {
-    label="1 · Private unpushed commit  —  git reset --soft HEAD~1";
-    fontsize=18; style="rounded"; color="#BAC7D5"; margin=14;
+    label="1 · Private (unpushed) — git reset --soft HEAD~1";
+    fontsize=17; style="rounded"; color="#BAC7D5"; margin=14;
 
-    p_c1 [shape=box, fillcolor="#E9F7F2", label=<
-      <B>C1 (good)</B><BR/>
-      <FONT POINT-SIZE="14"><B>recovery-lab</B><BR/>rewinds here</FONT>
-    >];
+    p_c1 [shape=circle, fixedsize=true, width=0.56, fillcolor="#E9F7F2", label="C1"];
     p_c2 [shape=box, style="rounded,filled,dashed", fillcolor="#FBEDED", label=<
-      <B>C2 (mistake)</B><BR/>
-      <FONT POINT-SIZE="14">unpushed tip<BR/>left behind</FONT>
+      <B>C2</B><BR/>
+      <FONT POINT-SIZE="12.5" COLOR="#7A2E2E">unpushed</FONT>
     >];
-    p_staged [shape=note, style="filled", fillcolor="#FFF2D6", label=<
-      <B>Staging area (index)</B><BR/>
-      C2's edits stay <B>staged</B><BR/>
-      to fix &amp; recommit
+    p_staged [shape=box, fillcolor="#FFF2D6", label=<
+      <B>Index</B><BR/>
+      <FONT POINT-SIZE="12.5" COLOR="#526780">edits staged</FONT>
     >];
 
-    p_c1 -> p_c2 [dir=back, color="#8B6D37", penwidth=1.9, label="rewind\npointer"];
-    p_c2 -> p_staged [style=dashed, color="#526780", label="keep\nedits"];
+    p_c1 -> p_c2 [dir=back, color="#8B6D37", fontcolor="#8B6D37", label="rewind branch"];
+    p_c2 -> p_staged [style=dashed, label="keep"];
   }
 
   { rank=same; s_c1; p_c1; }
   { rank=same; s_c2; p_c2; }
-  { rank=same; s_c3; p_staged; }
 }

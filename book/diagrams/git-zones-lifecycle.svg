@@ -1,119 +1,98 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="300" viewBox="0.00 0.00 1074.00 448.00" role="img" aria-labelledby="git-zones-lifecycle-title git-zones-lifecycle-desc">
-  <title id="git-zones-lifecycle-title">Four places your work lives and which Git command moves between them</title>
-  <desc id="git-zones-lifecycle-desc">Left-to-right flow across Working tree (saved files on disk), Staging index (snapshot queued via git add, unstaged safely via git restore --staged), Local history in .git (commits created via git commit, rewound privately via git reset --soft HEAD~1), and Remote repository (updated via git push, inspected via git fetch, and copied or integrated via git clone and git pull).</desc>
-  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(11.52 436.11)">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="103" viewBox="0.00 0.00 847.00 121.00" role="img" aria-labelledby="git-zones-lifecycle-title git-zones-lifecycle-desc">
+  <title id="git-zones-lifecycle-title">Git zones and commands</title>
+  <desc id="git-zones-lifecycle-desc">Four zones from left to right — Working tree (saved files), Staging index (next snapshot), Local .git (commits), and Remote (origin) — connected by git add, git commit, git push, restore --staged, reset --soft, git fetch, and git clone or git pull.</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(8.64 112.04)">
     <title>git_zones_lifecycle</title>
-    <polygon fill="white" stroke="none" points="-11.52,11.52 -11.52,-436.11 1062.52,-436.11 1062.52,11.52 -11.52,11.52" />
-    <text xml:space="preserve" text-anchor="middle" x="525.5" y="-401.59" font-family="Arial" font-size="20.00" fill="#14263c">Four places your work lives — and which Git command moves between them</text>
-    <g id="clust1" class="cluster">
-      <title>cluster_local</title>
-      <path fill="white" stroke="#bac7d5" d="M20,-8C20,-8 581,-8 581,-8 587,-8 593,-14 593,-20 593,-20 593,-366.84 593,-366.84 593,-372.84 587,-378.84 581,-378.84 581,-378.84 20,-378.84 20,-378.84 14,-378.84 8,-372.84 8,-366.84 8,-366.84 8,-20 8,-20 8,-14 14,-8 20,-8" />
-      <text xml:space="preserve" text-anchor="middle" x="300.5" y="-357.74" font-family="Arial" font-size="18.00" fill="#14263c">On your computer (offline, no account required)</text>
-    </g>
-    <g id="clust2" class="cluster">
-      <title>cluster_remote</title>
-      <path fill="white" stroke="#bac7d5" d="M613,-8C613,-8 1031,-8 1031,-8 1037,-8 1043,-14 1043,-20 1043,-20 1043,-373.34 1043,-373.34 1043,-379.34 1037,-385.34 1031,-385.34 1031,-385.34 613,-385.34 613,-385.34 607,-385.34 601,-379.34 601,-373.34 601,-373.34 601,-20 601,-20 601,-14 607,-8 613,-8" />
-      <text xml:space="preserve" text-anchor="middle" x="822" y="-364.24" font-family="Arial" font-size="18.00" fill="#14263c">Shared server or bare folder</text>
-    </g>
+    <polygon fill="white" stroke="none" points="-8.64,8.64 -8.64,-112.04 838.53,-112.04 838.53,8.64 -8.64,8.64" />
+    <text xml:space="preserve" text-anchor="middle" x="414.94" y="-82.3" font-family="Arial" font-size="18.00" fill="#14263c">Git zones and commands</text>
     <g id="node1" class="node">
       <title>working</title>
-      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M388.52,-333.84C388.52,-333.84 65.48,-333.84 65.48,-333.84 59.48,-333.84 53.48,-327.84 53.48,-321.84 53.48,-321.84 53.48,-280.56 53.48,-280.56 53.48,-274.56 59.48,-268.56 65.48,-268.56 65.48,-268.56 388.52,-268.56 388.52,-268.56 394.52,-268.56 400.52,-274.56 400.52,-280.56 400.52,-280.56 400.52,-321.84 400.52,-321.84 400.52,-327.84 394.52,-333.84 388.52,-333.84" />
-      <text xml:space="preserve" text-anchor="start" x="153.12" y="-311" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="180.12" y="-311" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">1 · Working tree</text>
-      <text xml:space="preserve" text-anchor="start" x="65" y="-295" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="92" y="-295" font-family="Arial" font-size="14.00" fill="#14263c">Saved files on disk (U = untracked, M = modified)</text>
-      <text xml:space="preserve" text-anchor="start" x="90.88" y="-279" font-family="Arial" font-size="14.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="113.38" y="-279" font-family="Arial" font-style="italic" font-size="14.00" fill="#14263c">Unsaved editor tabs are invisible to Git</text>
-      <text xml:space="preserve" text-anchor="start" x="345.12" y="-279" font-family="Arial" font-size="16.00" fill="#14263c">    </text>
+      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.6" d="M118.41,-45.4C118.41,-45.4 12,-45.4 12,-45.4 6,-45.4 0,-39.4 0,-33.4 0,-33.4 0,-13 0,-13 0,-7 6,-1 12,-1 12,-1 118.41,-1 118.41,-1 124.41,-1 130.41,-7 130.41,-13 130.41,-13 130.41,-33.4 130.41,-33.4 130.41,-39.4 124.41,-45.4 118.41,-45.4" />
+      <text xml:space="preserve" text-anchor="start" x="10.08" y="-24.95" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="28.08" y="-24.95" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Working tree</text>
+      <text xml:space="preserve" text-anchor="start" x="19.83" y="-9.95" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="37.83" y="-9.95" font-family="Arial" font-size="13.00" fill="#526780">saved files</text>
+      <text xml:space="preserve" text-anchor="start" x="101.58" y="-9.95" font-family="Arial" font-size="15.00" fill="#14263c">  </text>
     </g>
     <g id="node2" class="node">
       <title>index</title>
-      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" d="M376.52,-208.31C376.52,-208.31 89.48,-208.31 89.48,-208.31 83.48,-208.31 77.48,-202.31 77.48,-196.31 77.48,-196.31 77.48,-155.03 77.48,-155.03 77.48,-149.03 83.48,-143.03 89.48,-143.03 89.48,-143.03 376.52,-143.03 376.52,-143.03 382.52,-143.03 388.52,-149.03 388.52,-155.03 388.52,-155.03 388.52,-196.31 388.52,-196.31 388.52,-202.31 382.52,-208.31 376.52,-208.31" />
-      <text xml:space="preserve" text-anchor="start" x="155.38" y="-185.47" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="182.38" y="-185.47" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">2 · Staging index</text>
-      <text xml:space="preserve" text-anchor="start" x="89" y="-169.47" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="116" y="-169.47" font-family="Arial" font-size="14.00" fill="#14263c">Exact snapshot queued for the next commit</text>
-      <text xml:space="preserve" text-anchor="start" x="90.12" y="-153.47" font-family="Arial" font-size="14.00" fill="#14263c">      Inspect with:  git status  ·  git diff --staged</text>
-      <text xml:space="preserve" text-anchor="start" x="357.88" y="-153.47" font-family="Arial" font-size="16.00" fill="#14263c">    </text>
+      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.6" d="M385.57,-74.4C385.57,-74.4 273.16,-74.4 273.16,-74.4 267.16,-74.4 261.16,-68.4 261.16,-62.4 261.16,-62.4 261.16,-42 261.16,-42 261.16,-36 267.16,-30 273.16,-30 273.16,-30 385.57,-30 385.57,-30 391.57,-30 397.57,-36 397.57,-42 397.57,-42 397.57,-62.4 397.57,-62.4 397.57,-68.4 391.57,-74.4 385.57,-74.4" />
+      <text xml:space="preserve" text-anchor="start" x="271.24" y="-53.95" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="289.24" y="-53.95" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Staging index</text>
+      <text xml:space="preserve" text-anchor="start" x="273.87" y="-38.95" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="291.87" y="-38.95" font-family="Arial" font-size="13.00" fill="#526780">next snapshot</text>
+      <text xml:space="preserve" text-anchor="start" x="375.87" y="-38.95" font-family="Arial" font-size="15.00" fill="#14263c">  </text>
     </g>
     <g id="edge1" class="edge">
       <title>working-&gt;index</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M112.33,-267.82C95.92,-257.34 87.99,-243.99 99.5,-227.31 102.38,-223.13 105.66,-219.3 109.25,-215.78" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="110.91,-218.14 115.21,-210.58 107.14,-213.81 110.91,-218.14" />
-      <text xml:space="preserve" text-anchor="start" x="99.5" y="-230.76" font-family="Arial" font-size="14.00" fill="#14263c">  </text>
-      <text xml:space="preserve" text-anchor="start" x="107" y="-230.76" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">git add</text>
-      <text xml:space="preserve" text-anchor="start" x="151.25" y="-230.76" font-family="Arial" font-size="14.00" fill="#14263c"> (stage snapshot)  </text>
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M130.96,-37.13C135.5,-37.89 140.02,-38.59 144.41,-39.2 179.05,-43.94 217.61,-47 250.44,-48.96" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="249.87,-51.73 258.02,-49.39 250.19,-46.14 249.87,-51.73" />
+      <text xml:space="preserve" text-anchor="start" x="169.91" y="-52.23" font-family="Arial" font-size="13.00" fill="#14263c"> </text>
+      <text xml:space="preserve" text-anchor="start" x="173.66" y="-52.23" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">git add</text>
+      <text xml:space="preserve" text-anchor="start" x="217.91" y="-52.23" font-family="Arial" font-size="13.00" fill="#14263c"> </text>
     </g>
-    <g id="edge2" class="edge">
+    <g id="edge4" class="edge">
       <title>index-&gt;working</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" stroke-dasharray="5,2" d="M261.01,-208.83C267.05,-219.42 270.66,-231.45 267,-243.06 265.29,-248.47 262.87,-253.82 260.05,-258.94" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="257.68,-257.32 255.87,-265.82 262.58,-260.3 257.68,-257.32" />
-      <text xml:space="preserve" text-anchor="start" x="268.47" y="-229.76" font-family="Arial" font-size="14.00" fill="#526780">  git restore --staged (unstage safely)  </text>
+      <path fill="none" stroke="#526780" stroke-width="1.6" stroke-dasharray="5,2" d="M280.78,-29.32C269.97,-25.12 258.36,-21.38 247.16,-19.2 212.64,-12.45 173.72,-12.37 140.84,-14.41" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="141.04,-11.59 133.26,-14.94 141.43,-17.18 141.04,-11.59" />
+      <text xml:space="preserve" text-anchor="start" x="144.41" y="-21.85" font-family="Arial" font-size="13.00" fill="#526780"> restore --staged </text>
     </g>
     <g id="node3" class="node">
       <title>local_repo</title>
-      <path fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" d="M395.27,-89.28C395.27,-89.28 82.73,-89.28 82.73,-89.28 76.73,-89.28 70.73,-83.28 70.73,-77.28 70.73,-77.28 70.73,-36 70.73,-36 70.73,-30 76.73,-24 82.73,-24 82.73,-24 395.27,-24 395.27,-24 401.27,-24 407.27,-30 407.27,-36 407.27,-36 407.27,-77.28 407.27,-77.28 407.27,-83.28 401.27,-89.28 395.27,-89.28" />
-      <text xml:space="preserve" text-anchor="start" x="144.5" y="-66.44" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="171.5" y="-66.44" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">3 · Local history (.git)</text>
-      <text xml:space="preserve" text-anchor="start" x="82.25" y="-50.44" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="109.25" y="-50.44" font-family="Arial" font-size="14.00" fill="#14263c">Permanent commit snapshots  (HEAD → main)</text>
-      <text xml:space="preserve" text-anchor="start" x="107.75" y="-34.44" font-family="Arial" font-size="14.00" fill="#14263c">      Inspect with:  git log --oneline --graph</text>
-      <text xml:space="preserve" text-anchor="start" x="352.25" y="-34.44" font-family="Arial" font-size="16.00" fill="#14263c">    </text>
+      <path fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.6" d="M636.98,-74.4C636.98,-74.4 556.07,-74.4 556.07,-74.4 550.07,-74.4 544.07,-68.4 544.07,-62.4 544.07,-62.4 544.07,-42 544.07,-42 544.07,-36 550.07,-30 556.07,-30 556.07,-30 636.98,-30 636.98,-30 642.98,-30 648.98,-36 648.98,-42 648.98,-42 648.98,-62.4 648.98,-62.4 648.98,-68.4 642.98,-74.4 636.98,-74.4" />
+      <text xml:space="preserve" text-anchor="start" x="554.15" y="-53.95" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="572.15" y="-53.95" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Local .git</text>
+      <text xml:space="preserve" text-anchor="start" x="558.65" y="-38.95" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="576.65" y="-38.95" font-family="Arial" font-size="13.00" fill="#526780">commits</text>
+      <text xml:space="preserve" text-anchor="start" x="625.4" y="-38.95" font-family="Arial" font-size="15.00" fill="#14263c">  </text>
     </g>
-    <g id="edge3" class="edge">
+    <g id="edge2" class="edge">
       <title>index-&gt;local_repo</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M77.07,-155.87C49.96,-146.03 35.33,-131.07 52.75,-108.28 56.64,-103.19 63.53,-98.49 72.43,-94.18" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="73.39,-96.89 79.75,-90.96 71.08,-91.63 73.39,-96.89" />
-      <text xml:space="preserve" text-anchor="start" x="52.75" y="-111.73" font-family="Arial" font-size="14.00" fill="#14263c">  </text>
-      <text xml:space="preserve" text-anchor="start" x="60.25" y="-111.73" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">git commit</text>
-      <text xml:space="preserve" text-anchor="start" x="130" y="-111.73" font-family="Arial" font-size="14.00" fill="#14263c"> (record snapshot)  </text>
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M398.31,-52.2C439.95,-52.2 492.85,-52.2 533.38,-52.2" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="533.25,-55 541.25,-52.2 533.25,-49.4 533.25,-55" />
+      <text xml:space="preserve" text-anchor="start" x="433.69" y="-55.85" font-family="Arial" font-size="13.00" fill="#14263c"> </text>
+      <text xml:space="preserve" text-anchor="start" x="437.44" y="-55.85" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">git commit</text>
+      <text xml:space="preserve" text-anchor="start" x="504.19" y="-55.85" font-family="Arial" font-size="13.00" fill="#14263c"> </text>
     </g>
-    <g id="edge4" class="edge">
+    <g id="edge5" class="edge">
       <title>local_repo-&gt;index</title>
-      <path fill="none" stroke="#526780" stroke-width="1.6" stroke-dasharray="5,2" d="M249.37,-89.7C251.68,-100.59 252.93,-112.83 251,-124.03 250.53,-126.78 249.92,-129.58 249.21,-132.38" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="246.5,-131.42 246.97,-140.09 252.01,-133.02 246.5,-131.42" />
-      <text xml:space="preserve" text-anchor="start" x="251.94" y="-110.73" font-family="Arial" font-size="14.00" fill="#526780">  git reset --soft HEAD~1 (undo private commit)  </text>
+      <path fill="none" stroke="#526780" stroke-width="1.6" stroke-dasharray="5,2" d="M543.32,-34.75C538.88,-33.72 534.42,-32.85 530.07,-32.2 477.98,-24.42 463.85,-25.85 411.57,-32.2 410.45,-32.33 409.33,-32.48 408.2,-32.63" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.6" points="407.79,-29.86 400.32,-33.88 408.66,-35.39 407.79,-29.86" />
+      <text xml:space="preserve" text-anchor="start" x="434.82" y="-34.85" font-family="Arial" font-size="13.00" fill="#526780"> reset --soft </text>
     </g>
     <g id="node4" class="node">
       <title>remote</title>
-      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M946.77,-89.28C946.77,-89.28 697.23,-89.28 697.23,-89.28 691.23,-89.28 685.23,-83.28 685.23,-77.28 685.23,-77.28 685.23,-36 685.23,-36 685.23,-30 691.23,-24 697.23,-24 697.23,-24 946.77,-24 946.77,-24 952.77,-24 958.77,-30 958.77,-36 958.77,-36 958.77,-77.28 958.77,-77.28 958.77,-83.28 952.77,-89.28 946.77,-89.28" />
-      <text xml:space="preserve" text-anchor="start" x="696.75" y="-66.44" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="723.75" y="-66.44" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">4 · Remote repository (origin)</text>
-      <text xml:space="preserve" text-anchor="start" x="703.5" y="-50.44" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="730.5" y="-50.44" font-family="Arial" font-size="14.00" fill="#14263c">GitHub, GitLab, institutional server,</text>
-      <text xml:space="preserve" text-anchor="start" x="729" y="-34.44" font-family="Arial" font-size="14.00" fill="#14263c">      or another folder on disk</text>
-      <text xml:space="preserve" text-anchor="start" x="897" y="-34.44" font-family="Arial" font-size="16.00" fill="#14263c">    </text>
+      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.6" d="M817.89,-45.4C817.89,-45.4 748.98,-45.4 748.98,-45.4 742.98,-45.4 736.98,-39.4 736.98,-33.4 736.98,-33.4 736.98,-13 736.98,-13 736.98,-7 742.98,-1 748.98,-1 748.98,-1 817.89,-1 817.89,-1 823.89,-1 829.89,-7 829.89,-13 829.89,-13 829.89,-33.4 829.89,-33.4 829.89,-39.4 823.89,-45.4 817.89,-45.4" />
+      <text xml:space="preserve" text-anchor="start" x="747.06" y="-24.95" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="765.06" y="-24.95" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Remote</text>
+      <text xml:space="preserve" text-anchor="start" x="753.43" y="-9.95" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="771.43" y="-9.95" font-family="Arial" font-size="13.00" fill="#526780">origin</text>
+      <text xml:space="preserve" text-anchor="start" x="804.43" y="-9.95" font-family="Arial" font-size="15.00" fill="#14263c">  </text>
+    </g>
+    <g id="edge3" class="edge">
+      <title>local_repo-&gt;remote</title>
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M649.67,-48.67C672.32,-46.65 699.08,-43.62 722.98,-39.2 724.06,-39 725.14,-38.79 726.24,-38.57" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="726.6,-41.36 733.82,-36.92 725.41,-35.88 726.6,-41.36" />
+      <text xml:space="preserve" text-anchor="start" x="662.98" y="-50.87" font-family="Arial" font-size="13.00" fill="#14263c"> </text>
+      <text xml:space="preserve" text-anchor="start" x="666.73" y="-50.87" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">git push</text>
+      <text xml:space="preserve" text-anchor="start" x="719.23" y="-50.87" font-family="Arial" font-size="13.00" fill="#14263c"> </text>
+    </g>
+    <g id="edge7" class="edge">
+      <title>remote-&gt;working</title>
+      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" stroke-dasharray="1,5" d="M736.2,-11.27C731.75,-10.43 727.3,-9.72 722.98,-9.2 637.86,1.14 615.81,-7.64 530.07,-7.2 358.67,-6.31 315.02,8.34 144.41,-8.2 143.31,-8.3 142.2,-8.42 141.09,-8.54" />
+      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="140.92,-5.74 133.34,-9.52 141.63,-11.29 140.92,-5.74" />
+      <text xml:space="preserve" text-anchor="start" x="411.57" y="-10.85" font-family="Arial" font-size="13.00" fill="#2e7d6b"> </text>
+      <text xml:space="preserve" text-anchor="start" x="415.32" y="-10.85" font-family="Arial" font-weight="bold" font-size="13.00" fill="#2e7d6b">git clone / git pull</text>
+      <text xml:space="preserve" text-anchor="start" x="526.32" y="-10.85" font-family="Arial" font-size="13.00" fill="#2e7d6b"> </text>
     </g>
     <g id="edge6" class="edge">
-      <title>local_repo-&gt;remote</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M418.4,-56.64C500.51,-56.64 596.62,-56.64 674.45,-56.64" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="418.64,-53.77 410.44,-56.64 418.64,-59.51 418.64,-53.77" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="674.2,-59.51 682.4,-56.64 674.2,-53.77 674.2,-59.51" />
-      <text xml:space="preserve" text-anchor="start" x="509.12" y="-75.34" font-family="Arial" font-size="14.00" fill="#14263c"> </text>
-      <text xml:space="preserve" text-anchor="start" x="512.88" y="-75.34" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">git push →</text>
-      <text xml:space="preserve" text-anchor="start" x="477.25" y="-61.34" font-family="Arial" font-weight="bold" font-size="14.00" fill="#2e7d6b">← git fetch</text>
-      <text xml:space="preserve" text-anchor="start" x="547.75" y="-61.34" font-family="Arial" font-size="14.00" fill="#2e7d6b"> (refs only)</text>
-      <text xml:space="preserve" text-anchor="start" x="611.5" y="-61.34" font-family="Arial" font-size="14.00" fill="#14263c"> </text>
-    </g>
-    <g id="node5" class="node">
-      <title>shortcuts</title>
-      <polygon fill="#f3f5f7" stroke="#bac7d5" stroke-width="1.5" points="1020.64,-340.34 617.36,-340.34 617.36,-262.06 1026.64,-262.06 1026.64,-334.34 1020.64,-340.34" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="1020.64,-340.34 1020.64,-334.34" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="1026.64,-334.34 1020.64,-334.34" />
-      <text xml:space="preserve" text-anchor="start" x="687.38" y="-317.5" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="714.38" y="-317.5" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">Multi-step &amp; discard commands</text>
-      <text xml:space="preserve" text-anchor="start" x="632.62" y="-301.5" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="659.62" y="-301.5" font-family="Arial" font-size="13.00" fill="#14263c">• </text>
-      <text xml:space="preserve" text-anchor="start" x="667.88" y="-301.5" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">git clone URL</text>
-      <text xml:space="preserve" text-anchor="start" x="754.88" y="-301.5" font-family="Arial" font-size="13.00" fill="#14263c"> — copy Remote → new .git + Working tree</text>
-      <text xml:space="preserve" text-anchor="start" x="646.12" y="-288.35" font-family="Arial" font-size="13.00" fill="#14263c">      • </text>
-      <text xml:space="preserve" text-anchor="start" x="676.88" y="-288.35" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">git pull</text>
-      <text xml:space="preserve" text-anchor="start" x="721.12" y="-288.35" font-family="Arial" font-size="13.00" fill="#14263c"> — git fetch + merge into current branch &amp; files</text>
-      <text xml:space="preserve" text-anchor="start" x="628.88" y="-272.5" font-family="Arial" font-size="13.00" fill="#14263c">      • </text>
-      <text xml:space="preserve" text-anchor="start" x="659.62" y="-272.5" font-family="Arial" font-weight="bold" font-size="13.00" fill="#14263c">git restore -- file</text>
-      <text xml:space="preserve" text-anchor="start" x="761.62" y="-272.5" font-family="Arial" font-size="13.00" fill="#14263c"> — discard unstaged Working-tree edits</text>
-      <text xml:space="preserve" text-anchor="start" x="997.12" y="-272.5" font-family="Arial" font-size="16.00" fill="#14263c">    </text>
+      <title>remote-&gt;local_repo</title>
+      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" stroke-dasharray="5,2" d="M736.2,-16C713.81,-13.93 686.7,-13.55 662.98,-19.2 656.89,-20.64 650.72,-22.76 644.72,-25.22" />
+      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="643.87,-22.54 637.7,-28.36 646.15,-27.65 643.87,-22.54" />
+      <text xml:space="preserve" text-anchor="start" x="662.98" y="-22.85" font-family="Arial" font-size="13.00" fill="#2e7d6b"> </text>
+      <text xml:space="preserve" text-anchor="start" x="666.73" y="-22.85" font-family="Arial" font-weight="bold" font-size="13.00" fill="#2e7d6b">git fetch</text>
+      <text xml:space="preserve" text-anchor="start" x="719.23" y="-22.85" font-family="Arial" font-size="13.00" fill="#2e7d6b"> </text>
     </g>
   </g>
 </svg>

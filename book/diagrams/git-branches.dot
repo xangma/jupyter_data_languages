@@ -1,81 +1,46 @@
-// Source: 02-git-and-tests.ipynb, "Merge and resolve a conflict".
-// Solid edges run older -> newer; they are not Git's stored parent pointers.
-// Commit M has parents A and B. The dashed red note is not a commit.
+// Source: 02-git-and-tests.ipynb, Part 2 ("Merge conflict").
+// Two competing edits to the same line pause at a conflict before commit M.
 digraph git_branches {
   graph [
-    bgcolor="white", fontname="Arial", fontsize=24, fontcolor="#14263C",
-    label="Two README edits meet in a merge\nSolid arrows: older → newer commits",
-    labelloc=t, rankdir=LR, nodesep=0.38, ranksep=0.48,
-    pad=0.16, splines=polyline, outputorder=edgesfirst
+    bgcolor="white", fontname="Arial", fontsize=19, fontcolor="#14263C",
+    label="Competing edits pause for conflict resolution",
+    labelloc=t, rankdir=LR, nodesep=0.34, ranksep=0.50, pad=0.14,
+    splines=true
   ];
   node [
-    fontname="Arial", fontsize=19, fontcolor="#14263C",
-    color="#BAC7D5", penwidth=1.5, style=filled,
-    margin="0.15,0.12"
+    fontname="Arial", fontsize=15, fontcolor="#14263C",
+    color="#BAC7D5", penwidth=1.6, style="rounded,filled", margin="0.13,0.09"
   ];
   edge [
-    fontname="Arial", fontsize=18, fontcolor="#14263C",
-    color="#14263C", penwidth=1.7, arrowsize=0.85
+    fontname="Arial", fontsize=13.5, fontcolor="#14263C",
+    color="#14263C", penwidth=1.6, arrowsize=0.8
   ];
 
-  base [shape=circle, fixedsize=true, width=0.68, fillcolor="#F3F5F7", label="C"];
-  a [shape=circle, fixedsize=true, width=0.68, fillcolor="#EAF3FE", label="A"];
-  b [shape=circle, fixedsize=true, width=0.68, fillcolor="#FFF2D6", label="B"];
-  merge [shape=doublecircle, fixedsize=true, width=0.68, fillcolor="#F0EBFA", label="M"];
+  base [shape=circle, fixedsize=true, width=0.56, fillcolor="#F3F5F7", label="C"];
 
-  base_note [shape=plain, style="", label=<
-    <B>Common base</B><BR/>
-    main after<BR/>
-    merging<BR/>
-    test-wraparound
-  >];
-  a_note [shape=note, fillcolor="#EAF3FE", label=<
-    <B>description-a</B><BR/>
-    README.md:<BR/><BR/>
-    Angles are measured<BR/>
-    in degrees.
-  >];
-  b_note [shape=note, fillcolor="#FFF2D6", label=<
-    <B>description-b</B><BR/>
-    same paragraph in<BR/>
-    README.md:<BR/><BR/>
-    The helper returns<BR/>
-    the shortest arc.
-  >];
-  conflict [shape=note, style="filled,dashed", fillcolor="#FBEDED", label=<
-    <B>Merge pauses: conflict</B><BR/><BR/>
-    1 · main fast-forwards to A<BR/><BR/>
-    2 · git merge<BR/>
-    description-b<BR/><BR/>
-    Conflict in README.md<BR/>
-    <B>No new commit yet</B>
-  >];
-  resolved [shape=note, fillcolor="#E9F7F2", label=<
-    <B>Resolve README.md</B><BR/><BR/>
-    Keep both facts:<BR/>
-    degrees and shortest arc<BR/><BR/>
-    git add README.md<BR/>
-    git commit<BR/><BR/>
-    <B>main → M</B><BR/>
-    M has parents A and B
+  a [shape=box, fillcolor="#EAF3FE", label=<
+    <B>A · description-a</B><BR/>
+    <FONT POINT-SIZE="13" COLOR="#526780">"in degrees"</FONT>
   >];
 
-  { rank=same; base; base_note; }
-  { rank=same; a_note; a; b; b_note; }
-  { rank=same; conflict; merge; resolved; }
+  b [shape=box, fillcolor="#FFF2D6", label=<
+    <B>B · description-b</B><BR/>
+    <FONT POINT-SIZE="13" COLOR="#526780">"shortest arc"</FONT>
+  >];
+
+  conflict [shape=box, style="rounded,filled,dashed", fillcolor="#FBEDED", label=<
+    <B>Conflict pause</B><BR/>
+    <FONT POINT-SIZE="13" COLOR="#7A2E2E">same line edited</FONT>
+  >];
+
+  merge [shape=box, fillcolor="#E9F7F2", label=<
+    <B>M · Merge commit</B><BR/>
+    <FONT POINT-SIZE="13" COLOR="#2E7D6B">"degrees + shortest arc"</FONT>
+  >];
 
   base -> a;
   base -> b;
-  a -> merge;
-  b -> merge;
-
-  base -> base_note [style=invis, weight=10];
-  a_note -> a [style=invis, weight=10];
-  a -> b [style=invis, weight=20];
-  b -> b_note [style=invis, weight=10];
-  conflict -> merge [style=invis, weight=10];
-  merge -> resolved [style=invis, weight=10];
-  a -> a_note [style=dashed, arrowhead=none, constraint=false, color="#BAC7D5"];
-  b -> b_note [style=dashed, arrowhead=none, constraint=false, color="#BAC7D5"];
-  merge -> resolved [style=dashed, arrowhead=none, constraint=false, color="#BAC7D5"];
+  a -> conflict [style=dashed, color="#7A2E2E"];
+  b -> conflict [style=dashed, color="#7A2E2E"];
+  conflict -> merge [label=< resolve + commit >];
 }

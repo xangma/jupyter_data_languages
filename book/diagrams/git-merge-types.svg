@@ -1,133 +1,113 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="227" viewBox="0.00 0.00 1144.00 361.00" role="img" aria-labelledby="git-merge-types-title git-merge-types-desc">
-  <title id="git-merge-types-title">Fast-forward pointer move versus three-way merge commit</title>
-  <desc id="git-merge-types-desc">Top panel shows a fast-forward merge where main stayed at C1 while test-wraparound advanced to C2, so git merge slides main forward to C2 with no extra commit. Bottom panel shows diverged branches A and B joining in a two-parent merge commit M automatically when different lines changed, or pausing for human conflict resolution when the same lines changed differently.</desc>
-  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(10.08 351.33)">
+<svg xmlns="http://www.w3.org/2000/svg" width="654" height="368" viewBox="0.00 0.00 654.00 368.00" role="img" aria-labelledby="git-merge-types-title git-merge-types-desc">
+  <title id="git-merge-types-title">Fast-forward merge versus three-way merge</title>
+  <desc id="git-merge-types-desc">Top panel shows a fast-forward merge sliding main forward from C1 to C2 along linear history; bottom panel shows diverged commits A (main) and B (feature) joining in two-parent merge commit M.</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(10.08 357.83)">
     <title>git_merge_types</title>
-    <polygon fill="white" stroke="none" points="-10.08,10.08 -10.08,-351.33 1134.29,-351.33 1134.29,10.08 -10.08,10.08" />
-    <text xml:space="preserve" text-anchor="middle" x="562.11" y="-318.25" font-family="Arial" font-size="20.00" fill="#14263c">What a merge does: fast-forward pointer move vs three-way merge commit</text>
+    <polygon fill="white" stroke="none" points="-10.08,10.08 -10.08,-357.83 644.41,-357.83 644.41,10.08 -10.08,10.08" />
+    <text xml:space="preserve" text-anchor="middle" x="317.16" y="-325.7" font-family="Arial" font-size="19.00" fill="#14263c">Fast-forward merge vs three-way merge</text>
     <g id="clust1" class="cluster">
       <title>cluster_3way</title>
-      <path fill="white" stroke="#bac7d5" d="M20,-8C20,-8 1104.21,-8 1104.21,-8 1110.21,-8 1116.21,-14 1116.21,-20 1116.21,-20 1116.21,-151 1116.21,-151 1116.21,-157 1110.21,-163 1104.21,-163 1104.21,-163 20,-163 20,-163 14,-163 8,-157 8,-151 8,-151 8,-20 8,-20 8,-14 14,-8 20,-8" />
-      <text xml:space="preserve" text-anchor="middle" x="562.11" y="-142.38" font-family="Arial" font-size="17.50" fill="#14263c">2 · Three-way merge (both branches added commits)</text>
+      <path fill="white" stroke="#bac7d5" d="M20,-8C20,-8 614.33,-8 614.33,-8 620.33,-8 626.33,-14 626.33,-20 626.33,-20 626.33,-154 626.33,-154 626.33,-160 620.33,-166 614.33,-166 614.33,-166 20,-166 20,-166 14,-166 8,-160 8,-154 8,-154 8,-20 8,-20 8,-14 14,-8 20,-8" />
+      <text xml:space="preserve" text-anchor="middle" x="317.16" y="-145.85" font-family="Arial" font-size="17.00" fill="#14263c">2 · Three-way merge (both branches advanced)</text>
     </g>
     <g id="clust2" class="cluster">
       <title>cluster_ff</title>
-      <path fill="white" stroke="#bac7d5" d="M20,-171C20,-171 696.55,-171 696.55,-171 702.55,-171 708.55,-177 708.55,-183 708.55,-183 708.55,-290 708.55,-290 708.55,-296 702.55,-302 696.55,-302 696.55,-302 20,-302 20,-302 14,-302 8,-296 8,-290 8,-290 8,-183 8,-183 8,-177 14,-171 20,-171" />
-      <text xml:space="preserve" text-anchor="middle" x="358.28" y="-281.38" font-family="Arial" font-size="17.50" fill="#14263c">1 · Fast-forward merge (main stayed at C1)</text>
+      <path fill="white" stroke="#bac7d5" d="M20,-174C20,-174 414.11,-174 414.11,-174 420.11,-174 426.11,-180 426.11,-186 426.11,-186 426.11,-298 426.11,-298 426.11,-304 420.11,-310 414.11,-310 414.11,-310 20,-310 20,-310 14,-310 8,-304 8,-298 8,-298 8,-186 8,-186 8,-180 14,-174 20,-174" />
+      <text xml:space="preserve" text-anchor="middle" x="217.05" y="-289.85" font-family="Arial" font-size="17.00" fill="#14263c">1 · Fast-forward merge (main stayed at C1)</text>
     </g>
     <g id="node1" class="node">
       <title>t_c1</title>
-      <ellipse fill="#f3f5f7" stroke="#bac7d5" stroke-width="1.5" cx="42.16" cy="-67" rx="20.16" ry="20.16" />
-      <text xml:space="preserve" text-anchor="middle" x="42.16" y="-61.27" font-family="Arial" font-size="15.50" fill="#14263c">C1</text>
+      <ellipse fill="#f3f5f7" stroke="#bac7d5" stroke-width="1.6" cx="42.16" cy="-75" rx="20.16" ry="20.16" />
+      <text xml:space="preserve" text-anchor="middle" x="42.16" y="-69.28" font-family="Arial" font-size="15.50" fill="#14263c">C1</text>
     </g>
     <g id="node2" class="node">
       <title>t_a</title>
-      <ellipse fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" cx="203.98" cy="-42" rx="20.16" ry="20.16" />
-      <text xml:space="preserve" text-anchor="middle" x="203.98" y="-36.27" font-family="Arial" font-size="15.50" fill="#14263c">A</text>
+      <ellipse fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.6" cx="166.98" cy="-42" rx="20.16" ry="20.16" />
+      <text xml:space="preserve" text-anchor="middle" x="166.98" y="-36.27" font-family="Arial" font-size="15.50" fill="#14263c">A</text>
     </g>
     <g id="edge1" class="edge">
       <title>t_c1-&gt;t_a</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M61.79,-60.55C65.88,-59.31 70.22,-58.13 74.32,-57.25 107.77,-50.1 146.87,-46.06 173.11,-43.96" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="173,-46.78 180.76,-43.39 172.57,-41.2 173,-46.78" />
-      <text xml:space="preserve" text-anchor="middle" x="123.07" y="-59.7" font-family="Arial" font-size="14.00" fill="#14263c">main</text>
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M62.12,-68.94C68.23,-67.05 75.04,-65 81.32,-63.25 99.64,-58.13 120.34,-52.93 136.69,-48.95" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="137.26,-51.69 144.38,-47.09 135.95,-46.25 137.26,-51.69" />
+      <text xml:space="preserve" text-anchor="middle" x="104.57" y="-66.17" font-family="Arial" font-size="13.50" fill="#14263c">main</text>
     </g>
     <g id="node3" class="node">
       <title>t_b</title>
-      <ellipse fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" cx="203.98" cy="-101" rx="20.16" ry="20.16" />
-      <text xml:space="preserve" text-anchor="middle" x="203.98" y="-95.28" font-family="Arial" font-size="15.50" fill="#14263c">B</text>
+      <ellipse fill="#fff2d6" stroke="#bac7d5" stroke-width="1.6" cx="166.98" cy="-104" rx="20.16" ry="20.16" />
+      <text xml:space="preserve" text-anchor="middle" x="166.98" y="-98.28" font-family="Arial" font-size="15.50" fill="#14263c">B</text>
     </g>
     <g id="edge2" class="edge">
       <title>t_c1-&gt;t_b</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M62.44,-71.1C90.16,-77 141.49,-87.92 173.85,-94.8" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="172.86,-97.45 181.26,-96.38 174.02,-91.98 172.86,-97.45" />
-      <text xml:space="preserve" text-anchor="middle" x="123.07" y="-96.11" font-family="Arial" font-size="14.00" fill="#14263c">feature</text>
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M62.35,-79.53C82.36,-84.26 113.96,-91.72 137.01,-97.16" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="136.14,-99.83 144.57,-98.94 137.42,-94.38 136.14,-99.83" />
+      <text xml:space="preserve" text-anchor="middle" x="104.57" y="-97.54" font-family="Arial" font-size="13.50" fill="#14263c">feature</text>
     </g>
     <g id="node4" class="node">
       <title>t_m</title>
-      <ellipse fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" cx="471.85" cy="-71" rx="21.6" ry="21.6" />
-      <ellipse fill="none" stroke="#bac7d5" stroke-width="1.5" cx="471.85" cy="-71" rx="25.6" ry="25.6" />
-      <text xml:space="preserve" text-anchor="middle" x="471.85" y="-65.28" font-family="Arial" font-size="15.50" fill="#14263c">M</text>
+      <ellipse fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.6" cx="319.12" cy="-62" rx="21.6" ry="21.6" />
+      <ellipse fill="none" stroke="#bac7d5" stroke-width="1.6" cx="319.12" cy="-62" rx="25.6" ry="25.6" />
+      <text xml:space="preserve" text-anchor="middle" x="319.12" y="-56.27" font-family="Arial" font-size="15.50" fill="#14263c">M</text>
     </g>
     <g id="edge3" class="edge">
       <title>t_a-&gt;t_m</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M224.53,-44.13C269.14,-49 378.97,-60.98 435.68,-67.16" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="435.29,-69.94 443.55,-68.02 435.9,-64.37 435.29,-69.94" />
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M187.61,-44.61C211.78,-47.83 253.29,-53.36 283.01,-57.32" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="282.28,-60.05 290.58,-58.33 283.02,-54.5 282.28,-60.05" />
     </g>
     <g id="edge4" class="edge">
       <title>t_b-&gt;t_m</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M224.53,-98.79C269.14,-93.76 378.97,-81.37 435.68,-74.97" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="435.91,-77.76 443.55,-74.08 435.29,-72.19 435.91,-77.76" />
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M187,-98.68C211.38,-91.86 254.11,-79.91 284.15,-71.5" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="284.52,-74.31 291.47,-69.46 283.01,-68.91 284.52,-74.31" />
     </g>
     <g id="node5" class="node">
-      <title>t_out</title>
-      <polygon fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" points="1096.21,-108.45 729.55,-108.45 729.55,-33.55 1102.21,-33.55 1102.21,-102.45 1096.21,-108.45" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="1096.21,-108.45 1096.21,-102.45" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="1102.21,-102.45 1096.21,-102.45" />
-      <text xml:space="preserve" text-anchor="start" x="797.76" y="-87.53" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="824.76" y="-87.53" font-family="Arial" font-weight="bold" font-size="15.50" fill="#14263c">Two-parent merge commit M</text>
-      <text xml:space="preserve" text-anchor="start" x="750.88" y="-72.03" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="777.88" y="-72.03" font-family="Arial" font-size="14.00" fill="#14263c">• </text>
-      <text xml:space="preserve" text-anchor="start" x="786.88" y="-72.03" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">Different lines/files:</text>
-      <text xml:space="preserve" text-anchor="start" x="912.13" y="-72.03" font-family="Arial" font-size="14.00" fill="#14263c"> Git creates </text>
-      <text xml:space="preserve" text-anchor="start" x="985.63" y="-72.03" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">M</text>
-      <text xml:space="preserve" text-anchor="start" x="997.63" y="-72.03" font-family="Arial" font-size="14.00" fill="#14263c"> automatically</text>
-      <text xml:space="preserve" text-anchor="start" x="748.26" y="-57.95" font-family="Arial" font-size="14.00" fill="#14263c">      • </text>
-      <text xml:space="preserve" text-anchor="start" x="779.76" y="-57.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">Same lines edited:</text>
-      <text xml:space="preserve" text-anchor="start" x="899.01" y="-57.95" font-family="Arial" font-size="14.00" fill="#14263c"> </text>
-      <text xml:space="preserve" text-anchor="start" x="902.76" y="-57.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">Conflict</text>
-      <text xml:space="preserve" text-anchor="start" x="953.01" y="-57.95" font-family="Arial" font-size="14.00" fill="#14263c"> — Git pauses so you</text>
-      <text xml:space="preserve" text-anchor="start" x="739.63" y="-42.52" font-family="Arial" font-size="14.00" fill="#14263c">        combine both facts, then git add + git commit → </text>
-      <text xml:space="preserve" text-anchor="start" x="1062.13" y="-42.52" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">M</text>
-      <text xml:space="preserve" text-anchor="start" x="1074.13" y="-42.52" font-family="Arial" font-size="15.50" fill="#14263c">    </text>
+      <title>t_ref</title>
+      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.6" d="M600.33,-83.26C600.33,-83.26 466.11,-83.26 466.11,-83.26 460.11,-83.26 454.11,-77.26 454.11,-71.26 454.11,-71.26 454.11,-52.74 454.11,-52.74 454.11,-46.74 460.11,-40.74 466.11,-40.74 466.11,-40.74 600.33,-40.74 600.33,-40.74 606.33,-40.74 612.33,-46.74 612.33,-52.74 612.33,-52.74 612.33,-71.26 612.33,-71.26 612.33,-77.26 606.33,-83.26 600.33,-83.26" />
+      <text xml:space="preserve" text-anchor="start" x="482.97" y="-63.77" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="509.97" y="-63.77" font-family="Arial" font-weight="bold" font-size="15.50" fill="#14263c">main → M</text>
+      <text xml:space="preserve" text-anchor="start" x="463.47" y="-48.27" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="490.47" y="-48.27" font-family="Arial" font-size="13.00" fill="#526780">2 parents (A, B)</text>
+      <text xml:space="preserve" text-anchor="start" x="584.97" y="-48.27" font-family="Arial" font-size="15.50" fill="#14263c">    </text>
     </g>
     <g id="edge5" class="edge">
-      <title>t_m-&gt;t_out</title>
-      <path fill="none" stroke="#71849a" stroke-width="1.6" stroke-dasharray="5,2" d="M497.88,-71C542.53,-71 639.63,-71 728.91,-71" />
+      <title>t_m-&gt;t_ref</title>
+      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" stroke-dasharray="5,2" d="M355.67,-62C382.4,-62 420.05,-62 453.72,-62" />
+      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="355.71,-59.2 347.71,-62 355.71,-64.8 355.71,-59.2" />
     </g>
     <g id="node6" class="node">
       <title>f_c1</title>
-      <ellipse fill="#f3f5f7" stroke="#bac7d5" stroke-width="1.5" cx="42.16" cy="-222" rx="20.16" ry="20.16" />
-      <text xml:space="preserve" text-anchor="middle" x="42.16" y="-216.28" font-family="Arial" font-size="15.50" fill="#14263c">C1</text>
+      <ellipse fill="#f3f5f7" stroke="#bac7d5" stroke-width="1.6" cx="42.16" cy="-229" rx="20.16" ry="20.16" />
+      <text xml:space="preserve" text-anchor="middle" x="42.16" y="-223.28" font-family="Arial" font-size="15.50" fill="#14263c">C1</text>
     </g>
     <g id="node7" class="node">
       <title>f_c2</title>
-      <ellipse fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" cx="203.98" cy="-222" rx="20.16" ry="20.16" />
-      <text xml:space="preserve" text-anchor="middle" x="203.98" y="-216.28" font-family="Arial" font-size="15.50" fill="#14263c">C2</text>
+      <ellipse fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.6" cx="166.98" cy="-228" rx="20.16" ry="20.16" />
+      <text xml:space="preserve" text-anchor="middle" x="166.98" y="-222.28" font-family="Arial" font-size="15.50" fill="#14263c">C2</text>
     </g>
     <g id="edge6" class="edge">
       <title>f_c1-&gt;f_c2</title>
-      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M59.68,-211.18C64.24,-208.75 69.32,-206.51 74.32,-205.25 116.34,-194.67 129.8,-194.67 171.82,-205.25 173.54,-205.68 175.27,-206.23 176.98,-206.86" />
-      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="175.81,-209.41 184.25,-210.18 178.14,-204.31 175.81,-209.41" />
-      <text xml:space="preserve" text-anchor="middle" x="123.07" y="-207.7" font-family="Arial" font-size="14.00" fill="#14263c">test-wraparound</text>
+      <path fill="none" stroke="#14263c" stroke-width="1.6" d="M60.01,-218.66C66.44,-215.28 73.99,-211.95 81.32,-210.25 101.45,-205.57 107.64,-205.79 127.82,-210.25 131.61,-211.09 135.47,-212.34 139.21,-213.81" />
+      <polygon fill="#14263c" stroke="#14263c" stroke-width="1.6" points="138.03,-216.34 146.47,-217.03 140.3,-211.23 138.03,-216.34" />
+      <text xml:space="preserve" text-anchor="middle" x="104.57" y="-213.18" font-family="Arial" font-size="13.50" fill="#14263c">feature</text>
     </g>
     <g id="edge7" class="edge">
       <title>f_c1-&gt;f_c2</title>
-      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" stroke-dasharray="5,2" d="M62.76,-222C90.32,-222 140.75,-222 173.03,-222" />
-      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="172.8,-224.8 180.8,-222 172.8,-219.2 172.8,-224.8" />
-      <text xml:space="preserve" text-anchor="middle" x="123.07" y="-224.45" font-family="Arial" font-size="14.00" fill="#2e7d6b">main slides →</text>
+      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" stroke-dasharray="5,2" d="M62.89,-228.84C82.68,-228.68 113.39,-228.43 136.16,-228.24" />
+      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="135.9,-231.05 143.87,-228.18 135.85,-225.45 135.9,-231.05" />
+      <text xml:space="preserve" text-anchor="middle" x="104.57" y="-231.6" font-family="Arial" font-size="13.50" fill="#2e7d6b">main →</text>
     </g>
     <g id="node8" class="node">
-      <title>f_note</title>
-      <polygon fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" points="688.55,-252.45 249.14,-252.45 249.14,-191.55 694.55,-191.55 694.55,-246.45 688.55,-252.45" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="688.55,-252.45 688.55,-246.45" />
-      <polyline fill="none" stroke="#bac7d5" stroke-width="1.5" points="694.55,-246.45 688.55,-246.45" />
-      <text xml:space="preserve" text-anchor="start" x="288.47" y="-231.53" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="315.47" y="-231.53" font-family="Arial" font-weight="bold" font-size="15.50" fill="#14263c">git switch main &amp;&amp; git merge test-wraparound</text>
-      <text xml:space="preserve" text-anchor="start" x="313.22" y="-216.03" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="340.22" y="-216.03" font-family="Arial" font-size="14.00" fill="#14263c">No diverging commits on main: Git simply slides</text>
-      <text xml:space="preserve" text-anchor="start" x="259.22" y="-200.53" font-family="Arial" font-size="14.00" fill="#14263c">      the </text>
-      <text xml:space="preserve" text-anchor="start" x="304.22" y="-200.53" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">main</text>
-      <text xml:space="preserve" text-anchor="start" x="336.47" y="-200.53" font-family="Arial" font-size="14.00" fill="#14263c"> pointer (and </text>
-      <text xml:space="preserve" text-anchor="start" x="415.97" y="-200.53" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">HEAD</text>
-      <text xml:space="preserve" text-anchor="start" x="454.22" y="-200.53" font-family="Arial" font-size="14.00" fill="#14263c">) forward to </text>
-      <text xml:space="preserve" text-anchor="start" x="526.22" y="-200.53" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">C2</text>
-      <text xml:space="preserve" text-anchor="start" x="543.47" y="-200.53" font-family="Arial" font-size="14.00" fill="#14263c"> — no extra commit.</text>
-      <text xml:space="preserve" text-anchor="start" x="666.47" y="-200.53" font-family="Arial" font-size="15.50" fill="#14263c">    </text>
+      <title>f_ref</title>
+      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.6" d="M400.11,-249.26C400.11,-249.26 238.14,-249.26 238.14,-249.26 232.14,-249.26 226.14,-243.26 226.14,-237.26 226.14,-237.26 226.14,-218.74 226.14,-218.74 226.14,-212.74 232.14,-206.74 238.14,-206.74 238.14,-206.74 400.11,-206.74 400.11,-206.74 406.11,-206.74 412.11,-212.74 412.11,-218.74 412.11,-218.74 412.11,-237.26 412.11,-237.26 412.11,-243.26 406.11,-249.26 400.11,-249.26" />
+      <text xml:space="preserve" text-anchor="start" x="235.5" y="-229.78" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="262.5" y="-229.78" font-family="Arial" font-weight="bold" font-size="15.50" fill="#14263c">main, feature → C2</text>
+      <text xml:space="preserve" text-anchor="start" x="256.87" y="-214.28" font-family="Arial" font-size="15.50" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="283.87" y="-214.28" font-family="Arial" font-size="13.00" fill="#526780">pointer slides</text>
+      <text xml:space="preserve" text-anchor="start" x="363.37" y="-214.28" font-family="Arial" font-size="15.50" fill="#14263c">    </text>
     </g>
     <g id="edge8" class="edge">
-      <title>f_c2-&gt;f_note</title>
-      <path fill="none" stroke="#71849a" stroke-width="1.6" stroke-dasharray="5,2" d="M224.53,-222C231.25,-222 239.44,-222 248.71,-222" />
+      <title>f_c2-&gt;f_ref</title>
+      <path fill="none" stroke="#2e7d6b" stroke-width="1.6" stroke-dasharray="5,2" d="M198.31,-228C206.49,-228 215.78,-228 225.49,-228" />
+      <polygon fill="#2e7d6b" stroke="#2e7d6b" stroke-width="1.6" points="198.34,-225.2 190.34,-228 198.34,-230.8 198.34,-225.2" />
     </g>
   </g>
 </svg>

@@ -1,61 +1,51 @@
-// Source: 02-git-and-tests.ipynb; teaching example with an edit after staging.
-// Render with Graphviz dot. Arrows show actions or the passage of time.
+// Source: 02-git-and-tests.ipynb, Part 2 (Task A).
+// Editing a file after git add leaves the second edit out of the commit.
 digraph git_states {
   graph [
-    bgcolor="white", fontname="Arial", fontsize=24, fontcolor="#14263C",
-    label="A commit records the staged snapshot", labelloc=t,
-    rankdir=TB, newrank=true, nodesep=0.30, ranksep=0.72, pad=0.16,
-    splines=polyline, compound=true, outputorder=edgesfirst
+    bgcolor="white", fontname="Arial", fontsize=19, fontcolor="#14263C",
+    label="git commit records the staged snapshot",
+    labelloc=t, rankdir=TB, newrank=true, nodesep=0.42, ranksep=0.55, pad=0.16,
+    splines=true
   ];
   node [
-    fontname="Arial", fontsize=19, fontcolor="#14263C",
-    color="#BAC7D5", penwidth=1.5, style=filled,
-    margin="0.17,0.14"
+    fontname="Arial", fontsize=16, fontcolor="#14263C",
+    color="#BAC7D5", penwidth=1.6, style="rounded,filled", margin="0.16,0.12"
   ];
   edge [
-    fontname="Arial", fontsize=18, fontcolor="#14263C",
-    color="#14263C", penwidth=1.5, arrowsize=0.8
+    fontname="Arial", fontsize=14, fontcolor="#14263C",
+    color="#14263C", penwidth=1.6, arrowsize=0.82
   ];
 
   subgraph cluster_working {
-    label="Working tree"; fontsize=21; color="#BAC7D5";
-    style=rounded; margin=16;
-    working_v1 [shape=note, fillcolor="#EAF3FE", label=<
-      <B>test_angle.py · v1</B><BR/><BR/>
-      test_wraparound()
+    label="Working tree (disk)"; fontsize=17; color="#BAC7D5";
+    style="rounded"; margin=14;
+    w1 [shape=box, fillcolor="#EAF3FE", label=<
+      <B>v1</B><BR/>
+      <FONT POINT-SIZE="13" COLOR="#526780">1 test</FONT>
     >];
-    working_v2 [shape=note, fillcolor="#FFF2D6", label=<
-      <B>2 · Edit again</B><BR/>
-      test_angle.py · v2<BR/><BR/>
-      test_wraparound()<BR/>
-      + test_full_turns()<BR/><BR/>
-      new edit uncommitted
+    w2 [shape=box, fillcolor="#FFF2D6", label=<
+      <B>v2 (unstaged)</B><BR/>
+      <FONT POINT-SIZE="13" COLOR="#526780">2 tests</FONT>
     >];
   }
 
   subgraph cluster_snapshots {
-    label="Git snapshots"; fontsize=21; color="#BAC7D5";
-    style=rounded; margin=16;
-    staged_v1 [shape=box, fillcolor="#E9F7F2", label=<
-      <B>1 · git add</B><BR/>
-      test_angle.py<BR/><BR/>
-      <B>Staging area (index) · v1</B><BR/>
-      test_wraparound()
+    label="Git snapshots"; fontsize=17; color="#BAC7D5";
+    style="rounded"; margin=14;
+    idx [shape=box, fillcolor="#E9F7F2", label=<
+      <B>Index: v1</B><BR/>
+      <FONT POINT-SIZE="13" COLOR="#526780">1 test</FONT>
     >];
-    commit_v1 [shape=cylinder, fillcolor="#F0EBFA", label=<
-      <B>3 · git commit</B><BR/>
-      (no second git add)<BR/><BR/>
-      <B>Local history · v1</B><BR/>
-      staged snapshot unchanged<BR/>
-      test_wraparound()
+    cmt [shape=box, fillcolor="#F0EBFA", label=<
+      <B>Commit: v1</B><BR/>
+      <FONT POINT-SIZE="13" COLOR="#526780">1 test only</FONT>
     >];
   }
 
-  { rank=same; working_v1; staged_v1; }
-  { rank=same; working_v2; commit_v1; }
+  { rank=same; w1; idx; }
+  { rank=same; w2; cmt; }
 
-  working_v1 -> staged_v1 [constraint=false];
-  working_v1 -> working_v2;
-  staged_v1 -> commit_v1;
-  working_v2 -> commit_v1 [style=invis, weight=20];
+  w1 -> idx [constraint=false, label=< <B>1 · git add</B> >];
+  w1 -> w2 [label=< 2 · edit file >];
+  idx -> cmt [label=< <B>3 · git commit</B> >];
 }

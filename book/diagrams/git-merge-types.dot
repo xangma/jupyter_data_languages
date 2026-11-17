@@ -1,60 +1,56 @@
-// Source: 02-git-and-tests.ipynb, Part 2 ("Branches and what a merge actually does").
-// Contrasts fast-forward merges with three-way merge commits (clean vs conflict).
+// Source: 02-git-and-tests.ipynb, Part 2 ("What is a merge?").
+// Pure commit-graph contrast between fast-forward and three-way merges.
 digraph git_merge_types {
   graph [
-    bgcolor="white", fontname="Arial", fontsize=20, fontcolor="#14263C",
-    label="What a merge does: fast-forward pointer move vs three-way merge commit",
-    labelloc=t, rankdir=LR, newrank=true, nodesep=0.26, ranksep=0.34, pad=0.14,
+    bgcolor="white", fontname="Arial", fontsize=19, fontcolor="#14263C",
+    label="Fast-forward merge vs three-way merge",
+    labelloc=t, rankdir=LR, newrank=true, nodesep=0.30, ranksep=0.52, pad=0.14,
     splines=true
   ];
   node [
     fontname="Arial", fontsize=15.5, fontcolor="#14263C",
-    color="#BAC7D5", penwidth=1.5, style="rounded,filled", margin="0.14,0.10"
+    color="#BAC7D5", penwidth=1.6, style="rounded,filled", margin="0.13,0.08"
   ];
   edge [
-    fontname="Arial", fontsize=14, fontcolor="#14263C",
+    fontname="Arial", fontsize=13.5, fontcolor="#14263C",
     color="#14263C", penwidth=1.6, arrowsize=0.8
   ];
 
   // Defined first so cluster_ff stacks above cluster_3way in rankdir=LR.
   subgraph cluster_3way {
-    label="2 · Three-way merge (both branches added commits)";
-    fontsize=17.5; style="rounded"; color="#BAC7D5"; margin=14;
+    label="2 · Three-way merge (both branches advanced)";
+    fontsize=17; style="rounded"; color="#BAC7D5"; margin=14;
 
     t_c1 [shape=circle, fixedsize=true, width=0.56, fillcolor="#F3F5F7", label="C1"];
     t_a [shape=circle, fixedsize=true, width=0.56, fillcolor="#EAF3FE", label="A"];
     t_b [shape=circle, fixedsize=true, width=0.56, fillcolor="#FFF2D6", label="B"];
     t_m [shape=doublecircle, fixedsize=true, width=0.60, fillcolor="#F0EBFA", label="M"];
-
-    t_out [shape=note, style="filled", fillcolor="#E9F7F2", label=<
-      <B>Two-parent merge commit M</B><BR/>
-      <FONT POINT-SIZE="14">• <B>Different lines/files:</B>&#160;Git creates&#160;<B>M</B>&#160;automatically<BR/>
-      • <B>Same lines edited:</B>&#160;<B>Conflict</B>&#160;— Git pauses so you<BR/>
-        combine both facts, then git add + git commit →&#160;<B>M</B></FONT>
+    t_ref [shape=box, fillcolor="#E9F7F2", label=<
+      <B>main → M</B><BR/>
+      <FONT POINT-SIZE="13" COLOR="#526780">2 parents (A, B)</FONT>
     >];
 
     t_c1 -> t_a [label="main"];
     t_c1 -> t_b [label="feature"];
     t_a -> t_m;
     t_b -> t_m;
-    t_m -> t_out [style=dashed, arrowhead=none, color="#71849A"];
+    t_m -> t_ref [style=dashed, dir=back, color="#2E7D6B"];
   }
 
   subgraph cluster_ff {
     label="1 · Fast-forward merge (main stayed at C1)";
-    fontsize=17.5; style="rounded"; color="#BAC7D5"; margin=14;
+    fontsize=17; style="rounded"; color="#BAC7D5"; margin=14;
 
     f_c1 [shape=circle, fixedsize=true, width=0.56, fillcolor="#F3F5F7", label="C1"];
     f_c2 [shape=circle, fixedsize=true, width=0.56, fillcolor="#EAF3FE", label="C2"];
-    f_note [shape=note, style="filled", fillcolor="#E9F7F2", label=<
-      <B>git switch main &amp;&amp; git merge test-wraparound</B><BR/>
-      <FONT POINT-SIZE="14">No diverging commits on main: Git simply slides<BR/>
-      the&#160;<B>main</B>&#160;pointer (and&#160;<B>HEAD</B>) forward to&#160;<B>C2</B>&#160;— no extra commit.</FONT>
+    f_ref [shape=box, fillcolor="#E9F7F2", label=<
+      <B>main, feature → C2</B><BR/>
+      <FONT POINT-SIZE="13" COLOR="#526780">pointer slides</FONT>
     >];
 
-    f_c1 -> f_c2 [label="test-wraparound"];
-    f_c1 -> f_c2 [style=dashed, color="#2E7D6B", fontcolor="#2E7D6B", label="main slides →"];
-    f_c2 -> f_note [style=dashed, arrowhead=none, color="#71849A"];
+    f_c1 -> f_c2 [label="feature"];
+    f_c1 -> f_c2 [style=dashed, color="#2E7D6B", fontcolor="#2E7D6B", label="main →"];
+    f_c2 -> f_ref [style=dashed, dir=back, color="#2E7D6B"];
   }
 
   { rank=same; t_c1; f_c1; }
