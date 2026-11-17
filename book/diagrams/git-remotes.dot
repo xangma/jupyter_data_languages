@@ -1,77 +1,77 @@
-// Source: 02-git-and-tests.ipynb, optional hosting exercise.
-// The server is initially empty. Branch boxes show the state after both pushes.
-// A hosted pull request is a comparison/review, separate from push and merge.
+// Source: 02-git-and-tests.ipynb, Part 3 ("Remotes, clones, fetch, pull and push").
+// Explains clone, fetch vs pull, push, and why non-fast-forward pushes are rejected.
 digraph git_remotes {
   graph [
-    bgcolor="white", fontname="Arial", fontsize=24, fontcolor="#14263C",
-    label="Push, fetch and review do different jobs", labelloc=t,
-    rankdir=TB, newrank=true, nodesep=0.42, ranksep=0.75, pad=0.16,
-    splines=polyline, compound=true, outputorder=edgesfirst
+    bgcolor="white", fontname="Arial", fontsize=20, fontcolor="#14263C",
+    label="How clone, fetch, pull and push synchronise two repositories",
+    labelloc=t, rankdir=LR, newrank=true, nodesep=0.34, ranksep=0.58, pad=0.16,
+    splines=true
   ];
   node [
-    fontname="Arial", fontsize=19, fontcolor="#14263C",
-    color="#BAC7D5", penwidth=1.5, style=filled,
-    margin="0.18,0.15"
+    fontname="Arial", fontsize=15.5, fontcolor="#14263C",
+    color="#BAC7D5", penwidth=1.5, style="rounded,filled", margin="0.15,0.11"
   ];
   edge [
-    fontname="Arial", fontsize=18, fontcolor="#14263C",
-    color="#14263C", penwidth=1.5, arrowsize=0.85
+    fontname="Arial", fontsize=14, fontcolor="#14263C",
+    color="#14263C", penwidth=1.6, arrowsize=0.82
   ];
 
   subgraph cluster_local {
-    label="Your local repository"; fontsize=22;
-    style=rounded; color="#BAC7D5"; margin=18;
-    local_branches [shape=box, fillcolor="#EAF3FE", label=<
-      <B>1–2 · Push local branches</B><BR/><BR/>
-      main first<BR/>
-      then edge-case-tests<BR/><BR/>
-      Transfer commits and<BR/>
-      update server branch tips.
+    label="Your local clone"; fontsize=18;
+    style="rounded"; color="#BAC7D5"; margin=14;
+
+    clone_note [shape=note, style="filled", fillcolor="#F0EBFA", label=<
+      <B>0 · git clone &lt;url&gt;</B> (once at start)<BR/>
+      <FONT POINT-SIZE="13.5">Copies full .git history, checks out<BR/>
+      files, and names that remote origin</FONT>
     >];
+
+    local_work [shape=box, fillcolor="#EAF3FE", label=<
+      <B>Local branch &amp; working files</B><BR/>
+      <FONT POINT-SIZE="13.5">main: C1 → C2 (plus local commit <B>L3</B>)</FONT>
+    >];
+
     tracking [shape=box, fillcolor="#E9F7F2", label=<
-      <B>3 · git fetch origin</B><BR/><BR/>
-      Remote-tracking refs:<BR/>
-      origin/main<BR/>
-      origin/edge-case-tests<BR/><BR/>
-      Fetch updates these refs.<BR/>
-      Working files stay<BR/>
-      unchanged.
+      <B>Remote-tracking ref</B><BR/>
+      <FONT POINT-SIZE="13.5">origin/main (or practice/main)<BR/>
+      Local bookmark of remote state</FONT>
     >];
-    compare [shape=note, fillcolor="#F3F5F7", label=<
-      <B>4 · Inspect the</B><BR/>
-      <B>proposed change</B><BR/><BR/>
-      git diff<BR/>
-      origin/main...edge-case-tests
-    >];
+
+    clone_note -> local_work [style=invis, weight=10];
   }
 
-  subgraph cluster_host {
-    label="Classroom server · origin\nEmpty before the first push";
-    fontsize=22; style=rounded; color="#BAC7D5"; margin=18;
-    server_branches [shape=box, fillcolor="#EAF3FE", label=<
-      <B>Server branches</B><BR/><BR/>
-      main<BR/>
-      edge-case-tests
+  subgraph cluster_remote {
+    label="Remote repository (origin / practice)"; fontsize=18;
+    style="rounded"; color="#BAC7D5"; margin=14;
+
+    rejected [shape=note, style="filled,dashed", fillcolor="#FBEDED", label=<
+      <B>Why push can be rejected</B><BR/>
+      <FONT POINT-SIZE="13.5">If remote has <B>R3</B> that your branch lacks,<BR/>
+      git push stops safely (<I>non-fast-forward</I>):<BR/>
+      <B>fetch → pull/merge → pytest → push</B></FONT>
     >];
-    pull_request [shape=note, fillcolor="#F0EBFA", label=<
-      <B>5 · Hosted pull request</B><BR/><BR/>
-      edge-case-tests → main<BR/><BR/>
-      Compare and review<BR/>
-      the diff, description<BR/>
-      and tests.<BR/><BR/>
-      <B>Merge is a separate step.</B>
+
+    remote_branch [shape=box, fillcolor="#FFF2D6", label=<
+      <B>Remote branch</B><BR/>
+      <FONT POINT-SIZE="13.5">main: C1 → C2 → <B>R3</B><BR/>
+      (<B>R3</B> pushed by a collaborator)</FONT>
     >];
+
+    rejected -> remote_branch [style=dashed, arrowhead=none, color="#71849A"];
   }
 
-  { rank=same; local_branches; server_branches; }
-  { rank=same; tracking; pull_request; }
+  { rank=same; clone_note; local_work; tracking; }
+  { rank=same; rejected; remote_branch; }
 
-  local_branches -> server_branches [constraint=false];
-  server_branches -> tracking [minlen=1];
-  server_branches -> pull_request [
-    style=dashed, arrowhead=none
+  remote_branch -> tracking [
+    color="#2E7D6B", fontcolor="#2E7D6B",
+    label=< <B>1 · git fetch</B><BR/><FONT POINT-SIZE="12">downloads R3; files untouched</FONT> >
   ];
-  local_branches -> tracking [style=invis, weight=20];
-  tracking -> compare [style=invis, weight=20];
-  tracking -> pull_request [style=invis, weight=20];
+  tracking -> local_work [
+    color="#2E7D6B", fontcolor="#2E7D6B",
+    label=< <B>2 · merge / git pull</B><BR/><FONT POINT-SIZE="12">integrates R3 into branch</FONT> >
+  ];
+  local_work -> remote_branch [
+    label=< <B>3 · git push</B><BR/><FONT POINT-SIZE="12">uploads local commits</FONT> >
+  ];
 }

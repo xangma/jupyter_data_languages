@@ -27,10 +27,13 @@ Exports fit within 720 by 640 CSS pixels while retaining their scalable viewBox.
 | `catalogue-selection.dot` | Session 1: Investigate a survey selection |
 | `fits-vs-ecsv.dot` | Session 1: Saving tables with units and metadata (ECSV vs FITS HDUs) |
 | `nyquist-aliasing.dot` | Optional extension: Spectral analysis and Nyquist folding / aliasing |
-| `git-states.dot` | Session 2: before staging and committing |
-| `git-branches.dot` | Session 2: Merge and resolve a conflict |
+| `git-zones-lifecycle.dot` | Session 2: Four places work lives (Working tree, Staging index, Local `.git` history, Remote) |
+| `git-states.dot` | Session 2: Staging captures a point-in-time snapshot (`git diff` vs `git diff --staged`) |
+| `git-merge-types.dot` | Session 2: Fast-forward pointer move versus three-way merge commit |
+| `git-branches.dot` | Session 2: Merge conflict pause and scientific resolution |
+| `git-remotes.dot` | Session 2: Synchronising via `clone`, `fetch`, `pull` and `push` (and rejected pushes) |
 | `git-undo-vs-revert.dot` | Session 2: Private `git reset --soft` vs shared `git revert` |
-| `git-remotes.dot` | Session 2: Optional hosting exercise |
+| `git-clone-fork-pr.dot` | Session 2: Team repository versus open-source Fork and Pull Request workflow |
 | `agent-architecture.dot` | Session 3: Know what your agent can do |
 | `agent-review-loop.dot` | Session 3: Supply context, commit the tests checkpoint and review repairs |
 

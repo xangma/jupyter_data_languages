@@ -220,6 +220,31 @@ is empty), leaving `test_angle.py` ready to commit on `edge-case-tests`. Unit
 tests still cannot catch caller inputs supplied in radians instead of degrees.
 :::
 
+### Collaboration & software licensing — clones, forks, PRs and `choosealicense.com`
+
+**Hint:** Distinguish local disk copies (`clone`) from hosted GitHub account
+copies (`fork`), and compare default copyright (`no LICENSE`) against standard
+licences on [choosealicense.com](https://choosealicense.com/).
+
+:::{dropdown} Worked answer
+- **Branch vs clone vs fork vs PR:** A **branch** is a movable commit pointer
+  inside a repository; **`git clone`** downloads a remote repository's full
+  `.git` history and working tree onto your computer (`origin`); a **fork**
+  copies someone else's GitHub/GitLab repository (`upstream`) into your own
+  hosted account (`origin`) when you lack write access; and a **pull request**
+  proposes merging a pushed branch (`feature` or `you:fix`) into a base branch
+  with human diff review and CI checks (distinct from `git pull`, which fetches
+  and merges remote commits locally).
+- **Licensing & citation:** Public code **without a `LICENSE` file** remains
+  under exclusive default copyright ("all rights reserved"), so others cannot
+  legally reuse, modify, or redistribute it. Pick a standard licence on
+  [choosealicense.com](https://choosealicense.com/) (e.g. permissive `MIT` /
+  `BSD-3-Clause` / `Apache-2.0`, or copyleft `GPL-3.0`; `CC-BY-4.0` for data and
+  prose rather than code), confirm supervisor/funder IP rules before publishing,
+  and pair `LICENSE` with `CITATION.cff` and a Zenodo release DOI for academic
+  credit.
+:::
+
 ## Session 3
 
 ### Core practical — plan, student checks, scalar `weighted_mean` repair and accountability

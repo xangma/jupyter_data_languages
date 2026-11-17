@@ -52,6 +52,16 @@ project:
     residuals: "Data minus model predictions; plotting residuals around zero reveals small systematic trends or outliers."
     asinh stretch: "Inverse hyperbolic sine colour scaling: linear near zero (showing noise cleanly) and logarithmic at high values so bright peaks do not wash out faint structure."
     Malmquist bias: "A selection bias where a brightness cut preferentially retains intrinsically brighter-than-average sources at large distances when distances or luminosities have scatter."
+    working tree: "The regular files and folders saved on disk that you edit directly (unsaved editor tabs are invisible to Git)."
+    staging index: "Git's preparation area (.git/index) holding the exact file snapshots queued for your next git commit."
+    fast-forward: "A merge where the target branch has no diverging commits, so Git simply moves the branch pointer forward without creating an extra merge commit."
+    merge conflict: "A pause during merging when two branches edited the same lines differently, requiring you to choose the intended content before committing."
+    bare repository: "A Git repository storing only version history (no checked-out working files), used as a shared remote target for git push and git fetch."
+    fork: "A personal server-side copy of someone else's GitHub or GitLab repository under your own account, used to push branches and open pull requests when you lack write access to upstream."
+    pull request: "A hosted code-review discussion on GitHub (called a Merge Request on GitLab) proposing to merge one branch or fork into another — distinct from the local git pull command."
+    permissive licence: "A software licence family (such as MIT, BSD-3-Clause, or Apache-2.0) allowing reuse, modification, and redistribution with minimal conditions beyond keeping copyright and licence notices."
+    copyleft: "A software licence family (such as GPL-3.0) allowing reuse and modification on condition that distributed derivative works remain open under the same licence."
+    CITATION.cff: "Citation File Format: a plain-text YAML file at a repository root telling readers, GitHub, and Zenodo how to cite your research software."
   toc:
     - file: book/index.md
       title: Course overview

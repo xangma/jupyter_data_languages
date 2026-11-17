@@ -1,0 +1,81 @@
+// Source: 02-git-and-tests.ipynb, Part 4 ("Forks, Pull Requests and collaboration etiquette").
+// Contrasts direct branch+PR in a team repo with Fork+Clone+PR on external open-source repos.
+digraph git_clone_fork_pr {
+  graph [
+    bgcolor="white", fontname="Arial", fontsize=20, fontcolor="#14263C",
+    label="Team repository vs Open-source Fork — and where a Pull Request fits",
+    labelloc=t, rankdir=LR, newrank=true, nodesep=0.26, ranksep=0.32, pad=0.14,
+    splines=true
+  ];
+  node [
+    fontname="Arial", fontsize=15, fontcolor="#14263C",
+    color="#BAC7D5", penwidth=1.5, style="rounded,filled", margin="0.13,0.09"
+  ];
+  edge [
+    fontname="Arial", fontsize=13.5, fontcolor="#14263C",
+    color="#14263C", penwidth=1.6, arrowsize=0.8
+  ];
+
+  // Defined first so cluster_team renders above cluster_fork in rankdir=LR.
+  subgraph cluster_fork {
+    label="2 · External / open-source repository (no write access) — Fork + Clone + Pull Request";
+    fontsize=17.5; style="rounded"; color="#BAC7D5"; margin=14;
+
+    upstream [shape=box, fillcolor="#FFF2D6", label=<
+      <B>Maintainer GitHub</B><BR/>
+      <FONT POINT-SIZE="13.5">remote: <B>upstream</B><BR/>
+      (org/project)</FONT>
+    >];
+    fork [shape=box, fillcolor="#E9F7F2", label=<
+      <B>Your GitHub Fork</B><BR/>
+      <FONT POINT-SIZE="13.5">remote: <B>origin</B><BR/>
+      (you/project)</FONT>
+    >];
+    f_local [shape=box, fillcolor="#EAF3FE", label=<
+      <B>Your computer</B><BR/>
+      <FONT POINT-SIZE="13.5">branch fix-units<BR/>
+      edit + pytest + commit</FONT>
+    >];
+    f_pr [shape=note, style="filled", fillcolor="#F0EBFA", label=<
+      <B>Pull Request on upstream</B><BR/>
+      <FONT POINT-SIZE="13.5">you:fix-units → org:main<BR/>
+      Maintainers review diff &amp; CI,<BR/>
+      then merge into <B>upstream</B></FONT>
+    >];
+
+    upstream -> fork [label=< <B>1 · Fork</B><BR/><FONT POINT-SIZE="11.5">(on GitHub)</FONT> >];
+    fork -> f_local [label=< <B>2 · clone</B> >];
+    f_local -> fork [color="#2E7D6B", fontcolor="#2E7D6B", label=< <B>3 · push origin</B> >];
+    fork -> f_pr [label=< <B>4 · Open PR</B> >];
+    upstream -> f_local [
+      style=dashed, color="#526780", fontcolor="#526780",
+      label=< fetch upstream (stay in sync) >
+    ];
+  }
+
+  subgraph cluster_team {
+    label="1 · Shared group repository (you have write access) — Clone + Branch + Pull Request";
+    fontsize=17.5; style="rounded"; color="#BAC7D5"; margin=14;
+
+    t_origin [shape=box, fillcolor="#FFF2D6", label=<
+      <B>Group GitHub</B><BR/>
+      <FONT POINT-SIZE="13.5">remote: <B>origin</B><BR/>
+      (group/project)</FONT>
+    >];
+    t_local [shape=box, fillcolor="#EAF3FE", label=<
+      <B>Your computer</B><BR/>
+      <FONT POINT-SIZE="13.5">git switch -c feature<BR/>
+      edit + pytest + commit</FONT>
+    >];
+    t_pr [shape=note, style="filled", fillcolor="#F0EBFA", label=<
+      <B>Pull Request on origin</B><BR/>
+      <FONT POINT-SIZE="13.5">feature → main<BR/>
+      Teammate reviews diff &amp; tests<BR/>
+      before merging into <B>main</B></FONT>
+    >];
+
+    t_origin -> t_local [label=< <B>1 · clone</B> >];
+    t_local -> t_origin [color="#2E7D6B", fontcolor="#2E7D6B", label=< <B>2 · push -u origin</B> >];
+    t_origin -> t_pr [label=< <B>3 · Open PR</B> >];
+  }
+}
