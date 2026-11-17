@@ -1,5 +1,21 @@
 # Validation — pedagogical revamp and GUI walkthroughs
 
+## Session 2 restructure, software licensing & 17 concise diagrams — 17 November 2026 (`agy/pedagogy-revamp-20261114`)
+
+Verified in `/Users/xangma/.gemini/antigravity/scratch/phd-python-2026-revamp`:
+
+- **Prose smoothing & hover hygiene**: Removed shoehorned subfield roll-calls (`k-modes`, `inflation spectrum`, `SNR triggers`, `Fisher-information additivity`) and standalone single-symbol KaTeX (`k k`, `h(t) h(t)`) across all 5 notebooks, scoped `view` → `array view` in `myst.yml` so `review`/`overview` never get false `<abbr>` hover underlines, and added 11 Git/licensing hover definitions (`48` total keys in `myst.yml`).
+- **Session 2 restructure & software licensing**: Restructured `book/02-git-and-tests.ipynb` into a 5-part progression (**1. Snapshots, staging & commits → 2. Branches & merges → 3. Remotes, clones & safe recovery → 4. Forks, pull requests & etiquette → 5. Unit tests, software licensing & handoff**), adding explicit **Branch vs Clone vs Fork (`upstream` / `origin`) vs Pull Request** coverage, **PR etiquette** (author, reviewer, and AI-assisted PR accountability), and **Software licensing & citation** ([choosealicense.com](https://choosealicense.com/) default-copyright trap, permissive `MIT`/`BSD-3-Clause`/`Apache-2.0` vs copyleft `GPL-3.0` vs `CC-BY-4.0` for data/docs, `CITATION.cff` + Zenodo DOIs, and supervisor/funder IP checks).
+- **17 concise diagrams & natural SVG scale cap**: Added `git-zones-lifecycle`, `git-merge-types`, and `git-clone-fork-pr`, trimmed prose boxes and long banners across all **17 editable DOT/SVG diagrams** (`render_diagrams.py --check`, capping export scale at `1.0` so compact diagrams stay crisp), and verified all **52 annotated screenshots** (`render_screenshot_callouts.py --check`), **28 unit tests** (`pytest`), **5 executed notebooks** (`validate_course.py`), and **10 strict HTML pages** (`BASE_URL=/python-phd npm run build:docs`, `0` warnings).
+- **Live CPD deployment — 17 November 2026**:
+  - Course source published on `codex/phd-python-2026` at `922a291412d4d8fec46d1cf9f3901e5ba46327c7`.
+  - [PR 454](https://github.com/icg-innovation/space-k8s-gitops/pull/454) passed all 4 required checks (`Private registry source`, `Registry policy checks`, `Storage policy checks`, `Traefik migration checks`) and merged as `04e2e21375f9de225f7e1435a373d0d5f7b398f7`.
+  - Flux `gitrepository/flux-system` and `kustomization/{flux-system,apps,infrastructure}` reconciled `Ready=True` at `main@sha1:04e2e21375f9de225f7e1435a373d0d5f7b398f7`.
+  - `deploy/phd-python-jupyterbook` rolled out cleanly to `pod/phd-python-jupyterbook-6c86f546b7-sbb6l` (`1/1 Running` on `node3`) at `ghcr.io/icg-innovation/phd-python-jupyterbook@sha256:cb15ad30e43f76cb141f0d54f6cd1581ba6b3c79fea871254dfea53909c8636e`, while `helmrelease/jupyterhub` (`True`) remained undisturbed.
+  - Live `https://icg-cpd-cluster.port.ac.uk/python-phd/` returned `HTTP 200` across all 10 student routes and all new Session 2 SVG diagrams (`git-zones-lifecycle`, `git-merge-types`, `git-clone-fork-pr`), `HTTP 404` on `/python-phd/instructor/`, and `HTTP 200` on `/jupyterbook/` (`CPD Training`).
+
+---
+
 ## Session 1 cross-model review & dependency-solving refinement — 16 November 2026 (`agy/pedagogy-revamp-20261114`)
 
 Verified in `/Users/xangma/.gemini/antigravity/scratch/phd-python-2026-revamp` following independent external reviews by **Gemini Pro**, **OpenAI Codex (`gpt-6-astra`)**, and **Anthropic Claude (`claude-opus-5-5`)**:
