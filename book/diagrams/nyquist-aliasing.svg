@@ -1,116 +1,68 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="223" viewBox="0.00 0.00 951.00 294.00" role="img" aria-labelledby="nyquist-aliasing-title nyquist-aliasing-desc">
-  <title id="nyquist-aliasing-title">Frequencies above Nyquist fold back into the resolved [0, fs/2] band</title>
-  <desc id="nyquist-aliasing-desc">At a 512 Hz sampling rate with Nyquist limit 256 Hz, a 40 Hz tone stays resolved at 40 Hz, whereas a 300 Hz tone (256 + 44 Hz) folds across the 256 Hz mirror to an alias at 212 Hz (512 - 300 = 256 - 44 Hz) that is indistinguishable at 1/512 s discrete samples.</desc>
-  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(11.52 282.73)">
+<svg xmlns="http://www.w3.org/2000/svg" width="634" height="223" viewBox="0.00 0.00 634.00 223.00" role="img" aria-labelledby="nyquist-aliasing-title nyquist-aliasing-desc">
+  <title id="nyquist-aliasing-title">Nyquist folding at fs = 512 Hz</title>
+  <desc id="nyquist-aliasing-desc">With 256 Hz Nyquist limit, a 40 Hz tone stays resolved in [0, 256 Hz], whereas a 300 Hz tone (256 + 44 Hz) folds across 256 Hz to a 212 Hz alias (512 - 300 Hz).</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(10.08 213.08)">
     <title>nyquist_aliasing</title>
-    <polygon fill="white" stroke="none" points="-11.52,11.52 -11.52,-282.73 939.52,-282.73 939.52,11.52 -11.52,11.52" />
-    <text xml:space="preserve" text-anchor="middle" x="464" y="-248.21" font-family="Arial" font-size="20.00" fill="#14263c">Frequencies above Nyquist fold back into the resolved [0, fs/2] band</text>
+    <polygon fill="white" stroke="none" points="-10.08,10.08 -10.08,-213.08 623.71,-213.08 623.71,10.08 -10.08,10.08" />
+    <text xml:space="preserve" text-anchor="middle" x="306.82" y="-181.9" font-family="Arial" font-size="18.00" fill="#14263c">Nyquist folding (fs = 512 Hz)</text>
     <g id="clust1" class="cluster">
       <title>cluster_resolved</title>
-      <path fill="#f9fcfb" stroke="#bac7d5" d="M20,-63.56C20,-63.56 421,-63.56 421,-63.56 427,-63.56 433,-69.56 433,-75.56 433,-75.56 433,-170.96 433,-170.96 433,-176.96 427,-182.96 421,-182.96 421,-182.96 20,-182.96 20,-182.96 14,-182.96 8,-176.96 8,-170.96 8,-170.96 8,-75.56 8,-75.56 8,-69.56 14,-63.56 20,-63.56" />
-      <text xml:space="preserve" text-anchor="middle" x="220.5" y="-161.86" font-family="Arial" font-size="18.00" fill="#14263c">Resolved band  [0, 256 Hz]</text>
+      <path fill="white" stroke="#bac7d5" d="M16.96,-8C16.96,-8 160.46,-8 160.46,-8 166.46,-8 172.46,-14 172.46,-20 172.46,-20 172.46,-154 172.46,-154 172.46,-160 166.46,-166 160.46,-166 160.46,-166 16.96,-166 16.96,-166 10.96,-166 4.96,-160 4.96,-154 4.96,-154 4.96,-20 4.96,-20 4.96,-14 10.96,-8 16.96,-8" />
+      <text xml:space="preserve" text-anchor="middle" x="88.71" y="-146.32" font-family="Arial" font-size="16.50" fill="#14263c">Resolved [0, 256 Hz]</text>
     </g>
-    <g id="clust2" class="cluster">
+    <g id="clust3" class="cluster">
       <title>cluster_above</title>
-      <path fill="#fff9f9" stroke="#bac7d5" stroke-dasharray="5,2" d="M683,-63.56C683,-63.56 908,-63.56 908,-63.56 914,-63.56 920,-69.56 920,-75.56 920,-75.56 920,-170.96 920,-170.96 920,-176.96 914,-182.96 908,-182.96 908,-182.96 683,-182.96 683,-182.96 677,-182.96 671,-176.96 671,-170.96 671,-170.96 671,-75.56 671,-75.56 671,-69.56 677,-63.56 683,-63.56" />
-      <text xml:space="preserve" text-anchor="middle" x="795.5" y="-161.86" font-family="Arial" font-size="18.00" fill="#14263c">Above Nyquist  (256, 512 Hz)</text>
+      <path fill="white" stroke="#bac7d5" stroke-dasharray="5,2" d="M463.97,-73C463.97,-73 593.63,-73 593.63,-73 599.63,-73 605.63,-79 605.63,-85 605.63,-85 605.63,-154 605.63,-154 605.63,-160 599.63,-166 593.63,-166 593.63,-166 463.97,-166 463.97,-166 457.97,-166 451.97,-160 451.97,-154 451.97,-154 451.97,-85 451.97,-85 451.97,-79 457.97,-73 463.97,-73" />
+      <text xml:space="preserve" text-anchor="middle" x="528.8" y="-146.32" font-family="Arial" font-size="16.50" fill="#14263c">Above Nyquist</text>
     </g>
     <g id="node1" class="node">
-      <title>setup</title>
-      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M749.2,-239.96C749.2,-239.96 150.8,-239.96 150.8,-239.96 144.8,-239.96 138.8,-233.96 138.8,-227.96 138.8,-227.96 138.8,-215.96 138.8,-215.96 138.8,-209.96 144.8,-203.96 150.8,-203.96 150.8,-203.96 749.2,-203.96 749.2,-203.96 755.2,-203.96 761.2,-209.96 761.2,-215.96 761.2,-215.96 761.2,-227.96 761.2,-227.96 761.2,-233.96 755.2,-239.96 749.2,-239.96" />
-      <text xml:space="preserve" text-anchor="start" x="148.88" y="-217.13" font-family="Arial" font-size="16.00" fill="#14263c">    </text>
-      <text xml:space="preserve" text-anchor="start" x="166.88" y="-217.13" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">Sampling rate:</text>
-      <text xml:space="preserve" text-anchor="start" x="277.88" y="-217.13" font-family="Arial" font-size="16.00" fill="#14263c"> f</text>
-      <text xml:space="preserve" text-anchor="start" x="286.88" y="-217.13" font-family="Arial" baseline-shift="sub" font-size="16.00" fill="#14263c">s</text>
-      <text xml:space="preserve" text-anchor="start" x="293.62" y="-217.13" font-family="Arial" font-size="16.00" fill="#14263c"> = 512 Hz (Δt = 1/512 s)   ·   </text>
-      <text xml:space="preserve" text-anchor="start" x="496.12" y="-217.13" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">Nyquist limit:</text>
-      <text xml:space="preserve" text-anchor="start" x="597.38" y="-217.13" font-family="Arial" font-size="16.00" fill="#14263c"> f</text>
-      <text xml:space="preserve" text-anchor="start" x="606.38" y="-217.13" font-family="Arial" baseline-shift="sub" font-size="16.00" fill="#14263c">Nyq</text>
-      <text xml:space="preserve" text-anchor="start" x="630.38" y="-217.13" font-family="Arial" font-size="16.00" fill="#14263c"> = f</text>
-      <text xml:space="preserve" text-anchor="start" x="652.88" y="-217.13" font-family="Arial" baseline-shift="sub" font-size="16.00" fill="#14263c">s</text>
-      <text xml:space="preserve" text-anchor="start" x="659.62" y="-217.13" font-family="Arial" font-size="16.00" fill="#14263c">/2 = 256 Hz  </text>
-    </g>
-    <g id="node3" class="node">
-      <title>f212</title>
-      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M406.7,-139.96C406.7,-139.96 261.3,-139.96 261.3,-139.96 255.3,-139.96 249.3,-133.96 249.3,-127.96 249.3,-127.96 249.3,-89.56 249.3,-89.56 249.3,-83.56 255.3,-77.56 261.3,-77.56 261.3,-77.56 406.7,-77.56 406.7,-77.56 412.7,-77.56 418.7,-83.56 418.7,-89.56 418.7,-89.56 418.7,-127.96 418.7,-127.96 418.7,-133.96 412.7,-139.96 406.7,-139.96" />
-      <text xml:space="preserve" text-anchor="start" x="264.25" y="-118.56" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="291.25" y="-118.56" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">Alias at 212 Hz</text>
-      <text xml:space="preserve" text-anchor="start" x="277" y="-102.56" font-family="Arial" font-size="16.00" fill="#14263c">      256 − 44 Hz</text>
-      <text xml:space="preserve" text-anchor="start" x="259.38" y="-86.56" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="286.38" y="-86.56" font-family="Arial" font-size="14.00" fill="#14263c">f</text>
-      <text xml:space="preserve" text-anchor="start" x="290.12" y="-86.56" font-family="Arial" baseline-shift="sub" font-size="14.00" fill="#14263c">alias</text>
-      <text xml:space="preserve" text-anchor="start" x="314.12" y="-86.56" font-family="Arial" font-size="14.00" fill="#14263c"> = 512 − 300</text>
-      <text xml:space="preserve" text-anchor="start" x="390.62" y="-86.56" font-family="Arial" font-size="16.00" fill="#14263c">    </text>
-    </g>
-    <g id="node4" class="node">
-      <title>mirror</title>
-      <polygon fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" points="641.98,-88.98 641.98,-128.54 598.64,-156.52 537.36,-156.52 494.02,-128.54 494.02,-88.98 537.36,-61 598.64,-61 641.98,-88.98" />
-      <text xml:space="preserve" text-anchor="start" x="529.75" y="-118.56" font-family="Arial" font-size="16.00" fill="#14263c">    </text>
-      <text xml:space="preserve" text-anchor="start" x="547.75" y="-118.56" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">Nyquist</text>
-      <text xml:space="preserve" text-anchor="start" x="533.5" y="-102.56" font-family="Arial" font-size="16.00" fill="#14263c">    </text>
-      <text xml:space="preserve" text-anchor="start" x="551.5" y="-102.56" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">256 Hz</text>
-      <text xml:space="preserve" text-anchor="start" x="536.5" y="-86.56" font-family="Arial" font-size="16.00" fill="#14263c">    </text>
-      <text xml:space="preserve" text-anchor="start" x="554.5" y="-86.56" font-family="Arial" font-size="14.00" fill="#14263c">mirror</text>
-      <text xml:space="preserve" text-anchor="start" x="590.5" y="-86.56" font-family="Arial" font-size="16.00" fill="#14263c">  </text>
-    </g>
-    <g id="edge2" class="edge">
-      <title>setup-&gt;mirror</title>
-      <path fill="none" stroke="#71849a" stroke-width="1.6" stroke-dasharray="5,2" d="M468.7,-203.34C484.03,-188.89 506.33,-167.87 525.91,-149.42" />
+      <title>f40</title>
+      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" d="M131.66,-62.48C131.66,-62.48 44.75,-62.48 44.75,-62.48 38.75,-62.48 32.75,-56.48 32.75,-50.48 32.75,-50.48 32.75,-31.52 32.75,-31.52 32.75,-25.52 38.75,-19.52 44.75,-19.52 44.75,-19.52 131.66,-19.52 131.66,-19.52 137.66,-19.52 143.66,-25.52 143.66,-31.52 143.66,-31.52 143.66,-50.48 143.66,-50.48 143.66,-56.48 137.66,-62.48 131.66,-62.48" />
+      <text xml:space="preserve" text-anchor="start" x="55.21" y="-42.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="82.21" y="-42.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">40 Hz</text>
+      <text xml:space="preserve" text-anchor="start" x="42.83" y="-27.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="69.83" y="-27.75" font-family="Arial" font-size="12.00" fill="#2e7d6b">resolved</text>
+      <text xml:space="preserve" text-anchor="start" x="115.58" y="-27.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
     </g>
     <g id="node2" class="node">
-      <title>f40</title>
-      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" d="M200.2,-139.96C200.2,-139.96 33.8,-139.96 33.8,-139.96 27.8,-139.96 21.8,-133.96 21.8,-127.96 21.8,-127.96 21.8,-89.56 21.8,-89.56 21.8,-83.56 27.8,-77.56 33.8,-77.56 33.8,-77.56 200.2,-77.56 200.2,-77.56 206.2,-77.56 212.2,-83.56 212.2,-89.56 212.2,-89.56 212.2,-127.96 212.2,-127.96 212.2,-133.96 206.2,-139.96 200.2,-139.96" />
-      <text xml:space="preserve" text-anchor="start" x="57" y="-118.56" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="84" y="-118.56" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">40 Hz signal</text>
-      <text xml:space="preserve" text-anchor="start" x="52.12" y="-102.56" font-family="Arial" font-size="16.00" fill="#14263c">      stays at </text>
-      <text xml:space="preserve" text-anchor="start" x="139.88" y="-102.56" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">40 Hz</text>
-      <text xml:space="preserve" text-anchor="start" x="31.88" y="-86.56" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="58.88" y="-86.56" font-family="Arial" font-size="14.00" fill="#14263c">(accurately resolved)</text>
-      <text xml:space="preserve" text-anchor="start" x="184.12" y="-86.56" font-family="Arial" font-size="16.00" fill="#14263c">    </text>
+      <title>f212</title>
+      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M144.41,-127.48C144.41,-127.48 32,-127.48 32,-127.48 26,-127.48 20,-121.48 20,-115.48 20,-115.48 20,-96.52 20,-96.52 20,-90.52 26,-84.52 32,-84.52 32,-84.52 144.41,-84.52 144.41,-84.52 150.41,-84.52 156.41,-90.52 156.41,-96.52 156.41,-96.52 156.41,-115.48 156.41,-115.48 156.41,-121.48 150.41,-127.48 144.41,-127.48" />
+      <text xml:space="preserve" text-anchor="start" x="31.96" y="-107.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="58.96" y="-107.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">212 Hz alias</text>
+      <text xml:space="preserve" text-anchor="start" x="30.08" y="-92.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="57.08" y="-92.75" font-family="Arial" font-size="12.00" fill="#526780">512 − 300 Hz</text>
+      <text xml:space="preserve" text-anchor="start" x="128.33" y="-92.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
     </g>
-    <g id="edge4" class="edge">
+    <g id="node3" class="node">
+      <title>mirror</title>
+      <polygon fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" points="391.97,-92.38 391.97,-119.62 349.64,-138.88 289.78,-138.88 247.46,-119.62 247.46,-92.38 289.78,-73.12 349.64,-73.12 391.97,-92.38" />
+      <text xml:space="preserve" text-anchor="start" x="283.34" y="-107.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="301.34" y="-107.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">Nyquist</text>
+      <text xml:space="preserve" text-anchor="start" x="282.59" y="-92.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
+      <text xml:space="preserve" text-anchor="start" x="300.59" y="-92.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">256 Hz</text>
+      <text xml:space="preserve" text-anchor="start" x="347.84" y="-92.75" font-family="Arial" font-size="15.00" fill="#14263c">  </text>
+    </g>
+    <g id="edge1" class="edge">
       <title>f212-&gt;mirror</title>
-      <path fill="none" stroke="#8b6d37" stroke-width="2" d="M430.66,-108.76C451.6,-108.76 473.43,-108.76 493.37,-108.76" />
-      <polygon fill="#8b6d37" stroke="#8b6d37" stroke-width="2" points="430.67,-105.78 422.17,-108.76 430.67,-111.73 430.67,-105.78" />
-      <text xml:space="preserve" text-anchor="middle" x="456.36" y="-115.51" font-family="Arial" font-size="15.00" fill="#14263c"> −44 Hz </text>
+      <path fill="none" stroke="#8b6d37" stroke-width="1.8" d="M167.94,-106C193.57,-106 221.87,-106 246.97,-106" />
+      <polygon fill="#8b6d37" stroke="#8b6d37" stroke-width="1.8" points="168.06,-103.13 159.86,-106 168.06,-108.87 168.06,-103.13" />
+      <text xml:space="preserve" text-anchor="middle" x="205.96" y="-108.92" font-family="Arial" font-size="13.50" fill="#8b6d37"> −44 Hz </text>
     </g>
-    <g id="node6" class="node">
-      <title>takeaway</title>
-      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M860.2,-36C860.2,-36 39.8,-36 39.8,-36 33.8,-36 27.8,-30 27.8,-24 27.8,-24 27.8,-12 27.8,-12 27.8,-6 33.8,0 39.8,0 39.8,0 860.2,0 860.2,0 866.2,0 872.2,-6 872.2,-12 872.2,-12 872.2,-24 872.2,-24 872.2,-30 866.2,-36 860.2,-36" />
-      <text xml:space="preserve" text-anchor="start" x="37.88" y="-13.18" font-family="Arial" font-size="16.00" fill="#14263c">    At discrete </text>
-      <text xml:space="preserve" text-anchor="start" x="136.12" y="-13.18" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">1/512 s</text>
-      <text xml:space="preserve" text-anchor="start" x="190.12" y="-13.18" font-family="Arial" font-size="16.00" fill="#14263c"> samples, </text>
-      <text xml:space="preserve" text-anchor="start" x="264.38" y="-13.18" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">300 Hz</text>
-      <text xml:space="preserve" text-anchor="start" x="315.38" y="-13.18" font-family="Arial" font-size="16.00" fill="#14263c"> folds to </text>
-      <text xml:space="preserve" text-anchor="start" x="376.88" y="-13.18" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">f</text>
-      <text xml:space="preserve" text-anchor="start" x="382.12" y="-13.18" font-family="Arial" font-weight="bold" baseline-shift="sub" font-size="16.00" fill="#14263c">alias</text>
-      <text xml:space="preserve" text-anchor="start" x="412.12" y="-13.18" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c"> = f</text>
-      <text xml:space="preserve" text-anchor="start" x="435.38" y="-13.18" font-family="Arial" font-weight="bold" baseline-shift="sub" font-size="16.00" fill="#14263c">s</text>
-      <text xml:space="preserve" text-anchor="start" x="442.88" y="-13.18" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c"> − f = 212 Hz</text>
-      <text xml:space="preserve" text-anchor="start" x="535.12" y="-13.18" font-family="Arial" font-size="16.00" fill="#14263c"> (indistinguishable without anti-alias filtering)  </text>
-    </g>
-    <g id="edge6" class="edge">
-      <title>f212-&gt;takeaway</title>
-      <path fill="none" stroke="#8b6d37" stroke-width="1.6" stroke-dasharray="5,2" d="M374.25,-76.96C391.91,-63.45 412.01,-48.07 427.07,-36.55" />
-    </g>
-    <g id="node5" class="node">
+    <g id="node4" class="node">
       <title>f300</title>
-      <path fill="#fbeded" stroke="#bac7d5" stroke-width="1.5" d="M864.71,-139.96C864.71,-139.96 713.29,-139.96 713.29,-139.96 707.29,-139.96 701.29,-133.96 701.29,-127.96 701.29,-127.96 701.29,-89.56 701.29,-89.56 701.29,-83.56 707.29,-77.56 713.29,-77.56 713.29,-77.56 864.71,-77.56 864.71,-77.56 870.71,-77.56 876.71,-83.56 876.71,-89.56 876.71,-89.56 876.71,-127.96 876.71,-127.96 876.71,-133.96 870.71,-139.96 864.71,-139.96" />
-      <text xml:space="preserve" text-anchor="start" x="724.5" y="-118.56" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="751.5" y="-118.56" font-family="Arial" font-weight="bold" font-size="16.00" fill="#14263c">300 Hz signal</text>
-      <text xml:space="preserve" text-anchor="start" x="732" y="-102.56" font-family="Arial" font-size="16.00" fill="#14263c">      256 + 44 Hz</text>
-      <text xml:space="preserve" text-anchor="start" x="711.38" y="-86.56" font-family="Arial" font-size="16.00" fill="#14263c">      </text>
-      <text xml:space="preserve" text-anchor="start" x="738.38" y="-86.56" font-family="Arial" font-size="14.00" fill="#14263c">(+44 Hz past f</text>
-      <text xml:space="preserve" text-anchor="start" x="823.12" y="-86.56" font-family="Arial" baseline-shift="sub" font-size="14.00" fill="#14263c">Nyq</text>
-      <text xml:space="preserve" text-anchor="start" x="844.12" y="-86.56" font-family="Arial" font-size="14.00" fill="#14263c">)</text>
-      <text xml:space="preserve" text-anchor="start" x="848.62" y="-86.56" font-family="Arial" font-size="16.00" fill="#14263c">    </text>
+      <path fill="#fbeded" stroke="#bac7d5" stroke-width="1.5" d="M581.63,-127.48C581.63,-127.48 475.97,-127.48 475.97,-127.48 469.97,-127.48 463.97,-121.48 463.97,-115.48 463.97,-115.48 463.97,-96.52 463.97,-96.52 463.97,-90.52 469.97,-84.52 475.97,-84.52 475.97,-84.52 581.63,-84.52 581.63,-84.52 587.63,-84.52 593.63,-90.52 593.63,-96.52 593.63,-96.52 593.63,-115.48 593.63,-115.48 593.63,-121.48 587.63,-127.48 581.63,-127.48" />
+      <text xml:space="preserve" text-anchor="start" x="491.68" y="-107.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="518.68" y="-107.75" font-family="Arial" font-weight="bold" font-size="15.00" fill="#14263c">300 Hz</text>
+      <text xml:space="preserve" text-anchor="start" x="474.05" y="-92.75" font-family="Arial" font-size="15.00" fill="#14263c">      </text>
+      <text xml:space="preserve" text-anchor="start" x="501.05" y="-92.75" font-family="Arial" font-size="12.00" fill="#7a2e2e">256 + 44 Hz</text>
+      <text xml:space="preserve" text-anchor="start" x="565.55" y="-92.75" font-family="Arial" font-size="15.00" fill="#14263c">    </text>
     </g>
-    <g id="edge5" class="edge">
+    <g id="edge2" class="edge">
       <title>mirror-&gt;f300</title>
-      <path fill="none" stroke="#8b6d37" stroke-width="2" d="M653.61,-108.76C669.04,-108.76 685.16,-108.76 700.67,-108.76" />
-      <polygon fill="#8b6d37" stroke="#8b6d37" stroke-width="2" points="654.04,-105.78 645.54,-108.76 654.04,-111.73 654.04,-105.78" />
-      <text xml:space="preserve" text-anchor="middle" x="671.64" y="-115.51" font-family="Arial" font-size="15.00" fill="#14263c"> folds </text>
+      <path fill="none" stroke="#8b6d37" stroke-width="1.8" d="M403.22,-106C423.22,-106 444.32,-106 463.35,-106" />
+      <polygon fill="#8b6d37" stroke="#8b6d37" stroke-width="1.8" points="403.49,-103.13 395.29,-106 403.49,-108.87 403.49,-103.13" />
+      <text xml:space="preserve" text-anchor="middle" x="425.97" y="-108.92" font-family="Arial" font-size="13.50" fill="#8b6d37"> folds </text>
     </g>
   </g>
 </svg>

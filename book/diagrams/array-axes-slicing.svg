@@ -1,229 +1,168 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="409" viewBox="0.00 0.00 800.00 454.00" role="img" aria-labelledby="array-axes-slicing-title array-axes-slicing-desc">
-  <title id="array-axes-slicing-title">0-based half-open slices in 1D and axis reductions on a 2D (rows, cols) grid</title>
-  <desc id="array-axes-slicing-desc">Left panel shows 1D array a = np.array([10, 20, 30, 40, 50]) with 0-based indices 0..4 and negative indices -5..-1, illustrating why half-open slice a[1:4] includes index 1 (20) and excludes stop 4 to return [20, 30, 40] while strided slice a[::2] returns [10, 30, 50]. Right panel shows a 2 by 3 grid [[1, 2, 3], [10, 20, 30]] where axis=0 collapses down rows to per-column shape (3,) [11, 22, 33], axis=1 collapses across columns to per-row shape (2,) [6, 60], and the axis number names the dimension that gets collapsed.</desc>
-  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(10.08 444.33)">
+<svg xmlns="http://www.w3.org/2000/svg" width="579" height="319" viewBox="0.00 0.00 579.00 319.00" role="img" aria-labelledby="array-axes-slicing-title array-axes-slicing-desc">
+  <title id="array-axes-slicing-title">1D half-open slices and 2D axis reductions</title>
+  <desc id="array-axes-slicing-desc">Left panel shows 1D array a = [10, 20, 30, 40, 50] with 0-based indices 0..4 and negative indices -5..-1, where half-open a[1:4] returns [20, 30, 40] (4 excluded) and a[::2] returns [10, 30, 50]. Right panel shows a (2, 3) grid [[1, 2, 3], [10, 20, 30]] where axis=0 sums down rows to [11, 22, 33] and axis=1 sums across columns to [6, 60].</desc>
+  <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(8.64 310.39)">
     <title>array_axes_slicing</title>
-    <polygon fill="white" stroke="none" points="-10.08,10.08 -10.08,-444.33 790.08,-444.33 790.08,10.08 -10.08,10.08" />
-    <text xml:space="preserve" text-anchor="middle" x="390" y="-412.2" font-family="Arial" font-size="19.00" fill="#14263c">0-based half-open slices in 1D and axis reductions on a 2D (rows, cols) grid</text>
+    <polygon fill="white" stroke="none" points="-8.64,8.64 -8.64,-310.39 570.64,-310.39 570.64,8.64 -8.64,8.64" />
+    <text xml:space="preserve" text-anchor="middle" x="281" y="-280.65" font-family="Arial" font-size="18.00" fill="#14263c">1D half-open slices and 2D axis reductions</text>
     <g id="clust1" class="cluster">
       <title>cluster_slicing</title>
-      <path fill="white" stroke="#bac7d5" d="M20,-19.5C20,-19.5 370,-19.5 370,-19.5 376,-19.5 382,-25.5 382,-31.5 382,-31.5 382,-369.62 382,-369.62 382,-375.62 376,-381.62 370,-381.62 370,-381.62 20,-381.62 20,-381.62 14,-381.62 8,-375.62 8,-369.62 8,-369.62 8,-31.5 8,-31.5 8,-25.5 14,-19.5 20,-19.5" />
-      <text xml:space="preserve" text-anchor="middle" x="195" y="-362.43" font-family="Arial" font-size="16.00" fill="#14263c">1 · 1D indexing &amp; half-open slices (start:stop:step)</text>
+      <path fill="white" stroke="#bac7d5" d="M20,-8C20,-8 238,-8 238,-8 244,-8 250,-14 250,-20 250,-20 250,-237.88 250,-237.88 250,-243.88 244,-249.88 238,-249.88 238,-249.88 20,-249.88 20,-249.88 14,-249.88 8,-243.88 8,-237.88 8,-237.88 8,-20 8,-20 8,-14 14,-8 20,-8" />
+      <text xml:space="preserve" text-anchor="middle" x="129" y="-230.68" font-family="Arial" font-size="16.00" fill="#14263c">1 · 1D slices (stop excluded)</text>
     </g>
     <g id="clust2" class="cluster">
       <title>cluster_axes</title>
-      <path fill="white" stroke="#bac7d5" d="M402,-8C402,-8 760,-8 760,-8 766,-8 772,-14 772,-20 772,-20 772,-384.5 772,-384.5 772,-390.5 766,-396.5 760,-396.5 760,-396.5 402,-396.5 402,-396.5 396,-396.5 390,-390.5 390,-384.5 390,-384.5 390,-20 390,-20 390,-14 396,-8 402,-8" />
-      <text xml:space="preserve" text-anchor="middle" x="581" y="-377.3" font-family="Arial" font-size="16.00" fill="#14263c">2 · 2D shape (rows, cols) &amp; axis reductions</text>
+      <path fill="white" stroke="#bac7d5" d="M270,-97C270,-97 542,-97 542,-97 548,-97 554,-103 554,-109 554,-109 554,-252.75 554,-252.75 554,-258.75 548,-264.75 542,-264.75 542,-264.75 270,-264.75 270,-264.75 264,-264.75 258,-258.75 258,-252.75 258,-252.75 258,-109 258,-109 258,-103 264,-97 270,-97" />
+      <text xml:space="preserve" text-anchor="middle" x="406" y="-245.55" font-family="Arial" font-size="16.00" fill="#14263c">2 · 2D grid — shape (2, 3)</text>
     </g>
     <g id="node1" class="node">
       <title>idx_table</title>
-      <polygon fill="#eaf3fe" stroke="none" points="45.5,-314.62 45.5,-342.88 344.5,-342.88 344.5,-314.62 45.5,-314.62" />
-      <polygon fill="none" stroke="#bac7d5" points="45.5,-314.62 45.5,-342.88 344.5,-342.88 344.5,-314.62 45.5,-314.62" />
-      <text xml:space="preserve" text-anchor="start" x="52.5" y="-325.48" font-family="Courier New" font-weight="bold" font-size="12.00" fill="#14263c">a = [10, 20, 30, 40, 50]  # shape (5,)</text>
-      <polygon fill="#f3f5f7" stroke="none" points="45.5,-284.12 45.5,-314.62 130.33,-314.62 130.33,-284.12 45.5,-284.12" />
-      <polygon fill="none" stroke="#bac7d5" points="45.5,-284.12 45.5,-314.62 130.33,-314.62 130.33,-284.12 45.5,-284.12" />
-      <text xml:space="preserve" text-anchor="start" x="62.42" y="-294.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">0-based</text>
-      <polygon fill="#ffffff" stroke="none" points="130.33,-284.12 130.33,-314.62 173.17,-314.62 173.17,-284.12 130.33,-284.12" />
-      <polygon fill="none" stroke="#bac7d5" points="130.33,-284.12 130.33,-314.62 173.17,-314.62 173.17,-284.12 130.33,-284.12" />
-      <text xml:space="preserve" text-anchor="start" x="147.62" y="-294.32" font-family="Courier New" font-size="14.00" fill="#14263c">0</text>
-      <polygon fill="#fff2d6" stroke="none" points="173.17,-284.12 173.17,-314.62 216,-314.62 216,-284.12 173.17,-284.12" />
-      <polygon fill="none" stroke="#bac7d5" points="173.17,-284.12 173.17,-314.62 216,-314.62 216,-284.12 173.17,-284.12" />
-      <text xml:space="preserve" text-anchor="start" x="190.46" y="-295.32" font-family="Courier New" font-weight="bold" font-size="14.00" fill="#14263c">1</text>
-      <polygon fill="#fff2d6" stroke="none" points="216,-284.12 216,-314.62 258.83,-314.62 258.83,-284.12 216,-284.12" />
-      <polygon fill="none" stroke="#bac7d5" points="216,-284.12 216,-314.62 258.83,-314.62 258.83,-284.12 216,-284.12" />
-      <text xml:space="preserve" text-anchor="start" x="233.29" y="-295.32" font-family="Courier New" font-weight="bold" font-size="14.00" fill="#14263c">2</text>
-      <polygon fill="#fff2d6" stroke="none" points="258.83,-284.12 258.83,-314.62 301.67,-314.62 301.67,-284.12 258.83,-284.12" />
-      <polygon fill="none" stroke="#bac7d5" points="258.83,-284.12 258.83,-314.62 301.67,-314.62 301.67,-284.12 258.83,-284.12" />
-      <text xml:space="preserve" text-anchor="start" x="276.12" y="-295.32" font-family="Courier New" font-weight="bold" font-size="14.00" fill="#14263c">3</text>
-      <polygon fill="#fbeded" stroke="none" points="301.67,-284.12 301.67,-314.62 344.5,-314.62 344.5,-284.12 301.67,-284.12" />
-      <polygon fill="none" stroke="#bac7d5" points="301.67,-284.12 301.67,-314.62 344.5,-314.62 344.5,-284.12 301.67,-284.12" />
-      <text xml:space="preserve" text-anchor="start" x="318.96" y="-295.32" font-family="Courier New" font-weight="bold" font-size="14.00" fill="#14263c">4</text>
-      <polygon fill="#f3f5f7" stroke="none" points="45.5,-254.38 45.5,-284.12 130.33,-284.12 130.33,-254.38 45.5,-254.38" />
-      <polygon fill="none" stroke="#bac7d5" points="45.5,-254.38 45.5,-284.12 130.33,-284.12 130.33,-254.38 45.5,-254.38" />
-      <text xml:space="preserve" text-anchor="start" x="58.67" y="-264.82" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">value a[i]</text>
-      <polygon fill="#ffffff" stroke="none" points="130.33,-254.38 130.33,-284.12 173.17,-284.12 173.17,-254.38 130.33,-254.38" />
-      <polygon fill="none" stroke="#bac7d5" points="130.33,-254.38 130.33,-284.12 173.17,-284.12 173.17,-254.38 130.33,-254.38" />
-      <text xml:space="preserve" text-anchor="start" x="144.25" y="-264.82" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">10</text>
-      <polygon fill="#fff2d6" stroke="none" points="173.17,-254.38 173.17,-284.12 216,-284.12 216,-254.38 173.17,-254.38" />
-      <polygon fill="none" stroke="#bac7d5" points="173.17,-254.38 173.17,-284.12 216,-284.12 216,-254.38 173.17,-254.38" />
-      <text xml:space="preserve" text-anchor="start" x="187.08" y="-264.82" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">20</text>
-      <polygon fill="#fff2d6" stroke="none" points="216,-254.38 216,-284.12 258.83,-284.12 258.83,-254.38 216,-254.38" />
-      <polygon fill="none" stroke="#bac7d5" points="216,-254.38 216,-284.12 258.83,-284.12 258.83,-254.38 216,-254.38" />
-      <text xml:space="preserve" text-anchor="start" x="229.92" y="-264.82" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">30</text>
-      <polygon fill="#fff2d6" stroke="none" points="258.83,-254.38 258.83,-284.12 301.67,-284.12 301.67,-254.38 258.83,-254.38" />
-      <polygon fill="none" stroke="#bac7d5" points="258.83,-254.38 258.83,-284.12 301.67,-284.12 301.67,-254.38 258.83,-254.38" />
-      <text xml:space="preserve" text-anchor="start" x="272.75" y="-264.82" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">40</text>
-      <polygon fill="#ffffff" stroke="none" points="301.67,-254.38 301.67,-284.12 344.5,-284.12 344.5,-254.38 301.67,-254.38" />
-      <polygon fill="none" stroke="#bac7d5" points="301.67,-254.38 301.67,-284.12 344.5,-284.12 344.5,-254.38 301.67,-254.38" />
-      <text xml:space="preserve" text-anchor="start" x="315.58" y="-264.82" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">50</text>
-      <polygon fill="#f3f5f7" stroke="none" points="45.5,-223.88 45.5,-254.38 130.33,-254.38 130.33,-223.88 45.5,-223.88" />
-      <polygon fill="none" stroke="#bac7d5" points="45.5,-223.88 45.5,-254.38 130.33,-254.38 130.33,-223.88 45.5,-223.88" />
-      <text xml:space="preserve" text-anchor="start" x="60.54" y="-234.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">negative</text>
-      <polygon fill="#f0ebfa" stroke="none" points="130.33,-223.88 130.33,-254.38 173.17,-254.38 173.17,-223.88 130.33,-223.88" />
-      <polygon fill="none" stroke="#bac7d5" points="130.33,-223.88 130.33,-254.38 173.17,-254.38 173.17,-223.88 130.33,-223.88" />
-      <text xml:space="preserve" text-anchor="start" x="143.5" y="-234.07" font-family="Courier New" font-size="14.00" fill="#14263c">-5</text>
-      <polygon fill="#f0ebfa" stroke="none" points="173.17,-223.88 173.17,-254.38 216,-254.38 216,-223.88 173.17,-223.88" />
-      <polygon fill="none" stroke="#bac7d5" points="173.17,-223.88 173.17,-254.38 216,-254.38 216,-223.88 173.17,-223.88" />
-      <text xml:space="preserve" text-anchor="start" x="186.33" y="-234.07" font-family="Courier New" font-size="14.00" fill="#14263c">-4</text>
-      <polygon fill="#f0ebfa" stroke="none" points="216,-223.88 216,-254.38 258.83,-254.38 258.83,-223.88 216,-223.88" />
-      <polygon fill="none" stroke="#bac7d5" points="216,-223.88 216,-254.38 258.83,-254.38 258.83,-223.88 216,-223.88" />
-      <text xml:space="preserve" text-anchor="start" x="229.17" y="-234.07" font-family="Courier New" font-size="14.00" fill="#14263c">-3</text>
-      <polygon fill="#f0ebfa" stroke="none" points="258.83,-223.88 258.83,-254.38 301.67,-254.38 301.67,-223.88 258.83,-223.88" />
-      <polygon fill="none" stroke="#bac7d5" points="258.83,-223.88 258.83,-254.38 301.67,-254.38 301.67,-223.88 258.83,-223.88" />
-      <text xml:space="preserve" text-anchor="start" x="272" y="-234.07" font-family="Courier New" font-size="14.00" fill="#14263c">-2</text>
-      <polygon fill="#f0ebfa" stroke="none" points="301.67,-223.88 301.67,-254.38 344.5,-254.38 344.5,-223.88 301.67,-223.88" />
-      <polygon fill="none" stroke="#bac7d5" points="301.67,-223.88 301.67,-254.38 344.5,-254.38 344.5,-223.88 301.67,-223.88" />
-      <text xml:space="preserve" text-anchor="start" x="314.83" y="-235.07" font-family="Courier New" font-weight="bold" font-size="14.00" fill="#14263c">-1</text>
-      <polygon fill="none" stroke="#bac7d5" points="44.5,-222.88 44.5,-343.88 345.5,-343.88 345.5,-222.88 44.5,-222.88" />
+      <polygon fill="#f3f5f7" stroke="none" points="31.88,-182.38 31.88,-212.12 81.12,-212.12 81.12,-182.38 31.88,-182.38" />
+      <polygon fill="none" stroke="#bac7d5" points="31.88,-182.38 31.88,-212.12 81.12,-212.12 81.12,-182.38 31.88,-182.38" />
+      <text xml:space="preserve" text-anchor="start" x="38.88" y="-192.82" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">index</text>
+      <polygon fill="#ffffff" stroke="none" points="81.12,-182.38 81.12,-212.12 110.12,-212.12 110.12,-182.38 81.12,-182.38" />
+      <polygon fill="none" stroke="#bac7d5" points="81.12,-182.38 81.12,-212.12 110.12,-212.12 110.12,-182.38 81.12,-182.38" />
+      <text xml:space="preserve" text-anchor="start" x="91.88" y="-191.82" font-family="Arial" font-size="14.00" fill="#14263c">0</text>
+      <polygon fill="#fff2d6" stroke="none" points="110.12,-182.38 110.12,-212.12 139.12,-212.12 139.12,-182.38 110.12,-182.38" />
+      <polygon fill="none" stroke="#bac7d5" points="110.12,-182.38 110.12,-212.12 139.12,-212.12 139.12,-182.38 110.12,-182.38" />
+      <text xml:space="preserve" text-anchor="start" x="120.88" y="-192.82" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">1</text>
+      <polygon fill="#fff2d6" stroke="none" points="139.12,-182.38 139.12,-212.12 168.12,-212.12 168.12,-182.38 139.12,-182.38" />
+      <polygon fill="none" stroke="#bac7d5" points="139.12,-182.38 139.12,-212.12 168.12,-212.12 168.12,-182.38 139.12,-182.38" />
+      <text xml:space="preserve" text-anchor="start" x="149.88" y="-192.82" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">2</text>
+      <polygon fill="#fff2d6" stroke="none" points="168.12,-182.38 168.12,-212.12 197.12,-212.12 197.12,-182.38 168.12,-182.38" />
+      <polygon fill="none" stroke="#bac7d5" points="168.12,-182.38 168.12,-212.12 197.12,-212.12 197.12,-182.38 168.12,-182.38" />
+      <text xml:space="preserve" text-anchor="start" x="178.88" y="-192.82" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">3</text>
+      <polygon fill="#fbeded" stroke="none" points="197.12,-182.38 197.12,-212.12 226.12,-212.12 226.12,-182.38 197.12,-182.38" />
+      <polygon fill="none" stroke="#bac7d5" points="197.12,-182.38 197.12,-212.12 226.12,-212.12 226.12,-182.38 197.12,-182.38" />
+      <text xml:space="preserve" text-anchor="start" x="207.88" y="-192.82" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">4</text>
+      <polygon fill="#eaf3fe" stroke="none" points="31.88,-152.62 31.88,-182.38 81.12,-182.38 81.12,-152.62 31.88,-152.62" />
+      <polygon fill="none" stroke="#bac7d5" points="31.88,-152.62 31.88,-182.38 81.12,-182.38 81.12,-152.62 31.88,-152.62" />
+      <text xml:space="preserve" text-anchor="start" x="52.75" y="-163.07" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">a</text>
+      <polygon fill="#ffffff" stroke="none" points="81.12,-152.62 81.12,-182.38 110.12,-182.38 110.12,-152.62 81.12,-152.62" />
+      <polygon fill="none" stroke="#bac7d5" points="81.12,-152.62 81.12,-182.38 110.12,-182.38 110.12,-152.62 81.12,-152.62" />
+      <text xml:space="preserve" text-anchor="start" x="88.12" y="-163.07" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">10</text>
+      <polygon fill="#fff2d6" stroke="none" points="110.12,-152.62 110.12,-182.38 139.12,-182.38 139.12,-152.62 110.12,-152.62" />
+      <polygon fill="none" stroke="#bac7d5" points="110.12,-152.62 110.12,-182.38 139.12,-182.38 139.12,-152.62 110.12,-152.62" />
+      <text xml:space="preserve" text-anchor="start" x="117.12" y="-163.07" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">20</text>
+      <polygon fill="#fff2d6" stroke="none" points="139.12,-152.62 139.12,-182.38 168.12,-182.38 168.12,-152.62 139.12,-152.62" />
+      <polygon fill="none" stroke="#bac7d5" points="139.12,-152.62 139.12,-182.38 168.12,-182.38 168.12,-152.62 139.12,-152.62" />
+      <text xml:space="preserve" text-anchor="start" x="146.12" y="-163.07" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">30</text>
+      <polygon fill="#fff2d6" stroke="none" points="168.12,-152.62 168.12,-182.38 197.12,-182.38 197.12,-152.62 168.12,-152.62" />
+      <polygon fill="none" stroke="#bac7d5" points="168.12,-152.62 168.12,-182.38 197.12,-182.38 197.12,-152.62 168.12,-152.62" />
+      <text xml:space="preserve" text-anchor="start" x="175.12" y="-163.07" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">40</text>
+      <polygon fill="#ffffff" stroke="none" points="197.12,-152.62 197.12,-182.38 226.12,-182.38 226.12,-152.62 197.12,-152.62" />
+      <polygon fill="none" stroke="#bac7d5" points="197.12,-152.62 197.12,-182.38 226.12,-182.38 226.12,-152.62 197.12,-152.62" />
+      <text xml:space="preserve" text-anchor="start" x="204.12" y="-163.07" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">50</text>
+      <polygon fill="#f3f5f7" stroke="none" points="31.88,-122.88 31.88,-152.62 81.12,-152.62 81.12,-122.88 31.88,-122.88" />
+      <polygon fill="none" stroke="#bac7d5" points="31.88,-122.88 31.88,-152.62 81.12,-152.62 81.12,-122.88 31.88,-122.88" />
+      <text xml:space="preserve" text-anchor="start" x="44.5" y="-133.32" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">neg</text>
+      <polygon fill="#f0ebfa" stroke="none" points="81.12,-122.88 81.12,-152.62 110.12,-152.62 110.12,-122.88 81.12,-122.88" />
+      <polygon fill="none" stroke="#bac7d5" points="81.12,-122.88 81.12,-152.62 110.12,-152.62 110.12,-122.88 81.12,-122.88" />
+      <text xml:space="preserve" text-anchor="start" x="89.62" y="-132.32" font-family="Arial" font-size="14.00" fill="#14263c">-5</text>
+      <polygon fill="#f0ebfa" stroke="none" points="110.12,-122.88 110.12,-152.62 139.12,-152.62 139.12,-122.88 110.12,-122.88" />
+      <polygon fill="none" stroke="#bac7d5" points="110.12,-122.88 110.12,-152.62 139.12,-152.62 139.12,-122.88 110.12,-122.88" />
+      <text xml:space="preserve" text-anchor="start" x="118.62" y="-132.32" font-family="Arial" font-size="14.00" fill="#14263c">-4</text>
+      <polygon fill="#f0ebfa" stroke="none" points="139.12,-122.88 139.12,-152.62 168.12,-152.62 168.12,-122.88 139.12,-122.88" />
+      <polygon fill="none" stroke="#bac7d5" points="139.12,-122.88 139.12,-152.62 168.12,-152.62 168.12,-122.88 139.12,-122.88" />
+      <text xml:space="preserve" text-anchor="start" x="147.62" y="-132.32" font-family="Arial" font-size="14.00" fill="#14263c">-3</text>
+      <polygon fill="#f0ebfa" stroke="none" points="168.12,-122.88 168.12,-152.62 197.12,-152.62 197.12,-122.88 168.12,-122.88" />
+      <polygon fill="none" stroke="#bac7d5" points="168.12,-122.88 168.12,-152.62 197.12,-152.62 197.12,-122.88 168.12,-122.88" />
+      <text xml:space="preserve" text-anchor="start" x="176.62" y="-132.32" font-family="Arial" font-size="14.00" fill="#14263c">-2</text>
+      <polygon fill="#f0ebfa" stroke="none" points="197.12,-122.88 197.12,-152.62 226.12,-152.62 226.12,-122.88 197.12,-122.88" />
+      <polygon fill="none" stroke="#bac7d5" points="197.12,-122.88 197.12,-152.62 226.12,-152.62 226.12,-122.88 197.12,-122.88" />
+      <text xml:space="preserve" text-anchor="start" x="205.62" y="-133.32" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">-1</text>
+      <polygon fill="none" stroke="#bac7d5" points="30.88,-121.88 30.88,-213.12 227.12,-213.12 227.12,-121.88 30.88,-121.88" />
     </g>
     <g id="node2" class="node">
       <title>slice_rules</title>
-      <polygon fill="#fff2d6" stroke="none" points="28.62,-120.75 28.62,-150.5 361.38,-150.5 361.38,-120.75 28.62,-120.75" />
-      <polygon fill="none" stroke="#bac7d5" points="28.62,-120.75 28.62,-150.5 361.38,-150.5 361.38,-120.75 28.62,-120.75" />
-      <text xml:space="preserve" text-anchor="start" x="57" y="-131.2" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">Half-open a[1:4]: start 1 in, stop 4 excluded</text>
-      <polygon fill="#f3f5f7" stroke="none" points="28.62,-91 28.62,-120.75 87.62,-120.75 87.62,-91 28.62,-91" />
-      <polygon fill="none" stroke="#bac7d5" points="28.62,-91 28.62,-120.75 87.62,-120.75 87.62,-91 28.62,-91" />
-      <text xml:space="preserve" text-anchor="start" x="35.62" y="-102.6" font-family="Courier New" font-weight="bold" font-size="12.00" fill="#14263c">a[1:4]</text>
-      <polygon fill="#f3f5f7" stroke="none" points="87.62,-91 87.62,-120.75 116.62,-120.75 116.62,-91 87.62,-91" />
-      <polygon fill="none" stroke="#bac7d5" points="87.62,-91 87.62,-120.75 116.62,-120.75 116.62,-91 87.62,-91" />
-      <text xml:space="preserve" text-anchor="start" x="99.88" y="-100.45" font-family="Arial" font-size="14.00" fill="#14263c">·</text>
-      <polygon fill="#fff2d6" stroke="none" points="116.62,-91 116.62,-120.75 145.62,-120.75 145.62,-91 116.62,-91" />
-      <polygon fill="none" stroke="#bac7d5" points="116.62,-91 116.62,-120.75 145.62,-120.75 145.62,-91 116.62,-91" />
-      <text xml:space="preserve" text-anchor="start" x="123.62" y="-101.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">20</text>
-      <polygon fill="#fff2d6" stroke="none" points="145.62,-91 145.62,-120.75 174.62,-120.75 174.62,-91 145.62,-91" />
-      <polygon fill="none" stroke="#bac7d5" points="145.62,-91 145.62,-120.75 174.62,-120.75 174.62,-91 145.62,-91" />
-      <text xml:space="preserve" text-anchor="start" x="152.62" y="-101.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">30</text>
-      <polygon fill="#fff2d6" stroke="none" points="174.62,-91 174.62,-120.75 203.62,-120.75 203.62,-91 174.62,-91" />
-      <polygon fill="none" stroke="#bac7d5" points="174.62,-91 174.62,-120.75 203.62,-120.75 203.62,-91 174.62,-91" />
-      <text xml:space="preserve" text-anchor="start" x="181.62" y="-101.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">40</text>
-      <polygon fill="#fbeded" stroke="none" points="203.62,-91 203.62,-120.75 257.38,-120.75 257.38,-91 203.62,-91" />
-      <polygon fill="none" stroke="#bac7d5" points="203.62,-91 203.62,-120.75 257.38,-120.75 257.38,-91 203.62,-91" />
-      <text xml:space="preserve" text-anchor="start" x="210.62" y="-101.6" font-family="Arial" font-size="12.00" fill="#14263c">stop 4✗</text>
-      <polygon fill="#fff2d6" stroke="none" points="257.38,-91 257.38,-120.75 361.38,-120.75 361.38,-91 257.38,-91" />
-      <polygon fill="none" stroke="#bac7d5" points="257.38,-91 257.38,-120.75 361.38,-120.75 361.38,-91 257.38,-91" />
-      <text xml:space="preserve" text-anchor="start" x="264.38" y="-102.6" font-family="Courier New" font-weight="bold" font-size="12.00" fill="#14263c">[20, 30, 40]</text>
-      <polygon fill="#e9f7f2" stroke="none" points="28.62,-61.25 28.62,-91 361.38,-91 361.38,-61.25 28.62,-61.25" />
-      <polygon fill="none" stroke="#bac7d5" points="28.62,-61.25 28.62,-91 361.38,-91 361.38,-61.25 28.62,-61.25" />
-      <text xml:space="preserve" text-anchor="start" x="47.25" y="-71.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">Stride a[::2] (step=2): indices 0, 2, 4  (a[-1]=50)</text>
-      <polygon fill="#f3f5f7" stroke="none" points="28.62,-31.5 28.62,-61.25 87.62,-61.25 87.62,-31.5 28.62,-31.5" />
-      <polygon fill="none" stroke="#bac7d5" points="28.62,-31.5 28.62,-61.25 87.62,-61.25 87.62,-31.5 28.62,-31.5" />
-      <text xml:space="preserve" text-anchor="start" x="35.62" y="-43.1" font-family="Courier New" font-weight="bold" font-size="12.00" fill="#14263c">a[::2]</text>
-      <polygon fill="#e9f7f2" stroke="none" points="87.62,-31.5 87.62,-61.25 116.62,-61.25 116.62,-31.5 87.62,-31.5" />
-      <polygon fill="none" stroke="#bac7d5" points="87.62,-31.5 87.62,-61.25 116.62,-61.25 116.62,-31.5 87.62,-31.5" />
-      <text xml:space="preserve" text-anchor="start" x="94.62" y="-41.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">10</text>
-      <polygon fill="#f3f5f7" stroke="none" points="116.62,-31.5 116.62,-61.25 145.62,-61.25 145.62,-31.5 116.62,-31.5" />
-      <polygon fill="none" stroke="#bac7d5" points="116.62,-31.5 116.62,-61.25 145.62,-61.25 145.62,-31.5 116.62,-31.5" />
-      <text xml:space="preserve" text-anchor="start" x="128.88" y="-40.95" font-family="Arial" font-size="14.00" fill="#14263c">·</text>
-      <polygon fill="#e9f7f2" stroke="none" points="145.62,-31.5 145.62,-61.25 174.62,-61.25 174.62,-31.5 145.62,-31.5" />
-      <polygon fill="none" stroke="#bac7d5" points="145.62,-31.5 145.62,-61.25 174.62,-61.25 174.62,-31.5 145.62,-31.5" />
-      <text xml:space="preserve" text-anchor="start" x="152.62" y="-41.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">30</text>
-      <polygon fill="#f3f5f7" stroke="none" points="174.62,-31.5 174.62,-61.25 203.62,-61.25 203.62,-31.5 174.62,-31.5" />
-      <polygon fill="none" stroke="#bac7d5" points="174.62,-31.5 174.62,-61.25 203.62,-61.25 203.62,-31.5 174.62,-31.5" />
-      <text xml:space="preserve" text-anchor="start" x="186.88" y="-40.95" font-family="Arial" font-size="14.00" fill="#14263c">·</text>
-      <polygon fill="#e9f7f2" stroke="none" points="203.62,-31.5 203.62,-61.25 257.38,-61.25 257.38,-31.5 203.62,-31.5" />
-      <polygon fill="none" stroke="#bac7d5" points="203.62,-31.5 203.62,-61.25 257.38,-61.25 257.38,-31.5 203.62,-31.5" />
-      <text xml:space="preserve" text-anchor="start" x="223" y="-41.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">50</text>
-      <polygon fill="#e9f7f2" stroke="none" points="257.38,-31.5 257.38,-61.25 361.38,-61.25 361.38,-31.5 257.38,-31.5" />
-      <polygon fill="none" stroke="#bac7d5" points="257.38,-31.5 257.38,-61.25 361.38,-61.25 361.38,-31.5 257.38,-31.5" />
-      <text xml:space="preserve" text-anchor="start" x="264.38" y="-43.1" font-family="Courier New" font-weight="bold" font-size="12.00" fill="#14263c">[10, 30, 50]</text>
-      <polygon fill="none" stroke="#bac7d5" points="27.62,-30.5 27.62,-151.5 362.38,-151.5 362.38,-30.5 27.62,-30.5" />
+      <polygon fill="#f3f5f7" stroke="none" points="19.5,-49.5 19.5,-80 83,-80 83,-49.5 19.5,-49.5" />
+      <polygon fill="none" stroke="#bac7d5" points="19.5,-49.5 19.5,-80 83,-80 83,-49.5 19.5,-49.5" />
+      <text xml:space="preserve" text-anchor="start" x="26.5" y="-60.7" font-family="Courier New" font-weight="bold" font-size="14.00" fill="#14263c">a[1:4]</text>
+      <polygon fill="#fff2d6" stroke="none" points="83,-49.5 83,-80 166,-80 166,-49.5 83,-49.5" />
+      <polygon fill="none" stroke="#bac7d5" points="83,-49.5 83,-80 166,-80 166,-49.5 83,-49.5" />
+      <text xml:space="preserve" text-anchor="start" x="90" y="-60.33" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">[20, 30, 40]</text>
+      <polygon fill="#fbeded" stroke="none" points="166,-49.5 166,-80 238.5,-80 238.5,-49.5 166,-49.5" />
+      <polygon fill="none" stroke="#bac7d5" points="166,-49.5 166,-80 238.5,-80 238.5,-49.5 166,-49.5" />
+      <text xml:space="preserve" text-anchor="start" x="173" y="-60.48" font-family="Arial" font-size="12.00" fill="#14263c">4 excluded</text>
+      <polygon fill="#f3f5f7" stroke="none" points="19.5,-19 19.5,-49.5 83,-49.5 83,-19 19.5,-19" />
+      <polygon fill="none" stroke="#bac7d5" points="19.5,-19 19.5,-49.5 83,-49.5 83,-19 19.5,-19" />
+      <text xml:space="preserve" text-anchor="start" x="26.5" y="-30.2" font-family="Courier New" font-weight="bold" font-size="14.00" fill="#14263c">a[::2]</text>
+      <polygon fill="#e9f7f2" stroke="none" points="83,-19 83,-49.5 166,-49.5 166,-19 83,-19" />
+      <polygon fill="none" stroke="#bac7d5" points="83,-19 83,-49.5 166,-49.5 166,-19 83,-19" />
+      <text xml:space="preserve" text-anchor="start" x="90" y="-29.82" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">[10, 30, 50]</text>
+      <polygon fill="#e9f7f2" stroke="none" points="166,-19 166,-49.5 238.5,-49.5 238.5,-19 166,-19" />
+      <polygon fill="none" stroke="#bac7d5" points="166,-19 166,-49.5 238.5,-49.5 238.5,-19 166,-19" />
+      <text xml:space="preserve" text-anchor="start" x="181.25" y="-29.98" font-family="Arial" font-size="12.00" fill="#14263c">step = 2</text>
+      <polygon fill="none" stroke="#bac7d5" points="18.5,-18 18.5,-81 239.5,-81 239.5,-18 18.5,-18" />
     </g>
     <g id="edge1" class="edge">
       <title>idx_table-&gt;slice_rules</title>
-      <path fill="none" stroke="#526780" stroke-width="1.5" d="M195,-222.92C195,-203.42 195,-181.57 195,-161.39" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="197.8,-161.6 195,-153.6 192.2,-161.6 197.8,-161.6" />
-      <text xml:space="preserve" text-anchor="middle" x="238.12" y="-180.65" font-family="Arial" font-size="13.00" fill="#14263c"> slice windows</text>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M129,-121.98C129,-111.74 129,-100.9 129,-90.85" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="131.8,-90.98 129,-82.98 126.2,-90.98 131.8,-90.98" />
     </g>
     <g id="node3" class="node">
       <title>grid_2d</title>
-      <polygon fill="#eaf3fe" stroke="none" points="401.62,-328 401.62,-357.75 760.38,-357.75 760.38,-328 401.62,-328" />
-      <polygon fill="none" stroke="#bac7d5" points="401.62,-328 401.62,-357.75 760.38,-357.75 760.38,-328 401.62,-328" />
-      <text xml:space="preserve" text-anchor="start" x="451.62" y="-338.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">grid — 2 objects × 3 bands · shape (2, 3)</text>
-      <polygon fill="#f3f5f7" stroke="none" points="401.62,-298.25 401.62,-328 514.62,-328 514.62,-298.25 401.62,-298.25" />
-      <polygon fill="none" stroke="#bac7d5" points="401.62,-298.25 401.62,-328 514.62,-328 514.62,-298.25 401.62,-298.25" />
-      <text xml:space="preserve" text-anchor="start" x="408.62" y="-309.85" font-family="Arial" font-weight="bold" font-size="12.00" fill="#14263c">axis 0 ↓ / axis 1 →</text>
-      <polygon fill="#f3f5f7" stroke="none" points="514.62,-298.25 514.62,-328 559.38,-328 559.38,-298.25 514.62,-298.25" />
-      <polygon fill="none" stroke="#bac7d5" points="514.62,-298.25 514.62,-328 559.38,-328 559.38,-298.25 514.62,-298.25" />
-      <text xml:space="preserve" text-anchor="start" x="521.62" y="-308.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">col 0</text>
-      <polygon fill="#f3f5f7" stroke="none" points="559.38,-298.25 559.38,-328 604.12,-328 604.12,-298.25 559.38,-298.25" />
-      <polygon fill="none" stroke="#bac7d5" points="559.38,-298.25 559.38,-328 604.12,-328 604.12,-298.25 559.38,-298.25" />
-      <text xml:space="preserve" text-anchor="start" x="566.38" y="-308.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">col 1</text>
-      <polygon fill="#f3f5f7" stroke="none" points="604.12,-298.25 604.12,-328 648.88,-328 648.88,-298.25 604.12,-298.25" />
-      <polygon fill="none" stroke="#bac7d5" points="604.12,-298.25 604.12,-328 648.88,-328 648.88,-298.25 604.12,-298.25" />
-      <text xml:space="preserve" text-anchor="start" x="611.12" y="-308.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">col 2</text>
-      <polygon fill="#e9f7f2" stroke="none" points="648.88,-298.25 648.88,-328 760.38,-328 760.38,-298.25 648.88,-298.25" />
-      <polygon fill="none" stroke="#bac7d5" points="648.88,-298.25 648.88,-328 760.38,-328 760.38,-298.25 648.88,-298.25" />
-      <text xml:space="preserve" text-anchor="start" x="655.88" y="-308.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">sum(axis=1) →</text>
-      <polygon fill="#f3f5f7" stroke="none" points="401.62,-268.5 401.62,-298.25 514.62,-298.25 514.62,-268.5 401.62,-268.5" />
-      <polygon fill="none" stroke="#bac7d5" points="401.62,-268.5 401.62,-298.25 514.62,-298.25 514.62,-268.5 401.62,-268.5" />
-      <text xml:space="preserve" text-anchor="start" x="420.62" y="-277.95" font-family="Arial" font-size="14.00" fill="#14263c">row 0 (obj 0)</text>
-      <polygon fill="#ffffff" stroke="none" points="514.62,-268.5 514.62,-298.25 559.38,-298.25 559.38,-268.5 514.62,-268.5" />
-      <polygon fill="none" stroke="#bac7d5" points="514.62,-268.5 514.62,-298.25 559.38,-298.25 559.38,-268.5 514.62,-268.5" />
-      <text xml:space="preserve" text-anchor="start" x="533.25" y="-277.95" font-family="Arial" font-size="14.00" fill="#14263c">1</text>
-      <polygon fill="#ffffff" stroke="none" points="559.38,-268.5 559.38,-298.25 604.12,-298.25 604.12,-268.5 559.38,-268.5" />
-      <polygon fill="none" stroke="#bac7d5" points="559.38,-268.5 559.38,-298.25 604.12,-298.25 604.12,-268.5 559.38,-268.5" />
-      <text xml:space="preserve" text-anchor="start" x="578" y="-277.95" font-family="Arial" font-size="14.00" fill="#14263c">2</text>
-      <polygon fill="#ffffff" stroke="none" points="604.12,-268.5 604.12,-298.25 648.88,-298.25 648.88,-268.5 604.12,-268.5" />
-      <polygon fill="none" stroke="#bac7d5" points="604.12,-268.5 604.12,-298.25 648.88,-298.25 648.88,-268.5 604.12,-268.5" />
-      <text xml:space="preserve" text-anchor="start" x="622.75" y="-277.95" font-family="Arial" font-size="14.00" fill="#14263c">3</text>
-      <polygon fill="#e9f7f2" stroke="none" points="648.88,-268.5 648.88,-298.25 760.38,-298.25 760.38,-268.5 648.88,-268.5" />
-      <polygon fill="none" stroke="#bac7d5" points="648.88,-268.5 648.88,-298.25 760.38,-298.25 760.38,-268.5 648.88,-268.5" />
-      <text xml:space="preserve" text-anchor="start" x="700.88" y="-278.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">6</text>
-      <polygon fill="#f3f5f7" stroke="none" points="401.62,-238.75 401.62,-268.5 514.62,-268.5 514.62,-238.75 401.62,-238.75" />
-      <polygon fill="none" stroke="#bac7d5" points="401.62,-238.75 401.62,-268.5 514.62,-268.5 514.62,-238.75 401.62,-238.75" />
-      <text xml:space="preserve" text-anchor="start" x="420.62" y="-248.2" font-family="Arial" font-size="14.00" fill="#14263c">row 1 (obj 1)</text>
-      <polygon fill="#ffffff" stroke="none" points="514.62,-238.75 514.62,-268.5 559.38,-268.5 559.38,-238.75 514.62,-238.75" />
-      <polygon fill="none" stroke="#bac7d5" points="514.62,-238.75 514.62,-268.5 559.38,-268.5 559.38,-238.75 514.62,-238.75" />
-      <text xml:space="preserve" text-anchor="start" x="529.5" y="-248.2" font-family="Arial" font-size="14.00" fill="#14263c">10</text>
-      <polygon fill="#ffffff" stroke="none" points="559.38,-238.75 559.38,-268.5 604.12,-268.5 604.12,-238.75 559.38,-238.75" />
-      <polygon fill="none" stroke="#bac7d5" points="559.38,-238.75 559.38,-268.5 604.12,-268.5 604.12,-238.75 559.38,-238.75" />
-      <text xml:space="preserve" text-anchor="start" x="574.25" y="-248.2" font-family="Arial" font-size="14.00" fill="#14263c">20</text>
-      <polygon fill="#ffffff" stroke="none" points="604.12,-238.75 604.12,-268.5 648.88,-268.5 648.88,-238.75 604.12,-238.75" />
-      <polygon fill="none" stroke="#bac7d5" points="604.12,-238.75 604.12,-268.5 648.88,-268.5 648.88,-238.75 604.12,-238.75" />
-      <text xml:space="preserve" text-anchor="start" x="619" y="-248.2" font-family="Arial" font-size="14.00" fill="#14263c">30</text>
-      <polygon fill="#e9f7f2" stroke="none" points="648.88,-238.75 648.88,-268.5 760.38,-268.5 760.38,-238.75 648.88,-238.75" />
-      <polygon fill="none" stroke="#bac7d5" points="648.88,-238.75 648.88,-268.5 760.38,-268.5 760.38,-238.75 648.88,-238.75" />
-      <text xml:space="preserve" text-anchor="start" x="697.12" y="-249.2" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">60</text>
-      <polygon fill="#f0ebfa" stroke="none" points="401.62,-209 401.62,-238.75 514.62,-238.75 514.62,-209 401.62,-209" />
-      <polygon fill="none" stroke="#bac7d5" points="401.62,-209 401.62,-238.75 514.62,-238.75 514.62,-209 401.62,-209" />
-      <text xml:space="preserve" text-anchor="start" x="413.12" y="-219.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">sum(axis=0) ↓</text>
-      <polygon fill="#f0ebfa" stroke="none" points="514.62,-209 514.62,-238.75 559.38,-238.75 559.38,-209 514.62,-209" />
-      <polygon fill="none" stroke="#bac7d5" points="514.62,-209 514.62,-238.75 559.38,-238.75 559.38,-209 514.62,-209" />
-      <text xml:space="preserve" text-anchor="start" x="529.88" y="-219.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">11</text>
-      <polygon fill="#f0ebfa" stroke="none" points="559.38,-209 559.38,-238.75 604.12,-238.75 604.12,-209 559.38,-209" />
-      <polygon fill="none" stroke="#bac7d5" points="559.38,-209 559.38,-238.75 604.12,-238.75 604.12,-209 559.38,-209" />
-      <text xml:space="preserve" text-anchor="start" x="574.25" y="-219.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">22</text>
-      <polygon fill="#f0ebfa" stroke="none" points="604.12,-209 604.12,-238.75 648.88,-238.75 648.88,-209 604.12,-209" />
-      <polygon fill="none" stroke="#bac7d5" points="604.12,-209 604.12,-238.75 648.88,-238.75 648.88,-209 604.12,-209" />
-      <text xml:space="preserve" text-anchor="start" x="619" y="-219.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">33</text>
-      <polygon fill="#f3f5f7" stroke="none" points="648.88,-209 648.88,-238.75 760.38,-238.75 760.38,-209 648.88,-209" />
-      <polygon fill="none" stroke="#bac7d5" points="648.88,-209 648.88,-238.75 760.38,-238.75 760.38,-209 648.88,-209" />
-      <text xml:space="preserve" text-anchor="start" x="670.5" y="-219.6" font-family="Arial" font-size="12.00" fill="#14263c">↓ (3,) · → (2,)</text>
-      <polygon fill="none" stroke="#bac7d5" points="400.62,-208 400.62,-358.75 761.38,-358.75 761.38,-208 400.62,-208" />
-    </g>
-    <g id="node4" class="node">
-      <title>axis_rules</title>
-      <polygon fill="#f0ebfa" stroke="none" points="411.75,-120 411.75,-162 750.25,-162 750.25,-120 411.75,-120" />
-      <polygon fill="none" stroke="#bac7d5" points="411.75,-120 411.75,-162 750.25,-162 750.25,-120 411.75,-120" />
-      <text xml:space="preserve" text-anchor="start" x="467.75" y="-141.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">axis=0: down rows (↓) → shape (3,)</text>
-      <text xml:space="preserve" text-anchor="start" x="419.75" y="-129.6" font-family="Courier New" font-size="12.00" fill="#14263c">per-column: grid.sum(axis=0) = [11, 22, 33]</text>
-      <polygon fill="#e9f7f2" stroke="none" points="411.75,-78 411.75,-120 750.25,-120 750.25,-78 411.75,-78" />
-      <polygon fill="none" stroke="#bac7d5" points="411.75,-78 411.75,-120 750.25,-120 750.25,-78 411.75,-78" />
-      <text xml:space="preserve" text-anchor="start" x="462.88" y="-99.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">axis=1: across cols (→) → shape (2,)</text>
-      <text xml:space="preserve" text-anchor="start" x="449.75" y="-87.6" font-family="Courier New" font-size="12.00" fill="#14263c">per-row: grid.sum(axis=1) = [6, 60]</text>
-      <polygon fill="#fff2d6" stroke="none" points="411.75,-20 411.75,-78 750.25,-78 750.25,-20 411.75,-20" />
-      <polygon fill="none" stroke="#bac7d5" points="411.75,-20 411.75,-78 750.25,-78 750.25,-20 411.75,-20" />
-      <text xml:space="preserve" text-anchor="start" x="522.88" y="-57.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">Rule to remember</text>
-      <text xml:space="preserve" text-anchor="start" x="461.38" y="-43.7" font-family="Arial" font-style="italic" font-size="14.00" fill="#14263c">“The axis number names the dimension</text>
-      <text xml:space="preserve" text-anchor="start" x="520.62" y="-29.7" font-family="Arial" font-style="italic" font-size="14.00" fill="#14263c">that gets collapsed.”</text>
-      <polygon fill="none" stroke="#bac7d5" points="410.75,-19 410.75,-163 751.25,-163 751.25,-19 410.75,-19" />
-    </g>
-    <g id="edge2" class="edge">
-      <title>grid_2d-&gt;axis_rules</title>
-      <path fill="none" stroke="#526780" stroke-width="1.5" d="M581,-208.23C581,-196.68 581,-184.7 581,-173.01" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="583.8,-173.1 581,-165.1 578.2,-173.1 583.8,-173.1" />
-      <text xml:space="preserve" text-anchor="middle" x="634.62" y="-180.65" font-family="Arial" font-size="13.00" fill="#14263c"> collapse one axis</text>
+      <polygon fill="#f3f5f7" stroke="none" points="268.62,-197.25 268.62,-227 335.12,-227 335.12,-197.25 268.62,-197.25" />
+      <polygon fill="none" stroke="#bac7d5" points="268.62,-197.25 268.62,-227 335.12,-227 335.12,-197.25 268.62,-197.25" />
+      <polygon fill="#f3f5f7" stroke="none" points="335.12,-197.25 335.12,-227 379.88,-227 379.88,-197.25 335.12,-197.25" />
+      <polygon fill="none" stroke="#bac7d5" points="335.12,-197.25 335.12,-227 379.88,-227 379.88,-197.25 335.12,-197.25" />
+      <text xml:space="preserve" text-anchor="start" x="342.12" y="-207.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">col 0</text>
+      <polygon fill="#f3f5f7" stroke="none" points="379.88,-197.25 379.88,-227 424.62,-227 424.62,-197.25 379.88,-197.25" />
+      <polygon fill="none" stroke="#bac7d5" points="379.88,-197.25 379.88,-227 424.62,-227 424.62,-197.25 379.88,-197.25" />
+      <text xml:space="preserve" text-anchor="start" x="386.88" y="-207.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">col 1</text>
+      <polygon fill="#f3f5f7" stroke="none" points="424.62,-197.25 424.62,-227 469.38,-227 469.38,-197.25 424.62,-197.25" />
+      <polygon fill="none" stroke="#bac7d5" points="424.62,-197.25 424.62,-227 469.38,-227 469.38,-197.25 424.62,-197.25" />
+      <text xml:space="preserve" text-anchor="start" x="431.62" y="-207.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">col 2</text>
+      <polygon fill="#e9f7f2" stroke="none" points="469.38,-197.25 469.38,-227 543.38,-227 543.38,-197.25 469.38,-197.25" />
+      <polygon fill="none" stroke="#bac7d5" points="469.38,-197.25 469.38,-227 543.38,-227 543.38,-197.25 469.38,-197.25" />
+      <text xml:space="preserve" text-anchor="start" x="476.38" y="-207.7" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">axis=1 →</text>
+      <polygon fill="#f3f5f7" stroke="none" points="268.62,-167.5 268.62,-197.25 335.12,-197.25 335.12,-167.5 268.62,-167.5" />
+      <polygon fill="none" stroke="#bac7d5" points="268.62,-167.5 268.62,-197.25 335.12,-197.25 335.12,-167.5 268.62,-167.5" />
+      <text xml:space="preserve" text-anchor="start" x="283.88" y="-177.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">row 0</text>
+      <polygon fill="#ffffff" stroke="none" points="335.12,-167.5 335.12,-197.25 379.88,-197.25 379.88,-167.5 335.12,-167.5" />
+      <polygon fill="none" stroke="#bac7d5" points="335.12,-167.5 335.12,-197.25 379.88,-197.25 379.88,-167.5 335.12,-167.5" />
+      <text xml:space="preserve" text-anchor="start" x="353.75" y="-176.95" font-family="Arial" font-size="14.00" fill="#14263c">1</text>
+      <polygon fill="#ffffff" stroke="none" points="379.88,-167.5 379.88,-197.25 424.62,-197.25 424.62,-167.5 379.88,-167.5" />
+      <polygon fill="none" stroke="#bac7d5" points="379.88,-167.5 379.88,-197.25 424.62,-197.25 424.62,-167.5 379.88,-167.5" />
+      <text xml:space="preserve" text-anchor="start" x="398.5" y="-176.95" font-family="Arial" font-size="14.00" fill="#14263c">2</text>
+      <polygon fill="#ffffff" stroke="none" points="424.62,-167.5 424.62,-197.25 469.38,-197.25 469.38,-167.5 424.62,-167.5" />
+      <polygon fill="none" stroke="#bac7d5" points="424.62,-167.5 424.62,-197.25 469.38,-197.25 469.38,-167.5 424.62,-167.5" />
+      <text xml:space="preserve" text-anchor="start" x="443.25" y="-176.95" font-family="Arial" font-size="14.00" fill="#14263c">3</text>
+      <polygon fill="#e9f7f2" stroke="none" points="469.38,-167.5 469.38,-197.25 543.38,-197.25 543.38,-167.5 469.38,-167.5" />
+      <polygon fill="none" stroke="#bac7d5" points="469.38,-167.5 469.38,-197.25 543.38,-197.25 543.38,-167.5 469.38,-167.5" />
+      <text xml:space="preserve" text-anchor="start" x="502.62" y="-177.95" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">6</text>
+      <polygon fill="#f3f5f7" stroke="none" points="268.62,-137.75 268.62,-167.5 335.12,-167.5 335.12,-137.75 268.62,-137.75" />
+      <polygon fill="none" stroke="#bac7d5" points="268.62,-137.75 268.62,-167.5 335.12,-167.5 335.12,-137.75 268.62,-137.75" />
+      <text xml:space="preserve" text-anchor="start" x="283.88" y="-148.2" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">row 1</text>
+      <polygon fill="#ffffff" stroke="none" points="335.12,-137.75 335.12,-167.5 379.88,-167.5 379.88,-137.75 335.12,-137.75" />
+      <polygon fill="none" stroke="#bac7d5" points="335.12,-137.75 335.12,-167.5 379.88,-167.5 379.88,-137.75 335.12,-137.75" />
+      <text xml:space="preserve" text-anchor="start" x="350" y="-147.2" font-family="Arial" font-size="14.00" fill="#14263c">10</text>
+      <polygon fill="#ffffff" stroke="none" points="379.88,-137.75 379.88,-167.5 424.62,-167.5 424.62,-137.75 379.88,-137.75" />
+      <polygon fill="none" stroke="#bac7d5" points="379.88,-137.75 379.88,-167.5 424.62,-167.5 424.62,-137.75 379.88,-137.75" />
+      <text xml:space="preserve" text-anchor="start" x="394.75" y="-147.2" font-family="Arial" font-size="14.00" fill="#14263c">20</text>
+      <polygon fill="#ffffff" stroke="none" points="424.62,-137.75 424.62,-167.5 469.38,-167.5 469.38,-137.75 424.62,-137.75" />
+      <polygon fill="none" stroke="#bac7d5" points="424.62,-137.75 424.62,-167.5 469.38,-167.5 469.38,-137.75 424.62,-137.75" />
+      <text xml:space="preserve" text-anchor="start" x="439.5" y="-147.2" font-family="Arial" font-size="14.00" fill="#14263c">30</text>
+      <polygon fill="#e9f7f2" stroke="none" points="469.38,-137.75 469.38,-167.5 543.38,-167.5 543.38,-137.75 469.38,-137.75" />
+      <polygon fill="none" stroke="#bac7d5" points="469.38,-137.75 469.38,-167.5 543.38,-167.5 543.38,-137.75 469.38,-137.75" />
+      <text xml:space="preserve" text-anchor="start" x="498.88" y="-148.2" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">60</text>
+      <polygon fill="#f0ebfa" stroke="none" points="268.62,-108 268.62,-137.75 335.12,-137.75 335.12,-108 268.62,-108" />
+      <polygon fill="none" stroke="#bac7d5" points="268.62,-108 268.62,-137.75 335.12,-137.75 335.12,-108 268.62,-108" />
+      <text xml:space="preserve" text-anchor="start" x="275.62" y="-118.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">axis=0 ↓</text>
+      <polygon fill="#f0ebfa" stroke="none" points="335.12,-108 335.12,-137.75 379.88,-137.75 379.88,-108 335.12,-108" />
+      <polygon fill="none" stroke="#bac7d5" points="335.12,-108 335.12,-137.75 379.88,-137.75 379.88,-108 335.12,-108" />
+      <text xml:space="preserve" text-anchor="start" x="350.38" y="-118.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">11</text>
+      <polygon fill="#f0ebfa" stroke="none" points="379.88,-108 379.88,-137.75 424.62,-137.75 424.62,-108 379.88,-108" />
+      <polygon fill="none" stroke="#bac7d5" points="379.88,-108 379.88,-137.75 424.62,-137.75 424.62,-108 379.88,-108" />
+      <text xml:space="preserve" text-anchor="start" x="394.75" y="-118.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">22</text>
+      <polygon fill="#f0ebfa" stroke="none" points="424.62,-108 424.62,-137.75 469.38,-137.75 469.38,-108 424.62,-108" />
+      <polygon fill="none" stroke="#bac7d5" points="424.62,-108 424.62,-137.75 469.38,-137.75 469.38,-108 424.62,-108" />
+      <text xml:space="preserve" text-anchor="start" x="439.5" y="-118.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="#14263c">33</text>
+      <polygon fill="#f3f5f7" stroke="none" points="469.38,-108 469.38,-137.75 543.38,-137.75 543.38,-108 469.38,-108" />
+      <polygon fill="none" stroke="#bac7d5" points="469.38,-108 469.38,-137.75 543.38,-137.75 543.38,-108 469.38,-108" />
+      <text xml:space="preserve" text-anchor="start" x="495.12" y="-118.6" font-family="Arial" font-size="12.00" fill="#14263c">sum</text>
+      <polygon fill="none" stroke="#bac7d5" points="267.62,-107 267.62,-228 544.38,-228 544.38,-107 267.62,-107" />
     </g>
   </g>
 </svg>

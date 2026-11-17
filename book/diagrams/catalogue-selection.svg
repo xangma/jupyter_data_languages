@@ -1,90 +1,88 @@
 <?xml version='1.0' encoding='utf-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="226" viewBox="0.00 0.00 813.00 255.00" role="img" aria-labelledby="catalogue-selection-title catalogue-selection-desc">
-  <title id="catalogue-selection-title">Data-hygiene filtering and physical survey selection are separate steps</title>
-  <desc id="catalogue-selection-desc">Left-to-right flow from Raw catalogue (400 rows) to Rejected: invalid (5 rows) and Valid catalogue (395 rows), then through magnitude cut m &lt; 16.5 to Selected (262 rows) and Valid, not selected (133 rows), comparing the Valid catalogue (395 reference) and Selected (262) distance distributions on shared distance bins.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="541" height="255" viewBox="0.00 0.00 541.00 255.00" role="img" aria-labelledby="catalogue-selection-title catalogue-selection-desc">
+  <title id="catalogue-selection-title">Data quality versus selection threshold</title>
+  <desc id="catalogue-selection-desc">From 400 raw rows, data-quality filtering removes 5 invalid rows to leave 395 valid rows, and threshold cut m &lt; 16.5 selects 262 rows (leaving 133 faint valid rows) for comparison on shared bins.</desc>
   <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(8.64 246.16)">
     <title>catalogue_selection</title>
-    <polygon fill="white" stroke="none" points="-8.64,8.64 -8.64,-246.16 803.89,-246.16 803.89,8.64 -8.64,8.64" />
-    <text xml:space="preserve" text-anchor="middle" x="397.63" y="-216.42" font-family="Arial" font-size="18.00" fill="#14263c">Data-hygiene filtering and physical survey selection are separate steps</text>
+    <polygon fill="white" stroke="none" points="-8.64,8.64 -8.64,-246.16 531.99,-246.16 531.99,8.64 -8.64,8.64" />
+    <text xml:space="preserve" text-anchor="middle" x="261.68" y="-216.42" font-family="Arial" font-size="18.00" fill="#14263c">Data quality vs selection threshold</text>
     <g id="node1" class="node">
       <title>raw</title>
-      <path fill="#f3f5f7" stroke="#bac7d5" stroke-width="1.4" d="M100.65,-58.52C100.65,-58.52 12,-58.52 12,-58.52 6,-58.52 0,-52.52 0,-46.52 0,-46.52 0,-23 0,-23 0,-17 6,-11 12,-11 12,-11 100.65,-11 100.65,-11 106.65,-11 112.65,-17 112.65,-23 112.65,-23 112.65,-46.52 112.65,-46.52 112.65,-52.52 106.65,-58.52 100.65,-58.52" />
-      <text xml:space="preserve" text-anchor="middle" x="56.33" y="-38.51" font-family="Arial" font-size="15.00" fill="#14263c">Raw catalogue</text>
-      <text xml:space="preserve" text-anchor="middle" x="56.33" y="-20.51" font-family="Arial" font-size="15.00" fill="#14263c">400 rows</text>
+      <path fill="#f3f5f7" stroke="#bac7d5" stroke-width="1.5" d="M64.59,-58.52C64.59,-58.52 12,-58.52 12,-58.52 6,-58.52 0,-52.52 0,-46.52 0,-46.52 0,-23 0,-23 0,-17 6,-11 12,-11 12,-11 64.59,-11 64.59,-11 70.59,-11 76.59,-17 76.59,-23 76.59,-23 76.59,-46.52 76.59,-46.52 76.59,-52.52 70.59,-58.52 64.59,-58.52" />
+      <text xml:space="preserve" text-anchor="middle" x="38.29" y="-38.51" font-family="Arial" font-size="15.00" fill="#14263c">Raw</text>
+      <text xml:space="preserve" text-anchor="middle" x="38.29" y="-20.51" font-family="Arial" font-size="15.00" fill="#14263c">400 rows</text>
     </g>
     <g id="node2" class="node">
       <title>valid</title>
-      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.4" d="M236.68,-112.52C236.68,-112.52 145.78,-112.52 145.78,-112.52 139.78,-112.52 133.78,-106.52 133.78,-100.52 133.78,-100.52 133.78,-77 133.78,-77 133.78,-71 139.78,-65 145.78,-65 145.78,-65 236.68,-65 236.68,-65 242.68,-65 248.68,-71 248.68,-77 248.68,-77 248.68,-100.52 248.68,-100.52 248.68,-106.52 242.68,-112.52 236.68,-112.52" />
-      <text xml:space="preserve" text-anchor="middle" x="191.23" y="-92.51" font-family="Arial" font-size="15.00" fill="#14263c">Valid catalogue</text>
-      <text xml:space="preserve" text-anchor="middle" x="191.23" y="-74.51" font-family="Arial" font-size="15.00" fill="#14263c">395 rows</text>
+      <path fill="#eaf3fe" stroke="#bac7d5" stroke-width="1.5" d="M160.18,-112.52C160.18,-112.52 107.59,-112.52 107.59,-112.52 101.59,-112.52 95.59,-106.52 95.59,-100.52 95.59,-100.52 95.59,-77 95.59,-77 95.59,-71 101.59,-65 107.59,-65 107.59,-65 160.18,-65 160.18,-65 166.18,-65 172.18,-71 172.18,-77 172.18,-77 172.18,-100.52 172.18,-100.52 172.18,-106.52 166.18,-112.52 160.18,-112.52" />
+      <text xml:space="preserve" text-anchor="middle" x="133.88" y="-92.51" font-family="Arial" font-size="15.00" fill="#14263c">Valid</text>
+      <text xml:space="preserve" text-anchor="middle" x="133.88" y="-74.51" font-family="Arial" font-size="15.00" fill="#14263c">395 rows</text>
     </g>
     <g id="edge1" class="edge">
       <title>raw-&gt;valid</title>
-      <path fill="none" stroke="#526780" stroke-width="1.5" d="M113.3,-57.5C116.84,-58.94 120.43,-60.4 124.01,-61.86" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="122.89,-64.42 131.36,-64.84 125,-59.24 122.89,-64.42" />
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M77.09,-56.57C80.13,-58.32 83.21,-60.1 86.3,-61.88" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="84.65,-64.16 92.98,-65.74 87.45,-59.31 84.65,-64.16" />
     </g>
     <g id="node3" class="node">
       <title>invalid</title>
-      <path fill="#fbeded" stroke="#bac7d5" stroke-width="1.4" d="M240.8,-47.52C240.8,-47.52 141.65,-47.52 141.65,-47.52 135.65,-47.52 129.65,-41.52 129.65,-35.52 129.65,-35.52 129.65,-12 129.65,-12 129.65,-6 135.65,0 141.65,0 141.65,0 240.8,0 240.8,0 246.8,0 252.8,-6 252.8,-12 252.8,-12 252.8,-35.52 252.8,-35.52 252.8,-41.52 246.8,-47.52 240.8,-47.52" />
-      <text xml:space="preserve" text-anchor="middle" x="191.23" y="-27.51" font-family="Arial" font-size="15.00" fill="#14263c">Rejected: invalid</text>
-      <text xml:space="preserve" text-anchor="middle" x="191.23" y="-9.51" font-family="Arial" font-size="15.00" fill="#14263c">5 rows</text>
+      <path fill="#fbeded" stroke="#bac7d5" stroke-width="1.5" d="M151.93,-47.52C151.93,-47.52 115.84,-47.52 115.84,-47.52 109.84,-47.52 103.84,-41.52 103.84,-35.52 103.84,-35.52 103.84,-12 103.84,-12 103.84,-6 109.84,0 115.84,0 115.84,0 151.93,0 151.93,0 157.93,0 163.93,-6 163.93,-12 163.93,-12 163.93,-35.52 163.93,-35.52 163.93,-41.52 157.93,-47.52 151.93,-47.52" />
+      <text xml:space="preserve" text-anchor="middle" x="133.88" y="-27.51" font-family="Arial" font-size="15.00" fill="#14263c">Invalid</text>
+      <text xml:space="preserve" text-anchor="middle" x="133.88" y="-9.51" font-family="Arial" font-size="15.00" fill="#14263c">5 rows</text>
     </g>
     <g id="edge2" class="edge">
       <title>raw-&gt;invalid</title>
-      <path fill="none" stroke="#526780" stroke-width="1.5" d="M113.3,-30.13C115.27,-29.96 117.25,-29.8 119.24,-29.64" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="119.18,-32.45 126.92,-29 118.72,-26.87 119.18,-32.45" />
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M77.09,-30.32C82.41,-29.69 87.89,-29.05 93.24,-28.42" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="93.42,-31.22 101.04,-27.5 92.77,-25.66 93.42,-31.22" />
     </g>
     <g id="node4" class="node">
       <title>cut</title>
-      <polygon fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.4" points="322,-147.68 269.8,-121.76 322,-95.84 374.2,-121.76 322,-147.68" />
-      <text xml:space="preserve" text-anchor="middle" x="322" y="-116.51" font-family="Arial" font-size="15.00" fill="#14263c">m &lt; 16.5 ?</text>
+      <polygon fill="#f0ebfa" stroke="#bac7d5" stroke-width="1.5" points="242.3,-145.96 191.18,-120.76 242.3,-95.56 293.42,-120.76 242.3,-145.96" />
+      <text xml:space="preserve" text-anchor="middle" x="242.3" y="-115.51" font-family="Arial" font-size="15.00" fill="#14263c">m &lt; 16.5 ?</text>
     </g>
     <g id="edge4" class="edge">
       <title>valid-&gt;cut</title>
-      <path fill="none" stroke="#526780" stroke-width="1.5" d="M249.08,-103.33C258.29,-105.69 267.7,-108.1 276.55,-110.37" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="275.62,-113.02 284.07,-112.3 277.01,-107.6 275.62,-113.02" />
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M172.7,-100.13C181.38,-102.74 190.66,-105.53 199.5,-108.19" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="198.6,-110.84 207.06,-110.46 200.21,-105.48 198.6,-110.84" />
     </g>
     <g id="node7" class="node">
       <title>compare</title>
-      <path fill="#f3f5f7" stroke="#bac7d5" stroke-width="1.4" d="M783.25,-104.52C783.25,-104.52 647.35,-104.52 647.35,-104.52 641.35,-104.52 635.35,-98.52 635.35,-92.52 635.35,-92.52 635.35,-69 635.35,-69 635.35,-63 641.35,-57 647.35,-57 647.35,-57 783.25,-57 783.25,-57 789.25,-57 795.25,-63 795.25,-69 795.25,-69 795.25,-92.52 795.25,-92.52 795.25,-98.52 789.25,-104.52 783.25,-104.52" />
-      <text xml:space="preserve" text-anchor="middle" x="715.3" y="-84.51" font-family="Arial" font-size="15.00" fill="#14263c">Compare distributions</text>
-      <text xml:space="preserve" text-anchor="middle" x="715.3" y="-66.51" font-family="Arial" font-size="15.00" fill="#14263c">Shared distance bins</text>
+      <path fill="#f3f5f7" stroke="#bac7d5" stroke-width="1.5" d="M511.35,-104.52C511.35,-104.52 440.01,-104.52 440.01,-104.52 434.01,-104.52 428.01,-98.52 428.01,-92.52 428.01,-92.52 428.01,-69 428.01,-69 428.01,-63 434.01,-57 440.01,-57 440.01,-57 511.35,-57 511.35,-57 517.35,-57 523.35,-63 523.35,-69 523.35,-69 523.35,-92.52 523.35,-92.52 523.35,-98.52 517.35,-104.52 511.35,-104.52" />
+      <text xml:space="preserve" text-anchor="middle" x="475.68" y="-84.51" font-family="Arial" font-size="15.00" fill="#14263c">Shared bins</text>
+      <text xml:space="preserve" text-anchor="middle" x="475.68" y="-66.51" font-family="Arial" font-size="15.00" fill="#14263c">395 vs 262</text>
     </g>
     <g id="edge3" class="edge">
       <title>valid-&gt;compare</title>
-      <path fill="none" stroke="#526780" stroke-width="1.5" stroke-dasharray="5,2" d="M249.09,-87.89C339.59,-86.5 517.15,-83.78 624.82,-82.13" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="624.79,-84.93 632.74,-82.01 624.7,-79.33 624.79,-84.93" />
-      <text xml:space="preserve" text-anchor="middle" x="428.33" y="-88.76" font-family="Arial" font-size="13.50" fill="#14263c">reference (395)</text>
+      <path fill="none" stroke="#526780" stroke-width="1.5" stroke-dasharray="5,2" d="M172.73,-87.34C178.9,-87.13 185.22,-86.93 191.18,-86.76 269.52,-84.54 360.05,-82.76 417.33,-81.73" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="417.05,-84.54 425,-81.6 416.95,-78.94 417.05,-84.54" />
     </g>
     <g id="node5" class="node">
       <title>selected</title>
-      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.4" d="M575.98,-208.52C575.98,-208.52 524.83,-208.52 524.83,-208.52 518.83,-208.52 512.83,-202.52 512.83,-196.52 512.83,-196.52 512.83,-173 512.83,-173 512.83,-167 518.83,-161 524.83,-161 524.83,-161 575.98,-161 575.98,-161 581.98,-161 587.98,-167 587.98,-173 587.98,-173 587.98,-196.52 587.98,-196.52 587.98,-202.52 581.98,-208.52 575.98,-208.52" />
-      <text xml:space="preserve" text-anchor="middle" x="550.4" y="-188.51" font-family="Arial" font-size="15.00" fill="#14263c">Selected</text>
-      <text xml:space="preserve" text-anchor="middle" x="550.4" y="-170.51" font-family="Arial" font-size="15.00" fill="#14263c">262 rows</text>
+      <path fill="#e9f7f2" stroke="#bac7d5" stroke-width="1.5" d="M397.01,-208.52C397.01,-208.52 344.42,-208.52 344.42,-208.52 338.42,-208.52 332.42,-202.52 332.42,-196.52 332.42,-196.52 332.42,-173 332.42,-173 332.42,-167 338.42,-161 344.42,-161 344.42,-161 397.01,-161 397.01,-161 403.01,-161 409.01,-167 409.01,-173 409.01,-173 409.01,-196.52 409.01,-196.52 409.01,-202.52 403.01,-208.52 397.01,-208.52" />
+      <text xml:space="preserve" text-anchor="middle" x="370.72" y="-188.51" font-family="Arial" font-size="15.00" fill="#14263c">Selected</text>
+      <text xml:space="preserve" text-anchor="middle" x="370.72" y="-170.51" font-family="Arial" font-size="15.00" fill="#14263c">262 rows</text>
     </g>
     <g id="edge5" class="edge">
       <title>cut-&gt;selected</title>
-      <path fill="none" stroke="#2f6f5e" stroke-width="1.5" d="M344.52,-137.1C355.35,-144.12 368.97,-151.93 382.2,-156.76 421.16,-170.98 467.89,-178.03 502.04,-181.49" />
-      <polygon fill="#2f6f5e" stroke="#2f6f5e" stroke-width="1.5" points="501.72,-184.27 509.94,-182.24 502.24,-178.7 501.72,-184.27" />
-      <text xml:space="preserve" text-anchor="middle" x="428.33" y="-180.7" font-family="Arial" font-size="13.50" fill="#14263c">yes</text>
+      <path fill="none" stroke="#2f6f5e" stroke-width="1.5" d="M268.58,-133.56C284.11,-141.42 304.49,-151.74 322.89,-161.05" />
+      <polygon fill="#2f6f5e" stroke="#2f6f5e" stroke-width="1.5" points="321.58,-163.53 329.98,-164.64 324.11,-158.53 321.58,-163.53" />
+      <text xml:space="preserve" text-anchor="middle" x="312.92" y="-163.3" font-family="Arial" font-size="13.50" fill="#14263c">yes</text>
     </g>
     <g id="node6" class="node">
       <title>excluded</title>
-      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.4" d="M606.35,-143.52C606.35,-143.52 494.45,-143.52 494.45,-143.52 488.45,-143.52 482.45,-137.52 482.45,-131.52 482.45,-131.52 482.45,-108 482.45,-108 482.45,-102 488.45,-96 494.45,-96 494.45,-96 606.35,-96 606.35,-96 612.35,-96 618.35,-102 618.35,-108 618.35,-108 618.35,-131.52 618.35,-131.52 618.35,-137.52 612.35,-143.52 606.35,-143.52" />
-      <text xml:space="preserve" text-anchor="middle" x="550.4" y="-123.51" font-family="Arial" font-size="15.00" fill="#14263c">Valid, not selected</text>
-      <text xml:space="preserve" text-anchor="middle" x="550.4" y="-105.51" font-family="Arial" font-size="15.00" fill="#14263c">133 rows</text>
+      <path fill="#fff2d6" stroke="#bac7d5" stroke-width="1.5" d="M397.01,-143.52C397.01,-143.52 344.42,-143.52 344.42,-143.52 338.42,-143.52 332.42,-137.52 332.42,-131.52 332.42,-131.52 332.42,-108 332.42,-108 332.42,-102 338.42,-96 344.42,-96 344.42,-96 397.01,-96 397.01,-96 403.01,-96 409.01,-102 409.01,-108 409.01,-108 409.01,-131.52 409.01,-131.52 409.01,-137.52 403.01,-143.52 397.01,-143.52" />
+      <text xml:space="preserve" text-anchor="middle" x="370.72" y="-123.51" font-family="Arial" font-size="15.00" fill="#14263c">m ≥ 16.5</text>
+      <text xml:space="preserve" text-anchor="middle" x="370.72" y="-105.51" font-family="Arial" font-size="15.00" fill="#14263c">133 rows</text>
     </g>
     <g id="edge6" class="edge">
       <title>cut-&gt;excluded</title>
-      <path fill="none" stroke="#526780" stroke-width="1.5" d="M374.66,-121.3C403.39,-121.05 439.73,-120.73 471.81,-120.45" />
-      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="471.82,-123.25 479.79,-120.37 471.77,-117.65 471.82,-123.25" />
-      <text xml:space="preserve" text-anchor="middle" x="428.33" y="-139.9" font-family="Arial" font-size="13.50" fill="#14263c">no</text>
-      <text xml:space="preserve" text-anchor="middle" x="428.33" y="-124.15" font-family="Arial" font-size="13.50" fill="#14263c">(m ≥ 16.5)</text>
+      <path fill="none" stroke="#526780" stroke-width="1.5" d="M293.99,-120.36C303.17,-120.29 312.72,-120.21 321.82,-120.14" />
+      <polygon fill="#526780" stroke="#526780" stroke-width="1.5" points="321.61,-122.94 329.59,-120.08 321.57,-117.34 321.61,-122.94" />
+      <text xml:space="preserve" text-anchor="middle" x="312.92" y="-123.21" font-family="Arial" font-size="13.50" fill="#14263c">no</text>
     </g>
     <g id="edge7" class="edge">
       <title>selected-&gt;compare</title>
-      <path fill="none" stroke="#2f6f5e" stroke-width="1.5" d="M588.52,-167.93C598.41,-163.06 608.95,-157.49 618.35,-151.76 638.45,-139.51 659.61,-124.15 676.92,-110.85" />
-      <polygon fill="#2f6f5e" stroke="#2f6f5e" stroke-width="1.5" points="678.19,-113.41 682.8,-106.3 674.76,-108.98 678.19,-113.41" />
+      <path fill="none" stroke="#2f6f5e" stroke-width="1.5" d="M399.69,-160.55C402.88,-157.64 406.04,-154.66 409.01,-151.76 421.73,-139.31 435.18,-125 446.57,-112.5" />
+      <polygon fill="#2f6f5e" stroke="#2f6f5e" stroke-width="1.5" points="448.55,-114.48 451.84,-106.67 444.4,-110.73 448.55,-114.48" />
     </g>
   </g>
 </svg>

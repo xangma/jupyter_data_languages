@@ -1,125 +1,92 @@
-// Source: 01-catalogue.ipynb; 2D broadcasting for a chi^2(H0) grid scan over galaxies.
+// Source: 01-catalogue.ipynb; 2D broadcasting (M, 1) * (N,) -> (M, N) + .sum(axis=1).
 digraph broadcasting {
   graph [
-    bgcolor="white", fontname="Arial", fontsize=19, fontcolor="#14263C",
-    label="Broadcast M trial slopes against N galaxies, then sum across axis=1",
-    labelloc=t, rankdir=TB, newrank=true, nodesep=0.07, ranksep=0.28, pad=0.10
+    bgcolor="white", fontname="Arial", fontsize=18, fontcolor="#14263C",
+    label="Broadcasting (M, 1) * (N,) → (M, N)",
+    labelloc=t, rankdir=TB, newrank=true, nodesep=0.07, ranksep=0.26, pad=0.10
   ];
   node [
-    shape=plain, fontname="Arial", fontsize=15, fontcolor="#14263C",
+    shape=plain, fontname="Arial", fontsize=14.5, fontcolor="#14263C",
     color="#BAC7D5", penwidth=1.4
   ];
   edge [
-    fontname="Arial", fontsize=14, fontcolor="#14263C",
+    fontname="Arial", fontsize=13.5, fontcolor="#14263C",
     color="#526780", penwidth=1.6, arrowsize=0.8
   ];
 
   h0_col [label=<
     <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
-      <TR><TD COLSPAN="3"><FONT FACE="Courier New" POINT-SIZE="13"><B>h0_grid[:, None]&#160;</B></FONT></TD></TR>
-      <TR><TD COLSPAN="3"><B>(M, 1)</B> · M = 201</TD></TR>
-      <TR><TD COLSPAN="3" HEIGHT="4"></TD></TR>
-      <TR>
-        <TD WIDTH="30"></TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="7" WIDTH="42">H<SUB><FONT POINT-SIZE="12">1</FONT></SUB></TD>
-        <TD WIDTH="30"></TD>
-      </TR>
-      <TR>
-        <TD></TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="7">H<SUB><FONT POINT-SIZE="12">2</FONT></SUB></TD>
-        <TD></TD>
-      </TR>
-      <TR>
-        <TD></TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="5">&#8942;</TD>
-        <TD></TD>
-      </TR>
-      <TR>
-        <TD></TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="7">H<SUB><FONT POINT-SIZE="12">M</FONT></SUB></TD>
-        <TD></TD>
-      </TR>
+      <TR><TD COLSPAN="3"><FONT FACE="Courier New" POINT-SIZE="12.5"><B>h0_grid[:, None]</B></FONT></TD></TR>
+      <TR><TD COLSPAN="3"><B>(201, 1)</B></TD></TR>
+      <TR><TD COLSPAN="3" HEIGHT="3"></TD></TR>
+      <TR><TD WIDTH="20"></TD><TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="6" WIDTH="40">H<SUB><FONT POINT-SIZE="11">1</FONT></SUB></TD><TD WIDTH="20"></TD></TR>
+      <TR><TD></TD><TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="6">H<SUB><FONT POINT-SIZE="11">2</FONT></SUB></TD><TD></TD></TR>
+      <TR><TD></TD><TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="4">&#8942;</TD><TD></TD></TR>
+      <TR><TD></TD><TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="6">H<SUB><FONT POINT-SIZE="11">M</FONT></SUB></TD><TD></TD></TR>
     </TABLE>
   >];
 
-  multiply [fontsize=22, label="×"];
+  multiply [fontsize=21, label="×"];
 
   dist_row [label=<
     <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
-      <TR><TD COLSPAN="4"><FONT FACE="Courier New" POINT-SIZE="13"><B>distance[valid]&#160;</B></FONT></TD></TR>
-      <TR><TD COLSPAN="4"><B>(N,) → (1, N)</B> · N = 395</TD></TR>
-      <TR><TD COLSPAN="4" HEIGHT="4"></TD></TR>
+      <TR><TD COLSPAN="4"><FONT FACE="Courier New" POINT-SIZE="12.5"><B>distance[valid]</B></FONT></TD></TR>
+      <TR><TD COLSPAN="4"><B>(395,) → (1, 395)</B></TD></TR>
+      <TR><TD COLSPAN="4" HEIGHT="3"></TD></TR>
       <TR>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#F3F5F7" CELLPADDING="7">d<SUB><FONT POINT-SIZE="12">1</FONT></SUB></TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#F3F5F7" CELLPADDING="7">d<SUB><FONT POINT-SIZE="12">2</FONT></SUB></TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="6">&#8230;</TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#F3F5F7" CELLPADDING="7">d<SUB><FONT POINT-SIZE="12">N</FONT></SUB></TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#F3F5F7" CELLPADDING="6">d<SUB><FONT POINT-SIZE="11">1</FONT></SUB></TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#F3F5F7" CELLPADDING="6">d<SUB><FONT POINT-SIZE="11">2</FONT></SUB></TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="5">&#8230;</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#F3F5F7" CELLPADDING="6">d<SUB><FONT POINT-SIZE="11">N</FONT></SUB></TD>
       </TR>
     </TABLE>
   >];
 
   plus_offset [label=<
-    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="4">
-      <TR><TD><FONT POINT-SIZE="13">offset</FONT></TD></TR>
-      <TR><TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#F3F5F7" CELLPADDING="6"><FONT FACE="Courier New" POINT-SIZE="13"><B>+ 300&#160;</B></FONT></TD></TR>
+    <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="3">
+      <TR><TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#F3F5F7" CELLPADDING="6"><FONT FACE="Courier New" POINT-SIZE="13"><B>+ 300</B></FONT></TD></TR>
     </TABLE>
   >];
 
-  equals [fontsize=22, label="="];
+  equals [fontsize=21, label="="];
 
   v_model [label=<
     <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
-      <TR><TD COLSPAN="3"><FONT FACE="Courier New" POINT-SIZE="13"><B>v_model&#160;</B></FONT></TD></TR>
-      <TR><TD COLSPAN="3"><B>(M, N)</B> · 201 × 395 grid</TD></TR>
-      <TR><TD COLSPAN="3" HEIGHT="4"></TD></TR>
+      <TR><TD COLSPAN="3"><FONT FACE="Courier New" POINT-SIZE="12.5"><B>v_model</B></FONT></TD></TR>
+      <TR><TD COLSPAN="3"><B>(201, 395)</B></TD></TR>
+      <TR><TD COLSPAN="3" HEIGHT="3"></TD></TR>
       <TR>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="6">H<SUB><FONT POINT-SIZE="12">1</FONT></SUB>&#8201;d<SUB><FONT POINT-SIZE="12">1</FONT></SUB>+300</TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="6">&#8230;</TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="6">H<SUB><FONT POINT-SIZE="12">1</FONT></SUB>&#8201;d<SUB><FONT POINT-SIZE="12">N</FONT></SUB>+300</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="5">H<SUB><FONT POINT-SIZE="11">1</FONT></SUB>d<SUB><FONT POINT-SIZE="11">1</FONT></SUB>+300</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="5">&#8230;</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="5">H<SUB><FONT POINT-SIZE="11">1</FONT></SUB>d<SUB><FONT POINT-SIZE="11">N</FONT></SUB>+300</TD>
       </TR>
       <TR>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="6">H<SUB><FONT POINT-SIZE="12">2</FONT></SUB>&#8201;d<SUB><FONT POINT-SIZE="12">1</FONT></SUB>+300</TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="6">&#8230;</TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="6">H<SUB><FONT POINT-SIZE="12">2</FONT></SUB>&#8201;d<SUB><FONT POINT-SIZE="12">N</FONT></SUB>+300</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="5">H<SUB><FONT POINT-SIZE="11">2</FONT></SUB>d<SUB><FONT POINT-SIZE="11">1</FONT></SUB>+300</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="5">&#8230;</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="5">H<SUB><FONT POINT-SIZE="11">2</FONT></SUB>d<SUB><FONT POINT-SIZE="11">N</FONT></SUB>+300</TD>
       </TR>
       <TR>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="5">&#8942;</TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="5">&#8945;</TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="5">&#8942;</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="4">&#8942;</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="4">&#8945;</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="4">&#8942;</TD>
       </TR>
       <TR>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="6">H<SUB><FONT POINT-SIZE="12">M</FONT></SUB>&#8201;d<SUB><FONT POINT-SIZE="12">1</FONT></SUB>+300</TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="6">&#8230;</TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="6">H<SUB><FONT POINT-SIZE="12">M</FONT></SUB>&#8201;d<SUB><FONT POINT-SIZE="12">N</FONT></SUB>+300</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="5">H<SUB><FONT POINT-SIZE="11">M</FONT></SUB>d<SUB><FONT POINT-SIZE="11">1</FONT></SUB>+300</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="5">&#8230;</TD>
+        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="5">H<SUB><FONT POINT-SIZE="11">M</FONT></SUB>d<SUB><FONT POINT-SIZE="11">N</FONT></SUB>+300</TD>
       </TR>
     </TABLE>
   >];
 
   chi2_vec [label=<
     <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="2">
-      <TR><TD COLSPAN="3"><FONT FACE="Courier New" POINT-SIZE="13"><B>chi2&#160;</B></FONT></TD></TR>
-      <TR><TD COLSPAN="3"><B>(M,)</B> · per H<SUB><FONT POINT-SIZE="12">0</FONT></SUB></TD></TR>
-      <TR><TD COLSPAN="3" HEIGHT="4"></TD></TR>
-      <TR>
-        <TD WIDTH="14"></TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="7" WIDTH="44">&#967;<SUP><FONT POINT-SIZE="11">2</FONT></SUP><SUB><FONT POINT-SIZE="12">1</FONT></SUB></TD>
-        <TD WIDTH="14"></TD>
-      </TR>
-      <TR>
-        <TD></TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="7">&#967;<SUP><FONT POINT-SIZE="11">2</FONT></SUP><SUB><FONT POINT-SIZE="12">2</FONT></SUB></TD>
-        <TD></TD>
-      </TR>
-      <TR>
-        <TD></TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="5">&#8942;</TD>
-        <TD></TD>
-      </TR>
-      <TR>
-        <TD></TD>
-        <TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="7">&#967;<SUP><FONT POINT-SIZE="11">2</FONT></SUP><SUB><FONT POINT-SIZE="12">M</FONT></SUB></TD>
-        <TD></TD>
-      </TR>
+      <TR><TD COLSPAN="3"><FONT FACE="Courier New" POINT-SIZE="12.5"><B>chi2</B></FONT></TD></TR>
+      <TR><TD COLSPAN="3"><B>(201,)</B></TD></TR>
+      <TR><TD COLSPAN="3" HEIGHT="3"></TD></TR>
+      <TR><TD WIDTH="8"></TD><TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#EAF3FE" CELLPADDING="6" WIDTH="42">&#967;<SUP><FONT POINT-SIZE="10">2</FONT></SUP><SUB><FONT POINT-SIZE="11">1</FONT></SUB></TD><TD WIDTH="8"></TD></TR>
+      <TR><TD></TD><TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#E9F7F2" CELLPADDING="6">&#967;<SUP><FONT POINT-SIZE="10">2</FONT></SUP><SUB><FONT POINT-SIZE="11">2</FONT></SUB></TD><TD></TD></TR>
+      <TR><TD></TD><TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFFFFF" CELLPADDING="4">&#8942;</TD><TD></TD></TR>
+      <TR><TD></TD><TD BORDER="1" COLOR="#BAC7D5" BGCOLOR="#FFF2D6" CELLPADDING="6">&#967;<SUP><FONT POINT-SIZE="10">2</FONT></SUP><SUB><FONT POINT-SIZE="11">M</FONT></SUB></TD><TD></TD></TR>
     </TABLE>
   >];
 
@@ -130,5 +97,5 @@ digraph broadcasting {
   dist_row -> plus_offset [style=invis, weight=100];
   plus_offset -> equals [style=invis, weight=100];
   equals -> v_model [style=invis, weight=100];
-  v_model -> chi2_vec [color="#2F6F5E", label=" .sum(axis=1)\n across N", weight=100];
+  v_model -> chi2_vec [color="#2F6F5E", label=" .sum(axis=1)", weight=100];
 }

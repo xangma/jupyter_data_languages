@@ -1,92 +1,74 @@
-// Source: 00-primer.ipynb; Python environment solvers and aligned kernel/shell execution.
+// Source: 00-primer.ipynb; Python environments, kernels and shells.
 digraph python_environments {
   graph [
-    bgcolor="white", fontname="Arial", fontsize=19, fontcolor="#14263C",
-    label="Lock one project environment and point both kernel and shell at it",
-    labelloc=t, rankdir=TB, newrank=true, nodesep=0.18, ranksep=0.38, pad=0.14
+    bgcolor="white", fontname="Arial", fontsize=18, fontcolor="#14263C",
+    label="One project environment for both kernel and shell",
+    labelloc=t, rankdir=TB, newrank=true, nodesep=0.28, ranksep=0.44, pad=0.14,
+    splines=true
   ];
   node [
-    shape=plain, fontname="Arial", fontsize=15, fontcolor="#14263C",
-    color="#BAC7D5", penwidth=1.4
+    shape=box, style="rounded,filled", fontname="Arial", fontsize=15,
+    fontcolor="#14263C", color="#BAC7D5", penwidth=1.5, margin="0.14,0.09"
   ];
   edge [
-    fontname="Arial", fontsize=14, fontcolor="#14263C",
-    color="#526780", penwidth=1.5, arrowsize=0.8
+    fontname="Arial", fontsize=13.5, fontcolor="#14263C",
+    color="#526780", penwidth=1.6, arrowsize=0.8
   ];
 
   subgraph cluster_tools {
-    label="Dependency solvers & environment tools (pick one per project)";
+    label="Pick one solver per project";
     fontsize=16; style="rounded"; color="#BAC7D5"; margin=12;
 
-    uv_tool [label=<
-      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
-        <TR><TD BGCOLOR="#EAF3FE"><B>uv · used here</B></TD></TR>
-        <TR><TD BGCOLOR="#F3F5F7">Solves &amp; locks PyPI graph<BR/><FONT FACE="Courier New" POINT-SIZE="12.5">uv sync --frozen --extra teaching&#160;</FONT></TD></TR>
-      </TABLE>
+    uv_tool [fillcolor="#EAF3FE", label=<
+      <B>uv</B><BR/>
+      <FONT POINT-SIZE="12.5" COLOR="#526780">uv.lock</FONT>
     >];
-
-    venv_tool [label=<
-      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
-        <TR><TD BGCOLOR="#EAF3FE"><B>pip + venv · stdlib</B></TD></TR>
-        <TR><TD BGCOLOR="#F3F5F7">Resolves against current env<BR/><FONT FACE="Courier New" POINT-SIZE="12.5">python -m pip install ...&#160;</FONT></TD></TR>
-      </TABLE>
+    venv_tool [fillcolor="#EAF3FE", label=<
+      <B>pip + venv</B><BR/>
+      <FONT POINT-SIZE="12.5" COLOR="#526780">stdlib</FONT>
     >];
-
-    conda_tool [label=<
-      <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
-        <TR><TD BGCOLOR="#EAF3FE"><B>conda / mamba · binary</B></TD></TR>
-        <TR><TD BGCOLOR="#F3F5F7">Solves Python + C/CUDA<BR/><FONT FACE="Courier New" POINT-SIZE="12.5">CFITSIO · FFTW · MPI&#160;</FONT></TD></TR>
-      </TABLE>
+    conda_tool [fillcolor="#EAF3FE", label=<
+      <B>conda / mamba</B><BR/>
+      <FONT POINT-SIZE="12.5" COLOR="#526780">Python + C/GPU</FONT>
     >];
-
     { rank=same; uv_tool; venv_tool; conda_tool; }
   }
 
-  project_env [label=<
-    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#BAC7D5">
-      <TR><TD BGCOLOR="#F0EBFA"><B>Isolated project environment</B></TD></TR>
-      <TR><TD BGCOLOR="#FFFFFF"><FONT FACE="Courier New" POINT-SIZE="12.5">.venv/bin/python (uv / venv)&#160;</FONT><BR/><FONT FACE="Courier New" POINT-SIZE="12.5">.../envs/&lt;project&gt;/bin/python (conda)&#160;</FONT></TD></TR>
-    </TABLE>
+  project_env [fillcolor="#F0EBFA", label=<
+    <B>Project environment</B><BR/>
+    <FONT FACE="Courier New" POINT-SIZE="12.5" COLOR="#526780">.venv/bin/python</FONT>
   >];
 
-  unactivated_cmd [label=<
-    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="8" COLOR="#D8A8A8">
-      <TR><TD BGCOLOR="#FFF2D6"><B>Unactivated shell (#1 trap)</B></TD></TR>
-      <TR><TD BGCOLOR="#FFFFFF"><FONT FACE="Courier New" POINT-SIZE="13">&#160;pip install ... | pytest&#160;&#160;</FONT><BR/>Bare command in fresh shell</TD></TR>
-    </TABLE>
+  unactivated_cmd [fillcolor="#FFF2D6", color="#D8A8A8", label=<
+    <B>Unactivated shell</B><BR/>
+    <FONT POINT-SIZE="12.5" COLOR="#7A2E2E">bare pip / pytest</FONT>
   >];
 
   { rank=same; project_env; unactivated_cmd; }
 
-  kernel_ok [label=<
-    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
-      <TR><TD BGCOLOR="#E9F7F2"><B>Aligned · Jupyter kernel</B></TD></TR>
-      <TR><TD BGCOLOR="#FFFFFF"><B>Python PhD (locked)</B><BR/><FONT FACE="Courier New" POINT-SIZE="12.5">sys.executable → project env&#160;</FONT></TD></TR>
-    </TABLE>
+  kernel_ok [fillcolor="#E9F7F2", label=<
+    <B>Jupyter kernel</B><BR/>
+    <FONT POINT-SIZE="12.5" COLOR="#2E7D6B">Python PhD (locked)</FONT>
   >];
 
-  term_ok [label=<
-    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#BAC7D5">
-      <TR><TD BGCOLOR="#E9F7F2"><B>Aligned · Activated shell</B></TD></TR>
-      <TR><TD BGCOLOR="#FFFFFF"><FONT FACE="Courier New" POINT-SIZE="12.5">source .../activate | uv run&#160;</FONT><BR/><FONT FACE="Courier New" POINT-SIZE="12.5">python -m pytest · uv sync / pip&#160;</FONT></TD></TR>
-    </TABLE>
+  term_ok [fillcolor="#E9F7F2", label=<
+    <B>Activated shell</B><BR/>
+    <FONT POINT-SIZE="12.5" COLOR="#2E7D6B">activate / uv run</FONT>
   >];
 
-  trap_bad [label=<
-    <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#D8A8A8">
-      <TR><TD BGCOLOR="#FBEDED"><B>Wrong interpreter!</B></TD></TR>
-      <TR><TD BGCOLOR="#FBEDED"><FONT FACE="Courier New" POINT-SIZE="12.5">/usr/bin/python3 | conda (base)&#160;</FONT><BR/><FONT FACE="Courier New" POINT-SIZE="12.5">ModuleNotFoundError&#160;</FONT></TD></TR>
-    </TABLE>
+  trap_bad [fillcolor="#FBEDED", color="#D8A8A8", label=<
+    <B>Wrong Python!</B><BR/>
+    <FONT FACE="Courier New" POINT-SIZE="12" COLOR="#7A2E2E">ModuleNotFoundError</FONT>
   >];
 
   { rank=same; kernel_ok; term_ok; trap_bad; }
 
-  uv_tool -> project_env [label=" builds"];
-  venv_tool -> project_env [label=" builds"];
-  conda_tool -> project_env [label=" builds"];
+  uv_tool -> project_env;
+  venv_tool -> project_env;
+  conda_tool -> project_env;
   conda_tool -> unactivated_cmd [style=invis];
 
   project_env -> kernel_ok [color="#2F6F5E", label=" ipykernel"];
-  project_env -> term_ok [color="#2F6F5E", label=" activate / uv run"];
-  unactivated_cmd -> trap_bad [color="#A63A3A", style=dashed, penwidth=1.8, label=" bypasses env"];
+  project_env -> term_ok [color="#2F6F5E", label=" activate"];
+  unactivated_cmd -> trap_bad [color="#A63A3A", style=dashed, label=" bypasses .venv"];
 }

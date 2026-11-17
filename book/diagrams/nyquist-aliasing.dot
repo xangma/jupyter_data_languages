@@ -1,69 +1,50 @@
-// Source: 01-catalogue.ipynb; Nyquist limit and spectral folding / aliasing.
+// Source: 04-signal-extension.ipynb; Nyquist folding across fs/2.
 digraph nyquist_aliasing {
   graph [
-    bgcolor="white", fontname="Arial", fontsize=20, fontcolor="#14263C",
-    label="Frequencies above Nyquist fold back into the resolved [0, fs/2] band",
-    labelloc=t, rankdir=TB, newrank=true, nodesep=0.26, ranksep=0.34, pad=0.16
+    bgcolor="white", fontname="Arial", fontsize=18, fontcolor="#14263C",
+    label="Nyquist folding (fs = 512 Hz)",
+    labelloc=t, rankdir=LR, newrank=true, nodesep=0.30, ranksep=0.44, pad=0.14
   ];
   node [
-    shape=box, style="rounded,filled", fontname="Arial", fontsize=16,
-    fontcolor="#14263C", color="#BAC7D5", penwidth=1.5, margin="0.14,0.10"
+    shape=box, style="rounded,filled", fontname="Arial", fontsize=15,
+    fontcolor="#14263C", color="#BAC7D5", penwidth=1.5, margin="0.14,0.09"
   ];
   edge [
-    fontname="Arial", fontsize=15, fontcolor="#14263C",
-    color="#526780", penwidth=1.6, arrowsize=0.85
+    fontname="Arial", fontsize=13.5, fontcolor="#14263C",
+    color="#526780", penwidth=1.6, arrowsize=0.82
   ];
 
-  setup [fillcolor="#EAF3FE", label=<
-    <B>Sampling rate:</B> f<SUB>s</SUB> = 512 Hz (&Delta;t = 1/512 s)   &middot;   <B>Nyquist limit:</B> f<SUB>Nyq</SUB> = f<SUB>s</SUB>/2 = 256 Hz
-  >];
-
   subgraph cluster_resolved {
-    label="Resolved band  [0, 256 Hz]";
-    fontsize=18; style="rounded"; color="#BAC7D5"; bgcolor="#F9FCFB"; margin=14;
+    label="Resolved [0, 256 Hz]";
+    fontsize=16.5; style="rounded"; color="#BAC7D5"; margin=12;
 
     f40 [fillcolor="#E9F7F2", label=<
-      <B>40 Hz signal</B><BR/>
-      stays at <B>40 Hz</B><BR/>
-      <FONT POINT-SIZE="14">(accurately resolved)</FONT>
+      <B>40 Hz</B><BR/>
+      <FONT POINT-SIZE="12.5" COLOR="#2E7D6B">resolved</FONT>
     >];
 
     f212 [fillcolor="#FFF2D6", label=<
-      <B>Alias at 212 Hz</B><BR/>
-      256 &minus; 44 Hz<BR/>
-      <FONT POINT-SIZE="14">f<SUB>alias</SUB> = 512 &minus; 300</FONT>
+      <B>212 Hz alias</B><BR/>
+      <FONT POINT-SIZE="12.5" COLOR="#526780">512 − 300 Hz</FONT>
     >];
+    { rank=same; f40; f212; }
   }
 
   mirror [shape=octagon, style="filled", fillcolor="#F0EBFA", label=<
     <B>Nyquist</B><BR/>
-    <B>256 Hz</B><BR/>
-    <FONT POINT-SIZE="14">mirror</FONT>
+    <B>256 Hz</B>
   >];
 
   subgraph cluster_above {
-    label="Above Nyquist  (256, 512 Hz)";
-    fontsize=18; style="rounded,dashed"; color="#BAC7D5"; bgcolor="#FFF9F9"; margin=14;
+    label="Above Nyquist";
+    fontsize=16.5; style="rounded,dashed"; color="#BAC7D5"; margin=12;
 
     f300 [fillcolor="#FBEDED", label=<
-      <B>300 Hz signal</B><BR/>
-      256 + 44 Hz<BR/>
-      <FONT POINT-SIZE="14">(+44 Hz past f<SUB>Nyq</SUB>)</FONT>
+      <B>300 Hz</B><BR/>
+      <FONT POINT-SIZE="12.5" COLOR="#7A2E2E">256 + 44 Hz</FONT>
     >];
   }
 
-  takeaway [fillcolor="#FFF2D6", label=<
-    At discrete <B>1/512 s</B> samples, <B>300 Hz</B> folds to <B>f<SUB>alias</SUB> = f<SUB>s</SUB> &minus; f = 212 Hz</B> (indistinguishable without anti-alias filtering)
-  >];
-
-  { rank=same; f40; f212; mirror; f300; }
-
-  setup -> f212 [style=invis];
-  setup -> mirror [style=dashed, arrowhead=none, color="#71849A"];
-  f40 -> f212 [style=invis];
-  f212 -> mirror [dir=back, color="#8B6D37", penwidth=2.0, label=" −44 Hz "];
-  mirror -> f300 [dir=back, color="#8B6D37", penwidth=2.0, label=" folds "];
-
-  f212 -> takeaway [style=dashed, arrowhead=none, color="#8B6D37"];
-  mirror -> takeaway [style=invis];
+  f212 -> mirror [dir=back, color="#8B6D37", fontcolor="#8B6D37", penwidth=1.8, label=" −44 Hz "];
+  mirror -> f300 [dir=back, color="#8B6D37", fontcolor="#8B6D37", penwidth=1.8, label=" folds "];
 }

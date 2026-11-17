@@ -1,37 +1,38 @@
 // SPDX-License-Identifier: MIT
 digraph agent_architecture {
-  graph [bgcolor="white", fontname="Arial", fontsize=19, fontcolor="#14263C",
-         rankdir=TB, newrank=true, nodesep=0.26, ranksep=0.42, pad=0.16, compound=true];
-  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=16,
+  graph [bgcolor="white", fontname="Arial", fontsize=18, fontcolor="#14263C",
+         label="Agent client, tools and model host", labelloc=t,
+         rankdir=TB, newrank=true, nodesep=0.28, ranksep=0.38, pad=0.14, compound=true];
+  node [shape=box, style="rounded,filled", fontname="Arial", fontsize=15,
         fontcolor="#14263C", color="#BAC7D5", penwidth=1.5,
-        fillcolor="#F3F5F7", margin="0.14,0.10"];
-  edge [fontname="Arial", fontsize=15, fontcolor="#14263C", color="#526780",
+        fillcolor="#F3F5F7", margin="0.13,0.09"];
+  edge [fontname="Arial", fontsize=13.5, fontcolor="#14263C", color="#526780",
         penwidth=1.6, arrowsize=0.8];
 
   subgraph cluster_client {
-    label="Your workstation (e.g. VS Code / terminal)";
-    style="rounded"; color="#BAC7D5"; margin=16;
-    client [label="Agent client\n(Claude Code / Codex / Cline)", fillcolor="#F0EBFA"];
-    permission [label="Client permissions\nand action approvals", fillcolor="#FFF2D6"];
-    filetool [label="File read/edit tool"];
-    files [label="Your workspace files\nweighted_mean.py + tests", fillcolor="#EAF3FE"];
+    label="Workstation";
+    fontsize=16.5; style="rounded"; color="#BAC7D5"; margin=14;
+    client [label="Agent client\nClaude · Codex · Cline", fillcolor="#F0EBFA"];
+    permission [label="Approvals", fillcolor="#FFF2D6"];
+    filetool [label="File tool"];
+    files [label="Workspace files", fillcolor="#EAF3FE"];
     subgraph cluster_shell {
-      label="OS shell sandbox\n(only in tools that provide one)";
-      fontsize=15; style="rounded,dashed"; color="#71849A"; margin=14;
-      terminal [label="Terminal subprocess\npython -m pytest -q", fillcolor="#E9F7F2"];
+      label="OS sandbox (optional)";
+      fontsize=14; style="rounded,dashed"; color="#71849A"; margin=12;
+      terminal [label="Terminal\npytest", fillcolor="#E9F7F2"];
     }
-    client -> permission [label=" requested action"];
+    client -> permission;
     permission -> filetool;
     permission -> terminal [lhead=cluster_shell];
-    filetool -> files [label=" read / edit"];
-    terminal -> files [label=" permitted file access"];
+    filetool -> files [label=" edit"];
+    terminal -> files [label=" run"];
     {rank=same; filetool; terminal;}
   }
   subgraph cluster_model {
-    label="Model inference\n(cloud API or local server)";
-    style="rounded"; color="#BAC7D5"; margin=16;
-    model [label="LLM endpoint\nproposes next steps", fillcolor="#FFF2D6"];
+    label="Model host";
+    fontsize=16.5; style="rounded"; color="#BAC7D5"; margin=14;
+    model [label="LLM\nAPI / local server", fillcolor="#FFF2D6"];
   }
   {rank=same; client; model;}
-  client -> model [dir=both, label="  context + results out  \n  proposals back  "];
+  client -> model [dir=both, label=" context ↔ proposals "];
 }
