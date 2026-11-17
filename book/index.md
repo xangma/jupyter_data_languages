@@ -1,8 +1,8 @@
 # Python for ICG Research
 
-Three practical sessions for incoming PhD students at the Institute of Cosmology
-and Gravitation, University of Portsmouth — welcoming both theoretical or
-computational researchers and observational astronomers.
+Three practical sessions for incoming PhD students across theory, computation,
+and observation at the Institute of Cosmology and Gravitation, University of
+Portsmouth.
 
 By the end you will have a reproducible numerical analysis, a scientific test
 you can explain, and a reviewed Git commit. You will also steer a coding agent

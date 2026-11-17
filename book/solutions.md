@@ -69,7 +69,7 @@ their `TUNITn` unit cards) while omitting `apparent_magnitude` and the long
 free-text `description`, and preserved key provenance in `<=8`-character FITS
 header cards (`SYNTH = True`, `SEED = 20261109`, `H0_INJ = 70.0`). Calling
 `.to_value(u.Mpc)` checks dimensions and rescales compatible units (`kpc`
-$\rightarrow$ `Mpc`) or raises `UnitConversionError`, whereas `.value` blindly
+→ `Mpc`) or raises `UnitConversionError`, whereas `.value` blindly
 strips whatever unit was stored.
 :::
 
@@ -209,7 +209,7 @@ def test_float_wraparound():
     assert angle_distance(359.9, 0.1) == pytest.approx(0.2)
 ```
 
-In IEEE-754 floating-point arithmetic, `360 - abs(0.1 - 359.9)` evaluates to
+In binary floating-point arithmetic, `360 - abs(0.1 - 359.9)` evaluates to
 `0.20000000000004547`, so `pytest.approx(0.2)` avoids brittle exact-float
 failure. With the deliberate `abs(b - a)` bug, `test_wraparound` returns `358`
 instead of `2`, `test_float_wraparound` returns `359.8` instead of `0.2`, and
