@@ -1,7 +1,7 @@
 # General CPD tools and GPU libraries stay in the existing Conda environment.
 # The course uses an independent, hash-locked Python environment and kernel.
 FROM ghcr.io/astral-sh/uv:0.13.7@sha256:96f40d3904aad8d0bd010539001d36c8e2188b981e1334471a90c4a1d93bb490 AS uv
-FROM ghcr.io/icg-innovation/cpd-jupyterhub:ai-sha-ec313ad62d1218493a39d6478b94cee30b6a61dd@sha256:9111defd34f30a44227f1d3b3baf071535f0d2a73da992ed512a6cc57e06b63a
+FROM ghcr.io/icg-innovation/cpd-jupyterhub:ai-sha-9b72a28e5b753a198d50bf7f3288adf6132a7bd9@sha256:563824e5c2e4616fa97cc9970d65df8aa303b3fa3775b1ba90a475f20e915288
 
 USER root
 COPY --from=uv /uv /usr/local/bin/uv
